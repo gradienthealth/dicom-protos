@@ -1,0 +1,3 @@
+[submodule "dicom-standard"]
+	path = dicom-standard
+	url = git@github.com:innolitics/dicom-standard.git
