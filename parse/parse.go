@@ -11,7 +11,7 @@ type Attribute struct {
 	Name                string `json:"name"`
 	Keyword             string `json:"keyword"`
 	ValueRepresentation string `json:"valueRepresentation"`
-	valueMultiplicity   string `json:"valueMultiplicity"`
+	ValueMultiplicity   string `json:"valueMultiplicity"`
 	Retired             bool   `json:"retired"`
 }
 
@@ -38,7 +38,7 @@ type ModuleToAttributeItem struct {
 	Type     string `json:"type"`
 }
 
-func tagToKey(tag string) string {
+func TagToKey(tag string) string {
 	s := strings.Replace(tag, ",", "", -1)
 	s2 := strings.Replace(s, "(", "", -1)
 	s3 := strings.Replace(s2, ")", "", -1)
@@ -77,9 +77,12 @@ func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Modu
 	moduleToAttributesDec := json.NewDecoder(moduleToAttributesFile)
 	var moduleToAttributes []ModuleToAttributeItem
 	err = moduleToAttributesDec.Decode(&moduleToAttributes)
+	if err != nil {
+		panic(err)
+	}
 
 	for _, mapping := range moduleToAttributes {
-		tagKey := tagToKey(mapping.Tag)
+		tagKey := TagToKey(mapping.Tag)
 		objA := mpMap[mapping.ModuleID]
 		objA.AddAttribute(aMap[tagKey])
 	}
