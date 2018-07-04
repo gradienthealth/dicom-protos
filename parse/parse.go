@@ -57,44 +57,45 @@ func TagToKey(tag string) string {
 }
 
 func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Module, error) {
-
+	// Parse AttributeMap
 	dec := json.NewDecoder(attributeFile)
-	var aMap AttributeMap
-	err := dec.Decode(&aMap)
+	var attrMap AttributeMap
+	err := dec.Decode(&attrMap)
 	if err != nil {
 		return []*Module{}, err
 	}
 
+	// Parse ModuleMap
 	dec = json.NewDecoder(moduleFile)
 	var mMap ModuleMap
 	err = dec.Decode(&mMap)
 	if err != nil {
 		return []*Module{}, err
 	}
-	mpMap := mMap.ToPointerMap()
+	moduleMap := mMap.ToPointerMap()
 
+	// Parse ModuleToAttributeItem mappings
 	dec = json.NewDecoder(moduleToAttributesFile)
 	var moduleToAttributes []ModuleToAttributeItem
 	err = dec.Decode(&moduleToAttributes)
 	if err != nil {
-		panic(err)
+		return []*Module{}, err
 	}
 
+	// Associate all modules with their sets of attributes
 	for _, mapping := range moduleToAttributes {
 		tagKey := TagToKey(mapping.Tag)
-		module := mpMap[mapping.ModuleID]
-		module.AddAttribute(aMap[tagKey])
+		module := moduleMap[mapping.ModuleID]
+		module.AddAttribute(attrMap[tagKey])
 	}
 
-	moduleArray := make([]*Module, len(mpMap))
-
+	// Create slice of modules to return
 	i := 0
-
-	for _, v := range mpMap {
-		moduleArray[i] = v
+	modules := make([]*Module, len(moduleMap))
+	for _, v := range moduleMap {
+		modules[i] = v
 		i++
 	}
 
-	return moduleArray, nil
-
+	return modules, nil
 }
