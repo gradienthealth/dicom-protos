@@ -1,13 +1,10 @@
 package main
 
 import (
-	"os"
-
-	"strings"
-
 	"fmt"
-
 	"log"
+	"os"
+	"strings"
 
 	"github.com/gradienthealth/dicom-protos/gen"
 	"github.com/gradienthealth/dicom-protos/parse"

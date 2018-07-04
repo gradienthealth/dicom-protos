@@ -1,11 +1,9 @@
 package gen
 
 import (
-	"io"
-
 	"bytes"
 	"fmt"
-
+	"io"
 	"log"
 
 	"github.com/gradienthealth/dicom-protos/parse"
@@ -93,7 +91,7 @@ func AttributeProto(a *parse.Attribute) string {
 	}
 
 	if a.ValueRepresentation == "SQ" {
-		fmt.Fprint(b, "// This attribute has a SQ VR, no proto mapping yet")
+		fmt.Fprint(b, "\t// This attribute has a SQ VR, no proto mapping yet\n")
 	}
 
 	fmt.Fprint(b, "}")

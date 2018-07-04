@@ -46,9 +46,8 @@ func TagToKey(tag string) string {
 	return s3
 }
 
-func convertToPointerMap(m ModuleMap) ModulePointerMap {
-	var mp ModulePointerMap
-	mp = make(ModulePointerMap)
+func (m ModuleMap) ToPointerMap() ModulePointerMap {
+	mp := make(ModulePointerMap)
 	for k, v := range m {
 		var module Module
 		module = v
@@ -59,32 +58,32 @@ func convertToPointerMap(m ModuleMap) ModulePointerMap {
 
 func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Module, error) {
 
-	aFileDec := json.NewDecoder(attributeFile)
+	dec := json.NewDecoder(attributeFile)
 	var aMap AttributeMap
-	err := aFileDec.Decode(&aMap)
+	err := dec.Decode(&aMap)
 	if err != nil {
 		return []*Module{}, err
 	}
 
-	mFileDec := json.NewDecoder(moduleFile)
+	dec = json.NewDecoder(moduleFile)
 	var mMap ModuleMap
-	err = mFileDec.Decode(&mMap)
+	err = dec.Decode(&mMap)
 	if err != nil {
 		return []*Module{}, err
 	}
-	mpMap := convertToPointerMap(mMap)
+	mpMap := mMap.ToPointerMap()
 
-	moduleToAttributesDec := json.NewDecoder(moduleToAttributesFile)
+	dec = json.NewDecoder(moduleToAttributesFile)
 	var moduleToAttributes []ModuleToAttributeItem
-	err = moduleToAttributesDec.Decode(&moduleToAttributes)
+	err = dec.Decode(&moduleToAttributes)
 	if err != nil {
 		panic(err)
 	}
 
 	for _, mapping := range moduleToAttributes {
 		tagKey := TagToKey(mapping.Tag)
-		objA := mpMap[mapping.ModuleID]
-		objA.AddAttribute(aMap[tagKey])
+		module := mpMap[mapping.ModuleID]
+		module.AddAttribute(aMap[tagKey])
 	}
 
 	moduleArray := make([]*Module, len(mpMap))
