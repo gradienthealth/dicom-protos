@@ -32,6 +32,16 @@ func (m *Module) AddAttribute(a Attribute) {
 type ModuleMap map[string]Module
 type ModulePointerMap map[string]*Module
 
+// ToPointerMap converts a ModuleMap to a ModulePointerMap
+func (m ModuleMap) ToPointerMap() ModulePointerMap {
+	mp := make(ModulePointerMap)
+	for k, v := range m {
+		module := v // allocate a new module (copy v)
+		mp[k] = &module
+	}
+	return mp
+}
+
 type ModuleToAttributeItem struct {
 	ModuleID string `json:"module"`
 	Tag      string `json:"tag"`
@@ -44,16 +54,6 @@ func TagToKey(tag string) string {
 	s3 := strings.Replace(s2, ")", "", -1)
 
 	return s3
-}
-
-func (m ModuleMap) ToPointerMap() ModulePointerMap {
-	mp := make(ModulePointerMap)
-	for k, v := range m {
-		var module Module
-		module = v
-		mp[k] = &module
-	}
-	return mp
 }
 
 func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Module, error) {
