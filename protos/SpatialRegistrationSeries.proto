@@ -1,8 +1,0 @@
-// Spatial Registration Series
-// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.20.html#table_C.20.1-1
-syntax = "proto3";
-
-// DICOM Tag: (0008,0060)
-message Modality {
-	string value = 1;
-}

@@ -1,8 +1,0 @@
-// Approval
-// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.16.html#table_C.8-52
-syntax = "proto3";
-
-
-
-
-

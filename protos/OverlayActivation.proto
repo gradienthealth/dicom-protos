@@ -1,8 +1,0 @@
-// Overlay Activation
-// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.7.html#table_C.11.7-1
-syntax = "proto3";
-
-// DICOM Tag: (60XX,1001)
-message OverlayActivationLayer {
-	string value = 1;
-}

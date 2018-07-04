@@ -1,8 +1,0 @@
-// Timezone
-// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.5.html#table_C.12.5-1
-syntax = "proto3";
-
-// DICOM Tag: (0008,0201)
-message TimezoneOffsetFromUTC {
-	string value = 1;
-}
