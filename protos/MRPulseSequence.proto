@@ -1,0 +1,84 @@
+// MR Pulse Sequence
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.4.html#table_C.8-87
+syntax = "proto3";
+
+// DICOM Tag: (0018,9005)
+message PulseSequenceName {
+	string value = 1;
+}
+// DICOM Tag: (0018,0023)
+message MRAcquisitionType {
+	string value = 1;
+}
+// DICOM Tag: (0018,9008)
+message EchoPulseSequence {
+	string value = 1;
+}
+// DICOM Tag: (0018,9011)
+message MultipleSpinEcho {
+	string value = 1;
+}
+// DICOM Tag: (0018,9012)
+message MultiPlanarExcitation {
+	string value = 1;
+}
+// DICOM Tag: (0018,9014)
+message PhaseContrast {
+	string value = 1;
+}
+// DICOM Tag: (0018,9092)
+message VelocityEncodingAcquisitionSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0018,9090)
+message VelocityEncodingDirection {
+	repeated double value = 1;
+}
+// DICOM Tag: (0018,9015)
+message TimeOfFlightContrast {
+	string value = 1;
+}
+// DICOM Tag: (0018,9250)
+message ArterialSpinLabelingContrast {
+	string value = 1;
+}
+// DICOM Tag: (0018,9017)
+message SteadyStatePulseSequence {
+	string value = 1;
+}
+// DICOM Tag: (0018,9018)
+message EchoPlanarPulseSequence {
+	string value = 1;
+}
+// DICOM Tag: (0018,9024)
+message SaturationRecovery {
+	string value = 1;
+}
+// DICOM Tag: (0018,9025)
+message SpectrallySelectedSuppression {
+	string value = 1;
+}
+// DICOM Tag: (0018,9029)
+message OversamplingPhase {
+	string value = 1;
+}
+// DICOM Tag: (0018,9032)
+message GeometryOfKSpaceTraversal {
+	string value = 1;
+}
+// DICOM Tag: (0018,9034)
+message RectilinearPhaseEncodeReordering {
+	string value = 1;
+}
+// DICOM Tag: (0018,9033)
+message SegmentedKSpaceTraversal {
+	string value = 1;
+}
+// DICOM Tag: (0018,9094)
+message CoverageOfKSpace {
+	string value = 1;
+}
+// DICOM Tag: (0018,9093)
+message NumberOfKSpaceTrajectories {
+	uint32 value = 1;
+}

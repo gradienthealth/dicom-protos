@@ -1,0 +1,236 @@
+// Lensometry Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.8.html#table_C.8.25.8-1
+syntax = "proto3";
+
+// DICOM Tag: (0046,0012)
+message LensDescription {
+	string value = 1;
+}
+// DICOM Tag: (0046,0014)
+message RightLensSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0146)
+message SpherePower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0018)
+message CylinderSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0147)
+message CylinderPower {
+	double value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
+	float value = 1;
+}
+// DICOM Tag: (0046,0100)
+message AddNearSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0101)
+message AddIntermediateSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0028)
+message PrismSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0030)
+message HorizontalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0032)
+message HorizontalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0034)
+message VerticalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0036)
+message VerticalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0038)
+message LensSegmentType {
+	string value = 1;
+}
+// DICOM Tag: (0046,0040)
+message OpticalTransmittance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0042)
+message ChannelWidth {
+	double value = 1;
+}
+// DICOM Tag: (0046,0015)
+message LeftLensSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0146)
+message SpherePower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0018)
+message CylinderSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0147)
+message CylinderPower {
+	double value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
+	float value = 1;
+}
+// DICOM Tag: (0046,0100)
+message AddNearSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0101)
+message AddIntermediateSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0028)
+message PrismSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0030)
+message HorizontalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0032)
+message HorizontalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0034)
+message VerticalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0036)
+message VerticalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0038)
+message LensSegmentType {
+	string value = 1;
+}
+// DICOM Tag: (0046,0040)
+message OpticalTransmittance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0042)
+message ChannelWidth {
+	double value = 1;
+}
+// DICOM Tag: (0046,0016)
+message UnspecifiedLateralityLensSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0146)
+message SpherePower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0018)
+message CylinderSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0147)
+message CylinderPower {
+	double value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
+	float value = 1;
+}
+// DICOM Tag: (0046,0100)
+message AddNearSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0101)
+message AddIntermediateSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0028)
+message PrismSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0030)
+message HorizontalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0032)
+message HorizontalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0034)
+message VerticalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0036)
+message VerticalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0038)
+message LensSegmentType {
+	string value = 1;
+}
+// DICOM Tag: (0046,0040)
+message OpticalTransmittance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0042)
+message ChannelWidth {
+	double value = 1;
+}

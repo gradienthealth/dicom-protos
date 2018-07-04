@@ -1,0 +1,36 @@
+// Multi-Planar Reconstruction Geometry
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.26.html#table_C.11.26-1
+syntax = "proto3";
+
+// DICOM Tag: (0070,1501)
+message MultiPlanarReconstructionStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,1502)
+message MPRThicknessType {
+	string value = 1;
+}
+// DICOM Tag: (0070,1503)
+message MPRSlabThickness {
+	double value = 1;
+}
+// DICOM Tag: (0070,1507)
+message MPRViewWidthDirection {
+	repeated double value = 1;
+}
+// DICOM Tag: (0070,1508)
+message MPRViewWidth {
+	double value = 1;
+}
+// DICOM Tag: (0070,1511)
+message MPRViewHeightDirection {
+	repeated double value = 1;
+}
+// DICOM Tag: (0070,1512)
+message MPRViewHeight {
+	double value = 1;
+}
+// DICOM Tag: (0070,1505)
+message MPRTopLeftHandCorner {
+	repeated double value = 1;
+}

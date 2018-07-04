@@ -1,0 +1,27 @@
+// Ultrasound Frame of Reference
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.2.html#table_C.8.24.2-1
+syntax = "proto3";
+
+// DICOM Tag: (0020,9312)
+message VolumeFrameOfReferenceUID {
+	string value = 1;
+}
+// DICOM Tag: (0020,9307)
+message UltrasoundAcquisitionGeometry {
+	string value = 1;
+}
+// DICOM Tag: (0020,9308)
+message ApexPosition {
+	repeated double value = 1;
+}
+
+// DICOM Tag: (0020,9309)
+message VolumeToTransducerMappingMatrix {
+	repeated double value = 1;
+}
+
+// DICOM Tag: (0020,9313)
+message TableFrameOfReferenceUID {
+	string value = 1;
+}
+

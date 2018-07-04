@@ -1,0 +1,28 @@
+// NM Image Pixel
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.7.html#table_C.8-6
+syntax = "proto3";
+
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}

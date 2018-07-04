@@ -1,0 +1,68 @@
+// Autorefraction Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.9.html#table_C.8.25.9-1
+syntax = "proto3";
+
+// DICOM Tag: (0046,0050)
+message AutorefractionRightEyeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0146)
+message SpherePower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0018)
+message CylinderSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0147)
+message CylinderPower {
+	double value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
+	float value = 1;
+}
+// DICOM Tag: (0046,0044)
+message PupilSize {
+	double value = 1;
+}
+// DICOM Tag: (0046,0046)
+message CornealSize {
+	double value = 1;
+}
+// DICOM Tag: (0046,0052)
+message AutorefractionLeftEyeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0146)
+message SpherePower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0018)
+message CylinderSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0046,0147)
+message CylinderPower {
+	double value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
+	float value = 1;
+}
+// DICOM Tag: (0046,0044)
+message PupilSize {
+	double value = 1;
+}
+// DICOM Tag: (0046,0046)
+message CornealSize {
+	double value = 1;
+}
+// DICOM Tag: (0046,0060)
+message DistancePupillaryDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0062)
+message NearPupillaryDistance {
+	double value = 1;
+}

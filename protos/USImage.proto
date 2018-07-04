@@ -1,0 +1,957 @@
+// US Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.5.6.html#table_C.8-18
+syntax = "proto3";
+
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0006)
+message PlanarConfiguration {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0009)
+message FrameIncrementPointer {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0028,2110)
+message LossyImageCompression {
+	string value = 1;
+}
+// DICOM Tag: (0008,2124)
+message NumberOfStages {
+	int32 value = 1;
+}
+
+// DICOM Tag: (0018,6060)
+message RWaveTimeVector {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0014)
+message UltrasoundColorDataPresent {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,2120)
+message StageName {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,2122)
+message StageNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,2127)
+message ViewName {
+	string value = 1;
+}
+// DICOM Tag: (0008,2128)
+message ViewNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,2129)
+message NumberOfEventTimers {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,2130)
+message EventElapsedTimes {
+	repeated float value = 1;
+}
+// DICOM Tag: (0008,2132)
+message EventTimerNames {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,2218)
+message AnatomicRegionSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,2220)
+message AnatomicRegionModifierSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,2230)
+message PrimaryAnatomicStructureModifierSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0054,0220)
+message ViewCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0054,0222)
+message ViewModifierCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
+	string value = 1;
+}
+
+// DICOM Tag: (0018,1060)
+message TriggerTime {
+	float value = 1;
+}
+// DICOM Tag: (0018,1062)
+message NominalInterval {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1080)
+message BeatRejectionFlag {
+	string value = 1;
+}
+// DICOM Tag: (0018,1081)
+message LowRRValue {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1082)
+message HighRRValue {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1088)
+message HeartRate {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,3100)
+message IVUSAcquisition {
+	string value = 1;
+}
+// DICOM Tag: (0018,3101)
+message IVUSPullbackRate {
+	float value = 1;
+}
+// DICOM Tag: (0018,3102)
+message IVUSGatedRate {
+	float value = 1;
+}
+// DICOM Tag: (0018,3103)
+message IVUSPullbackStartFrameNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,3104)
+message IVUSPullbackStopFrameNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,3105)
+message LesionNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,5000)
+message OutputPower {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,5010)
+message TransducerData {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,6031)
+message TransducerType {
+	string value = 1;
+}
+// DICOM Tag: (0018,5012)
+message FocusDepth {
+	float value = 1;
+}
+// DICOM Tag: (0018,5020)
+message ProcessingFunction {
+	string value = 1;
+}
+// DICOM Tag: (0018,5022)
+message MechanicalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,5024)
+message BoneThermalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,5026)
+message CranialThermalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,5027)
+message SoftTissueThermalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,5028)
+message SoftTissueFocusThermalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,5029)
+message SoftTissueSurfaceThermalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,5050)
+message DepthOfScanField {
+	int32 value = 1;
+}
+// DICOM Tag: (60XX,0045)
+message OverlaySubtype {
+	string value = 1;
+}

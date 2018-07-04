@@ -1,0 +1,481 @@
+// Graphic Annotation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.5.html#table_C.10-5
+syntax = "proto3";
+
+// DICOM Tag: (0070,0001)
+message GraphicAnnotationSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,1140)
+message ReferencedImageSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+
+// DICOM Tag: (0070,0002)
+message GraphicLayer {
+	string value = 1;
+}
+// DICOM Tag: (0070,0008)
+message TextObjectSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0003)
+message BoundingBoxAnnotationUnits {
+	string value = 1;
+}
+// DICOM Tag: (0070,0004)
+message AnchorPointAnnotationUnits {
+	string value = 1;
+}
+// DICOM Tag: (0070,0006)
+message UnformattedTextValue {
+	string value = 1;
+}
+// DICOM Tag: (0070,0231)
+message TextStyleSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0227)
+message FontName {
+	string value = 1;
+}
+// DICOM Tag: (0070,0228)
+message FontNameType {
+	string value = 1;
+}
+// DICOM Tag: (0070,0229)
+message CSSFontName {
+	string value = 1;
+}
+// DICOM Tag: (0070,0241)
+message TextColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0242)
+message HorizontalAlignment {
+	string value = 1;
+}
+// DICOM Tag: (0070,0243)
+message VerticalAlignment {
+	string value = 1;
+}
+// DICOM Tag: (0070,0244)
+message ShadowStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,0245)
+message ShadowOffsetX {
+	float value = 1;
+}
+// DICOM Tag: (0070,0246)
+message ShadowOffsetY {
+	float value = 1;
+}
+// DICOM Tag: (0070,0247)
+message ShadowColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0258)
+message ShadowOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0248)
+message Underlined {
+	string value = 1;
+}
+// DICOM Tag: (0070,0249)
+message Bold {
+	string value = 1;
+}
+// DICOM Tag: (0070,0250)
+message Italic {
+	string value = 1;
+}
+// DICOM Tag: (0070,0010)
+message BoundingBoxTopLeftHandCorner {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,0011)
+message BoundingBoxBottomRightHandCorner {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,0012)
+message BoundingBoxTextHorizontalJustification {
+	string value = 1;
+}
+// DICOM Tag: (0070,0014)
+message AnchorPoint {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,0015)
+message AnchorPointVisibility {
+	string value = 1;
+}
+// DICOM Tag: (0070,0226)
+message CompoundGraphicInstanceID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0295)
+message GraphicGroupID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0062,0020)
+message TrackingID {
+	string value = 1;
+}
+// DICOM Tag: (0062,0021)
+message TrackingUID {
+	string value = 1;
+}
+// DICOM Tag: (0070,0009)
+message GraphicObjectSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0005)
+message GraphicAnnotationUnits {
+	string value = 1;
+}
+// DICOM Tag: (0070,0020)
+message GraphicDimensions {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0021)
+message NumberOfGraphicPoints {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0022)
+message GraphicData {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,0023)
+message GraphicType {
+	string value = 1;
+}
+// DICOM Tag: (0070,0232)
+message LineStyleSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0251)
+message PatternOnColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0252)
+message PatternOffColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0284)
+message PatternOnOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0285)
+message PatternOffOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0253)
+message LineThickness {
+	float value = 1;
+}
+// DICOM Tag: (0070,0254)
+message LineDashingStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,0255)
+message LinePattern {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0244)
+message ShadowStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,0245)
+message ShadowOffsetX {
+	float value = 1;
+}
+// DICOM Tag: (0070,0246)
+message ShadowOffsetY {
+	float value = 1;
+}
+// DICOM Tag: (0070,0247)
+message ShadowColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0258)
+message ShadowOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0024)
+message GraphicFilled {
+	string value = 1;
+}
+// DICOM Tag: (0070,0233)
+message FillStyleSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0251)
+message PatternOnColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0252)
+message PatternOffColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0284)
+message PatternOnOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0285)
+message PatternOffOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0257)
+message FillMode {
+	string value = 1;
+}
+// DICOM Tag: (0070,0256)
+message FillPattern {
+	string value = 1;
+}
+// DICOM Tag: (0070,0226)
+message CompoundGraphicInstanceID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0295)
+message GraphicGroupID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0062,0020)
+message TrackingID {
+	string value = 1;
+}
+// DICOM Tag: (0062,0021)
+message TrackingUID {
+	string value = 1;
+}
+// DICOM Tag: (0070,0209)
+message CompoundGraphicSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0226)
+message CompoundGraphicInstanceID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0282)
+message CompoundGraphicUnits {
+	string value = 1;
+}
+// DICOM Tag: (0070,0020)
+message GraphicDimensions {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0021)
+message NumberOfGraphicPoints {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0022)
+message GraphicData {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,0294)
+message CompoundGraphicType {
+	string value = 1;
+}
+// DICOM Tag: (0070,0231)
+message TextStyleSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0227)
+message FontName {
+	string value = 1;
+}
+// DICOM Tag: (0070,0228)
+message FontNameType {
+	string value = 1;
+}
+// DICOM Tag: (0070,0229)
+message CSSFontName {
+	string value = 1;
+}
+// DICOM Tag: (0070,0241)
+message TextColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0242)
+message HorizontalAlignment {
+	string value = 1;
+}
+// DICOM Tag: (0070,0243)
+message VerticalAlignment {
+	string value = 1;
+}
+// DICOM Tag: (0070,0244)
+message ShadowStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,0245)
+message ShadowOffsetX {
+	float value = 1;
+}
+// DICOM Tag: (0070,0246)
+message ShadowOffsetY {
+	float value = 1;
+}
+// DICOM Tag: (0070,0247)
+message ShadowColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0258)
+message ShadowOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0248)
+message Underlined {
+	string value = 1;
+}
+// DICOM Tag: (0070,0249)
+message Bold {
+	string value = 1;
+}
+// DICOM Tag: (0070,0250)
+message Italic {
+	string value = 1;
+}
+// DICOM Tag: (0070,0232)
+message LineStyleSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0251)
+message PatternOnColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0252)
+message PatternOffColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0284)
+message PatternOnOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0285)
+message PatternOffOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0253)
+message LineThickness {
+	float value = 1;
+}
+// DICOM Tag: (0070,0254)
+message LineDashingStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,0255)
+message LinePattern {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0244)
+message ShadowStyle {
+	string value = 1;
+}
+// DICOM Tag: (0070,0245)
+message ShadowOffsetX {
+	float value = 1;
+}
+// DICOM Tag: (0070,0246)
+message ShadowOffsetY {
+	float value = 1;
+}
+// DICOM Tag: (0070,0247)
+message ShadowColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0258)
+message ShadowOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0230)
+message RotationAngle {
+	double value = 1;
+}
+// DICOM Tag: (0070,0273)
+message RotationPoint {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,0261)
+message GapLength {
+	float value = 1;
+}
+// DICOM Tag: (0070,0262)
+message DiameterOfVisibility {
+	float value = 1;
+}
+// DICOM Tag: (0070,0287)
+message MajorTicksSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0288)
+message TickPosition {
+	float value = 1;
+}
+// DICOM Tag: (0070,0289)
+message TickLabel {
+	string value = 1;
+}
+// DICOM Tag: (0070,0274)
+message TickAlignment {
+	string value = 1;
+}
+// DICOM Tag: (0070,0279)
+message TickLabelAlignment {
+	string value = 1;
+}
+// DICOM Tag: (0070,0278)
+message ShowTickLabel {
+	string value = 1;
+}
+// DICOM Tag: (0070,0024)
+message GraphicFilled {
+	string value = 1;
+}
+// DICOM Tag: (0070,0233)
+message FillStyleSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0251)
+message PatternOnColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0252)
+message PatternOffColorCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0284)
+message PatternOnOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0285)
+message PatternOffOpacity {
+	float value = 1;
+}
+// DICOM Tag: (0070,0257)
+message FillMode {
+	string value = 1;
+}
+// DICOM Tag: (0070,0256)
+message FillPattern {
+	string value = 1;
+}
+// DICOM Tag: (0070,0295)
+message GraphicGroupID {
+	uint32 value = 1;
+}

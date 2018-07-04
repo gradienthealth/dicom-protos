@@ -1,0 +1,16 @@
+// X-Ray Image Intensifier
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.4.html#table_C.8.19.4-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,1162)
+message IntensifierSize {
+	float value = 1;
+}
+// DICOM Tag: (0018,9427)
+message IntensifierActiveShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,9428)
+message IntensifierActiveDimensions {
+	repeated float value = 1;
+}

@@ -1,0 +1,28 @@
+// Graphic Layer
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.7.html#table_C.10-7
+syntax = "proto3";
+
+// DICOM Tag: (0070,0060)
+message GraphicLayerSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,0002)
+message GraphicLayer {
+	string value = 1;
+}
+// DICOM Tag: (0070,0062)
+message GraphicLayerOrder {
+	int32 value = 1;
+}
+// DICOM Tag: (0070,0066)
+message GraphicLayerRecommendedDisplayGrayscaleValue {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,0401)
+message GraphicLayerRecommendedDisplayCIELabValue {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0070,0068)
+message GraphicLayerDescription {
+	string value = 1;
+}

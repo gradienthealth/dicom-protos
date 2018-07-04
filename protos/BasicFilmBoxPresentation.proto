@@ -1,0 +1,65 @@
+// Basic Film Box Presentation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html#table_C.13-3
+syntax = "proto3";
+
+// DICOM Tag: (2010,0010)
+message ImageDisplayFormat {
+	string value = 1;
+}
+// DICOM Tag: (2010,0030)
+message AnnotationDisplayFormatID {
+	string value = 1;
+}
+// DICOM Tag: (2010,0040)
+message FilmOrientation {
+	string value = 1;
+}
+// DICOM Tag: (2010,0050)
+message FilmSizeID {
+	string value = 1;
+}
+// DICOM Tag: (2010,0060)
+message MagnificationType {
+	string value = 1;
+}
+// DICOM Tag: (2010,0080)
+message SmoothingType {
+	string value = 1;
+}
+// DICOM Tag: (2010,0100)
+message BorderDensity {
+	string value = 1;
+}
+// DICOM Tag: (2010,0110)
+message EmptyImageDensity {
+	string value = 1;
+}
+// DICOM Tag: (2010,0120)
+message MinDensity {
+	uint32 value = 1;
+}
+// DICOM Tag: (2010,0130)
+message MaxDensity {
+	uint32 value = 1;
+}
+// DICOM Tag: (2010,0140)
+message Trim {
+	string value = 1;
+}
+// DICOM Tag: (2010,0150)
+message ConfigurationInformation {
+	string value = 1;
+}
+
+// DICOM Tag: (2010,0160)
+message ReflectedAmbientLight {
+	uint32 value = 1;
+}
+// DICOM Tag: (2020,0050)
+message RequestedResolutionID {
+	string value = 1;
+}
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
+}

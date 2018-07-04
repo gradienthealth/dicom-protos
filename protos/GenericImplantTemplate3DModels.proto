@@ -1,0 +1,21 @@
+// Generic Implant Template 3D Models
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.3-1
+syntax = "proto3";
+
+// DICOM Tag: (0068,6350)
+message ImplantTemplate3DModelSurfaceNumber {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0068,6360)
+message SurfaceModelDescriptionSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+
+// DICOM Tag: (0068,6380)
+message SurfaceModelLabel {
+	string value = 1;
+}
+// DICOM Tag: (0068,6390)
+message SurfaceModelScalingFactor {
+	double value = 1;
+}

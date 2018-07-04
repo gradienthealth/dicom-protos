@@ -1,0 +1,56 @@
+// Multi-frame Functional Groups
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1
+syntax = "proto3";
+
+// DICOM Tag: (5200,9229)
+message SharedFunctionalGroupsSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (5200,9230)
+message PerFrameFunctionalGroupsSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,0023)
+message ContentDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0028,0008)
+message NumberOfFrames {
+	int32 value = 1;
+}
+// DICOM Tag: (0022,0028)
+message StereoPairsPresent {
+	string value = 1;
+}
+// DICOM Tag: (0020,9228)
+message ConcatenationFrameOffsetNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,6010)
+message RepresentativeFrameNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0020,9161)
+message ConcatenationUID {
+	string value = 1;
+}
+// DICOM Tag: (0020,0242)
+message SOPInstanceUIDOfConcatenationSource {
+	string value = 1;
+}
+// DICOM Tag: (0020,9162)
+message InConcatenationNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0020,9163)
+message InConcatenationTotalNumber {
+	uint32 value = 1;
+}

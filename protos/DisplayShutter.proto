@@ -1,0 +1,44 @@
+// Display Shutter
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.11.html#table_C.7-17
+syntax = "proto3";
+
+// DICOM Tag: (0018,1600)
+message ShutterShape {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,1602)
+message ShutterLeftVerticalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1604)
+message ShutterRightVerticalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1606)
+message ShutterUpperHorizontalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1608)
+message ShutterLowerHorizontalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1610)
+message CenterOfCircularShutter {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,1612)
+message RadiusOfCircularShutter {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1620)
+message VerticesOfThePolygonalShutter {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,1622)
+message ShutterPresentationValue {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,1624)
+message ShutterPresentationColorCIELabValue {
+	repeated uint32 value = 1;
+}

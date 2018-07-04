@@ -1,0 +1,32 @@
+// CR Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.html#table_C.8-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,0015)
+message BodyPartExamined {
+	string value = 1;
+}
+// DICOM Tag: (0018,5101)
+message ViewPosition {
+	string value = 1;
+}
+// DICOM Tag: (0018,1160)
+message FilterType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1180)
+message CollimatorGridName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1190)
+message FocalSpots {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1260)
+message PlateType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1261)
+message PhosphorType {
+	string value = 1;
+}

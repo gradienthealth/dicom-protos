@@ -1,0 +1,121 @@
+// MPR Volumetric Presentation State Display
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.27.html#table_C.11.27-1
+syntax = "proto3";
+
+// DICOM Tag: (0008,9205)
+message PixelPresentation {
+	string value = 1;
+}
+// DICOM Tag: (0070,1801)
+message PresentationStateClassificationComponentSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,1802)
+message ComponentType {
+	string value = 1;
+}
+// DICOM Tag: (0070,1803)
+message ComponentInputSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,1804)
+message VolumetricPresentationInputIndex {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,1403)
+message BitsMappedToColorLookupTable {
+	uint32 value = 1;
+}
+
+// DICOM Tag: (0028,1410)
+message AlphaLUTTransferFunction {
+	string value = 1;
+}
+// DICOM Tag: (0028,1101)
+message RedPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1102)
+message GreenPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1103)
+message BluePaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1104)
+message AlphaPaletteColorLookupTableDescriptor {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,1199)
+message PaletteColorLookupTableUID {
+	string value = 1;
+}
+// DICOM Tag: (0028,1201)
+message RedPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1204)
+message AlphaPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1221)
+message SegmentedRedPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1222)
+message SegmentedGreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1223)
+message SegmentedBluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1224)
+message SegmentedAlphaPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0070,1805)
+message PresentationStateCompositorComponentSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0070,1806)
+message WeightingTransferFunctionSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0028,3002)
+message LUTDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,3006)
+message LUTData {
+	repeated bytes value = 1;
+}
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
+	string value = 1;
+}
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
+}
+// DICOM Tag: (0028,2002)
+message ColorSpace {
+	string value = 1;
+}

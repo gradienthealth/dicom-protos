@@ -1,0 +1,20 @@
+// XRF Positioner
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.6.html#table_C.8-31
+syntax = "proto3";
+
+// DICOM Tag: (0018,1110)
+message DistanceSourceToDetector {
+	float value = 1;
+}
+// DICOM Tag: (0018,1111)
+message DistanceSourceToPatient {
+	float value = 1;
+}
+// DICOM Tag: (0018,1114)
+message EstimatedRadiographicMagnificationFactor {
+	float value = 1;
+}
+// DICOM Tag: (0018,1450)
+message ColumnAngulation {
+	float value = 1;
+}

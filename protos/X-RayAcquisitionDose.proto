@@ -1,0 +1,130 @@
+// X-Ray Acquisition Dose
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.8.html#table_C.8-33
+syntax = "proto3";
+
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,1151)
+message XRayTubeCurrent {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,8151)
+message XRayTubeCurrentInuA {
+	float value = 1;
+}
+// DICOM Tag: (0018,1150)
+message ExposureTime {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,8150)
+message ExposureTimeInuS {
+	float value = 1;
+}
+// DICOM Tag: (0018,1152)
+message Exposure {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1153)
+message ExposureInuAs {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1110)
+message DistanceSourceToDetector {
+	float value = 1;
+}
+// DICOM Tag: (0018,1111)
+message DistanceSourceToPatient {
+	float value = 1;
+}
+
+
+// DICOM Tag: (0018,1405)
+message RelativeXRayExposure {
+	int32 value = 1;
+}
+// DICOM Tag: (0040,0302)
+message EntranceDose {
+	uint32 value = 1;
+}
+// DICOM Tag: (0040,8302)
+message EntranceDoseInmGy {
+	float value = 1;
+}
+// DICOM Tag: (0040,8303)
+message EntranceDoseDerivation {
+	string value = 1;
+}
+// DICOM Tag: (0040,0303)
+message ExposedArea {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0040,0306)
+message DistanceSourceToEntrance {
+	float value = 1;
+}
+// DICOM Tag: (0040,0310)
+message CommentsOnRadiationDose {
+	string value = 1;
+}
+// DICOM Tag: (0040,0312)
+message XRayOutput {
+	float value = 1;
+}
+// DICOM Tag: (0040,0314)
+message HalfValueLayer {
+	float value = 1;
+}
+// DICOM Tag: (0040,0316)
+message OrganDose {
+	float value = 1;
+}
+// DICOM Tag: (0040,0318)
+message OrganExposed {
+	string value = 1;
+}
+// DICOM Tag: (0018,1191)
+message AnodeTargetMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,1160)
+message FilterType {
+	string value = 1;
+}
+// DICOM Tag: (0018,7050)
+message FilterMaterial {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,7052)
+message FilterThicknessMinimum {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7054)
+message FilterThicknessMaximum {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7056)
+message FilterBeamPathLengthMinimum {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7058)
+message FilterBeamPathLengthMaximum {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1156)
+message RectificationType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1413)
+message DeviationIndex {
+	float value = 1;
+}

@@ -1,0 +1,32 @@
+// Print Job
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.8.html#table_C.13-8
+syntax = "proto3";
+
+// DICOM Tag: (2100,0020)
+message ExecutionStatus {
+	string value = 1;
+}
+// DICOM Tag: (2100,0030)
+message ExecutionStatusInfo {
+	string value = 1;
+}
+// DICOM Tag: (2100,0040)
+message CreationDate {
+	string value = 1;
+}
+// DICOM Tag: (2100,0050)
+message CreationTime {
+	int64 value = 1;
+}
+// DICOM Tag: (2000,0020)
+message PrintPriority {
+	string value = 1;
+}
+// DICOM Tag: (2110,0030)
+message PrinterName {
+	string value = 1;
+}
+// DICOM Tag: (2100,0070)
+message Originator {
+	string value = 1;
+}

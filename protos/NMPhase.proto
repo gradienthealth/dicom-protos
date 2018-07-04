@@ -1,0 +1,36 @@
+// NM Phase
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.14.html#table_C.8-14
+syntax = "proto3";
+
+// DICOM Tag: (0054,0032)
+message PhaseInformationSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0054,0036)
+message PhaseDelay {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1242)
+message ActualFrameDuration {
+	int32 value = 1;
+}
+// DICOM Tag: (0054,0038)
+message PauseBetweenFrames {
+	int32 value = 1;
+}
+// DICOM Tag: (0054,0033)
+message NumberOfFramesInPhase {
+	uint32 value = 1;
+}
+// DICOM Tag: (0054,0210)
+message TriggerVector {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0054,0211)
+message NumberOfTriggersInPhase {
+	uint32 value = 1;
+}
+// DICOM Tag: (0054,0039)
+message PhaseDescription {
+	string value = 1;
+}

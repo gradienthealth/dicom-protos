@@ -1,0 +1,28 @@
+// RT Prescription
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.10.html#table_C.8-46
+syntax = "proto3";
+
+
+
+
+
+
+
+// DICOM Tag: (3006,0084)
+message ReferencedROINumber {
+	int32 value = 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

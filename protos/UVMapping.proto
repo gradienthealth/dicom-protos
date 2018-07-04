@@ -1,0 +1,69 @@
+// UV Mapping
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.27.6.html#table_C.27.6-1
+syntax = "proto3";
+
+// DICOM Tag: (0080,0008)
+message UVMappingSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0080,0009)
+message TextureLabel {
+	string value = 1;
+}
+// DICOM Tag: (0080,0010)
+message UValueData {
+	repeated string value = 1;
+}
+// DICOM Tag: (0080,0011)
+message VValueData {
+	repeated string value = 1;
+}
+// DICOM Tag: (0080,0012)
+message ReferencedTextureSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+
+
+
+// DICOM Tag: (0008,1199)
+message ReferencedSOPSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+
+
+// DICOM Tag: (0008,0054)
+message RetrieveAETitle {
+	repeated string value = 1;
+}
+
+// DICOM Tag: (0088,0130)
+message StorageMediaFileSetID {
+	string value = 1;
+}
+// DICOM Tag: (0088,0140)
+message StorageMediaFileSetUID {
+	string value = 1;
+}
+
+
+
+
+
+
+// DICOM Tag: (0008,1190)
+message RetrieveURL {
+	string value = 1;
+}

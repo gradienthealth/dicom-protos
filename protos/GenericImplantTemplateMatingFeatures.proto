@@ -1,0 +1,54 @@
+// Generic Implant Template Mating Features
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.4-1
+syntax = "proto3";
+
+
+
+
+
+
+
+
+// DICOM Tag: (0068,6430)
+message TwoDMatingFeatureCoordinatesSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0068,6440)
+message ReferencedHPGLDocumentID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0068,6450)
+message TwoDMatingPoint {
+	repeated double value = 1;
+}
+// DICOM Tag: (0068,6460)
+message TwoDMatingAxes {
+	repeated double value = 1;
+}
+// DICOM Tag: (0068,6400)
+message MatingFeatureDegreeOfFreedomSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0068,6410)
+message DegreeOfFreedomID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0068,6420)
+message DegreeOfFreedomType {
+	string value = 1;
+}
+// DICOM Tag: (0068,6470)
+message TwoDDegreeOfFreedomSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0068,6440)
+message ReferencedHPGLDocumentID {
+	uint32 value = 1;
+}
+
+
+// DICOM Tag: (0068,6490)
+message ThreeDDegreeOfFreedomAxis {
+	repeated double value = 1;
+}
+

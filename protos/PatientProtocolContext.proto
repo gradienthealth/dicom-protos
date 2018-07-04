@@ -1,0 +1,13 @@
+// Patient Protocol Context
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.3.html#table_C.34.3-1
+syntax = "proto3";
+
+
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}

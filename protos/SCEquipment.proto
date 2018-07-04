@@ -1,0 +1,36 @@
+// SC Equipment
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.html#table_C.8-24
+syntax = "proto3";
+
+// DICOM Tag: (0008,0064)
+message ConversionType {
+	string value = 1;
+}
+// DICOM Tag: (0008,0060)
+message Modality {
+	string value = 1;
+}
+// DICOM Tag: (0018,1010)
+message SecondaryCaptureDeviceID {
+	string value = 1;
+}
+// DICOM Tag: (0018,1016)
+message SecondaryCaptureDeviceManufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0018,1018)
+message SecondaryCaptureDeviceManufacturerModelName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1019)
+message SecondaryCaptureDeviceSoftwareVersions {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,1022)
+message VideoImageFormatAcquired {
+	string value = 1;
+}
+// DICOM Tag: (0018,1023)
+message DigitalImageFormatAcquired {
+	string value = 1;
+}

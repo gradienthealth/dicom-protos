@@ -1,0 +1,24 @@
+// Image Plane
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html#table_C.7-10
+syntax = "proto3";
+
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0020,0037)
+message ImageOrientationPatient {
+	repeated float value = 1;
+}
+// DICOM Tag: (0020,0032)
+message ImagePositionPatient {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,0050)
+message SliceThickness {
+	float value = 1;
+}
+// DICOM Tag: (0020,1041)
+message SliceLocation {
+	float value = 1;
+}

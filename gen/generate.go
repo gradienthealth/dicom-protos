@@ -44,6 +44,7 @@ var VRToProto = map[string]string{
 	"UC":       "string",
 	"UR":       "string", // consider url types later
 	"":         "bytes",  // assuming this is unknown VR, default to bytes
+	"OL":       "int32",
 	"US or SS": "int64",
 	"US or OW": "bytes",
 	"OB or OW": "bytes",
@@ -88,7 +89,7 @@ func AttributeProto(a *parse.Attribute) string {
 
 	// Add word size for OW VRs. Clients can choose to fill this in, should be 16bits
 	if a.ValueRepresentation == "OW" {
-		fmt.Fprint(b, "int32 word_size = 2;\n")
+		fmt.Fprint(b, "\tint32 word_size = 2;\n")
 	}
 
 	if a.ValueRepresentation == "SQ" {

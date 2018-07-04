@@ -1,0 +1,71 @@
+// Performed Storage
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.14.html#table_C.34.14-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,9936)
+message StorageProtocolElementSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0018,9921)
+message ProtocolElementNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,9922)
+message ProtocolElementName {
+	string value = 1;
+}
+// DICOM Tag: (0018,9924)
+message ProtocolElementPurpose {
+	string value = 1;
+}
+// DICOM Tag: (0018,9923)
+message ProtocolElementCharacteristicsSummary {
+	string value = 1;
+}
+// DICOM Tag: (0018,9938)
+message SourceAcquisitionProtocolElementNumber {
+	repeated uint32 value = 1;
+}
+
+// DICOM Tag: (0018,9939)
+message SourceAcquisitionBeamNumber {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,4033)
+message OutputInformationSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,4071)
+message DICOMStorageSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (2100,0140)
+message DestinationAE {
+	string value = 1;
+}
+// DICOM Tag: (0040,4072)
+message STOWRSStorageSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0040,4073)
+message StorageURL {
+	string value = 1;
+}
+// DICOM Tag: (0040,4074)
+message XDSStorageSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+
+

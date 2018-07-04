@@ -1,0 +1,72 @@
+// Enhanced PET Corrections
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.6.html#table_C.8.22-19
+syntax = "proto3";
+
+// DICOM Tag: (0054,1002)
+message CountsSource {
+	string value = 1;
+}
+// DICOM Tag: (0018,9758)
+message DecayCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9759)
+message AttenuationCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9760)
+message ScatterCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9761)
+message DeadTimeCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9762)
+message GantryMotionCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9763)
+message PatientMotionCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9764)
+message CountLossNormalizationCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9765)
+message RandomsCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9766)
+message NonUniformRadialSamplingCorrected {
+	string value = 1;
+}
+// DICOM Tag: (0018,9767)
+message SensitivityCalibrated {
+	string value = 1;
+}
+// DICOM Tag: (0018,9768)
+message DetectorNormalizationCorrection {
+	string value = 1;
+}
+// DICOM Tag: (0054,1100)
+message RandomsCorrectionMethod {
+	string value = 1;
+}
+// DICOM Tag: (0018,9738)
+message AttenuationCorrectionSource {
+	string value = 1;
+}
+// DICOM Tag: (0018,9770)
+message AttenuationCorrectionTemporalRelationship {
+	string value = 1;
+}
+// DICOM Tag: (0054,1105)
+message ScatterCorrectionMethod {
+	string value = 1;
+}
+// DICOM Tag: (0018,9701)
+message DecayCorrectionDateTime {
+	int64 value = 1;
+}

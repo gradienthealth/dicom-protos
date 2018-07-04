@@ -1,0 +1,139 @@
+// Enhanced Palette Color Lookup Table
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.23.html#table_C.7.6.23-1
+syntax = "proto3";
+
+// DICOM Tag: (0028,1401)
+message DataFrameAssignmentSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0018,9808)
+message DataType {
+	string value = 1;
+}
+// DICOM Tag: (0028,1402)
+message DataPathAssignment {
+	string value = 1;
+}
+// DICOM Tag: (0028,1403)
+message BitsMappedToColorLookupTable {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,3010)
+message VOILUTSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0028,3002)
+message LUTDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,3003)
+message LUTExplanation {
+	string value = 1;
+}
+// DICOM Tag: (0028,3006)
+message LUTData {
+	repeated bytes value = 1;
+}
+// DICOM Tag: (0028,1050)
+message WindowCenter {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,1051)
+message WindowWidth {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,1055)
+message WindowCenterWidthExplanation {
+	repeated string value = 1;
+}
+// DICOM Tag: (0028,1056)
+message VOILUTFunction {
+	string value = 1;
+}
+// DICOM Tag: (0028,1404)
+message BlendingLUT1Sequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0028,1405)
+message BlendingLUT1TransferFunction {
+	string value = 1;
+}
+// DICOM Tag: (0028,1406)
+message BlendingWeightConstant {
+	double value = 1;
+}
+// DICOM Tag: (0028,1407)
+message BlendingLookupTableDescriptor {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,1408)
+message BlendingLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+
+
+// DICOM Tag: (0028,1406)
+message BlendingWeightConstant {
+	double value = 1;
+}
+// DICOM Tag: (0028,1407)
+message BlendingLookupTableDescriptor {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,1408)
+message BlendingLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+
+
+
+// DICOM Tag: (0028,1410)
+message AlphaLUTTransferFunction {
+	string value = 1;
+}
+// DICOM Tag: (0028,1101)
+message RedPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1102)
+message GreenPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1103)
+message BluePaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1104)
+message AlphaPaletteColorLookupTableDescriptor {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,1201)
+message RedPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1204)
+message AlphaPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
+}
+// DICOM Tag: (0028,2002)
+message ColorSpace {
+	string value = 1;
+}

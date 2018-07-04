@@ -1,0 +1,32 @@
+// SC Multi-frame Vector
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.4.html#table_C.8-25c
+syntax = "proto3";
+
+// DICOM Tag: (0018,1065)
+message FrameTimeVector {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,2001)
+message PageNumberVector {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,2002)
+message FrameLabelVector {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,2003)
+message FramePrimaryAngleVector {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,2004)
+message FrameSecondaryAngleVector {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,2005)
+message SliceLocationVector {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,2006)
+message DisplayWindowLabelVector {
+	repeated string value = 1;
+}

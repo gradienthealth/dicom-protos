@@ -1,0 +1,60 @@
+// MR Spectroscopy Pulse Sequence
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.2.html#table_C.8-103
+syntax = "proto3";
+
+// DICOM Tag: (0018,9005)
+message PulseSequenceName {
+	string value = 1;
+}
+// DICOM Tag: (0018,9200)
+message MRSpectroscopyAcquisitionType {
+	string value = 1;
+}
+// DICOM Tag: (0018,9008)
+message EchoPulseSequence {
+	string value = 1;
+}
+// DICOM Tag: (0018,9011)
+message MultipleSpinEcho {
+	string value = 1;
+}
+// DICOM Tag: (0018,9012)
+message MultiPlanarExcitation {
+	string value = 1;
+}
+// DICOM Tag: (0018,9017)
+message SteadyStatePulseSequence {
+	string value = 1;
+}
+// DICOM Tag: (0018,9018)
+message EchoPlanarPulseSequence {
+	string value = 1;
+}
+// DICOM Tag: (0018,9025)
+message SpectrallySelectedSuppression {
+	string value = 1;
+}
+// DICOM Tag: (0018,9032)
+message GeometryOfKSpaceTraversal {
+	string value = 1;
+}
+// DICOM Tag: (0018,9034)
+message RectilinearPhaseEncodeReordering {
+	string value = 1;
+}
+// DICOM Tag: (0018,9033)
+message SegmentedKSpaceTraversal {
+	string value = 1;
+}
+// DICOM Tag: (0018,9094)
+message CoverageOfKSpace {
+	string value = 1;
+}
+// DICOM Tag: (0018,9093)
+message NumberOfKSpaceTrajectories {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,9298)
+message EchoPeakPosition {
+	int32 value = 1;
+}

@@ -1,0 +1,29 @@
+// Instructions
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.7.html#table_C.34.7-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,9914)
+message InstructionSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0018,9915)
+message InstructionIndex {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,9916)
+message InstructionText {
+	string value = 1;
+}
+// DICOM Tag: (0018,9917)
+message InstructionDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,9918)
+message InstructionPerformedFlag {
+	string value = 1;
+}
+// DICOM Tag: (0018,9919)
+message InstructionPerformedDateTime {
+	int64 value = 1;
+}
+

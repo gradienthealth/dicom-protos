@@ -1,0 +1,12 @@
+// Slide Label
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.8.html#table_C.8.12.8-1
+syntax = "proto3";
+
+// DICOM Tag: (2200,0005)
+message BarcodeValue {
+	string value = 1;
+}
+// DICOM Tag: (2200,0002)
+message LabelText {
+	string value = 1;
+}

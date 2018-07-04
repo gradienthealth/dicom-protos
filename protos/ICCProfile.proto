@@ -1,0 +1,12 @@
+// ICC Profile
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.15.html#table_C.11.15-1
+syntax = "proto3";
+
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
+}
+// DICOM Tag: (0028,2002)
+message ColorSpace {
+	string value = 1;
+}

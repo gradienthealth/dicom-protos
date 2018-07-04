@@ -1,0 +1,41 @@
+// Multi-Resolution Navigation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.7.html#table_C.8.12.7-1
+syntax = "proto3";
+
+// DICOM Tag: (0048,0200)
+message ReferencedImageNavigationSequence {
+	bytes value = 1;
+// This attribute has a SQ VR, no proto mapping yet}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0048,0201)
+message TopLeftHandCornerOfLocalizerArea {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0048,0202)
+message BottomRightHandCornerOfLocalizerArea {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0048,0106)
+message OpticalPathIdentifier {
+	string value = 1;
+}

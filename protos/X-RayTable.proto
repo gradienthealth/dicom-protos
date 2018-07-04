@@ -1,0 +1,24 @@
+// X-Ray Table
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.4.html#table_C.8-29
+syntax = "proto3";
+
+// DICOM Tag: (0018,1134)
+message TableMotion {
+	string value = 1;
+}
+// DICOM Tag: (0018,1135)
+message TableVerticalIncrement {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1137)
+message TableLongitudinalIncrement {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1136)
+message TableLateralIncrement {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1138)
+message TableAngle {
+	float value = 1;
+}

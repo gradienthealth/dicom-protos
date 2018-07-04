@@ -1,0 +1,37 @@
+// X-Ray Grid
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.11.html#table_C.8-36
+syntax = "proto3";
+
+// DICOM Tag: (0018,1166)
+message Grid {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,7040)
+message GridAbsorbingMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,7041)
+message GridSpacingMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,7042)
+message GridThickness {
+	float value = 1;
+}
+// DICOM Tag: (0018,7044)
+message GridPitch {
+	float value = 1;
+}
+// DICOM Tag: (0018,7046)
+message GridAspectRatio {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,7048)
+message GridPeriod {
+	float value = 1;
+}
+
+// DICOM Tag: (0018,1006)
+message GridID {
+	string value = 1;
+}
