@@ -15,6 +15,12 @@ type Attribute struct {
 	Retired             bool   `json:"retired"`
 }
 
+func (a *Attribute) IsEmpty() bool {
+	return a.Name == "" && a.Keyword == "" &&
+		a.ValueRepresentation == "" &&
+		a.ValueMultiplicity == "" && a.Tag == ""
+}
+
 type AttributeMap map[string]Attribute
 
 type Module struct {

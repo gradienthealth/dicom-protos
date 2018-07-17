@@ -35,6 +35,7 @@ func main() {
 	}
 	defer mta.Close()
 
+	counter := 0
 	modules, err := parse.Parse(af, mf, mta)
 	for _, m := range modules {
 		out, err := os.Create(moduleNameToFilename(m.Name))
@@ -44,6 +45,9 @@ func main() {
 		}
 		gen.ModuleProto(m, out) // Generate module proto
 		out.Close()
+		counter++
 	}
+
+	log.Printf("Complete. Generated protos for %d modules.", counter)
 
 }
