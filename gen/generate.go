@@ -129,20 +129,9 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 	return nil
 }
 
-func getFieldName2(name string) string {
-	re := regexp.MustCompile("[A-Z][^A-Z]*")
-	idxs := re.FindAllStringSubmatchIndex(name, -1)
-	s := ""
-	for _, idxArray := range idxs[0 : len(idxs)-1] {
-		s += name[idxArray[0]:idxArray[1]]
-		s += "_"
-	}
-	s += name[idxs[len(idxs)-1][0]:idxs[len(idxs)-1][1]]
-	return strings.ToLower(s)
-}
-
 func getFieldName(name string) string {
 	s := strings.ToLower(name)
+	// Replace characters we do not like in protocol buffer messages
 	s2 := strings.Replace(s, " ", "_", -1)
 	s3 := strings.Replace(s2, "-", "_", -1)
 	s4 := strings.Replace(s3, "(", "", -1)
