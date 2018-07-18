@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+type TagKey string
+
 type Attribute struct {
 	Tag                 string `json:"tag"`
 	Name                string `json:"name"`
@@ -13,6 +15,8 @@ type Attribute struct {
 	ValueRepresentation string `json:"valueRepresentation"`
 	ValueMultiplicity   string `json:"valueMultiplicity"`
 	Retired             bool   `json:"retired"`
+	tagKey              TagKey
+	SubAttributes       map[TagKey]*Attribute
 }
 
 func (a *Attribute) IsEmpty() bool {
@@ -21,18 +25,43 @@ func (a *Attribute) IsEmpty() bool {
 		a.ValueMultiplicity == "" && a.Tag == ""
 }
 
-type AttributeMap map[string]Attribute
+func (a *Attribute) TagKey() TagKey {
+	if a.tagKey != "" {
+		return a.tagKey
+	}
+	a.tagKey = tagToKey(a.Tag)
+	return a.tagKey
+}
+
+func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey) {
+	if len(keys) == 1 {
+		a.SubAttributes[keys[0]] = at
+	}
+
+	// If map hasn't been made yet, do so
+	if a.SubAttributes == nil {
+		a.SubAttributes = make(map[TagKey]*Attribute)
+	}
+
+	a.SubAttributes[keys[1]].AddSubAttribute(at, keys[1:])
+}
+
+type AttributeMap map[TagKey]Attribute
 
 type Module struct {
 	ID             string `json:"id"`
 	Name           string `json:"name"`
 	Description    string `json:"description"`
 	LinkToStandard string `json:"linkToStandard"`
-	Attributes     []Attribute
+	Attributes     map[TagKey]*Attribute
 }
 
-func (m *Module) AddAttribute(a Attribute) {
-	m.Attributes = append(m.Attributes, a)
+func (m *Module) AddAttribute(a Attribute, path string) {
+	if m.Attributes == nil {
+		m.Attributes = make(map[TagKey]*Attribute)
+	}
+
+	m.Attributes[a.TagKey()] = &a
 }
 
 type ModuleMap map[string]Module
@@ -52,14 +81,7 @@ type ModuleToAttributeItem struct {
 	ModuleID string `json:"module"`
 	Tag      string `json:"tag"`
 	Type     string `json:"type"`
-}
-
-func TagToKey(tag string) string {
-	s := strings.Replace(tag, ",", "", -1)
-	s2 := strings.Replace(s, "(", "", -1)
-	s3 := strings.Replace(s2, ")", "", -1)
-
-	return s3
+	Path     string `json:"path"`
 }
 
 func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Module, error) {
@@ -90,9 +112,9 @@ func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Modu
 
 	// Associate all modules with their sets of attributes
 	for _, mapping := range moduleToAttributes {
-		tagKey := TagToKey(mapping.Tag)
+		tagKey := tagToKey(mapping.Tag)
 		module := moduleMap[mapping.ModuleID]
-		module.AddAttribute(attrMap[tagKey])
+		module.AddAttribute(attrMap[tagKey], mapping.Path)
 	}
 
 	// Create slice of modules to return
@@ -104,4 +126,13 @@ func Parse(attributeFile, moduleFile, moduleToAttributesFile io.Reader) ([]*Modu
 	}
 
 	return modules, nil
+}
+
+// Useful functions
+func tagToKey(tag string) TagKey {
+	s := strings.Replace(tag, ",", "", -1)
+	s2 := strings.Replace(s, "(", "", -1)
+	s3 := strings.Replace(s2, ")", "", -1)
+
+	return TagKey(s3)
 }

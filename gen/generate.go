@@ -61,7 +61,7 @@ func AttributeProto(a *parse.Attribute) string {
 	// Determine name of proto message:
 	messageName := a.Keyword
 	if a.Keyword == "" {
-		messageName = parse.TagToKey(a.Tag)
+		messageName = string(a.TagKey())
 		log.Printf("Blank keyword, assigning tag. Attribute: %+v", a)
 	}
 
@@ -106,7 +106,7 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 		if a.Retired || a.IsEmpty() {
 			continue // Skip
 		}
-		ap := AttributeProto(&a)
+		ap := AttributeProto(a)
 		fmt.Fprintf(w, ap)
 		fmt.Fprintln(w, "")
 	}
