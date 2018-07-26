@@ -6,11 +6,12 @@ syntax = "proto3";
 message PixelPresentation {
 	string value = 1;
 }
-// DICOM Tag: (0070,0403)
-message RelativeOpacity {
-	float value = 1;
+// DICOM Tag: (0070,1B04)
+message BlendingDisplaySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message AdvancedBlendingPresentationStateDisplayModule {
-	RelativeOpacity relative_opacity = 1;
-	PixelPresentation pixel_presentation = 2;
+	PixelPresentation pixel_presentation = 1;
+	BlendingDisplaySequence blending_display_sequence = 2;
 }

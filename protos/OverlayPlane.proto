@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html#table_C.9-2
 syntax = "proto3";
 
-// DICOM Tag: (60XX,0102)
-message OverlayBitPosition {
-	uint32 value = 1;
-}
-// DICOM Tag: (60XX,3000)
-message OverlayData {
-	bytes value = 1;
-}
 // DICOM Tag: (60XX,0022)
 message OverlayDescription {
 	string value = 1;
@@ -26,17 +18,9 @@ message OverlayLabel {
 message ROIArea {
 	int32 value = 1;
 }
-// DICOM Tag: (60XX,1302)
-message ROIMean {
-	float value = 1;
-}
-// DICOM Tag: (60XX,0100)
-message OverlayBitsAllocated {
+// DICOM Tag: (60XX,0010)
+message OverlayRows {
 	uint32 value = 1;
-}
-// DICOM Tag: (60XX,1303)
-message ROIStandardDeviation {
-	float value = 1;
 }
 // DICOM Tag: (60XX,0011)
 message OverlayColumns {
@@ -46,26 +30,42 @@ message OverlayColumns {
 message OverlayType {
 	string value = 1;
 }
+// DICOM Tag: (60XX,3000)
+message OverlayData {
+	bytes value = 1;
+}
+// DICOM Tag: (60XX,1302)
+message ROIMean {
+	float value = 1;
+}
+// DICOM Tag: (60XX,1303)
+message ROIStandardDeviation {
+	float value = 1;
+}
 // DICOM Tag: (60XX,0050)
 message OverlayOrigin {
 	repeated int32 value = 1;
 }
-// DICOM Tag: (60XX,0010)
-message OverlayRows {
+// DICOM Tag: (60XX,0100)
+message OverlayBitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (60XX,0102)
+message OverlayBitPosition {
 	uint32 value = 1;
 }
 message OverlayPlaneModule {
-	OverlaySubtype overlay_subtype = 1;
-	OverlayLabel overlay_label = 2;
-	ROIArea roi_area = 3;
-	ROIMean roi_mean = 4;
-	OverlayBitsAllocated overlay_bits_allocated = 5;
-	OverlayBitPosition overlay_bit_position = 6;
-	OverlayData overlay_data = 7;
-	OverlayDescription overlay_description = 8;
-	ROIStandardDeviation roi_standard_deviation = 9;
-	OverlayRows overlay_rows = 10;
-	OverlayColumns overlay_columns = 11;
-	OverlayType overlay_type = 12;
-	OverlayOrigin overlay_origin = 13;
+	OverlayBitsAllocated overlay_bits_allocated = 1;
+	OverlayBitPosition overlay_bit_position = 2;
+	OverlayOrigin overlay_origin = 3;
+	OverlayColumns overlay_columns = 4;
+	OverlayType overlay_type = 5;
+	OverlayData overlay_data = 6;
+	OverlayDescription overlay_description = 7;
+	OverlaySubtype overlay_subtype = 8;
+	OverlayLabel overlay_label = 9;
+	ROIArea roi_area = 10;
+	OverlayRows overlay_rows = 11;
+	ROIStandardDeviation roi_standard_deviation = 12;
+	ROIMean roi_mean = 13;
 }

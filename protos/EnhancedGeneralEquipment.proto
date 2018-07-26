@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.2.html#table_C.7-8b
 syntax = "proto3";
 
-// DICOM Tag: (0018,1020)
-message SoftwareVersions {
-	repeated string value = 1;
-}
 // DICOM Tag: (0008,0070)
 message Manufacturer {
 	string value = 1;
@@ -17,6 +13,10 @@ message ManufacturerModelName {
 // DICOM Tag: (0018,1000)
 message DeviceSerialNumber {
 	string value = 1;
+}
+// DICOM Tag: (0018,1020)
+message SoftwareVersions {
+	repeated string value = 1;
 }
 message EnhancedGeneralEquipmentModule {
 	Manufacturer manufacturer = 1;

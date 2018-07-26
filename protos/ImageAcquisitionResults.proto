@@ -2,228 +2,27 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.15.html#table_C.4-15
 syntax = "proto3";
 
-// DICOM Tag: (0040,0260)
-message PerformedProtocolCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,1104)
-message PersonTelecomInformation {
-	string value = 1;
-}
-// DICOM Tag: (0008,1140)
-message ReferencedImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0008,0060)
 message Modality {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0040,1103)
-message PersonTelephoneNumbers {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,1072)
-message OperatorIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0512)
-message ContainerIdentifier {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0040,0340)
-message PerformedSeriesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,1102)
-message PersonAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0054)
-message RetrieveAETitle {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,0560)
-message SpecimenDescriptionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0440)
-message ProtocolContextSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1050)
-message PerformingPhysicianName {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,1101)
-message PersonIdentificationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1070)
-message OperatorsName {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0040,0551)
-message SpecimenIdentifier {
-	string value = 1;
-}
-// DICOM Tag: (0040,0441)
-message ContentItemModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1052)
-message PerformingPhysicianIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0220)
-message ReferencedNonImageCompositeSOPInstanceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0040,0554)
-message SpecimenUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0082)
-message InstitutionCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1030)
-message ProtocolName {
 	string value = 1;
 }
 // DICOM Tag: (0020,0010)
 message StudyID {
 	string value = 1;
 }
+// DICOM Tag: (0040,0260)
+message PerformedProtocolCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0340)
+message PerformedSeriesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message ImageAcquisitionResultsModule {
-	PersonTelecomInformation person's_telecom_information = 1;
-	ReferencedImageSequence referenced_image_sequence = 2;
-	Modality modality = 3;
-	PerformedProtocolCodeSequence performed_protocol_code_sequence = 4;
-	ReferencedFrameNumber referenced_frame_number = 5;
-	PersonTelephoneNumbers person's_telephone_numbers = 6;
-	InstitutionAddress institution_address = 7;
-	OperatorIdentificationSequence operator_identification_sequence = 8;
-	ContainerIdentifier container_identifier = 9;
-	ContextUID context_uid = 10;
-	MappingResourceName mapping_resource_name = 11;
-	PerformedSeriesSequence performed_series_sequence = 12;
-	PersonAddress person's_address = 13;
-	EquivalentCodeSequence equivalent_code_sequence = 14;
-	MappingResource mapping_resource = 15;
-	ReferencedSOPSequence referenced_sop_sequence = 16;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 17;
-	RetrieveAETitle retrieve_ae_title = 18;
-	SpecimenDescriptionSequence specimen_description_sequence = 19;
-	LongCodeValue long_code_value = 20;
-	MappingResourceUID mapping_resource_uid = 21;
-	ProtocolContextSequence protocol_context_sequence = 22;
-	ReferencedSOPClassUID referenced_sop_class_uid = 23;
-	PerformingPhysicianName performing_physician's_name = 24;
-	PersonIdentificationCodeSequence person_identification_code_sequence = 25;
-	InstitutionName institution_name = 26;
-	OperatorsName operators'_name = 27;
-	CodeMeaning code_meaning = 28;
-	ContextGroupVersion context_group_version = 29;
-	SpecimenIdentifier specimen_identifier = 30;
-	ContentItemModifierSequence content_item_modifier_sequence = 31;
-	PerformingPhysicianIdentificationSequence performing_physician_identification_sequence = 32;
-	ReferencedNonImageCompositeSOPInstanceSequence referenced_non_image_composite_sop_instance_sequence = 33;
-	CodeValue code_value = 34;
-	SpecimenUID specimen_uid = 35;
-	CodingSchemeVersion coding_scheme_version = 36;
-	URNCodeValue urn_code_value = 37;
-	ContextGroupLocalVersion context_group_local_version = 38;
-	InstitutionCodeSequence institution_code_sequence = 39;
-	ProtocolName protocol_name = 40;
-	StudyID study_id = 41;
-	CodingSchemeDesignator coding_scheme_designator = 42;
+	Modality modality = 1;
+	StudyID study_id = 2;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 3;
+	PerformedSeriesSequence performed_series_sequence = 4;
 }

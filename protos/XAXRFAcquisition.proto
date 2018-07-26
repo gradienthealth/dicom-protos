@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.3.html#table_C.8.19.3-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,9420)
-message XRayReceptorType {
-	string value = 1;
-}
 // DICOM Tag: (0018,9328)
 message ExposureTimeInms {
 	double value = 1;
@@ -14,68 +10,77 @@ message ExposureTimeInms {
 message ExposureInmAs {
 	double value = 1;
 }
-// DICOM Tag: (0018,1190)
-message FocalSpots {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1156)
-message RectificationType {
+// DICOM Tag: (0018,9420)
+message XRayReceptorType {
 	string value = 1;
-}
-// DICOM Tag: (0018,1154)
-message AveragePulseWidth {
-	float value = 1;
-}
-// DICOM Tag: (0018,9426)
-message DistanceReceptorPlaneToDetectorHousing {
-	float value = 1;
 }
 // DICOM Tag: (0018,9473)
 message AcquiredImageAreaDoseProduct {
 	float value = 1;
 }
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
+// DICOM Tag: (0018,9330)
+message XRayTubeCurrentInmA {
+	double value = 1;
 }
 // DICOM Tag: (0018,9073)
 message AcquisitionDuration {
-	double value = 1;
-}
-// DICOM Tag: (0018,9474)
-message CArmPositionerTabletopRelationship {
-	string value = 1;
-}
-// DICOM Tag: (0018,1155)
-message RadiationSetting {
-	string value = 1;
-}
-// DICOM Tag: (0018,9330)
-message XRayTubeCurrentInmA {
 	double value = 1;
 }
 // DICOM Tag: (0018,1191)
 message AnodeTargetMaterial {
 	string value = 1;
 }
+// DICOM Tag: (0018,9426)
+message DistanceReceptorPlaneToDetectorHousing {
+	float value = 1;
+}
 // DICOM Tag: (0018,1508)
 message PositionerType {
 	string value = 1;
 }
+// DICOM Tag: (0018,1155)
+message RadiationSetting {
+	string value = 1;
+}
+// DICOM Tag: (0018,1154)
+message AveragePulseWidth {
+	float value = 1;
+}
+// DICOM Tag: (0018,115A)
+message RadiationMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,1190)
+message FocalSpots {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,9474)
+message CArmPositionerTabletopRelationship {
+	string value = 1;
+}
+// DICOM Tag: (0018,1156)
+message RectificationType {
+	string value = 1;
+}
 message XA/XRFAcquisitionModule {
-	CArmPositionerTabletopRelationship c_arm_positioner_tabletop_relationship = 1;
+	FocalSpots focal_spots = 1;
 	KVP kvp = 2;
-	AcquisitionDuration acquisition_duration = 3;
-	AnodeTargetMaterial anode_target_material = 4;
-	PositionerType positioner_type = 5;
-	RadiationSetting radiation_setting = 6;
-	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 7;
-	FocalSpots focal_spots = 8;
-	RectificationType rectification_type = 9;
-	XRayReceptorType x_ray_receptor_type = 10;
-	ExposureTimeInms exposure_time_in_ms = 11;
-	ExposureInmAs exposure_in_mas = 12;
-	AcquiredImageAreaDoseProduct acquired_image_area_dose_product = 13;
-	AveragePulseWidth average_pulse_width = 14;
-	DistanceReceptorPlaneToDetectorHousing distance_receptor_plane_to_detector_housing = 15;
+	AveragePulseWidth average_pulse_width = 3;
+	RadiationMode radiation_mode = 4;
+	RectificationType rectification_type = 5;
+	CArmPositionerTabletopRelationship c_arm_positioner_tabletop_relationship = 6;
+	XRayReceptorType x_ray_receptor_type = 7;
+	AcquiredImageAreaDoseProduct acquired_image_area_dose_product = 8;
+	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 9;
+	ExposureTimeInms exposure_time_in_ms = 10;
+	ExposureInmAs exposure_in_mas = 11;
+	DistanceReceptorPlaneToDetectorHousing distance_receptor_plane_to_detector_housing = 12;
+	PositionerType positioner_type = 13;
+	RadiationSetting radiation_setting = 14;
+	AcquisitionDuration acquisition_duration = 15;
+	AnodeTargetMaterial anode_target_material = 16;
 }

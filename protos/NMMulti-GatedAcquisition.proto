@@ -2,57 +2,8 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.13.html#table_C.8-13
 syntax = "proto3";
 
-// DICOM Tag: (0018,1080)
-message BeatRejectionFlag {
-	string value = 1;
-}
 // DICOM Tag: (0018,1088)
 message HeartRate {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1062)
-message NominalInterval {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1082)
-message HighRRValue {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1060)
-message TriggerTime {
-	float value = 1;
-}
-// DICOM Tag: (0018,1085)
-message PVCRejection {
-	string value = 1;
-}
-// DICOM Tag: (0018,1083)
-message IntervalsAcquired {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1084)
-message IntervalsRejected {
-	int32 value = 1;
-}
-// DICOM Tag: (0054,0072)
-message TimeSlotInformationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1063)
-message FrameTime {
-	float value = 1;
-}
-// DICOM Tag: (0018,1081)
-message LowRRValue {
-	int32 value = 1;
-}
-// DICOM Tag: (0054,0073)
-message TimeSlotTime {
-	float value = 1;
-}
-// DICOM Tag: (0018,1086)
-message SkipBeats {
 	int32 value = 1;
 }
 // DICOM Tag: (0054,0062)
@@ -60,30 +11,22 @@ message GatedInformationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,1064)
-message CardiacFramingType {
+// DICOM Tag: (0018,1080)
+message BeatRejectionFlag {
 	string value = 1;
 }
-// DICOM Tag: (0054,0063)
-message DataInformationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0018,1085)
+message PVCRejection {
+	string value = 1;
+}
+// DICOM Tag: (0018,1086)
+message SkipBeats {
+	int32 value = 1;
 }
 message NMMulti-GatedAcquisitionModule {
-	DataInformationSequence data_information_sequence = 1;
-	FrameTime frame_time = 2;
-	LowRRValue low_r_r_value = 3;
-	TimeSlotTime time_slot_time = 4;
-	SkipBeats skip_beats = 5;
-	GatedInformationSequence gated_information_sequence = 6;
-	CardiacFramingType cardiac_framing_type = 7;
-	HighRRValue high_r_r_value = 8;
-	BeatRejectionFlag beat_rejection_flag = 9;
-	HeartRate heart_rate = 10;
-	NominalInterval nominal_interval = 11;
-	TriggerTime trigger_time = 12;
-	TimeSlotInformationSequence time_slot_information_sequence = 13;
-	PVCRejection pvc_rejection = 14;
-	IntervalsAcquired intervals_acquired = 15;
-	IntervalsRejected intervals_rejected = 16;
+	PVCRejection pvc_rejection = 1;
+	SkipBeats skip_beats = 2;
+	HeartRate heart_rate = 3;
+	GatedInformationSequence gated_information_sequence = 4;
+	BeatRejectionFlag beat_rejection_flag = 5;
 }

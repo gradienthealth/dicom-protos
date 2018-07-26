@@ -2,41 +2,11 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.5.html#table_C.11.5-1
 syntax = "proto3";
 
-// DICOM Tag: (0060,3002)
-message HistogramNumberOfBins {
-	uint32 value = 1;
-}
-// DICOM Tag: (0060,3004)
-message HistogramFirstBinValue {
-	int64 value = 1;
-}
-// DICOM Tag: (0060,3006)
-message HistogramLastBinValue {
-	int64 value = 1;
-}
-// DICOM Tag: (0060,3008)
-message HistogramBinWidth {
-	uint32 value = 1;
-}
-// DICOM Tag: (0060,3010)
-message HistogramExplanation {
-	string value = 1;
-}
-// DICOM Tag: (0060,3020)
-message HistogramData {
-	repeated uint32 value = 1;
-}
 // DICOM Tag: (0060,3000)
 message HistogramSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message ImageHistogramModule {
-	HistogramExplanation histogram_explanation = 1;
-	HistogramData histogram_data = 2;
-	HistogramSequence histogram_sequence = 3;
-	HistogramNumberOfBins histogram_number_of_bins = 4;
-	HistogramFirstBinValue histogram_first_bin_value = 5;
-	HistogramLastBinValue histogram_last_bin_value = 6;
-	HistogramBinWidth histogram_bin_width = 7;
+	HistogramSequence histogram_sequence = 1;
 }

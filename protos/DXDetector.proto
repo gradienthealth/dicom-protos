@@ -2,65 +2,53 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.4.html#table_C.8-71
 syntax = "proto3";
 
-// DICOM Tag: (0018,6000)
-message Sensitivity {
-	float value = 1;
-}
-// DICOM Tag: (0018,7006)
-message DetectorDescription {
+// DICOM Tag: (0018,1007)
+message CassetteID {
 	string value = 1;
 }
-// DICOM Tag: (0018,7012)
-message DetectorTimeSinceLastExposure {
-	float value = 1;
-}
-// DICOM Tag: (0018,7000)
-message DetectorConditionsNominalFlag {
+// DICOM Tag: (0018,700A)
+message DetectorID {
 	string value = 1;
 }
-// DICOM Tag: (0018,1413)
-message DeviationIndex {
+// DICOM Tag: (0018,700C)
+message DateOfLastDetectorCalibration {
+	string value = 1;
+}
+// DICOM Tag: (0018,700E)
+message TimeOfLastDetectorCalibration {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,702A)
+message DetectorManufacturerName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
 	float value = 1;
-}
-// DICOM Tag: (0018,1164)
-message ImagerPixelSpacing {
-	repeated float value = 1;
-}
-// DICOM Tag: (0028,0030)
-message PixelSpacing {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,7010)
-message ExposuresOnDetectorSinceLastCalibration {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,7020)
-message DetectorElementPhysicalSize {
-	repeated float value = 1;
 }
 // DICOM Tag: (0018,7014)
 message DetectorActiveTime {
 	float value = 1;
 }
-// DICOM Tag: (0018,1147)
-message FieldOfViewShape {
-	string value = 1;
-}
-// DICOM Tag: (0018,7032)
-message FieldOfViewRotation {
-	float value = 1;
-}
-// DICOM Tag: (0018,7004)
-message DetectorType {
-	string value = 1;
-}
-// DICOM Tag: (0018,7028)
-message DetectorActiveOrigin {
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,1149)
-message FieldOfViewDimensions {
-	repeated int32 value = 1;
+// DICOM Tag: (0018,1004)
+message PlateID {
+	string value = 1;
+}
+// DICOM Tag: (0018,7005)
+message DetectorConfiguration {
+	string value = 1;
+}
+// DICOM Tag: (0018,7010)
+message ExposuresOnDetectorSinceLastCalibration {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,7011)
+message ExposuresOnDetectorSinceManufactured {
+	int32 value = 1;
 }
 // DICOM Tag: (0018,7001)
 message DetectorTemperature {
@@ -70,82 +58,134 @@ message DetectorTemperature {
 message DetectorActiveShape {
 	string value = 1;
 }
-// DICOM Tag: (0018,1412)
-message TargetExposureIndex {
+// DICOM Tag: (0018,7034)
+message FieldOfViewHorizontalFlip {
+	string value = 1;
+}
+// DICOM Tag: (0018,1164)
+message ImagerPixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7032)
+message FieldOfViewRotation {
 	float value = 1;
 }
-// DICOM Tag: (0018,7016)
-message DetectorActivationOffsetFromExposure {
-	float value = 1;
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
 }
-// DICOM Tag: (0018,1004)
-message PlateID {
+// DICOM Tag: (0018,7006)
+message DetectorDescription {
 	string value = 1;
 }
 // DICOM Tag: (0018,7008)
 message DetectorMode {
 	string value = 1;
 }
-// DICOM Tag: (0018,7011)
-message ExposuresOnDetectorSinceManufactured {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1411)
-message ExposureIndex {
+// DICOM Tag: (0018,7012)
+message DetectorTimeSinceLastExposure {
 	float value = 1;
 }
-// DICOM Tag: (0018,7034)
-message FieldOfViewHorizontalFlip {
+// DICOM Tag: (0018,701A)
+message DetectorBinning {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1147)
+message FieldOfViewShape {
 	string value = 1;
 }
-// DICOM Tag: (0018,1007)
-message CassetteID {
+// DICOM Tag: (0018,1149)
+message FieldOfViewDimensions {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,702B)
+message DetectorManufacturerModelName {
 	string value = 1;
 }
-// DICOM Tag: (0018,7005)
-message DetectorConfiguration {
+// DICOM Tag: (0018,7000)
+message DetectorConditionsNominalFlag {
 	string value = 1;
 }
 // DICOM Tag: (0018,7022)
 message DetectorElementSpacing {
 	repeated float value = 1;
 }
+// DICOM Tag: (0018,7028)
+message DetectorActiveOrigin {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
+	float value = 1;
+}
 // DICOM Tag: (0018,7026)
 message DetectorActiveDimensions {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1413)
+message DeviationIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,7016)
+message DetectorActivationOffsetFromExposure {
+	float value = 1;
+}
+// DICOM Tag: (0018,6000)
+message Sensitivity {
+	float value = 1;
+}
+// DICOM Tag: (0018,7020)
+message DetectorElementPhysicalSize {
 	repeated float value = 1;
 }
 // DICOM Tag: (0018,7030)
 message FieldOfViewOrigin {
 	repeated float value = 1;
 }
+// DICOM Tag: (0028,0A02)
+message PixelSpacingCalibrationType {
+	string value = 1;
+}
+// DICOM Tag: (0028,0A04)
+message PixelSpacingCalibrationDescription {
+	string value = 1;
+}
 message DXDetectorModule {
-	Sensitivity sensitivity = 1;
-	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 2;
-	DeviationIndex deviation_index = 3;
-	ImagerPixelSpacing imager_pixel_spacing = 4;
-	DetectorDescription detector_description = 5;
-	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 6;
-	DetectorActiveTime detector_active_time = 7;
-	FieldOfViewShape field_of_view_shape = 8;
-	FieldOfViewRotation field_of_view_rotation = 9;
-	PixelSpacing pixel_spacing = 10;
-	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 11;
-	DetectorElementPhysicalSize detector_element_physical_size = 12;
-	DetectorType detector_type = 13;
-	DetectorActiveOrigin detector_active_origin = 14;
-	FieldOfViewDimensions field_of_view_dimensions = 15;
-	TargetExposureIndex target_exposure_index = 16;
-	DetectorActivationOffsetFromExposure detector_activation_offset_from_exposure = 17;
-	DetectorTemperature detector_temperature = 18;
-	DetectorActiveShape detector_active_shape = 19;
-	ExposureIndex exposure_index = 20;
-	FieldOfViewHorizontalFlip field_of_view_horizontal_flip = 21;
-	CassetteID cassette_id = 22;
-	PlateID plate_id = 23;
-	DetectorMode detector_mode = 24;
-	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 25;
-	DetectorElementSpacing detector_element_spacing = 26;
-	DetectorActiveDimensions detector_active_dimensions = 27;
-	FieldOfViewOrigin field_of_view_origin = 28;
-	DetectorConfiguration detector_configuration = 29;
+	DetectorMode detector_mode = 1;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 2;
+	DetectorBinning detector_binning = 3;
+	FieldOfViewShape field_of_view_shape = 4;
+	FieldOfViewDimensions field_of_view_dimensions = 5;
+	FieldOfViewRotation field_of_view_rotation = 6;
+	DetectorType detector_type = 7;
+	DetectorDescription detector_description = 8;
+	DetectorElementSpacing detector_element_spacing = 9;
+	DetectorManufacturerModelName detector_manufacturer's_model_name = 10;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 11;
+	DetectorActiveOrigin detector_active_origin = 12;
+	ExposureIndex exposure_index = 13;
+	DetectorActivationOffsetFromExposure detector_activation_offset_from_exposure = 14;
+	DetectorActiveDimensions detector_active_dimensions = 15;
+	DeviationIndex deviation_index = 16;
+	FieldOfViewOrigin field_of_view_origin = 17;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 18;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 19;
+	Sensitivity sensitivity = 20;
+	DetectorElementPhysicalSize detector_element_physical_size = 21;
+	TimeOfLastDetectorCalibration time_of_last_detector_calibration = 22;
+	DetectorManufacturerName detector_manufacturer_name = 23;
+	TargetExposureIndex target_exposure_index = 24;
+	DetectorActiveTime detector_active_time = 25;
+	PixelSpacing pixel_spacing = 26;
+	CassetteID cassette_id = 27;
+	DetectorID detector_id = 28;
+	DateOfLastDetectorCalibration date_of_last_detector_calibration = 29;
+	PlateID plate_id = 30;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 31;
+	DetectorTemperature detector_temperature = 32;
+	DetectorActiveShape detector_active_shape = 33;
+	FieldOfViewHorizontalFlip field_of_view_horizontal_flip = 34;
+	ImagerPixelSpacing imager_pixel_spacing = 35;
+	DetectorConfiguration detector_configuration = 36;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 37;
 }

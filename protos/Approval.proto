@@ -2,5 +2,25 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.16.html#table_C.8-52
 syntax = "proto3";
 
+// DICOM Tag: (300E,0002)
+message ApprovalStatus {
+	string value = 1;
+}
+// DICOM Tag: (300E,0004)
+message ReviewDate {
+	string value = 1;
+}
+// DICOM Tag: (300E,0005)
+message ReviewTime {
+	int64 value = 1;
+}
+// DICOM Tag: (300E,0008)
+message ReviewerName {
+	string value = 1;
+}
 message ApprovalModule {
+	ReviewTime review_time = 1;
+	ReviewerName reviewer_name = 2;
+	ApprovalStatus approval_status = 3;
+	ReviewDate review_date = 4;
 }

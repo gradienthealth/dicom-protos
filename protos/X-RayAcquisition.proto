@@ -2,90 +2,110 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.2.html#table_C.8-27
 syntax = "proto3";
 
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
-}
-// DICOM Tag: (0018,1155)
-message RadiationSetting {
-	string value = 1;
-}
-// DICOM Tag: (0018,1147)
-message FieldOfViewShape {
-	string value = 1;
-}
-// DICOM Tag: (0018,1161)
-message TypeOfFilters {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,1149)
-message FieldOfViewDimensions {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0018,1190)
-message FocalSpots {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,8151)
-message XRayTubeCurrentInuA {
-	float value = 1;
-}
-// DICOM Tag: (0018,8150)
-message ExposureTimeInuS {
-	float value = 1;
-}
-// DICOM Tag: (0018,1152)
-message Exposure {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1153)
-message ExposureInuAs {
-	int32 value = 1;
-}
 // DICOM Tag: (0018,1166)
 message Grid {
 	repeated string value = 1;
-}
-// DICOM Tag: (0028,0030)
-message PixelSpacing {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1151)
-message XRayTubeCurrent {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1150)
-message ExposureTime {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1154)
-message AveragePulseWidth {
-	float value = 1;
-}
-// DICOM Tag: (0018,1162)
-message IntensifierSize {
-	float value = 1;
 }
 // DICOM Tag: (0018,1164)
 message ImagerPixelSpacing {
 	repeated float value = 1;
 }
+// DICOM Tag: (0028,0A04)
+message PixelSpacingCalibrationDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,115E)
+message ImageAndFluoroscopyAreaDoseProduct {
+	float value = 1;
+}
+// DICOM Tag: (0018,1151)
+message XRayTubeCurrent {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1155)
+message RadiationSetting {
+	string value = 1;
+}
+// DICOM Tag: (0018,8151)
+message XRayTubeCurrentInuA {
+	float value = 1;
+}
+// DICOM Tag: (0018,1150)
+message ExposureTime {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1161)
+message TypeOfFilters {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,1190)
+message FocalSpots {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,1154)
+message AveragePulseWidth {
+	float value = 1;
+}
+// DICOM Tag: (0018,115A)
+message RadiationMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,1162)
+message IntensifierSize {
+	float value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,8150)
+message ExposureTimeInuS {
+	float value = 1;
+}
+// DICOM Tag: (0018,1153)
+message ExposureInuAs {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1147)
+message FieldOfViewShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,1149)
+message FieldOfViewDimensions {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0028,0A02)
+message PixelSpacingCalibrationType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1152)
+message Exposure {
+	int32 value = 1;
+}
 message X-RayAcquisitionModule {
-	ExposureInuAs exposure_in_as = 1;
-	Grid grid = 2;
-	TypeOfFilters type_of_filters = 3;
-	FieldOfViewDimensions field_of_view_dimensions = 4;
-	FocalSpots focal_spots = 5;
-	XRayTubeCurrentInuA x_ray_tube_current_in_a = 6;
-	ExposureTimeInuS exposure_time_in_s = 7;
-	Exposure exposure = 8;
-	IntensifierSize intensifier_size = 9;
-	ImagerPixelSpacing imager_pixel_spacing = 10;
-	PixelSpacing pixel_spacing = 11;
-	XRayTubeCurrent x_ray_tube_current = 12;
-	ExposureTime exposure_time = 13;
-	AveragePulseWidth average_pulse_width = 14;
-	FieldOfViewShape field_of_view_shape = 15;
-	KVP kvp = 16;
-	RadiationSetting radiation_setting = 17;
+	Grid grid = 1;
+	ImagerPixelSpacing imager_pixel_spacing = 2;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 3;
+	ImageAndFluoroscopyAreaDoseProduct image_and_fluoroscopy_area_dose_product = 4;
+	XRayTubeCurrent x_ray_tube_current = 5;
+	RadiationSetting radiation_setting = 6;
+	XRayTubeCurrentInuA x_ray_tube_current_in_a = 7;
+	ExposureTime exposure_time = 8;
+	TypeOfFilters type_of_filters = 9;
+	FocalSpots focal_spots = 10;
+	KVP kvp = 11;
+	AveragePulseWidth average_pulse_width = 12;
+	RadiationMode radiation_mode = 13;
+	IntensifierSize intensifier_size = 14;
+	PixelSpacing pixel_spacing = 15;
+	ExposureTimeInuS exposure_time_in_s = 16;
+	ExposureInuAs exposure_in_as = 17;
+	FieldOfViewShape field_of_view_shape = 18;
+	FieldOfViewDimensions field_of_view_dimensions = 19;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 20;
+	Exposure exposure = 21;
 }

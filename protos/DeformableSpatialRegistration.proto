@@ -2,151 +2,34 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.20.3.html#table_C.20.3-1
 syntax = "proto3";
 
-// DICOM Tag: (0070,0080)
-message ContentLabel {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0020,0032)
-message ImagePositionPatient {
-	repeated float value = 1;
-}
-// DICOM Tag: (0040,1104)
-message PersonTelecomInformation {
-	string value = 1;
-}
-// DICOM Tag: (0064,0005)
-message DeformableRegistrationGridSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0064,0007)
-message GridDimensions {
-	repeated uint32 value = 1;
-}
 // DICOM Tag: (0008,0033)
 message ContentTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0070,0081)
-message ContentDescription {
+// DICOM Tag: (0070,0080)
+message ContentLabel {
 	string value = 1;
 }
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,1103)
-message PersonTelephoneNumbers {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,1101)
-message PersonIdentificationCodeSequence {
+// DICOM Tag: (0040,A043)
+message ConceptNameCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0064,0003)
-message SourceFrameOfReferenceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
+// DICOM Tag: (0064,0002)
+message DeformableRegistrationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,0023)
 message ContentDate {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0006)
-message LanguageCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0064,0010)
-message PostDeformationMatrixRegistrationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0070,0086)
-message ContentCreatorIdentificationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,1102)
-message PersonAddress {
 	string value = 1;
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,1140)
-message ReferencedImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0064,0009)
-message VectorGridData {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0064,0008)
-message GridResolution {
-	repeated double value = 1;
-}
-// DICOM Tag: (0020,0037)
-message ImageOrientationPatient {
-	repeated float value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
+// DICOM Tag: (0070,0081)
+message ContentDescription {
 	string value = 1;
 }
 // DICOM Tag: (0070,0087)
@@ -158,75 +41,20 @@ message AlternateContentDescriptionSequence {
 message ContentCreatorName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0082)
-message InstitutionCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0064,0002)
-message DeformableRegistrationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0070,0314)
-message UsedFiducialsSequence {
+// DICOM Tag: (0070,0086)
+message ContentCreatorIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message DeformableSpatialRegistrationModule {
-	InstanceNumber instance_number = 1;
-	InstitutionAddress institution_address = 2;
-	ReferencedImageSequence referenced_image_sequence = 3;
-	VectorGridData vector_grid_data = 4;
-	ContextGroupLocalVersion context_group_local_version = 5;
-	InstitutionName institution_name = 6;
-	GridResolution grid_resolution = 7;
-	CodeValue code_value = 8;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 9;
-	ContentCreatorName content_creator's_name = 10;
-	InstitutionCodeSequence institution_code_sequence = 11;
-	DeformableRegistrationSequence deformable_registration_sequence = 12;
-	ImageOrientationPatient image_orientation_patient = 13;
-	CodingSchemeVersion coding_scheme_version = 14;
-	CodeMeaning code_meaning = 15;
-	MappingResourceUID mapping_resource_uid = 16;
-	UsedFiducialsSequence used_fiducials_sequence = 17;
-	ContentLabel content_label = 18;
-	LongCodeValue long_code_value = 19;
-	ContextGroupVersion context_group_version = 20;
-	ImagePositionPatient image_position_patient = 21;
-	GridDimensions grid_dimensions = 22;
-	ContentTime content_time = 23;
-	ContentDescription content_description = 24;
-	URNCodeValue urn_code_value = 25;
-	ContextUID context_uid = 26;
-	PersonTelephoneNumbers person's_telephone_numbers = 27;
-	PersonTelecomInformation person's_telecom_information = 28;
-	DeformableRegistrationGridSequence deformable_registration_grid_sequence = 29;
-	ReferencedSOPClassUID referenced_sop_class_uid = 30;
-	ContentDate content_date = 31;
-	CodingSchemeDesignator coding_scheme_designator = 32;
-	EquivalentCodeSequence equivalent_code_sequence = 33;
-	MappingResource mapping_resource = 34;
-	LanguageCodeSequence language_code_sequence = 35;
-	PersonIdentificationCodeSequence person_identification_code_sequence = 36;
-	SourceFrameOfReferenceUID source_frame_of_reference_uid = 37;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 38;
-	ReferencedFrameNumber referenced_frame_number = 39;
-	PostDeformationMatrixRegistrationSequence post_deformation_matrix_registration_sequence = 40;
-	MappingResourceName mapping_resource_name = 41;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 42;
-	PersonAddress person's_address = 43;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 1;
+	DeformableRegistrationSequence deformable_registration_sequence = 2;
+	ContentDate content_date = 3;
+	InstanceNumber instance_number = 4;
+	ContentDescription content_description = 5;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 6;
+	ContentCreatorName content_creator's_name = 7;
+	ContentTime content_time = 8;
+	ContentLabel content_label = 9;
+	ConceptNameCodeSequence concept_name_code_sequence = 10;
 }

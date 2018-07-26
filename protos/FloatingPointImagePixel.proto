@@ -6,21 +6,29 @@ syntax = "proto3";
 message PhotometricInterpretation {
 	string value = 1;
 }
-// DICOM Tag: (0028,0010)
-message Rows {
+// DICOM Tag: (0028,0011)
+message Columns {
 	uint32 value = 1;
+}
+// DICOM Tag: (7FE0,0008)
+message FloatPixelData {
+	string value = 1;
+}
+// DICOM Tag: (0028,0034)
+message PixelAspectRatio {
+	repeated int32 value = 1;
 }
 // DICOM Tag: (0028,0002)
 message SamplesPerPixel {
 	uint32 value = 1;
 }
+// DICOM Tag: (0028,0010)
+message Rows {
+	uint32 value = 1;
+}
 // DICOM Tag: (0028,0100)
 message BitsAllocated {
 	uint32 value = 1;
-}
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
 }
 // DICOM Tag: (0028,0122)
 message FloatPixelPaddingValue {
@@ -30,17 +38,14 @@ message FloatPixelPaddingValue {
 message FloatPixelPaddingRangeLimit {
 	float value = 1;
 }
-// DICOM Tag: (0028,0011)
-message Columns {
-	uint32 value = 1;
-}
 message FloatingPointImagePixelModule {
-	FloatPixelPaddingRangeLimit float_pixel_padding_range_limit = 1;
-	Columns columns = 2;
-	BitsAllocated bits_allocated = 3;
-	PixelAspectRatio pixel_aspect_ratio = 4;
-	FloatPixelPaddingValue float_pixel_padding_value = 5;
-	SamplesPerPixel samples_per_pixel = 6;
+	FloatPixelPaddingValue float_pixel_padding_value = 1;
+	FloatPixelPaddingRangeLimit float_pixel_padding_range_limit = 2;
+	SamplesPerPixel samples_per_pixel = 3;
+	Rows rows = 4;
+	BitsAllocated bits_allocated = 5;
+	PixelAspectRatio pixel_aspect_ratio = 6;
 	PhotometricInterpretation photometric_interpretation = 7;
-	Rows rows = 8;
+	Columns columns = 8;
+	FloatPixelData float_pixel_data = 9;
 }

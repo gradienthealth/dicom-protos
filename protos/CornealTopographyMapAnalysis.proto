@@ -6,161 +6,30 @@ syntax = "proto3";
 message SurfaceRegularityIndex {
 	float value = 1;
 }
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
+// DICOM Tag: (0046,0242)
+message CornealTopographyMapQualityEvaluation {
 	string value = 1;
-}
-// DICOM Tag: (0046,0249)
-message AxialPower {
-	float value = 1;
-}
-// DICOM Tag: (0046,0205)
-message EquivalentPupilRadius {
-	float value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0024,0306)
-message DataSetName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0236)
-message KeratoconusPredictionIndex {
-	float value = 1;
-}
-// DICOM Tag: (0046,0248)
-message CornealPointEstimated {
-	string value = 1;
-}
-// DICOM Tag: (0046,0212)
-message MaximumCornealCurvature {
-	float value = 1;
-}
-// DICOM Tag: (0046,0232)
-message SurfaceAsymmetryIndex {
-	float value = 1;
-}
-// DICOM Tag: (0046,0238)
-message DecimalPotentialVisualAcuity {
-	float value = 1;
-}
-// DICOM Tag: (0046,0207)
-message CornealTopographyMapTypeCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0046,0247)
-message CornealPointLocation {
-	repeated float value = 1;
-}
-// DICOM Tag: (0046,0251)
-message RefractivePower {
-	float value = 1;
-}
-// DICOM Tag: (0046,0075)
-message RadiusOfCurvature {
-	double value = 1;
-}
-// DICOM Tag: (0046,0253)
-message CornealWavefront {
-	float value = 1;
-}
-// DICOM Tag: (0046,0208)
-message VerticesOfTheOutlineOfPupil {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0046,0077)
-message KeratometricAxis {
-	double value = 1;
-}
-// DICOM Tag: (0046,0218)
-message SimulatedKeratometricCylinderSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0234)
-message CornealEccentricityIndex {
-	float value = 1;
-}
-// DICOM Tag: (0022,1415)
-message OphthalmicMappingDeviceType {
-	string value = 1;
-}
-// DICOM Tag: (0046,0076)
-message KeratometricPower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0224)
-message CornealISValue {
-	float value = 1;
-}
-// DICOM Tag: (0046,0211)
-message MaximumCornealCurvatureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0024,0308)
-message DataSetSource {
-	string value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0046,0250)
-message TangentialPower {
-	float value = 1;
-}
-// DICOM Tag: (0046,0204)
-message PupilCentroidYCoordinate {
-	float value = 1;
 }
 // DICOM Tag: (0046,0210)
 message CornealTopographyMappingNormalsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0024,0307)
-message DataSetVersion {
+// DICOM Tag: (0022,1415)
+message OphthalmicMappingDeviceType {
 	string value = 1;
 }
-// DICOM Tag: (0046,0203)
-message PupilCentroidXCoordinate {
-	float value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
+// DICOM Tag: (0046,0208)
+message VerticesOfTheOutlineOfPupil {
+	repeated int32 value = 1;
 }
 // DICOM Tag: (0046,0074)
 message SteepKeratometricAxisSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0218)
+message SimulatedKeratometricCylinderSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -168,134 +37,104 @@ message SteepKeratometricAxisSequence {
 message AverageCornealPower {
 	float value = 1;
 }
-// DICOM Tag: (0046,0242)
-message CornealTopographyMapQualityEvaluation {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0046,0201)
-message CornealTopographySurface {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0046,0215)
-message MinimumKeratometricSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2112)
-message SourceImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0252)
-message RelativeElevation {
+// DICOM Tag: (0046,0238)
+message DecimalPotentialVisualAcuity {
 	float value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0046,0227)
-message AnalyzedArea {
-	float value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0046,0080)
-message FlatKeratometricAxisSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0213)
-message MaximumCornealCurvatureLocation {
-	repeated float value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0046,0202)
-message CornealVertexLocation {
-	repeated float value = 1;
 }
 // DICOM Tag: (0046,0244)
 message SourceImageCornealProcessedDataSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0024,0309)
-message DataSetDescription {
+// DICOM Tag: (0046,0205)
+message EquivalentPupilRadius {
+	float value = 1;
+}
+// DICOM Tag: (0046,0203)
+message PupilCentroidXCoordinate {
+	float value = 1;
+}
+// DICOM Tag: (0046,0204)
+message PupilCentroidYCoordinate {
+	float value = 1;
+}
+// DICOM Tag: (0046,0080)
+message FlatKeratometricAxisSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0215)
+message MinimumKeratometricSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0224)
+message CornealISValue {
+	float value = 1;
+}
+// DICOM Tag: (0046,0227)
+message AnalyzedArea {
+	float value = 1;
+}
+// DICOM Tag: (0046,0211)
+message MaximumCornealCurvatureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0202)
+message CornealVertexLocation {
+	repeated float value = 1;
+}
+// DICOM Tag: (0046,0207)
+message CornealTopographyMapTypeCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0232)
+message SurfaceAsymmetryIndex {
+	float value = 1;
+}
+// DICOM Tag: (0046,0234)
+message CornealEccentricityIndex {
+	float value = 1;
+}
+// DICOM Tag: (0046,0236)
+message KeratoconusPredictionIndex {
+	float value = 1;
+}
+// DICOM Tag: (0008,2112)
+message SourceImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0201)
+message CornealTopographySurface {
 	string value = 1;
 }
 message CornealTopographyMapAnalysisModule {
-	KeratoconusPredictionIndex keratoconus_prediction_index = 1;
-	MaximumCornealCurvature maximum_corneal_curvature = 2;
-	CornealPointEstimated corneal_point_estimated = 3;
-	CornealPointLocation corneal_point_location = 4;
-	RefractivePower refractive_power = 5;
-	RadiusOfCurvature radius_of_curvature = 6;
-	SurfaceAsymmetryIndex surface_asymmetry_index = 7;
-	DecimalPotentialVisualAcuity decimal_potential_visual_acuity = 8;
-	CornealTopographyMapTypeCodeSequence corneal_topography_map_type_code_sequence = 9;
-	CodingSchemeDesignator coding_scheme_designator = 10;
-	MappingResourceName mapping_resource_name = 11;
-	CornealWavefront corneal_wavefront = 12;
-	OphthalmicMappingDeviceType ophthalmic_mapping_device_type = 13;
-	VerticesOfTheOutlineOfPupil vertices_of_the_outline_of_pupil = 14;
-	KeratometricAxis keratometric_axis = 15;
-	SimulatedKeratometricCylinderSequence simulated_keratometric_cylinder_sequence = 16;
-	CornealEccentricityIndex corneal_eccentricity_index = 17;
-	ReferencedFrameNumber referenced_frame_number = 18;
-	TangentialPower tangential_power = 19;
-	PupilCentroidYCoordinate pupil_centroid_y_coordinate = 20;
-	KeratometricPower keratometric_power = 21;
-	CornealISValue corneal_i_s_value = 22;
-	MaximumCornealCurvatureSequence maximum_corneal_curvature_sequence = 23;
-	ContextGroupLocalVersion context_group_local_version = 24;
-	DataSetSource data_set_source = 25;
-	PupilCentroidXCoordinate pupil_centroid_x_coordinate = 26;
-	CornealTopographyMappingNormalsSequence corneal_topography_mapping_normals_sequence = 27;
-	DataSetVersion data_set_version = 28;
-	CodeMeaning code_meaning = 29;
-	URNCodeValue urn_code_value = 30;
-	ContextUID context_uid = 31;
-	CornealTopographySurface corneal_topography_surface = 32;
-	SteepKeratometricAxisSequence steep_keratometric_axis_sequence = 33;
-	AverageCornealPower average_corneal_power = 34;
-	CornealTopographyMapQualityEvaluation corneal_topography_map_quality_evaluation = 35;
-	ContextGroupVersion context_group_version = 36;
-	MinimumKeratometricSequence minimum_keratometric_sequence = 37;
-	CodeValue code_value = 38;
-	LongCodeValue long_code_value = 39;
-	SourceImageSequence source_image_sequence = 40;
-	RelativeElevation relative_elevation = 41;
-	FlatKeratometricAxisSequence flat_keratometric_axis_sequence = 42;
-	AnalyzedArea analyzed_area = 43;
-	CodingSchemeVersion coding_scheme_version = 44;
-	CornealVertexLocation corneal_vertex_location = 45;
-	MaximumCornealCurvatureLocation maximum_corneal_curvature_location = 46;
-	ReferencedSOPClassUID referenced_sop_class_uid = 47;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 48;
-	DataSetDescription data_set_description = 49;
-	SourceImageCornealProcessedDataSequence source_image_corneal_processed_data_sequence = 50;
-	EquivalentPupilRadius equivalent_pupil_radius = 51;
-	SurfaceRegularityIndex surface_regularity_index = 52;
-	MappingResourceUID mapping_resource_uid = 53;
-	AxialPower axial_power = 54;
-	MappingResource mapping_resource = 55;
-	EquivalentCodeSequence equivalent_code_sequence = 56;
-	DataSetName data_set_name = 57;
+	CornealVertexLocation corneal_vertex_location = 1;
+	PupilCentroidXCoordinate pupil_centroid_x_coordinate = 2;
+	PupilCentroidYCoordinate pupil_centroid_y_coordinate = 3;
+	FlatKeratometricAxisSequence flat_keratometric_axis_sequence = 4;
+	MinimumKeratometricSequence minimum_keratometric_sequence = 5;
+	CornealISValue corneal_i_s_value = 6;
+	AnalyzedArea analyzed_area = 7;
+	MaximumCornealCurvatureSequence maximum_corneal_curvature_sequence = 8;
+	SurfaceAsymmetryIndex surface_asymmetry_index = 9;
+	CornealTopographyMapTypeCodeSequence corneal_topography_map_type_code_sequence = 10;
+	CornealTopographySurface corneal_topography_surface = 11;
+	CornealEccentricityIndex corneal_eccentricity_index = 12;
+	KeratoconusPredictionIndex keratoconus_prediction_index = 13;
+	SourceImageSequence source_image_sequence = 14;
+	OphthalmicMappingDeviceType ophthalmic_mapping_device_type = 15;
+	SurfaceRegularityIndex surface_regularity_index = 16;
+	CornealTopographyMapQualityEvaluation corneal_topography_map_quality_evaluation = 17;
+	CornealTopographyMappingNormalsSequence corneal_topography_mapping_normals_sequence = 18;
+	EquivalentPupilRadius equivalent_pupil_radius = 19;
+	VerticesOfTheOutlineOfPupil vertices_of_the_outline_of_pupil = 20;
+	SteepKeratometricAxisSequence steep_keratometric_axis_sequence = 21;
+	SimulatedKeratometricCylinderSequence simulated_keratometric_cylinder_sequence = 22;
+	AverageCornealPower average_corneal_power = 23;
+	DecimalPotentialVisualAcuity decimal_potential_visual_acuity = 24;
+	SourceImageCornealProcessedDataSequence source_image_corneal_processed_data_sequence = 25;
 }

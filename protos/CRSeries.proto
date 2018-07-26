@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.html#table_C.8-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,1261)
-message PhosphorType {
-	string value = 1;
-}
 // DICOM Tag: (0018,0015)
 message BodyPartExamined {
 	string value = 1;
@@ -30,12 +26,16 @@ message FocalSpots {
 message PlateType {
 	string value = 1;
 }
+// DICOM Tag: (0018,1261)
+message PhosphorType {
+	string value = 1;
+}
 message CRSeriesModule {
-	FocalSpots focal_spots = 1;
-	PlateType plate_type = 2;
-	PhosphorType phosphor_type = 3;
-	BodyPartExamined body_part_examined = 4;
-	ViewPosition view_position = 5;
-	FilterType filter_type = 6;
-	CollimatorGridName collimator_grid_name = 7;
+	BodyPartExamined body_part_examined = 1;
+	ViewPosition view_position = 2;
+	FilterType filter_type = 3;
+	CollimatorGridName collimator_grid_name = 4;
+	FocalSpots focal_spots = 5;
+	PlateType plate_type = 6;
+	PhosphorType phosphor_type = 7;
 }

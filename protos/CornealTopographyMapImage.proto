@@ -6,14 +6,34 @@ syntax = "proto3";
 message ContentTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (0040,9096)
+message RealWorldValueMappingSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0008,0008)
 message ImageType {
@@ -23,76 +43,37 @@ message ImageType {
 message PhotometricInterpretation {
 	string value = 1;
 }
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
+// DICOM Tag: (0028,0034)
+message PixelAspectRatio {
+	repeated int32 value = 1;
 }
-// DICOM Tag: (0040,9212)
-message RealWorldValueLUTData {
-	repeated double value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
+// DICOM Tag: (0028,0302)
+message RecognizableVisualFeatures {
 	string value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2230)
-message PrimaryAnatomicStructureModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
-	uint32 value = 1;
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
 }
 // DICOM Tag: (0028,0030)
 message PixelSpacing {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
+// DICOM Tag: (0028,0A02)
+message PixelSpacingCalibrationType {
 	string value = 1;
 }
-// DICOM Tag: (0040,9224)
-message RealWorldValueIntercept {
-	double value = 1;
+// DICOM Tag: (0028,0A04)
+message PixelSpacingCalibrationDescription {
+	string value = 1;
 }
 // DICOM Tag: (0028,2112)
 message LossyImageCompressionRatio {
 	repeated float value = 1;
 }
-// DICOM Tag: (0040,9096)
-message RealWorldValueMappingSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
 	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,9220)
-message QuantityDefinitionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
 }
 // DICOM Tag: (0008,2218)
 message AnatomicRegionSequence {
@@ -103,162 +84,46 @@ message AnatomicRegionSequence {
 message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
 	uint32 value = 1;
-}
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
-// DICOM Tag: (0020,0062)
-message ImageLaterality {
-	string value = 1;
-}
-// DICOM Tag: (0040,9214)
-message DoubleFloatRealWorldValueFirstValueMapped {
-	double value = 1;
-}
-// DICOM Tag: (0028,3003)
-message LUTExplanation {
-	string value = 1;
-}
-// DICOM Tag: (0008,2220)
-message AnatomicRegionModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
 }
 // DICOM Tag: (0028,2110)
 message LossyImageCompression {
 	string value = 1;
 }
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,9213)
-message DoubleFloatRealWorldValueLastValueMapped {
-	double value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0020,0062)
+message ImageLaterality {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0028,0302)
-message RecognizableVisualFeatures {
-	string value = 1;
-}
-// DICOM Tag: (0040,9211)
-message RealWorldValueLastValueMapped {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,9210)
-message LUTLabel {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,9216)
-message RealWorldValueFirstValueMapped {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,9225)
-message RealWorldValueSlope {
-	double value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
 }
 message CornealTopographyMapImageModule {
-	ImageType image_type = 1;
-	PhotometricInterpretation photometric_interpretation = 2;
-	BitsStored bits_stored = 3;
-	RealWorldValueLUTData real_world_value_lut_data = 4;
-	MappingResourceUID mapping_resource_uid = 5;
-	InstanceNumber instance_number = 6;
-	PixelRepresentation pixel_representation = 7;
-	PixelSpacing pixel_spacing = 8;
-	PixelAspectRatio pixel_aspect_ratio = 9;
-	BurnedInAnnotation burned_in_annotation = 10;
-	RealWorldValueIntercept real_world_value_intercept = 11;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 12;
-	PrimaryAnatomicStructureModifierSequence primary_anatomic_structure_modifier_sequence = 13;
-	SamplesPerPixel samples_per_pixel = 14;
-	RealWorldValueMappingSequence real_world_value_mapping_sequence = 15;
-	URNCodeValue urn_code_value = 16;
-	ContextGroupVersion context_group_version = 17;
-	QuantityDefinitionSequence quantity_definition_sequence = 18;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 19;
-	BitsAllocated bits_allocated = 20;
-	HighBit high_bit = 21;
-	ImageLaterality image_laterality = 22;
-	DoubleFloatRealWorldValueFirstValueMapped double_float_real_world_value_first_value_mapped = 23;
-	LUTExplanation lut_explanation = 24;
-	ReferencedFrameNumber referenced_frame_number = 25;
-	AnatomicRegionSequence anatomic_region_sequence = 26;
-	ContentDate content_date = 27;
-	AnatomicRegionModifierSequence anatomic_region_modifier_sequence = 28;
-	LossyImageCompressionMethod lossy_image_compression_method = 29;
-	DoubleFloatRealWorldValueLastValueMapped double_float_real_world_value_last_value_mapped = 30;
-	CodingSchemeDesignator coding_scheme_designator = 31;
-	LongCodeValue long_code_value = 32;
-	ContextUID context_uid = 33;
-	ReferencedSOPClassUID referenced_sop_class_uid = 34;
-	LossyImageCompression lossy_image_compression = 35;
-	RealWorldValueLastValueMapped real_world_value_last_value_mapped = 36;
-	LUTLabel lut_label = 37;
-	CodeMeaning code_meaning = 38;
-	EquivalentCodeSequence equivalent_code_sequence = 39;
-	MappingResourceName mapping_resource_name = 40;
-	ContextGroupLocalVersion context_group_local_version = 41;
-	RecognizableVisualFeatures recognizable_visual_features = 42;
-	RealWorldValueFirstValueMapped real_world_value_first_value_mapped = 43;
-	RealWorldValueSlope real_world_value_slope = 44;
-	CodeValue code_value = 45;
-	CodingSchemeVersion coding_scheme_version = 46;
-	MappingResource mapping_resource = 47;
-	ReferencedSOPSequence referenced_sop_sequence = 48;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 49;
-	ContentTime content_time = 50;
+	ContentDate content_date = 1;
+	SamplesPerPixel samples_per_pixel = 2;
+	LossyImageCompression lossy_image_compression = 3;
+	ImageLaterality image_laterality = 4;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 5;
+	LossyImageCompressionMethod lossy_image_compression_method = 6;
+	RealWorldValueMappingSequence real_world_value_mapping_sequence = 7;
+	ContentTime content_time = 8;
+	PixelRepresentation pixel_representation = 9;
+	BitsAllocated bits_allocated = 10;
+	BitsStored bits_stored = 11;
+	HighBit high_bit = 12;
+	AcquisitionDateTime acquisition_datetime = 13;
+	ImageType image_type = 14;
+	PhotometricInterpretation photometric_interpretation = 15;
+	PixelAspectRatio pixel_aspect_ratio = 16;
+	RecognizableVisualFeatures recognizable_visual_features = 17;
+	BurnedInAnnotation burned_in_annotation = 18;
+	AnatomicRegionSequence anatomic_region_sequence = 19;
+	InstanceNumber instance_number = 20;
+	PixelSpacing pixel_spacing = 21;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 22;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 23;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 24;
 }

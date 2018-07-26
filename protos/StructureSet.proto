@@ -2,193 +2,53 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.5.html#table_C.8-41
 syntax = "proto3";
 
-// DICOM Tag: (3006,0022)
-message ROINumber {
-	int32 value = 1;
+// DICOM Tag: (3006,0020)
+message StructureSetROISequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (3006,0026)
-message ROIName {
-	string value = 1;
-}
-// DICOM Tag: (3006,0028)
-message ROIDescription {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
+// DICOM Tag: (3006,0002)
+message StructureSetLabel {
 	string value = 1;
 }
 // DICOM Tag: (3006,0006)
 message StructureSetDescription {
 	string value = 1;
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,9215)
-message DerivationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (3006,0018)
-message PredecessorStructureSetSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0010)
-message ReferencedFrameOfReferenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0012)
-message RTReferencedStudySequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0014)
-message RTReferencedSeriesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0038)
-message ROIGenerationDescription {
-	string value = 1;
-}
-// DICOM Tag: (3006,0004)
-message StructureSetName {
+// DICOM Tag: (3006,0008)
+message StructureSetDate {
 	string value = 1;
 }
 // DICOM Tag: (3006,0009)
 message StructureSetTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (3006,0010)
+message ReferencedFrameOfReferenceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0020,0052)
-message FrameOfReferenceUID {
+// DICOM Tag: (3006,0004)
+message StructureSetName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (3006,0008)
-message StructureSetDate {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (3006,0036)
-message ROIGenerationAlgorithm {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (3006,0016)
-message ContourImageSequence {
+// DICOM Tag: (3006,0018)
+message PredecessorStructureSetSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0020)
-message StructureSetROISequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0024)
-message ReferencedFrameOfReferenceUID {
-	string value = 1;
-}
-// DICOM Tag: (3006,0002)
-message StructureSetLabel {
-	string value = 1;
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
 }
 message StructureSetModule {
-	MappingResource mapping_resource = 1;
-	ROIGenerationAlgorithm roi_generation_algorithm = 2;
-	CodeValue code_value = 3;
-	CodingSchemeDesignator coding_scheme_designator = 4;
-	ContourImageSequence contour_image_sequence = 5;
+	StructureSetName structure_set_name = 1;
+	PredecessorStructureSetSequence predecessor_structure_set_sequence = 2;
+	StructureSetDate structure_set_date = 3;
+	StructureSetTime structure_set_time = 4;
+	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 5;
 	StructureSetROISequence structure_set_roi_sequence = 6;
-	ReferencedFrameOfReferenceUID referenced_frame_of_reference_uid = 7;
-	StructureSetLabel structure_set_label = 8;
+	StructureSetLabel structure_set_label = 7;
+	StructureSetDescription structure_set_description = 8;
 	InstanceNumber instance_number = 9;
-	ROINumber roi_number = 10;
-	ROIName roi_name = 11;
-	ROIDescription roi_description = 12;
-	CodeMeaning code_meaning = 13;
-	URNCodeValue urn_code_value = 14;
-	ContextUID context_uid = 15;
-	StructureSetDescription structure_set_description = 16;
-	ReferencedSOPClassUID referenced_sop_class_uid = 17;
-	MappingResourceName mapping_resource_name = 18;
-	DerivationCodeSequence derivation_code_sequence = 19;
-	ContextGroupLocalVersion context_group_local_version = 20;
-	PredecessorStructureSetSequence predecessor_structure_set_sequence = 21;
-	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 22;
-	RTReferencedStudySequence rt_referenced_study_sequence = 23;
-	RTReferencedSeriesSequence rt_referenced_series_sequence = 24;
-	ROIGenerationDescription roi_generation_description = 25;
-	StructureSetName structure_set_name = 26;
-	StructureSetTime structure_set_time = 27;
-	ReferencedFrameNumber referenced_frame_number = 28;
-	CodingSchemeVersion coding_scheme_version = 29;
-	EquivalentCodeSequence equivalent_code_sequence = 30;
-	ContextGroupVersion context_group_version = 31;
-	FrameOfReferenceUID frame_of_reference_uid = 32;
-	LongCodeValue long_code_value = 33;
-	MappingResourceUID mapping_resource_uid = 34;
-	StructureSetDate structure_set_date = 35;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 36;
 }

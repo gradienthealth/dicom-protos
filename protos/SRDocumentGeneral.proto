@@ -2,302 +2,106 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.html#table_C.17-2
 syntax = "proto3";
 
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,1020)
-message SoftwareVersions {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0400,0100)
-message DigitalSignatureUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,0026)
-message OrderPlacerIdentifierSequence {
+// DICOM Tag: (0008,114A)
+message ReferencedInstanceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0117)
-message ContextUID {
+// DICOM Tag: (0040,A493)
+message VerificationFlag {
 	string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0400,0120)
-message Signature {
-	string value = 1;
-}
-// DICOM Tag: (0400,0015)
-message MACAlgorithm {
-	string value = 1;
-}
-// DICOM Tag: (0008,0082)
-message InstitutionCodeSequence {
+// DICOM Tag: (0040,A078)
+message AuthorObserverSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1115)
-message ReferencedSeriesSequence {
+// DICOM Tag: (0040,A07A)
+message ParticipantSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1010)
-message StationName {
-	string value = 1;
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1190)
-message RetrieveURL {
-	string value = 1;
-}
-// DICOM Tag: (0040,0031)
-message LocalNamespaceEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,1040)
-message InstitutionalDepartmentName {
-	string value = 1;
-}
-// DICOM Tag: (0400,0404)
-message MAC {
-	string value = 1;
-}
 // DICOM Tag: (0008,0023)
 message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0051)
-message IssuerOfAccessionNumberSequence {
+// DICOM Tag: (0040,A385)
+message PertinentOtherEvidenceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0040,A073)
+message VerifyingObserverSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0400,0403)
-message ReferencedSOPInstanceMACSequence {
+// DICOM Tag: (0040,A375)
+message CurrentRequestedProcedureEvidenceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0400,0010)
-message MACCalculationTransferSyntaxUID {
+// DICOM Tag: (0040,A496)
+message PreliminaryFlag {
 	string value = 1;
 }
-// DICOM Tag: (0040,0027)
-message OrderFillerIdentifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0032,1064)
-message RequestedProcedureCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0088,0130)
-message StorageMediaFileSetID {
-	string value = 1;
-}
-// DICOM Tag: (0040,2017)
-message FillerOrderNumberImagingServiceRequest {
-	string value = 1;
-}
-// DICOM Tag: (0088,0140)
-message StorageMediaFileSetUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,2016)
-message PlacerOrderNumberImagingServiceRequest {
-	string value = 1;
-}
-// DICOM Tag: (0008,1110)
-message ReferencedStudySequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0050)
-message AccessionNumber {
-	string value = 1;
-}
-// DICOM Tag: (0040,0032)
-message UniversalEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0032,1060)
-message RequestedProcedureDescription {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1002)
-message DeviceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1090)
-message ManufacturerModelName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0054)
-message RetrieveAETitle {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,1001)
-message RequestedProcedureID {
-	string value = 1;
-}
-// DICOM Tag: (0018,1000)
-message DeviceSerialNumber {
-	string value = 1;
-}
-// DICOM Tag: (0040,0033)
-message UniversalEntityIDType {
+// DICOM Tag: (0040,A492)
+message CompletionFlagDescription {
 	string value = 1;
 }
 // DICOM Tag: (0008,0033)
 message ContentTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0040,1101)
-message PersonIdentificationCodeSequence {
+// DICOM Tag: (0040,A525)
+message IdenticalDocumentsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0400,0402)
-message ReferencedDigitalSignatureSequence {
+// DICOM Tag: (0040,A370)
+message ReferencedRequestSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0400,0020)
-message DataElementsSigned {
-	repeated string value = 1;
+// DICOM Tag: (0040,A372)
+message PerformedProcedureCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,1002)
-message ReasonForTheRequestedProcedure {
+// DICOM Tag: (0040,A491)
+message CompletionFlag {
 	string value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
+// DICOM Tag: (0040,A07C)
+message CustodialOrganizationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0055)
-message StationAETitle {
-	string value = 1;
+// DICOM Tag: (0040,A360)
+message PredecessorDocumentsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message SRDocumentGeneralModule {
-	InstitutionCodeSequence institution_code_sequence = 1;
-	ReferencedSeriesSequence referenced_series_sequence = 2;
-	MACAlgorithm mac_algorithm = 3;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 4;
-	InstanceNumber instance_number = 5;
-	ContextGroupVersion context_group_version = 6;
-	StationName station_name = 7;
-	URNCodeValue urn_code_value = 8;
-	ContextGroupLocalVersion context_group_local_version = 9;
-	RetrieveURL retrieve_url = 10;
-	LocalNamespaceEntityID local_namespace_entity_id = 11;
-	CodingSchemeDesignator coding_scheme_designator = 12;
-	LongCodeValue long_code_value = 13;
-	ContentDate content_date = 14;
-	InstitutionalDepartmentName institutional_department_name = 15;
-	MAC mac = 16;
-	CodeValue code_value = 17;
-	EquivalentCodeSequence equivalent_code_sequence = 18;
-	InstitutionName institution_name = 19;
-	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 20;
-	OrderFillerIdentifierSequence order_filler_identifier_sequence = 21;
-	RequestedProcedureCodeSequence requested_procedure_code_sequence = 22;
-	Manufacturer manufacturer = 23;
-	StorageMediaFileSetID storage_media_file_set_id = 24;
-	ReferencedSOPInstanceMACSequence referenced_sop_instance_mac_sequence = 25;
-	MACCalculationTransferSyntaxUID mac_calculation_transfer_syntax_uid = 26;
-	StorageMediaFileSetUID storage_media_file_set_uid = 27;
-	PlacerOrderNumberImagingServiceRequest placer_order_number___imaging_service_request = 28;
-	FillerOrderNumberImagingServiceRequest filler_order_number___imaging_service_request = 29;
-	UniversalEntityID universal_entity_id = 30;
-	RequestedProcedureDescription requested_procedure_description = 31;
-	CodingSchemeVersion coding_scheme_version = 32;
-	CodeMeaning code_meaning = 33;
-	ReferencedStudySequence referenced_study_sequence = 34;
-	AccessionNumber accession_number = 35;
-	DeviceUID device_uid = 36;
-	ManufacturerModelName manufacturer's_model_name = 37;
-	ReferencedSOPSequence referenced_sop_sequence = 38;
-	RetrieveAETitle retrieve_ae_title = 39;
-	RequestedProcedureID requested_procedure_id = 40;
-	ContentTime content_time = 41;
-	PersonIdentificationCodeSequence person_identification_code_sequence = 42;
-	DeviceSerialNumber device_serial_number = 43;
-	UniversalEntityIDType universal_entity_id_type = 44;
-	ReasonForTheRequestedProcedure reason_for_the_requested_procedure = 45;
-	MappingResourceName mapping_resource_name = 46;
-	StationAETitle station__ae_title = 47;
-	ReferencedDigitalSignatureSequence referenced_digital_signature_sequence = 48;
-	DataElementsSigned data_elements_signed = 49;
-	ReferencedSOPClassUID referenced_sop_class_uid = 50;
-	DigitalSignatureUID digital_signature_uid = 51;
-	OrderPlacerIdentifierSequence order_placer_identifier_sequence = 52;
-	ContextUID context_uid = 53;
-	MappingResource mapping_resource = 54;
-	MappingResourceUID mapping_resource_uid = 55;
-	SoftwareVersions software_versions = 56;
-	Signature signature = 57;
+	InstanceNumber instance_number = 1;
+	ContentDate content_date = 2;
+	PertinentOtherEvidenceSequence pertinent_other_evidence_sequence = 3;
+	CurrentRequestedProcedureEvidenceSequence current_requested_procedure_evidence_sequence = 4;
+	PreliminaryFlag preliminary_flag = 5;
+	CompletionFlagDescription completion_flag_description = 6;
+	ContentTime content_time = 7;
+	VerifyingObserverSequence verifying_observer_sequence = 8;
+	ReferencedRequestSequence referenced_request_sequence = 9;
+	PerformedProcedureCodeSequence performed_procedure_code_sequence = 10;
+	CompletionFlag completion_flag = 11;
+	CustodialOrganizationSequence custodial_organization_sequence = 12;
+	PredecessorDocumentsSequence predecessor_documents_sequence = 13;
+	IdenticalDocumentsSequence identical_documents_sequence = 14;
+	VerificationFlag verification_flag = 15;
+	AuthorObserverSequence author_observer_sequence = 16;
+	ParticipantSequence participant_sequence = 17;
+	ReferencedInstanceSequence referenced_instance_sequence = 18;
 }

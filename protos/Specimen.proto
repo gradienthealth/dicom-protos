@@ -2,40 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.22.html#table_C.7.6.22-1
 syntax = "proto3";
 
-// DICOM Tag: (0040,0033)
-message UniversalEntityIDType {
-	string value = 1;
-}
 // DICOM Tag: (0040,0513)
 message IssuerOfTheContainerIdentifierSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0032)
-message UniversalEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0040,0610)
-message SpecimenPreparationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0612)
-message SpecimenPreparationStepContentItemSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0050,0013)
-message ContainerComponentThickness {
-	double value = 1;
-}
-// DICOM Tag: (0040,0512)
-message ContainerIdentifier {
-	string value = 1;
 }
 // DICOM Tag: (0040,0515)
 message AlternateContainerIdentifierSequence {
@@ -47,179 +17,30 @@ message ContainerTypeCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0040,051A)
+message ContainerDescription {
 	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0562)
-message IssuerOfTheSpecimenIdentifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0600)
-message SpecimenShortDescription {
-	string value = 1;
-}
-// DICOM Tag: (0040,0602)
-message SpecimenDetailedDescription {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
 }
 // DICOM Tag: (0040,0520)
 message ContainerComponentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,0031)
-message LocalNamespaceEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0050,0012)
-message ContainerComponentTypeCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1090)
-message ManufacturerModelName {
-	string value = 1;
-}
-// DICOM Tag: (0050,0015)
-message ContainerComponentWidth {
-	double value = 1;
-}
 // DICOM Tag: (0040,0560)
 message SpecimenDescriptionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2230)
-message PrimaryAnatomicStructureModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,0620)
-message SpecimenLocalizationContentItemSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0040,0551)
-message SpecimenIdentifier {
-	string value = 1;
-}
-// DICOM Tag: (0040,0554)
-message SpecimenUID {
+// DICOM Tag: (0040,0512)
+message ContainerIdentifier {
 	string value = 1;
 }
 message SpecimenModule {
-	ManufacturerModelName manufacturer's_model_name = 1;
-	ContainerComponentWidth container_component_width = 2;
-	SpecimenDescriptionSequence specimen_description_sequence = 3;
-	ReferencedSOPSequence referenced_sop_sequence = 4;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 5;
-	LocalNamespaceEntityID local_namespace_entity_id = 6;
-	LongCodeValue long_code_value = 7;
-	ContainerComponentTypeCodeSequence container_component_type_code_sequence = 8;
-	PrimaryAnatomicStructureModifierSequence primary_anatomic_structure_modifier_sequence = 9;
-	ReferencedSOPClassUID referenced_sop_class_uid = 10;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 11;
-	CodeValue code_value = 12;
-	EquivalentCodeSequence equivalent_code_sequence = 13;
-	MappingResourceName mapping_resource_name = 14;
-	ContextUID context_uid = 15;
-	SpecimenLocalizationContentItemSequence specimen_localization_content_item_sequence = 16;
-	SpecimenUID specimen_uid = 17;
-	CodingSchemeVersion coding_scheme_version = 18;
-	Manufacturer manufacturer = 19;
-	SpecimenIdentifier specimen_identifier = 20;
-	UniversalEntityIDType universal_entity_id_type = 21;
-	SpecimenPreparationStepContentItemSequence specimen_preparation_step_content_item_sequence = 22;
-	ReferencedFrameNumber referenced_frame_number = 23;
-	IssuerOfTheContainerIdentifierSequence issuer_of_the_container_identifier_sequence = 24;
-	UniversalEntityID universal_entity_id = 25;
-	SpecimenPreparationSequence specimen_preparation_sequence = 26;
-	CodingSchemeDesignator coding_scheme_designator = 27;
-	URNCodeValue urn_code_value = 28;
-	MappingResourceUID mapping_resource_uid = 29;
-	ContextGroupLocalVersion context_group_local_version = 30;
-	ContainerComponentThickness container_component_thickness = 31;
-	ContainerIdentifier container_identifier = 32;
-	AlternateContainerIdentifierSequence alternate_container_identifier_sequence = 33;
-	ContainerTypeCodeSequence container_type_code_sequence = 34;
-	IssuerOfTheSpecimenIdentifierSequence issuer_of_the_specimen_identifier_sequence = 35;
-	SpecimenShortDescription specimen_short_description = 36;
-	SpecimenDetailedDescription specimen_detailed_description = 37;
-	ContainerComponentSequence container_component_sequence = 38;
-	CodeMeaning code_meaning = 39;
-	MappingResource mapping_resource = 40;
-	ContextGroupVersion context_group_version = 41;
+	ContainerComponentSequence container_component_sequence = 1;
+	SpecimenDescriptionSequence specimen_description_sequence = 2;
+	ContainerIdentifier container_identifier = 3;
+	IssuerOfTheContainerIdentifierSequence issuer_of_the_container_identifier_sequence = 4;
+	AlternateContainerIdentifierSequence alternate_container_identifier_sequence = 5;
+	ContainerTypeCodeSequence container_type_code_sequence = 6;
+	ContainerDescription container_description = 7;
 }

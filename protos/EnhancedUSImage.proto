@@ -2,175 +2,140 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.3.html#table_C.8.24.3-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
+// DICOM Tag: (0018,980F)
+message TransducerApplicationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,2230)
-message PrimaryAnatomicStructureModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,1203)
-message BluePaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0018,5026)
-message CranialThermalIndex {
-	float value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1190)
-message RetrieveURL {
-	string value = 1;
-}
-// DICOM Tag: (0400,0404)
-message MAC {
-	string value = 1;
-}
-// DICOM Tag: (0008,2112)
-message SourceImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0400,0010)
-message MACCalculationTransferSyntaxUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,0107)
-message LargestImagePixelValue {
-	int64 value = 1;
-}
-// DICOM Tag: (0028,1052)
-message RescaleIntercept {
-	float value = 1;
-}
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
-	string value = 1;
+// DICOM Tag: (0018,5050)
+message DepthOfScanField {
+	int32 value = 1;
 }
 // DICOM Tag: (0028,0004)
 message PhotometricInterpretation {
 	string value = 1;
 }
-// DICOM Tag: (0008,9121)
-message ReferencedRawDataSequence {
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (0028,0302)
+message RecognizableVisualFeatures {
+	string value = 1;
+}
+// DICOM Tag: (0018,5010)
+message TransducerData {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,9809)
+message TransducerScanPatternCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0400,0120)
-message Signature {
-	string value = 1;
-}
-// DICOM Tag: (0008,2134)
-message EventTimeOffset {
-	double value = 1;
-}
-// DICOM Tag: (0028,2000)
-message ICCProfile {
+// DICOM Tag: (0020,9311)
+message DimensionOrganizationType {
 	string value = 1;
 }
 // DICOM Tag: (0028,2110)
 message LossyImageCompression {
 	string value = 1;
 }
+// DICOM Tag: (0008,2124)
+message NumberOfStages {
+	int32 value = 1;
+}
 // DICOM Tag: (0008,2122)
 message StageNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0088,0140)
-message StorageMediaFileSetUID {
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
 	string value = 1;
 }
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
+// DICOM Tag: (0008,2133)
+message EventTimerSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,980D)
+message TransducerGeometryCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
 	uint32 value = 1;
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
+// DICOM Tag: (0008,2112)
+message SourceImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,000A)
+message StageCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
 	string value = 1;
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
+// DICOM Tag: (0018,5022)
+message MechanicalIndex {
+	float value = 1;
 }
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0018,5024)
+message BoneThermalIndex {
+	float value = 1;
 }
-// DICOM Tag: (0400,0402)
-message ReferencedDigitalSignatureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0018,9801)
+message DepthsOfFocus {
+	repeated double value = 1;
 }
-// DICOM Tag: (0054,0220)
-message ViewCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
 }
-// DICOM Tag: (0028,0010)
-message Rows {
+// DICOM Tag: (0028,0101)
+message BitsStored {
 	uint32 value = 1;
 }
 // DICOM Tag: (0028,0102)
 message HighBit {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0106)
-message SmallestImagePixelValue {
-	int64 value = 1;
-}
-// DICOM Tag: (0028,1201)
-message RedPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0018,5024)
-message BoneThermalIndex {
-	float value = 1;
-}
-// DICOM Tag: (0028,0011)
-message Columns {
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
 	uint32 value = 1;
+}
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
 }
 // DICOM Tag: (2050,0020)
 message PresentationLUTShape {
 	string value = 1;
 }
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
+// DICOM Tag: (0028,1053)
+message RescaleSlope {
+	float value = 1;
 }
-// DICOM Tag: (0400,0100)
-message DigitalSignatureUID {
-	string value = 1;
-}
-// DICOM Tag: (0054,0222)
-message ViewModifierCodeSequence {
+// DICOM Tag: (0008,9121)
+message ReferencedRawDataSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,2220)
-message AnatomicRegionModifierSequence {
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,114A)
+message ReferencedInstanceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -179,284 +144,97 @@ message IconImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0006)
-message PlanarConfiguration {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,1115)
-message ReferencedSeriesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0054)
-message RetrieveAETitle {
-	repeated string value = 1;
-}
-// DICOM Tag: (0400,0020)
-message DataElementsSigned {
-	repeated string value = 1;
-}
-// DICOM Tag: (0028,2002)
-message ColorSpace {
-	string value = 1;
-}
 // DICOM Tag: (0018,5020)
 message ProcessingFunction {
 	string value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0400,0403)
-message ReferencedSOPInstanceMACSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2133)
-message EventTimerSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9809)
-message TransducerScanPatternCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,5050)
-message DepthOfScanField {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2124)
-message NumberOfStages {
-	int32 value = 1;
-}
-// DICOM Tag: (0028,1103)
-message BluePaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,1202)
-message GreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0028,1102)
-message GreenPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0018,5022)
-message MechanicalIndex {
-	float value = 1;
 }
 // DICOM Tag: (0018,5027)
 message SoftTissueThermalIndex {
 	float value = 1;
 }
-// DICOM Tag: (0008,2132)
-message EventTimerNames {
-	repeated string value = 1;
+// DICOM Tag: (0054,0220)
+message ViewCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,2218)
+message AnatomicRegionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,980E)
+message TransducerBeamSteeringCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,5026)
+message CranialThermalIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,980C)
+message PositionMeasuringDeviceUsed {
+	string value = 1;
 }
 // DICOM Tag: (0028,2112)
 message LossyImageCompressionRatio {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0400,0015)
-message MACAlgorithm {
-	string value = 1;
-}
-// DICOM Tag: (0054,0500)
-message SliceProgressionDirection {
-	string value = 1;
-}
-// DICOM Tag: (0028,0302)
-message RecognizableVisualFeatures {
-	string value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
-}
-// DICOM Tag: (0020,9311)
-message DimensionOrganizationType {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0088,0130)
-message StorageMediaFileSetID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2135)
-message EventCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,9073)
-message AcquisitionDuration {
-	double value = 1;
-}
-// DICOM Tag: (0028,1053)
-message RescaleSlope {
+// DICOM Tag: (0028,1052)
+message RescaleIntercept {
 	float value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
 }
 // DICOM Tag: (0008,1140)
 message ReferencedImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,1101)
-message RedPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0018,5010)
-message TransducerData {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,9801)
-message DepthsOfFocus {
-	repeated double value = 1;
-}
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
+// DICOM Tag: (0018,9073)
+message AcquisitionDuration {
+	double value = 1;
 }
 message EnhancedUSImageModule {
-	RetrieveURL retrieve_url = 1;
-	MAC mac = 2;
-	SourceImageSequence source_image_sequence = 3;
-	ContextGroupLocalVersion context_group_local_version = 4;
-	AnatomicRegionSequence anatomic_region_sequence = 5;
-	LargestImagePixelValue largest_image_pixel_value = 6;
-	RescaleIntercept rescale_intercept = 7;
-	MACCalculationTransferSyntaxUID mac_calculation_transfer_syntax_uid = 8;
+	NumberOfStages number_of_stages = 1;
+	StageNumber stage_number = 2;
+	SliceProgressionDirection slice_progression_direction = 3;
+	EventTimerSequence event_timer_sequence = 4;
+	TransducerGeometryCodeSequence transducer_geometry_code_sequence = 5;
+	SamplesPerPixel samples_per_pixel = 6;
+	LossyImageCompression lossy_image_compression = 7;
+	StageCodeSequence stage_code_sequence = 8;
 	BurnedInAnnotation burned_in_annotation = 9;
-	PhotometricInterpretation photometric_interpretation = 10;
-	Signature signature = 11;
-	EventTimeOffset event_time_offset = 12;
-	ICCProfile icc_profile = 13;
-	LossyImageCompression lossy_image_compression = 14;
-	ReferencedRawDataSequence referenced_raw_data_sequence = 15;
-	PixelAspectRatio pixel_aspect_ratio = 16;
-	StorageMediaFileSetUID storage_media_file_set_uid = 17;
-	StageNumber stage_number = 18;
-	ReferencedSOPClassUID referenced_sop_class_uid = 19;
-	CodeValue code_value = 20;
-	ReferencedSOPSequence referenced_sop_sequence = 21;
-	ReferencedDigitalSignatureSequence referenced_digital_signature_sequence = 22;
-	ViewCodeSequence view_code_sequence = 23;
-	Rows rows = 24;
-	HighBit high_bit = 25;
-	PixelRepresentation pixel_representation = 26;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 27;
-	BoneThermalIndex bone_thermal_index = 28;
-	Columns columns = 29;
-	SmallestImagePixelValue smallest_image_pixel_value = 30;
-	ContextUID context_uid = 31;
-	DigitalSignatureUID digital_signature_uid = 32;
-	ViewModifierCodeSequence view_modifier_code_sequence = 33;
-	AnatomicRegionModifierSequence anatomic_region_modifier_sequence = 34;
-	IconImageSequence icon_image_sequence = 35;
-	SamplesPerPixel samples_per_pixel = 36;
-	PresentationLUTShape presentation_lut_shape = 37;
-	ReferencedSeriesSequence referenced_series_sequence = 38;
-	PlanarConfiguration planar_configuration = 39;
-	EquivalentCodeSequence equivalent_code_sequence = 40;
-	RetrieveAETitle retrieve_ae_title = 41;
-	DataElementsSigned data_elements_signed = 42;
-	ColorSpace color_space = 43;
-	ProcessingFunction processing_function = 44;
-	ReferencedFrameNumber referenced_frame_number = 45;
-	LongCodeValue long_code_value = 46;
-	ReferencedSOPInstanceMACSequence referenced_sop_instance_mac_sequence = 47;
-	EventTimerSequence event_timer_sequence = 48;
-	TransducerScanPatternCodeSequence transducer_scan_pattern_code_sequence = 49;
-	DepthOfScanField depth_of_scan_field = 50;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 51;
-	CodingSchemeDesignator coding_scheme_designator = 52;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 53;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 54;
-	CodeMeaning code_meaning = 55;
-	NumberOfStages number_of_stages = 56;
-	MechanicalIndex mechanical_index = 57;
-	SoftTissueThermalIndex soft_tissue_thermal_index = 58;
-	EventTimerNames event_timer_names = 59;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 60;
-	LossyImageCompressionMethod lossy_image_compression_method = 61;
-	ContextGroupVersion context_group_version = 62;
-	MACAlgorithm mac_algorithm = 63;
-	SliceProgressionDirection slice_progression_direction = 64;
-	RecognizableVisualFeatures recognizable_visual_features = 65;
-	ImageType image_type = 66;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 67;
-	URNCodeValue urn_code_value = 68;
-	MappingResource mapping_resource = 69;
-	MappingResourceName mapping_resource_name = 70;
-	StorageMediaFileSetID storage_media_file_set_id = 71;
-	EventCodeSequence event_code_sequence = 72;
-	BitsAllocated bits_allocated = 73;
-	DimensionOrganizationType dimension_organization_type = 74;
-	RescaleSlope rescale_slope = 75;
-	MappingResourceUID mapping_resource_uid = 76;
-	ReferencedImageSequence referenced_image_sequence = 77;
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 78;
-	TransducerData transducer_data = 79;
-	DepthsOfFocus depths_of_focus = 80;
-	BitsStored bits_stored = 81;
-	AcquisitionDuration acquisition_duration = 82;
-	PrimaryAnatomicStructureModifierSequence primary_anatomic_structure_modifier_sequence = 83;
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 84;
-	CranialThermalIndex cranial_thermal_index = 85;
-	CodingSchemeVersion coding_scheme_version = 86;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 87;
+	MechanicalIndex mechanical_index = 10;
+	BoneThermalIndex bone_thermal_index = 11;
+	DepthsOfFocus depths_of_focus = 12;
+	BitsAllocated bits_allocated = 13;
+	SourceImageSequence source_image_sequence = 14;
+	HighBit high_bit = 15;
+	PixelRepresentation pixel_representation = 16;
+	AcquisitionDateTime acquisition_datetime = 17;
+	PresentationLUTShape presentation_lut_shape = 18;
+	RescaleSlope rescale_slope = 19;
+	ReferencedRawDataSequence referenced_raw_data_sequence = 20;
+	ImageType image_type = 21;
+	BitsStored bits_stored = 22;
+	ReferencedInstanceSequence referenced_instance_sequence = 23;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 24;
+	ProcessingFunction processing_function = 25;
+	SoftTissueThermalIndex soft_tissue_thermal_index = 26;
+	ViewCodeSequence view_code_sequence = 27;
+	IconImageSequence icon_image_sequence = 28;
+	TransducerBeamSteeringCodeSequence transducer_beam_steering_code_sequence = 29;
+	CranialThermalIndex cranial_thermal_index = 30;
+	PositionMeasuringDeviceUsed position_measuring_device_used = 31;
+	AnatomicRegionSequence anatomic_region_sequence = 32;
+	RescaleIntercept rescale_intercept = 33;
+	ReferencedImageSequence referenced_image_sequence = 34;
+	AcquisitionDuration acquisition_duration = 35;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 36;
+	DepthOfScanField depth_of_scan_field = 37;
+	PhotometricInterpretation photometric_interpretation = 38;
+	TransducerApplicationCodeSequence transducer_application_code_sequence = 39;
+	RecognizableVisualFeatures recognizable_visual_features = 40;
+	TransducerData transducer_data = 41;
+	TransducerScanPatternCodeSequence transducer_scan_pattern_code_sequence = 42;
+	DimensionOrganizationType dimension_organization_type = 43;
+	LossyImageCompressionMethod lossy_image_compression_method = 44;
 }

@@ -2,101 +2,28 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.2.html#table_C.8.22-2
 syntax = "proto3";
 
-// DICOM Tag: (0018,9720)
-message TerminationDensityThreshold {
-	double value = 1;
-}
-// DICOM Tag: (0018,9724)
-message TerminationRespiratoryTriggerCountThreshold {
-	double value = 1;
-}
-// DICOM Tag: (0018,9726)
-message TransverseDetectorSeparation {
-	double value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0054,1210)
-message CoincidenceWindowWidth {
-	float value = 1;
-}
-// DICOM Tag: (0018,9755)
-message TimeOfFlightInformationUsed {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
 // DICOM Tag: (0018,0073)
 message AcquisitionStartCondition {
 	string value = 1;
 }
-// DICOM Tag: (0018,9717)
-message StartCardiacTriggerCountThreshold {
-	double value = 1;
-}
-// DICOM Tag: (0018,9723)
-message TerminationCardiacTriggerCountThreshold {
-	double value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0054,0500)
-message SliceProgressionDirection {
-	string value = 1;
-}
-// DICOM Tag: (0018,9715)
-message StartDensityThreshold {
+// DICOM Tag: (0018,9716)
+message StartRelativeDensityDifferenceThreshold {
 	double value = 1;
 }
 // DICOM Tag: (0018,9721)
 message TerminationRelativeDensityThreshold {
 	double value = 1;
 }
-// DICOM Tag: (0018,9722)
-message TerminationTimeThreshold {
+// DICOM Tag: (0018,9724)
+message TerminationRespiratoryTriggerCountThreshold {
 	double value = 1;
 }
-// DICOM Tag: (0054,0220)
-message ViewCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0054,0202)
+message TypeOfDetectorMotion {
 	string value = 1;
 }
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,9716)
-message StartRelativeDensityDifferenceThreshold {
-	double value = 1;
-}
-// DICOM Tag: (0018,9725)
-message DetectorGeometry {
+// DICOM Tag: (0018,1181)
+message CollimatorType {
 	string value = 1;
 }
 // DICOM Tag: (0054,0013)
@@ -104,107 +31,103 @@ message EnergyWindowRangeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0054,0015)
-message EnergyWindowUpperLimit {
+// DICOM Tag: (0018,9722)
+message TerminationTimeThreshold {
+	double value = 1;
+}
+// DICOM Tag: (0018,9726)
+message TransverseDetectorSeparation {
+	double value = 1;
+}
+// DICOM Tag: (0018,9727)
+message AxialDetectorDimension {
+	double value = 1;
+}
+// DICOM Tag: (0054,1210)
+message CoincidenceWindowWidth {
 	float value = 1;
 }
 // DICOM Tag: (0018,1134)
 message TableMotion {
 	string value = 1;
 }
-// DICOM Tag: (0018,9718)
-message StartRespiratoryTriggerCountThreshold {
-	double value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0054,0220)
+message ViewCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0054,0222)
-message ViewModifierCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,0071)
-message AcquisitionTerminationCondition {
-	string value = 1;
-}
-// DICOM Tag: (0018,9727)
-message AxialDetectorDimension {
-	double value = 1;
-}
-// DICOM Tag: (0018,1181)
-message CollimatorType {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
 }
 // DICOM Tag: (0054,0501)
 message ScanProgressionDirection {
 	string value = 1;
 }
+// DICOM Tag: (0018,9717)
+message StartCardiacTriggerCountThreshold {
+	double value = 1;
+}
 // DICOM Tag: (0018,9719)
 message TerminationCountsThreshold {
 	double value = 1;
 }
-// DICOM Tag: (0054,0202)
-message TypeOfDetectorMotion {
+// DICOM Tag: (0018,9723)
+message TerminationCardiacTriggerCountThreshold {
+	double value = 1;
+}
+// DICOM Tag: (0018,9755)
+message TimeOfFlightInformationUsed {
 	string value = 1;
 }
-// DICOM Tag: (0054,0014)
-message EnergyWindowLowerLimit {
-	float value = 1;
+// DICOM Tag: (300A,012C)
+message IsocenterPosition {
+	repeated float value = 1;
 }
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0018,9715)
+message StartDensityThreshold {
+	double value = 1;
+}
+// DICOM Tag: (0018,9718)
+message StartRespiratoryTriggerCountThreshold {
+	double value = 1;
+}
+// DICOM Tag: (0018,0071)
+message AcquisitionTerminationCondition {
+	string value = 1;
+}
+// DICOM Tag: (0018,9720)
+message TerminationDensityThreshold {
+	double value = 1;
+}
+// DICOM Tag: (0018,9725)
+message DetectorGeometry {
+	string value = 1;
+}
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
 	string value = 1;
 }
 message EnhancedPETAcquisitionModule {
-	TerminationCountsThreshold termination_counts_threshold = 1;
-	TypeOfDetectorMotion type_of_detector_motion = 2;
-	EnergyWindowLowerLimit energy_window_lower_limit = 3;
-	URNCodeValue urn_code_value = 4;
-	TerminationDensityThreshold termination_density_threshold = 5;
-	TerminationRespiratoryTriggerCountThreshold termination_respiratory_trigger_count_threshold = 6;
-	TransverseDetectorSeparation transverse_detector_separation = 7;
-	ContextGroupVersion context_group_version = 8;
-	CoincidenceWindowWidth coincidence_window_width = 9;
-	TimeOfFlightInformationUsed time_of_flight_information_used = 10;
-	CodeMeaning code_meaning = 11;
-	MappingResource mapping_resource = 12;
-	AcquisitionStartCondition acquisition_start_condition = 13;
-	StartCardiacTriggerCountThreshold start_cardiac_trigger_count_threshold = 14;
-	TerminationCardiacTriggerCountThreshold termination_cardiac_trigger_count_threshold = 15;
-	MappingResourceName mapping_resource_name = 16;
-	SliceProgressionDirection slice_progression_direction = 17;
-	MappingResourceUID mapping_resource_uid = 18;
-	StartDensityThreshold start_density_threshold = 19;
-	TerminationRelativeDensityThreshold termination_relative_density_threshold = 20;
-	TerminationTimeThreshold termination_time_threshold = 21;
-	ViewCodeSequence view_code_sequence = 22;
-	CodingSchemeDesignator coding_scheme_designator = 23;
-	CodingSchemeVersion coding_scheme_version = 24;
-	ContextUID context_uid = 25;
-	ContextGroupLocalVersion context_group_local_version = 26;
-	StartRelativeDensityDifferenceThreshold start_relative_density_difference_threshold = 27;
-	DetectorGeometry detector_geometry = 28;
-	EnergyWindowRangeSequence energy_window_range_sequence = 29;
-	EnergyWindowUpperLimit energy_window_upper_limit = 30;
-	TableMotion table_motion = 31;
-	StartRespiratoryTriggerCountThreshold start_respiratory_trigger_count_threshold = 32;
-	EquivalentCodeSequence equivalent_code_sequence = 33;
-	ViewModifierCodeSequence view_modifier_code_sequence = 34;
-	AcquisitionTerminationCondition acquisition_termination_condition = 35;
-	AxialDetectorDimension axial_detector_dimension = 36;
-	CollimatorType collimator_type = 37;
-	CodeValue code_value = 38;
-	LongCodeValue long_code_value = 39;
-	ScanProgressionDirection scan_progression_direction = 40;
+	StartCardiacTriggerCountThreshold start_cardiac_trigger_count_threshold = 1;
+	TerminationCountsThreshold termination_counts_threshold = 2;
+	TerminationCardiacTriggerCountThreshold termination_cardiac_trigger_count_threshold = 3;
+	TimeOfFlightInformationUsed time_of_flight_information_used = 4;
+	IsocenterPosition isocenter_position = 5;
+	StartDensityThreshold start_density_threshold = 6;
+	StartRespiratoryTriggerCountThreshold start_respiratory_trigger_count_threshold = 7;
+	AcquisitionTerminationCondition acquisition_termination_condition = 8;
+	TerminationDensityThreshold termination_density_threshold = 9;
+	DetectorGeometry detector_geometry = 10;
+	SliceProgressionDirection slice_progression_direction = 11;
+	AcquisitionStartCondition acquisition_start_condition = 12;
+	StartRelativeDensityDifferenceThreshold start_relative_density_difference_threshold = 13;
+	TerminationRelativeDensityThreshold termination_relative_density_threshold = 14;
+	TerminationRespiratoryTriggerCountThreshold termination_respiratory_trigger_count_threshold = 15;
+	TypeOfDetectorMotion type_of_detector_motion = 16;
+	CollimatorType collimator_type = 17;
+	EnergyWindowRangeSequence energy_window_range_sequence = 18;
+	TerminationTimeThreshold termination_time_threshold = 19;
+	TransverseDetectorSeparation transverse_detector_separation = 20;
+	AxialDetectorDimension axial_detector_dimension = 21;
+	CoincidenceWindowWidth coincidence_window_width = 22;
+	TableMotion table_motion = 23;
+	ViewCodeSequence view_code_sequence = 24;
+	ScanProgressionDirection scan_progression_direction = 25;
 }

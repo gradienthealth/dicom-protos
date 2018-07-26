@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.html#table_C.8.27.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0068)
-message PresentationIntentType {
-	string value = 1;
-}
 // DICOM Tag: (0008,0060)
 message Modality {
 	string value = 1;
@@ -23,15 +15,13 @@ message ReferencedPerformedProcedureStepSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
+// DICOM Tag: (0008,0068)
+message PresentationIntentType {
 	string value = 1;
 }
 message IntravascularOCTSeriesModule {
 	Modality modality = 1;
 	SeriesNumber series_number = 2;
 	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
-	ReferencedSOPClassUID referenced_sop_class_uid = 4;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 5;
-	PresentationIntentType presentation_intent_type = 6;
+	PresentationIntentType presentation_intent_type = 4;
 }

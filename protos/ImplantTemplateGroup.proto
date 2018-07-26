@@ -2,8 +2,8 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.3.html#table_C.29.3-1
 syntax = "proto3";
 
-// DICOM Tag: (0078,0001)
-message ImplantTemplateGroupName {
+// DICOM Tag: (0078,0010)
+message ImplantTemplateGroupDescription {
 	string value = 1;
 }
 // DICOM Tag: (0078,0028)
@@ -11,91 +11,30 @@ message ImplantTemplateGroupTargetAnatomySequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
+// DICOM Tag: (0078,00B0)
+message ImplantTemplateGroupVariationDimensionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0078,0001)
+message ImplantTemplateGroupName {
+	string value = 1;
 }
 // DICOM Tag: (0078,0020)
 message ImplantTemplateGroupIssuer {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
+// DICOM Tag: (0078,0024)
+message ImplantTemplateGroupVersion {
 	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0078,0050)
-message ThreeDImplantTemplateGroupMemberMatchingPoint {
-	repeated double value = 1;
-}
-// DICOM Tag: (0068,6440)
-message ReferencedHPGLDocumentID {
-	uint32 value = 1;
 }
 // DICOM Tag: (0078,0026)
 message ReplacedImplantTemplateGroupSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0078,0010)
-message ImplantTemplateGroupDescription {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0078,0070)
-message ImplantTemplateGroupMemberMatching2DCoordinatesSequence {
+// DICOM Tag: (0078,002A)
+message ImplantTemplateGroupMembersSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -103,49 +42,14 @@ message ImplantTemplateGroupMemberMatching2DCoordinatesSequence {
 message EffectiveDateTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0078,0024)
-message ImplantTemplateGroupVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0078,0060)
-message ThreeDImplantTemplateGroupMemberMatchingAxes {
-	repeated double value = 1;
-}
-// DICOM Tag: (0078,0090)
-message TwoDImplantTemplateGroupMemberMatchingPoint {
-	repeated double value = 1;
-}
 message ImplantTemplateGroupModule {
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 1;
-	AnatomicRegionSequence anatomic_region_sequence = 2;
-	MappingResource mapping_resource = 3;
-	MappingResourceUID mapping_resource_uid = 4;
-	CodeValue code_value = 5;
-	URNCodeValue urn_code_value = 6;
-	ImplantTemplateGroupDescription implant_template_group_description = 7;
-	CodingSchemeDesignator coding_scheme_designator = 8;
-	ImplantTemplateGroupMemberMatching2DCoordinatesSequence implant_template_group_member_matching_2d_coordinates_sequence = 9;
-	EffectiveDateTime effective_datetime = 10;
-	ImplantTemplateGroupVersion implant_template_group_version = 11;
-	ContextUID context_uid = 12;
-	ThreeDImplantTemplateGroupMemberMatchingAxes 3d_implant_template_group_member_matching_axes = 13;
-	TwoDImplantTemplateGroupMemberMatchingPoint 2d_implant_template_group_member_matching_point = 14;
-	ImplantTemplateGroupName implant_template_group_name = 15;
-	ImplantTemplateGroupTargetAnatomySequence implant_template_group_target_anatomy_sequence = 16;
-	ContextGroupVersion context_group_version = 17;
-	ImplantTemplateGroupIssuer implant_template_group_issuer = 18;
-	LongCodeValue long_code_value = 19;
-	EquivalentCodeSequence equivalent_code_sequence = 20;
-	MappingResourceName mapping_resource_name = 21;
-	ThreeDImplantTemplateGroupMemberMatchingPoint 3d_implant_template_group_member_matching_point = 22;
-	ReferencedHPGLDocumentID referenced_hpgl_document_id = 23;
-	ReplacedImplantTemplateGroupSequence replaced_implant_template_group_sequence = 24;
-	ReferencedSOPClassUID referenced_sop_class_uid = 25;
-	CodingSchemeVersion coding_scheme_version = 26;
-	CodeMeaning code_meaning = 27;
-	ContextGroupLocalVersion context_group_local_version = 28;
+	ReplacedImplantTemplateGroupSequence replaced_implant_template_group_sequence = 1;
+	ImplantTemplateGroupMembersSequence implant_template_group_members_sequence = 2;
+	EffectiveDateTime effective_datetime = 3;
+	ImplantTemplateGroupIssuer implant_template_group_issuer = 4;
+	ImplantTemplateGroupVersion implant_template_group_version = 5;
+	ImplantTemplateGroupVariationDimensionSequence implant_template_group_variation_dimension_sequence = 6;
+	ImplantTemplateGroupName implant_template_group_name = 7;
+	ImplantTemplateGroupDescription implant_template_group_description = 8;
+	ImplantTemplateGroupTargetAnatomySequence implant_template_group_target_anatomy_sequence = 9;
 }

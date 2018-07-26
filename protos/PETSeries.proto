@@ -2,130 +2,90 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.html#table_C.8-60
 syntax = "proto3";
 
-// DICOM Tag: (0054,1104)
-message DetectorLinesOfResponseUsed {
-	string value = 1;
-}
-// DICOM Tag: (0018,0073)
-message AcquisitionStartCondition {
-	string value = 1;
-}
-// DICOM Tag: (0018,1180)
-message CollimatorGridName {
-	string value = 1;
-}
-// DICOM Tag: (0054,1203)
-message DetectorElementSize {
-	repeated float value = 1;
-}
-// DICOM Tag: (0054,0081)
-message NumberOfSlices {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,1210)
-message ConvolutionKernel {
-	repeated string value = 1;
-}
-// DICOM Tag: (0054,1103)
-message ReconstructionMethod {
-	string value = 1;
-}
-// DICOM Tag: (0054,0202)
-message TypeOfDetectorMotion {
-	string value = 1;
-}
-// DICOM Tag: (0054,0014)
-message EnergyWindowLowerLimit {
-	float value = 1;
-}
-// DICOM Tag: (0054,0015)
-message EnergyWindowUpperLimit {
-	float value = 1;
-}
-// DICOM Tag: (0054,0101)
-message NumberOfTimeSlices {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,1149)
-message FieldOfViewDimensions {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0018,1120)
-message GantryDetectorTilt {
-	float value = 1;
-}
-// DICOM Tag: (0018,1100)
-message ReconstructionDiameter {
-	float value = 1;
-}
-// DICOM Tag: (0018,0074)
-message AcquisitionStartConditionData {
+// DICOM Tag: (0054,1202)
+message TransverseMash {
 	int32 value = 1;
-}
-// DICOM Tag: (0008,0021)
-message SeriesDate {
-	string value = 1;
-}
-// DICOM Tag: (0028,0051)
-message CorrectedImage {
-	repeated string value = 1;
-}
-// DICOM Tag: (0054,1102)
-message DecayCorrection {
-	string value = 1;
-}
-// DICOM Tag: (0018,1181)
-message CollimatorType {
-	string value = 1;
-}
-// DICOM Tag: (0008,0031)
-message SeriesTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0054,1000)
-message SeriesType {
-	repeated string value = 1;
 }
 // DICOM Tag: (0054,1004)
 message ReprojectionMethod {
 	string value = 1;
 }
-// DICOM Tag: (0054,1220)
-message SecondaryCountsType {
-	repeated string value = 1;
-}
-// DICOM Tag: (0054,1001)
-message Units {
-	string value = 1;
-}
-// DICOM Tag: (0054,1100)
-message RandomsCorrectionMethod {
+// DICOM Tag: (0054,1101)
+message AttenuationCorrectionMethod {
 	string value = 1;
 }
 // DICOM Tag: (0054,1105)
 message ScatterCorrectionMethod {
 	string value = 1;
 }
-// DICOM Tag: (0054,1202)
-message TransverseMash {
+// DICOM Tag: (0018,0071)
+message AcquisitionTerminationCondition {
+	string value = 1;
+}
+// DICOM Tag: (0008,0031)
+message SeriesTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0054,1002)
+message CountsSource {
+	string value = 1;
+}
+// DICOM Tag: (0054,1104)
+message DetectorLinesOfResponseUsed {
+	string value = 1;
+}
+// DICOM Tag: (0018,1210)
+message ConvolutionKernel {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,0075)
+message AcquisitionTerminationConditionData {
 	int32 value = 1;
+}
+// DICOM Tag: (0054,0101)
+message NumberOfTimeSlices {
+	uint32 value = 1;
+}
+// DICOM Tag: (0054,0081)
+message NumberOfSlices {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,1100)
+message ReconstructionDiameter {
+	float value = 1;
 }
 // DICOM Tag: (0054,0013)
 message EnergyWindowRangeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0054,1002)
-message CountsSource {
+// DICOM Tag: (0054,1220)
+message SecondaryCountsType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0054,0061)
+message NumberOfRRIntervals {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,1149)
+message FieldOfViewDimensions {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0054,1200)
+message AxialAcceptance {
+	float value = 1;
+}
+// DICOM Tag: (0054,1100)
+message RandomsCorrectionMethod {
 	string value = 1;
 }
-// DICOM Tag: (0018,0075)
-message AcquisitionTerminationConditionData {
-	int32 value = 1;
+// DICOM Tag: (0054,1102)
+message DecayCorrection {
+	string value = 1;
 }
-// DICOM Tag: (0054,1201)
-message AxialMash {
-	repeated int32 value = 1;
+// DICOM Tag: (0054,1103)
+message ReconstructionMethod {
+	string value = 1;
 }
 // DICOM Tag: (0018,1147)
 message FieldOfViewShape {
@@ -135,9 +95,29 @@ message FieldOfViewShape {
 message GantryDetectorSlew {
 	float value = 1;
 }
-// DICOM Tag: (0054,1200)
-message AxialAcceptance {
-	float value = 1;
+// DICOM Tag: (0054,1001)
+message Units {
+	string value = 1;
+}
+// DICOM Tag: (0054,0071)
+message NumberOfTimeSlots {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0051)
+message CorrectedImage {
+	repeated string value = 1;
+}
+// DICOM Tag: (0054,1201)
+message AxialMash {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,0074)
+message AcquisitionStartConditionData {
+	int32 value = 1;
+}
+// DICOM Tag: (0054,1203)
+message DetectorElementSize {
+	repeated float value = 1;
 }
 // DICOM Tag: (0054,1210)
 message CoincidenceWindowWidth {
@@ -147,66 +127,76 @@ message CoincidenceWindowWidth {
 message SUVType {
 	string value = 1;
 }
-// DICOM Tag: (0054,0071)
-message NumberOfTimeSlots {
-	uint32 value = 1;
+// DICOM Tag: (0054,1000)
+message SeriesType {
+	repeated string value = 1;
 }
-// DICOM Tag: (0054,1101)
-message AttenuationCorrectionMethod {
+// DICOM Tag: (0018,0073)
+message AcquisitionStartCondition {
 	string value = 1;
 }
-// DICOM Tag: (0054,0061)
-message NumberOfRRIntervals {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,0071)
-message AcquisitionTerminationCondition {
+// DICOM Tag: (0054,0202)
+message TypeOfDetectorMotion {
 	string value = 1;
 }
 // DICOM Tag: (0054,0501)
 message ScanProgressionDirection {
 	string value = 1;
 }
+// DICOM Tag: (0018,1180)
+message CollimatorGridName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0021)
+message SeriesDate {
+	string value = 1;
+}
+// DICOM Tag: (0018,1120)
+message GantryDetectorTilt {
+	float value = 1;
+}
+// DICOM Tag: (0018,1181)
+message CollimatorType {
+	string value = 1;
+}
 message PETSeriesModule {
-	ReprojectionMethod reprojection_method = 1;
-	CollimatorType collimator_type = 2;
-	SeriesTime series_time = 3;
-	SeriesType series_type = 4;
-	ScatterCorrectionMethod scatter_correction_method = 5;
-	SecondaryCountsType secondary_counts_type = 6;
-	Units units = 7;
-	RandomsCorrectionMethod randoms_correction_method = 8;
+	GantryDetectorSlew gantry_detector_slew = 1;
+	Units units = 2;
+	NumberOfTimeSlots number_of_time_slots = 3;
+	CorrectedImage corrected_image = 4;
+	RandomsCorrectionMethod randoms_correction_method = 5;
+	DecayCorrection decay_correction = 6;
+	ReconstructionMethod reconstruction_method = 7;
+	FieldOfViewShape field_of_view_shape = 8;
 	AxialMash axial_mash = 9;
-	TransverseMash transverse_mash = 10;
-	EnergyWindowRangeSequence energy_window_range_sequence = 11;
-	CountsSource counts_source = 12;
-	AcquisitionTerminationConditionData acquisition_termination_condition_data = 13;
-	AttenuationCorrectionMethod attenuation_correction_method = 14;
-	FieldOfViewShape field_of_view_shape = 15;
-	GantryDetectorSlew gantry_detector_slew = 16;
-	AxialAcceptance axial_acceptance = 17;
-	CoincidenceWindowWidth coincidence_window_width = 18;
-	SUVType suv_type = 19;
-	NumberOfTimeSlots number_of_time_slots = 20;
-	ScanProgressionDirection scan_progression_direction = 21;
-	NumberOfRRIntervals number_of_r_r_intervals = 22;
-	AcquisitionTerminationCondition acquisition_termination_condition = 23;
-	ReconstructionMethod reconstruction_method = 24;
-	DetectorLinesOfResponseUsed detector_lines_of_response_used = 25;
-	AcquisitionStartCondition acquisition_start_condition = 26;
-	CollimatorGridName collimator_grid_name = 27;
-	DetectorElementSize detector_element_size = 28;
-	NumberOfSlices number_of_slices = 29;
-	ConvolutionKernel convolution_kernel = 30;
-	GantryDetectorTilt gantry_detector_tilt = 31;
-	TypeOfDetectorMotion type_of_detector_motion = 32;
-	EnergyWindowLowerLimit energy_window_lower_limit = 33;
-	EnergyWindowUpperLimit energy_window_upper_limit = 34;
-	NumberOfTimeSlices number_of_time_slices = 35;
+	SUVType suv_type = 10;
+	SeriesType series_type = 11;
+	AcquisitionStartCondition acquisition_start_condition = 12;
+	AcquisitionStartConditionData acquisition_start_condition_data = 13;
+	DetectorElementSize detector_element_size = 14;
+	CoincidenceWindowWidth coincidence_window_width = 15;
+	TypeOfDetectorMotion type_of_detector_motion = 16;
+	ScanProgressionDirection scan_progression_direction = 17;
+	SeriesDate series_date = 18;
+	GantryDetectorTilt gantry_detector_tilt = 19;
+	CollimatorType collimator_type = 20;
+	CollimatorGridName collimator_grid_name = 21;
+	ReprojectionMethod reprojection_method = 22;
+	AttenuationCorrectionMethod attenuation_correction_method = 23;
+	ScatterCorrectionMethod scatter_correction_method = 24;
+	TransverseMash transverse_mash = 25;
+	SeriesTime series_time = 26;
+	CountsSource counts_source = 27;
+	DetectorLinesOfResponseUsed detector_lines_of_response_used = 28;
+	AcquisitionTerminationCondition acquisition_termination_condition = 29;
+	NumberOfTimeSlices number_of_time_slices = 30;
+	NumberOfSlices number_of_slices = 31;
+	ReconstructionDiameter reconstruction_diameter = 32;
+	ConvolutionKernel convolution_kernel = 33;
+	AcquisitionTerminationConditionData acquisition_termination_condition_data = 34;
+	NumberOfRRIntervals number_of_r_r_intervals = 35;
 	FieldOfViewDimensions field_of_view_dimensions = 36;
-	DecayCorrection decay_correction = 37;
-	ReconstructionDiameter reconstruction_diameter = 38;
-	AcquisitionStartConditionData acquisition_start_condition_data = 39;
-	SeriesDate series_date = 40;
-	CorrectedImage corrected_image = 41;
+	AxialAcceptance axial_acceptance = 37;
+	EnergyWindowRangeSequence energy_window_range_sequence = 38;
+	SecondaryCountsType secondary_counts_type = 39;
 }

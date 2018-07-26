@@ -7,21 +7,6 @@ message CalculatedDoseReferenceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (3008,0072)
-message CalculatedDoseReferenceNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (3008,0076)
-message CalculatedDoseReferenceDoseValue {
-	float value = 1;
-}
-// DICOM Tag: (3008,0074)
-message CalculatedDoseReferenceDescription {
-	string value = 1;
-}
 message CalculatedDoseReferenceRecordModule {
-	CalculatedDoseReferenceNumber calculated_dose_reference_number = 1;
-	CalculatedDoseReferenceDoseValue calculated_dose_reference_dose_value = 2;
-	CalculatedDoseReferenceDescription calculated_dose_reference_description = 3;
-	CalculatedDoseReferenceSequence calculated_dose_reference_sequence = 4;
+	CalculatedDoseReferenceSequence calculated_dose_reference_sequence = 1;
 }

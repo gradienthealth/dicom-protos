@@ -11,10 +11,6 @@ message SurfaceModelDescriptionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0068,6380)
-message SurfaceModelLabel {
-	string value = 1;
-}
 // DICOM Tag: (0068,6390)
 message SurfaceModelScalingFactor {
 	double value = 1;
@@ -22,6 +18,5 @@ message SurfaceModelScalingFactor {
 message GenericImplantTemplate3DModelsModule {
 	ImplantTemplate3DModelSurfaceNumber implant_template_3d_model_surface_number = 1;
 	SurfaceModelDescriptionSequence surface_model_description_sequence = 2;
-	SurfaceModelLabel surface_model_label = 3;
-	SurfaceModelScalingFactor surface_model_scaling_factor = 4;
+	SurfaceModelScalingFactor surface_model_scaling_factor = 3;
 }

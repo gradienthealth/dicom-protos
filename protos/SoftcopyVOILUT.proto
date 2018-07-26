@@ -7,68 +7,6 @@ message SoftcopyVOILUTSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0028,3002)
-message LUTDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,3003)
-message LUTExplanation {
-	string value = 1;
-}
-// DICOM Tag: (0028,1055)
-message WindowCenterWidthExplanation {
-	repeated string value = 1;
-}
-// DICOM Tag: (0028,3006)
-message LUTData {
-	repeated bytes value = 1;
-}
-// DICOM Tag: (0028,1050)
-message WindowCenter {
-	repeated float value = 1;
-}
-// DICOM Tag: (0028,1051)
-message WindowWidth {
-	repeated float value = 1;
-}
-// DICOM Tag: (0028,1056)
-message VOILUTFunction {
-	string value = 1;
-}
-// DICOM Tag: (0008,1140)
-message ReferencedImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0028,3010)
-message VOILUTSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message SoftcopyVOILUTModule {
 	SoftcopyVOILUTSequence softcopy_voi_lut_sequence = 1;
-	ReferencedSOPClassUID referenced_sop_class_uid = 2;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 3;
-	LUTDescriptor lut_descriptor = 4;
-	LUTExplanation lut_explanation = 5;
-	WindowCenterWidthExplanation window_center_&_width_explanation = 6;
-	LUTData lut_data = 7;
-	WindowCenter window_center = 8;
-	WindowWidth window_width = 9;
-	VOILUTFunction voi_lut_function = 10;
-	ReferencedImageSequence referenced_image_sequence = 11;
-	ReferencedFrameNumber referenced_frame_number = 12;
-	VOILUTSequence voi_lut_sequence = 13;
 }

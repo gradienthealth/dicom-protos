@@ -2,6 +2,18 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.8.html#table_C.13-8
 syntax = "proto3";
 
+// DICOM Tag: (2100,0020)
+message ExecutionStatus {
+	string value = 1;
+}
+// DICOM Tag: (2100,0030)
+message ExecutionStatusInfo {
+	string value = 1;
+}
+// DICOM Tag: (2100,0040)
+message CreationDate {
+	string value = 1;
+}
 // DICOM Tag: (2100,0050)
 message CreationTime {
 	int64 value = 1;
@@ -18,24 +30,12 @@ message PrinterName {
 message Originator {
 	string value = 1;
 }
-// DICOM Tag: (2100,0020)
-message ExecutionStatus {
-	string value = 1;
-}
-// DICOM Tag: (2100,0030)
-message ExecutionStatusInfo {
-	string value = 1;
-}
-// DICOM Tag: (2100,0040)
-message CreationDate {
-	string value = 1;
-}
 message PrintJobModule {
-	Originator originator = 1;
-	ExecutionStatus execution_status = 2;
-	ExecutionStatusInfo execution_status_info = 3;
-	CreationDate creation_date = 4;
-	CreationTime creation_time = 5;
-	PrintPriority print_priority = 6;
-	PrinterName printer_name = 7;
+	ExecutionStatusInfo execution_status_info = 1;
+	CreationDate creation_date = 2;
+	CreationTime creation_time = 3;
+	PrintPriority print_priority = 4;
+	PrinterName printer_name = 5;
+	Originator originator = 6;
+	ExecutionStatus execution_status = 7;
 }

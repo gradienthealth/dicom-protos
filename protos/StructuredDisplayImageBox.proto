@@ -2,47 +2,8 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.17.html#table_C.11.17-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
 // DICOM Tag: (0072,0422)
 message StructuredDisplayImageBoxSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0072,0302)
-message ImageBoxNumber {
-	uint32 value = 1;
-}
-// DICOM Tag: (0072,0308)
-message ImageBoxTileVerticalDimension {
-	uint32 value = 1;
-}
-// DICOM Tag: (0072,0717)
-message DisplaySetHorizontalJustification {
-	string value = 1;
-}
-// DICOM Tag: (0008,2143)
-message StopTrim {
-	int32 value = 1;
-}
-// DICOM Tag: (0072,0427)
-message ReferencedFirstFrameSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1140)
-message ReferencedImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,9237)
-message ReferencedPresentationStateSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -51,87 +12,7 @@ message ImageBoxSynchronizationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0072,0432)
-message SynchronizedImageBoxList {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0072,0304)
-message ImageBoxLayoutType {
-	string value = 1;
-}
-// DICOM Tag: (0072,0306)
-message ImageBoxTileHorizontalDimension {
-	uint32 value = 1;
-}
-// DICOM Tag: (0072,0718)
-message DisplaySetVerticalJustification {
-	string value = 1;
-}
-// DICOM Tag: (0008,2142)
-message StartTrim {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0072,0108)
-message DisplayEnvironmentSpatialPosition {
-	repeated double value = 1;
-}
-// DICOM Tag: (0018,1244)
-message PreferredPlaybackSequencing {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,0042)
-message InitialCineRunState {
-	string value = 1;
-}
-// DICOM Tag: (0072,0320)
-message ImageBoxOverlapPriority {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,2144)
-message RecommendedDisplayFrameRate {
-	int32 value = 1;
-}
-// DICOM Tag: (0072,0330)
-message CineRelativeToRealTime {
-	double value = 1;
-}
-// DICOM Tag: (0008,1134)
-message ReferencedStereometricInstanceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0072,0434)
-message TypeOfSynchronization {
-	string value = 1;
-}
 message StructuredDisplayImageBoxModule {
-	SynchronizedImageBoxList synchronized_image_box_list = 1;
-	ImageBoxLayoutType image_box_layout_type = 2;
-	ImageBoxTileHorizontalDimension image_box_tile_horizontal_dimension = 3;
-	DisplaySetVerticalJustification display_set_vertical_justification = 4;
-	StartTrim start_trim = 5;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 6;
-	DisplayEnvironmentSpatialPosition display_environment_spatial_position = 7;
-	PreferredPlaybackSequencing preferred_playback_sequencing = 8;
-	InitialCineRunState initial_cine_run_state = 9;
-	ImageBoxOverlapPriority image_box_overlap_priority = 10;
-	RecommendedDisplayFrameRate recommended_display_frame_rate = 11;
-	CineRelativeToRealTime cine_relative_to_real_time = 12;
-	ReferencedStereometricInstanceSequence referenced_stereometric_instance_sequence = 13;
-	TypeOfSynchronization type_of_synchronization = 14;
-	ReferencedSOPClassUID referenced_sop_class_uid = 15;
-	ReferencedFrameNumber referenced_frame_number = 16;
-	StructuredDisplayImageBoxSequence structured_display_image_box_sequence = 17;
-	ImageBoxNumber image_box_number = 18;
-	ImageBoxTileVerticalDimension image_box_tile_vertical_dimension = 19;
-	DisplaySetHorizontalJustification display_set_horizontal_justification = 20;
-	StopTrim stop_trim = 21;
-	ReferencedFirstFrameSequence referenced_first_frame_sequence = 22;
-	ReferencedImageSequence referenced_image_sequence = 23;
-	ReferencedPresentationStateSequence referenced_presentation_state_sequence = 24;
-	ImageBoxSynchronizationSequence image_box_synchronization_sequence = 25;
+	StructuredDisplayImageBoxSequence structured_display_image_box_sequence = 1;
+	ImageBoxSynchronizationSequence image_box_synchronization_sequence = 2;
 }

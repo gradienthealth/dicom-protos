@@ -2,86 +2,46 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.12.html#table_C.4-12
 syntax = "proto3";
 
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0008,0090)
+message ReferringPhysicianName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
+// DICOM Tag: (0008,0096)
+message ReferringPhysicianIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0032,1033)
+message RequestingService {
 	string value = 1;
 }
 // DICOM Tag: (0040,2016)
 message PlacerOrderNumberImagingServiceRequest {
 	string value = 1;
 }
-// DICOM Tag: (0040,0027)
-message OrderFillerIdentifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0040,2011)
+message OrderCallbackTelecomInformation {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
+// DICOM Tag: (0038,0010)
+message AdmissionID {
 	string value = 1;
-}
-// DICOM Tag: (0032,1034)
-message RequestingServiceCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,0051)
 message IssuerOfAccessionNumberSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,2011)
-message OrderCallbackTelecomInformation {
+// DICOM Tag: (0040,2004)
+message IssueDateOfImagingServiceRequest {
 	string value = 1;
 }
-// DICOM Tag: (0040,1101)
-message PersonIdentificationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
+// DICOM Tag: (0040,2017)
+message FillerOrderNumberImagingServiceRequest {
 	string value = 1;
-}
-// DICOM Tag: (0040,0026)
-message OrderPlacerIdentifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0040,2008)
 message OrderEnteredBy {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0082)
-message InstitutionCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
 	string value = 1;
 }
 // DICOM Tag: (0040,2009)
@@ -92,52 +52,17 @@ message OrderEntererLocation {
 message OrderCallbackPhoneNumber {
 	string value = 1;
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
+// DICOM Tag: (0040,2400)
+message ImagingServiceRequestComments {
 	string value = 1;
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
+// DICOM Tag: (0032,1031)
+message RequestingPhysicianIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,1102)
-message PersonAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,0090)
-message ReferringPhysicianName {
-	string value = 1;
-}
-// DICOM Tag: (0032,1033)
-message RequestingService {
-	string value = 1;
-}
-// DICOM Tag: (0040,0031)
-message LocalNamespaceEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0040,2004)
-message IssueDateOfImagingServiceRequest {
-	string value = 1;
-}
-// DICOM Tag: (0038,0010)
-message AdmissionID {
-	string value = 1;
-}
-// DICOM Tag: (0032,1032)
-message RequestingPhysician {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0040,1104)
-message PersonTelecomInformation {
-	string value = 1;
-}
-// DICOM Tag: (0008,0096)
-message ReferringPhysicianIdentificationSequence {
+// DICOM Tag: (0032,1034)
+message RequestingServiceCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -145,24 +70,21 @@ message ReferringPhysicianIdentificationSequence {
 message AccessionNumber {
 	string value = 1;
 }
-// DICOM Tag: (0040,0033)
-message UniversalEntityIDType {
-	string value = 1;
-}
 // DICOM Tag: (0040,2005)
 message IssueTimeOfImagingServiceRequest {
 	int64 value = 1;
 }
-// DICOM Tag: (0040,2017)
-message FillerOrderNumberImagingServiceRequest {
+// DICOM Tag: (0040,0027)
+message OrderFillerIdentifierSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0032,1032)
+message RequestingPhysician {
 	string value = 1;
 }
-// DICOM Tag: (0040,2400)
-message ImagingServiceRequestComments {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0040,0026)
+message OrderPlacerIdentifierSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -171,66 +93,26 @@ message IssuerOfAdmissionIDSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,1103)
-message PersonTelephoneNumbers {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0040,0032)
-message UniversalEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0032,1031)
-message RequestingPhysicianIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message ImagingServiceRequestModule {
-	RequestingPhysicianIdentificationSequence requesting_physician_identification_sequence = 1;
-	PersonTelephoneNumbers person's_telephone_numbers = 2;
-	InstitutionName institution_name = 3;
-	UniversalEntityID universal_entity_id = 4;
-	OrderFillerIdentifierSequence order_filler_identifier_sequence = 5;
-	CodingSchemeDesignator coding_scheme_designator = 6;
-	LongCodeValue long_code_value = 7;
-	URNCodeValue urn_code_value = 8;
-	MappingResource mapping_resource = 9;
-	PlacerOrderNumberImagingServiceRequest placer_order_number___imaging_service_request = 10;
-	PersonIdentificationCodeSequence person_identification_code_sequence = 11;
-	CodingSchemeVersion coding_scheme_version = 12;
-	RequestingServiceCodeSequence requesting_service_code_sequence = 13;
-	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 14;
-	OrderCallbackTelecomInformation order_callback_telecom_information = 15;
-	CodeMeaning code_meaning = 16;
-	MappingResourceUID mapping_resource_uid = 17;
-	OrderPlacerIdentifierSequence order_placer_identifier_sequence = 18;
-	OrderEnteredBy order_entered_by = 19;
-	ContextUID context_uid = 20;
-	ContextGroupLocalVersion context_group_local_version = 21;
-	InstitutionCodeSequence institution_code_sequence = 22;
-	CodeValue code_value = 23;
-	ContextGroupVersion context_group_version = 24;
-	InstitutionAddress institution_address = 25;
-	OrderEntererLocation order_enterer's_location = 26;
-	OrderCallbackPhoneNumber order_callback_phone_number = 27;
-	LocalNamespaceEntityID local_namespace_entity_id = 28;
-	IssueDateOfImagingServiceRequest issue_date_of_imaging_service_request = 29;
-	AdmissionID admission_id = 30;
-	RequestingPhysician requesting_physician = 31;
-	MappingResourceName mapping_resource_name = 32;
-	PersonAddress person's_address = 33;
-	ReferringPhysicianName referring_physician's_name = 34;
-	RequestingService requesting_service = 35;
-	UniversalEntityIDType universal_entity_id_type = 36;
-	IssueTimeOfImagingServiceRequest issue_time_of_imaging_service_request = 37;
-	FillerOrderNumberImagingServiceRequest filler_order_number___imaging_service_request = 38;
-	ImagingServiceRequestComments imaging_service_request_comments = 39;
-	EquivalentCodeSequence equivalent_code_sequence = 40;
-	PersonTelecomInformation person's_telecom_information = 41;
-	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 42;
-	AccessionNumber accession_number = 43;
-	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 44;
+	OrderEntererLocation order_enterer's_location = 1;
+	OrderCallbackPhoneNumber order_callback_phone_number = 2;
+	ImagingServiceRequestComments imaging_service_request_comments = 3;
+	RequestingPhysicianIdentificationSequence requesting_physician_identification_sequence = 4;
+	RequestingServiceCodeSequence requesting_service_code_sequence = 5;
+	AccessionNumber accession_number = 6;
+	IssueTimeOfImagingServiceRequest issue_time_of_imaging_service_request = 7;
+	OrderFillerIdentifierSequence order_filler_identifier_sequence = 8;
+	RequestingPhysician requesting_physician = 9;
+	OrderPlacerIdentifierSequence order_placer_identifier_sequence = 10;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 11;
+	ReferringPhysicianName referring_physician's_name = 12;
+	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 13;
+	RequestingService requesting_service = 14;
+	PlacerOrderNumberImagingServiceRequest placer_order_number___imaging_service_request = 15;
+	OrderCallbackTelecomInformation order_callback_telecom_information = 16;
+	AdmissionID admission_id = 17;
+	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 18;
+	IssueDateOfImagingServiceRequest issue_date_of_imaging_service_request = 19;
+	FillerOrderNumberImagingServiceRequest filler_order_number___imaging_service_request = 20;
+	OrderEnteredBy order_entered_by = 21;
 }

@@ -11,6 +11,6 @@ message BulkMotionSignalSource {
 	string value = 1;
 }
 message BulkMotionSynchronizationModule {
-	BulkMotionCompensationTechnique bulk_motion_compensation_technique = 1;
-	BulkMotionSignalSource bulk_motion_signal_source = 2;
+	BulkMotionSignalSource bulk_motion_signal_source = 1;
+	BulkMotionCompensationTechnique bulk_motion_compensation_technique = 2;
 }

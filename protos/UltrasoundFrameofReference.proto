@@ -6,6 +6,10 @@ syntax = "proto3";
 message TableFrameOfReferenceUID {
 	string value = 1;
 }
+// DICOM Tag: (0020,930A)
+message VolumeToTableMappingMatrix {
+	repeated double value = 1;
+}
 // DICOM Tag: (0020,9312)
 message VolumeFrameOfReferenceUID {
 	string value = 1;
@@ -18,14 +22,25 @@ message UltrasoundAcquisitionGeometry {
 message ApexPosition {
 	repeated double value = 1;
 }
+// DICOM Tag: (0020,930B)
+message VolumeToTransducerRelationship {
+	string value = 1;
+}
 // DICOM Tag: (0020,9309)
 message VolumeToTransducerMappingMatrix {
 	repeated double value = 1;
 }
+// DICOM Tag: (0020,930C)
+message PatientFrameOfReferenceSource {
+	string value = 1;
+}
 message UltrasoundFrameofReferenceModule {
-	TableFrameOfReferenceUID table_frame_of_reference_uid = 1;
-	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 2;
-	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 3;
-	ApexPosition apex_position = 4;
-	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 5;
+	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 1;
+	PatientFrameOfReferenceSource patient_frame_of_reference_source = 2;
+	TableFrameOfReferenceUID table_frame_of_reference_uid = 3;
+	VolumeToTableMappingMatrix volume_to_table_mapping_matrix = 4;
+	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 5;
+	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 6;
+	ApexPosition apex_position = 7;
+	VolumeToTransducerRelationship volume_to_transducer_relationship = 8;
 }

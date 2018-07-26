@@ -2,78 +2,30 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.24.2.html#table_C.24-2
 syntax = "proto3";
 
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
+// DICOM Tag: (0028,0302)
+message RecognizableVisualFeatures {
 	string value = 1;
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0400,0403)
-message ReferencedSOPInstanceMACSequence {
+// DICOM Tag: (0040,A043)
+message ConceptNameCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0088,0130)
-message StorageMediaFileSetID {
-	string value = 1;
-}
-// DICOM Tag: (0400,0402)
-message ReferencedDigitalSignatureSequence {
+// DICOM Tag: (0040,A525)
+message IdenticalDocumentsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0042,0011)
-message EncapsulatedDocument {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0400,0100)
-message DigitalSignatureUID {
-	string value = 1;
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
+// DICOM Tag: (0008,0023)
+message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0400,0010)
-message MACCalculationTransferSyntaxUID {
-	string value = 1;
-}
-// DICOM Tag: (0042,0012)
-message MIMETypeOfEncapsulatedDocument {
+// DICOM Tag: (0040,E001)
+message HL7InstanceIdentifier {
 	string value = 1;
 }
 // DICOM Tag: (0042,0014)
@@ -84,129 +36,66 @@ message ListOfMIMETypes {
 message BurnedInAnnotation {
 	string value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0088,0140)
-message StorageMediaFileSetUID {
-	string value = 1;
-}
-// DICOM Tag: (0042,0010)
-message DocumentTitle {
-	string value = 1;
-}
-// DICOM Tag: (0008,1190)
-message RetrieveURL {
-	string value = 1;
-}
-// DICOM Tag: (0400,0015)
-message MACAlgorithm {
-	string value = 1;
-}
-// DICOM Tag: (0400,0020)
-message DataElementsSigned {
-	repeated string value = 1;
-}
-// DICOM Tag: (0400,0404)
-message MAC {
-	string value = 1;
-}
-// DICOM Tag: (0028,0302)
-message RecognizableVisualFeatures {
-	string value = 1;
-}
 // DICOM Tag: (0042,0013)
 message SourceInstanceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
+// DICOM Tag: (0042,0011)
+message EncapsulatedDocument {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
 }
-// DICOM Tag: (0008,1115)
-message ReferencedSeriesSequence {
+// DICOM Tag: (0040,A360)
+message PredecessorDocumentsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0054)
-message RetrieveAETitle {
-	repeated string value = 1;
-}
-// DICOM Tag: (0400,0120)
-message Signature {
+// DICOM Tag: (0042,0010)
+message DocumentTitle {
 	string value = 1;
 }
-// DICOM Tag: (0008,0023)
-message ContentDate {
+// DICOM Tag: (0040,E008)
+message DocumentClassCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,A493)
+message VerificationFlag {
 	string value = 1;
+}
+// DICOM Tag: (0042,0012)
+message MIMETypeOfEncapsulatedDocument {
+	string value = 1;
+}
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0020,0062)
 message ImageLaterality {
 	string value = 1;
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message EncapsulatedDocumentModule {
-	CodeMeaning code_meaning = 1;
-	ContextGroupVersion context_group_version = 2;
-	ReferencedSOPInstanceMACSequence referenced_sop_instance_mac_sequence = 3;
-	EncapsulatedDocument encapsulated_document = 4;
-	ContentTime content_time = 5;
-	CodingSchemeDesignator coding_scheme_designator = 6;
-	StorageMediaFileSetID storage_media_file_set_id = 7;
-	ReferencedDigitalSignatureSequence referenced_digital_signature_sequence = 8;
-	ContextGroupLocalVersion context_group_local_version = 9;
-	DigitalSignatureUID digital_signature_uid = 10;
-	CodingSchemeVersion coding_scheme_version = 11;
-	URNCodeValue urn_code_value = 12;
-	ContextUID context_uid = 13;
-	MappingResourceUID mapping_resource_uid = 14;
-	ListOfMIMETypes list_of_mime_types = 15;
-	InstanceNumber instance_number = 16;
-	MappingResourceName mapping_resource_name = 17;
-	MACCalculationTransferSyntaxUID mac_calculation_transfer_syntax_uid = 18;
-	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 19;
-	StorageMediaFileSetUID storage_media_file_set_uid = 20;
-	BurnedInAnnotation burned_in_annotation = 21;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 22;
-	EquivalentCodeSequence equivalent_code_sequence = 23;
-	MappingResource mapping_resource = 24;
-	MAC mac = 25;
-	DocumentTitle document_title = 26;
-	RetrieveURL retrieve_url = 27;
-	MACAlgorithm mac_algorithm = 28;
-	DataElementsSigned data_elements_signed = 29;
-	ReferencedSeriesSequence referenced_series_sequence = 30;
-	RetrieveAETitle retrieve_ae_title = 31;
-	Signature signature = 32;
-	RecognizableVisualFeatures recognizable_visual_features = 33;
-	SourceInstanceSequence source_instance_sequence = 34;
-	CodeValue code_value = 35;
-	LongCodeValue long_code_value = 36;
-	ReferencedSOPSequence referenced_sop_sequence = 37;
-	ContentDate content_date = 38;
-	ImageLaterality image_laterality = 39;
-	ReferencedSOPClassUID referenced_sop_class_uid = 40;
+	AcquisitionDateTime acquisition_datetime = 1;
+	PredecessorDocumentsSequence predecessor_documents_sequence = 2;
+	EncapsulatedDocument encapsulated_document = 3;
+	ContentTime content_time = 4;
+	ImageLaterality image_laterality = 5;
+	DocumentTitle document_title = 6;
+	DocumentClassCodeSequence document_class_code_sequence = 7;
+	VerificationFlag verification_flag = 8;
+	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 9;
+	InstanceNumber instance_number = 10;
+	ContentDate content_date = 11;
+	RecognizableVisualFeatures recognizable_visual_features = 12;
+	ConceptNameCodeSequence concept_name_code_sequence = 13;
+	IdenticalDocumentsSequence identical_documents_sequence = 14;
+	BurnedInAnnotation burned_in_annotation = 15;
+	SourceInstanceSequence source_instance_sequence = 16;
+	HL7InstanceIdentifier hl7_instance_identifier = 17;
+	ListOfMIMETypes list_of_mime_types = 18;
 }

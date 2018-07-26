@@ -7,26 +7,11 @@ message NominalScreenDefinitionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0072,0104)
-message NumberOfVerticalPixels {
-	uint32 value = 1;
-}
-// DICOM Tag: (0072,0106)
-message NumberOfHorizontalPixels {
-	uint32 value = 1;
-}
-// DICOM Tag: (0072,0108)
-message DisplayEnvironmentSpatialPosition {
-	repeated double value = 1;
-}
 // DICOM Tag: (0072,0100)
 message NumberOfScreens {
 	uint32 value = 1;
 }
 message HangingProtocolEnvironmentModule {
-	NumberOfVerticalPixels number_of_vertical_pixels = 1;
-	NumberOfHorizontalPixels number_of_horizontal_pixels = 2;
-	DisplayEnvironmentSpatialPosition display_environment_spatial_position = 3;
-	NumberOfScreens number_of_screens = 4;
-	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 5;
+	NumberOfScreens number_of_screens = 1;
+	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 2;
 }

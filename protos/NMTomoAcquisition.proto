@@ -2,66 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.12.html#table_C.8-12
 syntax = "proto3";
 
+// DICOM Tag: (0054,0202)
+message TypeOfDetectorMotion {
+	string value = 1;
+}
 // DICOM Tag: (0054,0052)
 message RotationInformationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0054,0200)
-message StartAngle {
-	float value = 1;
-}
-// DICOM Tag: (0018,1143)
-message ScanArc {
-	float value = 1;
-}
-// DICOM Tag: (0018,1242)
-message ActualFrameDuration {
-	int32 value = 1;
-}
-// DICOM Tag: (0054,0053)
-message NumberOfFramesInRotation {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,1131)
-message TableTraverse {
-	float value = 1;
-}
-// DICOM Tag: (0018,1144)
-message AngularStep {
-	float value = 1;
-}
-// DICOM Tag: (0018,1140)
-message RotationDirection {
-	string value = 1;
-}
-// DICOM Tag: (0018,1142)
-message RadialPosition {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1110)
-message DistanceSourceToDetector {
-	float value = 1;
-}
-// DICOM Tag: (0018,1130)
-message TableHeight {
-	float value = 1;
-}
-// DICOM Tag: (0054,0202)
-message TypeOfDetectorMotion {
-	string value = 1;
-}
 message NMTomoAcquisitionModule {
-	ScanArc scan_arc = 1;
-	ActualFrameDuration actual_frame_duration = 2;
-	NumberOfFramesInRotation number_of_frames_in_rotation = 3;
-	TableTraverse table_traverse = 4;
-	RotationInformationSequence rotation_information_sequence = 5;
-	StartAngle start_angle = 6;
-	RadialPosition radial_position = 7;
-	DistanceSourceToDetector distance_source_to_detector = 8;
-	TableHeight table_height = 9;
-	TypeOfDetectorMotion type_of_detector_motion = 10;
-	AngularStep angular_step = 11;
-	RotationDirection rotation_direction = 12;
+	RotationInformationSequence rotation_information_sequence = 1;
+	TypeOfDetectorMotion type_of_detector_motion = 2;
 }

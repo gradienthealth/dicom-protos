@@ -2,18 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.8.html#table_C.8.25.8-1
 syntax = "proto3";
 
-// DICOM Tag: (0022,0009)
-message CylinderAxis {
-	float value = 1;
-}
-// DICOM Tag: (0046,0034)
-message VerticalPrismPower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0038)
-message LensSegmentType {
-	string value = 1;
-}
 // DICOM Tag: (0046,0012)
 message LensDescription {
 	string value = 1;
@@ -22,36 +10,6 @@ message LensDescription {
 message RightLensSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0146)
-message SpherePower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0032)
-message HorizontalPrismBase {
-	string value = 1;
-}
-// DICOM Tag: (0046,0042)
-message ChannelWidth {
-	double value = 1;
-}
-// DICOM Tag: (0046,0018)
-message CylinderSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0100)
-message AddNearSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0106)
-message ViewingDistance {
-	double value = 1;
-}
-// DICOM Tag: (0046,0040)
-message OpticalTransmittance {
-	double value = 1;
 }
 // DICOM Tag: (0046,0015)
 message LeftLensSequence {
@@ -63,51 +21,9 @@ message UnspecifiedLateralityLensSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0147)
-message CylinderPower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0104)
-message AddPower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0101)
-message AddIntermediateSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0028)
-message PrismSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0030)
-message HorizontalPrismPower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0036)
-message VerticalPrismBase {
-	string value = 1;
-}
 message LensometryMeasurementsModule {
-	VerticalPrismBase vertical_prism_base = 1;
-	UnspecifiedLateralityLensSequence unspecified_laterality_lens_sequence = 2;
-	CylinderPower cylinder_power = 3;
-	AddPower add_power = 4;
-	AddIntermediateSequence add_intermediate_sequence = 5;
-	PrismSequence prism_sequence = 6;
-	HorizontalPrismPower horizontal_prism_power = 7;
-	CylinderAxis cylinder_axis = 8;
-	VerticalPrismPower vertical_prism_power = 9;
-	LensSegmentType lens_segment_type = 10;
-	LensDescription lens_description = 11;
-	RightLensSequence right_lens_sequence = 12;
-	SpherePower sphere_power = 13;
-	HorizontalPrismBase horizontal_prism_base = 14;
-	ChannelWidth channel_width = 15;
-	CylinderSequence cylinder_sequence = 16;
-	AddNearSequence add_near_sequence = 17;
-	ViewingDistance viewing_distance = 18;
-	OpticalTransmittance optical_transmittance = 19;
-	LeftLensSequence left_lens_sequence = 20;
+	UnspecifiedLateralityLensSequence unspecified_laterality_lens_sequence = 1;
+	LensDescription lens_description = 2;
+	RightLensSequence right_lens_sequence = 3;
+	LeftLensSequence left_lens_sequence = 4;
 }
