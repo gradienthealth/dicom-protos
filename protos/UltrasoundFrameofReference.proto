@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.2.html#table_C.8.24.2-1
 syntax = "proto3";
 
-// DICOM Tag: (0020,9313)
-message TableFrameOfReferenceUID {
-	string value = 1;
-}
 // DICOM Tag: (0020,930A)
 message VolumeToTableMappingMatrix {
 	repeated double value = 1;
@@ -34,13 +30,17 @@ message VolumeToTransducerMappingMatrix {
 message PatientFrameOfReferenceSource {
 	string value = 1;
 }
+// DICOM Tag: (0020,9313)
+message TableFrameOfReferenceUID {
+	string value = 1;
+}
 message UltrasoundFrameofReferenceModule {
-	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 1;
-	PatientFrameOfReferenceSource patient_frame_of_reference_source = 2;
-	TableFrameOfReferenceUID table_frame_of_reference_uid = 3;
-	VolumeToTableMappingMatrix volume_to_table_mapping_matrix = 4;
-	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 5;
-	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 6;
-	ApexPosition apex_position = 7;
-	VolumeToTransducerRelationship volume_to_transducer_relationship = 8;
+	TableFrameOfReferenceUID table_frame_of_reference_uid = 1;
+	VolumeToTableMappingMatrix volume_to_table_mapping_matrix = 2;
+	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 3;
+	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 4;
+	ApexPosition apex_position = 5;
+	VolumeToTransducerRelationship volume_to_transducer_relationship = 6;
+	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 7;
+	PatientFrameOfReferenceSource patient_frame_of_reference_source = 8;
 }

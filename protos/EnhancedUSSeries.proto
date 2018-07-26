@@ -21,8 +21,8 @@ message PerformedProtocolType {
 	string value = 1;
 }
 message EnhancedUSSeriesModule {
-	Modality modality = 1;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
-	PerformedProtocolCodeSequence performed_protocol_code_sequence = 3;
-	PerformedProtocolType performed_protocol_type = 4;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 1;
+	PerformedProtocolType performed_protocol_type = 2;
+	Modality modality = 3;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 4;
 }

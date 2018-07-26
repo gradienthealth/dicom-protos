@@ -2,15 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html#table_C.11-2
 syntax = "proto3";
 
-// DICOM Tag: (0028,3010)
-message VOILUTSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,1050)
-message WindowCenter {
-	repeated float value = 1;
-}
 // DICOM Tag: (0028,1051)
 message WindowWidth {
 	repeated float value = 1;
@@ -23,10 +14,19 @@ message WindowCenterWidthExplanation {
 message VOILUTFunction {
 	string value = 1;
 }
+// DICOM Tag: (0028,3010)
+message VOILUTSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,1050)
+message WindowCenter {
+	repeated float value = 1;
+}
 message VOILUTModule {
-	WindowCenterWidthExplanation window_center_&_width_explanation = 1;
-	VOILUTFunction voi_lut_function = 2;
-	VOILUTSequence voi_lut_sequence = 3;
-	WindowCenter window_center = 4;
-	WindowWidth window_width = 5;
+	VOILUTFunction voi_lut_function = 1;
+	VOILUTSequence voi_lut_sequence = 2;
+	WindowCenter window_center = 3;
+	WindowWidth window_width = 4;
+	WindowCenterWidthExplanation window_center_&_width_explanation = 5;
 }

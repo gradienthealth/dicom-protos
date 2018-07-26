@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.26.html#table_C.8.8.26-1
 syntax = "proto3";
 
-// DICOM Tag: (300C,0022)
-message ReferencedFractionGroupNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (300A,0078)
-message NumberOfFractionsPlanned {
-	int32 value = 1;
-}
 // DICOM Tag: (300A,00B3)
 message PrimaryDosimeterUnit {
 	string value = 1;
@@ -18,6 +10,14 @@ message PrimaryDosimeterUnit {
 message TreatmentSessionIonBeamSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (300C,0022)
+message ReferencedFractionGroupNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (300A,0078)
+message NumberOfFractionsPlanned {
+	int32 value = 1;
 }
 message RTIonBeamsSessionRecordModule {
 	ReferencedFractionGroupNumber referenced_fraction_group_number = 1;

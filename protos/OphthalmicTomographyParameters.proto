@@ -2,40 +2,28 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.9.html#table_C.8.17.9-1
 syntax = "proto3";
 
-// DICOM Tag: (0022,0035)
-message DepthSpatialResolution {
-	float value = 1;
-}
-// DICOM Tag: (0018,7004)
-message DetectorType {
-	string value = 1;
-}
-// DICOM Tag: (0022,0055)
-message IlluminationWaveLength {
-	float value = 1;
-}
-// DICOM Tag: (0022,0056)
-message IlluminationPower {
-	float value = 1;
-}
 // DICOM Tag: (0022,0036)
 message MaximumDepthDistortion {
-	float value = 1;
-}
-// DICOM Tag: (0022,0037)
-message AlongScanSpatialResolution {
 	float value = 1;
 }
 // DICOM Tag: (0022,0038)
 message MaximumAlongScanDistortion {
 	float value = 1;
 }
-// DICOM Tag: (0022,0048)
-message AcrossScanSpatialResolution {
+// DICOM Tag: (0022,0056)
+message IlluminationPower {
 	float value = 1;
 }
-// DICOM Tag: (0022,0049)
-message MaximumAcrossScanDistortion {
+// DICOM Tag: (0022,0057)
+message IlluminationBandwidth {
+	float value = 1;
+}
+// DICOM Tag: (0022,0035)
+message DepthSpatialResolution {
+	float value = 1;
+}
+// DICOM Tag: (0022,0037)
+message AlongScanSpatialResolution {
 	float value = 1;
 }
 // DICOM Tag: (0022,0015)
@@ -48,21 +36,33 @@ message LightPathFilterTypeStackCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0022,0057)
-message IlluminationBandwidth {
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
+}
+// DICOM Tag: (0022,0055)
+message IlluminationWaveLength {
+	float value = 1;
+}
+// DICOM Tag: (0022,0048)
+message AcrossScanSpatialResolution {
+	float value = 1;
+}
+// DICOM Tag: (0022,0049)
+message MaximumAcrossScanDistortion {
 	float value = 1;
 }
 message OphthalmicTomographyParametersModule {
 	LightPathFilterTypeStackCodeSequence light_path_filter_type_stack_code_sequence = 1;
-	IlluminationBandwidth illumination_bandwidth = 2;
-	MaximumDepthDistortion maximum_depth_distortion = 3;
-	AlongScanSpatialResolution along_scan_spatial_resolution = 4;
-	MaximumAlongScanDistortion maximum_along_scan_distortion = 5;
-	AcrossScanSpatialResolution across_scan_spatial_resolution = 6;
-	MaximumAcrossScanDistortion maximum_across_scan_distortion = 7;
+	DetectorType detector_type = 2;
+	IlluminationWaveLength illumination_wave_length = 3;
+	IlluminationPower illumination_power = 4;
+	IlluminationBandwidth illumination_bandwidth = 5;
+	DepthSpatialResolution depth_spatial_resolution = 6;
+	AlongScanSpatialResolution along_scan_spatial_resolution = 7;
 	AcquisitionDeviceTypeCodeSequence acquisition_device_type_code_sequence = 8;
-	IlluminationWaveLength illumination_wave_length = 9;
-	IlluminationPower illumination_power = 10;
-	DepthSpatialResolution depth_spatial_resolution = 11;
-	DetectorType detector_type = 12;
+	MaximumAcrossScanDistortion maximum_across_scan_distortion = 9;
+	AcrossScanSpatialResolution across_scan_spatial_resolution = 10;
+	MaximumAlongScanDistortion maximum_along_scan_distortion = 11;
+	MaximumDepthDistortion maximum_depth_distortion = 12;
 }

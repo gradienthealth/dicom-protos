@@ -7,14 +7,18 @@ message AlternateContentDescriptionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0072,0102)
-message NominalScreenDefinitionSequence {
+// DICOM Tag: (0070,0083)
+message PresentationCreationTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0088,0200)
+message IconImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,0082)
-message PresentationCreationDate {
-	string value = 1;
+// DICOM Tag: (0072,0420)
+message StructuredDisplayBackgroundCIELabValue {
+	repeated uint32 value = 1;
 }
 // DICOM Tag: (0072,0008)
 message HangingProtocolCreator {
@@ -28,25 +32,17 @@ message ContentLabel {
 message ContentDescription {
 	string value = 1;
 }
-// DICOM Tag: (0070,0084)
-message ContentCreatorName {
-	string value = 1;
-}
-// DICOM Tag: (0072,0421)
-message EmptyImageBoxCIELabValue {
-	repeated uint32 value = 1;
-}
 // DICOM Tag: (0072,0100)
 message NumberOfScreens {
 	uint32 value = 1;
 }
-// DICOM Tag: (0088,0200)
-message IconImageSequence {
+// DICOM Tag: (0072,0102)
+message NominalScreenDefinitionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0072,0420)
-message StructuredDisplayBackgroundCIELabValue {
+// DICOM Tag: (0072,0421)
+message EmptyImageBoxCIELabValue {
 	repeated uint32 value = 1;
 }
 // DICOM Tag: (0072,0002)
@@ -57,35 +53,39 @@ message HangingProtocolName {
 message InstanceNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0040,A043)
-message ConceptNameCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0070,0086)
 message ContentCreatorIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,0083)
-message PresentationCreationTime {
-	int64 value = 1;
+// DICOM Tag: (0040,A043)
+message ConceptNameCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0084)
+message ContentCreatorName {
+	string value = 1;
+}
+// DICOM Tag: (0070,0082)
+message PresentationCreationDate {
+	string value = 1;
 }
 message StructuredDisplayModule {
-	ContentDescription content_description = 1;
-	ContentCreatorName content_creator's_name = 2;
-	EmptyImageBoxCIELabValue empty_image_box_cielab_value = 3;
-	ContentLabel content_label = 4;
-	ConceptNameCodeSequence concept_name_code_sequence = 5;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 6;
-	PresentationCreationTime presentation_creation_time = 7;
-	NumberOfScreens number_of_screens = 8;
-	IconImageSequence icon_image_sequence = 9;
-	StructuredDisplayBackgroundCIELabValue structured_display_background_cielab_value = 10;
-	HangingProtocolName hanging_protocol_name = 11;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 1;
+	PresentationCreationTime presentation_creation_time = 2;
+	IconImageSequence icon_image_sequence = 3;
+	StructuredDisplayBackgroundCIELabValue structured_display_background_cielab_value = 4;
+	ContentLabel content_label = 5;
+	ContentDescription content_description = 6;
+	NumberOfScreens number_of_screens = 7;
+	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 8;
+	EmptyImageBoxCIELabValue empty_image_box_cielab_value = 9;
+	HangingProtocolName hanging_protocol_name = 10;
+	HangingProtocolCreator hanging_protocol_creator = 11;
 	InstanceNumber instance_number = 12;
-	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 13;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 14;
-	HangingProtocolCreator hanging_protocol_creator = 15;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 13;
+	ConceptNameCodeSequence concept_name_code_sequence = 14;
+	ContentCreatorName content_creator's_name = 15;
 	PresentationCreationDate presentation_creation_date = 16;
 }

@@ -2,6 +2,15 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.11.html#table_C.8.17.11-1
 syntax = "proto3";
 
+// DICOM Tag: (0022,1513)
+message TransformationAlgorithmSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1019)
+message OphthalmicAxialLength {
+	float value = 1;
+}
 // DICOM Tag: (0022,1515)
 message OphthalmicAxialLengthMethod {
 	string value = 1;
@@ -28,22 +37,13 @@ message PrimaryAnatomicStructureSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0022,1513)
-message TransformationAlgorithmSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1019)
-message OphthalmicAxialLength {
-	float value = 1;
-}
 message WideFieldOphthalmicPhotographyStereographicProjectionModule {
-	AnatomicRegionSequence anatomic_region_sequence = 1;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
-	TransformationAlgorithmSequence transformation_algorithm_sequence = 3;
-	OphthalmicAxialLength ophthalmic_axial_length = 4;
-	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 5;
-	XCoordinatesCenterPixelViewAngle x_coordinates_center_pixel_view_angle = 6;
-	YCoordinatesCenterPixelViewAngle y_coordinates_center_pixel_view_angle = 7;
-	OphthalmicFOV ophthalmic_fov = 8;
+	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 1;
+	XCoordinatesCenterPixelViewAngle x_coordinates_center_pixel_view_angle = 2;
+	YCoordinatesCenterPixelViewAngle y_coordinates_center_pixel_view_angle = 3;
+	OphthalmicFOV ophthalmic_fov = 4;
+	AnatomicRegionSequence anatomic_region_sequence = 5;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 6;
+	TransformationAlgorithmSequence transformation_algorithm_sequence = 7;
+	OphthalmicAxialLength ophthalmic_axial_length = 8;
 }

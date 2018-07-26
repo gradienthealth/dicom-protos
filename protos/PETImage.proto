@@ -2,33 +2,33 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.4.html#table_C.8-63
 syntax = "proto3";
 
-// DICOM Tag: (0018,1060)
-message TriggerTime {
+// DICOM Tag: (0054,1321)
+message DecayFactor {
 	float value = 1;
 }
-// DICOM Tag: (0008,0022)
-message AcquisitionDate {
-	string value = 1;
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
 }
-// DICOM Tag: (0008,0032)
-message AcquisitionTime {
-	int64 value = 1;
+// DICOM Tag: (0018,1082)
+message HighRRValue {
+	int32 value = 1;
 }
-// DICOM Tag: (0054,1320)
-message SliceSensitivityFactor {
+// DICOM Tag: (0054,1322)
+message DoseCalibrationFactor {
 	float value = 1;
 }
 // DICOM Tag: (300A,012C)
 message IsocenterPosition {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
+// DICOM Tag: (0018,1063)
+message FrameTime {
+	float value = 1;
 }
-// DICOM Tag: (0018,1081)
-message LowRRValue {
-	int32 value = 1;
+// DICOM Tag: (0008,0022)
+message AcquisitionDate {
+	string value = 1;
 }
 // DICOM Tag: (0054,1310)
 message PrimaryPromptsCountsAccumulated {
@@ -38,8 +38,58 @@ message PrimaryPromptsCountsAccumulated {
 message SecondaryCountsAccumulated {
 	repeated int32 value = 1;
 }
-// DICOM Tag: (0054,1321)
-message DecayFactor {
+// DICOM Tag: (0054,0220)
+message ViewCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
+	string value = 1;
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,1052)
+message RescaleIntercept {
+	float value = 1;
+}
+// DICOM Tag: (0018,1081)
+message LowRRValue {
+	int32 value = 1;
+}
+// DICOM Tag: (0054,1300)
+message FrameReferenceTime {
+	float value = 1;
+}
+// DICOM Tag: (0028,2110)
+message LossyImageCompression {
+	string value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,1053)
+message RescaleSlope {
+	float value = 1;
+}
+// DICOM Tag: (0008,0032)
+message AcquisitionTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0054,1320)
+message SliceSensitivityFactor {
 	float value = 1;
 }
 // DICOM Tag: (0008,2218)
@@ -47,25 +97,24 @@ message AnatomicRegionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0054,0220)
-message ViewCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
+// DICOM Tag: (0054,1330)
+message ImageIndex {
+	uint32 value = 1;
 }
-// DICOM Tag: (0028,1052)
-message RescaleIntercept {
-	float value = 1;
+// DICOM Tag: (0018,1062)
+message NominalInterval {
+	int32 value = 1;
 }
-// DICOM Tag: (0018,1063)
-message FrameTime {
+// DICOM Tag: (0018,1084)
+message IntervalsRejected {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1060)
+message TriggerTime {
 	float value = 1;
 }
 // DICOM Tag: (0018,1242)
@@ -80,95 +129,46 @@ message ScatterFractionFactor {
 message DeadTimeFactor {
 	float value = 1;
 }
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,2110)
-message LossyImageCompression {
-	string value = 1;
-}
 // DICOM Tag: (0008,0008)
 message ImageType {
 	repeated string value = 1;
-}
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1053)
-message RescaleSlope {
-	float value = 1;
-}
-// DICOM Tag: (0018,1084)
-message IntervalsRejected {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1062)
-message NominalInterval {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0054,1300)
-message FrameReferenceTime {
-	float value = 1;
-}
-// DICOM Tag: (0018,1082)
-message HighRRValue {
-	int32 value = 1;
-}
-// DICOM Tag: (0054,1330)
-message ImageIndex {
-	uint32 value = 1;
 }
 // DICOM Tag: (0018,1083)
 message IntervalsAcquired {
 	int32 value = 1;
 }
-// DICOM Tag: (0054,1322)
-message DoseCalibrationFactor {
-	float value = 1;
-}
-// DICOM Tag: (0054,0500)
-message SliceProgressionDirection {
-	string value = 1;
-}
 message PETImageModule {
-	RescaleSlope rescale_slope = 1;
-	IntervalsRejected intervals_rejected = 2;
-	ImageType image_type = 3;
-	BitsStored bits_stored = 4;
-	NominalInterval nominal_interval = 5;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 6;
-	ImageIndex image_index = 7;
-	IntervalsAcquired intervals_acquired = 8;
-	DoseCalibrationFactor dose_calibration_factor = 9;
-	SliceProgressionDirection slice_progression_direction = 10;
-	FrameReferenceTime frame_reference_time = 11;
-	HighRRValue high_r_r_value = 12;
-	AcquisitionTime acquisition_time = 13;
-	SliceSensitivityFactor slice_sensitivity_factor = 14;
-	TriggerTime trigger_time = 15;
-	AcquisitionDate acquisition_date = 16;
-	IsocenterPosition isocenter_position = 17;
-	PrimaryPromptsCountsAccumulated primary_prompts_counts_accumulated = 18;
-	SecondaryCountsAccumulated secondary_counts_accumulated = 19;
-	DecayFactor decay_factor = 20;
+	IsocenterPosition isocenter_position = 1;
+	DoseCalibrationFactor dose_calibration_factor = 2;
+	HighBit high_bit = 3;
+	FrameTime frame_time = 4;
+	AcquisitionDate acquisition_date = 5;
+	PrimaryPromptsCountsAccumulated primary_prompts_counts_accumulated = 6;
+	SecondaryCountsAccumulated secondary_counts_accumulated = 7;
+	ViewCodeSequence view_code_sequence = 8;
+	SliceProgressionDirection slice_progression_direction = 9;
+	SamplesPerPixel samples_per_pixel = 10;
+	LowRRValue low_r_r_value = 11;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 12;
+	RescaleIntercept rescale_intercept = 13;
+	RescaleSlope rescale_slope = 14;
+	FrameReferenceTime frame_reference_time = 15;
+	LossyImageCompression lossy_image_compression = 16;
+	PhotometricInterpretation photometric_interpretation = 17;
+	ImageIndex image_index = 18;
+	AcquisitionTime acquisition_time = 19;
+	SliceSensitivityFactor slice_sensitivity_factor = 20;
 	AnatomicRegionSequence anatomic_region_sequence = 21;
 	BitsAllocated bits_allocated = 22;
-	LowRRValue low_r_r_value = 23;
-	RescaleIntercept rescale_intercept = 24;
-	FrameTime frame_time = 25;
-	ActualFrameDuration actual_frame_duration = 26;
-	ScatterFractionFactor scatter_fraction_factor = 27;
-	DeadTimeFactor dead_time_factor = 28;
-	ViewCodeSequence view_code_sequence = 29;
-	SamplesPerPixel samples_per_pixel = 30;
-	PhotometricInterpretation photometric_interpretation = 31;
-	HighBit high_bit = 32;
-	LossyImageCompression lossy_image_compression = 33;
+	ActualFrameDuration actual_frame_duration = 23;
+	NominalInterval nominal_interval = 24;
+	IntervalsRejected intervals_rejected = 25;
+	TriggerTime trigger_time = 26;
+	IntervalsAcquired intervals_acquired = 27;
+	ScatterFractionFactor scatter_fraction_factor = 28;
+	DeadTimeFactor dead_time_factor = 29;
+	ImageType image_type = 30;
+	HighRRValue high_r_r_value = 31;
+	DecayFactor decay_factor = 32;
+	BitsStored bits_stored = 33;
 }

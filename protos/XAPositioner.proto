@@ -2,6 +2,26 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.5.html#table_C.8-30
 syntax = "proto3";
 
+// DICOM Tag: (0018,1114)
+message EstimatedRadiographicMagnificationFactor {
+	float value = 1;
+}
+// DICOM Tag: (0018,1500)
+message PositionerMotion {
+	string value = 1;
+}
+// DICOM Tag: (0018,1111)
+message DistanceSourceToPatient {
+	float value = 1;
+}
+// DICOM Tag: (0018,1110)
+message DistanceSourceToDetector {
+	float value = 1;
+}
+// DICOM Tag: (0018,1510)
+message PositionerPrimaryAngle {
+	float value = 1;
+}
 // DICOM Tag: (0018,1511)
 message PositionerSecondaryAngle {
 	float value = 1;
@@ -14,26 +34,6 @@ message PositionerPrimaryAngleIncrement {
 message PositionerSecondaryAngleIncrement {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,1111)
-message DistanceSourceToPatient {
-	float value = 1;
-}
-// DICOM Tag: (0018,1110)
-message DistanceSourceToDetector {
-	float value = 1;
-}
-// DICOM Tag: (0018,1114)
-message EstimatedRadiographicMagnificationFactor {
-	float value = 1;
-}
-// DICOM Tag: (0018,1500)
-message PositionerMotion {
-	string value = 1;
-}
-// DICOM Tag: (0018,1510)
-message PositionerPrimaryAngle {
-	float value = 1;
-}
 // DICOM Tag: (0018,1530)
 message DetectorPrimaryAngle {
 	float value = 1;
@@ -45,12 +45,12 @@ message DetectorSecondaryAngle {
 message XAPositionerModule {
 	EstimatedRadiographicMagnificationFactor estimated_radiographic_magnification_factor = 1;
 	PositionerMotion positioner_motion = 2;
-	PositionerPrimaryAngle positioner_primary_angle = 3;
-	PositionerSecondaryAngle positioner_secondary_angle = 4;
-	PositionerPrimaryAngleIncrement positioner_primary_angle_increment = 5;
-	PositionerSecondaryAngleIncrement positioner_secondary_angle_increment = 6;
-	DistanceSourceToPatient distance_source_to_patient = 7;
-	DistanceSourceToDetector distance_source_to_detector = 8;
-	DetectorPrimaryAngle detector_primary_angle = 9;
-	DetectorSecondaryAngle detector_secondary_angle = 10;
+	DetectorPrimaryAngle detector_primary_angle = 3;
+	DetectorSecondaryAngle detector_secondary_angle = 4;
+	DistanceSourceToPatient distance_source_to_patient = 5;
+	DistanceSourceToDetector distance_source_to_detector = 6;
+	PositionerPrimaryAngle positioner_primary_angle = 7;
+	PositionerSecondaryAngle positioner_secondary_angle = 8;
+	PositionerPrimaryAngleIncrement positioner_primary_angle_increment = 9;
+	PositionerSecondaryAngleIncrement positioner_secondary_angle_increment = 10;
 }

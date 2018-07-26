@@ -15,7 +15,7 @@ message ClinicalTrialSeriesDescription {
 	string value = 1;
 }
 message ClinicalTrialSeriesModule {
-	ClinicalTrialSeriesID clinical_trial_series_id = 1;
-	ClinicalTrialSeriesDescription clinical_trial_series_description = 2;
-	ClinicalTrialCoordinatingCenterName clinical_trial_coordinating_center_name = 3;
+	ClinicalTrialCoordinatingCenterName clinical_trial_coordinating_center_name = 1;
+	ClinicalTrialSeriesID clinical_trial_series_id = 2;
+	ClinicalTrialSeriesDescription clinical_trial_series_description = 3;
 }

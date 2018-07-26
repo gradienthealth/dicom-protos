@@ -13,6 +13,6 @@ message VolumetricPresentationInputAnnotationSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message VolumetricGraphicAnnotationModule {
-	VolumetricAnnotationSequence volumetric_annotation_sequence = 1;
-	VolumetricPresentationInputAnnotationSequence volumetric_presentation_input_annotation_sequence = 2;
+	VolumetricPresentationInputAnnotationSequence volumetric_presentation_input_annotation_sequence = 1;
+	VolumetricAnnotationSequence volumetric_annotation_sequence = 2;
 }

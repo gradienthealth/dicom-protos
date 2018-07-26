@@ -2,9 +2,37 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.5.html#table_C.8.19.5-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,700E)
-message TimeOfLastDetectorCalibration {
-	int64 value = 1;
+// DICOM Tag: (0018,700A)
+message DetectorID {
+	string value = 1;
+}
+// DICOM Tag: (0018,702A)
+message DetectorManufacturerName {
+	string value = 1;
+}
+// DICOM Tag: (0018,7000)
+message DetectorConditionsNominalFlag {
+	string value = 1;
+}
+// DICOM Tag: (0018,1413)
+message DeviationIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,9430)
+message PositionOfIsocenterProjection {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
+}
+// DICOM Tag: (0018,7008)
+message DetectorMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,700C)
+message DateOfLastDetectorCalibration {
+	string value = 1;
 }
 // DICOM Tag: (0018,701A)
 message DetectorBinning {
@@ -14,33 +42,21 @@ message DetectorBinning {
 message DetectorElementSpacing {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,7026)
-message DetectorActiveDimensions {
+// DICOM Tag: (0018,7024)
+message DetectorActiveShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,9429)
+message PhysicalDetectorSize {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,7004)
-message DetectorType {
-	string value = 1;
+// DICOM Tag: (0018,7010)
+message ExposuresOnDetectorSinceLastCalibration {
+	int32 value = 1;
 }
-// DICOM Tag: (0018,7005)
-message DetectorConfiguration {
-	string value = 1;
-}
-// DICOM Tag: (0018,7000)
-message DetectorConditionsNominalFlag {
-	string value = 1;
-}
-// DICOM Tag: (0018,7028)
-message DetectorActiveOrigin {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,7006)
-message DetectorDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,7008)
-message DetectorMode {
-	string value = 1;
+// DICOM Tag: (0018,7011)
+message ExposuresOnDetectorSinceManufactured {
+	int32 value = 1;
 }
 // DICOM Tag: (0018,702B)
 message DetectorManufacturerModelName {
@@ -50,41 +66,33 @@ message DetectorManufacturerModelName {
 message Sensitivity {
 	float value = 1;
 }
-// DICOM Tag: (0018,7024)
-message DetectorActiveShape {
-	string value = 1;
+// DICOM Tag: (0018,7026)
+message DetectorActiveDimensions {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
 }
 // DICOM Tag: (0018,1411)
 message ExposureIndex {
 	float value = 1;
 }
-// DICOM Tag: (0018,1413)
-message DeviationIndex {
-	float value = 1;
-}
-// DICOM Tag: (0018,9429)
-message PhysicalDetectorSize {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,700A)
-message DetectorID {
+// DICOM Tag: (0018,7005)
+message DetectorConfiguration {
 	string value = 1;
+}
+// DICOM Tag: (0018,7006)
+message DetectorDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,700E)
+message TimeOfLastDetectorCalibration {
+	int64 value = 1;
 }
 // DICOM Tag: (0018,7012)
 message DetectorTimeSinceLastExposure {
 	float value = 1;
-}
-// DICOM Tag: (0018,9430)
-message PositionOfIsocenterProjection {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,7011)
-message ExposuresOnDetectorSinceManufactured {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,702A)
-message DetectorManufacturerName {
-	string value = 1;
 }
 // DICOM Tag: (0018,7001)
 message DetectorTemperature {
@@ -94,43 +102,35 @@ message DetectorTemperature {
 message DetectorElementPhysicalSize {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,1412)
-message TargetExposureIndex {
-	float value = 1;
-}
-// DICOM Tag: (0018,700C)
-message DateOfLastDetectorCalibration {
-	string value = 1;
-}
-// DICOM Tag: (0018,7010)
-message ExposuresOnDetectorSinceLastCalibration {
-	int32 value = 1;
+// DICOM Tag: (0018,7028)
+message DetectorActiveOrigin {
+	repeated float value = 1;
 }
 message X-RayDetectorModule {
-	DeviationIndex deviation_index = 1;
-	PhysicalDetectorSize physical_detector_size = 2;
-	DetectorID detector_id = 3;
-	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 4;
-	DetectorManufacturerModelName detector_manufacturer's_model_name = 5;
-	Sensitivity sensitivity = 6;
-	DetectorActiveShape detector_active_shape = 7;
-	ExposureIndex exposure_index = 8;
-	PositionOfIsocenterProjection position_of_isocenter_projection = 9;
-	TargetExposureIndex target_exposure_index = 10;
-	DateOfLastDetectorCalibration date_of_last_detector_calibration = 11;
-	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 12;
-	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 13;
-	DetectorManufacturerName detector_manufacturer_name = 14;
-	DetectorTemperature detector_temperature = 15;
-	DetectorElementPhysicalSize detector_element_physical_size = 16;
-	DetectorType detector_type = 17;
-	DetectorConfiguration detector_configuration = 18;
+	PhysicalDetectorSize physical_detector_size = 1;
+	PositionOfIsocenterProjection position_of_isocenter_projection = 2;
+	DetectorType detector_type = 3;
+	DetectorMode detector_mode = 4;
+	DateOfLastDetectorCalibration date_of_last_detector_calibration = 5;
+	DetectorBinning detector_binning = 6;
+	DetectorElementSpacing detector_element_spacing = 7;
+	DetectorActiveShape detector_active_shape = 8;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 9;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 10;
+	DetectorManufacturerModelName detector_manufacturer's_model_name = 11;
+	Sensitivity sensitivity = 12;
+	DetectorActiveDimensions detector_active_dimensions = 13;
+	TargetExposureIndex target_exposure_index = 14;
+	DetectorActiveOrigin detector_active_origin = 15;
+	ExposureIndex exposure_index = 16;
+	DetectorConfiguration detector_configuration = 17;
+	DetectorDescription detector_description = 18;
 	TimeOfLastDetectorCalibration time_of_last_detector_calibration = 19;
-	DetectorBinning detector_binning = 20;
-	DetectorElementSpacing detector_element_spacing = 21;
-	DetectorActiveDimensions detector_active_dimensions = 22;
-	DetectorDescription detector_description = 23;
-	DetectorMode detector_mode = 24;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 20;
+	DetectorTemperature detector_temperature = 21;
+	DetectorElementPhysicalSize detector_element_physical_size = 22;
+	DetectorID detector_id = 23;
+	DetectorManufacturerName detector_manufacturer_name = 24;
 	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 25;
-	DetectorActiveOrigin detector_active_origin = 26;
+	DeviationIndex deviation_index = 26;
 }

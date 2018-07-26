@@ -12,6 +12,6 @@ message ProcedureStepProgressInformationSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message UnifiedProcedureStepProgressInformationModule {
-	ProcedureStepProgressInformationSequence procedure_step_progress_information_sequence = 1;
-	ProcedureStepState procedure_step_state = 2;
+	ProcedureStepState procedure_step_state = 1;
+	ProcedureStepProgressInformationSequence procedure_step_progress_information_sequence = 2;
 }

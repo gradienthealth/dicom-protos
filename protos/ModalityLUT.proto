@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html#table_C.11-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,1053)
-message RescaleSlope {
-	float value = 1;
-}
-// DICOM Tag: (0028,1054)
-message RescaleType {
-	string value = 1;
-}
 // DICOM Tag: (0028,3000)
 message ModalityLUTSequence {
 	bytes value = 1;
@@ -19,9 +11,17 @@ message ModalityLUTSequence {
 message RescaleIntercept {
 	float value = 1;
 }
+// DICOM Tag: (0028,1053)
+message RescaleSlope {
+	float value = 1;
+}
+// DICOM Tag: (0028,1054)
+message RescaleType {
+	string value = 1;
+}
 message ModalityLUTModule {
-	RescaleType rescale_type = 1;
-	ModalityLUTSequence modality_lut_sequence = 2;
-	RescaleIntercept rescale_intercept = 3;
-	RescaleSlope rescale_slope = 4;
+	RescaleSlope rescale_slope = 1;
+	RescaleType rescale_type = 2;
+	ModalityLUTSequence modality_lut_sequence = 3;
+	RescaleIntercept rescale_intercept = 4;
 }

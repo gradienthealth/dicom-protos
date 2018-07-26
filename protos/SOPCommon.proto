@@ -2,102 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.html#table_C.12-1
 syntax = "proto3";
 
-// DICOM Tag: (0040,A390)
-message HL7StructuredDocumentReferenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0015)
-message InstanceCoercionDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0014)
-message InstanceCreatorUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0124)
-message MappingResourceIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9004)
-message ContentQualification {
+// DICOM Tag: (0008,0018)
+message SOPInstanceUID {
 	string value = 1;
 }
 // DICOM Tag: (0008,0201)
 message TimezoneOffsetFromUTC {
 	string value = 1;
 }
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,0016)
-message SOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0005)
-message SpecificCharacterSet {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0012)
-message InstanceCreationDate {
-	string value = 1;
-}
-// DICOM Tag: (0008,001B)
-message OriginalSpecializedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0013)
-message InstanceCreationTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0100,0426)
-message AuthorizationEquipmentCertificationNumber {
-	string value = 1;
-}
-// DICOM Tag: (FFFA,FFFA)
-message DigitalSignaturesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0100,0424)
-message SOPAuthorizationComment {
-	string value = 1;
-}
-// DICOM Tag: (0008,001A)
-message RelatedGeneralSOPClassUID {
-	repeated string value = 1;
-}
-// DICOM Tag: (0100,0410)
-message SOPInstanceStatus {
-	string value = 1;
-}
-// DICOM Tag: (0028,0303)
-message LongitudinalTemporalInformationModified {
-	string value = 1;
-}
-// DICOM Tag: (0008,0300)
-message PrivateDataElementCharacteristicsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,9172)
-message ConversionSourceAttributesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0110)
-message CodingSchemeIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0100,0420)
-message SOPAuthorizationDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0400,0500)
-message EncryptedAttributesSequence {
+// DICOM Tag: (0018,A001)
+message ContributingEquipmentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -105,22 +19,37 @@ message EncryptedAttributesSequence {
 message QueryRetrieveView {
 	string value = 1;
 }
-// DICOM Tag: (0400,0561)
-message OriginalAttributesSequence {
+// DICOM Tag: (0018,9004)
+message ContentQualification {
+	string value = 1;
+}
+// DICOM Tag: (0008,0005)
+message SpecificCharacterSet {
+	repeated string value = 1;
+}
+// DICOM Tag: (0100,0420)
+message SOPAuthorizationDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0100,0426)
+message AuthorizationEquipmentCertificationNumber {
+	string value = 1;
+}
+// DICOM Tag: (0020,9172)
+message ConversionSourceAttributesSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0018)
-message SOPInstanceUID {
+// DICOM Tag: (0008,0016)
+message SOPClassUID {
 	string value = 1;
+}
+// DICOM Tag: (0008,0013)
+message InstanceCreationTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0008,0123)
 message ContextGroupIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,A001)
-message ContributingEquipmentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -129,34 +58,105 @@ message MACParametersSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0028,0303)
+message LongitudinalTemporalInformationModified {
+	string value = 1;
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0040,A390)
+message HL7StructuredDocumentReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0400,0561)
+message OriginalAttributesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0012)
+message InstanceCreationDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,0015)
+message InstanceCoercionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,001A)
+message RelatedGeneralSOPClassUID {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,001B)
+message OriginalSpecializedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0124)
+message MappingResourceIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0400,0500)
+message EncryptedAttributesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0100,0410)
+message SOPInstanceStatus {
+	string value = 1;
+}
+// DICOM Tag: (0008,0014)
+message InstanceCreatorUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0110)
+message CodingSchemeIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0100,0424)
+message SOPAuthorizationComment {
+	string value = 1;
+}
+// DICOM Tag: (FFFA,FFFA)
+message DigitalSignaturesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0300)
+message PrivateDataElementCharacteristicsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message SOPCommonModule {
-	InstanceCreationTime instance_creation_time = 1;
-	AuthorizationEquipmentCertificationNumber authorization_equipment_certification_number = 2;
+	CodingSchemeIdentificationSequence coding_scheme_identification_sequence = 1;
+	SOPAuthorizationComment sop_authorization_comment = 2;
 	DigitalSignaturesSequence digital_signatures_sequence = 3;
-	SOPAuthorizationComment sop_authorization_comment = 4;
-	RelatedGeneralSOPClassUID related_general_sop_class_uid = 5;
-	SOPInstanceStatus sop_instance_status = 6;
-	LongitudinalTemporalInformationModified longitudinal_temporal_information_modified = 7;
-	PrivateDataElementCharacteristicsSequence private_data_element_characteristics_sequence = 8;
-	CodingSchemeIdentificationSequence coding_scheme_identification_sequence = 9;
-	SOPAuthorizationDateTime sop_authorization_datetime = 10;
-	EncryptedAttributesSequence encrypted_attributes_sequence = 11;
-	QueryRetrieveView query_retrieve_view = 12;
+	PrivateDataElementCharacteristicsSequence private_data_element_characteristics_sequence = 4;
+	InstanceCreatorUID instance_creator_uid = 5;
+	TimezoneOffsetFromUTC timezone_offset_from_utc = 6;
+	SOPInstanceUID sop_instance_uid = 7;
+	QueryRetrieveView query_retrieve_view = 8;
+	ContentQualification content_qualification = 9;
+	ContributingEquipmentSequence contributing_equipment_sequence = 10;
+	SOPAuthorizationDateTime sop_authorization_datetime = 11;
+	AuthorizationEquipmentCertificationNumber authorization_equipment_certification_number = 12;
 	ConversionSourceAttributesSequence conversion_source_attributes_sequence = 13;
-	SOPInstanceUID sop_instance_uid = 14;
-	ContextGroupIdentificationSequence context_group_identification_sequence = 15;
-	ContributingEquipmentSequence contributing_equipment_sequence = 16;
+	SpecificCharacterSet specific_character_set = 14;
+	InstanceCreationTime instance_creation_time = 15;
+	ContextGroupIdentificationSequence context_group_identification_sequence = 16;
 	MACParametersSequence mac_parameters_sequence = 17;
-	OriginalAttributesSequence original_attributes_sequence = 18;
-	HL7StructuredDocumentReferenceSequence hl7_structured_document_reference_sequence = 19;
-	InstanceCoercionDateTime instance_coercion_datetime = 20;
-	InstanceCreatorUID instance_creator_uid = 21;
-	MappingResourceIdentificationSequence mapping_resource_identification_sequence = 22;
-	ContentQualification content_qualification = 23;
-	SOPClassUID sop_class_uid = 24;
-	SpecificCharacterSet specific_character_set = 25;
-	InstanceCreationDate instance_creation_date = 26;
-	OriginalSpecializedSOPClassUID original_specialized_sop_class_uid = 27;
-	TimezoneOffsetFromUTC timezone_offset_from_utc = 28;
-	InstanceNumber instance_number = 29;
+	LongitudinalTemporalInformationModified longitudinal_temporal_information_modified = 18;
+	SOPClassUID sop_class_uid = 19;
+	HL7StructuredDocumentReferenceSequence hl7_structured_document_reference_sequence = 20;
+	InstanceNumber instance_number = 21;
+	InstanceCoercionDateTime instance_coercion_datetime = 22;
+	RelatedGeneralSOPClassUID related_general_sop_class_uid = 23;
+	OriginalSpecializedSOPClassUID original_specialized_sop_class_uid = 24;
+	MappingResourceIdentificationSequence mapping_resource_identification_sequence = 25;
+	EncryptedAttributesSequence encrypted_attributes_sequence = 26;
+	OriginalAttributesSequence original_attributes_sequence = 27;
+	InstanceCreationDate instance_creation_date = 28;
+	SOPInstanceStatus sop_instance_status = 29;
 }

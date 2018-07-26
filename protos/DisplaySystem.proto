@@ -2,20 +2,29 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.32.html#table_C.32.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1040)
-message InstitutionalDepartmentName {
+// DICOM Tag: (0008,0080)
+message InstitutionName {
 	string value = 1;
 }
-// DICOM Tag: (0028,7001)
-message NumberOfDisplaySubsystems {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,0070)
-message Manufacturer {
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
 	string value = 1;
 }
 // DICOM Tag: (0018,1000)
 message DeviceSerialNumber {
+	string value = 1;
+}
+// DICOM Tag: (0008,1040)
+message InstitutionalDepartmentName {
+	string value = 1;
+}
+// DICOM Tag: (0028,7000)
+message EquipmentAdministratorSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0070)
+message Manufacturer {
 	string value = 1;
 }
 // DICOM Tag: (0008,1010)
@@ -26,33 +35,24 @@ message StationName {
 message ManufacturerModelName {
 	string value = 1;
 }
-// DICOM Tag: (0028,7000)
-message EquipmentAdministratorSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0028,7001)
+message NumberOfDisplaySubsystems {
+	uint32 value = 1;
 }
 // DICOM Tag: (0028,7023)
 message DisplaySubsystemSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
 message DisplaySystemModule {
-	ManufacturerModelName manufacturer's_model_name = 1;
-	EquipmentAdministratorSequence equipment_administrator_sequence = 2;
-	DisplaySubsystemSequence display_subsystem_sequence = 3;
+	DeviceSerialNumber device_serial_number = 1;
+	InstitutionalDepartmentName institutional_department_name = 2;
+	EquipmentAdministratorSequence equipment_administrator_sequence = 3;
 	InstitutionName institution_name = 4;
 	InstitutionAddress institution_address = 5;
-	StationName station_name = 6;
+	ManufacturerModelName manufacturer's_model_name = 6;
 	NumberOfDisplaySubsystems number_of_display_subsystems = 7;
-	Manufacturer manufacturer = 8;
-	DeviceSerialNumber device_serial_number = 9;
-	InstitutionalDepartmentName institutional_department_name = 10;
+	DisplaySubsystemSequence display_subsystem_sequence = 8;
+	Manufacturer manufacturer = 9;
+	StationName station_name = 10;
 }

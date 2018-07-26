@@ -2,6 +2,11 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.10.html#table_C.8-10
 syntax = "proto3";
 
+// DICOM Tag: (0018,0026)
+message InterventionDrugInformationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0054,0012)
 message EnergyWindowInformationSequence {
 	bytes value = 1;
@@ -9,11 +14,6 @@ message EnergyWindowInformationSequence {
 }
 // DICOM Tag: (0054,0016)
 message RadiopharmaceuticalInformationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,0026)
-message InterventionDrugInformationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }

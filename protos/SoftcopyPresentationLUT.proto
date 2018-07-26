@@ -11,14 +11,6 @@ message PresentationLUTSequence {
 message PresentationLUTShape {
 	string value = 1;
 }
-// DICOM Tag: (0028,3006)
-message LUTData {
-	repeated bytes value = 1;
-}
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
-}
 message SoftcopyPresentationLUTModule {
 	PresentationLUTSequence presentation_lut_sequence = 1;
 	PresentationLUTShape presentation_lut_shape = 2;

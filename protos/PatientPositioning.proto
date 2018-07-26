@@ -2,16 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.8.html#table_C.34.8-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0018,9947)
 message ProtocolDefinedPatientPosition {
 	string value = 1;
@@ -39,13 +29,23 @@ message TargetFrameOfReferenceUID {
 message TargetPositionReferenceIndicator {
 	string value = 1;
 }
+// DICOM Tag: (0008,2218)
+message AnatomicRegionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message PatientPositioningModule {
-	TargetFrameOfReferenceUID target_frame_of_reference_uid = 1;
-	TargetPositionReferenceIndicator target_position_reference_indicator = 2;
-	AnatomicRegionSequence anatomic_region_sequence = 3;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 4;
-	ProtocolDefinedPatientPosition protocol_defined_patient_position = 5;
-	PatientPositioningInstructionSequence patient_positioning_instruction_sequence = 6;
-	PositioningMethodCodeSequence positioning_method_code_sequence = 7;
-	PositioningLandmarkSequence positioning_landmark_sequence = 8;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 1;
+	ProtocolDefinedPatientPosition protocol_defined_patient_position = 2;
+	PatientPositioningInstructionSequence patient_positioning_instruction_sequence = 3;
+	PositioningMethodCodeSequence positioning_method_code_sequence = 4;
+	PositioningLandmarkSequence positioning_landmark_sequence = 5;
+	TargetFrameOfReferenceUID target_frame_of_reference_uid = 6;
+	TargetPositionReferenceIndicator target_position_reference_indicator = 7;
+	AnatomicRegionSequence anatomic_region_sequence = 8;
 }

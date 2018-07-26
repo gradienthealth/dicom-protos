@@ -2,14 +2,14 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.6.html#table_C.34.6-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0221)
-message EquipmentModality {
-	string value = 1;
-}
 // DICOM Tag: (0018,9912)
 message ModelSpecificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0221)
+message EquipmentModality {
+	string value = 1;
 }
 message EquipmentSpecificationModule {
 	EquipmentModality equipment_modality = 1;

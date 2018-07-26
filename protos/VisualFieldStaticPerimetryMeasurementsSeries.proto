@@ -2,34 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.html#table_C.8.26.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1111)
-message ReferencedPerformedProcedureStepSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0060)
+message Modality {
+	string value = 1;
 }
 // DICOM Tag: (0040,0253)
 message PerformedProcedureStepID {
-	string value = 1;
-}
-// DICOM Tag: (0040,0245)
-message PerformedProcedureStepStartTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0251)
-message PerformedProcedureStepEndTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0260)
-message PerformedProtocolCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0280)
-message CommentsOnThePerformedProcedureStep {
-	string value = 1;
-}
-// DICOM Tag: (0008,0060)
-message Modality {
 	string value = 1;
 }
 // DICOM Tag: (0040,0244)
@@ -40,25 +18,47 @@ message PerformedProcedureStepStartDate {
 message PerformedProcedureStepEndDate {
 	string value = 1;
 }
-// DICOM Tag: (0040,0254)
-message PerformedProcedureStepDescription {
-	string value = 1;
+// DICOM Tag: (0040,0260)
+message PerformedProtocolCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1111)
+message ReferencedPerformedProcedureStepSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0040,0275)
 message RequestAttributesSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0040,0245)
+message PerformedProcedureStepStartTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0040,0251)
+message PerformedProcedureStepEndTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0040,0254)
+message PerformedProcedureStepDescription {
+	string value = 1;
+}
+// DICOM Tag: (0040,0280)
+message CommentsOnThePerformedProcedureStep {
+	string value = 1;
+}
 message VisualFieldStaticPerimetryMeasurementsSeriesModule {
-	PerformedProcedureStepID performed_procedure_step_id = 1;
+	RequestAttributesSequence request_attributes_sequence = 1;
 	PerformedProcedureStepStartTime performed_procedure_step_start_time = 2;
 	PerformedProcedureStepEndTime performed_procedure_step_end_time = 3;
-	PerformedProtocolCodeSequence performed_protocol_code_sequence = 4;
+	PerformedProcedureStepDescription performed_procedure_step_description = 4;
 	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 5;
-	Modality modality = 6;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 7;
-	PerformedProcedureStepEndDate performed_procedure_step_end_date = 8;
-	PerformedProcedureStepDescription performed_procedure_step_description = 9;
-	RequestAttributesSequence request_attributes_sequence = 10;
-	PerformedProcedureStepStartDate performed_procedure_step_start_date = 11;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 6;
+	PerformedProcedureStepID performed_procedure_step_id = 7;
+	PerformedProcedureStepStartDate performed_procedure_step_start_date = 8;
+	PerformedProcedureStepEndDate performed_procedure_step_end_date = 9;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 10;
+	Modality modality = 11;
 }

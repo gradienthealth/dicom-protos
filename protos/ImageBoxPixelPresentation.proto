@@ -2,25 +2,21 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.5.html#table_C.13-5
 syntax = "proto3";
 
-// DICOM Tag: (2020,0020)
-message Polarity {
-	string value = 1;
-}
-// DICOM Tag: (2010,0080)
-message SmoothingType {
-	string value = 1;
+// DICOM Tag: (2020,0111)
+message BasicColorImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (2020,0030)
 message RequestedImageSize {
 	float value = 1;
 }
+// DICOM Tag: (2020,0040)
+message RequestedDecimateCropBehavior {
+	string value = 1;
+}
 // DICOM Tag: (2020,0110)
 message BasicGrayscaleImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (2020,0111)
-message BasicColorImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -28,26 +24,30 @@ message BasicColorImageSequence {
 message ImageBoxPosition {
 	uint32 value = 1;
 }
+// DICOM Tag: (2020,0020)
+message Polarity {
+	string value = 1;
+}
 // DICOM Tag: (2010,0060)
 message MagnificationType {
+	string value = 1;
+}
+// DICOM Tag: (2010,0080)
+message SmoothingType {
 	string value = 1;
 }
 // DICOM Tag: (2010,0150)
 message ConfigurationInformation {
 	string value = 1;
 }
-// DICOM Tag: (2020,0040)
-message RequestedDecimateCropBehavior {
-	string value = 1;
-}
 message ImageBoxPixelPresentationModule {
-	ImageBoxPosition image_box_position = 1;
-	MagnificationType magnification_type = 2;
-	ConfigurationInformation configuration_information = 3;
-	RequestedDecimateCropBehavior requested_decimate_crop_behavior = 4;
+	RequestedImageSize requested_image_size = 1;
+	RequestedDecimateCropBehavior requested_decimate_crop_behavior = 2;
+	BasicGrayscaleImageSequence basic_grayscale_image_sequence = 3;
+	ImageBoxPosition image_box_position = 4;
 	Polarity polarity = 5;
-	SmoothingType smoothing_type = 6;
-	RequestedImageSize requested_image_size = 7;
-	BasicGrayscaleImageSequence basic_grayscale_image_sequence = 8;
+	MagnificationType magnification_type = 6;
+	SmoothingType smoothing_type = 7;
+	ConfigurationInformation configuration_information = 8;
 	BasicColorImageSequence basic_color_image_sequence = 9;
 }

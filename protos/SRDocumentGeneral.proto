@@ -2,48 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.html#table_C.17-2
 syntax = "proto3";
 
-// DICOM Tag: (0008,114A)
-message ReferencedInstanceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A493)
-message VerificationFlag {
-	string value = 1;
-}
-// DICOM Tag: (0040,A078)
-message AuthorObserverSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A07A)
-message ParticipantSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,0023)
-message ContentDate {
-	string value = 1;
-}
-// DICOM Tag: (0040,A385)
-message PertinentOtherEvidenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A073)
-message VerifyingObserverSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A375)
-message CurrentRequestedProcedureEvidenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0040,A496)
 message PreliminaryFlag {
 	string value = 1;
@@ -52,9 +10,28 @@ message PreliminaryFlag {
 message CompletionFlagDescription {
 	string value = 1;
 }
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
+// DICOM Tag: (0040,A078)
+message AuthorObserverSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,A385)
+message PertinentOtherEvidenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,114A)
+message ReferencedInstanceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,A491)
+message CompletionFlag {
+	string value = 1;
+}
+// DICOM Tag: (0040,A493)
+message VerificationFlag {
+	string value = 1;
 }
 // DICOM Tag: (0040,A525)
 message IdenticalDocumentsSequence {
@@ -66,14 +43,37 @@ message ReferencedRequestSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0040,A375)
+message CurrentRequestedProcedureEvidenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0023)
+message ContentDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0040,A073)
+message VerifyingObserverSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,A07A)
+message ParticipantSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0040,A372)
 message PerformedProcedureCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,A491)
-message CompletionFlag {
-	string value = 1;
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
 }
 // DICOM Tag: (0040,A07C)
 message CustodialOrganizationSequence {
@@ -86,22 +86,22 @@ message PredecessorDocumentsSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message SRDocumentGeneralModule {
-	InstanceNumber instance_number = 1;
-	ContentDate content_date = 2;
-	PertinentOtherEvidenceSequence pertinent_other_evidence_sequence = 3;
-	CurrentRequestedProcedureEvidenceSequence current_requested_procedure_evidence_sequence = 4;
-	PreliminaryFlag preliminary_flag = 5;
-	CompletionFlagDescription completion_flag_description = 6;
-	ContentTime content_time = 7;
-	VerifyingObserverSequence verifying_observer_sequence = 8;
-	ReferencedRequestSequence referenced_request_sequence = 9;
-	PerformedProcedureCodeSequence performed_procedure_code_sequence = 10;
-	CompletionFlag completion_flag = 11;
-	CustodialOrganizationSequence custodial_organization_sequence = 12;
-	PredecessorDocumentsSequence predecessor_documents_sequence = 13;
-	IdenticalDocumentsSequence identical_documents_sequence = 14;
-	VerificationFlag verification_flag = 15;
-	AuthorObserverSequence author_observer_sequence = 16;
-	ParticipantSequence participant_sequence = 17;
-	ReferencedInstanceSequence referenced_instance_sequence = 18;
+	ParticipantSequence participant_sequence = 1;
+	PerformedProcedureCodeSequence performed_procedure_code_sequence = 2;
+	CurrentRequestedProcedureEvidenceSequence current_requested_procedure_evidence_sequence = 3;
+	ContentDate content_date = 4;
+	ContentTime content_time = 5;
+	VerifyingObserverSequence verifying_observer_sequence = 6;
+	InstanceNumber instance_number = 7;
+	CustodialOrganizationSequence custodial_organization_sequence = 8;
+	PredecessorDocumentsSequence predecessor_documents_sequence = 9;
+	PertinentOtherEvidenceSequence pertinent_other_evidence_sequence = 10;
+	ReferencedInstanceSequence referenced_instance_sequence = 11;
+	PreliminaryFlag preliminary_flag = 12;
+	CompletionFlagDescription completion_flag_description = 13;
+	AuthorObserverSequence author_observer_sequence = 14;
+	ReferencedRequestSequence referenced_request_sequence = 15;
+	CompletionFlag completion_flag = 16;
+	VerificationFlag verification_flag = 17;
+	IdenticalDocumentsSequence identical_documents_sequence = 18;
 }

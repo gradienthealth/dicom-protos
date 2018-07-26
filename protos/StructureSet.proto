@@ -2,14 +2,28 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.5.html#table_C.8-41
 syntax = "proto3";
 
+// DICOM Tag: (3006,0002)
+message StructureSetLabel {
+	string value = 1;
+}
+// DICOM Tag: (3006,0004)
+message StructureSetName {
+	string value = 1;
+}
 // DICOM Tag: (3006,0020)
 message StructureSetROISequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (3006,0002)
-message StructureSetLabel {
-	string value = 1;
+// DICOM Tag: (3006,0018)
+message PredecessorStructureSetSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3006,0010)
+message ReferencedFrameOfReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (3006,0006)
 message StructureSetDescription {
@@ -27,28 +41,14 @@ message StructureSetDate {
 message StructureSetTime {
 	int64 value = 1;
 }
-// DICOM Tag: (3006,0010)
-message ReferencedFrameOfReferenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0004)
-message StructureSetName {
-	string value = 1;
-}
-// DICOM Tag: (3006,0018)
-message PredecessorStructureSetSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message StructureSetModule {
-	StructureSetName structure_set_name = 1;
-	PredecessorStructureSetSequence predecessor_structure_set_sequence = 2;
-	StructureSetDate structure_set_date = 3;
-	StructureSetTime structure_set_time = 4;
-	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 5;
-	StructureSetROISequence structure_set_roi_sequence = 6;
-	StructureSetLabel structure_set_label = 7;
-	StructureSetDescription structure_set_description = 8;
-	InstanceNumber instance_number = 9;
+	StructureSetLabel structure_set_label = 1;
+	StructureSetName structure_set_name = 2;
+	StructureSetROISequence structure_set_roi_sequence = 3;
+	PredecessorStructureSetSequence predecessor_structure_set_sequence = 4;
+	StructureSetDescription structure_set_description = 5;
+	InstanceNumber instance_number = 6;
+	StructureSetDate structure_set_date = 7;
+	StructureSetTime structure_set_time = 8;
+	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 9;
 }

@@ -19,8 +19,8 @@ message ReviewerName {
 	string value = 1;
 }
 message ApprovalModule {
-	ReviewTime review_time = 1;
-	ReviewerName reviewer_name = 2;
-	ApprovalStatus approval_status = 3;
-	ReviewDate review_date = 4;
+	ReviewDate review_date = 1;
+	ReviewTime review_time = 2;
+	ReviewerName reviewer_name = 3;
+	ApprovalStatus approval_status = 4;
 }

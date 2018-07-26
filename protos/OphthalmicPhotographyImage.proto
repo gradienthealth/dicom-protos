@@ -2,21 +2,62 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.2.html#table_C.8.17.2-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
+	string value = 1;
 }
-// DICOM Tag: (0028,0006)
-message PlanarConfiguration {
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
+	string value = 1;
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
 	uint32 value = 1;
+}
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,0023)
+message ContentDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0028,2110)
+message LossyImageCompression {
+	string value = 1;
 }
 // DICOM Tag: (0028,2112)
 message LossyImageCompressionRatio {
 	repeated float value = 1;
 }
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (0050,0004)
+message CalibrationImage {
+	string value = 1;
+}
+// DICOM Tag: (0028,0003)
+message SamplesPerPixelUsed {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
 // DICOM Tag: (0028,0302)
 message RecognizableVisualFeatures {
 	string value = 1;
+}
+// DICOM Tag: (0008,2112)
+message SourceImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0028,0004)
 message PhotometricInterpretation {
@@ -26,77 +67,36 @@ message PhotometricInterpretation {
 message ContentTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,2112)
-message SourceImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,2110)
-message LossyImageCompression {
-	string value = 1;
-}
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
-	string value = 1;
-}
-// DICOM Tag: (0050,0004)
-message CalibrationImage {
-	string value = 1;
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
+// DICOM Tag: (0028,0006)
+message PlanarConfiguration {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0030)
-message PixelSpacing {
-	repeated float value = 1;
-}
-// DICOM Tag: (0008,0023)
-message ContentDate {
-	string value = 1;
-}
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
+// DICOM Tag: (0008,0008)
+message ImageType {
 	repeated string value = 1;
-}
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0028,0003)
-message SamplesPerPixelUsed {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,002A)
-message AcquisitionDateTime {
-	int64 value = 1;
-}
 message OphthalmicPhotographyImageModule {
-	PlanarConfiguration planar_configuration = 1;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 2;
-	RecognizableVisualFeatures recognizable_visual_features = 3;
-	ImageType image_type = 4;
-	ContentTime content_time = 5;
-	SourceImageSequence source_image_sequence = 6;
-	LossyImageCompression lossy_image_compression = 7;
-	BurnedInAnnotation burned_in_annotation = 8;
-	PhotometricInterpretation photometric_interpretation = 9;
-	PixelSpacing pixel_spacing = 10;
-	ContentDate content_date = 11;
+	SamplesPerPixel samples_per_pixel = 1;
+	PixelRepresentation pixel_representation = 2;
+	PresentationLUTShape presentation_lut_shape = 3;
+	BurnedInAnnotation burned_in_annotation = 4;
+	CalibrationImage calibration_image = 5;
+	SamplesPerPixelUsed samples_per_pixel_used = 6;
+	PixelSpacing pixel_spacing = 7;
+	ContentDate content_date = 8;
+	AcquisitionDateTime acquisition_datetime = 9;
+	LossyImageCompression lossy_image_compression = 10;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 11;
 	LossyImageCompressionMethod lossy_image_compression_method = 12;
-	PresentationLUTShape presentation_lut_shape = 13;
-	CalibrationImage calibration_image = 14;
-	SamplesPerPixel samples_per_pixel = 15;
-	SamplesPerPixelUsed samples_per_pixel_used = 16;
-	PixelRepresentation pixel_representation = 17;
-	AcquisitionDateTime acquisition_datetime = 18;
-	InstanceNumber instance_number = 19;
+	RecognizableVisualFeatures recognizable_visual_features = 13;
+	PhotometricInterpretation photometric_interpretation = 14;
+	ContentTime content_time = 15;
+	SourceImageSequence source_image_sequence = 16;
+	ImageType image_type = 17;
+	InstanceNumber instance_number = 18;
+	PlanarConfiguration planar_configuration = 19;
 }

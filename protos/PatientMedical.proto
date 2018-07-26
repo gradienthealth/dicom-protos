@@ -2,25 +2,17 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.4.html#table_C.2-4
 syntax = "proto3";
 
-// DICOM Tag: (0010,21A0)
-message SmokingStatus {
-	string value = 1;
+// DICOM Tag: (0010,2110)
+message Allergies {
+	repeated string value = 1;
 }
 // DICOM Tag: (0010,21C0)
 message PregnancyStatus {
 	uint32 value = 1;
 }
-// DICOM Tag: (0038,0050)
-message SpecialNeeds {
+// DICOM Tag: (0010,2203)
+message PatientSexNeutered {
 	string value = 1;
-}
-// DICOM Tag: (0038,0500)
-message PatientState {
-	string value = 1;
-}
-// DICOM Tag: (0010,2000)
-message MedicalAlerts {
-	repeated string value = 1;
 }
 // DICOM Tag: (0010,1023)
 message MeasuredAPDimension {
@@ -30,55 +22,63 @@ message MeasuredAPDimension {
 message MeasuredLateralDimension {
 	float value = 1;
 }
-// DICOM Tag: (0038,0101)
-message PertinentResourcesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0010,21A0)
+message SmokingStatus {
+	string value = 1;
 }
 // DICOM Tag: (0010,21B0)
 message AdditionalPatientHistory {
 	string value = 1;
 }
-// DICOM Tag: (0010,21D0)
-message LastMenstrualDate {
-	string value = 1;
-}
-// DICOM Tag: (0010,2203)
-message PatientSexNeutered {
-	string value = 1;
-}
-// DICOM Tag: (0010,2110)
-message Allergies {
-	repeated string value = 1;
-}
 // DICOM Tag: (0010,1022)
 message PatientBodyMassIndex {
 	float value = 1;
-}
-// DICOM Tag: (0038,0100)
-message PertinentDocumentsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0038,0502)
 message PatientClinicalTrialParticipationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0010,2000)
+message MedicalAlerts {
+	repeated string value = 1;
+}
+// DICOM Tag: (0010,21D0)
+message LastMenstrualDate {
+	string value = 1;
+}
+// DICOM Tag: (0038,0050)
+message SpecialNeeds {
+	string value = 1;
+}
+// DICOM Tag: (0038,0500)
+message PatientState {
+	string value = 1;
+}
+// DICOM Tag: (0038,0100)
+message PertinentDocumentsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0038,0101)
+message PertinentResourcesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message PatientMedicalModule {
-	SmokingStatus smoking_status = 1;
-	PregnancyStatus pregnancy_status = 2;
+	MedicalAlerts medical_alerts = 1;
+	LastMenstrualDate last_menstrual_date = 2;
 	SpecialNeeds special_needs = 3;
 	PatientState patient_state = 4;
-	MedicalAlerts medical_alerts = 5;
-	MeasuredAPDimension measured_ap_dimension = 6;
+	PertinentDocumentsSequence pertinent_documents_sequence = 5;
+	PertinentResourcesSequence pertinent_resources_sequence = 6;
 	MeasuredLateralDimension measured_lateral_dimension = 7;
-	PertinentResourcesSequence pertinent_resources_sequence = 8;
-	AdditionalPatientHistory additional_patient_history = 9;
-	LastMenstrualDate last_menstrual_date = 10;
-	PatientSexNeutered patient's_sex_neutered = 11;
-	Allergies allergies = 12;
-	PatientBodyMassIndex patient's_body_mass_index = 13;
-	PertinentDocumentsSequence pertinent_documents_sequence = 14;
+	Allergies allergies = 8;
+	PregnancyStatus pregnancy_status = 9;
+	PatientSexNeutered patient's_sex_neutered = 10;
+	MeasuredAPDimension measured_ap_dimension = 11;
+	SmokingStatus smoking_status = 12;
+	AdditionalPatientHistory additional_patient_history = 13;
+	PatientBodyMassIndex patient's_body_mass_index = 14;
 	PatientClinicalTrialParticipationSequence patient_clinical_trial_participation_sequence = 15;
 }

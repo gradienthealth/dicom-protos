@@ -11,6 +11,6 @@ message ImageFrameOrigin {
 	uint32 value = 1;
 }
 message Multi-frameOverlayModule {
-	NumberOfFramesInOverlay number_of_frames_in_overlay = 1;
-	ImageFrameOrigin image_frame_origin = 2;
+	ImageFrameOrigin image_frame_origin = 1;
+	NumberOfFramesInOverlay number_of_frames_in_overlay = 2;
 }

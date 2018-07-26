@@ -13,6 +13,6 @@ message ScheduledSpecimenSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message ScheduledProcedureStepModule {
-	ScheduledProcedureStepSequence scheduled_procedure_step_sequence = 1;
-	ScheduledSpecimenSequence scheduled_specimen_sequence = 2;
+	ScheduledSpecimenSequence scheduled_specimen_sequence = 1;
+	ScheduledProcedureStepSequence scheduled_procedure_step_sequence = 2;
 }

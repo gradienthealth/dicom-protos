@@ -2,6 +2,18 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.30.html#table_C.11.30-1
 syntax = "proto3";
 
+// DICOM Tag: (0070,1602)
+message RenderProjection {
+	string value = 1;
+}
+// DICOM Tag: (0070,1603)
+message ViewpointPosition {
+	repeated double value = 1;
+}
+// DICOM Tag: (0070,1604)
+message ViewpointLookAtPoint {
+	repeated double value = 1;
+}
 // DICOM Tag: (0070,1605)
 message ViewpointUpDirection {
 	repeated double value = 1;
@@ -18,24 +30,12 @@ message RenderingMethod {
 message SamplingStepSize {
 	double value = 1;
 }
-// DICOM Tag: (0070,1602)
-message RenderProjection {
-	string value = 1;
-}
-// DICOM Tag: (0070,1603)
-message ViewpointPosition {
-	repeated double value = 1;
-}
-// DICOM Tag: (0070,1604)
-message ViewpointLookAtPoint {
-	repeated double value = 1;
-}
 message VolumeRenderGeometryModule {
-	SamplingStepSize sampling_step_size = 1;
-	RenderProjection render_projection = 2;
-	ViewpointPosition viewpoint_position = 3;
-	ViewpointLookAtPoint viewpoint_lookat_point = 4;
-	ViewpointUpDirection viewpoint_up_direction = 5;
-	RenderFieldOfView render_field_of_view = 6;
-	RenderingMethod rendering_method = 7;
+	RenderProjection render_projection = 1;
+	ViewpointPosition viewpoint_position = 2;
+	ViewpointLookAtPoint viewpoint_lookat_point = 3;
+	ViewpointUpDirection viewpoint_up_direction = 4;
+	RenderFieldOfView render_field_of_view = 5;
+	RenderingMethod rendering_method = 6;
+	SamplingStepSize sampling_step_size = 7;
 }

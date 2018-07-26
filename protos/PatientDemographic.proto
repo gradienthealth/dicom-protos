@@ -2,74 +2,64 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.3.html#table_C.2-3
 syntax = "proto3";
 
-// DICOM Tag: (0010,0050)
-message PatientInsurancePlanCodeSequence {
+// DICOM Tag: (0010,0200)
+message QualityControlSubject {
+	string value = 1;
+}
+// DICOM Tag: (0010,1021)
+message PatientSizeCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0010,2160)
-message EthnicGroup {
+// DICOM Tag: (0010,0216)
+message StrainStockSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,2152)
+message RegionOfResidence {
 	string value = 1;
 }
-// DICOM Tag: (0010,2201)
-message PatientSpeciesDescription {
+// DICOM Tag: (0010,2298)
+message ResponsiblePersonRole {
 	string value = 1;
 }
-// DICOM Tag: (0010,0212)
-message StrainDescription {
+// DICOM Tag: (0010,1010)
+message PatientAge {
 	string value = 1;
 }
-// DICOM Tag: (0010,0030)
-message PatientBirthDate {
+// DICOM Tag: (0040,3001)
+message ConfidentialityConstraintOnPatientDataDescription {
 	string value = 1;
 }
 // DICOM Tag: (0010,0032)
 message PatientBirthTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0010,0040)
-message PatientSex {
-	string value = 1;
-}
-// DICOM Tag: (0010,1020)
-message PatientSize {
-	float value = 1;
-}
-// DICOM Tag: (0010,2298)
-message ResponsiblePersonRole {
-	string value = 1;
-}
 // DICOM Tag: (0010,2299)
 message ResponsibleOrganization {
 	string value = 1;
-}
-// DICOM Tag: (0010,2292)
-message PatientBreedDescription {
-	string value = 1;
-}
-// DICOM Tag: (0010,2180)
-message Occupation {
-	string value = 1;
-}
-// DICOM Tag: (0010,2152)
-message RegionOfResidence {
-	string value = 1;
-}
-// DICOM Tag: (0010,2154)
-message PatientTelephoneNumbers {
-	repeated string value = 1;
 }
 // DICOM Tag: (0010,2293)
 message PatientBreedCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0010,1081)
-message BranchOfService {
-	string value = 1;
+// DICOM Tag: (0010,0219)
+message StrainCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,1030)
+message PatientWeight {
+	float value = 1;
 }
 // DICOM Tag: (0010,2150)
 message CountryOfResidence {
+	string value = 1;
+}
+// DICOM Tag: (0010,2297)
+message ResponsiblePerson {
 	string value = 1;
 }
 // DICOM Tag: (0010,2202)
@@ -77,43 +67,16 @@ message PatientSpeciesCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0010,0200)
-message QualityControlSubject {
+// DICOM Tag: (0010,2292)
+message PatientBreedDescription {
 	string value = 1;
-}
-// DICOM Tag: (0010,21F0)
-message PatientReligiousPreference {
-	string value = 1;
-}
-// DICOM Tag: (0010,2297)
-message ResponsiblePerson {
-	string value = 1;
-}
-// DICOM Tag: (0010,2294)
-message BreedRegistrationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0010,0213)
 message StrainNomenclature {
 	string value = 1;
 }
-// DICOM Tag: (0010,0219)
-message StrainCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0218)
-message StrainAdditionalInformation {
-	string value = 1;
-}
-// DICOM Tag: (0010,0216)
-message StrainStockSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,3001)
-message ConfidentialityConstraintOnPatientDataDescription {
+// DICOM Tag: (0010,2180)
+message Occupation {
 	string value = 1;
 }
 // DICOM Tag: (0010,0101)
@@ -121,12 +84,29 @@ message PatientPrimaryLanguageCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0010,1040)
-message PatientAddress {
+// DICOM Tag: (0010,2160)
+message EthnicGroup {
+	string value = 1;
+}
+// DICOM Tag: (0010,2294)
+message BreedRegistrationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0212)
+message StrainDescription {
+	string value = 1;
+}
+// DICOM Tag: (0010,0040)
+message PatientSex {
 	string value = 1;
 }
 // DICOM Tag: (0010,1080)
 message MilitaryRank {
+	string value = 1;
+}
+// DICOM Tag: (0010,1081)
+message BranchOfService {
 	string value = 1;
 }
 // DICOM Tag: (0010,2155)
@@ -137,18 +117,38 @@ message PatientTelecomInformation {
 message PatientComments {
 	string value = 1;
 }
-// DICOM Tag: (0010,1010)
-message PatientAge {
+// DICOM Tag: (0010,0030)
+message PatientBirthDate {
 	string value = 1;
 }
-// DICOM Tag: (0010,1030)
-message PatientWeight {
+// DICOM Tag: (0010,1020)
+message PatientSize {
 	float value = 1;
 }
-// DICOM Tag: (0010,1021)
-message PatientSizeCodeSequence {
+// DICOM Tag: (0010,2201)
+message PatientSpeciesDescription {
+	string value = 1;
+}
+// DICOM Tag: (0010,0218)
+message StrainAdditionalInformation {
+	string value = 1;
+}
+// DICOM Tag: (0010,0050)
+message PatientInsurancePlanCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,1040)
+message PatientAddress {
+	string value = 1;
+}
+// DICOM Tag: (0010,2154)
+message PatientTelephoneNumbers {
+	repeated string value = 1;
+}
+// DICOM Tag: (0010,21F0)
+message PatientReligiousPreference {
+	string value = 1;
 }
 // DICOM Tag: (0010,0221)
 message GeneticModificationsSequence {
@@ -156,40 +156,40 @@ message GeneticModificationsSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message PatientDemographicModule {
-	PatientBreedDescription patient_breed_description = 1;
-	Occupation occupation = 2;
-	RegionOfResidence region_of_residence = 3;
-	PatientTelephoneNumbers patient's_telephone_numbers = 4;
-	PatientBreedCodeSequence patient_breed_code_sequence = 5;
-	BranchOfService branch_of_service = 6;
-	CountryOfResidence country_of_residence = 7;
-	PatientSpeciesCodeSequence patient_species_code_sequence = 8;
-	QualityControlSubject quality_control_subject = 9;
-	PatientReligiousPreference patient's_religious_preference = 10;
-	ResponsiblePerson responsible_person = 11;
-	BreedRegistrationSequence breed_registration_sequence = 12;
-	StrainNomenclature strain_nomenclature = 13;
-	StrainCodeSequence strain_code_sequence = 14;
-	ConfidentialityConstraintOnPatientDataDescription confidentiality_constraint_on_patient_data_description = 15;
-	PatientPrimaryLanguageCodeSequence patient's_primary_language_code_sequence = 16;
-	PatientAddress patient's_address = 17;
-	MilitaryRank military_rank = 18;
-	PatientTelecomInformation patient's_telecom_information = 19;
-	PatientComments patient_comments = 20;
-	StrainAdditionalInformation strain_additional_information = 21;
+	Occupation occupation = 1;
+	PatientPrimaryLanguageCodeSequence patient's_primary_language_code_sequence = 2;
+	EthnicGroup ethnic_group = 3;
+	BreedRegistrationSequence breed_registration_sequence = 4;
+	StrainDescription strain_description = 5;
+	PatientSex patient's_sex = 6;
+	MilitaryRank military_rank = 7;
+	BranchOfService branch_of_service = 8;
+	PatientTelecomInformation patient's_telecom_information = 9;
+	PatientComments patient_comments = 10;
+	PatientBirthDate patient's_birth_date = 11;
+	PatientSize patient's_size = 12;
+	PatientSpeciesDescription patient_species_description = 13;
+	StrainAdditionalInformation strain_additional_information = 14;
+	PatientInsurancePlanCodeSequence patient's_insurance_plan_code_sequence = 15;
+	PatientAddress patient's_address = 16;
+	PatientTelephoneNumbers patient's_telephone_numbers = 17;
+	PatientReligiousPreference patient's_religious_preference = 18;
+	GeneticModificationsSequence genetic_modifications_sequence = 19;
+	QualityControlSubject quality_control_subject = 20;
+	PatientSizeCodeSequence patient's_size_code_sequence = 21;
 	StrainStockSequence strain_stock_sequence = 22;
-	PatientAge patient's_age = 23;
-	PatientWeight patient's_weight = 24;
-	PatientSizeCodeSequence patient's_size_code_sequence = 25;
-	GeneticModificationsSequence genetic_modifications_sequence = 26;
-	PatientInsurancePlanCodeSequence patient's_insurance_plan_code_sequence = 27;
-	EthnicGroup ethnic_group = 28;
-	PatientSpeciesDescription patient_species_description = 29;
-	PatientBirthDate patient's_birth_date = 30;
-	PatientBirthTime patient's_birth_time = 31;
-	PatientSex patient's_sex = 32;
-	PatientSize patient's_size = 33;
-	ResponsiblePersonRole responsible_person_role = 34;
-	ResponsibleOrganization responsible_organization = 35;
-	StrainDescription strain_description = 36;
+	RegionOfResidence region_of_residence = 23;
+	ResponsiblePersonRole responsible_person_role = 24;
+	StrainCodeSequence strain_code_sequence = 25;
+	PatientAge patient's_age = 26;
+	ConfidentialityConstraintOnPatientDataDescription confidentiality_constraint_on_patient_data_description = 27;
+	PatientBirthTime patient's_birth_time = 28;
+	ResponsibleOrganization responsible_organization = 29;
+	PatientBreedCodeSequence patient_breed_code_sequence = 30;
+	StrainNomenclature strain_nomenclature = 31;
+	PatientWeight patient's_weight = 32;
+	CountryOfResidence country_of_residence = 33;
+	ResponsiblePerson responsible_person = 34;
+	PatientSpeciesCodeSequence patient_species_code_sequence = 35;
+	PatientBreedDescription patient_breed_description = 36;
 }

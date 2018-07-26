@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.26.html#table_C.11.26-1
 syntax = "proto3";
 
-// DICOM Tag: (0070,1502)
-message MPRThicknessType {
-	string value = 1;
-}
 // DICOM Tag: (0070,1503)
 message MPRSlabThickness {
 	double value = 1;
@@ -34,13 +30,17 @@ message MPRTopLeftHandCorner {
 message MultiPlanarReconstructionStyle {
 	string value = 1;
 }
+// DICOM Tag: (0070,1502)
+message MPRThicknessType {
+	string value = 1;
+}
 message Multi-PlanarReconstructionGeometryModule {
-	MPRSlabThickness mpr_slab_thickness = 1;
-	MPRViewWidthDirection mpr_view_width_direction = 2;
-	MPRViewWidth mpr_view_width = 3;
-	MPRViewHeightDirection mpr_view_height_direction = 4;
-	MPRViewHeight mpr_view_height = 5;
-	MPRTopLeftHandCorner mpr_top_left_hand_corner = 6;
-	MultiPlanarReconstructionStyle multi_planar_reconstruction_style = 7;
-	MPRThicknessType mpr_thickness_type = 8;
+	MPRViewWidth mpr_view_width = 1;
+	MPRViewHeightDirection mpr_view_height_direction = 2;
+	MPRViewHeight mpr_view_height = 3;
+	MPRTopLeftHandCorner mpr_top_left_hand_corner = 4;
+	MultiPlanarReconstructionStyle multi_planar_reconstruction_style = 5;
+	MPRThicknessType mpr_thickness_type = 6;
+	MPRSlabThickness mpr_slab_thickness = 7;
+	MPRViewWidthDirection mpr_view_width_direction = 8;
 }

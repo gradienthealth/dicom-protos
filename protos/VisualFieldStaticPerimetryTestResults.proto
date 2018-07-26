@@ -2,18 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.5.html#table_C.8.26.5-1
 syntax = "proto3";
 
-// DICOM Tag: (0024,0320)
-message VisualFieldGlobalResultsIndexSequence {
+// DICOM Tag: (0024,0064)
+message ResultsNormalsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0024,0070)
-message VisualFieldMeanSensitivity {
-	float value = 1;
-}
-// DICOM Tag: (0024,0076)
-message ShortTermFluctuationProbabilityCalculated {
-	string value = 1;
 }
 // DICOM Tag: (0024,0074)
 message ShortTermFluctuationCalculated {
@@ -27,6 +19,26 @@ message ShortTermFluctuation {
 message ShortTermFluctuationProbability {
 	float value = 1;
 }
+// DICOM Tag: (0024,0080)
+message CorrectedLocalizedDeviationFromNormalProbabilityCalculated {
+	string value = 1;
+}
+// DICOM Tag: (0024,0081)
+message CorrectedLocalizedDeviationFromNormalProbability {
+	float value = 1;
+}
+// DICOM Tag: (0024,0070)
+message VisualFieldMeanSensitivity {
+	float value = 1;
+}
+// DICOM Tag: (0024,0063)
+message VisualFieldTestNormalsFlag {
+	string value = 1;
+}
+// DICOM Tag: (0024,0076)
+message ShortTermFluctuationProbabilityCalculated {
+	string value = 1;
+}
 // DICOM Tag: (0024,0078)
 message CorrectedLocalizedDeviationFromNormalCalculated {
 	string value = 1;
@@ -35,34 +47,22 @@ message CorrectedLocalizedDeviationFromNormalCalculated {
 message CorrectedLocalizedDeviationFromNormal {
 	float value = 1;
 }
-// DICOM Tag: (0024,0080)
-message CorrectedLocalizedDeviationFromNormalProbabilityCalculated {
-	string value = 1;
-}
-// DICOM Tag: (0024,0063)
-message VisualFieldTestNormalsFlag {
-	string value = 1;
-}
-// DICOM Tag: (0024,0064)
-message ResultsNormalsSequence {
+// DICOM Tag: (0024,0320)
+message VisualFieldGlobalResultsIndexSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0024,0081)
-message CorrectedLocalizedDeviationFromNormalProbability {
-	float value = 1;
-}
 message VisualFieldStaticPerimetryTestResultsModule {
-	CorrectedLocalizedDeviationFromNormalCalculated corrected_localized_deviation_from_normal_calculated = 1;
-	CorrectedLocalizedDeviationFromNormal corrected_localized_deviation_from_normal = 2;
-	CorrectedLocalizedDeviationFromNormalProbabilityCalculated corrected_localized_deviation_from_normal_probability_calculated = 3;
-	VisualFieldTestNormalsFlag visual_field_test_normals_flag = 4;
-	ResultsNormalsSequence results_normals_sequence = 5;
-	ShortTermFluctuationCalculated short_term_fluctuation_calculated = 6;
-	ShortTermFluctuation short_term_fluctuation = 7;
-	ShortTermFluctuationProbability short_term_fluctuation_probability = 8;
-	CorrectedLocalizedDeviationFromNormalProbability corrected_localized_deviation_from_normal_probability = 9;
-	VisualFieldMeanSensitivity visual_field_mean_sensitivity = 10;
-	ShortTermFluctuationProbabilityCalculated short_term_fluctuation_probability_calculated = 11;
-	VisualFieldGlobalResultsIndexSequence visual_field_global_results_index_sequence = 12;
+	VisualFieldMeanSensitivity visual_field_mean_sensitivity = 1;
+	VisualFieldTestNormalsFlag visual_field_test_normals_flag = 2;
+	ShortTermFluctuationProbabilityCalculated short_term_fluctuation_probability_calculated = 3;
+	CorrectedLocalizedDeviationFromNormalCalculated corrected_localized_deviation_from_normal_calculated = 4;
+	CorrectedLocalizedDeviationFromNormal corrected_localized_deviation_from_normal = 5;
+	VisualFieldGlobalResultsIndexSequence visual_field_global_results_index_sequence = 6;
+	ResultsNormalsSequence results_normals_sequence = 7;
+	ShortTermFluctuationCalculated short_term_fluctuation_calculated = 8;
+	ShortTermFluctuation short_term_fluctuation = 9;
+	ShortTermFluctuationProbability short_term_fluctuation_probability = 10;
+	CorrectedLocalizedDeviationFromNormalProbabilityCalculated corrected_localized_deviation_from_normal_probability_calculated = 11;
+	CorrectedLocalizedDeviationFromNormalProbability corrected_localized_deviation_from_normal_probability = 12;
 }

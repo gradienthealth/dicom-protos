@@ -2,49 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.30.2.html#table_C.30.2-1
 syntax = "proto3";
 
-// DICOM Tag: (0074,1200)
-message ScheduledProcedureStepPriority {
-	string value = 1;
-}
-// DICOM Tag: (0040,4005)
-message ScheduledProcedureStepStartDateTime {
+// DICOM Tag: (0040,4011)
+message ExpectedCompletionDateTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0074,1210)
-message ScheduledProcessingParametersSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,4041)
-message InputReadinessState {
-	string value = 1;
-}
-// DICOM Tag: (0040,4070)
-message OutputDestinationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0074,1204)
-message ProcedureStepLabel {
-	string value = 1;
-}
-// DICOM Tag: (0040,4025)
-message ScheduledStationNameCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,4026)
-message ScheduledStationClassCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,4027)
-message ScheduledStationGeographicLocationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,4034)
-message ScheduledHumanPerformersSequence {
+// DICOM Tag: (0040,4021)
+message InputInformationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -56,12 +19,26 @@ message StudyInstanceUID {
 message WorklistLabel {
 	string value = 1;
 }
-// DICOM Tag: (0040,0400)
-message CommentsOnTheScheduledProcedureStep {
+// DICOM Tag: (0074,1204)
+message ProcedureStepLabel {
 	string value = 1;
 }
-// DICOM Tag: (0040,4021)
-message InputInformationSequence {
+// DICOM Tag: (0040,4026)
+message ScheduledStationClassCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,4034)
+message ScheduledHumanPerformersSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,4005)
+message ScheduledProcedureStepStartDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0040,4070)
+message OutputDestinationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -69,31 +46,54 @@ message InputInformationSequence {
 message ScheduledProcedureStepModificationDateTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0040,4011)
-message ExpectedCompletionDateTime {
-	int64 value = 1;
+// DICOM Tag: (0040,0400)
+message CommentsOnTheScheduledProcedureStep {
+	string value = 1;
+}
+// DICOM Tag: (0040,4025)
+message ScheduledStationNameCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,4027)
+message ScheduledStationGeographicLocationCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0040,4018)
 message ScheduledWorkitemCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0074,1210)
+message ScheduledProcessingParametersSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,4041)
+message InputReadinessState {
+	string value = 1;
+}
+// DICOM Tag: (0074,1200)
+message ScheduledProcedureStepPriority {
+	string value = 1;
+}
 message UnifiedProcedureStepScheduledProcedureInformationModule {
-	ScheduledProcedureStepModificationDateTime scheduled_procedure_step_modification_datetime = 1;
-	ExpectedCompletionDateTime expected_completion_datetime = 2;
-	ScheduledWorkitemCodeSequence scheduled_workitem_code_sequence = 3;
-	ScheduledProcedureStepPriority scheduled_procedure_step_priority = 4;
-	ScheduledProcedureStepStartDateTime scheduled_procedure_step_start_datetime = 5;
-	ScheduledProcessingParametersSequence scheduled_processing_parameters_sequence = 6;
-	InputReadinessState input_readiness_state = 7;
-	OutputDestinationSequence output_destination_sequence = 8;
-	ProcedureStepLabel procedure_step_label = 9;
-	ScheduledStationNameCodeSequence scheduled_station_name_code_sequence = 10;
-	ScheduledStationClassCodeSequence scheduled_station_class_code_sequence = 11;
-	ScheduledStationGeographicLocationCodeSequence scheduled_station_geographic_location_code_sequence = 12;
-	ScheduledHumanPerformersSequence scheduled_human_performers_sequence = 13;
-	StudyInstanceUID study_instance_uid = 14;
+	ScheduledHumanPerformersSequence scheduled_human_performers_sequence = 1;
+	ScheduledProcedureStepStartDateTime scheduled_procedure_step_start_datetime = 2;
+	OutputDestinationSequence output_destination_sequence = 3;
+	ScheduledProcedureStepModificationDateTime scheduled_procedure_step_modification_datetime = 4;
+	ProcedureStepLabel procedure_step_label = 5;
+	ScheduledStationClassCodeSequence scheduled_station_class_code_sequence = 6;
+	ScheduledStationGeographicLocationCodeSequence scheduled_station_geographic_location_code_sequence = 7;
+	ScheduledWorkitemCodeSequence scheduled_workitem_code_sequence = 8;
+	ScheduledProcessingParametersSequence scheduled_processing_parameters_sequence = 9;
+	InputReadinessState input_readiness_state = 10;
+	ScheduledProcedureStepPriority scheduled_procedure_step_priority = 11;
+	CommentsOnTheScheduledProcedureStep comments_on_the_scheduled_procedure_step = 12;
+	ScheduledStationNameCodeSequence scheduled_station_name_code_sequence = 13;
+	ExpectedCompletionDateTime expected_completion_datetime = 14;
 	WorklistLabel worklist_label = 15;
-	CommentsOnTheScheduledProcedureStep comments_on_the_scheduled_procedure_step = 16;
-	InputInformationSequence input_information_sequence = 17;
+	InputInformationSequence input_information_sequence = 16;
+	StudyInstanceUID study_instance_uid = 17;
 }

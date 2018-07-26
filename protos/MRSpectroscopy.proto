@@ -2,100 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.html#table_C.8-102
 syntax = "proto3";
 
-// DICOM Tag: (0018,1320)
-message B1rms {
-	float value = 1;
-}
-// DICOM Tag: (0008,9206)
-message VolumetricProperties {
-	string value = 1;
-}
-// DICOM Tag: (0018,9059)
-message Decoupling {
-	string value = 1;
-}
-// DICOM Tag: (0018,9297)
-message WaterReferenceAcquisition {
-	string value = 1;
-}
-// DICOM Tag: (0008,002A)
-message AcquisitionDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,113A)
-message ReferencedWaveformSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0018,9100)
 message ResonantNucleus {
 	repeated string value = 1;
 }
-// DICOM Tag: (0008,9207)
-message VolumeBasedCalculationTechnique {
-	string value = 1;
-}
-// DICOM Tag: (0008,9209)
-message AcquisitionContrast {
-	string value = 1;
-}
-// DICOM Tag: (0018,9098)
-message TransmitterFrequency {
-	repeated double value = 1;
-}
-// DICOM Tag: (0018,9053)
-message ChemicalShiftReference {
-	repeated double value = 1;
-}
-// DICOM Tag: (0008,114A)
-message ReferencedInstanceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,0012)
-message AcquisitionNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,9004)
-message ContentQualification {
-	string value = 1;
-}
-// DICOM Tag: (0018,9126)
-message VolumeLocalizationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9066)
-message NumberOfZeroFills {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0018,9067)
-message BaselineCorrection {
-	string value = 1;
-}
-// DICOM Tag: (0018,9199)
-message WaterReferencedPhaseCorrection {
-	string value = 1;
-}
-// DICOM Tag: (0018,9073)
-message AcquisitionDuration {
-	double value = 1;
-}
-// DICOM Tag: (0008,9154)
-message SourceImageEvidenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9175)
-message ApplicableSafetyStandardDescription {
-	string value = 1;
-}
-// DICOM Tag: (300A,012C)
-message IsocenterPosition {
-	repeated float value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
+// DICOM Tag: (0018,9065)
+message TimeDomainFiltering {
 	repeated string value = 1;
 }
 // DICOM Tag: (0008,9237)
@@ -103,21 +15,144 @@ message ReferencedPresentationStateSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,9208)
-message ComplexImageComponent {
+// DICOM Tag: (0018,9004)
+message ContentQualification {
 	string value = 1;
+}
+// DICOM Tag: (0020,4000)
+message ImageComments {
+	string value = 1;
+}
+// DICOM Tag: (0018,9053)
+message ChemicalShiftReference {
+	repeated double value = 1;
+}
+// DICOM Tag: (0018,9062)
+message DecouplingMethod {
+	string value = 1;
+}
+// DICOM Tag: (0018,9067)
+message BaselineCorrection {
+	string value = 1;
+}
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,9154)
+message SourceImageEvidenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,9126)
+message VolumeLocalizationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,9063)
+message DecouplingChemicalShiftReference {
+	repeated double value = 1;
+}
+// DICOM Tag: (0018,9101)
+message FrequencyCorrection {
+	string value = 1;
+}
+// DICOM Tag: (0018,9175)
+message ApplicableSafetyStandardDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,9054)
+message VolumeLocalizationTechnique {
+	string value = 1;
+}
+// DICOM Tag: (0018,9064)
+message KSpaceFiltering {
+	string value = 1;
+}
+// DICOM Tag: (0018,9052)
+message SpectralWidth {
+	repeated double value = 1;
 }
 // DICOM Tag: (0018,9060)
 message DecoupledNucleus {
 	repeated string value = 1;
 }
-// DICOM Tag: (0008,9121)
-message ReferencedRawDataSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0018,9073)
+message AcquisitionDuration {
+	double value = 1;
 }
 // DICOM Tag: (0008,9092)
 message ReferencedImageEvidenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,9206)
+message VolumetricProperties {
+	string value = 1;
+}
+// DICOM Tag: (0018,9199)
+message WaterReferencedPhaseCorrection {
+	string value = 1;
+}
+// DICOM Tag: (0018,9297)
+message WaterReferenceAcquisition {
+	string value = 1;
+}
+// DICOM Tag: (0018,9174)
+message ApplicableSafetyStandardAgency {
+	string value = 1;
+}
+// DICOM Tag: (300A,012C)
+message IsocenterPosition {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1320)
+message B1rms {
+	float value = 1;
+}
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,9207)
+message VolumeBasedCalculationTechnique {
+	string value = 1;
+}
+// DICOM Tag: (0008,9208)
+message ComplexImageComponent {
+	string value = 1;
+}
+// DICOM Tag: (0008,9209)
+message AcquisitionContrast {
+	string value = 1;
+}
+// DICOM Tag: (0018,9061)
+message DecouplingFrequency {
+	repeated double value = 1;
+}
+// DICOM Tag: (0020,0012)
+message AcquisitionNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,113A)
+message ReferencedWaveformSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,9198)
+message FirstOrderPhaseCorrection {
+	string value = 1;
+}
+// DICOM Tag: (0018,9098)
+message TransmitterFrequency {
+	repeated double value = 1;
+}
+// DICOM Tag: (0018,9059)
+message Decoupling {
+	string value = 1;
+}
+// DICOM Tag: (0008,9121)
+message ReferencedRawDataSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -125,89 +160,54 @@ message ReferencedImageEvidenceSequence {
 message MagneticFieldStrength {
 	float value = 1;
 }
-// DICOM Tag: (0018,9061)
-message DecouplingFrequency {
-	repeated double value = 1;
+// DICOM Tag: (0018,9066)
+message NumberOfZeroFills {
+	repeated uint32 value = 1;
 }
-// DICOM Tag: (0018,9062)
-message DecouplingMethod {
-	string value = 1;
-}
-// DICOM Tag: (0018,9065)
-message TimeDomainFiltering {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,9101)
-message FrequencyCorrection {
-	string value = 1;
-}
-// DICOM Tag: (0018,9174)
-message ApplicableSafetyStandardAgency {
-	string value = 1;
-}
-// DICOM Tag: (0020,4000)
-message ImageComments {
-	string value = 1;
-}
-// DICOM Tag: (0018,9052)
-message SpectralWidth {
-	repeated double value = 1;
-}
-// DICOM Tag: (0018,9063)
-message DecouplingChemicalShiftReference {
-	repeated double value = 1;
-}
-// DICOM Tag: (0018,9064)
-message KSpaceFiltering {
-	string value = 1;
-}
-// DICOM Tag: (0018,9054)
-message VolumeLocalizationTechnique {
-	string value = 1;
-}
-// DICOM Tag: (0018,9198)
-message FirstOrderPhaseCorrection {
-	string value = 1;
+// DICOM Tag: (0008,114A)
+message ReferencedInstanceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message MRSpectroscopyModule {
-	AcquisitionDuration acquisition_duration = 1;
-	SourceImageEvidenceSequence source_image_evidence_sequence = 2;
-	ApplicableSafetyStandardDescription applicable_safety_standard_description = 3;
-	IsocenterPosition isocenter_position = 4;
-	ImageType image_type = 5;
-	ReferencedPresentationStateSequence referenced_presentation_state_sequence = 6;
-	ComplexImageComponent complex_image_component = 7;
-	DecoupledNucleus de_coupled_nucleus = 8;
-	ReferencedRawDataSequence referenced_raw_data_sequence = 9;
-	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 10;
-	MagneticFieldStrength magnetic_field_strength = 11;
-	DecouplingFrequency de_coupling_frequency = 12;
-	DecouplingMethod de_coupling_method = 13;
-	TimeDomainFiltering time_domain_filtering = 14;
-	FrequencyCorrection frequency_correction = 15;
-	ApplicableSafetyStandardAgency applicable_safety_standard_agency = 16;
-	ImageComments image_comments = 17;
-	SpectralWidth spectral_width = 18;
-	DecouplingChemicalShiftReference de_coupling_chemical_shift_reference = 19;
-	KSpaceFiltering k_space_filtering = 20;
-	VolumeLocalizationTechnique volume_localization_technique = 21;
-	FirstOrderPhaseCorrection first_order_phase_correction = 22;
-	B1rms b1rms = 23;
-	VolumetricProperties volumetric_properties = 24;
-	Decoupling de_coupling = 25;
-	WaterReferenceAcquisition water_reference_acquisition = 26;
-	AcquisitionDateTime acquisition_datetime = 27;
-	ReferencedWaveformSequence referenced_waveform_sequence = 28;
-	ResonantNucleus resonant_nucleus = 29;
-	VolumeBasedCalculationTechnique volume_based_calculation_technique = 30;
-	AcquisitionContrast acquisition_contrast = 31;
-	TransmitterFrequency transmitter_frequency = 32;
-	ChemicalShiftReference chemical_shift_reference = 33;
-	ReferencedInstanceSequence referenced_instance_sequence = 34;
-	AcquisitionNumber acquisition_number = 35;
-	ContentQualification content_qualification = 36;
-	VolumeLocalizationSequence volume_localization_sequence = 37;
-	NumberOfZeroFills number_of_zero_fills = 38;
-	BaselineCorrection baseline_correction = 39;
-	WaterReferencedPhaseCorrection water_referenced_phase_correction = 40;
+	ApplicableSafetyStandardAgency applicable_safety_standard_agency = 1;
+	IsocenterPosition isocenter_position = 2;
+	VolumetricProperties volumetric_properties = 3;
+	WaterReferencedPhaseCorrection water_referenced_phase_correction = 4;
+	WaterReferenceAcquisition water_reference_acquisition = 5;
+	ComplexImageComponent complex_image_component = 6;
+	AcquisitionContrast acquisition_contrast = 7;
+	DecouplingFrequency de_coupling_frequency = 8;
+	AcquisitionNumber acquisition_number = 9;
+	ReferencedWaveformSequence referenced_waveform_sequence = 10;
+	B1rms b1rms = 11;
+	ImageType image_type = 12;
+	VolumeBasedCalculationTechnique volume_based_calculation_technique = 13;
+	FirstOrderPhaseCorrection first_order_phase_correction = 14;
+	ReferencedRawDataSequence referenced_raw_data_sequence = 15;
+	MagneticFieldStrength magnetic_field_strength = 16;
+	TransmitterFrequency transmitter_frequency = 17;
+	Decoupling de_coupling = 18;
+	NumberOfZeroFills number_of_zero_fills = 19;
+	ReferencedInstanceSequence referenced_instance_sequence = 20;
+	ResonantNucleus resonant_nucleus = 21;
+	TimeDomainFiltering time_domain_filtering = 22;
+	ChemicalShiftReference chemical_shift_reference = 23;
+	DecouplingMethod de_coupling_method = 24;
+	BaselineCorrection baseline_correction = 25;
+	AcquisitionDateTime acquisition_datetime = 26;
+	SourceImageEvidenceSequence source_image_evidence_sequence = 27;
+	ReferencedPresentationStateSequence referenced_presentation_state_sequence = 28;
+	ContentQualification content_qualification = 29;
+	ImageComments image_comments = 30;
+	ApplicableSafetyStandardDescription applicable_safety_standard_description = 31;
+	VolumeLocalizationTechnique volume_localization_technique = 32;
+	VolumeLocalizationSequence volume_localization_sequence = 33;
+	DecouplingChemicalShiftReference de_coupling_chemical_shift_reference = 34;
+	FrequencyCorrection frequency_correction = 35;
+	AcquisitionDuration acquisition_duration = 36;
+	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 37;
+	KSpaceFiltering k_space_filtering = 38;
+	SpectralWidth spectral_width = 39;
+	DecoupledNucleus de_coupled_nucleus = 40;
 }

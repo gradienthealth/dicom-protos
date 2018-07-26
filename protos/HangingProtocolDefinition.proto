@@ -2,23 +2,18 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.23.html#table_C.23.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0072,000E)
-message HangingProtocolUserIdentificationCodeSequence {
+// DICOM Tag: (0072,0012)
+message SourceHangingProtocolSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0072,0010)
-message HangingProtocolUserGroupName {
-	string value = 1;
 }
 // DICOM Tag: (0072,0004)
 message HangingProtocolDescription {
 	string value = 1;
 }
-// DICOM Tag: (0072,000C)
-message HangingProtocolDefinitionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0072,0006)
+message HangingProtocolLevel {
+	string value = 1;
 }
 // DICOM Tag: (0072,0014)
 message NumberOfPriorsReferenced {
@@ -29,17 +24,13 @@ message ImageSetsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0072,0012)
-message SourceHangingProtocolSequence {
+// DICOM Tag: (0072,000E)
+message HangingProtocolUserIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0072,0002)
 message HangingProtocolName {
-	string value = 1;
-}
-// DICOM Tag: (0072,0006)
-message HangingProtocolLevel {
 	string value = 1;
 }
 // DICOM Tag: (0072,0008)
@@ -50,16 +41,25 @@ message HangingProtocolCreator {
 message HangingProtocolCreationDateTime {
 	int64 value = 1;
 }
+// DICOM Tag: (0072,000C)
+message HangingProtocolDefinitionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0072,0010)
+message HangingProtocolUserGroupName {
+	string value = 1;
+}
 message HangingProtocolDefinitionModule {
-	HangingProtocolName hanging_protocol_name = 1;
-	HangingProtocolLevel hanging_protocol_level = 2;
-	HangingProtocolCreator hanging_protocol_creator = 3;
-	HangingProtocolCreationDateTime hanging_protocol_creation_datetime = 4;
-	SourceHangingProtocolSequence source_hanging_protocol_sequence = 5;
-	HangingProtocolDescription hanging_protocol_description = 6;
-	HangingProtocolDefinitionSequence hanging_protocol_definition_sequence = 7;
-	NumberOfPriorsReferenced number_of_priors_referenced = 8;
-	ImageSetsSequence image_sets_sequence = 9;
-	HangingProtocolUserIdentificationCodeSequence hanging_protocol_user_identification_code_sequence = 10;
-	HangingProtocolUserGroupName hanging_protocol_user_group_name = 11;
+	HangingProtocolDefinitionSequence hanging_protocol_definition_sequence = 1;
+	HangingProtocolUserGroupName hanging_protocol_user_group_name = 2;
+	HangingProtocolName hanging_protocol_name = 3;
+	HangingProtocolCreator hanging_protocol_creator = 4;
+	HangingProtocolCreationDateTime hanging_protocol_creation_datetime = 5;
+	ImageSetsSequence image_sets_sequence = 6;
+	HangingProtocolUserIdentificationCodeSequence hanging_protocol_user_identification_code_sequence = 7;
+	SourceHangingProtocolSequence source_hanging_protocol_sequence = 8;
+	HangingProtocolDescription hanging_protocol_description = 9;
+	HangingProtocolLevel hanging_protocol_level = 10;
+	NumberOfPriorsReferenced number_of_priors_referenced = 11;
 }

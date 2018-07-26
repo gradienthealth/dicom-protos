@@ -2,11 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.10.html#table_C.8-76b
 syntax = "proto3";
 
-// DICOM Tag: (0008,1111)
-message ReferencedPerformedProcedureStepSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0040,0275)
 message RequestAttributesSequence {
 	bytes value = 1;
@@ -16,8 +11,13 @@ message RequestAttributesSequence {
 message Modality {
 	string value = 1;
 }
+// DICOM Tag: (0008,1111)
+message ReferencedPerformedProcedureStepSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message EnhancedMammographySeriesModule {
-	RequestAttributesSequence request_attributes_sequence = 1;
-	Modality modality = 2;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	RequestAttributesSequence request_attributes_sequence = 3;
 }

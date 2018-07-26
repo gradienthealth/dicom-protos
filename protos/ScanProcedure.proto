@@ -2,20 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.29.2.html#table_C.8.29-2
 syntax = "proto3";
 
-// DICOM Tag: (0080,0002)
-message SurfaceScanModeCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0080,0003)
-message RegistrationMethodCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
 // DICOM Tag: (0020,0012)
 message AcquisitionNumber {
 	int32 value = 1;
@@ -37,13 +23,27 @@ message SurfaceScanAcquisitionTypeCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0080,0002)
+message SurfaceScanModeCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0080,0003)
+message RegistrationMethodCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
 message ScanProcedureModule {
-	RegistrationMethodCodeSequence registration_method_code_sequence = 1;
-	InstanceNumber instance_number = 2;
-	AcquisitionNumber acquisition_number = 3;
-	AcquisitionDateTime acquisition_datetime = 4;
-	ShotDurationTime shot_duration_time = 5;
-	ShotOffsetTime shot_offset_time = 6;
-	SurfaceScanAcquisitionTypeCodeSequence surface_scan_acquisition_type_code_sequence = 7;
-	SurfaceScanModeCodeSequence surface_scan_mode_code_sequence = 8;
+	SurfaceScanAcquisitionTypeCodeSequence surface_scan_acquisition_type_code_sequence = 1;
+	SurfaceScanModeCodeSequence surface_scan_mode_code_sequence = 2;
+	RegistrationMethodCodeSequence registration_method_code_sequence = 3;
+	InstanceNumber instance_number = 4;
+	AcquisitionNumber acquisition_number = 5;
+	AcquisitionDateTime acquisition_datetime = 6;
+	ShotDurationTime shot_duration_time = 7;
+	ShotOffsetTime shot_offset_time = 8;
 }

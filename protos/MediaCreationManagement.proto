@@ -2,8 +2,45 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.22.html#table_C.22.1-1
 syntax = "proto3";
 
+// DICOM Tag: (2200,0009)
+message IncludeDisplayApplication {
+	string value = 1;
+}
+// DICOM Tag: (2100,0030)
+message ExecutionStatusInfo {
+	string value = 1;
+}
+// DICOM Tag: (2200,000B)
+message TotalNumberOfPiecesOfMediaCreated {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,1198)
+message FailedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (2200,0020)
+message RequestPriority {
+	string value = 1;
+}
+// DICOM Tag: (2200,0005)
+message BarcodeValue {
+	string value = 1;
+}
+// DICOM Tag: (2200,0006)
+message BarcodeSymbology {
+	string value = 1;
+}
 // DICOM Tag: (2200,000F)
 message AllowLossyCompression {
+	string value = 1;
+}
+// DICOM Tag: (2200,0007)
+message AllowMediaSplitting {
+	string value = 1;
+}
+// DICOM Tag: (2200,0008)
+message IncludeNonDICOMObjects {
 	string value = 1;
 }
 // DICOM Tag: (0008,1199)
@@ -11,8 +48,12 @@ message ReferencedSOPSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (2100,0030)
-message ExecutionStatusInfo {
+// DICOM Tag: (2200,0004)
+message MediaDisposition {
+	string value = 1;
+}
+// DICOM Tag: (2100,0020)
+message ExecutionStatus {
 	string value = 1;
 }
 // DICOM Tag: (2200,000D)
@@ -24,91 +65,50 @@ message ReferencedStorageMediaSequence {
 message NumberOfCopies {
 	int32 value = 1;
 }
-// DICOM Tag: (2200,0002)
-message LabelText {
-	string value = 1;
-}
-// DICOM Tag: (2200,0005)
-message BarcodeValue {
-	string value = 1;
-}
-// DICOM Tag: (2200,0007)
-message AllowMediaSplitting {
-	string value = 1;
-}
-// DICOM Tag: (2200,0020)
-message RequestPriority {
-	string value = 1;
-}
 // DICOM Tag: (2200,0001)
 message LabelUsingInformationExtractedFromInstances {
 	string value = 1;
 }
-// DICOM Tag: (2200,0009)
-message IncludeDisplayApplication {
-	string value = 1;
-}
-// DICOM Tag: (0008,1198)
-message FailedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (2200,000B)
-message TotalNumberOfPiecesOfMediaCreated {
-	uint32 value = 1;
-}
-// DICOM Tag: (0088,0130)
-message StorageMediaFileSetID {
-	string value = 1;
-}
-// DICOM Tag: (2200,0004)
-message MediaDisposition {
-	string value = 1;
-}
-// DICOM Tag: (2200,0008)
-message IncludeNonDICOMObjects {
-	string value = 1;
-}
-// DICOM Tag: (2200,000A)
-message PreserveCompositeInstancesAfterMediaCreation {
-	string value = 1;
-}
-// DICOM Tag: (0088,0140)
-message StorageMediaFileSetUID {
+// DICOM Tag: (2200,0002)
+message LabelText {
 	string value = 1;
 }
 // DICOM Tag: (2200,0003)
 message LabelStyleSelection {
 	string value = 1;
 }
-// DICOM Tag: (2200,0006)
-message BarcodeSymbology {
+// DICOM Tag: (0088,0130)
+message StorageMediaFileSetID {
 	string value = 1;
 }
-// DICOM Tag: (2100,0020)
-message ExecutionStatus {
+// DICOM Tag: (0088,0140)
+message StorageMediaFileSetUID {
+	string value = 1;
+}
+// DICOM Tag: (2200,000A)
+message PreserveCompositeInstancesAfterMediaCreation {
 	string value = 1;
 }
 message MediaCreationManagementModule {
-	MediaDisposition media_disposition = 1;
-	IncludeNonDICOMObjects include_non_dicom_objects = 2;
-	PreserveCompositeInstancesAfterMediaCreation preserve_composite_instances_after_media_creation = 3;
-	TotalNumberOfPiecesOfMediaCreated total_number_of_pieces_of_media_created = 4;
-	StorageMediaFileSetID storage_media_file_set_id = 5;
-	LabelStyleSelection label_style_selection = 6;
-	BarcodeSymbology barcode_symbology = 7;
-	ExecutionStatus execution_status = 8;
-	StorageMediaFileSetUID storage_media_file_set_uid = 9;
-	LabelText label_text = 10;
-	BarcodeValue barcode_value = 11;
-	AllowMediaSplitting allow_media_splitting = 12;
-	AllowLossyCompression allow_lossy_compression = 13;
-	ReferencedSOPSequence referenced_sop_sequence = 14;
-	ExecutionStatusInfo execution_status_info = 15;
-	ReferencedStorageMediaSequence referenced_storage_media_sequence = 16;
-	NumberOfCopies number_of_copies = 17;
-	LabelUsingInformationExtractedFromInstances label_using_information_extracted_from_instances = 18;
-	IncludeDisplayApplication include_display_application = 19;
-	FailedSOPSequence failed_sop_sequence = 20;
-	RequestPriority request_priority = 21;
+	StorageMediaFileSetUID storage_media_file_set_uid = 1;
+	PreserveCompositeInstancesAfterMediaCreation preserve_composite_instances_after_media_creation = 2;
+	StorageMediaFileSetID storage_media_file_set_id = 3;
+	BarcodeValue barcode_value = 4;
+	BarcodeSymbology barcode_symbology = 5;
+	AllowLossyCompression allow_lossy_compression = 6;
+	IncludeDisplayApplication include_display_application = 7;
+	ExecutionStatusInfo execution_status_info = 8;
+	TotalNumberOfPiecesOfMediaCreated total_number_of_pieces_of_media_created = 9;
+	FailedSOPSequence failed_sop_sequence = 10;
+	RequestPriority request_priority = 11;
+	IncludeNonDICOMObjects include_non_dicom_objects = 12;
+	ReferencedSOPSequence referenced_sop_sequence = 13;
+	AllowMediaSplitting allow_media_splitting = 14;
+	LabelUsingInformationExtractedFromInstances label_using_information_extracted_from_instances = 15;
+	LabelText label_text = 16;
+	LabelStyleSelection label_style_selection = 17;
+	MediaDisposition media_disposition = 18;
+	ExecutionStatus execution_status = 19;
+	ReferencedStorageMediaSequence referenced_storage_media_sequence = 20;
+	NumberOfCopies number_of_copies = 21;
 }

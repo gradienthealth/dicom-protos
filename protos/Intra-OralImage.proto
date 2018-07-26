@@ -21,8 +21,8 @@ message PrimaryAnatomicStructureSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message Intra-OralImageModule {
-	PositionerType positioner_type = 1;
-	ImageLaterality image_laterality = 2;
-	AnatomicRegionSequence anatomic_region_sequence = 3;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 4;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 1;
+	PositionerType positioner_type = 2;
+	ImageLaterality image_laterality = 3;
+	AnatomicRegionSequence anatomic_region_sequence = 4;
 }

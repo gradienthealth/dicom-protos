@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.29.html#table_C.11.29-1
 syntax = "proto3";
 
-// DICOM Tag: (0070,1A06)
-message SwivelRange {
-	double value = 1;
-}
 // DICOM Tag: (0070,1A01)
 message PresentationAnimationStyle {
 	string value = 1;
@@ -21,6 +17,10 @@ message AnimationCurveSequence {
 }
 // DICOM Tag: (0070,1A05)
 message AnimationStepSize {
+	double value = 1;
+}
+// DICOM Tag: (0070,1A06)
+message SwivelRange {
 	double value = 1;
 }
 message PresentationAnimationModule {

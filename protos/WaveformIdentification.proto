@@ -2,6 +2,15 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.8.html#table_C.10-8
 syntax = "proto3";
 
+// DICOM Tag: (0008,114A)
+message ReferencedInstanceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
 // DICOM Tag: (0008,0023)
 message ContentDate {
 	string value = 1;
@@ -13,15 +22,6 @@ message ContentTime {
 // DICOM Tag: (0008,002A)
 message AcquisitionDateTime {
 	int64 value = 1;
-}
-// DICOM Tag: (0008,114A)
-message ReferencedInstanceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
 }
 message WaveformIdentificationModule {
 	InstanceNumber instance_number = 1;

@@ -2,9 +2,9 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.20.2.html#table_C.20.2-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0023)
-message ContentDate {
-	string value = 1;
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
@@ -12,6 +12,10 @@ message InstanceNumber {
 }
 // DICOM Tag: (0070,0080)
 message ContentLabel {
+	string value = 1;
+}
+// DICOM Tag: (0070,0081)
+message ContentDescription {
 	string value = 1;
 }
 // DICOM Tag: (0040,A043)
@@ -24,12 +28,8 @@ message ContentCreatorIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0070,0081)
-message ContentDescription {
+// DICOM Tag: (0008,0023)
+message ContentDate {
 	string value = 1;
 }
 // DICOM Tag: (0070,0087)
@@ -47,14 +47,14 @@ message RegistrationSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message SpatialRegistrationModule {
-	ContentTime content_time = 1;
-	ContentDescription content_description = 2;
+	RegistrationSequence registration_sequence = 1;
+	ContentDate content_date = 2;
 	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
 	ContentCreatorName content_creator's_name = 4;
-	RegistrationSequence registration_sequence = 5;
-	ContentDate content_date = 6;
-	InstanceNumber instance_number = 7;
-	ContentLabel content_label = 8;
-	ConceptNameCodeSequence concept_name_code_sequence = 9;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 10;
+	ContentDescription content_description = 5;
+	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 7;
+	ContentTime content_time = 8;
+	InstanceNumber instance_number = 9;
+	ContentLabel content_label = 10;
 }

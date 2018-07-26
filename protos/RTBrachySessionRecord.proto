@@ -29,10 +29,10 @@ message TreatmentSessionApplicationSetupSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message RTBrachySessionRecordModule {
-	BrachyTreatmentType brachy_treatment_type = 1;
-	RecordedSourceSequence recorded_source_sequence = 2;
-	TreatmentSessionApplicationSetupSequence treatment_session_application_setup_sequence = 3;
-	ReferencedFractionGroupNumber referenced_fraction_group_number = 4;
-	NumberOfFractionsPlanned number_of_fractions_planned = 5;
-	BrachyTreatmentTechnique brachy_treatment_technique = 6;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 1;
+	NumberOfFractionsPlanned number_of_fractions_planned = 2;
+	BrachyTreatmentTechnique brachy_treatment_technique = 3;
+	BrachyTreatmentType brachy_treatment_type = 4;
+	RecordedSourceSequence recorded_source_sequence = 5;
+	TreatmentSessionApplicationSetupSequence treatment_session_application_setup_sequence = 6;
 }

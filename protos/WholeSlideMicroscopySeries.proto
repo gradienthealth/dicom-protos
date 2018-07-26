@@ -12,6 +12,6 @@ message ReferencedPerformedProcedureStepSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message WholeSlideMicroscopySeriesModule {
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
-	Modality modality = 2;
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
 }

@@ -2,6 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.7.html#table_C.8.25.7-1
 syntax = "proto3";
 
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
+}
 // DICOM Tag: (0024,0113)
 message MeasurementLaterality {
 	string value = 1;
@@ -23,15 +27,11 @@ message InstanceNumber {
 message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
-}
 message GeneralOphthalmicRefractiveMeasurementsModule {
-	InstanceNumber instance_number = 1;
-	ContentDate content_date = 2;
-	ContentTime content_time = 3;
-	MeasurementLaterality measurement_laterality = 4;
-	ImageComments image_comments = 5;
-	ReferencedRefractiveMeasurementsSequence referenced_refractive_measurements_sequence = 6;
+	MeasurementLaterality measurement_laterality = 1;
+	ImageComments image_comments = 2;
+	ReferencedRefractiveMeasurementsSequence referenced_refractive_measurements_sequence = 3;
+	InstanceNumber instance_number = 4;
+	ContentDate content_date = 5;
+	ContentTime content_time = 6;
 }

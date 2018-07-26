@@ -2,41 +2,25 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.html#table_C.8-2
 syntax = "proto3";
 
-// DICOM Tag: (0018,1150)
-message ExposureTime {
-	int32 value = 1;
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
 }
-// DICOM Tag: (0018,1164)
-message ImagerPixelSpacing {
-	repeated float value = 1;
+// DICOM Tag: (0018,1110)
+message DistanceSourceToDetector {
+	float value = 1;
 }
-// DICOM Tag: (0018,1401)
-message AcquisitionDeviceProcessingCode {
+// DICOM Tag: (0018,1400)
+message AcquisitionDeviceProcessingDescription {
 	string value = 1;
-}
-// DICOM Tag: (0018,6000)
-message Sensitivity {
-	float value = 1;
-}
-// DICOM Tag: (0018,1412)
-message TargetExposureIndex {
-	float value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0018,1111)
-message DistanceSourceToPatient {
-	float value = 1;
-}
-// DICOM Tag: (0028,0030)
-message PixelSpacing {
-	repeated float value = 1;
 }
 // DICOM Tag: (0018,1402)
 message CassetteOrientation {
 	string value = 1;
+}
+// DICOM Tag: (0018,1170)
+message GeneratorPower {
+	int32 value = 1;
 }
 // DICOM Tag: (0018,1403)
 message CassetteSize {
@@ -46,33 +30,12 @@ message CassetteSize {
 message ExposuresOnPlate {
 	uint32 value = 1;
 }
-// DICOM Tag: (0018,1413)
-message DeviationIndex {
-	float value = 1;
-}
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
-}
-// DICOM Tag: (0018,1152)
-message Exposure {
+// DICOM Tag: (0018,1405)
+message RelativeXRayExposure {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1411)
-message ExposureIndex {
-	float value = 1;
-}
-// DICOM Tag: (0018,1151)
-message XRayTubeCurrent {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1400)
-message AcquisitionDeviceProcessingDescription {
+// DICOM Tag: (0018,1004)
+message PlateID {
 	string value = 1;
 }
 // DICOM Tag: (0018,1153)
@@ -87,52 +50,89 @@ message PixelSpacingCalibrationType {
 message PixelSpacingCalibrationDescription {
 	string value = 1;
 }
-// DICOM Tag: (0018,1170)
-message GeneratorPower {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1405)
-message RelativeXRayExposure {
-	int32 value = 1;
+// DICOM Tag: (0018,6000)
+message Sensitivity {
+	float value = 1;
 }
 // DICOM Tag: (0008,2218)
 message AnatomicRegionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,1004)
-message PlateID {
-	string value = 1;
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,1110)
-message DistanceSourceToDetector {
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
 	float value = 1;
 }
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1413)
+message DeviationIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1111)
+message DistanceSourceToPatient {
+	float value = 1;
+}
+// DICOM Tag: (0018,1150)
+message ExposureTime {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1152)
+message Exposure {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1164)
+message ImagerPixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0018,1151)
+message XRayTubeCurrent {
+	int32 value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1401)
+message AcquisitionDeviceProcessingCode {
+	string value = 1;
+}
 message CRImageModule {
-	AnatomicRegionSequence anatomic_region_sequence = 1;
-	PlateID plate_id = 2;
-	DistanceSourceToDetector distance_source_to_detector = 3;
-	ExposureInuAs exposure_in_as = 4;
-	PixelSpacingCalibrationType pixel_spacing_calibration_type = 5;
-	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 6;
-	GeneratorPower generator_power = 7;
-	RelativeXRayExposure relative_x_ray_exposure = 8;
-	PhotometricInterpretation photometric_interpretation = 9;
-	DistanceSourceToPatient distance_source_to_patient = 10;
-	ExposureTime exposure_time = 11;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 1;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 2;
+	GeneratorPower generator_power = 3;
+	CassetteSize cassette_size = 4;
+	ExposuresOnPlate exposures_on_plate = 5;
+	RelativeXRayExposure relative_x_ray_exposure = 6;
+	PlateID plate_id = 7;
+	ExposureInuAs exposure_in_as = 8;
+	Sensitivity sensitivity = 9;
+	AnatomicRegionSequence anatomic_region_sequence = 10;
+	Exposure exposure = 11;
 	ImagerPixelSpacing imager_pixel_spacing = 12;
-	AcquisitionDeviceProcessingCode acquisition_device_processing_code = 13;
-	Sensitivity sensitivity = 14;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 13;
+	ExposureIndex exposure_index = 14;
 	TargetExposureIndex target_exposure_index = 15;
-	KVP kvp = 16;
-	Exposure exposure = 17;
-	PixelSpacing pixel_spacing = 18;
-	CassetteOrientation cassette_orientation = 19;
-	CassetteSize cassette_size = 20;
-	ExposuresOnPlate exposures_on_plate = 21;
-	DeviationIndex deviation_index = 22;
-	XRayTubeCurrent x_ray_tube_current = 23;
-	AcquisitionDeviceProcessingDescription acquisition_device_processing_description = 24;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 25;
-	ExposureIndex exposure_index = 26;
+	DeviationIndex deviation_index = 16;
+	DistanceSourceToPatient distance_source_to_patient = 17;
+	ExposureTime exposure_time = 18;
+	PixelSpacing pixel_spacing = 19;
+	AcquisitionDeviceProcessingCode acquisition_device_processing_code = 20;
+	PhotometricInterpretation photometric_interpretation = 21;
+	XRayTubeCurrent x_ray_tube_current = 22;
+	AcquisitionDeviceProcessingDescription acquisition_device_processing_description = 23;
+	CassetteOrientation cassette_orientation = 24;
+	KVP kvp = 25;
+	DistanceSourceToDetector distance_source_to_detector = 26;
 }
