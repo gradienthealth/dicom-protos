@@ -2,35 +2,39 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.24.2.html#table_C.24-2
 syntax = "proto3";
 
-// DICOM Tag: (0028,0302)
-message RecognizableVisualFeatures {
-	string value = 1;
-}
-// DICOM Tag: (0040,A043)
-message ConceptNameCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A525)
-message IdenticalDocumentsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0042,0014)
+message ListOfMIMETypes {
+	repeated string value = 1;
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,0023)
-message ContentDate {
-	string value = 1;
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0040,E008)
+message DocumentClassCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0040,E001)
 message HL7InstanceIdentifier {
 	string value = 1;
 }
-// DICOM Tag: (0042,0014)
-message ListOfMIMETypes {
-	repeated string value = 1;
+// DICOM Tag: (0040,A360)
+message PredecessorDocumentsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,A493)
+message VerificationFlag {
+	string value = 1;
+}
+// DICOM Tag: (0020,0062)
+message ImageLaterality {
+	string value = 1;
 }
 // DICOM Tag: (0028,0301)
 message BurnedInAnnotation {
@@ -41,61 +45,57 @@ message SourceInstanceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0042,0011)
-message EncapsulatedDocument {
-	string value = 1;
-}
-// DICOM Tag: (0008,002A)
-message AcquisitionDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,A360)
-message PredecessorDocumentsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0042,0010)
 message DocumentTitle {
 	string value = 1;
 }
-// DICOM Tag: (0040,E008)
-message DocumentClassCodeSequence {
+// DICOM Tag: (0040,A043)
+message ConceptNameCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,A493)
-message VerificationFlag {
+// DICOM Tag: (0042,0011)
+message EncapsulatedDocument {
 	string value = 1;
 }
-// DICOM Tag: (0042,0012)
-message MIMETypeOfEncapsulatedDocument {
+// DICOM Tag: (0008,0023)
+message ContentDate {
 	string value = 1;
 }
 // DICOM Tag: (0008,0033)
 message ContentTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0020,0062)
-message ImageLaterality {
+// DICOM Tag: (0028,0302)
+message RecognizableVisualFeatures {
+	string value = 1;
+}
+// DICOM Tag: (0040,A525)
+message IdenticalDocumentsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0042,0012)
+message MIMETypeOfEncapsulatedDocument {
 	string value = 1;
 }
 message EncapsulatedDocumentModule {
-	AcquisitionDateTime acquisition_datetime = 1;
-	PredecessorDocumentsSequence predecessor_documents_sequence = 2;
+	IdenticalDocumentsSequence identical_documents_sequence = 1;
+	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 2;
 	EncapsulatedDocument encapsulated_document = 3;
-	ContentTime content_time = 4;
-	ImageLaterality image_laterality = 5;
-	DocumentTitle document_title = 6;
-	DocumentClassCodeSequence document_class_code_sequence = 7;
-	VerificationFlag verification_flag = 8;
-	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 9;
+	ContentDate content_date = 4;
+	ContentTime content_time = 5;
+	RecognizableVisualFeatures recognizable_visual_features = 6;
+	HL7InstanceIdentifier hl7_instance_identifier = 7;
+	PredecessorDocumentsSequence predecessor_documents_sequence = 8;
+	ListOfMIMETypes list_of_mime_types = 9;
 	InstanceNumber instance_number = 10;
-	ContentDate content_date = 11;
-	RecognizableVisualFeatures recognizable_visual_features = 12;
-	ConceptNameCodeSequence concept_name_code_sequence = 13;
-	IdenticalDocumentsSequence identical_documents_sequence = 14;
-	BurnedInAnnotation burned_in_annotation = 15;
-	SourceInstanceSequence source_instance_sequence = 16;
-	HL7InstanceIdentifier hl7_instance_identifier = 17;
-	ListOfMIMETypes list_of_mime_types = 18;
+	AcquisitionDateTime acquisition_datetime = 11;
+	DocumentClassCodeSequence document_class_code_sequence = 12;
+	DocumentTitle document_title = 13;
+	ConceptNameCodeSequence concept_name_code_sequence = 14;
+	VerificationFlag verification_flag = 15;
+	ImageLaterality image_laterality = 16;
+	BurnedInAnnotation burned_in_annotation = 17;
+	SourceInstanceSequence source_instance_sequence = 18;
 }

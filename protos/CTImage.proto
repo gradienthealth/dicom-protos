@@ -2,103 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.2.html#table_C.8-3
 syntax = "proto3";
 
-// DICOM Tag: (300A,0140)
-message TableTopPitchAngle {
-	float value = 1;
-}
-// DICOM Tag: (0028,1052)
-message RescaleIntercept {
-	float value = 1;
-}
-// DICOM Tag: (0018,0090)
-message DataCollectionDiameter {
-	float value = 1;
-}
-// DICOM Tag: (0018,1151)
-message XRayTubeCurrent {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,9309)
-message TableSpeed {
-	double value = 1;
-}
-// DICOM Tag: (0054,0500)
-message SliceProgressionDirection {
-	string value = 1;
-}
-// DICOM Tag: (0020,0012)
-message AcquisitionNumber {
-	int32 value = 1;
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
 }
 // DICOM Tag: (0018,9305)
 message RevolutionTime {
-	double value = 1;
-}
-// DICOM Tag: (0018,9323)
-message ExposureModulationType {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,9324)
-message EstimatedDoseSaving {
-	double value = 1;
-}
-// DICOM Tag: (0018,1120)
-message GantryDetectorTilt {
-	float value = 1;
-}
-// DICOM Tag: (0018,1160)
-message FilterType {
-	string value = 1;
-}
-// DICOM Tag: (300A,0129)
-message TableTopLongitudinalPosition {
-	float value = 1;
-}
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1140)
-message RotationDirection {
-	string value = 1;
-}
-// DICOM Tag: (0018,1190)
-message FocalSpots {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1272)
-message WaterEquivalentDiameterCalculationMethodCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (300A,012C)
-message IsocenterPosition {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,9360)
-message CTAdditionalXRaySourceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (300A,012A)
-message TableTopLateralPosition {
-	float value = 1;
-}
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,0022)
-message ScanOptions {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,1111)
-message DistanceSourceToPatient {
-	float value = 1;
-}
-// DICOM Tag: (0018,9311)
-message SpiralPitchFactor {
 	double value = 1;
 }
 // DICOM Tag: (0018,9346)
@@ -106,17 +15,132 @@ message CTDIPhantomTypeCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,9318)
-message ReconstructionTargetCenterPatient {
-	repeated double value = 1;
+// DICOM Tag: (300A,012A)
+message TableTopLateralPosition {
+	float value = 1;
 }
-// DICOM Tag: (0018,1150)
-message ExposureTime {
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,9310)
+message TableFeedPerRotation {
+	double value = 1;
+}
+// DICOM Tag: (0018,1272)
+message WaterEquivalentDiameterCalculationMethodCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,1052)
+message RescaleIntercept {
+	float value = 1;
+}
+// DICOM Tag: (0018,9351)
+message CalciumScoringMassFactorPatient {
+	float value = 1;
+}
+// DICOM Tag: (300A,0140)
+message TableTopPitchAngle {
+	float value = 1;
+}
+// DICOM Tag: (0018,9309)
+message TableSpeed {
+	double value = 1;
+}
+// DICOM Tag: (0018,1110)
+message DistanceSourceToDetector {
+	float value = 1;
+}
+// DICOM Tag: (0018,9306)
+message SingleCollimationWidth {
+	double value = 1;
+}
+// DICOM Tag: (300A,0129)
+message TableTopLongitudinalPosition {
+	float value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0018,1153)
+message ExposureInuAs {
 	int32 value = 1;
+}
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (300A,0122)
 message PatientSupportAngle {
 	float value = 1;
+}
+// DICOM Tag: (0028,1053)
+message RescaleSlope {
+	float value = 1;
+}
+// DICOM Tag: (0018,1210)
+message ConvolutionKernel {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,9360)
+message CTAdditionalXRaySourceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,1152)
+message Exposure {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1160)
+message FilterType {
+	string value = 1;
+}
+// DICOM Tag: (300A,0144)
+message TableTopRollAngle {
+	float value = 1;
+}
+// DICOM Tag: (0018,9318)
+message ReconstructionTargetCenterPatient {
+	repeated double value = 1;
+}
+// DICOM Tag: (0018,0090)
+message DataCollectionDiameter {
+	float value = 1;
+}
+// DICOM Tag: (0018,1130)
+message TableHeight {
+	float value = 1;
+}
+// DICOM Tag: (0018,1170)
+message GeneratorPower {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,9307)
+message TotalCollimationWidth {
+	double value = 1;
+}
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (0020,0012)
+message AcquisitionNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,1150)
+message ExposureTime {
+	int32 value = 1;
 }
 // DICOM Tag: (0028,1054)
 message RescaleType {
@@ -126,167 +150,143 @@ message RescaleType {
 message DataCollectionCenterPatient {
 	repeated double value = 1;
 }
-// DICOM Tag: (0018,9307)
-message TotalCollimationWidth {
+// DICOM Tag: (0018,1190)
+message FocalSpots {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,115E)
+message ImageAndFluoroscopyAreaDoseProduct {
+	float value = 1;
+}
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
+	string value = 1;
+}
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,9345)
+message CTDIvol {
 	double value = 1;
 }
 // DICOM Tag: (0018,1271)
 message WaterEquivalentDiameter {
 	double value = 1;
 }
-// DICOM Tag: (0018,115E)
-message ImageAndFluoroscopyAreaDoseProduct {
-	float value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,1152)
-message Exposure {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1153)
-message ExposureInuAs {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1170)
-message GeneratorPower {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,9352)
-message CalciumScoringMassFactorDevice {
+// DICOM Tag: (300A,012C)
+message IsocenterPosition {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
-}
-// DICOM Tag: (0018,1210)
-message ConvolutionKernel {
+// DICOM Tag: (0018,0022)
+message ScanOptions {
 	repeated string value = 1;
 }
-// DICOM Tag: (0018,9306)
-message SingleCollimationWidth {
+// DICOM Tag: (0018,1100)
+message ReconstructionDiameter {
+	float value = 1;
+}
+// DICOM Tag: (0018,1111)
+message DistanceSourceToPatient {
+	float value = 1;
+}
+// DICOM Tag: (0018,9324)
+message EstimatedDoseSaving {
 	double value = 1;
+}
+// DICOM Tag: (0018,1140)
+message RotationDirection {
+	string value = 1;
+}
+// DICOM Tag: (0018,9323)
+message ExposureModulationType {
+	repeated string value = 1;
 }
 // DICOM Tag: (0054,0220)
 message ViewCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,9351)
-message CalciumScoringMassFactorPatient {
+// DICOM Tag: (0018,9352)
+message CalciumScoringMassFactorDevice {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1120)
+message GantryDetectorTilt {
 	float value = 1;
 }
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1053)
-message RescaleSlope {
-	float value = 1;
-}
-// DICOM Tag: (0018,1100)
-message ReconstructionDiameter {
-	float value = 1;
-}
-// DICOM Tag: (0018,9310)
-message TableFeedPerRotation {
+// DICOM Tag: (0018,9311)
+message SpiralPitchFactor {
 	double value = 1;
 }
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0018,9345)
-message CTDIvol {
-	double value = 1;
+// DICOM Tag: (0008,2218)
+message AnatomicRegionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0018,9353)
 message EnergyWeightingFactor {
 	float value = 1;
 }
-// DICOM Tag: (0018,1130)
-message TableHeight {
-	float value = 1;
-}
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1110)
-message DistanceSourceToDetector {
-	float value = 1;
-}
-// DICOM Tag: (300A,0144)
-message TableTopRollAngle {
-	float value = 1;
+// DICOM Tag: (0018,1151)
+message XRayTubeCurrent {
+	int32 value = 1;
 }
 message CTImageModule {
-	DistanceSourceToDetector distance_source_to_detector = 1;
-	TableTopRollAngle table_top_roll_angle = 2;
-	TableSpeed table_speed = 3;
-	SliceProgressionDirection slice_progression_direction = 4;
-	TableTopPitchAngle table_top_pitch_angle = 5;
-	RescaleIntercept rescale_intercept = 6;
-	DataCollectionDiameter data_collection_diameter = 7;
-	XRayTubeCurrent x_ray_tube_current = 8;
-	EstimatedDoseSaving estimated_dose_saving = 9;
-	AcquisitionNumber acquisition_number = 10;
-	RevolutionTime revolution_time = 11;
-	ExposureModulationType exposure_modulation_type = 12;
-	GantryDetectorTilt gantry_detector_tilt = 13;
-	FilterType filter_type = 14;
-	TableTopLongitudinalPosition table_top_longitudinal_position = 15;
-	AnatomicRegionSequence anatomic_region_sequence = 16;
-	IsocenterPosition isocenter_position = 17;
-	RotationDirection rotation_direction = 18;
-	FocalSpots focal_spots = 19;
-	WaterEquivalentDiameterCalculationMethodCodeSequence water_equivalent_diameter_calculation_method_code_sequence = 20;
-	SpiralPitchFactor spiral_pitch_factor = 21;
-	CTDIPhantomTypeCodeSequence ctdi_phantom_type_code_sequence = 22;
-	CTAdditionalXRaySourceSequence ct_additional_x_ray_source_sequence = 23;
-	TableTopLateralPosition table_top_lateral_position = 24;
-	BitsStored bits_stored = 25;
-	ScanOptions scan_options = 26;
-	DistanceSourceToPatient distance_source_to_patient = 27;
-	PatientSupportAngle patient_support_angle = 28;
-	ReconstructionTargetCenterPatient reconstruction_target_center_patient = 29;
-	ExposureTime exposure_time = 30;
-	RescaleType rescale_type = 31;
-	DataCollectionCenterPatient data_collection_center_patient = 32;
-	ExposureInuAs exposure_in_as = 33;
-	GeneratorPower generator_power = 34;
-	TotalCollimationWidth total_collimation_width = 35;
-	WaterEquivalentDiameter water_equivalent_diameter = 36;
-	ImageAndFluoroscopyAreaDoseProduct image_and_fluoroscopy_area_dose_product = 37;
-	ImageType image_type = 38;
-	BitsAllocated bits_allocated = 39;
-	Exposure exposure = 40;
-	CalciumScoringMassFactorDevice calcium_scoring_mass_factor_device = 41;
-	SamplesPerPixel samples_per_pixel = 42;
-	KVP kvp = 43;
-	CalciumScoringMassFactorPatient calcium_scoring_mass_factor_patient = 44;
-	ConvolutionKernel convolution_kernel = 45;
-	SingleCollimationWidth single_collimation_width = 46;
-	ViewCodeSequence view_code_sequence = 47;
-	TableFeedPerRotation table_feed_per_rotation = 48;
-	HighBit high_bit = 49;
-	RescaleSlope rescale_slope = 50;
-	ReconstructionDiameter reconstruction_diameter = 51;
-	PhotometricInterpretation photometric_interpretation = 52;
-	CTDIvol ctdivol = 53;
-	EnergyWeightingFactor energy_weighting_factor = 54;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 55;
-	TableHeight table_height = 56;
+	AcquisitionNumber acquisition_number = 1;
+	RescaleType rescale_type = 2;
+	KVP kvp = 3;
+	ExposureTime exposure_time = 4;
+	SliceProgressionDirection slice_progression_direction = 5;
+	ImageType image_type = 6;
+	DataCollectionCenterPatient data_collection_center_patient = 7;
+	FocalSpots focal_spots = 8;
+	ImageAndFluoroscopyAreaDoseProduct image_and_fluoroscopy_area_dose_product = 9;
+	ScanOptions scan_options = 10;
+	CTDIvol ctdivol = 11;
+	WaterEquivalentDiameter water_equivalent_diameter = 12;
+	IsocenterPosition isocenter_position = 13;
+	EstimatedDoseSaving estimated_dose_saving = 14;
+	ReconstructionDiameter reconstruction_diameter = 15;
+	DistanceSourceToPatient distance_source_to_patient = 16;
+	CalciumScoringMassFactorDevice calcium_scoring_mass_factor_device = 17;
+	GantryDetectorTilt gantry_detector_tilt = 18;
+	RotationDirection rotation_direction = 19;
+	ExposureModulationType exposure_modulation_type = 20;
+	ViewCodeSequence view_code_sequence = 21;
+	XRayTubeCurrent x_ray_tube_current = 22;
+	SpiralPitchFactor spiral_pitch_factor = 23;
+	AnatomicRegionSequence anatomic_region_sequence = 24;
+	EnergyWeightingFactor energy_weighting_factor = 25;
+	TableTopLateralPosition table_top_lateral_position = 26;
+	BitsAllocated bits_allocated = 27;
+	HighBit high_bit = 28;
+	RevolutionTime revolution_time = 29;
+	CTDIPhantomTypeCodeSequence ctdi_phantom_type_code_sequence = 30;
+	RescaleIntercept rescale_intercept = 31;
+	TableFeedPerRotation table_feed_per_rotation = 32;
+	WaterEquivalentDiameterCalculationMethodCodeSequence water_equivalent_diameter_calculation_method_code_sequence = 33;
+	TableSpeed table_speed = 34;
+	CalciumScoringMassFactorPatient calcium_scoring_mass_factor_patient = 35;
+	TableTopPitchAngle table_top_pitch_angle = 36;
+	PhotometricInterpretation photometric_interpretation = 37;
+	DistanceSourceToDetector distance_source_to_detector = 38;
+	SingleCollimationWidth single_collimation_width = 39;
+	TableTopLongitudinalPosition table_top_longitudinal_position = 40;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 41;
+	PatientSupportAngle patient_support_angle = 42;
+	RescaleSlope rescale_slope = 43;
+	ExposureInuAs exposure_in_as = 44;
+	SamplesPerPixel samples_per_pixel = 45;
+	ConvolutionKernel convolution_kernel = 46;
+	CTAdditionalXRaySourceSequence ct_additional_x_ray_source_sequence = 47;
+	ReconstructionTargetCenterPatient reconstruction_target_center_patient = 48;
+	Exposure exposure = 49;
+	FilterType filter_type = 50;
+	TableTopRollAngle table_top_roll_angle = 51;
+	TotalCollimationWidth total_collimation_width = 52;
+	BitsStored bits_stored = 53;
+	DataCollectionDiameter data_collection_diameter = 54;
+	TableHeight table_height = 55;
+	GeneratorPower generator_power = 56;
 }

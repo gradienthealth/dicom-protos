@@ -2,56 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.30.4.html#table_C.30.4-1
 syntax = "proto3";
 
-// DICOM Tag: (0010,0010)
-message PatientName {
-	string value = 1;
-}
-// DICOM Tag: (0010,0024)
-message IssuerOfPatientIDQualifiersSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0038,0014)
-message IssuerOfAdmissionIDSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0021)
-message IssuerOfPatientID {
-	string value = 1;
-}
-// DICOM Tag: (0010,0030)
-message PatientBirthDate {
-	string value = 1;
-}
 // DICOM Tag: (0038,0010)
 message AdmissionID {
 	string value = 1;
 }
-// DICOM Tag: (0010,0020)
-message PatientID {
-	string value = 1;
-}
-// DICOM Tag: (0010,0035)
-message PatientAlternativeCalendar {
-	string value = 1;
-}
-// DICOM Tag: (0010,0040)
-message PatientSex {
-	string value = 1;
-}
-// DICOM Tag: (0010,1100)
-message ReferencedPatientPhotoSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0040,A370)
 message ReferencedRequestSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,1002)
-message OtherPatientIDsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -59,18 +15,62 @@ message OtherPatientIDsSequence {
 message PatientBirthDateInAlternativeCalendar {
 	string value = 1;
 }
+// DICOM Tag: (0010,0024)
+message IssuerOfPatientIDQualifiersSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0010,0034)
 message PatientDeathDateInAlternativeCalendar {
 	string value = 1;
+}
+// DICOM Tag: (0010,0035)
+message PatientAlternativeCalendar {
+	string value = 1;
+}
+// DICOM Tag: (0010,1100)
+message ReferencedPatientPhotoSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,1080)
 message AdmittingDiagnosesDescription {
 	repeated string value = 1;
 }
+// DICOM Tag: (0010,0010)
+message PatientName {
+	string value = 1;
+}
+// DICOM Tag: (0010,0021)
+message IssuerOfPatientID {
+	string value = 1;
+}
+// DICOM Tag: (0010,1002)
+message OtherPatientIDsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0030)
+message PatientBirthDate {
+	string value = 1;
+}
+// DICOM Tag: (0010,0040)
+message PatientSex {
+	string value = 1;
+}
+// DICOM Tag: (0038,0014)
+message IssuerOfAdmissionIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0008,1084)
 message AdmittingDiagnosesCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0020)
+message PatientID {
+	string value = 1;
 }
 // DICOM Tag: (0074,1224)
 message ReplacedProcedureStepSequence {
@@ -78,21 +78,21 @@ message ReplacedProcedureStepSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message UnifiedProcedureStepRelationshipModule {
-	PatientName patient's_name = 1;
-	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 2;
-	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 3;
-	IssuerOfPatientID issuer_of_patient_id = 4;
-	PatientBirthDate patient's_birth_date = 5;
-	AdmissionID admission_id = 6;
-	PatientID patient_id = 7;
-	PatientAlternativeCalendar patient's_alternative_calendar = 8;
-	PatientSex patient's_sex = 9;
-	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 10;
-	ReferencedRequestSequence referenced_request_sequence = 11;
+	ReplacedProcedureStepSequence replaced_procedure_step_sequence = 1;
+	AdmissionID admission_id = 2;
+	ReferencedRequestSequence referenced_request_sequence = 3;
+	PatientBirthDateInAlternativeCalendar patient's_birth_date_in_alternative_calendar = 4;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 5;
+	PatientDeathDateInAlternativeCalendar patient's_death_date_in_alternative_calendar = 6;
+	PatientAlternativeCalendar patient's_alternative_calendar = 7;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 8;
+	AdmittingDiagnosesDescription admitting_diagnoses_description = 9;
+	PatientName patient's_name = 10;
+	IssuerOfPatientID issuer_of_patient_id = 11;
 	OtherPatientIDsSequence other_patient_ids_sequence = 12;
-	PatientBirthDateInAlternativeCalendar patient's_birth_date_in_alternative_calendar = 13;
-	PatientDeathDateInAlternativeCalendar patient's_death_date_in_alternative_calendar = 14;
-	AdmittingDiagnosesDescription admitting_diagnoses_description = 15;
+	PatientBirthDate patient's_birth_date = 13;
+	PatientSex patient's_sex = 14;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 15;
 	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 16;
-	ReplacedProcedureStepSequence replaced_procedure_step_sequence = 17;
+	PatientID patient_id = 17;
 }

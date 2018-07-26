@@ -2,8 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.12.html#table_C.8.25.12-1
 syntax = "proto3";
 
-// DICOM Tag: (0046,0095)
-message OptotypePresentation {
+// DICOM Tag: (0046,0125)
+message ViewingDistanceType {
+	string value = 1;
+}
+// DICOM Tag: (0046,0139)
+message OptotypeDetailedDefinition {
 	string value = 1;
 }
 // DICOM Tag: (0046,0122)
@@ -16,40 +20,36 @@ message VisualAcuityLeftEyeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0124)
-message VisualAcuityBothEyesOpenSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0094)
-message Optotype {
-	string value = 1;
-}
-// DICOM Tag: (0046,0139)
-message OptotypeDetailedDefinition {
-	string value = 1;
-}
-// DICOM Tag: (0046,0092)
-message BackgroundColor {
-	string value = 1;
-}
-// DICOM Tag: (0046,0125)
-message ViewingDistanceType {
-	string value = 1;
-}
 // DICOM Tag: (0046,0121)
 message VisualAcuityTypeCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0046,0092)
+message BackgroundColor {
+	string value = 1;
+}
+// DICOM Tag: (0046,0094)
+message Optotype {
+	string value = 1;
+}
+// DICOM Tag: (0046,0095)
+message OptotypePresentation {
+	string value = 1;
+}
+// DICOM Tag: (0046,0124)
+message VisualAcuityBothEyesOpenSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message VisualAcuityMeasurementsModule {
-	VisualAcuityLeftEyeSequence visual_acuity_left_eye_sequence = 1;
-	VisualAcuityBothEyesOpenSequence visual_acuity_both_eyes_open_sequence = 2;
+	VisualAcuityTypeCodeSequence visual_acuity_type_code_sequence = 1;
+	BackgroundColor background_color = 2;
 	Optotype optotype = 3;
-	OptotypeDetailedDefinition optotype_detailed_definition = 4;
-	OptotypePresentation optotype_presentation = 5;
-	VisualAcuityRightEyeSequence visual_acuity_right_eye_sequence = 6;
-	ViewingDistanceType viewing_distance_type = 7;
-	VisualAcuityTypeCodeSequence visual_acuity_type_code_sequence = 8;
-	BackgroundColor background_color = 9;
+	OptotypePresentation optotype_presentation = 4;
+	VisualAcuityBothEyesOpenSequence visual_acuity_both_eyes_open_sequence = 5;
+	ViewingDistanceType viewing_distance_type = 6;
+	OptotypeDetailedDefinition optotype_detailed_definition = 7;
+	VisualAcuityRightEyeSequence visual_acuity_right_eye_sequence = 8;
+	VisualAcuityLeftEyeSequence visual_acuity_left_eye_sequence = 9;
 }

@@ -2,13 +2,22 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.33.html#table_C.33.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0082,0006)
-message NumberOfAssessmentObservations {
-	uint32 value = 1;
-}
 // DICOM Tag: (0082,0023)
 message AssessmentLabel {
 	string value = 1;
+}
+// DICOM Tag: (0082,0004)
+message AssessedSOPInstanceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0082,0003)
+message AssessmentSummaryDescription {
+	string value = 1;
+}
+// DICOM Tag: (0082,0006)
+message NumberOfAssessmentObservations {
+	uint32 value = 1;
 }
 // DICOM Tag: (0082,0021)
 message AssessmentTypeCodeSequence {
@@ -19,17 +28,13 @@ message AssessmentTypeCodeSequence {
 message AssessmentSetID {
 	string value = 1;
 }
-// DICOM Tag: (0082,0004)
-message AssessedSOPInstanceSequence {
+// DICOM Tag: (0082,0017)
+message AssessmentRequesterSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0082,0001)
 message AssessmentSummary {
-	string value = 1;
-}
-// DICOM Tag: (0082,0003)
-message AssessmentSummaryDescription {
 	string value = 1;
 }
 // DICOM Tag: (0038,0101)
@@ -42,20 +47,15 @@ message AssessmentObservationsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0082,0017)
-message AssessmentRequesterSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message ContentAssessmentResultsModule {
-	AssessmentLabel assessment_label = 1;
-	AssessmentTypeCodeSequence assessment_type_code_sequence = 2;
-	AssessmentSetID assessment_set_id = 3;
-	AssessedSOPInstanceSequence assessed_sop_instance_sequence = 4;
-	AssessmentSummary assessment_summary = 5;
-	AssessmentSummaryDescription assessment_summary_description = 6;
-	PertinentResourcesSequence pertinent_resources_sequence = 7;
-	NumberOfAssessmentObservations number_of_assessment_observations = 8;
-	AssessmentObservationsSequence assessment_observations_sequence = 9;
-	AssessmentRequesterSequence assessment_requester_sequence = 10;
+	AssessmentSetID assessment_set_id = 1;
+	AssessmentRequesterSequence assessment_requester_sequence = 2;
+	AssessmentSummary assessment_summary = 3;
+	PertinentResourcesSequence pertinent_resources_sequence = 4;
+	AssessmentObservationsSequence assessment_observations_sequence = 5;
+	AssessmentTypeCodeSequence assessment_type_code_sequence = 6;
+	AssessedSOPInstanceSequence assessed_sop_instance_sequence = 7;
+	AssessmentSummaryDescription assessment_summary_description = 8;
+	NumberOfAssessmentObservations number_of_assessment_observations = 9;
+	AssessmentLabel assessment_label = 10;
 }

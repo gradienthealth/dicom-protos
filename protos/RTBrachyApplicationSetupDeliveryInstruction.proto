@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.30.html#table_C.8.8.30-1
 syntax = "proto3";
 
-// DICOM Tag: (3008,0022)
-message CurrentFractionNumber {
-	int32 value = 1;
-}
 // DICOM Tag: (0074,1404)
 message ContinuationPulseNumber {
 	int32 value = 1;
@@ -29,11 +25,15 @@ message ReferencedRTPlanSequence {
 message ReferencedFractionGroupNumber {
 	int32 value = 1;
 }
+// DICOM Tag: (3008,0022)
+message CurrentFractionNumber {
+	int32 value = 1;
+}
 message RTBrachyApplicationSetupDeliveryInstructionModule {
-	ContinuationPulseNumber continuation_pulse_number = 1;
-	BrachyTaskSequence brachy_task_sequence = 2;
-	OmittedApplicationSetupSequence omitted_application_setup_sequence = 3;
-	ReferencedRTPlanSequence referenced_rt_plan_sequence = 4;
-	ReferencedFractionGroupNumber referenced_fraction_group_number = 5;
-	CurrentFractionNumber current_fraction_number = 6;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 1;
+	CurrentFractionNumber current_fraction_number = 2;
+	ContinuationPulseNumber continuation_pulse_number = 3;
+	BrachyTaskSequence brachy_task_sequence = 4;
+	OmittedApplicationSetupSequence omitted_application_setup_sequence = 5;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 6;
 }

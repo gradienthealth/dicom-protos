@@ -2,18 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.html#table_C.8-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,0015)
-message BodyPartExamined {
-	string value = 1;
-}
-// DICOM Tag: (0018,5101)
-message ViewPosition {
-	string value = 1;
-}
-// DICOM Tag: (0018,1160)
-message FilterType {
-	string value = 1;
-}
 // DICOM Tag: (0018,1180)
 message CollimatorGridName {
 	string value = 1;
@@ -30,12 +18,24 @@ message PlateType {
 message PhosphorType {
 	string value = 1;
 }
+// DICOM Tag: (0018,0015)
+message BodyPartExamined {
+	string value = 1;
+}
+// DICOM Tag: (0018,5101)
+message ViewPosition {
+	string value = 1;
+}
+// DICOM Tag: (0018,1160)
+message FilterType {
+	string value = 1;
+}
 message CRSeriesModule {
-	BodyPartExamined body_part_examined = 1;
-	ViewPosition view_position = 2;
-	FilterType filter_type = 3;
-	CollimatorGridName collimator_grid_name = 4;
-	FocalSpots focal_spots = 5;
-	PlateType plate_type = 6;
-	PhosphorType phosphor_type = 7;
+	ViewPosition view_position = 1;
+	FilterType filter_type = 2;
+	CollimatorGridName collimator_grid_name = 3;
+	FocalSpots focal_spots = 4;
+	PlateType plate_type = 5;
+	PhosphorType phosphor_type = 6;
+	BodyPartExamined body_part_examined = 7;
 }

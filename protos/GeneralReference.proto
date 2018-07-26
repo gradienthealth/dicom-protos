@@ -2,11 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.4.html#table_C.12-10
 syntax = "proto3";
 
-// DICOM Tag: (0008,2112)
-message SourceImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0042,0013)
 message SourceInstanceSequence {
 	bytes value = 1;
@@ -31,11 +26,16 @@ message DerivationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0008,2112)
+message SourceImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message GeneralReferenceModule {
-	ReferencedImageSequence referenced_image_sequence = 1;
-	ReferencedInstanceSequence referenced_instance_sequence = 2;
-	DerivationDescription derivation_description = 3;
-	DerivationCodeSequence derivation_code_sequence = 4;
-	SourceImageSequence source_image_sequence = 5;
-	SourceInstanceSequence source_instance_sequence = 6;
+	DerivationDescription derivation_description = 1;
+	DerivationCodeSequence derivation_code_sequence = 2;
+	SourceImageSequence source_image_sequence = 3;
+	SourceInstanceSequence source_instance_sequence = 4;
+	ReferencedImageSequence referenced_image_sequence = 5;
+	ReferencedInstanceSequence referenced_instance_sequence = 6;
 }

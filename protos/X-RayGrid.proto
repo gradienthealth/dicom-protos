@@ -2,6 +2,14 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.11.html#table_C.8-36
 syntax = "proto3";
 
+// DICOM Tag: (0018,7041)
+message GridSpacingMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,7042)
+message GridThickness {
+	float value = 1;
+}
 // DICOM Tag: (0018,1006)
 message GridID {
 	string value = 1;
@@ -10,25 +18,9 @@ message GridID {
 message Grid {
 	repeated string value = 1;
 }
-// DICOM Tag: (0018,7040)
-message GridAbsorbingMaterial {
-	string value = 1;
-}
-// DICOM Tag: (0018,7042)
-message GridThickness {
-	float value = 1;
-}
 // DICOM Tag: (0018,7044)
 message GridPitch {
 	float value = 1;
-}
-// DICOM Tag: (0018,704C)
-message GridFocalDistance {
-	float value = 1;
-}
-// DICOM Tag: (0018,7041)
-message GridSpacingMaterial {
-	string value = 1;
 }
 // DICOM Tag: (0018,7046)
 message GridAspectRatio {
@@ -38,14 +30,22 @@ message GridAspectRatio {
 message GridPeriod {
 	float value = 1;
 }
+// DICOM Tag: (0018,704C)
+message GridFocalDistance {
+	float value = 1;
+}
+// DICOM Tag: (0018,7040)
+message GridAbsorbingMaterial {
+	string value = 1;
+}
 message X-RayGridModule {
-	GridThickness grid_thickness = 1;
+	GridAbsorbingMaterial grid_absorbing_material = 1;
 	GridPitch grid_pitch = 2;
-	GridFocalDistance grid_focal_distance = 3;
-	GridID grid_id = 4;
-	Grid grid = 5;
-	GridAbsorbingMaterial grid_absorbing_material = 6;
-	GridPeriod grid_period = 7;
-	GridSpacingMaterial grid_spacing_material = 8;
-	GridAspectRatio grid_aspect_ratio = 9;
+	GridAspectRatio grid_aspect_ratio = 3;
+	GridPeriod grid_period = 4;
+	GridFocalDistance grid_focal_distance = 5;
+	Grid grid = 6;
+	GridSpacingMaterial grid_spacing_material = 7;
+	GridThickness grid_thickness = 8;
+	GridID grid_id = 9;
 }

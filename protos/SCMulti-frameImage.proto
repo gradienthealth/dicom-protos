@@ -6,6 +6,26 @@ syntax = "proto3";
 message RescaleType {
 	string value = 1;
 }
+// DICOM Tag: (0028,0A02)
+message PixelSpacingCalibrationType {
+	string value = 1;
+}
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
+	string value = 1;
+}
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
+	string value = 1;
+}
+// DICOM Tag: (2010,0160)
+message ReflectedAmbientLight {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,1053)
+message RescaleSlope {
+	float value = 1;
+}
 // DICOM Tag: (0018,2030)
 message RotationOfScannedFilm {
 	float value = 1;
@@ -14,68 +34,48 @@ message RotationOfScannedFilm {
 message RecognizableVisualFeatures {
 	string value = 1;
 }
-// DICOM Tag: (2010,0160)
-message ReflectedAmbientLight {
+// DICOM Tag: (2010,015E)
+message Illumination {
 	uint32 value = 1;
 }
 // DICOM Tag: (0028,1052)
 message RescaleIntercept {
 	float value = 1;
 }
-// DICOM Tag: (0028,0009)
-message FrameIncrementPointer {
-	repeated string value = 1;
-}
-// DICOM Tag: (2010,015E)
-message Illumination {
-	uint32 value = 1;
-}
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
-}
-// DICOM Tag: (0028,1053)
-message RescaleSlope {
-	float value = 1;
-}
 // DICOM Tag: (0018,2010)
 message NominalScannedPixelSpacing {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,0A02)
-message PixelSpacingCalibrationType {
+// DICOM Tag: (0028,0009)
+message FrameIncrementPointer {
+	repeated string value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0A04)
+message PixelSpacingCalibrationDescription {
 	string value = 1;
 }
 // DICOM Tag: (0018,2020)
 message DigitizingDeviceTransportDirection {
 	string value = 1;
 }
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
-	string value = 1;
-}
-// DICOM Tag: (0028,0A04)
-message PixelSpacingCalibrationDescription {
-	string value = 1;
-}
-// DICOM Tag: (0028,0030)
-message PixelSpacing {
-	repeated float value = 1;
-}
 message SCMulti-frameImageModule {
-	Illumination illumination = 1;
-	ReflectedAmbientLight reflected_ambient_light = 2;
-	RescaleIntercept rescale_intercept = 3;
-	FrameIncrementPointer frame_increment_pointer = 4;
-	BurnedInAnnotation burned_in_annotation = 5;
-	PresentationLUTShape presentation_lut_shape = 6;
-	RescaleSlope rescale_slope = 7;
-	NominalScannedPixelSpacing nominal_scanned_pixel_spacing = 8;
-	PixelSpacingCalibrationType pixel_spacing_calibration_type = 9;
-	DigitizingDeviceTransportDirection digitizing_device_transport_direction = 10;
-	PixelSpacing pixel_spacing = 11;
-	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 12;
-	RecognizableVisualFeatures recognizable_visual_features = 13;
-	RescaleType rescale_type = 14;
-	RotationOfScannedFilm rotation_of_scanned_film = 15;
+	FrameIncrementPointer frame_increment_pointer = 1;
+	PixelSpacing pixel_spacing = 2;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 3;
+	DigitizingDeviceTransportDirection digitizing_device_transport_direction = 4;
+	RescaleType rescale_type = 5;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 6;
+	BurnedInAnnotation burned_in_annotation = 7;
+	PresentationLUTShape presentation_lut_shape = 8;
+	ReflectedAmbientLight reflected_ambient_light = 9;
+	RescaleSlope rescale_slope = 10;
+	RotationOfScannedFilm rotation_of_scanned_film = 11;
+	RecognizableVisualFeatures recognizable_visual_features = 12;
+	Illumination illumination = 13;
+	RescaleIntercept rescale_intercept = 14;
+	NominalScannedPixelSpacing nominal_scanned_pixel_spacing = 15;
 }

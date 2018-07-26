@@ -2,21 +2,30 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.32.2.html#table_PS3.3_C.8.32-2
 syntax = "proto3";
 
-// DICOM Tag: (0008,0008)
-message ImageType {
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
 	repeated string value = 1;
 }
 // DICOM Tag: (0070,0080)
 message ContentLabel {
 	string value = 1;
 }
+// DICOM Tag: (0070,0086)
+message ContentCreatorIdentificationCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,9205)
+message PixelPresentation {
+	string value = 1;
+}
 // DICOM Tag: (0028,0100)
 message BitsAllocated {
 	uint32 value = 1;
 }
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
 }
 // DICOM Tag: (0028,2112)
 message LossyImageCompressionRatio {
@@ -26,29 +35,9 @@ message LossyImageCompressionRatio {
 message ICCProfile {
 	string value = 1;
 }
-// DICOM Tag: (0070,0081)
-message ContentDescription {
-	string value = 1;
-}
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0302)
-message RecognizableVisualFeatures {
-	string value = 1;
-}
-// DICOM Tag: (0018,9004)
-message ContentQualification {
-	string value = 1;
-}
-// DICOM Tag: (0028,2002)
-message ColorSpace {
-	string value = 1;
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
 }
 // DICOM Tag: (0040,A043)
 message ConceptNameCodeSequence {
@@ -60,70 +49,81 @@ message AlternateContentDescriptionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,0084)
-message ContentCreatorName {
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
 	string value = 1;
-}
-// DICOM Tag: (0008,9205)
-message PixelPresentation {
-	string value = 1;
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0070,0086)
-message ContentCreatorIdentificationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0028,2110)
 message LossyImageCompression {
+	string value = 1;
+}
+// DICOM Tag: (0070,0081)
+message ContentDescription {
+	string value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
 	string value = 1;
 }
 // DICOM Tag: (0028,0301)
 message BurnedInAnnotation {
 	string value = 1;
 }
+// DICOM Tag: (0018,9004)
+message ContentQualification {
+	string value = 1;
+}
 // DICOM Tag: (0028,1199)
 message PaletteColorLookupTableUID {
 	string value = 1;
 }
+// DICOM Tag: (0028,2002)
+message ColorSpace {
+	string value = 1;
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0070,0084)
+message ContentCreatorName {
+	string value = 1;
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0302)
+message RecognizableVisualFeatures {
+	string value = 1;
+}
 message ParametricMapImageModule {
-	PresentationLUTShape presentation_lut_shape = 1;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 2;
-	ICCProfile icc_profile = 3;
-	ImageType image_type = 4;
-	ContentLabel content_label = 5;
-	BitsAllocated bits_allocated = 6;
-	RecognizableVisualFeatures recognizable_visual_features = 7;
-	ContentQualification content_qualification = 8;
-	ColorSpace color_space = 9;
-	ContentDescription content_description = 10;
-	BitsStored bits_stored = 11;
-	HighBit high_bit = 12;
-	PixelPresentation pixel_presentation = 13;
-	SamplesPerPixel samples_per_pixel = 14;
-	PhotometricInterpretation photometric_interpretation = 15;
-	LossyImageCompressionMethod lossy_image_compression_method = 16;
-	ConceptNameCodeSequence concept_name_code_sequence = 17;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 18;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 1;
+	PixelPresentation pixel_presentation = 2;
+	BitsAllocated bits_allocated = 3;
+	HighBit high_bit = 4;
+	LossyImageCompressionMethod lossy_image_compression_method = 5;
+	ContentLabel content_label = 6;
+	ConceptNameCodeSequence concept_name_code_sequence = 7;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 8;
+	PresentationLUTShape presentation_lut_shape = 9;
+	LossyImageCompression lossy_image_compression = 10;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 11;
+	ICCProfile icc_profile = 12;
+	ImageType image_type = 13;
+	PhotometricInterpretation photometric_interpretation = 14;
+	BurnedInAnnotation burned_in_annotation = 15;
+	ContentQualification content_qualification = 16;
+	PaletteColorLookupTableUID palette_color_lookup_table_uid = 17;
+	ContentDescription content_description = 18;
 	ContentCreatorName content_creator's_name = 19;
-	BurnedInAnnotation burned_in_annotation = 20;
-	PaletteColorLookupTableUID palette_color_lookup_table_uid = 21;
-	InstanceNumber instance_number = 22;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 23;
-	LossyImageCompression lossy_image_compression = 24;
+	SamplesPerPixel samples_per_pixel = 20;
+	BitsStored bits_stored = 21;
+	RecognizableVisualFeatures recognizable_visual_features = 22;
+	ColorSpace color_space = 23;
+	InstanceNumber instance_number = 24;
 }

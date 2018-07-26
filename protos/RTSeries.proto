@@ -2,26 +2,29 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.html#table_C.8-37
 syntax = "proto3";
 
+// DICOM Tag: (0040,0280)
+message CommentsOnThePerformedProcedureStep {
+	string value = 1;
+}
 // DICOM Tag: (0008,0060)
 message Modality {
 	string value = 1;
 }
-// DICOM Tag: (0020,000E)
-message SeriesInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1072)
-message OperatorIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1111)
-message ReferencedPerformedProcedureStepSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0031)
+message SeriesTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0040,0275)
 message RequestAttributesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1070)
+message OperatorsName {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,1072)
+message OperatorIdentificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -29,30 +32,31 @@ message RequestAttributesSequence {
 message PerformedProcedureStepStartTime {
 	int64 value = 1;
 }
+// DICOM Tag: (0040,0260)
+message PerformedProtocolCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0020,0011)
 message SeriesNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,103E)
-message SeriesDescription {
+// DICOM Tag: (0008,0021)
+message SeriesDate {
 	string value = 1;
 }
-// DICOM Tag: (0040,0250)
-message PerformedProcedureStepEndDate {
+// DICOM Tag: (0008,103E)
+message SeriesDescription {
 	string value = 1;
 }
 // DICOM Tag: (0040,0254)
 message PerformedProcedureStepDescription {
 	string value = 1;
 }
-// DICOM Tag: (0040,0260)
-message PerformedProtocolCodeSequence {
+// DICOM Tag: (0008,103F)
+message SeriesDescriptionCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0031)
-message SeriesTime {
-	int64 value = 1;
 }
 // DICOM Tag: (0040,0253)
 message PerformedProcedureStepID {
@@ -62,45 +66,41 @@ message PerformedProcedureStepID {
 message PerformedProcedureStepEndTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0040,0280)
-message CommentsOnThePerformedProcedureStep {
+// DICOM Tag: (0040,0250)
+message PerformedProcedureStepEndDate {
 	string value = 1;
 }
-// DICOM Tag: (0008,0021)
-message SeriesDate {
+// DICOM Tag: (0020,000E)
+message SeriesInstanceUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,103F)
-message SeriesDescriptionCodeSequence {
+// DICOM Tag: (0008,1111)
+message ReferencedPerformedProcedureStepSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1070)
-message OperatorsName {
-	repeated string value = 1;
 }
 // DICOM Tag: (0040,0244)
 message PerformedProcedureStepStartDate {
 	string value = 1;
 }
 message RTSeriesModule {
-	PerformedProcedureStepStartDate performed_procedure_step_start_date = 1;
-	SeriesDate series_date = 2;
-	SeriesDescriptionCodeSequence series_description_code_sequence = 3;
-	OperatorsName operators'_name = 4;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 5;
-	RequestAttributesSequence request_attributes_sequence = 6;
-	PerformedProcedureStepStartTime performed_procedure_step_start_time = 7;
-	Modality modality = 8;
-	SeriesInstanceUID series_instance_uid = 9;
+	Modality modality = 1;
+	SeriesTime series_time = 2;
+	RequestAttributesSequence request_attributes_sequence = 3;
+	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 4;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 5;
+	SeriesNumber series_number = 6;
+	SeriesDate series_date = 7;
+	SeriesDescription series_description = 8;
+	OperatorsName operators'_name = 9;
 	OperatorIdentificationSequence operator_identification_sequence = 10;
-	PerformedProcedureStepDescription performed_procedure_step_description = 11;
-	PerformedProtocolCodeSequence performed_protocol_code_sequence = 12;
-	SeriesNumber series_number = 13;
-	SeriesDescription series_description = 14;
-	PerformedProcedureStepEndDate performed_procedure_step_end_date = 15;
-	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 16;
-	SeriesTime series_time = 17;
-	PerformedProcedureStepID performed_procedure_step_id = 18;
-	PerformedProcedureStepEndTime performed_procedure_step_end_time = 19;
+	PerformedProcedureStepStartTime performed_procedure_step_start_time = 11;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 12;
+	PerformedProcedureStepID performed_procedure_step_id = 13;
+	PerformedProcedureStepEndTime performed_procedure_step_end_time = 14;
+	PerformedProcedureStepDescription performed_procedure_step_description = 15;
+	SeriesInstanceUID series_instance_uid = 16;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 17;
+	PerformedProcedureStepStartDate performed_procedure_step_start_date = 18;
+	PerformedProcedureStepEndDate performed_procedure_step_end_date = 19;
 }

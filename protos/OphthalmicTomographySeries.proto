@@ -24,7 +24,7 @@ message ReferencedPerformedProcedureStepSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message OphthalmicTomographySeriesModule {
-	Modality modality = 1;
-	SeriesNumber series_number = 2;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
+	Modality modality = 2;
+	SeriesNumber series_number = 3;
 }

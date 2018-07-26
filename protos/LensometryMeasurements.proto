@@ -2,6 +2,11 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.8.html#table_C.8.25.8-1
 syntax = "proto3";
 
+// DICOM Tag: (0046,0016)
+message UnspecifiedLateralityLensSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0046,0012)
 message LensDescription {
 	string value = 1;
@@ -16,14 +21,9 @@ message LeftLensSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0016)
-message UnspecifiedLateralityLensSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message LensometryMeasurementsModule {
-	UnspecifiedLateralityLensSequence unspecified_laterality_lens_sequence = 1;
-	LensDescription lens_description = 2;
-	RightLensSequence right_lens_sequence = 3;
-	LeftLensSequence left_lens_sequence = 4;
+	LensDescription lens_description = 1;
+	RightLensSequence right_lens_sequence = 2;
+	LeftLensSequence left_lens_sequence = 3;
+	UnspecifiedLateralityLensSequence unspecified_laterality_lens_sequence = 4;
 }

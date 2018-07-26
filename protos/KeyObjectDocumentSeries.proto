@@ -2,16 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.6.html#table_C.17.6-1
 syntax = "proto3";
 
-// DICOM Tag: (0020,000E)
-message SeriesInstanceUID {
+// DICOM Tag: (0008,0060)
+message Modality {
 	string value = 1;
 }
 // DICOM Tag: (0008,0021)
 message SeriesDate {
 	string value = 1;
 }
-// DICOM Tag: (0018,1030)
-message ProtocolName {
+// DICOM Tag: (0008,103E)
+message SeriesDescription {
 	string value = 1;
 }
 // DICOM Tag: (0008,103F)
@@ -24,8 +24,8 @@ message ReferencedPerformedProcedureStepSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0060)
-message Modality {
+// DICOM Tag: (0020,000E)
+message SeriesInstanceUID {
 	string value = 1;
 }
 // DICOM Tag: (0020,0011)
@@ -36,18 +36,18 @@ message SeriesNumber {
 message SeriesTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,103E)
-message SeriesDescription {
+// DICOM Tag: (0018,1030)
+message ProtocolName {
 	string value = 1;
 }
 message KeyObjectDocumentSeriesModule {
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
-	SeriesInstanceUID series_instance_uid = 2;
-	SeriesDate series_date = 3;
+	SeriesInstanceUID series_instance_uid = 1;
+	SeriesNumber series_number = 2;
+	SeriesTime series_time = 3;
 	ProtocolName protocol_name = 4;
-	SeriesDescriptionCodeSequence series_description_code_sequence = 5;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 5;
 	Modality modality = 6;
-	SeriesNumber series_number = 7;
-	SeriesTime series_time = 8;
-	SeriesDescription series_description = 9;
+	SeriesDate series_date = 7;
+	SeriesDescription series_description = 8;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 9;
 }

@@ -6,52 +6,53 @@ syntax = "proto3";
 message FovealPointNormativeDataFlag {
 	string value = 1;
 }
-// DICOM Tag: (0024,0120)
-message ScreeningBaselineMeasured {
+// DICOM Tag: (0024,0122)
+message ScreeningBaselineMeasuredSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0024,0105)
+message MinimumSensitivityValue {
+	float value = 1;
+}
+// DICOM Tag: (0024,0057)
+message TestPointNormalsDataFlag {
 	string value = 1;
+}
+// DICOM Tag: (0024,0037)
+message PresentedVisualStimuliDataFlag {
+	string value = 1;
+}
+// DICOM Tag: (0024,0088)
+message VisualFieldTestDuration {
+	float value = 1;
+}
+// DICOM Tag: (0024,0086)
+message FovealSensitivityMeasured {
+	string value = 1;
+}
+// DICOM Tag: (0024,0087)
+message FovealSensitivity {
+	float value = 1;
+}
+// DICOM Tag: (0024,0108)
+message BlindSpotYCoordinate {
+	float value = 1;
+}
+// DICOM Tag: (0024,0067)
+message GeneralizedDefectSensitivityDeviationAlgorithmSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0024,0058)
 message TestPointNormalsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0024,0037)
-message PresentedVisualStimuliDataFlag {
-	string value = 1;
-}
-// DICOM Tag: (0024,0107)
-message BlindSpotXCoordinate {
-	float value = 1;
-}
 // DICOM Tag: (0024,0065)
 message AgeCorrectedSensitivityDeviationAlgorithmSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0024,0086)
-message FovealSensitivityMeasured {
-	string value = 1;
-}
-// DICOM Tag: (0024,0038)
-message NumberOfVisualStimuli {
-	uint32 value = 1;
-}
-// DICOM Tag: (0024,0118)
-message FovealPointProbabilityValue {
-	float value = 1;
-}
-// DICOM Tag: (0024,0122)
-message ScreeningBaselineMeasuredSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0024,0108)
-message BlindSpotYCoordinate {
-	float value = 1;
-}
-// DICOM Tag: (0024,0057)
-message TestPointNormalsDataFlag {
-	string value = 1;
 }
 // DICOM Tag: (0024,0089)
 message VisualFieldTestPointSequence {
@@ -62,45 +63,44 @@ message VisualFieldTestPointSequence {
 message MeasurementLaterality {
 	string value = 1;
 }
-// DICOM Tag: (0024,0087)
-message FovealSensitivity {
+// DICOM Tag: (0024,0038)
+message NumberOfVisualStimuli {
+	uint32 value = 1;
+}
+// DICOM Tag: (0024,0118)
+message FovealPointProbabilityValue {
 	float value = 1;
+}
+// DICOM Tag: (0024,0120)
+message ScreeningBaselineMeasured {
+	string value = 1;
 }
 // DICOM Tag: (0024,0106)
 message BlindSpotLocalized {
 	string value = 1;
 }
-// DICOM Tag: (0024,0105)
-message MinimumSensitivityValue {
-	float value = 1;
-}
-// DICOM Tag: (0024,0067)
-message GeneralizedDefectSensitivityDeviationAlgorithmSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0024,0088)
-message VisualFieldTestDuration {
+// DICOM Tag: (0024,0107)
+message BlindSpotXCoordinate {
 	float value = 1;
 }
 message VisualFieldStaticPerimetryTestMeasurementsModule {
-	MeasurementLaterality measurement_laterality = 1;
-	NumberOfVisualStimuli number_of_visual_stimuli = 2;
-	FovealPointProbabilityValue foveal_point_probability_value = 3;
-	ScreeningBaselineMeasuredSequence screening_baseline_measured_sequence = 4;
-	BlindSpotYCoordinate blind_spot_y_coordinate = 5;
-	TestPointNormalsDataFlag test_point_normals_data_flag = 6;
-	VisualFieldTestPointSequence visual_field_test_point_sequence = 7;
-	VisualFieldTestDuration visual_field_test_duration = 8;
-	FovealSensitivity foveal_sensitivity = 9;
-	BlindSpotLocalized blind_spot_localized = 10;
-	MinimumSensitivityValue minimum_sensitivity_value = 11;
-	GeneralizedDefectSensitivityDeviationAlgorithmSequence generalized_defect_sensitivity_deviation_algorithm_sequence = 12;
-	PresentedVisualStimuliDataFlag presented_visual_stimuli_data_flag = 13;
-	FovealPointNormativeDataFlag foveal_point_normative_data_flag = 14;
+	BlindSpotYCoordinate blind_spot_y_coordinate = 1;
+	GeneralizedDefectSensitivityDeviationAlgorithmSequence generalized_defect_sensitivity_deviation_algorithm_sequence = 2;
+	PresentedVisualStimuliDataFlag presented_visual_stimuli_data_flag = 3;
+	VisualFieldTestDuration visual_field_test_duration = 4;
+	FovealSensitivityMeasured foveal_sensitivity_measured = 5;
+	FovealSensitivity foveal_sensitivity = 6;
+	TestPointNormalsSequence test_point_normals_sequence = 7;
+	AgeCorrectedSensitivityDeviationAlgorithmSequence age_corrected_sensitivity_deviation_algorithm_sequence = 8;
+	BlindSpotLocalized blind_spot_localized = 9;
+	BlindSpotXCoordinate blind_spot_x_coordinate = 10;
+	VisualFieldTestPointSequence visual_field_test_point_sequence = 11;
+	MeasurementLaterality measurement_laterality = 12;
+	NumberOfVisualStimuli number_of_visual_stimuli = 13;
+	FovealPointProbabilityValue foveal_point_probability_value = 14;
 	ScreeningBaselineMeasured screening_baseline_measured = 15;
-	TestPointNormalsSequence test_point_normals_sequence = 16;
-	FovealSensitivityMeasured foveal_sensitivity_measured = 17;
-	BlindSpotXCoordinate blind_spot_x_coordinate = 18;
-	AgeCorrectedSensitivityDeviationAlgorithmSequence age_corrected_sensitivity_deviation_algorithm_sequence = 19;
+	FovealPointNormativeDataFlag foveal_point_normative_data_flag = 16;
+	ScreeningBaselineMeasuredSequence screening_baseline_measured_sequence = 17;
+	MinimumSensitivityValue minimum_sensitivity_value = 18;
+	TestPointNormalsDataFlag test_point_normals_data_flag = 19;
 }

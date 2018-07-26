@@ -2,23 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.2.html#table_C.2-2
 syntax = "proto3";
 
-// DICOM Tag: (0010,0020)
-message PatientID {
-	string value = 1;
-}
-// DICOM Tag: (0010,0021)
-message IssuerOfPatientID {
-	string value = 1;
-}
-// DICOM Tag: (0010,1060)
-message PatientMotherBirthName {
-	string value = 1;
-}
-// DICOM Tag: (0010,0027)
-message GroupOfPatientsIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0010,0010)
 message PatientName {
 	string value = 1;
@@ -36,8 +19,25 @@ message OtherPatientNames {
 message PatientBirthName {
 	string value = 1;
 }
+// DICOM Tag: (0010,1060)
+message PatientMotherBirthName {
+	string value = 1;
+}
 // DICOM Tag: (0010,1100)
 message ReferencedPatientPhotoSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0020)
+message PatientID {
+	string value = 1;
+}
+// DICOM Tag: (0010,0021)
+message IssuerOfPatientID {
+	string value = 1;
+}
+// DICOM Tag: (0010,0024)
+message IssuerOfPatientIDQualifiersSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -46,21 +46,21 @@ message SourcePatientGroupIdentificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0010,0024)
-message IssuerOfPatientIDQualifiersSequence {
+// DICOM Tag: (0010,0027)
+message GroupOfPatientsIdentificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message PatientIdentificationModule {
-	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 1;
-	PatientName patient's_name = 2;
-	PatientID patient_id = 3;
-	IssuerOfPatientID issuer_of_patient_id = 4;
-	PatientMotherBirthName patient's_mother's_birth_name = 5;
-	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 6;
-	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 7;
-	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 8;
-	OtherPatientIDsSequence other_patient_ids_sequence = 9;
-	OtherPatientNames other_patient_names = 10;
-	PatientBirthName patient's_birth_name = 11;
+	IssuerOfPatientID issuer_of_patient_id = 1;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 2;
+	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 3;
+	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 4;
+	PatientID patient_id = 5;
+	OtherPatientIDsSequence other_patient_ids_sequence = 6;
+	OtherPatientNames other_patient_names = 7;
+	PatientBirthName patient's_birth_name = 8;
+	PatientMotherBirthName patient's_mother's_birth_name = 9;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 10;
+	PatientName patient's_name = 11;
 }

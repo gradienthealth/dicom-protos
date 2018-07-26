@@ -2,6 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.13.html#table_C.8-13
 syntax = "proto3";
 
+// DICOM Tag: (0018,1086)
+message SkipBeats {
+	int32 value = 1;
+}
 // DICOM Tag: (0018,1088)
 message HeartRate {
 	int32 value = 1;
@@ -19,14 +23,10 @@ message BeatRejectionFlag {
 message PVCRejection {
 	string value = 1;
 }
-// DICOM Tag: (0018,1086)
-message SkipBeats {
-	int32 value = 1;
-}
 message NMMulti-GatedAcquisitionModule {
-	PVCRejection pvc_rejection = 1;
-	SkipBeats skip_beats = 2;
-	HeartRate heart_rate = 3;
-	GatedInformationSequence gated_information_sequence = 4;
-	BeatRejectionFlag beat_rejection_flag = 5;
+	GatedInformationSequence gated_information_sequence = 1;
+	BeatRejectionFlag beat_rejection_flag = 2;
+	PVCRejection pvc_rejection = 3;
+	SkipBeats skip_beats = 4;
+	HeartRate heart_rate = 5;
 }

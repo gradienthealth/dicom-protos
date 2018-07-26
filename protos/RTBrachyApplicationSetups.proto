@@ -2,6 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.15.html#table_C.8-51
 syntax = "proto3";
 
+// DICOM Tag: (300A,0210)
+message SourceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (300A,0230)
+message ApplicationSetupSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (300A,0200)
 message BrachyTreatmentTechnique {
 	string value = 1;
@@ -15,20 +25,10 @@ message TreatmentMachineSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (300A,0210)
-message SourceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (300A,0230)
-message ApplicationSetupSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message RTBrachyApplicationSetupsModule {
-	SourceSequence source_sequence = 1;
-	ApplicationSetupSequence application_setup_sequence = 2;
-	BrachyTreatmentTechnique brachy_treatment_technique = 3;
-	BrachyTreatmentType brachy_treatment_type = 4;
-	TreatmentMachineSequence treatment_machine_sequence = 5;
+	BrachyTreatmentTechnique brachy_treatment_technique = 1;
+	BrachyTreatmentType brachy_treatment_type = 2;
+	TreatmentMachineSequence treatment_machine_sequence = 3;
+	SourceSequence source_sequence = 4;
+	ApplicationSetupSequence application_setup_sequence = 5;
 }

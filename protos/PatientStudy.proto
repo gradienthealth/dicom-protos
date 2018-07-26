@@ -2,6 +2,22 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a
 syntax = "proto3";
 
+// DICOM Tag: (0038,0060)
+message ServiceEpisodeID {
+	string value = 1;
+}
+// DICOM Tag: (0010,1010)
+message PatientAge {
+	string value = 1;
+}
+// DICOM Tag: (0010,1022)
+message PatientBodyMassIndex {
+	float value = 1;
+}
+// DICOM Tag: (0010,1024)
+message MeasuredLateralDimension {
+	float value = 1;
+}
 // DICOM Tag: (0010,1021)
 message PatientSizeCodeSequence {
 	bytes value = 1;
@@ -15,80 +31,18 @@ message MedicalAlerts {
 message PregnancyStatus {
 	uint32 value = 1;
 }
-// DICOM Tag: (0038,0010)
-message AdmissionID {
-	string value = 1;
-}
-// DICOM Tag: (0038,0064)
-message IssuerOfServiceEpisodeIDSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0038,0014)
-message IssuerOfAdmissionIDSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0038,0062)
-message ServiceEpisodeDescription {
-	string value = 1;
-}
-// DICOM Tag: (0010,2203)
-message PatientSexNeutered {
-	string value = 1;
-}
-// DICOM Tag: (0008,1080)
-message AdmittingDiagnosesDescription {
-	repeated string value = 1;
-}
-// DICOM Tag: (0010,1020)
-message PatientSize {
-	float value = 1;
-}
-// DICOM Tag: (0010,1030)
-message PatientWeight {
-	float value = 1;
-}
-// DICOM Tag: (0010,2180)
-message Occupation {
-	string value = 1;
-}
 // DICOM Tag: (0010,21B0)
 message AdditionalPatientHistory {
 	string value = 1;
 }
-// DICOM Tag: (0010,21D0)
-message LastMenstrualDate {
-	string value = 1;
-}
-// DICOM Tag: (0038,0060)
-message ServiceEpisodeID {
+// DICOM Tag: (0038,0062)
+message ServiceEpisodeDescription {
 	string value = 1;
 }
 // DICOM Tag: (0008,1084)
 message AdmittingDiagnosesCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,1010)
-message PatientAge {
-	string value = 1;
-}
-// DICOM Tag: (0010,1022)
-message PatientBodyMassIndex {
-	float value = 1;
-}
-// DICOM Tag: (0010,1023)
-message MeasuredAPDimension {
-	float value = 1;
-}
-// DICOM Tag: (0010,2110)
-message Allergies {
-	repeated string value = 1;
-}
-// DICOM Tag: (0010,1024)
-message MeasuredLateralDimension {
-	float value = 1;
 }
 // DICOM Tag: (0010,21A0)
 message SmokingStatus {
@@ -98,28 +52,74 @@ message SmokingStatus {
 message PatientState {
 	string value = 1;
 }
+// DICOM Tag: (0038,0010)
+message AdmissionID {
+	string value = 1;
+}
+// DICOM Tag: (0038,0014)
+message IssuerOfAdmissionIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1080)
+message AdmittingDiagnosesDescription {
+	repeated string value = 1;
+}
+// DICOM Tag: (0010,1023)
+message MeasuredAPDimension {
+	float value = 1;
+}
+// DICOM Tag: (0010,2180)
+message Occupation {
+	string value = 1;
+}
+// DICOM Tag: (0010,2203)
+message PatientSexNeutered {
+	string value = 1;
+}
+// DICOM Tag: (0010,1020)
+message PatientSize {
+	float value = 1;
+}
+// DICOM Tag: (0010,1030)
+message PatientWeight {
+	float value = 1;
+}
+// DICOM Tag: (0010,2110)
+message Allergies {
+	repeated string value = 1;
+}
+// DICOM Tag: (0010,21D0)
+message LastMenstrualDate {
+	string value = 1;
+}
+// DICOM Tag: (0038,0064)
+message IssuerOfServiceEpisodeIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message PatientStudyModule {
-	MedicalAlerts medical_alerts = 1;
-	PregnancyStatus pregnancy_status = 2;
-	AdmissionID admission_id = 3;
-	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 4;
-	PatientSizeCodeSequence patient's_size_code_sequence = 5;
+	AdmittingDiagnosesDescription admitting_diagnoses_description = 1;
+	MeasuredAPDimension measured_ap_dimension = 2;
+	Occupation occupation = 3;
+	PatientSexNeutered patient's_sex_neutered = 4;
+	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 5;
 	PatientSize patient's_size = 6;
 	PatientWeight patient's_weight = 7;
-	Occupation occupation = 8;
-	AdditionalPatientHistory additional_patient_history = 9;
-	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 10;
-	ServiceEpisodeDescription service_episode_description = 11;
-	PatientSexNeutered patient's_sex_neutered = 12;
-	AdmittingDiagnosesDescription admitting_diagnoses_description = 13;
+	Allergies allergies = 8;
+	LastMenstrualDate last_menstrual_date = 9;
+	MedicalAlerts medical_alerts = 10;
+	PregnancyStatus pregnancy_status = 11;
+	AdditionalPatientHistory additional_patient_history = 12;
+	ServiceEpisodeID service_episode_id = 13;
 	PatientAge patient's_age = 14;
 	PatientBodyMassIndex patient's_body_mass_index = 15;
-	MeasuredAPDimension measured_ap_dimension = 16;
-	Allergies allergies = 17;
-	LastMenstrualDate last_menstrual_date = 18;
-	ServiceEpisodeID service_episode_id = 19;
+	MeasuredLateralDimension measured_lateral_dimension = 16;
+	PatientSizeCodeSequence patient's_size_code_sequence = 17;
+	ServiceEpisodeDescription service_episode_description = 18;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 19;
 	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 20;
 	SmokingStatus smoking_status = 21;
 	PatientState patient_state = 22;
-	MeasuredLateralDimension measured_lateral_dimension = 23;
+	AdmissionID admission_id = 23;
 }

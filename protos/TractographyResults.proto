@@ -2,6 +2,20 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.33.2.html#table_C.8.33-2
 syntax = "proto3";
 
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0040,A043)
+message ConceptNameCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0087)
+message AlternateContentDescriptionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0070,0084)
 message ContentCreatorName {
 	string value = 1;
@@ -9,6 +23,16 @@ message ContentCreatorName {
 // DICOM Tag: (0008,0023)
 message ContentDate {
 	string value = 1;
+}
+// DICOM Tag: (0066,0101)
+message TrackSetSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,114A)
+message ReferencedInstanceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0020,0013)
 message InstanceNumber {
@@ -22,45 +46,21 @@ message ContentLabel {
 message ContentDescription {
 	string value = 1;
 }
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0066,0101)
-message TrackSetSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,114A)
-message ReferencedInstanceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A043)
-message ConceptNameCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0070,0087)
-message AlternateContentDescriptionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0070,0086)
 message ContentCreatorIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message TractographyResultsModule {
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 1;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 2;
-	ContentTime content_time = 3;
-	TrackSetSequence track_set_sequence = 4;
-	ReferencedInstanceSequence referenced_instance_sequence = 5;
-	ConceptNameCodeSequence concept_name_code_sequence = 6;
-	ContentLabel content_label = 7;
-	ContentDescription content_description = 8;
+	InstanceNumber instance_number = 1;
+	ContentLabel content_label = 2;
+	ContentDescription content_description = 3;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 4;
+	TrackSetSequence track_set_sequence = 5;
+	ReferencedInstanceSequence referenced_instance_sequence = 6;
+	ConceptNameCodeSequence concept_name_code_sequence = 7;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 8;
 	ContentCreatorName content_creator's_name = 9;
 	ContentDate content_date = 10;
-	InstanceNumber instance_number = 11;
+	ContentTime content_time = 11;
 }

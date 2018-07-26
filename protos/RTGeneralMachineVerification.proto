@@ -2,9 +2,19 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.31.html#table_C.31-1
 syntax = "proto3";
 
-// DICOM Tag: (0010,0020)
-message PatientID {
-	string value = 1;
+// DICOM Tag: (0074,104A)
+message OverriddenAttributesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (300C,0002)
+message ReferencedRTPlanSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (300C,0022)
+message ReferencedFractionGroupNumber {
+	int32 value = 1;
 }
 // DICOM Tag: (0010,0021)
 message IssuerOfPatientID {
@@ -20,37 +30,27 @@ message FailedAttributesSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0074,104A)
-message OverriddenAttributesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0010,0020)
+message PatientID {
+	string value = 1;
+}
+// DICOM Tag: (3008,002C)
+message TreatmentVerificationStatus {
+	string value = 1;
 }
 // DICOM Tag: (0074,1042)
 message GeneralMachineVerificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (300C,0002)
-message ReferencedRTPlanSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (300C,0022)
-message ReferencedFractionGroupNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (3008,002C)
-message TreatmentVerificationStatus {
-	string value = 1;
-}
 message RTGeneralMachineVerificationModule {
-	PatientID patient_id = 1;
-	IssuerOfPatientID issuer_of_patient_id = 2;
-	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 3;
-	FailedAttributesSequence failed_attributes_sequence = 4;
-	OverriddenAttributesSequence overridden_attributes_sequence = 5;
-	GeneralMachineVerificationSequence general_machine_verification_sequence = 6;
-	ReferencedRTPlanSequence referenced_rt_plan_sequence = 7;
-	ReferencedFractionGroupNumber referenced_fraction_group_number = 8;
-	TreatmentVerificationStatus treatment_verification_status = 9;
+	FailedAttributesSequence failed_attributes_sequence = 1;
+	OverriddenAttributesSequence overridden_attributes_sequence = 2;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 3;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 4;
+	IssuerOfPatientID issuer_of_patient_id = 5;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 6;
+	PatientID patient_id = 7;
+	TreatmentVerificationStatus treatment_verification_status = 8;
+	GeneralMachineVerificationSequence general_machine_verification_sequence = 9;
 }

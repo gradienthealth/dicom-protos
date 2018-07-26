@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.6.html#table_C.8-31
 syntax = "proto3";
 
-// DICOM Tag: (0018,1450)
-message ColumnAngulation {
-	float value = 1;
-}
 // DICOM Tag: (0018,1110)
 message DistanceSourceToDetector {
 	float value = 1;
@@ -18,9 +14,13 @@ message DistanceSourceToPatient {
 message EstimatedRadiographicMagnificationFactor {
 	float value = 1;
 }
+// DICOM Tag: (0018,1450)
+message ColumnAngulation {
+	float value = 1;
+}
 message XRFPositionerModule {
-	DistanceSourceToPatient distance_source_to_patient = 1;
-	EstimatedRadiographicMagnificationFactor estimated_radiographic_magnification_factor = 2;
-	ColumnAngulation column_angulation = 3;
-	DistanceSourceToDetector distance_source_to_detector = 4;
+	DistanceSourceToDetector distance_source_to_detector = 1;
+	DistanceSourceToPatient distance_source_to_patient = 2;
+	EstimatedRadiographicMagnificationFactor estimated_radiographic_magnification_factor = 3;
+	ColumnAngulation column_angulation = 4;
 }

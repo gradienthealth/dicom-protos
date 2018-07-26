@@ -2,20 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.3.2.html#table_C.3-2
 syntax = "proto3";
 
-// DICOM Tag: (0038,0014)
-message IssuerOfAdmissionIDSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0038,0060)
-message ServiceEpisodeID {
-	string value = 1;
-}
-// DICOM Tag: (0038,0064)
-message IssuerOfServiceEpisodeIDSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0038,0062)
 message ServiceEpisodeDescription {
 	string value = 1;
@@ -37,13 +23,27 @@ message InstitutionCodeSequence {
 message AdmissionID {
 	string value = 1;
 }
+// DICOM Tag: (0038,0014)
+message IssuerOfAdmissionIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0038,0060)
+message ServiceEpisodeID {
+	string value = 1;
+}
+// DICOM Tag: (0038,0064)
+message IssuerOfServiceEpisodeIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message VisitIdentificationModule {
-	InstitutionName institution_name = 1;
-	InstitutionAddress institution_address = 2;
-	InstitutionCodeSequence institution_code_sequence = 3;
-	AdmissionID admission_id = 4;
-	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 5;
-	ServiceEpisodeID service_episode_id = 6;
-	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 7;
-	ServiceEpisodeDescription service_episode_description = 8;
+	InstitutionAddress institution_address = 1;
+	InstitutionCodeSequence institution_code_sequence = 2;
+	AdmissionID admission_id = 3;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 4;
+	ServiceEpisodeID service_episode_id = 5;
+	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 6;
+	ServiceEpisodeDescription service_episode_description = 7;
+	InstitutionName institution_name = 8;
 }

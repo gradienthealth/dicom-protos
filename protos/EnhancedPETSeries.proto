@@ -2,6 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.html#table_C.8.22-1
 syntax = "proto3";
 
+// DICOM Tag: (0008,0060)
+message Modality {
+	string value = 1;
+}
 // DICOM Tag: (0008,1111)
 message ReferencedPerformedProcedureStepSequence {
 	bytes value = 1;
@@ -12,12 +16,8 @@ message RelatedSeriesSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0060)
-message Modality {
-	string value = 1;
-}
 message EnhancedPETSeriesModule {
-	Modality modality = 1;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
-	RelatedSeriesSequence related_series_sequence = 3;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
+	RelatedSeriesSequence related_series_sequence = 2;
+	Modality modality = 3;
 }

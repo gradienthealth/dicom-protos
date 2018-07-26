@@ -2,11 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.html#table_C.8.25.14-1
 syntax = "proto3";
 
-// DICOM Tag: (0022,1008)
-message OphthalmicAxialMeasurementsLeftEyeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0022,1009)
 message OphthalmicAxialMeasurementsDeviceType {
 	string value = 1;
@@ -23,6 +18,11 @@ message AnteriorChamberDepthDefinitionCodeSequence {
 }
 // DICOM Tag: (0022,1007)
 message OphthalmicAxialMeasurementsRightEyeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1008)
+message OphthalmicAxialMeasurementsLeftEyeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }

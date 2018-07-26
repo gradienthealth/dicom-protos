@@ -2,46 +2,18 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.9.html#table_C.8-9
 syntax = "proto3";
 
-// DICOM Tag: (0054,0400)
-message ImageID {
-	string value = 1;
-}
-// DICOM Tag: (0018,0070)
-message CountsAccumulated {
-	int32 value = 1;
+// DICOM Tag: (0018,1300)
+message ScanVelocity {
+	float value = 1;
 }
 // DICOM Tag: (0018,1302)
 message ScanLength {
 	int32 value = 1;
 }
-// DICOM Tag: (0018,1061)
-message TriggerSourceOrType {
-	string value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,1131)
-message TableTraverse {
-	float value = 1;
-}
-// DICOM Tag: (0018,5020)
-message ProcessingFunction {
-	string value = 1;
-}
-// DICOM Tag: (0018,1300)
-message ScanVelocity {
-	float value = 1;
-}
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0054,0501)
-message ScanProgressionDirection {
-	string value = 1;
 }
 // DICOM Tag: (0018,0071)
 message AcquisitionTerminationCondition {
@@ -51,14 +23,6 @@ message AcquisitionTerminationCondition {
 message TableHeight {
 	float value = 1;
 }
-// DICOM Tag: (0018,1242)
-message ActualFrameDuration {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1243)
-message CountRate {
-	int32 value = 1;
-}
 // DICOM Tag: (0028,0051)
 message CorrectedImage {
 	repeated string value = 1;
@@ -67,8 +31,8 @@ message CorrectedImage {
 message WholeBodyTechnique {
 	repeated string value = 1;
 }
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
+// DICOM Tag: (0008,2218)
+message AnatomicRegionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -77,28 +41,64 @@ message RealWorldValueMappingSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0054,0400)
+message ImageID {
+	string value = 1;
+}
+// DICOM Tag: (0018,5020)
+message ProcessingFunction {
+	string value = 1;
+}
+// DICOM Tag: (0018,1242)
+message ActualFrameDuration {
+	int32 value = 1;
+}
+// DICOM Tag: (0054,0501)
+message ScanProgressionDirection {
+	string value = 1;
+}
 // DICOM Tag: (0028,2110)
 message LossyImageCompression {
 	string value = 1;
 }
+// DICOM Tag: (0018,0070)
+message CountsAccumulated {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1131)
+message TableTraverse {
+	float value = 1;
+}
+// DICOM Tag: (0018,1243)
+message CountRate {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1061)
+message TriggerSourceOrType {
+	string value = 1;
+}
 message NMImageModule {
-	AcquisitionTerminationCondition acquisition_termination_condition = 1;
-	ProcessingFunction processing_function = 2;
-	ScanVelocity scan_velocity = 3;
-	AnatomicRegionSequence anatomic_region_sequence = 4;
-	ScanProgressionDirection scan_progression_direction = 5;
-	LossyImageCompression lossy_image_compression = 6;
-	TableHeight table_height = 7;
-	ActualFrameDuration actual_frame_duration = 8;
-	CountRate count_rate = 9;
-	CorrectedImage corrected_image = 10;
-	WholeBodyTechnique whole_body_technique = 11;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 12;
-	RealWorldValueMappingSequence real_world_value_mapping_sequence = 13;
-	ImageType image_type = 14;
-	ImageID image_id = 15;
-	CountsAccumulated counts_accumulated = 16;
-	ScanLength scan_length = 17;
-	TriggerSourceOrType trigger_source_or_type = 18;
-	TableTraverse table_traverse = 19;
+	ScanProgressionDirection scan_progression_direction = 1;
+	LossyImageCompression lossy_image_compression = 2;
+	CountsAccumulated counts_accumulated = 3;
+	TableTraverse table_traverse = 4;
+	ActualFrameDuration actual_frame_duration = 5;
+	CountRate count_rate = 6;
+	TriggerSourceOrType trigger_source_or_type = 7;
+	ScanLength scan_length = 8;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 9;
+	AcquisitionTerminationCondition acquisition_termination_condition = 10;
+	TableHeight table_height = 11;
+	CorrectedImage corrected_image = 12;
+	ScanVelocity scan_velocity = 13;
+	AnatomicRegionSequence anatomic_region_sequence = 14;
+	RealWorldValueMappingSequence real_world_value_mapping_sequence = 15;
+	ImageType image_type = 16;
+	ImageID image_id = 17;
+	ProcessingFunction processing_function = 18;
+	WholeBodyTechnique whole_body_technique = 19;
 }

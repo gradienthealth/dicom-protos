@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.3.3.html#table_C.3-3
 syntax = "proto3";
 
-// DICOM Tag: (0038,0008)
-message VisitStatusID {
-	string value = 1;
-}
-// DICOM Tag: (0038,0300)
-message CurrentPatientLocation {
-	string value = 1;
-}
 // DICOM Tag: (0038,0400)
 message PatientInstitutionResidence {
 	string value = 1;
@@ -18,9 +10,17 @@ message PatientInstitutionResidence {
 message VisitComments {
 	string value = 1;
 }
+// DICOM Tag: (0038,0008)
+message VisitStatusID {
+	string value = 1;
+}
+// DICOM Tag: (0038,0300)
+message CurrentPatientLocation {
+	string value = 1;
+}
 message VisitStatusModule {
-	VisitStatusID visit_status_id = 1;
-	CurrentPatientLocation current_patient_location = 2;
-	PatientInstitutionResidence patient's_institution_residence = 3;
-	VisitComments visit_comments = 4;
+	VisitComments visit_comments = 1;
+	VisitStatusID visit_status_id = 2;
+	CurrentPatientLocation current_patient_location = 3;
+	PatientInstitutionResidence patient's_institution_residence = 4;
 }

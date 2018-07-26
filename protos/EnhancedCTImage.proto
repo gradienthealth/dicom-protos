@@ -2,12 +2,58 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.15.2.html#table_C.8-114
 syntax = "proto3";
 
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
+// DICOM Tag: (0028,2110)
+message LossyImageCompression {
+	string value = 1;
 }
-// DICOM Tag: (0008,113A)
-message ReferencedWaveformSequence {
+// DICOM Tag: (300A,0122)
+message PatientSupportAngle {
+	float value = 1;
+}
+// DICOM Tag: (0008,9121)
+message ReferencedRawDataSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
+	string value = 1;
+}
+// DICOM Tag: (0028,2112)
+message LossyImageCompressionRatio {
+	repeated float value = 1;
+}
+// DICOM Tag: (0054,0220)
+message ViewCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,9207)
+message VolumeBasedCalculationTechnique {
+	string value = 1;
+}
+// DICOM Tag: (0018,9073)
+message AcquisitionDuration {
+	double value = 1;
+}
+// DICOM Tag: (0018,9004)
+message ContentQualification {
+	string value = 1;
+}
+// DICOM Tag: (300A,0144)
+message TableTopRollAngle {
+	float value = 1;
+}
+// DICOM Tag: (0008,9206)
+message VolumetricProperties {
+	string value = 1;
+}
+// DICOM Tag: (0008,9237)
+message ReferencedPresentationStateSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -15,59 +61,17 @@ message ReferencedWaveformSequence {
 message HighBit {
 	uint32 value = 1;
 }
-// DICOM Tag: (0054,0220)
-message ViewCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (300A,0122)
-message PatientSupportAngle {
-	float value = 1;
-}
-// DICOM Tag: (0020,0012)
-message AcquisitionNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,9237)
-message ReferencedPresentationStateSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
-}
-// DICOM Tag: (300A,0144)
-message TableTopRollAngle {
-	float value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
+	string value = 1;
 }
 // DICOM Tag: (0008,9154)
 message SourceImageEvidenceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (300A,0140)
-message TableTopPitchAngle {
-	float value = 1;
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,9004)
-message ContentQualification {
+// DICOM Tag: (0020,4000)
+message ImageComments {
 	string value = 1;
 }
 // DICOM Tag: (0028,0302)
@@ -78,44 +82,47 @@ message RecognizableVisualFeatures {
 message IsocenterPosition {
 	repeated float value = 1;
 }
-// DICOM Tag: (0008,9121)
-message ReferencedRawDataSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (300A,012A)
+message TableTopLateralPosition {
+	float value = 1;
 }
-// DICOM Tag: (0028,2110)
-message LossyImageCompression {
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
 	string value = 1;
 }
-// DICOM Tag: (0028,2112)
-message LossyImageCompressionRatio {
-	repeated float value = 1;
-}
-// DICOM Tag: (0054,0500)
-message SliceProgressionDirection {
-	string value = 1;
-}
-// DICOM Tag: (0008,9206)
-message VolumetricProperties {
-	string value = 1;
-}
-// DICOM Tag: (0008,9092)
-message ReferencedImageEvidenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,4000)
-message ImageComments {
-	string value = 1;
-}
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
 }
 // DICOM Tag: (0088,0200)
 message IconImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0020,0012)
+message AcquisitionNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,113A)
+message ReferencedWaveformSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (300A,0140)
+message TableTopPitchAngle {
+	float value = 1;
 }
 // DICOM Tag: (300A,0129)
 message TableTopLongitudinalPosition {
@@ -125,59 +132,52 @@ message TableTopLongitudinalPosition {
 message PixelPresentation {
 	string value = 1;
 }
-// DICOM Tag: (0008,9207)
-message VolumeBasedCalculationTechnique {
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
 	string value = 1;
 }
-// DICOM Tag: (0008,002A)
-message AcquisitionDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,9073)
-message AcquisitionDuration {
-	double value = 1;
-}
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
-	string value = 1;
-}
-// DICOM Tag: (300A,012A)
-message TableTopLateralPosition {
-	float value = 1;
+// DICOM Tag: (0008,9092)
+message ReferencedImageEvidenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message EnhancedCTImageModule {
-	TableTopLongitudinalPosition table_top_longitudinal_position = 1;
-	VolumetricProperties volumetric_properties = 2;
-	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 3;
-	ImageComments image_comments = 4;
-	PresentationLUTShape presentation_lut_shape = 5;
-	IconImageSequence icon_image_sequence = 6;
-	TableTopLateralPosition table_top_lateral_position = 7;
-	PixelPresentation pixel_presentation = 8;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 1;
+	ViewCodeSequence view_code_sequence = 2;
+	ImageType image_type = 3;
+	BurnedInAnnotation burned_in_annotation = 4;
+	AcquisitionDuration acquisition_duration = 5;
+	ContentQualification content_qualification = 6;
+	TableTopRollAngle table_top_roll_angle = 7;
+	VolumetricProperties volumetric_properties = 8;
 	VolumeBasedCalculationTechnique volume_based_calculation_technique = 9;
-	AcquisitionDateTime acquisition_datetime = 10;
-	AcquisitionDuration acquisition_duration = 11;
-	BurnedInAnnotation burned_in_annotation = 12;
-	BitsStored bits_stored = 13;
-	ReferencedWaveformSequence referenced_waveform_sequence = 14;
-	HighBit high_bit = 15;
-	ViewCodeSequence view_code_sequence = 16;
-	PatientSupportAngle patient_support_angle = 17;
-	AcquisitionNumber acquisition_number = 18;
-	ReferencedPresentationStateSequence referenced_presentation_state_sequence = 19;
-	LossyImageCompressionMethod lossy_image_compression_method = 20;
-	TableTopRollAngle table_top_roll_angle = 21;
-	ImageType image_type = 22;
-	SourceImageEvidenceSequence source_image_evidence_sequence = 23;
-	IsocenterPosition isocenter_position = 24;
+	HighBit high_bit = 10;
+	SliceProgressionDirection slice_progression_direction = 11;
+	SourceImageEvidenceSequence source_image_evidence_sequence = 12;
+	ReferencedPresentationStateSequence referenced_presentation_state_sequence = 13;
+	RecognizableVisualFeatures recognizable_visual_features = 14;
+	IsocenterPosition isocenter_position = 15;
+	TableTopLateralPosition table_top_lateral_position = 16;
+	SamplesPerPixel samples_per_pixel = 17;
+	ImageComments image_comments = 18;
+	LossyImageCompressionMethod lossy_image_compression_method = 19;
+	IconImageSequence icon_image_sequence = 20;
+	AcquisitionNumber acquisition_number = 21;
+	PhotometricInterpretation photometric_interpretation = 22;
+	ReferencedWaveformSequence referenced_waveform_sequence = 23;
+	BitsStored bits_stored = 24;
 	TableTopPitchAngle table_top_pitch_angle = 25;
-	SamplesPerPixel samples_per_pixel = 26;
-	PhotometricInterpretation photometric_interpretation = 27;
-	BitsAllocated bits_allocated = 28;
-	ContentQualification content_qualification = 29;
-	RecognizableVisualFeatures recognizable_visual_features = 30;
-	ReferencedRawDataSequence referenced_raw_data_sequence = 31;
-	LossyImageCompression lossy_image_compression = 32;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 33;
-	SliceProgressionDirection slice_progression_direction = 34;
+	TableTopLongitudinalPosition table_top_longitudinal_position = 26;
+	PixelPresentation pixel_presentation = 27;
+	AcquisitionDateTime acquisition_datetime = 28;
+	PresentationLUTShape presentation_lut_shape = 29;
+	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 30;
+	BitsAllocated bits_allocated = 31;
+	PatientSupportAngle patient_support_angle = 32;
+	ReferencedRawDataSequence referenced_raw_data_sequence = 33;
+	LossyImageCompression lossy_image_compression = 34;
 }

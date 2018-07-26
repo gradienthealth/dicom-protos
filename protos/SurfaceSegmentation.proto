@@ -2,23 +2,36 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.23.html#table_C.8.23-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0070,0080)
+message ContentLabel {
+	string value = 1;
+}
+// DICOM Tag: (0040,A043)
+message ConceptNameCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0087)
+message AlternateContentDescriptionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0062,0002)
 message SegmentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,0080)
-message ContentLabel {
+// DICOM Tag: (0070,0081)
+message ContentDescription {
 	string value = 1;
 }
-// DICOM Tag: (0070,0087)
-message AlternateContentDescriptionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0070,0084)
+message ContentCreatorName {
+	string value = 1;
 }
 // DICOM Tag: (0070,0086)
 message ContentCreatorIdentificationCodeSequence {
@@ -29,32 +42,19 @@ message ContentCreatorIdentificationCodeSequence {
 message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0070,0081)
-message ContentDescription {
-	string value = 1;
-}
-// DICOM Tag: (0040,A043)
-message ConceptNameCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0070,0084)
-message ContentCreatorName {
-	string value = 1;
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
 }
 message SurfaceSegmentationModule {
-	ContentLabel content_label = 1;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 2;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 3;
-	ContentDate content_date = 4;
+	InstanceNumber instance_number = 1;
+	ContentLabel content_label = 2;
+	ConceptNameCodeSequence concept_name_code_sequence = 3;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 4;
 	ContentTime content_time = 5;
 	SegmentSequence segment_sequence = 6;
-	InstanceNumber instance_number = 7;
-	ContentDescription content_description = 8;
-	ConceptNameCodeSequence concept_name_code_sequence = 9;
-	ContentCreatorName content_creator's_name = 10;
+	ContentDescription content_description = 7;
+	ContentCreatorName content_creator's_name = 8;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 9;
+	ContentDate content_date = 10;
 }

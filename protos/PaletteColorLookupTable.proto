@@ -2,39 +2,12 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.9.html#table_C.7-22
 syntax = "proto3";
 
-// DICOM Tag: (0028,1101)
-message RedPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,1103)
-message BluePaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,1202)
-message GreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,1222)
-message SegmentedGreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,1102)
-message GreenPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
 // DICOM Tag: (0028,1199)
 message PaletteColorLookupTableUID {
 	string value = 1;
 }
-// DICOM Tag: (0028,1201)
-message RedPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,1203)
-message BluePaletteColorLookupTableData {
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
@@ -43,20 +16,47 @@ message SegmentedRedPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
+// DICOM Tag: (0028,1222)
+message SegmentedGreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
 // DICOM Tag: (0028,1223)
 message SegmentedBluePaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
+// DICOM Tag: (0028,1101)
+message RedPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1102)
+message GreenPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1103)
+message BluePaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1201)
+message RedPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
 message PaletteColorLookupTableModule {
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 1;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 2;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 3;
+	PaletteColorLookupTableUID palette_color_lookup_table_uid = 1;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 2;
+	SegmentedRedPaletteColorLookupTableData segmented_red_palette_color_lookup_table_data = 3;
 	SegmentedGreenPaletteColorLookupTableData segmented_green_palette_color_lookup_table_data = 4;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 5;
-	PaletteColorLookupTableUID palette_color_lookup_table_uid = 6;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 7;
+	SegmentedBluePaletteColorLookupTableData segmented_blue_palette_color_lookup_table_data = 5;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 6;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 7;
 	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 8;
-	SegmentedRedPaletteColorLookupTableData segmented_red_palette_color_lookup_table_data = 9;
-	SegmentedBluePaletteColorLookupTableData segmented_blue_palette_color_lookup_table_data = 10;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 9;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 10;
 }

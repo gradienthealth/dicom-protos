@@ -2,20 +2,28 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.2.html#table_C.8-103
 syntax = "proto3";
 
+// DICOM Tag: (0018,9200)
+message MRSpectroscopyAcquisitionType {
+	string value = 1;
+}
+// DICOM Tag: (0018,9025)
+message SpectrallySelectedSuppression {
+	string value = 1;
+}
+// DICOM Tag: (0018,9298)
+message EchoPeakPosition {
+	int32 value = 1;
+}
 // DICOM Tag: (0018,9005)
 message PulseSequenceName {
 	string value = 1;
 }
-// DICOM Tag: (0018,9011)
-message MultipleSpinEcho {
+// DICOM Tag: (0018,9094)
+message CoverageOfKSpace {
 	string value = 1;
 }
-// DICOM Tag: (0018,9018)
-message EchoPlanarPulseSequence {
-	string value = 1;
-}
-// DICOM Tag: (0018,9034)
-message RectilinearPhaseEncodeReordering {
+// DICOM Tag: (0018,9033)
+message SegmentedKSpaceTraversal {
 	string value = 1;
 }
 // DICOM Tag: (0018,9093)
@@ -26,51 +34,43 @@ message NumberOfKSpaceTrajectories {
 message EchoPulseSequence {
 	string value = 1;
 }
-// DICOM Tag: (0018,9017)
-message SteadyStatePulseSequence {
+// DICOM Tag: (0018,9018)
+message EchoPlanarPulseSequence {
 	string value = 1;
 }
 // DICOM Tag: (0018,9032)
 message GeometryOfKSpaceTraversal {
 	string value = 1;
 }
+// DICOM Tag: (0018,9034)
+message RectilinearPhaseEncodeReordering {
+	string value = 1;
+}
+// DICOM Tag: (0018,9011)
+message MultipleSpinEcho {
+	string value = 1;
+}
 // DICOM Tag: (0018,9012)
 message MultiPlanarExcitation {
 	string value = 1;
 }
-// DICOM Tag: (0018,9094)
-message CoverageOfKSpace {
+// DICOM Tag: (0018,9017)
+message SteadyStatePulseSequence {
 	string value = 1;
-}
-// DICOM Tag: (0018,9200)
-message MRSpectroscopyAcquisitionType {
-	string value = 1;
-}
-// DICOM Tag: (0018,9025)
-message SpectrallySelectedSuppression {
-	string value = 1;
-}
-// DICOM Tag: (0018,9033)
-message SegmentedKSpaceTraversal {
-	string value = 1;
-}
-// DICOM Tag: (0018,9298)
-message EchoPeakPosition {
-	int32 value = 1;
 }
 message MRSpectroscopyPulseSequenceModule {
-	EchoPulseSequence echo_pulse_sequence = 1;
-	SteadyStatePulseSequence steady_state_pulse_sequence = 2;
-	GeometryOfKSpaceTraversal geometry_of_k_space_traversal = 3;
-	MultiPlanarExcitation multi_planar_excitation = 4;
+	MRSpectroscopyAcquisitionType mr_spectroscopy_acquisition_type = 1;
+	SpectrallySelectedSuppression spectrally_selected_suppression = 2;
+	EchoPeakPosition echo_peak_position = 3;
+	PulseSequenceName pulse_sequence_name = 4;
 	CoverageOfKSpace coverage_of_k_space = 5;
-	MRSpectroscopyAcquisitionType mr_spectroscopy_acquisition_type = 6;
-	SpectrallySelectedSuppression spectrally_selected_suppression = 7;
-	SegmentedKSpaceTraversal segmented_k_space_traversal = 8;
-	EchoPeakPosition echo_peak_position = 9;
-	NumberOfKSpaceTrajectories number_of_k_space_trajectories = 10;
-	PulseSequenceName pulse_sequence_name = 11;
+	RectilinearPhaseEncodeReordering rectilinear_phase_encode_reordering = 6;
+	SegmentedKSpaceTraversal segmented_k_space_traversal = 7;
+	NumberOfKSpaceTrajectories number_of_k_space_trajectories = 8;
+	EchoPulseSequence echo_pulse_sequence = 9;
+	EchoPlanarPulseSequence echo_planar_pulse_sequence = 10;
+	GeometryOfKSpaceTraversal geometry_of_k_space_traversal = 11;
 	MultipleSpinEcho multiple_spin_echo = 12;
-	EchoPlanarPulseSequence echo_planar_pulse_sequence = 13;
-	RectilinearPhaseEncodeReordering rectilinear_phase_encode_reordering = 14;
+	MultiPlanarExcitation multi_planar_excitation = 13;
+	SteadyStatePulseSequence steady_state_pulse_sequence = 14;
 }

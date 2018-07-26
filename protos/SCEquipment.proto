@@ -2,6 +2,14 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.html#table_C.8-24
 syntax = "proto3";
 
+// DICOM Tag: (0018,1019)
+message SecondaryCaptureDeviceSoftwareVersions {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,1022)
+message VideoImageFormatAcquired {
+	string value = 1;
+}
 // DICOM Tag: (0018,1023)
 message DigitalImageFormatAcquired {
 	string value = 1;
@@ -26,21 +34,13 @@ message SecondaryCaptureDeviceManufacturer {
 message SecondaryCaptureDeviceManufacturerModelName {
 	string value = 1;
 }
-// DICOM Tag: (0018,1019)
-message SecondaryCaptureDeviceSoftwareVersions {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,1022)
-message VideoImageFormatAcquired {
-	string value = 1;
-}
 message SCEquipmentModule {
-	VideoImageFormatAcquired video_image_format_acquired = 1;
-	DigitalImageFormatAcquired digital_image_format_acquired = 2;
-	ConversionType conversion_type = 3;
-	Modality modality = 4;
-	SecondaryCaptureDeviceID secondary_capture_device_id = 5;
-	SecondaryCaptureDeviceManufacturer secondary_capture_device_manufacturer = 6;
-	SecondaryCaptureDeviceManufacturerModelName secondary_capture_device_manufacturer's_model_name = 7;
-	SecondaryCaptureDeviceSoftwareVersions secondary_capture_device_software_versions = 8;
+	SecondaryCaptureDeviceID secondary_capture_device_id = 1;
+	SecondaryCaptureDeviceManufacturer secondary_capture_device_manufacturer = 2;
+	SecondaryCaptureDeviceManufacturerModelName secondary_capture_device_manufacturer's_model_name = 3;
+	SecondaryCaptureDeviceSoftwareVersions secondary_capture_device_software_versions = 4;
+	VideoImageFormatAcquired video_image_format_acquired = 5;
+	DigitalImageFormatAcquired digital_image_format_acquired = 6;
+	ConversionType conversion_type = 7;
+	Modality modality = 8;
 }

@@ -15,7 +15,7 @@ message StereoPairsPresent {
 	string value = 1;
 }
 message Multi-frameModule {
-	NumberOfFrames number_of_frames = 1;
-	FrameIncrementPointer frame_increment_pointer = 2;
-	StereoPairsPresent stereo_pairs_present = 3;
+	FrameIncrementPointer frame_increment_pointer = 1;
+	StereoPairsPresent stereo_pairs_present = 2;
+	NumberOfFrames number_of_frames = 3;
 }

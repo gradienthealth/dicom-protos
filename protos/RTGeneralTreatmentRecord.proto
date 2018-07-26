@@ -2,6 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.17.html#table_C.8-53
 syntax = "proto3";
 
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
 // DICOM Tag: (3008,0250)
 message TreatmentDate {
 	string value = 1;
@@ -20,14 +24,10 @@ message ReferencedTreatmentRecordSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
 message RTGeneralTreatmentRecordModule {
-	InstanceNumber instance_number = 1;
-	TreatmentDate treatment_date = 2;
-	TreatmentTime treatment_time = 3;
-	ReferencedRTPlanSequence referenced_rt_plan_sequence = 4;
-	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 5;
+	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 1;
+	InstanceNumber instance_number = 2;
+	TreatmentDate treatment_date = 3;
+	TreatmentTime treatment_time = 4;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 5;
 }

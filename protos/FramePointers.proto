@@ -19,8 +19,8 @@ message FrameNumbersOfInterest {
 	repeated uint32 value = 1;
 }
 message FramePointersModule {
-	RepresentativeFrameNumber representative_frame_number = 1;
-	FrameNumbersOfInterest frame_numbers_of_interest_foi = 2;
-	FrameOfInterestDescription frame_of_interest_description = 3;
-	FrameOfInterestType frame_of_interest_type = 4;
+	FrameNumbersOfInterest frame_numbers_of_interest_foi = 1;
+	FrameOfInterestDescription frame_of_interest_description = 2;
+	FrameOfInterestType frame_of_interest_type = 3;
+	RepresentativeFrameNumber representative_frame_number = 4;
 }

@@ -39,13 +39,12 @@ func (a *Attribute) TagKey() TagKey {
 }
 
 // AddSubAttribute adds a subattribute in the right place to an attribute "tree"
-func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap AttributeMap) {
+func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey) {
 	if len(keys) == 1 {
 		if a.SubAttributes == nil {
 			a.SubAttributes = make(map[TagKey]*Attribute)
 		}
-		attr := attributeMap[keys[0]]
-		a.SubAttributes[keys[0]] = &attr //TODO: don't use addresses, copy prob happens anyway
+		a.SubAttributes[keys[0]] = at
 		return
 	}
 
@@ -54,14 +53,19 @@ func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap A
 		a.SubAttributes = make(map[TagKey]*Attribute)
 	}
 
+	// NOTE: the underlying code prevents the current reliance on order of the JSON. Currently it is assumed that
+	// attributes are encountered from the root to the leaves (and not out of order). The below code addresses out of
+	// order scenarios
 	/*
 		// Add current level attribute to a's subattributes. DONT HAVE TO DO THIS assuming ordering in JSON
-		attr := attributeMap[keys[0]]
-		a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
+		if a.SubAttributes[keys[0]] == nil {
+			attr := attributeMap[keys[0]]
+			a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
+		}
 	*/
 
 	// Call add sub attribute on the next level
-	a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:], attributeMap)
+	a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:])
 }
 
 // AttributeMap represents a mapping from TagKey to Attribute entities
@@ -148,7 +152,7 @@ func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([
 		tagKey := tagToKey(mapping.Tag)
 		attr, ok := attrMap[tagKey]
 		if !ok {
-			log.Printf("ERROR: NO Attribute MAPPING FOUND: %s", tagKey)
+			log.Printf("ERROR: NO Attribute MAPPING FOUND: %s", tagKey) // badness
 		}
 		module := moduleMap[mapping.ModuleID]
 
@@ -164,7 +168,7 @@ func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([
 				module.Attributes = make(map[TagKey]*Attribute)
 			}
 
-			module.Attributes[pathTagKeys[0]].AddSubAttribute(&attr, pathTagKeys[1:], attrMap)
+			module.Attributes[pathTagKeys[0]].AddSubAttribute(&attr, pathTagKeys[1:]) //TODO: no need for attr pointer, it's prob copied anyway since map values are not addressable
 		}
 	}
 

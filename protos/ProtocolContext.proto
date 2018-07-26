@@ -7,38 +7,14 @@ message CustodialOrganizationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,9907)
-message PotentialRequestedProcedureCodeSequence {
+// DICOM Tag: (0008,0220)
+message ResponsibleGroupCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9909)
-message PotentialReasonsForProcedureCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,990E)
-message PredecessorProtocolSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,990F)
-message ProtocolPlanningInformation {
-	string value = 1;
 }
 // DICOM Tag: (0018,1030)
 message ProtocolName {
 	string value = 1;
-}
-// DICOM Tag: (0018,9906)
-message PotentialScheduledProtocolCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,990B)
-message ContraindicationsCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,0012)
 message InstanceCreationDate {
@@ -48,8 +24,8 @@ message InstanceCreationDate {
 message InstanceCreationTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,0220)
-message ResponsibleGroupCodeSequence {
+// DICOM Tag: (0018,9909)
+message PotentialReasonsForProcedureCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -57,16 +33,8 @@ message ResponsibleGroupCodeSequence {
 message PotentialDiagnosticTasks {
 	repeated string value = 1;
 }
-// DICOM Tag: (0070,0084)
-message ContentCreatorName {
-	string value = 1;
-}
-// DICOM Tag: (0018,9908)
-message PotentialReasonsForProcedure {
-	repeated string value = 1;
-}
-// DICOM Tag: (0070,0086)
-message ContentCreatorIdentificationCodeSequence {
+// DICOM Tag: (0018,990B)
+message ContraindicationsCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -74,21 +42,53 @@ message ContentCreatorIdentificationCodeSequence {
 message ProtocolDesignRationale {
 	string value = 1;
 }
+// DICOM Tag: (0018,990F)
+message ProtocolPlanningInformation {
+	string value = 1;
+}
+// DICOM Tag: (0018,9907)
+message PotentialRequestedProcedureCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,9908)
+message PotentialReasonsForProcedure {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,990E)
+message PredecessorProtocolSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0084)
+message ContentCreatorName {
+	string value = 1;
+}
+// DICOM Tag: (0070,0086)
+message ContentCreatorIdentificationCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,9906)
+message PotentialScheduledProtocolCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message ProtocolContextModule {
-	CustodialOrganizationSequence custodial_organization_sequence = 1;
-	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 2;
-	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 3;
-	PredecessorProtocolSequence predecessor_protocol_sequence = 4;
-	ProtocolPlanningInformation protocol_planning_information = 5;
-	ProtocolName protocol_name = 6;
-	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 7;
-	ContraindicationsCodeSequence contraindications_code_sequence = 8;
-	InstanceCreationDate instance_creation_date = 9;
-	InstanceCreationTime instance_creation_time = 10;
-	ResponsibleGroupCodeSequence responsible_group_code_sequence = 11;
-	PotentialDiagnosticTasks potential_diagnostic_tasks = 12;
-	ContentCreatorName content_creator's_name = 13;
-	PotentialReasonsForProcedure potential_reasons_for_procedure = 14;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 15;
-	ProtocolDesignRationale protocol_design_rationale = 16;
+	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 1;
+	InstanceCreationDate instance_creation_date = 2;
+	CustodialOrganizationSequence custodial_organization_sequence = 3;
+	ResponsibleGroupCodeSequence responsible_group_code_sequence = 4;
+	ProtocolName protocol_name = 5;
+	ProtocolDesignRationale protocol_design_rationale = 6;
+	ProtocolPlanningInformation protocol_planning_information = 7;
+	InstanceCreationTime instance_creation_time = 8;
+	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 9;
+	PotentialDiagnosticTasks potential_diagnostic_tasks = 10;
+	ContraindicationsCodeSequence contraindications_code_sequence = 11;
+	ContentCreatorName content_creator's_name = 12;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 13;
+	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 14;
+	PotentialReasonsForProcedure potential_reasons_for_procedure = 15;
+	PredecessorProtocolSequence predecessor_protocol_sequence = 16;
 }

@@ -2,49 +2,45 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#table_C.7-8
 syntax = "proto3";
 
-// DICOM Tag: (0018,1008)
-message GantryID {
-	string value = 1;
-}
-// DICOM Tag: (0018,1201)
-message TimeOfLastCalibration {
-	repeated int64 value = 1;
-}
 // DICOM Tag: (0008,0080)
 message InstitutionName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,1040)
-message InstitutionalDepartmentName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1010)
-message StationName {
+// DICOM Tag: (0018,1008)
+message GantryID {
 	string value = 1;
 }
 // DICOM Tag: (0018,1020)
 message SoftwareVersions {
 	repeated string value = 1;
 }
+// DICOM Tag: (0018,1201)
+message TimeOfLastCalibration {
+	repeated int64 value = 1;
+}
 // DICOM Tag: (0008,0070)
 message Manufacturer {
 	string value = 1;
 }
-// DICOM Tag: (0018,1050)
-message SpatialResolution {
-	float value = 1;
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
 }
-// DICOM Tag: (0028,0120)
-message PixelPaddingValue {
-	int64 value = 1;
+// DICOM Tag: (0008,1010)
+message StationName {
+	string value = 1;
+}
+// DICOM Tag: (0008,1040)
+message InstitutionalDepartmentName {
+	string value = 1;
 }
 // DICOM Tag: (0018,1200)
 message DateOfLastCalibration {
 	repeated string value = 1;
+}
+// DICOM Tag: (0028,0120)
+message PixelPaddingValue {
+	int64 value = 1;
 }
 // DICOM Tag: (0008,1090)
 message ManufacturerModelName {
@@ -59,19 +55,23 @@ message UDISequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0018,1050)
+message SpatialResolution {
+	float value = 1;
+}
 message GeneralEquipmentModule {
-	ManufacturerModelName manufacturer's_model_name = 1;
-	DeviceSerialNumber device_serial_number = 2;
-	UDISequence udi_sequence = 3;
-	DateOfLastCalibration date_of_last_calibration = 4;
-	InstitutionName institution_name = 5;
-	InstitutionAddress institution_address = 6;
-	InstitutionalDepartmentName institutional_department_name = 7;
+	DateOfLastCalibration date_of_last_calibration = 1;
+	UDISequence udi_sequence = 2;
+	SpatialResolution spatial_resolution = 3;
+	PixelPaddingValue pixel_padding_value = 4;
+	ManufacturerModelName manufacturer's_model_name = 5;
+	DeviceSerialNumber device_serial_number = 6;
+	InstitutionName institution_name = 7;
 	GantryID gantry_id = 8;
-	TimeOfLastCalibration time_of_last_calibration = 9;
-	StationName station_name = 10;
+	StationName station_name = 9;
+	InstitutionalDepartmentName institutional_department_name = 10;
 	SoftwareVersions software_versions = 11;
-	Manufacturer manufacturer = 12;
-	SpatialResolution spatial_resolution = 13;
-	PixelPaddingValue pixel_padding_value = 14;
+	TimeOfLastCalibration time_of_last_calibration = 12;
+	Manufacturer manufacturer = 13;
+	InstitutionAddress institution_address = 14;
 }

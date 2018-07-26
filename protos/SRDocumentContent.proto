@@ -2,38 +2,13 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.html#table_C.17-4
 syntax = "proto3";
 
-// DICOM Tag: (0040,A032)
-message ObservationDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,A730)
-message ContentSequence {
+// DICOM Tag: (0040,A301)
+message NumericValueQualifierCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,A121)
-message Date {
-	string value = 1;
-}
-// DICOM Tag: (0040,A300)
-message MeasuredValueSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0048,0301)
-message PixelOriginInterpretation {
-	string value = 1;
 }
 // DICOM Tag: (3006,0024)
 message ReferencedFrameOfReferenceUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,A13A)
-message ReferencedDateTime {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0040,A050)
-message ContinuityOfContent {
 	string value = 1;
 }
 // DICOM Tag: (0040,A040)
@@ -44,30 +19,37 @@ message ValueType {
 message TextValue {
 	string value = 1;
 }
+// DICOM Tag: (0040,A120)
+message DateTime {
+	int64 value = 1;
+}
 // DICOM Tag: (0040,A123)
 message PersonName {
 	string value = 1;
 }
-// DICOM Tag: (0040,A124)
-message UID {
-	string value = 1;
-}
-// DICOM Tag: (0040,A301)
-message NumericValueQualifierCodeSequence {
+// DICOM Tag: (0008,1199)
+message ReferencedSOPSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,A168)
-message ConceptCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0070,0022)
+message GraphicData {
+	repeated float value = 1;
 }
 // DICOM Tag: (0070,0023)
 message GraphicType {
 	string value = 1;
 }
-// DICOM Tag: (0070,031A)
-message FiducialUID {
+// DICOM Tag: (0048,0301)
+message PixelOriginInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0040,A130)
+message TemporalRangeType {
+	string value = 1;
+}
+// DICOM Tag: (0040,A050)
+message ContinuityOfContent {
 	string value = 1;
 }
 // DICOM Tag: (0040,A043)
@@ -79,65 +61,83 @@ message ConceptNameCodeSequence {
 message Time {
 	int64 value = 1;
 }
+// DICOM Tag: (0040,A168)
+message ConceptCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0040,A132)
 message ReferencedSamplePositions {
 	repeated uint32 value = 1;
 }
-// DICOM Tag: (0040,A504)
-message ContentTemplateSequence {
+// DICOM Tag: (0040,A13A)
+message ReferencedDateTime {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0040,A171)
+message ObservationUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,A121)
+message Date {
+	string value = 1;
+}
+// DICOM Tag: (0040,A124)
+message UID {
+	string value = 1;
+}
+// DICOM Tag: (0040,A300)
+message MeasuredValueSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,0022)
-message GraphicData {
-	repeated float value = 1;
-}
-// DICOM Tag: (0040,A130)
-message TemporalRangeType {
+// DICOM Tag: (0070,031A)
+message FiducialUID {
 	string value = 1;
 }
 // DICOM Tag: (0040,A138)
 message ReferencedTimeOffsets {
 	repeated float value = 1;
 }
-// DICOM Tag: (0040,A171)
-message ObservationUID {
-	string value = 1;
+// DICOM Tag: (0040,A504)
+message ContentTemplateSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,A120)
-message DateTime {
+// DICOM Tag: (0040,A032)
+message ObservationDateTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
+// DICOM Tag: (0040,A730)
+message ContentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message SRDocumentContentModule {
-	ObservationUID observation_uid = 1;
-	DateTime datetime = 2;
-	ReferencedSOPSequence referenced_sop_sequence = 3;
-	GraphicData graphic_data = 4;
-	TemporalRangeType temporal_range_type = 5;
-	ReferencedTimeOffsets referenced_time_offsets = 6;
-	Date date = 7;
+	Time time = 1;
+	ConceptCodeSequence concept_code_sequence = 2;
+	ReferencedSamplePositions referenced_sample_positions = 3;
+	ReferencedDateTime referenced_datetime = 4;
+	ObservationUID observation_uid = 5;
+	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	UID uid = 7;
 	MeasuredValueSequence measured_value_sequence = 8;
-	ObservationDateTime observation_datetime = 9;
-	ContentSequence content_sequence = 10;
-	ContinuityOfContent continuity_of_content = 11;
-	ValueType value_type = 12;
-	TextValue text_value = 13;
-	PixelOriginInterpretation pixel_origin_interpretation = 14;
+	FiducialUID fiducial_uid = 9;
+	ReferencedTimeOffsets referenced_time_offsets = 10;
+	ContentTemplateSequence content_template_sequence = 11;
+	ObservationDateTime observation_datetime = 12;
+	ContentSequence content_sequence = 13;
+	Date date = 14;
 	ReferencedFrameOfReferenceUID referenced_frame_of_reference_uid = 15;
-	ReferencedDateTime referenced_datetime = 16;
-	ConceptCodeSequence concept_code_sequence = 17;
-	GraphicType graphic_type = 18;
-	FiducialUID fiducial_uid = 19;
-	ConceptNameCodeSequence concept_name_code_sequence = 20;
-	Time time = 21;
-	PersonName person_name = 22;
-	UID uid = 23;
-	NumericValueQualifierCodeSequence numeric_value_qualifier_code_sequence = 24;
-	ReferencedSamplePositions referenced_sample_positions = 25;
-	ContentTemplateSequence content_template_sequence = 26;
+	NumericValueQualifierCodeSequence numeric_value_qualifier_code_sequence = 16;
+	TextValue text_value = 17;
+	DateTime datetime = 18;
+	PersonName person_name = 19;
+	ReferencedSOPSequence referenced_sop_sequence = 20;
+	GraphicData graphic_data = 21;
+	GraphicType graphic_type = 22;
+	PixelOriginInterpretation pixel_origin_interpretation = 23;
+	ValueType value_type = 24;
+	ContinuityOfContent continuity_of_content = 25;
+	TemporalRangeType temporal_range_type = 26;
 }

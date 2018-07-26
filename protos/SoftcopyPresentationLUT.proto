@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.6.html#table_C.11.6-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,3006)
-message LUTData {
-	repeated bytes value = 1;
-}
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
-}
 // DICOM Tag: (2050,0010)
 message PresentationLUTSequence {
 	bytes value = 1;

@@ -2,32 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-2b
 syntax = "proto3";
 
-// DICOM Tag: (0012,0020)
-message ClinicalTrialProtocolID {
+// DICOM Tag: (0012,0010)
+message ClinicalTrialSponsorName {
 	string value = 1;
 }
 // DICOM Tag: (0012,0030)
 message ClinicalTrialSiteID {
 	string value = 1;
 }
-// DICOM Tag: (0012,0031)
-message ClinicalTrialSiteName {
-	string value = 1;
-}
 // DICOM Tag: (0012,0042)
 message ClinicalTrialSubjectReadingID {
-	string value = 1;
-}
-// DICOM Tag: (0012,0010)
-message ClinicalTrialSponsorName {
-	string value = 1;
-}
-// DICOM Tag: (0012,0021)
-message ClinicalTrialProtocolName {
-	string value = 1;
-}
-// DICOM Tag: (0012,0040)
-message ClinicalTrialSubjectID {
 	string value = 1;
 }
 // DICOM Tag: (0012,0081)
@@ -38,14 +22,30 @@ message ClinicalTrialProtocolEthicsCommitteeName {
 message ClinicalTrialProtocolEthicsCommitteeApprovalNumber {
 	string value = 1;
 }
+// DICOM Tag: (0012,0020)
+message ClinicalTrialProtocolID {
+	string value = 1;
+}
+// DICOM Tag: (0012,0021)
+message ClinicalTrialProtocolName {
+	string value = 1;
+}
+// DICOM Tag: (0012,0031)
+message ClinicalTrialSiteName {
+	string value = 1;
+}
+// DICOM Tag: (0012,0040)
+message ClinicalTrialSubjectID {
+	string value = 1;
+}
 message ClinicalTrialSubjectModule {
-	ClinicalTrialProtocolID clinical_trial_protocol_id = 1;
+	ClinicalTrialSponsorName clinical_trial_sponsor_name = 1;
 	ClinicalTrialSiteID clinical_trial_site_id = 2;
-	ClinicalTrialSiteName clinical_trial_site_name = 3;
-	ClinicalTrialSubjectReadingID clinical_trial_subject_reading_id = 4;
+	ClinicalTrialSubjectReadingID clinical_trial_subject_reading_id = 3;
+	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 4;
 	ClinicalTrialProtocolEthicsCommitteeApprovalNumber clinical_trial_protocol_ethics_committee_approval_number = 5;
-	ClinicalTrialSponsorName clinical_trial_sponsor_name = 6;
+	ClinicalTrialProtocolID clinical_trial_protocol_id = 6;
 	ClinicalTrialProtocolName clinical_trial_protocol_name = 7;
-	ClinicalTrialSubjectID clinical_trial_subject_id = 8;
-	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 9;
+	ClinicalTrialSiteName clinical_trial_site_name = 8;
+	ClinicalTrialSubjectID clinical_trial_subject_id = 9;
 }

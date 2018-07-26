@@ -2,25 +2,22 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.4.html#table_C.7-12
 syntax = "proto3";
 
+// DICOM Tag: (0018,1046)
+message ContrastFlowRate {
+	repeated float value = 1;
+}
 // DICOM Tag: (0018,1047)
 message ContrastFlowDuration {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,1048)
-message ContrastBolusIngredient {
-	string value = 1;
-}
-// DICOM Tag: (0018,1049)
-message ContrastBolusIngredientConcentration {
-	float value = 1;
+// DICOM Tag: (0018,0012)
+message ContrastBolusAgentSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0018,1040)
 message ContrastBolusRoute {
 	string value = 1;
-}
-// DICOM Tag: (0018,1041)
-message ContrastBolusVolume {
-	float value = 1;
 }
 // DICOM Tag: (0018,1042)
 message ContrastBolusStartTime {
@@ -38,31 +35,34 @@ message ContrastBolusTotalDose {
 message ContrastBolusAgent {
 	string value = 1;
 }
-// DICOM Tag: (0018,0012)
-message ContrastBolusAgentSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0018,0014)
 message ContrastBolusAdministrationRouteSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,1046)
-message ContrastFlowRate {
-	repeated float value = 1;
+// DICOM Tag: (0018,1041)
+message ContrastBolusVolume {
+	float value = 1;
+}
+// DICOM Tag: (0018,1048)
+message ContrastBolusIngredient {
+	string value = 1;
+}
+// DICOM Tag: (0018,1049)
+message ContrastBolusIngredientConcentration {
+	float value = 1;
 }
 message Contrast/BolusModule {
 	ContrastBolusTotalDose contrast_bolus_total_dose = 1;
-	ContrastFlowDuration contrast_flow_duration = 2;
-	ContrastBolusIngredient contrast_bolus_ingredient = 3;
-	ContrastBolusIngredientConcentration contrast_bolus_ingredient_concentration = 4;
+	ContrastFlowRate contrast_flow_rate = 2;
+	ContrastFlowDuration contrast_flow_duration = 3;
+	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 4;
 	ContrastBolusRoute contrast_bolus_route = 5;
-	ContrastBolusVolume contrast_bolus_volume = 6;
-	ContrastBolusStartTime contrast_bolus_start_time = 7;
-	ContrastBolusStopTime contrast_bolus_stop_time = 8;
+	ContrastBolusStartTime contrast_bolus_start_time = 6;
+	ContrastBolusStopTime contrast_bolus_stop_time = 7;
+	ContrastBolusIngredientConcentration contrast_bolus_ingredient_concentration = 8;
 	ContrastBolusAgent contrast_bolus_agent = 9;
-	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 10;
-	ContrastBolusAdministrationRouteSequence contrast_bolus_administration_route_sequence = 11;
-	ContrastFlowRate contrast_flow_rate = 12;
+	ContrastBolusAdministrationRouteSequence contrast_bolus_administration_route_sequence = 10;
+	ContrastBolusVolume contrast_bolus_volume = 11;
+	ContrastBolusIngredient contrast_bolus_ingredient = 12;
 }

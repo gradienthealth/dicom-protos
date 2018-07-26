@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.3.html#table_C.8-62
 syntax = "proto3";
 
-// DICOM Tag: (0018,1064)
-message CardiacFramingType {
-	string value = 1;
-}
-// DICOM Tag: (0018,1080)
-message BeatRejectionFlag {
-	string value = 1;
-}
 // DICOM Tag: (0018,1061)
 message TriggerSourceOrType {
 	string value = 1;
@@ -26,11 +18,19 @@ message SkipBeats {
 message HeartRate {
 	int32 value = 1;
 }
+// DICOM Tag: (0018,1064)
+message CardiacFramingType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1080)
+message BeatRejectionFlag {
+	string value = 1;
+}
 message PETMulti-GatedAcquisitionModule {
-	PVCRejection pvc_rejection = 1;
-	SkipBeats skip_beats = 2;
-	HeartRate heart_rate = 3;
-	CardiacFramingType cardiac_framing_type = 4;
-	BeatRejectionFlag beat_rejection_flag = 5;
-	TriggerSourceOrType trigger_source_or_type = 6;
+	CardiacFramingType cardiac_framing_type = 1;
+	BeatRejectionFlag beat_rejection_flag = 2;
+	TriggerSourceOrType trigger_source_or_type = 3;
+	PVCRejection pvc_rejection = 4;
+	SkipBeats skip_beats = 5;
+	HeartRate heart_rate = 6;
 }
