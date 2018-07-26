@@ -1,0 +1,51 @@
+// Printer
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.9.html#table_C.13-9
+syntax = "proto3";
+
+// DICOM Tag: (2110,0030)
+message PrinterName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1000)
+message DeviceSerialNumber {
+	string value = 1;
+}
+// DICOM Tag: (0018,1200)
+message DateOfLastCalibration {
+	repeated string value = 1;
+}
+// DICOM Tag: (2110,0020)
+message PrinterStatusInfo {
+	string value = 1;
+}
+// DICOM Tag: (0008,0070)
+message Manufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0008,1090)
+message ManufacturerModelName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1020)
+message SoftwareVersions {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,1201)
+message TimeOfLastCalibration {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (2110,0010)
+message PrinterStatus {
+	string value = 1;
+}
+message PrinterModule {
+	DeviceSerialNumber device_serial_number = 1;
+	DateOfLastCalibration date_of_last_calibration = 2;
+	PrinterStatusInfo printer_status_info = 3;
+	PrinterName printer_name = 4;
+	ManufacturerModelName manufacturer's_model_name = 5;
+	SoftwareVersions software_versions = 6;
+	TimeOfLastCalibration time_of_last_calibration = 7;
+	PrinterStatus printer_status = 8;
+	Manufacturer manufacturer = 9;
+}

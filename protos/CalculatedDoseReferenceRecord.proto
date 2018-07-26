@@ -1,0 +1,27 @@
+// Calculated Dose Reference Record
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.20.html#table_C.8-56
+syntax = "proto3";
+
+// DICOM Tag: (3008,0070)
+message CalculatedDoseReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,0072)
+message CalculatedDoseReferenceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (3008,0076)
+message CalculatedDoseReferenceDoseValue {
+	float value = 1;
+}
+// DICOM Tag: (3008,0074)
+message CalculatedDoseReferenceDescription {
+	string value = 1;
+}
+message CalculatedDoseReferenceRecordModule {
+	CalculatedDoseReferenceSequence calculated_dose_reference_sequence = 1;
+	CalculatedDoseReferenceNumber calculated_dose_reference_number = 2;
+	CalculatedDoseReferenceDoseValue calculated_dose_reference_dose_value = 3;
+	CalculatedDoseReferenceDescription calculated_dose_reference_description = 4;
+}

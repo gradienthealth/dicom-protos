@@ -1,0 +1,64 @@
+// Volume Cropping
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1
+syntax = "proto3";
+
+// DICOM Tag: (0070,1309)
+message CroppingSpecificationNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,1302)
+message VolumeCroppingMethod {
+	string value = 1;
+}
+// DICOM Tag: (0070,1303)
+message BoundingBoxCrop {
+	repeated double value = 1;
+}
+// DICOM Tag: (0070,1304)
+message ObliqueCroppingPlaneSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,1306)
+message PlaneNormal {
+	repeated double value = 1;
+}
+// DICOM Tag: (0070,1301)
+message VolumeCroppingSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1140)
+message ReferencedImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0070,1305)
+message Plane {
+	repeated double value = 1;
+}
+message VolumeCroppingModule {
+	CroppingSpecificationNumber cropping_specification_number = 1;
+	VolumeCroppingMethod volume_cropping_method = 2;
+	BoundingBoxCrop bounding_box_crop = 3;
+	ObliqueCroppingPlaneSequence oblique_cropping_plane_sequence = 4;
+	PlaneNormal plane_normal = 5;
+	VolumeCroppingSequence volume_cropping_sequence = 6;
+	ReferencedImageSequence referenced_image_sequence = 7;
+	ReferencedSOPClassUID referenced_sop_class_uid = 8;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 9;
+	ReferencedFrameNumber referenced_frame_number = 10;
+	Plane plane = 11;
+}

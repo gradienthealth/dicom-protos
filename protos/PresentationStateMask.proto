@@ -1,0 +1,27 @@
+// Presentation State Mask
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.13.html#table_C.11.13-1
+syntax = "proto3";
+
+// DICOM Tag: (0028,6100)
+message MaskSubtractionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,6101)
+message MaskOperation {
+	string value = 1;
+}
+// DICOM Tag: (0028,6112)
+message ContrastFrameAveraging {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,1090)
+message RecommendedViewingMode {
+	string value = 1;
+}
+message PresentationStateMaskModule {
+	MaskSubtractionSequence mask_subtraction_sequence = 1;
+	MaskOperation mask_operation = 2;
+	ContrastFrameAveraging contrast_frame_averaging = 3;
+	RecommendedViewingMode recommended_viewing_mode = 4;
+}

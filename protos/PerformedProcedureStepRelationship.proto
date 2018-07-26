@@ -1,0 +1,293 @@
+// Performed Procedure Step Relationship
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.13.html#table_C.4-13
+syntax = "proto3";
+
+// DICOM Tag: (0008,1120)
+message ReferencedPatientSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0008)
+message ScheduledProtocolCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0441)
+message ContentItemModifierSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0010,0033)
+message PatientBirthDateInAlternativeCalendar {
+	string value = 1;
+}
+// DICOM Tag: (0010,0034)
+message PatientDeathDateInAlternativeCalendar {
+	string value = 1;
+}
+// DICOM Tag: (0038,0014)
+message IssuerOfAdmissionIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0038,0062)
+message ServiceEpisodeDescription {
+	string value = 1;
+}
+// DICOM Tag: (0032,1060)
+message RequestedProcedureDescription {
+	string value = 1;
+}
+// DICOM Tag: (0040,0035)
+message IdentifierTypeCode {
+	string value = 1;
+}
+// DICOM Tag: (0008,0050)
+message AccessionNumber {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0038,0010)
+message AdmissionID {
+	string value = 1;
+}
+// DICOM Tag: (0040,2017)
+message FillerOrderNumberImagingServiceRequest {
+	string value = 1;
+}
+// DICOM Tag: (0040,0027)
+message OrderFillerIdentifierSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0009)
+message ScheduledProcedureStepID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,1110)
+message ReferencedStudySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0039)
+message AssigningJurisdictionCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0032,1064)
+message RequestedProcedureCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0440)
+message ProtocolContextSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0010,0021)
+message IssuerOfPatientID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0033)
+message UniversalEntityIDType {
+	string value = 1;
+}
+// DICOM Tag: (0040,0036)
+message AssigningFacilitySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0270)
+message ScheduledStepAttributesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0020)
+message PatientID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0010,0030)
+message PatientBirthDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,1199)
+message ReferencedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0040,0032)
+message UniversalEntityID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0038,0064)
+message IssuerOfServiceEpisodeIDSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0051)
+message IssuerOfAccessionNumberSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0024)
+message IssuerOfPatientIDQualifiersSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,1001)
+message RequestedProcedureID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0007)
+message ScheduledProcedureStepDescription {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0010,0040)
+message PatientSex {
+	string value = 1;
+}
+// DICOM Tag: (0010,0035)
+message PatientAlternativeCalendar {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0038,0060)
+message ServiceEpisodeID {
+	string value = 1;
+}
+// DICOM Tag: (0040,2016)
+message PlacerOrderNumberImagingServiceRequest {
+	string value = 1;
+}
+// DICOM Tag: (0040,0031)
+message LocalNamespaceEntityID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0026)
+message OrderPlacerIdentifierSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0010)
+message PatientName {
+	string value = 1;
+}
+message PerformedProcedureStepRelationshipModule {
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 1;
+	RequestedProcedureCodeSequence requested_procedure_code_sequence = 2;
+	ProtocolContextSequence protocol_context_sequence = 3;
+	IssuerOfPatientID issuer_of_patient_id = 4;
+	MappingResourceUID mapping_resource_uid = 5;
+	ScheduledStepAttributesSequence scheduled_step_attributes_sequence = 6;
+	PatientID patient_id = 7;
+	UniversalEntityIDType universal_entity_id_type = 8;
+	AssigningFacilitySequence assigning_facility_sequence = 9;
+	ContextUID context_uid = 10;
+	ReferencedSOPClassUID referenced_sop_class_uid = 11;
+	CodeMeaning code_meaning = 12;
+	URNCodeValue urn_code_value = 13;
+	PatientBirthDate patient's_birth_date = 14;
+	ReferencedSOPSequence referenced_sop_sequence = 15;
+	UniversalEntityID universal_entity_id = 16;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 17;
+	MappingResource mapping_resource = 18;
+	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 19;
+	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 20;
+	CodingSchemeDesignator coding_scheme_designator = 21;
+	RequestedProcedureID requested_procedure_id = 22;
+	ScheduledProcedureStepDescription scheduled_procedure_step_description = 23;
+	PatientAlternativeCalendar patient's_alternative_calendar = 24;
+	PatientSex patient's_sex = 25;
+	LocalNamespaceEntityID local_namespace_entity_id = 26;
+	LongCodeValue long_code_value = 27;
+	ServiceEpisodeID service_episode_id = 28;
+	PlacerOrderNumberImagingServiceRequest placer_order_number___imaging_service_request = 29;
+	ContextGroupVersion context_group_version = 30;
+	OrderPlacerIdentifierSequence order_placer_identifier_sequence = 31;
+	PatientName patient's_name = 32;
+	CodingSchemeVersion coding_scheme_version = 33;
+	EquivalentCodeSequence equivalent_code_sequence = 34;
+	CodeValue code_value = 35;
+	ReferencedPatientSequence referenced_patient_sequence = 36;
+	ScheduledProtocolCodeSequence scheduled_protocol_code_sequence = 37;
+	ContentItemModifierSequence content_item_modifier_sequence = 38;
+	RequestedProcedureDescription requested_procedure_description = 39;
+	IdentifierTypeCode identifier_type_code = 40;
+	PatientBirthDateInAlternativeCalendar patient's_birth_date_in_alternative_calendar = 41;
+	PatientDeathDateInAlternativeCalendar patient's_death_date_in_alternative_calendar = 42;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 43;
+	ServiceEpisodeDescription service_episode_description = 44;
+	MappingResourceName mapping_resource_name = 45;
+	AccessionNumber accession_number = 46;
+	ReferencedFrameNumber referenced_frame_number = 47;
+	ContextGroupLocalVersion context_group_local_version = 48;
+	AdmissionID admission_id = 49;
+	FillerOrderNumberImagingServiceRequest filler_order_number___imaging_service_request = 50;
+	OrderFillerIdentifierSequence order_filler_identifier_sequence = 51;
+	ScheduledProcedureStepID scheduled_procedure_step_id = 52;
+	AssigningJurisdictionCodeSequence assigning_jurisdiction_code_sequence = 53;
+	ReferencedStudySequence referenced_study_sequence = 54;
+}

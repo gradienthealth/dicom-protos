@@ -1,0 +1,98 @@
+// RT DVH
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.4.html#table_C.8-40
+syntax = "proto3";
+
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (3004,0042)
+message DVHNormalizationDoseValue {
+	float value = 1;
+}
+// DICOM Tag: (3004,0056)
+message DVHNumberOfBins {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (3004,0001)
+message DVHType {
+	string value = 1;
+}
+// DICOM Tag: (3004,0004)
+message DoseType {
+	string value = 1;
+}
+// DICOM Tag: (3004,0052)
+message DVHDoseScaling {
+	float value = 1;
+}
+// DICOM Tag: (3004,0058)
+message DVHData {
+	repeated float value = 1;
+}
+// DICOM Tag: (3004,0050)
+message DVHSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3004,0040)
+message DVHNormalizationPoint {
+	repeated float value = 1;
+}
+// DICOM Tag: (3004,0060)
+message DVHReferencedROISequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3004,0002)
+message DoseUnits {
+	string value = 1;
+}
+// DICOM Tag: (3004,0070)
+message DVHMinimumDose {
+	float value = 1;
+}
+// DICOM Tag: (3004,0062)
+message DVHROIContributionType {
+	string value = 1;
+}
+// DICOM Tag: (3004,0054)
+message DVHVolumeUnits {
+	string value = 1;
+}
+// DICOM Tag: (3004,0072)
+message DVHMaximumDose {
+	float value = 1;
+}
+// DICOM Tag: (3004,0074)
+message DVHMeanDose {
+	float value = 1;
+}
+// DICOM Tag: (3006,0084)
+message ReferencedROINumber {
+	int32 value = 1;
+}
+message RTDVHModule {
+	DVHMinimumDose dvh_minimum_dose = 1;
+	DVHNormalizationPoint dvh_normalization_point = 2;
+	DVHReferencedROISequence dvh_referenced_roi_sequence = 3;
+	DoseUnits dose_units = 4;
+	DVHMeanDose dvh_mean_dose = 5;
+	ReferencedROINumber referenced_roi_number = 6;
+	DVHROIContributionType dvh_roi_contribution_type = 7;
+	DVHVolumeUnits dvh_volume_units = 8;
+	DVHMaximumDose dvh_maximum_dose = 9;
+	ReferencedSOPClassUID referenced_sop_class_uid = 10;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 11;
+	DVHNormalizationDoseValue dvh_normalization_dose_value = 12;
+	DVHNumberOfBins dvh_number_of_bins = 13;
+	DVHData dvh_data = 14;
+	DVHSequence dvh_sequence = 15;
+	DVHType dvh_type = 16;
+	DoseType dose_type = 17;
+	DVHDoseScaling dvh_dose_scaling = 18;
+}

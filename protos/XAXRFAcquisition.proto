@@ -1,0 +1,81 @@
+// XA/XRF Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.3.html#table_C.8.19.3-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,9328)
+message ExposureTimeInms {
+	double value = 1;
+}
+// DICOM Tag: (0018,1154)
+message AveragePulseWidth {
+	float value = 1;
+}
+// DICOM Tag: (0018,1190)
+message FocalSpots {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,9474)
+message CArmPositionerTabletopRelationship {
+	string value = 1;
+}
+// DICOM Tag: (0018,9473)
+message AcquiredImageAreaDoseProduct {
+	float value = 1;
+}
+// DICOM Tag: (0018,1155)
+message RadiationSetting {
+	string value = 1;
+}
+// DICOM Tag: (0018,1191)
+message AnodeTargetMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,1508)
+message PositionerType {
+	string value = 1;
+}
+// DICOM Tag: (0018,9332)
+message ExposureInmAs {
+	double value = 1;
+}
+// DICOM Tag: (0018,9330)
+message XRayTubeCurrentInmA {
+	double value = 1;
+}
+// DICOM Tag: (0018,1156)
+message RectificationType {
+	string value = 1;
+}
+// DICOM Tag: (0018,9426)
+message DistanceReceptorPlaneToDetectorHousing {
+	float value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,9420)
+message XRayReceptorType {
+	string value = 1;
+}
+// DICOM Tag: (0018,9073)
+message AcquisitionDuration {
+	double value = 1;
+}
+message XA/XRFAcquisitionModule {
+	ExposureInmAs exposure_in_mas = 1;
+	AnodeTargetMaterial anode_target_material = 2;
+	PositionerType positioner_type = 3;
+	KVP kvp = 4;
+	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 5;
+	RectificationType rectification_type = 6;
+	DistanceReceptorPlaneToDetectorHousing distance_receptor_plane_to_detector_housing = 7;
+	AcquisitionDuration acquisition_duration = 8;
+	XRayReceptorType x_ray_receptor_type = 9;
+	RadiationSetting radiation_setting = 10;
+	ExposureTimeInms exposure_time_in_ms = 11;
+	AveragePulseWidth average_pulse_width = 12;
+	FocalSpots focal_spots = 13;
+	CArmPositionerTabletopRelationship c_arm_positioner_tabletop_relationship = 14;
+	AcquiredImageAreaDoseProduct acquired_image_area_dose_product = 15;
+}

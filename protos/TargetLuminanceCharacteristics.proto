@@ -1,0 +1,47 @@
+// Target Luminance Characteristics
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.32.2.html#table_C.32.2-1
+syntax = "proto3";
+
+// DICOM Tag: (0028,7018)
+message CIExyWhitePoint {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,7025)
+message AmbientLightValueSource {
+	string value = 1;
+}
+// DICOM Tag: (0028,7008)
+message TargetLuminanceCharacteristicsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,7009)
+message LuminanceCharacteristicsID {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,7019)
+message DisplayFunctionType {
+	string value = 1;
+}
+// DICOM Tag: (0028,7017)
+message DDLValue {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,7020)
+message LuminanceResponseDescription {
+	string value = 1;
+}
+// DICOM Tag: (2010,0160)
+message ReflectedAmbientLight {
+	uint32 value = 1;
+}
+message TargetLuminanceCharacteristicsModule {
+	CIExyWhitePoint ciexy_white_point = 1;
+	AmbientLightValueSource ambient_light_value_source = 2;
+	TargetLuminanceCharacteristicsSequence target_luminance_characteristics_sequence = 3;
+	LuminanceCharacteristicsID luminance_characteristics_id = 4;
+	DisplayFunctionType display_function_type = 5;
+	DDLValue ddl_value = 6;
+	LuminanceResponseDescription luminance_response_description = 7;
+	ReflectedAmbientLight reflected_ambient_light = 8;
+}
