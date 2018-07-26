@@ -2,55 +2,33 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.15.html#table_C.8-51
 syntax = "proto3";
 
-// DICOM Tag: (0008,0080)
-message InstitutionName {
+// DICOM Tag: (300A,0200)
+message BrachyTreatmentTechnique {
 	string value = 1;
 }
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
+// DICOM Tag: (300A,0202)
+message BrachyTreatmentType {
 	string value = 1;
 }
-// DICOM Tag: (0018,1000)
-message DeviceSerialNumber {
-	string value = 1;
+// DICOM Tag: (300A,0206)
+message TreatmentMachineSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
+// DICOM Tag: (300A,0210)
+message SourceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0008,1040)
-message InstitutionalDepartmentName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1090)
-message ManufacturerModelName {
-	string value = 1;
-}
-// DICOM Tag: (3008,0105)
-message SourceSerialNumber {
-	string value = 1;
-}
-// DICOM Tag: (3006,0084)
-message ReferencedROINumber {
-	int32 value = 1;
+// DICOM Tag: (300A,0230)
+message ApplicationSetupSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message RTBrachyApplicationSetupsModule {
-	InstitutionAddress institution_address = 1;
-	DeviceSerialNumber device_serial_number = 2;
-	ReferencedSOPClassUID referenced_sop_class_uid = 3;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 4;
-	InstitutionName institution_name = 5;
-	Manufacturer manufacturer = 6;
-	InstitutionalDepartmentName institutional_department_name = 7;
-	ManufacturerModelName manufacturer's_model_name = 8;
-	SourceSerialNumber source_serial_number = 9;
-	ReferencedROINumber referenced_roi_number = 10;
+	SourceSequence source_sequence = 1;
+	ApplicationSetupSequence application_setup_sequence = 2;
+	BrachyTreatmentTechnique brachy_treatment_technique = 3;
+	BrachyTreatmentType brachy_treatment_type = 4;
+	TreatmentMachineSequence treatment_machine_sequence = 5;
 }

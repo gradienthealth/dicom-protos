@@ -2,109 +2,40 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.31.html#table_C.8.31-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,7006)
-message DetectorDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,7010)
-message ExposuresOnDetectorSinceLastCalibration {
-	int32 value = 1;
-}
-// DICOM Tag: (0028,0010)
-message Rows {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,7062)
-message ExposureControlModeDescription {
-	string value = 1;
-}
-// DICOM Tag: (0020,4000)
-message ImageComments {
-	string value = 1;
-}
-// DICOM Tag: (0028,0300)
-message QualityControlImage {
-	string value = 1;
-}
-// DICOM Tag: (0028,2112)
-message LossyImageCompressionRatio {
-	repeated float value = 1;
+// DICOM Tag: (0020,0020)
+message PatientOrientation {
+	repeated string value = 1;
 }
 // DICOM Tag: (0028,0101)
 message BitsStored {
 	uint32 value = 1;
 }
-// DICOM Tag: (0040,8302)
-message EntranceDoseInmGy {
-	float value = 1;
-}
-// DICOM Tag: (0028,0107)
-message LargestImagePixelValue {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,8303)
-message EntranceDoseDerivation {
+// DICOM Tag: (0054,0202)
+message TypeOfDetectorMotion {
 	string value = 1;
 }
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0028,1203)
-message BluePaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,2002)
-message ColorSpace {
-	string value = 1;
-}
-// DICOM Tag: (0018,7004)
-message DetectorType {
-	string value = 1;
-}
-// DICOM Tag: (0018,7011)
-message ExposuresOnDetectorSinceManufactured {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,7028)
-message DetectorActiveOrigin {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1412)
-message TargetExposureIndex {
-	float value = 1;
-}
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
-}
-// DICOM Tag: (0028,0106)
-message SmallestImagePixelValue {
-	int64 value = 1;
-}
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
-}
-// DICOM Tag: (0018,7000)
-message DetectorConditionsNominalFlag {
-	string value = 1;
-}
-// DICOM Tag: (0018,7026)
-message DetectorActiveDimensions {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1190)
-message FocalSpots {
-	repeated float value = 1;
-}
-// DICOM Tag: (0028,0102)
-message HighBit {
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,2110)
-message LossyImageCompression {
+// DICOM Tag: (0028,0300)
+message QualityControlImage {
+	string value = 1;
+}
+// DICOM Tag: (0018,7005)
+message DetectorConfiguration {
+	string value = 1;
+}
+// DICOM Tag: (0018,700C)
+message DateOfLastDetectorCalibration {
+	string value = 1;
+}
+// DICOM Tag: (0018,7024)
+message DetectorActiveShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,700A)
+message DetectorID {
 	string value = 1;
 }
 // DICOM Tag: (0088,0200)
@@ -112,111 +43,45 @@ message IconImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,9328)
-message ExposureTimeInms {
-	double value = 1;
+// DICOM Tag: (0018,1190)
+message FocalSpots {
+	repeated float value = 1;
 }
-// DICOM Tag: (0020,0020)
-message PatientOrientation {
-	repeated string value = 1;
-}
-// DICOM Tag: (0054,0202)
-message TypeOfDetectorMotion {
-	string value = 1;
-}
-// DICOM Tag: (0028,0011)
-message Columns {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
-	string value = 1;
-}
-// DICOM Tag: (0028,1101)
-message RedPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0018,7005)
-message DetectorConfiguration {
-	string value = 1;
-}
-// DICOM Tag: (0028,1201)
-message RedPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,1202)
-message GreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0018,1500)
-message PositionerMotion {
-	string value = 1;
-}
-// DICOM Tag: (0018,9073)
-message AcquisitionDuration {
-	double value = 1;
-}
-// DICOM Tag: (0018,9330)
-message XRayTubeCurrentInmA {
-	double value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0018,1508)
-message PositionerType {
-	string value = 1;
-}
-// DICOM Tag: (0018,7060)
-message ExposureControlMode {
-	string value = 1;
+// DICOM Tag: (0018,11A3)
+message CompressionPressure {
+	float value = 1;
 }
 // DICOM Tag: (0040,0316)
 message OrganDose {
 	float value = 1;
 }
-// DICOM Tag: (0028,1102)
-message GreenPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0018,9332)
-message ExposureInmAs {
-	double value = 1;
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
-}
-// DICOM Tag: (0028,0006)
-message PlanarConfiguration {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1103)
-message BluePaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0018,7008)
-message DetectorMode {
+// DICOM Tag: (0018,7062)
+message ExposureControlModeDescription {
 	string value = 1;
 }
-// DICOM Tag: (0018,7001)
-message DetectorTemperature {
+// DICOM Tag: (0028,2112)
+message LossyImageCompressionRatio {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,6000)
+message Sensitivity {
 	float value = 1;
 }
-// DICOM Tag: (0018,7024)
-message DetectorActiveShape {
+// DICOM Tag: (0018,7022)
+message DetectorElementSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7028)
+message DetectorActiveOrigin {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
 	string value = 1;
 }
-// DICOM Tag: (0018,1411)
-message ExposureIndex {
-	float value = 1;
+// DICOM Tag: (0018,7011)
+message ExposuresOnDetectorSinceManufactured {
+	int32 value = 1;
 }
 // DICOM Tag: (0018,7020)
 message DetectorElementPhysicalSize {
@@ -226,21 +91,21 @@ message DetectorElementPhysicalSize {
 message DeviationIndex {
 	float value = 1;
 }
-// DICOM Tag: (0018,1191)
-message AnodeTargetMaterial {
-	string value = 1;
+// DICOM Tag: (0018,700E)
+message TimeOfLastDetectorCalibration {
+	int64 value = 1;
 }
-// DICOM Tag: (0018,6000)
-message Sensitivity {
+// DICOM Tag: (0018,701A)
+message DetectorBinning {
+	repeated float value = 1;
+}
+// DICOM Tag: (0040,8302)
+message EntranceDoseInmGy {
 	float value = 1;
 }
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,2000)
-message ICCProfile {
-	string value = 1;
+// DICOM Tag: (0018,11A2)
+message CompressionForce {
+	float value = 1;
 }
 // DICOM Tag: (0018,9004)
 message ContentQualification {
@@ -250,76 +115,198 @@ message ContentQualification {
 message DetectorTimeSinceLastExposure {
 	float value = 1;
 }
-// DICOM Tag: (0018,7022)
-message DetectorElementSpacing {
-	repeated float value = 1;
+// DICOM Tag: (0018,9328)
+message ExposureTimeInms {
+	double value = 1;
 }
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
+// DICOM Tag: (0020,4000)
+message ImageComments {
+	string value = 1;
+}
+// DICOM Tag: (0028,2110)
+message LossyImageCompression {
+	string value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,11A5)
+message CompressionContactArea {
+	float value = 1;
+}
+// DICOM Tag: (0018,7060)
+message ExposureControlMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,11A4)
+message PaddleDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,1508)
+message PositionerType {
+	string value = 1;
+}
+// DICOM Tag: (0018,7006)
+message DetectorDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,7000)
+message DetectorConditionsNominalFlag {
+	string value = 1;
+}
+// DICOM Tag: (0040,8303)
+message EntranceDoseDerivation {
+	string value = 1;
+}
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,7008)
+message DetectorMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,9330)
+message XRayTubeCurrentInmA {
+	double value = 1;
+}
+// DICOM Tag: (0018,9332)
+message ExposureInmAs {
+	double value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
 	uint32 value = 1;
 }
+// DICOM Tag: (0018,1500)
+message PositionerMotion {
+	string value = 1;
+}
+// DICOM Tag: (0018,702B)
+message DetectorManufacturerModelName {
+	string value = 1;
+}
+// DICOM Tag: (0018,7026)
+message DetectorActiveDimensions {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,702A)
+message DetectorManufacturerName {
+	string value = 1;
+}
+// DICOM Tag: (0018,7001)
+message DetectorTemperature {
+	float value = 1;
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,002A)
+message AcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1191)
+message AnodeTargetMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,11A0)
+message BodyPartThickness {
+	float value = 1;
+}
+// DICOM Tag: (0018,9073)
+message AcquisitionDuration {
+	double value = 1;
+}
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
+}
+// DICOM Tag: (0018,7010)
+message ExposuresOnDetectorSinceLastCalibration {
+	int32 value = 1;
+}
 message EnhancedMammographyImageModule {
-	PositionerType positioner_type = 1;
-	ExposureControlMode exposure_control_mode = 2;
-	OrganDose organ_dose = 3;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 4;
-	ExposureInmAs exposure_in_mas = 5;
-	SamplesPerPixel samples_per_pixel = 6;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 7;
-	DetectorMode detector_mode = 8;
-	DetectorTemperature detector_temperature = 9;
-	DetectorActiveShape detector_active_shape = 10;
-	ExposureIndex exposure_index = 11;
-	KVP kvp = 12;
-	PlanarConfiguration planar_configuration = 13;
-	DetectorElementPhysicalSize detector_element_physical_size = 14;
-	DeviationIndex deviation_index = 15;
-	AnodeTargetMaterial anode_target_material = 16;
-	Sensitivity sensitivity = 17;
-	BitsAllocated bits_allocated = 18;
-	ContentQualification content_qualification = 19;
-	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 20;
-	DetectorElementSpacing detector_element_spacing = 21;
-	PixelRepresentation pixel_representation = 22;
-	ICCProfile icc_profile = 23;
-	DetectorDescription detector_description = 24;
-	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 25;
-	ExposureControlModeDescription exposure_control_mode_description = 26;
+	DetectorConfiguration detector_configuration = 1;
+	DateOfLastDetectorCalibration date_of_last_detector_calibration = 2;
+	DetectorActiveShape detector_active_shape = 3;
+	PixelRepresentation pixel_representation = 4;
+	QualityControlImage quality_control_image = 5;
+	DetectorID detector_id = 6;
+	IconImageSequence icon_image_sequence = 7;
+	FocalSpots focal_spots = 8;
+	CompressionPressure compression_pressure = 9;
+	OrganDose organ_dose = 10;
+	Sensitivity sensitivity = 11;
+	DetectorElementSpacing detector_element_spacing = 12;
+	DetectorActiveOrigin detector_active_origin = 13;
+	ExposureControlModeDescription exposure_control_mode_description = 14;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 15;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 16;
+	DetectorElementPhysicalSize detector_element_physical_size = 17;
+	DeviationIndex deviation_index = 18;
+	BurnedInAnnotation burned_in_annotation = 19;
+	TimeOfLastDetectorCalibration time_of_last_detector_calibration = 20;
+	DetectorBinning detector_binning = 21;
+	EntranceDoseInmGy entrance_dose_in_mgy = 22;
+	ContentQualification content_qualification = 23;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 24;
+	ExposureTimeInms exposure_time_in_ms = 25;
+	CompressionForce compression_force = 26;
 	ImageComments image_comments = 27;
-	QualityControlImage quality_control_image = 28;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 29;
-	Rows rows = 30;
-	BitsStored bits_stored = 31;
-	EntranceDoseInmGy entrance_dose_in_mgy = 32;
-	LargestImagePixelValue largest_image_pixel_value = 33;
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 34;
-	ColorSpace color_space = 35;
-	DetectorType detector_type = 36;
-	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 37;
-	DetectorActiveOrigin detector_active_origin = 38;
-	TargetExposureIndex target_exposure_index = 39;
-	EntranceDoseDerivation entrance_dose_derivation = 40;
-	PixelAspectRatio pixel_aspect_ratio = 41;
+	LossyImageCompression lossy_image_compression = 28;
+	KVP kvp = 29;
+	CompressionContactArea compression_contact_area = 30;
+	ExposureControlMode exposure_control_mode = 31;
+	PhotometricInterpretation photometric_interpretation = 32;
+	LossyImageCompressionMethod lossy_image_compression_method = 33;
+	PositionerType positioner_type = 34;
+	DetectorDescription detector_description = 35;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 36;
+	PaddleDescription paddle_description = 37;
+	DetectorMode detector_mode = 38;
+	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 39;
+	ExposureInmAs exposure_in_mas = 40;
+	EntranceDoseDerivation entrance_dose_derivation = 41;
 	PresentationLUTShape presentation_lut_shape = 42;
-	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 43;
-	DetectorActiveDimensions detector_active_dimensions = 44;
-	FocalSpots focal_spots = 45;
-	LossyImageCompressionMethod lossy_image_compression_method = 46;
-	SmallestImagePixelValue smallest_image_pixel_value = 47;
-	HighBit high_bit = 48;
-	LossyImageCompression lossy_image_compression = 49;
-	IconImageSequence icon_image_sequence = 50;
-	ExposureTimeInms exposure_time_in_ms = 51;
-	PatientOrientation patient_orientation = 52;
-	TypeOfDetectorMotion type_of_detector_motion = 53;
-	Columns columns = 54;
-	BurnedInAnnotation burned_in_annotation = 55;
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 56;
-	DetectorConfiguration detector_configuration = 57;
-	PositionerMotion positioner_motion = 58;
-	AcquisitionDuration acquisition_duration = 59;
-	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 60;
-	PhotometricInterpretation photometric_interpretation = 61;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 62;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 63;
+	PositionerMotion positioner_motion = 43;
+	DetectorManufacturerModelName detector_manufacturer's_model_name = 44;
+	DetectorActiveDimensions detector_active_dimensions = 45;
+	HighBit high_bit = 46;
+	DetectorManufacturerName detector_manufacturer_name = 47;
+	DetectorTemperature detector_temperature = 48;
+	SamplesPerPixel samples_per_pixel = 49;
+	BitsAllocated bits_allocated = 50;
+	AcquisitionDateTime acquisition_datetime = 51;
+	BodyPartThickness body_part_thickness = 52;
+	AcquisitionDuration acquisition_duration = 53;
+	DetectorType detector_type = 54;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 55;
+	ExposureIndex exposure_index = 56;
+	TargetExposureIndex target_exposure_index = 57;
+	AnodeTargetMaterial anode_target_material = 58;
+	PatientOrientation patient_orientation = 59;
+	BitsStored bits_stored = 60;
+	TypeOfDetectorMotion type_of_detector_motion = 61;
 }

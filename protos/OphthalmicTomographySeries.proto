@@ -27,6 +27,4 @@ message OphthalmicTomographySeriesModule {
 	Modality modality = 1;
 	SeriesNumber series_number = 2;
 	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
-	ReferencedSOPClassUID referenced_sop_class_uid = 4;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 5;
 }

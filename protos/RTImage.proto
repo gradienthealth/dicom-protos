@@ -2,94 +2,199 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.2.html#table_C.8-38
 syntax = "proto3";
 
-// DICOM Tag: (0008,0064)
-message ConversionType {
-	string value = 1;
+// DICOM Tag: (300A,0128)
+message TableTopVerticalPosition {
+	float value = 1;
 }
-// DICOM Tag: (3002,0050)
-message PrimaryFluenceModeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
 }
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
+// DICOM Tag: (3002,0022)
+message RadiationMachineSAD {
+	float value = 1;
 }
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1041)
-message PixelIntensityRelationshipSign {
-	int32 value = 1;
+// DICOM Tag: (3002,0026)
+message RTImageSID {
+	float value = 1;
 }
 // DICOM Tag: (3002,0011)
 message ImagePlanePixelSpacing {
 	repeated float value = 1;
 }
-// DICOM Tag: (3002,0024)
-message RadiationMachineSSD {
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (3002,0004)
+message RTImageDescription {
+	string value = 1;
+}
+// DICOM Tag: (3002,000E)
+message XRayImageReceptorAngle {
 	float value = 1;
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
+// DICOM Tag: (300C,0008)
+message StartCumulativeMetersetWeight {
+	float value = 1;
 }
-// DICOM Tag: (0018,9328)
-message ExposureTimeInms {
-	double value = 1;
-}
-// DICOM Tag: (3002,0034)
-message DiaphragmPosition {
-	repeated float value = 1;
+// DICOM Tag: (3002,0030)
+message ExposureSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (3002,0040)
 message FluenceMapSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,0101)
-message BitsStored {
+// DICOM Tag: (300A,0144)
+message TableTopRollAngle {
+	float value = 1;
+}
+// DICOM Tag: (300A,012A)
+message TableTopLateralPosition {
+	float value = 1;
+}
+// DICOM Tag: (3002,0010)
+message RTImageOrientation {
+	repeated float value = 1;
+}
+// DICOM Tag: (3002,0012)
+message RTImagePosition {
+	repeated float value = 1;
+}
+// DICOM Tag: (300C,0022)
+message ReferencedFractionGroupNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (300A,0140)
+message TableTopPitchAngle {
+	float value = 1;
+}
+// DICOM Tag: (300A,012C)
+message IsocenterPosition {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+// DICOM Tag: (3002,0020)
+message RadiationMachineName {
+	string value = 1;
+}
+// DICOM Tag: (300A,0120)
+message BeamLimitingDeviceAngle {
+	float value = 1;
+}
+// DICOM Tag: (3002,000C)
+message RTImagePlane {
+	string value = 1;
+}
+// DICOM Tag: (300A,00B3)
+message PrimaryDosimeterUnit {
+	string value = 1;
+}
+// DICOM Tag: (300C,0002)
+message ReferencedRTPlanSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (300A,0122)
+message PatientSupportAngle {
+	float value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
 	uint32 value = 1;
 }
 // DICOM Tag: (0028,0103)
 message PixelRepresentation {
 	uint32 value = 1;
 }
-// DICOM Tag: (0018,0060)
-message KVP {
+// DICOM Tag: (3002,0002)
+message RTImageLabel {
+	string value = 1;
+}
+// DICOM Tag: (3002,000D)
+message XRayImageReceptorTranslation {
+	repeated float value = 1;
+}
+// DICOM Tag: (300C,0006)
+message ReferencedBeamNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (3002,0029)
+message FractionNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (300C,0009)
+message EndCumulativeMetersetWeight {
 	float value = 1;
 }
-// DICOM Tag: (3002,0051)
-message FluenceMode {
-	string value = 1;
-}
-// DICOM Tag: (0018,9330)
-message XRayTubeCurrentInmA {
-	double value = 1;
-}
-// DICOM Tag: (3002,0042)
-message FluenceDataScale {
+// DICOM Tag: (300A,0129)
+message TableTopLongitudinalPosition {
 	float value = 1;
 }
-// DICOM Tag: (3002,0004)
-message RTImageDescription {
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,0064)
+message ConversionType {
 	string value = 1;
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
+// DICOM Tag: (3002,000A)
+message ReportedValuesOrigin {
 	string value = 1;
-}
-// DICOM Tag: (3002,0052)
-message FluenceModeID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
 }
 // DICOM Tag: (0018,5100)
 message PatientPosition {
+	string value = 1;
+}
+// DICOM Tag: (0018,1150)
+message ExposureTime {
+	int32 value = 1;
+}
+// DICOM Tag: (300A,0124)
+message TableTopEccentricAxisDistance {
+	float value = 1;
+}
+// DICOM Tag: (300A,0125)
+message TableTopEccentricAngle {
+	float value = 1;
+}
+// DICOM Tag: (0018,9328)
+message ExposureTimeInms {
+	double value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,1041)
+message PixelIntensityRelationshipSign {
+	int32 value = 1;
+}
+// DICOM Tag: (3002,0024)
+message RadiationMachineSSD {
+	float value = 1;
+}
+// DICOM Tag: (300A,011E)
+message GantryAngle {
+	float value = 1;
+}
+// DICOM Tag: (300A,014A)
+message GantryPitchAngle {
+	float value = 1;
+}
+// DICOM Tag: (3002,0032)
+message MetersetExposure {
+	float value = 1;
+}
+// DICOM Tag: (0028,1040)
+message PixelIntensityRelationship {
 	string value = 1;
 }
 // DICOM Tag: (3002,0003)
@@ -100,110 +205,55 @@ message RTImageName {
 message SourceToReferenceObjectDistance {
 	float value = 1;
 }
-// DICOM Tag: (3002,0030)
-message ExposureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3002,0032)
-message MetersetExposure {
-	float value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0028,1040)
-message PixelIntensityRelationship {
-	string value = 1;
-}
-// DICOM Tag: (3002,0020)
-message RadiationMachineName {
-	string value = 1;
-}
-// DICOM Tag: (3002,0022)
-message RadiationMachineSAD {
-	float value = 1;
-}
-// DICOM Tag: (3002,0026)
-message RTImageSID {
-	float value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,1151)
-message XRayTubeCurrent {
-	int32 value = 1;
-}
-// DICOM Tag: (3002,0041)
-message FluenceDataSource {
-	string value = 1;
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (3002,0002)
-message RTImageLabel {
-	string value = 1;
-}
-// DICOM Tag: (3002,0010)
-message RTImageOrientation {
-	repeated float value = 1;
-}
-// DICOM Tag: (3002,0012)
-message RTImagePosition {
-	repeated float value = 1;
-}
-// DICOM Tag: (3002,0029)
-message FractionNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1150)
-message ExposureTime {
-	int32 value = 1;
-}
 message RTImageModule {
-	PatientPosition patient_position = 1;
-	ImageType image_type = 2;
-	SourceToReferenceObjectDistance source_to_reference_object_distance = 3;
-	ExposureSequence exposure_sequence = 4;
-	MetersetExposure meterset_exposure = 5;
-	RTImageName rt_image_name = 6;
-	PixelIntensityRelationship pixel_intensity_relationship = 7;
-	RadiationMachineName radiation_machine_name = 8;
-	RadiationMachineSAD radiation_machine_sad = 9;
-	RTImageSID rt_image_sid = 10;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 11;
-	XRayTubeCurrent x_ray_tube_current = 12;
-	FluenceDataSource fluence_data_source = 13;
-	PhotometricInterpretation photometric_interpretation = 14;
-	RTImageLabel rt_image_label = 15;
-	RTImageOrientation rt_image_orientation = 16;
-	RTImagePosition rt_image_position = 17;
-	FractionNumber fraction_number = 18;
-	ExposureTime exposure_time = 19;
+	RTImageSID rt_image_sid = 1;
+	TableTopVerticalPosition table_top_vertical_position = 2;
+	ImageType image_type = 3;
+	RadiationMachineSAD radiation_machine_sad = 4;
+	XRayImageReceptorAngle x_ray_image_receptor_angle = 5;
+	ImagePlanePixelSpacing image_plane_pixel_spacing = 6;
+	BitsStored bits_stored = 7;
+	RTImageDescription rt_image_description = 8;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 9;
+	StartCumulativeMetersetWeight start_cumulative_meterset_weight = 10;
+	ExposureSequence exposure_sequence = 11;
+	FluenceMapSequence fluence_map_sequence = 12;
+	TableTopRollAngle table_top_roll_angle = 13;
+	TableTopLateralPosition table_top_lateral_position = 14;
+	RTImageOrientation rt_image_orientation = 15;
+	RTImagePosition rt_image_position = 16;
+	BeamLimitingDeviceAngle beam_limiting_device_angle = 17;
+	TableTopPitchAngle table_top_pitch_angle = 18;
+	IsocenterPosition isocenter_position = 19;
 	BitsAllocated bits_allocated = 20;
-	PrimaryFluenceModeSequence primary_fluence_mode_sequence = 21;
-	ConversionType conversion_type = 22;
-	HighBit high_bit = 23;
-	PixelIntensityRelationshipSign pixel_intensity_relationship_sign = 24;
-	ImagePlanePixelSpacing image_plane_pixel_spacing = 25;
-	RadiationMachineSSD radiation_machine_ssd = 26;
-	ReferencedFrameNumber referenced_frame_number = 27;
-	ExposureTimeInms exposure_time_in_ms = 28;
-	SamplesPerPixel samples_per_pixel = 29;
-	FluenceMapSequence fluence_map_sequence = 30;
-	DiaphragmPosition diaphragm_position = 31;
-	PixelRepresentation pixel_representation = 32;
-	KVP kvp = 33;
-	FluenceMode fluence_mode = 34;
-	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 35;
-	FluenceDataScale fluence_data_scale = 36;
-	BitsStored bits_stored = 37;
-	ReferencedSOPClassUID referenced_sop_class_uid = 38;
-	FluenceModeID fluence_mode_id = 39;
-	RTImageDescription rt_image_description = 40;
+	RadiationMachineName radiation_machine_name = 21;
+	RTImageLabel rt_image_label = 22;
+	RTImagePlane rt_image_plane = 23;
+	PrimaryDosimeterUnit primary_dosimeter_unit = 24;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 25;
+	PatientSupportAngle patient_support_angle = 26;
+	HighBit high_bit = 27;
+	PixelRepresentation pixel_representation = 28;
+	ReportedValuesOrigin reported_values_origin = 29;
+	XRayImageReceptorTranslation x_ray_image_receptor_translation = 30;
+	ReferencedBeamNumber referenced_beam_number = 31;
+	FractionNumber fraction_number = 32;
+	EndCumulativeMetersetWeight end_cumulative_meterset_weight = 33;
+	TableTopLongitudinalPosition table_top_longitudinal_position = 34;
+	SamplesPerPixel samples_per_pixel = 35;
+	ConversionType conversion_type = 36;
+	PatientPosition patient_position = 37;
+	ExposureTime exposure_time = 38;
+	RadiationMachineSSD radiation_machine_ssd = 39;
+	TableTopEccentricAxisDistance table_top_eccentric_axis_distance = 40;
+	TableTopEccentricAngle table_top_eccentric_angle = 41;
+	ExposureTimeInms exposure_time_in_ms = 42;
+	PhotometricInterpretation photometric_interpretation = 43;
+	PixelIntensityRelationshipSign pixel_intensity_relationship_sign = 44;
+	SourceToReferenceObjectDistance source_to_reference_object_distance = 45;
+	GantryAngle gantry_angle = 46;
+	GantryPitchAngle gantry_pitch_angle = 47;
+	MetersetExposure meterset_exposure = 48;
+	PixelIntensityRelationship pixel_intensity_relationship = 49;
+	RTImageName rt_image_name = 50;
 }

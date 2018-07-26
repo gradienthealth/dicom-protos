@@ -10,9 +10,9 @@ message PrinterName {
 message DeviceSerialNumber {
 	string value = 1;
 }
-// DICOM Tag: (0018,1200)
-message DateOfLastCalibration {
-	repeated string value = 1;
+// DICOM Tag: (2110,0010)
+message PrinterStatus {
+	string value = 1;
 }
 // DICOM Tag: (2110,0020)
 message PrinterStatusInfo {
@@ -30,22 +30,22 @@ message ManufacturerModelName {
 message SoftwareVersions {
 	repeated string value = 1;
 }
+// DICOM Tag: (0018,1200)
+message DateOfLastCalibration {
+	repeated string value = 1;
+}
 // DICOM Tag: (0018,1201)
 message TimeOfLastCalibration {
 	repeated int64 value = 1;
 }
-// DICOM Tag: (2110,0010)
-message PrinterStatus {
-	string value = 1;
-}
 message PrinterModule {
-	DeviceSerialNumber device_serial_number = 1;
-	DateOfLastCalibration date_of_last_calibration = 2;
-	PrinterStatusInfo printer_status_info = 3;
-	PrinterName printer_name = 4;
-	ManufacturerModelName manufacturer's_model_name = 5;
-	SoftwareVersions software_versions = 6;
-	TimeOfLastCalibration time_of_last_calibration = 7;
-	PrinterStatus printer_status = 8;
-	Manufacturer manufacturer = 9;
+	PrinterStatusInfo printer_status_info = 1;
+	Manufacturer manufacturer = 2;
+	ManufacturerModelName manufacturer's_model_name = 3;
+	SoftwareVersions software_versions = 4;
+	DateOfLastCalibration date_of_last_calibration = 5;
+	TimeOfLastCalibration time_of_last_calibration = 6;
+	PrinterStatus printer_status = 7;
+	DeviceSerialNumber device_serial_number = 8;
+	PrinterName printer_name = 9;
 }

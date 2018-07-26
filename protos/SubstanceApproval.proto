@@ -15,7 +15,7 @@ message ApprovalStatusDateTime {
 	int64 value = 1;
 }
 message SubstanceApprovalModule {
-	SubstanceAdministrationApproval substance_administration_approval = 1;
-	ApprovalStatusFurtherDescription approval_status_further_description = 2;
-	ApprovalStatusDateTime approval_status_datetime = 3;
+	ApprovalStatusFurtherDescription approval_status_further_description = 1;
+	ApprovalStatusDateTime approval_status_datetime = 2;
+	SubstanceAdministrationApproval substance_administration_approval = 3;
 }

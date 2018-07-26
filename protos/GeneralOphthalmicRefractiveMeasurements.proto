@@ -2,18 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.7.html#table_C.8.25.7-1
 syntax = "proto3";
 
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,0023)
-message ContentDate {
-	string value = 1;
-}
-// DICOM Tag: (0008,0033)
-message ContentTime {
-	int64 value = 1;
-}
 // DICOM Tag: (0024,0113)
 message MeasurementLaterality {
 	string value = 1;
@@ -27,21 +15,23 @@ message ReferencedRefractiveMeasurementsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,0023)
+message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
 }
 message GeneralOphthalmicRefractiveMeasurementsModule {
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 1;
-	InstanceNumber instance_number = 2;
-	ContentDate content_date = 3;
-	ContentTime content_time = 4;
-	MeasurementLaterality measurement_laterality = 5;
-	ImageComments image_comments = 6;
-	ReferencedRefractiveMeasurementsSequence referenced_refractive_measurements_sequence = 7;
-	ReferencedSOPClassUID referenced_sop_class_uid = 8;
+	InstanceNumber instance_number = 1;
+	ContentDate content_date = 2;
+	ContentTime content_time = 3;
+	MeasurementLaterality measurement_laterality = 4;
+	ImageComments image_comments = 5;
+	ReferencedRefractiveMeasurementsSequence referenced_refractive_measurements_sequence = 6;
 }

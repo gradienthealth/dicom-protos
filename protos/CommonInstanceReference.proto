@@ -2,27 +2,17 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.2.html#table_C.12-8
 syntax = "proto3";
 
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
+// DICOM Tag: (0008,1115)
+message ReferencedSeriesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,1200)
 message StudiesContainingOtherReferencedInstancesSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1115)
-message ReferencedSeriesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 message CommonInstanceReferenceModule {
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 1;
+	ReferencedSeriesSequence referenced_series_sequence = 1;
 	StudiesContainingOtherReferencedInstancesSequence studies_containing_other_referenced_instances_sequence = 2;
-	ReferencedSeriesSequence referenced_series_sequence = 3;
-	ReferencedSOPClassUID referenced_sop_class_uid = 4;
 }

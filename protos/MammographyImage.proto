@@ -2,25 +2,38 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.7.html#table_C.8-74
 syntax = "proto3";
 
-// DICOM Tag: (0028,1300)
-message BreastImplantPresent {
+// DICOM Tag: (0018,1508)
+message PositionerType {
 	string value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
+// DICOM Tag: (0018,1111)
+message DistanceSourceToPatient {
+	float value = 1;
+}
+// DICOM Tag: (0018,1510)
+message PositionerPrimaryAngle {
+	float value = 1;
+}
+// DICOM Tag: (0020,0062)
+message ImageLaterality {
 	string value = 1;
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0054,0222)
-message ViewModifierCodeSequence {
+// DICOM Tag: (0008,2218)
+message AnatomicRegionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,2045)
-message TargetLabel {
+// DICOM Tag: (0054,0220)
+message ViewCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,9559)
+message PositionerPrimaryAngleDirection {
 	string value = 1;
 }
 // DICOM Tag: (0018,1511)
@@ -31,43 +44,25 @@ message PositionerSecondaryAngle {
 message PartialView {
 	string value = 1;
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,2041)
-message BiopsyTargetSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,2044)
-message CalculatedTargetPosition {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1510)
-message PositionerPrimaryAngle {
-	float value = 1;
-}
 // DICOM Tag: (0028,1351)
 message PartialViewDescription {
 	string value = 1;
 }
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0040,0318)
+message OrganExposed {
+	string value = 1;
+}
+// DICOM Tag: (0028,1300)
+message BreastImplantPresent {
+	string value = 1;
+}
+// DICOM Tag: (0008,2228)
+message PrimaryAnatomicStructureSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2230)
-message PrimaryAnatomicStructureModifierSequence {
+// DICOM Tag: (0018,2041)
+message BiopsyTargetSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -75,131 +70,27 @@ message PrimaryAnatomicStructureModifierSequence {
 message DistanceSourceToDetector {
 	float value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,2220)
-message AnatomicRegionModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2228)
-message PrimaryAnatomicStructureSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0054,0220)
-message ViewCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,2043)
-message LocalizingCursorPosition {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1111)
-message DistanceSourceToPatient {
-	float value = 1;
-}
-// DICOM Tag: (0020,0062)
-message ImageLaterality {
-	string value = 1;
-}
-// DICOM Tag: (0040,0318)
-message OrganExposed {
-	string value = 1;
-}
 // DICOM Tag: (0028,1352)
 message PartialViewCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,1508)
-message PositionerType {
-	string value = 1;
-}
-// DICOM Tag: (0018,9559)
-message PositionerPrimaryAngleDirection {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0018,2042)
-message TargetUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
-}
-// DICOM Tag: (0018,2046)
-message DisplayedZValue {
-	float value = 1;
-}
 message MammographyImageModule {
-	BreastImplantPresent breast_implant_present = 1;
-	MappingResourceName mapping_resource_name = 2;
-	ContextGroupLocalVersion context_group_local_version = 3;
-	ViewModifierCodeSequence view_modifier_code_sequence = 4;
-	TargetLabel target_label = 5;
-	PositionerSecondaryAngle positioner_secondary_angle = 6;
-	PartialView partial_view = 7;
-	CodingSchemeDesignator coding_scheme_designator = 8;
-	MappingResourceUID mapping_resource_uid = 9;
-	BiopsyTargetSequence biopsy_target_sequence = 10;
-	CalculatedTargetPosition calculated_target_position = 11;
-	PositionerPrimaryAngle positioner_primary_angle = 12;
+	OrganExposed organ_exposed = 1;
+	BreastImplantPresent breast_implant_present = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	BiopsyTargetSequence biopsy_target_sequence = 4;
+	DistanceSourceToDetector distance_source_to_detector = 5;
+	PartialViewCodeSequence partial_view_code_sequence = 6;
+	AnatomicRegionSequence anatomic_region_sequence = 7;
+	ViewCodeSequence view_code_sequence = 8;
+	PositionerType positioner_type = 9;
+	DistanceSourceToPatient distance_source_to_patient = 10;
+	PositionerPrimaryAngle positioner_primary_angle = 11;
+	ImageLaterality image_laterality = 12;
 	PartialViewDescription partial_view_description = 13;
-	EquivalentCodeSequence equivalent_code_sequence = 14;
-	AnatomicRegionSequence anatomic_region_sequence = 15;
-	PrimaryAnatomicStructureModifierSequence primary_anatomic_structure_modifier_sequence = 16;
-	LocalizingCursorPosition localizing_cursor_position = 17;
-	DistanceSourceToDetector distance_source_to_detector = 18;
-	CodeMeaning code_meaning = 19;
-	ContextUID context_uid = 20;
-	AnatomicRegionModifierSequence anatomic_region_modifier_sequence = 21;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 22;
-	ViewCodeSequence view_code_sequence = 23;
-	ContextGroupVersion context_group_version = 24;
-	DistanceSourceToPatient distance_source_to_patient = 25;
-	ImageLaterality image_laterality = 26;
-	OrganExposed organ_exposed = 27;
-	PartialViewCodeSequence partial_view_code_sequence = 28;
-	CodeValue code_value = 29;
-	URNCodeValue urn_code_value = 30;
-	PositionerType positioner_type = 31;
-	PositionerPrimaryAngleDirection positioner_primary_angle_direction = 32;
-	CodingSchemeVersion coding_scheme_version = 33;
-	LongCodeValue long_code_value = 34;
-	MappingResource mapping_resource = 35;
-	TargetUID target_uid = 36;
-	ImageType image_type = 37;
-	DisplayedZValue displayed_z_value = 38;
+	ImageType image_type = 14;
+	PositionerPrimaryAngleDirection positioner_primary_angle_direction = 15;
+	PositionerSecondaryAngle positioner_secondary_angle = 16;
+	PartialView partial_view = 17;
 }

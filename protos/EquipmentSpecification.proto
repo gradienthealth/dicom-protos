@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.6.html#table_C.34.6-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,1000)
-message DeviceSerialNumber {
-	string value = 1;
-}
 // DICOM Tag: (0008,0221)
 message EquipmentModality {
 	string value = 1;
@@ -15,28 +11,7 @@ message ModelSpecificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0008,0222)
-message ManufacturerRelatedModelGroup {
-	string value = 1;
-}
-// DICOM Tag: (0008,1090)
-message ManufacturerModelName {
-	string value = 1;
-}
-// DICOM Tag: (0018,1020)
-message SoftwareVersions {
-	repeated string value = 1;
-}
 message EquipmentSpecificationModule {
-	ModelSpecificationSequence model_specification_sequence = 1;
-	Manufacturer manufacturer = 2;
-	ManufacturerRelatedModelGroup manufacturer's_related_model_group = 3;
-	ManufacturerModelName manufacturer's_model_name = 4;
-	SoftwareVersions software_versions = 5;
-	DeviceSerialNumber device_serial_number = 6;
-	EquipmentModality equipment_modality = 7;
+	EquipmentModality equipment_modality = 1;
+	ModelSpecificationSequence model_specification_sequence = 2;
 }

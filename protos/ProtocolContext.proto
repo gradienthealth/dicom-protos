@@ -2,112 +2,41 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.2.html#table_C.34.2-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0070,0086)
-message ContentCreatorIdentificationCodeSequence {
+// DICOM Tag: (0040,A07C)
+message CustodialOrganizationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
-// DICOM Tag: (0018,9910)
-message ProtocolDesignRationale {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0018,9909)
-message PotentialReasonsForProcedureCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1030)
-message ProtocolName {
-	string value = 1;
 }
 // DICOM Tag: (0018,9907)
 message PotentialRequestedProcedureCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,1104)
-message PersonTelecomInformation {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,9908)
-message PotentialReasonsForProcedure {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,1102)
-message PersonAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0082)
-message InstitutionCodeSequence {
+// DICOM Tag: (0018,9909)
+message PotentialReasonsForProcedureCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0018,990E)
+message PredecessorProtocolSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,990F)
+message ProtocolPlanningInformation {
 	string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
+// DICOM Tag: (0018,1030)
+message ProtocolName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0013)
-message InstanceCreationTime {
-	int64 value = 1;
+// DICOM Tag: (0018,9906)
+message PotentialScheduledProtocolCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,0084)
-message ContentCreatorName {
-	string value = 1;
-}
-// DICOM Tag: (0040,1103)
-message PersonTelephoneNumbers {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0220)
-message ResponsibleGroupCodeSequence {
+// DICOM Tag: (0018,990B)
+message ContraindicationsCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -115,65 +44,51 @@ message ResponsibleGroupCodeSequence {
 message InstanceCreationDate {
 	string value = 1;
 }
-// DICOM Tag: (0040,1101)
-message PersonIdentificationCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
+// DICOM Tag: (0008,0013)
+message InstanceCreationTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0018,9906)
-message PotentialScheduledProtocolCodeSequence {
+// DICOM Tag: (0008,0220)
+message ResponsibleGroupCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0080)
-message InstitutionName {
+// DICOM Tag: (0018,990A)
+message PotentialDiagnosticTasks {
+	repeated string value = 1;
+}
+// DICOM Tag: (0070,0084)
+message ContentCreatorName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0018,9908)
+message PotentialReasonsForProcedure {
+	repeated string value = 1;
+}
+// DICOM Tag: (0070,0086)
+message ContentCreatorIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0018,9910)
+message ProtocolDesignRationale {
+	string value = 1;
+}
 message ProtocolContextModule {
-	PersonIdentificationCodeSequence person_identification_code_sequence = 1;
-	LongCodeValue long_code_value = 2;
-	ContextGroupVersion context_group_version = 3;
-	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 4;
-	InstitutionName institution_name = 5;
-	EquivalentCodeSequence equivalent_code_sequence = 6;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 7;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 8;
-	InstitutionAddress institution_address = 9;
-	ProtocolDesignRationale protocol_design_rationale = 10;
-	CodeMeaning code_meaning = 11;
-	URNCodeValue urn_code_value = 12;
-	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 13;
-	ProtocolName protocol_name = 14;
-	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 15;
-	PersonTelecomInformation person's_telecom_information = 16;
-	CodeValue code_value = 17;
-	MappingResourceUID mapping_resource_uid = 18;
-	ContextGroupLocalVersion context_group_local_version = 19;
-	PotentialReasonsForProcedure potential_reasons_for_procedure = 20;
-	PersonAddress person's_address = 21;
-	CodingSchemeVersion coding_scheme_version = 22;
-	ContextUID context_uid = 23;
-	MappingResourceName mapping_resource_name = 24;
-	ReferencedSOPClassUID referenced_sop_class_uid = 25;
-	InstitutionCodeSequence institution_code_sequence = 26;
-	CodingSchemeDesignator coding_scheme_designator = 27;
-	MappingResource mapping_resource = 28;
-	InstanceCreationTime instance_creation_time = 29;
-	ContentCreatorName content_creator's_name = 30;
-	PersonTelephoneNumbers person's_telephone_numbers = 31;
-	ResponsibleGroupCodeSequence responsible_group_code_sequence = 32;
-	InstanceCreationDate instance_creation_date = 33;
+	CustodialOrganizationSequence custodial_organization_sequence = 1;
+	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 2;
+	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 3;
+	PredecessorProtocolSequence predecessor_protocol_sequence = 4;
+	ProtocolPlanningInformation protocol_planning_information = 5;
+	ProtocolName protocol_name = 6;
+	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 7;
+	ContraindicationsCodeSequence contraindications_code_sequence = 8;
+	InstanceCreationDate instance_creation_date = 9;
+	InstanceCreationTime instance_creation_time = 10;
+	ResponsibleGroupCodeSequence responsible_group_code_sequence = 11;
+	PotentialDiagnosticTasks potential_diagnostic_tasks = 12;
+	ContentCreatorName content_creator's_name = 13;
+	PotentialReasonsForProcedure potential_reasons_for_procedure = 14;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 15;
+	ProtocolDesignRationale protocol_design_rationale = 16;
 }

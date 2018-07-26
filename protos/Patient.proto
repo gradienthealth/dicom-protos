@@ -2,86 +2,17 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0031)
-message LocalNamespaceEntityID {
+// DICOM Tag: (0010,2201)
+message PatientSpeciesDescription {
 	string value = 1;
 }
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0010,0026)
+message SourcePatientGroupIdentificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0010,2202)
-message PatientSpeciesCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,2296)
-message BreedRegistryCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0222)
-message GeneticModificationsDescription {
-	string value = 1;
-}
-// DICOM Tag: (0010,2297)
-message ResponsiblePerson {
-	string value = 1;
-}
-// DICOM Tag: (0040,0033)
-message UniversalEntityIDType {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0010,2293)
-message PatientBreedCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0027)
-message GroupOfPatientsIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0021)
-message IssuerOfPatientID {
-	string value = 1;
-}
-// DICOM Tag: (0010,0032)
-message PatientBirthTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0010,0030)
-message PatientBirthDate {
-	string value = 1;
-}
-// DICOM Tag: (0010,0010)
-message PatientName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0010,1100)
-message ReferencedPatientPhotoSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0088,0140)
-message StorageMediaFileSetUID {
+// DICOM Tag: (0010,0213)
+message StrainNomenclature {
 	string value = 1;
 }
 // DICOM Tag: (0010,0216)
@@ -89,46 +20,41 @@ message StrainStockSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,0035)
-message IdentifierTypeCode {
+// DICOM Tag: (0010,0030)
+message PatientBirthDate {
 	string value = 1;
 }
-// DICOM Tag: (0010,0040)
-message PatientSex {
-	string value = 1;
-}
-// DICOM Tag: (0010,0214)
-message StrainStockNumber {
-	string value = 1;
-}
-// DICOM Tag: (0010,0215)
-message StrainSourceRegistryCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0221)
-message GeneticModificationsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
+// DICOM Tag: (0010,0032)
+message PatientBirthTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0010,0212)
 message StrainDescription {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
+// DICOM Tag: (0010,2298)
+message ResponsiblePersonRole {
 	string value = 1;
 }
-// DICOM Tag: (0012,0062)
-message PatientIdentityRemoved {
+// DICOM Tag: (0010,0034)
+message PatientDeathDateInAlternativeCalendar {
 	string value = 1;
 }
-// DICOM Tag: (0010,0033)
-message PatientBirthDateInAlternativeCalendar {
+// DICOM Tag: (0010,2160)
+message EthnicGroup {
+	string value = 1;
+}
+// DICOM Tag: (0010,2202)
+message PatientSpeciesCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0021)
+message IssuerOfPatientID {
+	string value = 1;
+}
+// DICOM Tag: (0010,4000)
+message PatientComments {
 	string value = 1;
 }
 // DICOM Tag: (0008,1120)
@@ -136,173 +62,12 @@ message ReferencedPatientSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,0036)
-message AssigningFacilitySequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0010,0223)
-message GeneticModificationsNomenclature {
-	string value = 1;
-}
-// DICOM Tag: (0010,2299)
-message ResponsibleOrganization {
-	string value = 1;
-}
-// DICOM Tag: (0040,0039)
-message AssigningJurisdictionCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0054)
-message RetrieveAETitle {
-	repeated string value = 1;
-}
-// DICOM Tag: (0088,0130)
-message StorageMediaFileSetID {
-	string value = 1;
-}
-// DICOM Tag: (0010,1002)
-message OtherPatientIDsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,2160)
-message EthnicGroup {
-	string value = 1;
-}
-// DICOM Tag: (0010,2201)
-message PatientSpeciesDescription {
-	string value = 1;
-}
-// DICOM Tag: (0040,0032)
-message UniversalEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0012,0063)
-message DeidentificationMethod {
-	repeated string value = 1;
-}
-// DICOM Tag: (0010,0026)
-message SourcePatientGroupIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0028)
-message SubjectRelativePositionInImage {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0010,0218)
-message StrainAdditionalInformation {
-	string value = 1;
-}
-// DICOM Tag: (0010,2298)
-message ResponsiblePersonRole {
-	string value = 1;
-}
-// DICOM Tag: (0010,0022)
-message TypeOfPatientID {
-	string value = 1;
-}
-// DICOM Tag: (0010,2292)
-message PatientBreedDescription {
-	string value = 1;
-}
-// DICOM Tag: (0010,2295)
-message BreedRegistrationNumber {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0010,0200)
-message QualityControlSubject {
-	string value = 1;
-}
-// DICOM Tag: (0010,0213)
-message StrainNomenclature {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
 // DICOM Tag: (0010,1001)
 message OtherPatientNames {
 	repeated string value = 1;
 }
-// DICOM Tag: (0010,4000)
-message PatientComments {
-	string value = 1;
-}
-// DICOM Tag: (0010,0217)
-message StrainSource {
-	string value = 1;
-}
-// DICOM Tag: (0010,0229)
-message GeneticModificationsCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0024)
-message IssuerOfPatientIDQualifiersSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1190)
-message RetrieveURL {
-	string value = 1;
-}
-// DICOM Tag: (0012,0064)
-message DeidentificationMethodCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,5100)
-message PatientPosition {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,0034)
-message PatientDeathDateInAlternativeCalendar {
-	string value = 1;
-}
-// DICOM Tag: (0010,0219)
-message StrainCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0010,0035)
-message PatientAlternativeCalendar {
+// DICOM Tag: (0010,2292)
+message PatientBreedDescription {
 	string value = 1;
 }
 // DICOM Tag: (0010,2294)
@@ -310,87 +75,125 @@ message BreedRegistrationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0010,0219)
+message StrainCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,2299)
+message ResponsibleOrganization {
+	string value = 1;
+}
+// DICOM Tag: (0012,0063)
+message DeidentificationMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (0012,0064)
+message DeidentificationMethodCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0010,0020)
 message PatientID {
 	string value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
+// DICOM Tag: (0010,1100)
+message ReferencedPatientPhotoSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0040)
+message PatientSex {
 	string value = 1;
 }
+// DICOM Tag: (0010,0200)
+message QualityControlSubject {
+	string value = 1;
+}
+// DICOM Tag: (0010,0218)
+message StrainAdditionalInformation {
+	string value = 1;
+}
+// DICOM Tag: (0010,0221)
+message GeneticModificationsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,2297)
+message ResponsiblePerson {
+	string value = 1;
+}
+// DICOM Tag: (0010,0027)
+message GroupOfPatientsIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,0033)
+message PatientBirthDateInAlternativeCalendar {
+	string value = 1;
+}
+// DICOM Tag: (0010,0035)
+message PatientAlternativeCalendar {
+	string value = 1;
+}
+// DICOM Tag: (0010,1002)
+message OtherPatientIDsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0010,2293)
+message PatientBreedCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0012,0062)
+message PatientIdentityRemoved {
+	string value = 1;
+}
+// DICOM Tag: (0010,0010)
+message PatientName {
+	string value = 1;
+}
+// DICOM Tag: (0010,0024)
+message IssuerOfPatientIDQualifiersSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message PatientModule {
-	StrainStockSequence strain_stock_sequence = 1;
-	IdentifierTypeCode identifier_type_code = 2;
-	PatientSex patient's_sex = 3;
-	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 4;
-	StorageMediaFileSetUID storage_media_file_set_uid = 5;
-	GeneticModificationsSequence genetic_modifications_sequence = 6;
-	ReferencedFrameNumber referenced_frame_number = 7;
-	StrainDescription strain_description = 8;
-	StrainStockNumber strain_stock_number = 9;
-	StrainSourceRegistryCodeSequence strain_source_registry_code_sequence = 10;
-	LongCodeValue long_code_value = 11;
-	PatientIdentityRemoved patient_identity_removed = 12;
-	AssigningFacilitySequence assigning_facility_sequence = 13;
-	ContextUID context_uid = 14;
-	PatientBirthDateInAlternativeCalendar patient's_birth_date_in_alternative_calendar = 15;
-	ReferencedPatientSequence referenced_patient_sequence = 16;
-	AssigningJurisdictionCodeSequence assigning_jurisdiction_code_sequence = 17;
-	CodingSchemeDesignator coding_scheme_designator = 18;
-	GeneticModificationsNomenclature genetic_modifications_nomenclature = 19;
-	ResponsibleOrganization responsible_organization = 20;
-	StorageMediaFileSetID storage_media_file_set_id = 21;
-	OtherPatientIDsSequence other_patient_ids_sequence = 22;
-	EthnicGroup ethnic_group = 23;
-	PatientSpeciesDescription patient_species_description = 24;
-	UniversalEntityID universal_entity_id = 25;
-	MappingResourceName mapping_resource_name = 26;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 27;
-	RetrieveAETitle retrieve_ae_title = 28;
-	SubjectRelativePositionInImage subject_relative_position_in_image = 29;
-	StrainAdditionalInformation strain_additional_information = 30;
-	ResponsiblePersonRole responsible_person_role = 31;
-	DeidentificationMethod de_identification_method = 32;
-	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 33;
-	BreedRegistrationNumber breed_registration_number = 34;
-	MappingResourceUID mapping_resource_uid = 35;
-	QualityControlSubject quality_control_subject = 36;
-	TypeOfPatientID type_of_patient_id = 37;
-	PatientBreedDescription patient_breed_description = 38;
-	URNCodeValue urn_code_value = 39;
-	OtherPatientNames other_patient_names = 40;
-	StrainNomenclature strain_nomenclature = 41;
-	GeneticModificationsCodeSequence genetic_modifications_code_sequence = 42;
-	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 43;
-	PatientComments patient_comments = 44;
-	StrainSource strain_source = 45;
-	PatientPosition patient_position = 46;
-	CodeValue code_value = 47;
-	ReferencedSOPSequence referenced_sop_sequence = 48;
-	RetrieveURL retrieve_url = 49;
-	DeidentificationMethodCodeSequence de_identification_method_code_sequence = 50;
-	PatientDeathDateInAlternativeCalendar patient's_death_date_in_alternative_calendar = 51;
-	StrainCodeSequence strain_code_sequence = 52;
-	BreedRegistrationSequence breed_registration_sequence = 53;
-	PatientID patient_id = 54;
-	CodeMeaning code_meaning = 55;
-	MappingResource mapping_resource = 56;
-	PatientAlternativeCalendar patient's_alternative_calendar = 57;
-	LocalNamespaceEntityID local_namespace_entity_id = 58;
-	EquivalentCodeSequence equivalent_code_sequence = 59;
-	ContextGroupVersion context_group_version = 60;
-	BreedRegistryCodeSequence breed_registry_code_sequence = 61;
-	GeneticModificationsDescription genetic_modifications_description = 62;
-	ResponsiblePerson responsible_person = 63;
-	UniversalEntityIDType universal_entity_id_type = 64;
-	ContextGroupLocalVersion context_group_local_version = 65;
-	ReferencedSOPClassUID referenced_sop_class_uid = 66;
-	PatientSpeciesCodeSequence patient_species_code_sequence = 67;
-	IssuerOfPatientID issuer_of_patient_id = 68;
-	PatientBirthTime patient's_birth_time = 69;
-	PatientBreedCodeSequence patient_breed_code_sequence = 70;
-	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 71;
-	PatientName patient's_name = 72;
-	CodingSchemeVersion coding_scheme_version = 73;
-	PatientBirthDate patient's_birth_date = 74;
+	IssuerOfPatientID issuer_of_patient_id = 1;
+	PatientComments patient_comments = 2;
+	PatientSpeciesCodeSequence patient_species_code_sequence = 3;
+	ReferencedPatientSequence referenced_patient_sequence = 4;
+	OtherPatientNames other_patient_names = 5;
+	StrainCodeSequence strain_code_sequence = 6;
+	ResponsibleOrganization responsible_organization = 7;
+	DeidentificationMethod de_identification_method = 8;
+	DeidentificationMethodCodeSequence de_identification_method_code_sequence = 9;
+	PatientID patient_id = 10;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 11;
+	PatientBreedDescription patient_breed_description = 12;
+	BreedRegistrationSequence breed_registration_sequence = 13;
+	StrainAdditionalInformation strain_additional_information = 14;
+	GeneticModificationsSequence genetic_modifications_sequence = 15;
+	ResponsiblePerson responsible_person = 16;
+	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 17;
+	PatientBirthDateInAlternativeCalendar patient's_birth_date_in_alternative_calendar = 18;
+	PatientAlternativeCalendar patient's_alternative_calendar = 19;
+	PatientSex patient's_sex = 20;
+	QualityControlSubject quality_control_subject = 21;
+	PatientIdentityRemoved patient_identity_removed = 22;
+	PatientName patient's_name = 23;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 24;
+	OtherPatientIDsSequence other_patient_ids_sequence = 25;
+	PatientBreedCodeSequence patient_breed_code_sequence = 26;
+	PatientSpeciesDescription patient_species_description = 27;
+	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 28;
+	PatientBirthDate patient's_birth_date = 29;
+	PatientBirthTime patient's_birth_time = 30;
+	StrainNomenclature strain_nomenclature = 31;
+	StrainStockSequence strain_stock_sequence = 32;
+	PatientDeathDateInAlternativeCalendar patient's_death_date_in_alternative_calendar = 33;
+	EthnicGroup ethnic_group = 34;
+	StrainDescription strain_description = 35;
+	ResponsiblePersonRole responsible_person_role = 36;
 }

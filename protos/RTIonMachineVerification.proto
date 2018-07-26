@@ -7,11 +7,6 @@ message IonMachineVerificationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (3008,0045)
-message MetersetRateSet {
-	float value = 1;
-}
 message RTIonMachineVerificationModule {
-	MetersetRateSet meterset_rate_set = 1;
-	IonMachineVerificationSequence ion_machine_verification_sequence = 2;
+	IonMachineVerificationSequence ion_machine_verification_sequence = 1;
 }

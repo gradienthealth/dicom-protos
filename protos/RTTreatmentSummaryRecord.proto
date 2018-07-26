@@ -10,37 +10,6 @@ message CurrentTreatmentStatus {
 message TreatmentStatusComment {
 	string value = 1;
 }
-// DICOM Tag: (3008,0220)
-message FractionGroupSummarySequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3008,0224)
-message FractionGroupType {
-	string value = 1;
-}
-// DICOM Tag: (3008,0240)
-message FractionStatusSummarySequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3008,0250)
-message TreatmentDate {
-	string value = 1;
-}
-// DICOM Tag: (3008,0251)
-message TreatmentTime {
-	int64 value = 1;
-}
-// DICOM Tag: (3008,0052)
-message CumulativeDoseToDoseReference {
-	float value = 1;
-}
-// DICOM Tag: (3008,0050)
-message TreatmentSummaryCalculatedDoseReferenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (3008,0054)
 message FirstTreatmentDate {
 	string value = 1;
@@ -49,21 +18,27 @@ message FirstTreatmentDate {
 message MostRecentTreatmentDate {
 	string value = 1;
 }
-// DICOM Tag: (3008,0223)
-message ReferencedFractionNumber {
-	int32 value = 1;
+// DICOM Tag: (3008,0220)
+message FractionGroupSummarySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,00E0)
+message TreatmentSummaryMeasuredDoseReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,0050)
+message TreatmentSummaryCalculatedDoseReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message RTTreatmentSummaryRecordModule {
-	FractionStatusSummarySequence fraction_status_summary_sequence = 1;
-	TreatmentDate treatment_date = 2;
-	TreatmentTime treatment_time = 3;
-	CurrentTreatmentStatus current_treatment_status = 4;
-	TreatmentStatusComment treatment_status_comment = 5;
+	TreatmentSummaryCalculatedDoseReferenceSequence treatment_summary_calculated_dose_reference_sequence = 1;
+	CurrentTreatmentStatus current_treatment_status = 2;
+	TreatmentStatusComment treatment_status_comment = 3;
+	FirstTreatmentDate first_treatment_date = 4;
+	MostRecentTreatmentDate most_recent_treatment_date = 5;
 	FractionGroupSummarySequence fraction_group_summary_sequence = 6;
-	FractionGroupType fraction_group_type = 7;
-	CumulativeDoseToDoseReference cumulative_dose_to_dose_reference = 8;
-	TreatmentSummaryCalculatedDoseReferenceSequence treatment_summary_calculated_dose_reference_sequence = 9;
-	FirstTreatmentDate first_treatment_date = 10;
-	MostRecentTreatmentDate most_recent_treatment_date = 11;
-	ReferencedFractionNumber referenced_fraction_number = 12;
+	TreatmentSummaryMeasuredDoseReferenceSequence treatment_summary_measured_dose_reference_sequence = 7;
 }

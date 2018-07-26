@@ -2,15 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.34.html#table_C.11.34.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0070,0403)
-message RelativeOpacity {
-	float value = 1;
-}
 // DICOM Tag: (0008,9205)
 message PixelPresentation {
 	string value = 1;
 }
+// DICOM Tag: (0070,1B04)
+message BlendingDisplaySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message AdvancedBlendingPresentationStateDisplayModule {
-	RelativeOpacity relative_opacity = 1;
-	PixelPresentation pixel_presentation = 2;
+	PixelPresentation pixel_presentation = 1;
+	BlendingDisplaySequence blending_display_sequence = 2;
 }

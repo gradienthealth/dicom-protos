@@ -2,27 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0068,6265)
-message NotificationFromManufacturerSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
 // DICOM Tag: (0068,6223)
 message ImplantType {
 	string value = 1;
@@ -31,154 +10,108 @@ message ImplantType {
 message EffectiveDateTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,2218)
-message AnatomicRegionSequence {
+// DICOM Tag: (0068,62A5)
+message OverallTemplateSpatialTolerance {
+	double value = 1;
+}
+// DICOM Tag: (0068,63A0)
+message MaterialsCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0068,6270)
-message InformationIssueDateTime {
-	int64 value = 1;
+// DICOM Tag: (0068,63A4)
+message CoatingMaterialsCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0068,6280)
-message InformationSummary {
-	string value = 1;
+// DICOM Tag: (0068,63A8)
+message ImplantTypeCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0042,0012)
-message MIMETypeOfEncapsulatedDocument {
-	string value = 1;
-}
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
+// DICOM Tag: (0068,62A0)
+message ImplantRegulatoryDisapprovalCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0020,0052)
 message FrameOfReferenceUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0022,1097)
 message ImplantPartNumber {
-	string value = 1;
-}
-// DICOM Tag: (0068,6260)
-message InformationFromManufacturerSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0068,6222)
-message ReplacedImplantTemplateSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
 	string value = 1;
 }
 // DICOM Tag: (0068,6221)
 message ImplantTemplateVersion {
 	string value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0042,0011)
-message EncapsulatedDocument {
-	string value = 1;
-}
-// DICOM Tag: (0022,1095)
-message ImplantName {
-	string value = 1;
-}
-// DICOM Tag: (0068,6224)
-message DerivationImplantTemplateSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0068,6230)
 message ImplantTargetAnatomySequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0068,6265)
+message NotificationFromManufacturerSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0068,6260)
+message InformationFromManufacturerSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0070)
+message Manufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0068,6210)
+message ImplantSize {
+	string value = 1;
 }
 // DICOM Tag: (0068,6225)
 message OriginalImplantTemplateSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
+// DICOM Tag: (0068,63AC)
+message FixationMethodCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0068,6210)
-message ImplantSize {
+// DICOM Tag: (0022,1095)
+message ImplantName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
+// DICOM Tag: (0068,6222)
+message ReplacedImplantTemplateSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
+// DICOM Tag: (0068,6224)
+message DerivationImplantTemplateSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message GenericImplantTemplateDescriptionModule {
-	URNCodeValue urn_code_value = 1;
-	MappingResourceName mapping_resource_name = 2;
-	ImplantSize implant_size = 3;
-	ImplantType implant_type = 4;
-	EffectiveDateTime effective_datetime = 5;
-	AnatomicRegionSequence anatomic_region_sequence = 6;
-	CodingSchemeVersion coding_scheme_version = 7;
-	LongCodeValue long_code_value = 8;
-	ContextUID context_uid = 9;
-	NotificationFromManufacturerSequence notification_from_manufacturer_sequence = 10;
-	ReferencedSOPClassUID referenced_sop_class_uid = 11;
-	InformationSummary information_summary = 12;
-	InformationIssueDateTime information_issue_datetime = 13;
-	FrameOfReferenceUID frame_of_reference_uid = 14;
-	CodeMeaning code_meaning = 15;
-	EquivalentCodeSequence equivalent_code_sequence = 16;
-	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 17;
-	Manufacturer manufacturer = 18;
-	ImplantPartNumber implant_part_number = 19;
-	CodingSchemeDesignator coding_scheme_designator = 20;
-	MappingResource mapping_resource = 21;
-	MappingResourceUID mapping_resource_uid = 22;
-	InformationFromManufacturerSequence information_from_manufacturer_sequence = 23;
-	ReplacedImplantTemplateSequence replaced_implant_template_sequence = 24;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 25;
-	CodeValue code_value = 26;
-	ImplantTemplateVersion implant_template_version = 27;
-	DerivationImplantTemplateSequence derivation_implant_template_sequence = 28;
-	ImplantTargetAnatomySequence implant_target_anatomy_sequence = 29;
-	EncapsulatedDocument encapsulated_document = 30;
-	ImplantName implant_name = 31;
-	ContextGroupVersion context_group_version = 32;
-	ContextGroupLocalVersion context_group_local_version = 33;
-	OriginalImplantTemplateSequence original_implant_template_sequence = 34;
+	ImplantType implant_type = 1;
+	EffectiveDateTime effective_datetime = 2;
+	OverallTemplateSpatialTolerance overall_template_spatial_tolerance = 3;
+	MaterialsCodeSequence materials_code_sequence = 4;
+	CoatingMaterialsCodeSequence coating_materials_code_sequence = 5;
+	ImplantTypeCodeSequence implant_type_code_sequence = 6;
+	FrameOfReferenceUID frame_of_reference_uid = 7;
+	ImplantPartNumber implant_part_number = 8;
+	ImplantTemplateVersion implant_template_version = 9;
+	ImplantTargetAnatomySequence implant_target_anatomy_sequence = 10;
+	NotificationFromManufacturerSequence notification_from_manufacturer_sequence = 11;
+	InformationFromManufacturerSequence information_from_manufacturer_sequence = 12;
+	ImplantRegulatoryDisapprovalCodeSequence implant_regulatory_disapproval_code_sequence = 13;
+	Manufacturer manufacturer = 14;
+	ImplantSize implant_size = 15;
+	OriginalImplantTemplateSequence original_implant_template_sequence = 16;
+	FixationMethodCodeSequence fixation_method_code_sequence = 17;
+	ImplantName implant_name = 18;
+	ReplacedImplantTemplateSequence replaced_implant_template_sequence = 19;
+	DerivationImplantTemplateSequence derivation_implant_template_sequence = 20;
 }

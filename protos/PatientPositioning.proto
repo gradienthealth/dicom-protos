@@ -2,105 +2,8 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.8.html#table_C.34.8-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,9904)
-message OffsetDistance {
-	float value = 1;
-}
-// DICOM Tag: (0018,9916)
-message InstructionText {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
 // DICOM Tag: (0008,2218)
 message AnatomicRegionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,2220)
-message AnatomicRegionModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9947)
-message ProtocolDefinedPatientPosition {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,9900)
-message ReferenceLocationLabel {
-	string value = 1;
-}
-// DICOM Tag: (0018,9915)
-message InstructionIndex {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,2230)
-message PrimaryAnatomicStructureModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0018,9902)
-message ReferenceBasisCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9917)
-message InstructionDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,9918)
-message InstructionPerformedFlag {
-	string value = 1;
-}
-// DICOM Tag: (0018,9919)
-message InstructionPerformedDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,9903)
-message ReferenceGeometryCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -109,50 +12,40 @@ message PrimaryAnatomicStructureSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0018,9947)
+message ProtocolDefinedPatientPosition {
 	string value = 1;
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
+// DICOM Tag: (0018,991B)
+message PatientPositioningInstructionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,9901)
-message ReferenceLocationDescription {
+// DICOM Tag: (0018,991C)
+message PositioningMethodCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,991D)
+message PositioningLandmarkSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,991E)
+message TargetFrameOfReferenceUID {
 	string value = 1;
 }
-// DICOM Tag: (0018,9905)
-message OffsetDirection {
+// DICOM Tag: (0020,103F)
+message TargetPositionReferenceIndicator {
 	string value = 1;
 }
 message PatientPositioningModule {
-	ContextGroupLocalVersion context_group_local_version = 1;
-	ReferenceLocationDescription reference_location_description = 2;
-	OffsetDirection offset_direction = 3;
+	TargetFrameOfReferenceUID target_frame_of_reference_uid = 1;
+	TargetPositionReferenceIndicator target_position_reference_indicator = 2;
+	AnatomicRegionSequence anatomic_region_sequence = 3;
 	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 4;
-	URNCodeValue urn_code_value = 5;
-	OffsetDistance offset_distance = 6;
-	MappingResourceUID mapping_resource_uid = 7;
-	InstructionText instruction_text = 8;
-	CodeValue code_value = 9;
-	CodingSchemeDesignator coding_scheme_designator = 10;
-	CodeMeaning code_meaning = 11;
-	LongCodeValue long_code_value = 12;
-	ContextGroupVersion context_group_version = 13;
-	AnatomicRegionSequence anatomic_region_sequence = 14;
-	AnatomicRegionModifierSequence anatomic_region_modifier_sequence = 15;
-	ProtocolDefinedPatientPosition protocol_defined_patient_position = 16;
-	ReferenceLocationLabel reference_location_label = 17;
-	ContextUID context_uid = 18;
-	MappingResource mapping_resource = 19;
-	PrimaryAnatomicStructureModifierSequence primary_anatomic_structure_modifier_sequence = 20;
-	InstructionIndex instruction_index = 21;
-	InstructionDescription instruction_description = 22;
-	InstructionPerformedFlag instruction_performed_flag = 23;
-	InstructionPerformedDateTime instruction_performed_datetime = 24;
-	CodingSchemeVersion coding_scheme_version = 25;
-	EquivalentCodeSequence equivalent_code_sequence = 26;
-	MappingResourceName mapping_resource_name = 27;
-	ReferenceBasisCodeSequence reference_basis_code_sequence = 28;
-	ReferenceGeometryCodeSequence reference_geometry_code_sequence = 29;
+	ProtocolDefinedPatientPosition protocol_defined_patient_position = 5;
+	PatientPositioningInstructionSequence patient_positioning_instruction_sequence = 6;
+	PositioningMethodCodeSequence positioning_method_code_sequence = 7;
+	PositioningLandmarkSequence positioning_landmark_sequence = 8;
 }

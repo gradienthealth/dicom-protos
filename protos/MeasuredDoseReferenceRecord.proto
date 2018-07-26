@@ -2,36 +2,11 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.19.html#table_C.8-55
 syntax = "proto3";
 
-// DICOM Tag: (3004,0002)
-message DoseUnits {
-	string value = 1;
-}
-// DICOM Tag: (3008,0016)
-message MeasuredDoseValue {
-	float value = 1;
-}
-// DICOM Tag: (3008,0014)
-message MeasuredDoseType {
-	string value = 1;
-}
-// DICOM Tag: (3008,0012)
-message MeasuredDoseDescription {
-	string value = 1;
-}
 // DICOM Tag: (3008,0010)
 message MeasuredDoseReferenceSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (3008,0064)
-message MeasuredDoseReferenceNumber {
-	int32 value = 1;
-}
 message MeasuredDoseReferenceRecordModule {
-	MeasuredDoseReferenceNumber measured_dose_reference_number = 1;
-	DoseUnits dose_units = 2;
-	MeasuredDoseValue measured_dose_value = 3;
-	MeasuredDoseType measured_dose_type = 4;
-	MeasuredDoseDescription measured_dose_description = 5;
-	MeasuredDoseReferenceSequence measured_dose_reference_sequence = 6;
+	MeasuredDoseReferenceSequence measured_dose_reference_sequence = 1;
 }

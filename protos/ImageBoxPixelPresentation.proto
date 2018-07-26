@@ -2,102 +2,52 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.5.html#table_C.13-5
 syntax = "proto3";
 
-// DICOM Tag: (2010,0060)
-message MagnificationType {
+// DICOM Tag: (2020,0020)
+message Polarity {
 	string value = 1;
 }
 // DICOM Tag: (2010,0080)
 message SmoothingType {
 	string value = 1;
 }
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0011)
-message Columns {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (2020,0010)
-message ImageBoxPosition {
-	uint32 value = 1;
-}
-// DICOM Tag: (2020,0020)
-message Polarity {
-	string value = 1;
-}
-// DICOM Tag: (2020,0040)
-message RequestedDecimateCropBehavior {
-	string value = 1;
+// DICOM Tag: (2020,0030)
+message RequestedImageSize {
+	float value = 1;
 }
 // DICOM Tag: (2020,0110)
 message BasicGrayscaleImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,0006)
-message PlanarConfiguration {
-	uint32 value = 1;
-}
-// DICOM Tag: (2010,0150)
-message ConfigurationInformation {
-	string value = 1;
-}
-// DICOM Tag: (2020,0030)
-message RequestedImageSize {
-	float value = 1;
-}
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
 // DICOM Tag: (2020,0111)
 message BasicColorImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
+// DICOM Tag: (2020,0010)
+message ImageBoxPosition {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
+// DICOM Tag: (2010,0060)
+message MagnificationType {
 	string value = 1;
 }
-// DICOM Tag: (0028,0010)
-message Rows {
-	uint32 value = 1;
+// DICOM Tag: (2010,0150)
+message ConfigurationInformation {
+	string value = 1;
 }
-// DICOM Tag: (0028,0101)
-message BitsStored {
-	uint32 value = 1;
+// DICOM Tag: (2020,0040)
+message RequestedDecimateCropBehavior {
+	string value = 1;
 }
 message ImageBoxPixelPresentationModule {
 	ImageBoxPosition image_box_position = 1;
-	Polarity polarity = 2;
-	RequestedDecimateCropBehavior requested_decimate_crop_behavior = 3;
-	BasicGrayscaleImageSequence basic_grayscale_image_sequence = 4;
-	Columns columns = 5;
-	BitsAllocated bits_allocated = 6;
-	ConfigurationInformation configuration_information = 7;
-	RequestedImageSize requested_image_size = 8;
-	PixelAspectRatio pixel_aspect_ratio = 9;
-	HighBit high_bit = 10;
-	PlanarConfiguration planar_configuration = 11;
-	SamplesPerPixel samples_per_pixel = 12;
-	PhotometricInterpretation photometric_interpretation = 13;
-	Rows rows = 14;
-	BitsStored bits_stored = 15;
-	BasicColorImageSequence basic_color_image_sequence = 16;
-	MagnificationType magnification_type = 17;
-	SmoothingType smoothing_type = 18;
-	PixelRepresentation pixel_representation = 19;
+	MagnificationType magnification_type = 2;
+	ConfigurationInformation configuration_information = 3;
+	RequestedDecimateCropBehavior requested_decimate_crop_behavior = 4;
+	Polarity polarity = 5;
+	SmoothingType smoothing_type = 6;
+	RequestedImageSize requested_image_size = 7;
+	BasicGrayscaleImageSequence basic_grayscale_image_sequence = 8;
+	BasicColorImageSequence basic_color_image_sequence = 9;
 }

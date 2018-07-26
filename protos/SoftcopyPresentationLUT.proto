@@ -7,12 +7,8 @@ message PresentationLUTSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,3002)
-message LUTDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,3003)
-message LUTExplanation {
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
 	string value = 1;
 }
 // DICOM Tag: (0028,3006)
@@ -25,8 +21,5 @@ message PresentationLUTShape {
 }
 message SoftcopyPresentationLUTModule {
 	PresentationLUTSequence presentation_lut_sequence = 1;
-	LUTDescriptor lut_descriptor = 2;
-	LUTExplanation lut_explanation = 3;
-	LUTData lut_data = 4;
-	PresentationLUTShape presentation_lut_shape = 5;
+	PresentationLUTShape presentation_lut_shape = 2;
 }

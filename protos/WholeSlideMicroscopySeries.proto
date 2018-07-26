@@ -11,17 +11,7 @@ message ReferencedPerformedProcedureStepSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
 message WholeSlideMicroscopySeriesModule {
-	Modality modality = 1;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
-	ReferencedSOPClassUID referenced_sop_class_uid = 3;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 4;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
+	Modality modality = 2;
 }

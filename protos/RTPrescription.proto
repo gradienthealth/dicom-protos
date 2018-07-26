@@ -2,10 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.10.html#table_C.8-46
 syntax = "proto3";
 
-// DICOM Tag: (3006,0084)
-message ReferencedROINumber {
-	int32 value = 1;
+// DICOM Tag: (300A,000E)
+message PrescriptionDescription {
+	string value = 1;
+}
+// DICOM Tag: (300A,0010)
+message DoseReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message RTPrescriptionModule {
-	ReferencedROINumber referenced_roi_number = 1;
+	PrescriptionDescription prescription_description = 1;
+	DoseReferenceSequence dose_reference_sequence = 2;
 }

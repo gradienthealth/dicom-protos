@@ -7,16 +7,6 @@ message ExcludedIntervalsSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,9804)
-message ExclusionStartDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,9805)
-message ExclusionDuration {
-	double value = 1;
-}
 message ExcludedIntervalsModule {
 	ExcludedIntervalsSequence excluded_intervals_sequence = 1;
-	ExclusionStartDateTime exclusion_start_datetime = 2;
-	ExclusionDuration exclusion_duration = 3;
 }

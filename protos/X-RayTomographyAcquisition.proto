@@ -27,10 +27,10 @@ message NumberOfTomosynthesisSourceImages {
 	int32 value = 1;
 }
 message X-RayTomographyAcquisitionModule {
-	TomoClass tomo_class = 1;
-	NumberOfTomosynthesisSourceImages number_of_tomosynthesis_source_images = 2;
-	TomoLayerHeight tomo_layer_height = 3;
-	TomoAngle tomo_angle = 4;
-	TomoTime tomo_time = 5;
-	TomoType tomo_type = 6;
+	TomoType tomo_type = 1;
+	TomoClass tomo_class = 2;
+	NumberOfTomosynthesisSourceImages number_of_tomosynthesis_source_images = 3;
+	TomoLayerHeight tomo_layer_height = 4;
+	TomoAngle tomo_angle = 5;
+	TomoTime tomo_time = 6;
 }

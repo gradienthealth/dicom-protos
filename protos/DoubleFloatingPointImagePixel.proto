@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.25.html#table_PS3.3_C.7.6.25-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,0123)
-message DoubleFloatPixelPaddingValue {
-	double value = 1;
-}
-// DICOM Tag: (0028,0125)
-message DoubleFloatPixelPaddingRangeLimit {
-	double value = 1;
-}
 // DICOM Tag: (0028,0002)
 message SamplesPerPixel {
 	uint32 value = 1;
@@ -22,10 +14,6 @@ message Rows {
 message BitsAllocated {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
-}
 // DICOM Tag: (0028,0004)
 message PhotometricInterpretation {
 	string value = 1;
@@ -34,13 +22,30 @@ message PhotometricInterpretation {
 message Columns {
 	uint32 value = 1;
 }
+// DICOM Tag: (7FE0,0009)
+message DoubleFloatPixelData {
+	string value = 1;
+}
+// DICOM Tag: (0028,0034)
+message PixelAspectRatio {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0028,0123)
+message DoubleFloatPixelPaddingValue {
+	double value = 1;
+}
+// DICOM Tag: (0028,0125)
+message DoubleFloatPixelPaddingRangeLimit {
+	double value = 1;
+}
 message DoubleFloatingPointImagePixelModule {
-	DoubleFloatPixelPaddingValue double_float_pixel_padding_value = 1;
-	DoubleFloatPixelPaddingRangeLimit double_float_pixel_padding_range_limit = 2;
-	SamplesPerPixel samples_per_pixel = 3;
-	Rows rows = 4;
-	BitsAllocated bits_allocated = 5;
-	PixelAspectRatio pixel_aspect_ratio = 6;
-	PhotometricInterpretation photometric_interpretation = 7;
-	Columns columns = 8;
+	PhotometricInterpretation photometric_interpretation = 1;
+	Columns columns = 2;
+	DoubleFloatPixelData double_float_pixel_data = 3;
+	PixelAspectRatio pixel_aspect_ratio = 4;
+	DoubleFloatPixelPaddingValue double_float_pixel_padding_value = 5;
+	DoubleFloatPixelPaddingRangeLimit double_float_pixel_padding_range_limit = 6;
+	SamplesPerPixel samples_per_pixel = 7;
+	Rows rows = 8;
+	BitsAllocated bits_allocated = 9;
 }

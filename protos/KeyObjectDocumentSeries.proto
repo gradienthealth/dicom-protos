@@ -2,70 +2,8 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.6.html#table_C.17.6-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0031)
-message SeriesTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1111)
-message ReferencedPerformedProcedureStepSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0060)
-message Modality {
-	string value = 1;
-}
-// DICOM Tag: (0020,0011)
-message SeriesNumber {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
+// DICOM Tag: (0020,000E)
+message SeriesInstanceUID {
 	string value = 1;
 }
 // DICOM Tag: (0008,0021)
@@ -76,38 +14,40 @@ message SeriesDate {
 message ProtocolName {
 	string value = 1;
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0008,103F)
+message SeriesDescriptionCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1111)
+message ReferencedPerformedProcedureStepSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0060)
+message Modality {
 	string value = 1;
 }
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
+// DICOM Tag: (0020,0011)
+message SeriesNumber {
+	int32 value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
+// DICOM Tag: (0008,0031)
+message SeriesTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,103E)
+message SeriesDescription {
 	string value = 1;
 }
 message KeyObjectDocumentSeriesModule {
 	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 2;
-	SeriesTime series_time = 3;
-	CodeValue code_value = 4;
-	MappingResource mapping_resource = 5;
-	MappingResourceName mapping_resource_name = 6;
-	ContextUID context_uid = 7;
-	ContextGroupLocalVersion context_group_local_version = 8;
-	Modality modality = 9;
-	SeriesNumber series_number = 10;
-	LongCodeValue long_code_value = 11;
-	EquivalentCodeSequence equivalent_code_sequence = 12;
-	ReferencedSOPClassUID referenced_sop_class_uid = 13;
-	URNCodeValue urn_code_value = 14;
-	MappingResourceUID mapping_resource_uid = 15;
-	ContextGroupVersion context_group_version = 16;
-	CodeMeaning code_meaning = 17;
-	SeriesDate series_date = 18;
-	ProtocolName protocol_name = 19;
-	CodingSchemeDesignator coding_scheme_designator = 20;
-	CodingSchemeVersion coding_scheme_version = 21;
+	SeriesInstanceUID series_instance_uid = 2;
+	SeriesDate series_date = 3;
+	ProtocolName protocol_name = 4;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 5;
+	Modality modality = 6;
+	SeriesNumber series_number = 7;
+	SeriesTime series_time = 8;
+	SeriesDescription series_description = 9;
 }

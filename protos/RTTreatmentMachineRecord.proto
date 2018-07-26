@@ -2,35 +2,11 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.18.html#table_C.8-54
 syntax = "proto3";
 
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
-// DICOM Tag: (0008,1040)
-message InstitutionalDepartmentName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1090)
-message ManufacturerModelName {
-	string value = 1;
-}
-// DICOM Tag: (0018,1000)
-message DeviceSerialNumber {
-	string value = 1;
-}
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
+// DICOM Tag: (300A,0206)
+message TreatmentMachineSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message RTTreatmentMachineRecordModule {
-	Manufacturer manufacturer = 1;
-	InstitutionName institution_name = 2;
-	InstitutionAddress institution_address = 3;
-	InstitutionalDepartmentName institutional_department_name = 4;
-	ManufacturerModelName manufacturer's_model_name = 5;
-	DeviceSerialNumber device_serial_number = 6;
+	TreatmentMachineSequence treatment_machine_sequence = 1;
 }

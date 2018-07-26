@@ -31,11 +31,11 @@ message SliceLocationVector {
 	repeated float value = 1;
 }
 message SCMulti-frameVectorModule {
-	FrameSecondaryAngleVector frame_secondary_angle_vector = 1;
-	SliceLocationVector slice_location_vector = 2;
-	DisplayWindowLabelVector display_window_label_vector = 3;
-	FrameTimeVector frame_time_vector = 4;
-	PageNumberVector page_number_vector = 5;
-	FrameLabelVector frame_label_vector = 6;
-	FramePrimaryAngleVector frame_primary_angle_vector = 7;
+	FramePrimaryAngleVector frame_primary_angle_vector = 1;
+	FrameSecondaryAngleVector frame_secondary_angle_vector = 2;
+	SliceLocationVector slice_location_vector = 3;
+	DisplayWindowLabelVector display_window_label_vector = 4;
+	FrameTimeVector frame_time_vector = 5;
+	PageNumberVector page_number_vector = 6;
+	FrameLabelVector frame_label_vector = 7;
 }

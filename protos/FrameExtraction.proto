@@ -7,26 +7,6 @@ message FrameExtractionSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1167)
-message MultiFrameSourceSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1161)
-message SimpleFrameList {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0008,1162)
-message CalculatedFrameList {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0008,1163)
-message TimeRange {
-	repeated double value = 1;
-}
 message FrameExtractionModule {
 	FrameExtractionSequence frame_extraction_sequence = 1;
-	MultiFrameSourceSOPInstanceUID multi_frame_source_sop_instance_uid = 2;
-	SimpleFrameList simple_frame_list = 3;
-	CalculatedFrameList calculated_frame_list = 4;
-	TimeRange time_range = 5;
 }

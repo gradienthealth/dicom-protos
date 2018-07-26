@@ -11,6 +11,6 @@ message ShutterPresentationColorCIELabValue {
 	repeated uint32 value = 1;
 }
 message PresentationStateShutterModule {
-	ShutterPresentationValue shutter_presentation_value = 1;
-	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 2;
+	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 1;
+	ShutterPresentationValue shutter_presentation_value = 2;
 }

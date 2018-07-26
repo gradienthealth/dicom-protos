@@ -2,72 +2,71 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.14.html#table_C.8.17.14-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
 	string value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
+// DICOM Tag: (0022,1515)
+message OphthalmicAxialLengthMethod {
 	string value = 1;
-}
-// DICOM Tag: (0028,1051)
-message WindowWidth {
-	repeated float value = 1;
 }
 // DICOM Tag: (0028,2110)
 message LossyImageCompression {
 	string value = 1;
 }
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,1050)
+message WindowCenter {
+	repeated float value = 1;
+}
+// DICOM Tag: (0022,1620)
+message ReferencedSurfaceMeshIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0028,0302)
 message RecognizableVisualFeatures {
 	string value = 1;
 }
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
+// DICOM Tag: (0008,0008)
+message ImageType {
+	repeated string value = 1;
+}
+// DICOM Tag: (0022,1616)
+message OphthalmicImageTypeDescription {
+	string value = 1;
 }
 // DICOM Tag: (0008,0023)
 message ContentDate {
 	string value = 1;
 }
-// DICOM Tag: (0008,2112)
-message SourceImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0022,1612)
-message DerivationAlgorithmSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0028,2112)
 message LossyImageCompressionRatio {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
+// DICOM Tag: (0028,0102)
+message HighBit {
 	uint32 value = 1;
 }
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
 	string value = 1;
 }
-// DICOM Tag: (0066,0030)
-message AlgorithmNameCodeSequence {
+// DICOM Tag: (0022,1615)
+message OphthalmicImageTypeCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1658)
-message SurfaceMeshZPixelOffset {
-	uint32 value = 1;
-}
-// DICOM Tag: (0022,1019)
-message OphthalmicAxialLength {
-	float value = 1;
 }
 // DICOM Tag: (0050,0004)
 message CalibrationImage {
@@ -77,186 +76,75 @@ message CalibrationImage {
 message BurnedInAnnotation {
 	string value = 1;
 }
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0024,0202)
-message AlgorithmSource {
-	string value = 1;
-}
-// DICOM Tag: (0028,1050)
-message WindowCenter {
-	repeated float value = 1;
-}
-// DICOM Tag: (0022,1517)
-message OphthalmicFOV {
-	float value = 1;
-}
-// DICOM Tag: (0022,1620)
-message ReferencedSurfaceMeshIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1616)
-message OphthalmicImageTypeDescription {
-	string value = 1;
-}
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0022,1515)
-message OphthalmicAxialLengthMethod {
-	string value = 1;
-}
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
 }
 // DICOM Tag: (0008,0033)
 message ContentTime {
 	int64 value = 1;
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0066,0036)
-message AlgorithmName {
-	string value = 1;
-}
-// DICOM Tag: (0066,0032)
-message AlgorithmParameters {
-	string value = 1;
-}
-// DICOM Tag: (0022,1615)
-message OphthalmicImageTypeCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,0030)
-message PixelSpacing {
-	repeated float value = 1;
-}
 // DICOM Tag: (0028,0101)
 message BitsStored {
 	uint32 value = 1;
+}
+// DICOM Tag: (0028,1051)
+message WindowWidth {
+	repeated float value = 1;
+}
+// DICOM Tag: (0022,1019)
+message OphthalmicAxialLength {
+	float value = 1;
 }
 // DICOM Tag: (0028,0103)
 message PixelRepresentation {
 	uint32 value = 1;
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
+// DICOM Tag: (0022,1612)
+message DerivationAlgorithmSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0066,0031)
-message AlgorithmVersion {
-	string value = 1;
+// DICOM Tag: (0022,1517)
+message OphthalmicFOV {
+	float value = 1;
 }
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
-	string value = 1;
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
 }
-// DICOM Tag: (0008,0008)
-message ImageType {
-	repeated string value = 1;
+// DICOM Tag: (0008,2112)
+message SourceImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 message OphthalmicOpticalCoherenceTomographyEnFaceImageModule {
-	BitsAllocated bits_allocated = 1;
-	ContentDate content_date = 2;
-	SourceImageSequence source_image_sequence = 3;
-	ContextGroupVersion context_group_version = 4;
-	DerivationAlgorithmSequence derivation_algorithm_sequence = 5;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 6;
-	SamplesPerPixel samples_per_pixel = 7;
-	MappingResourceUID mapping_resource_uid = 8;
-	AlgorithmNameCodeSequence algorithm_name_code_sequence = 9;
-	SurfaceMeshZPixelOffset surface_mesh_z_pixel_offset = 10;
-	OphthalmicAxialLength ophthalmic_axial_length = 11;
-	CalibrationImage calibration_image = 12;
-	BurnedInAnnotation burned_in_annotation = 13;
-	ReferencedSurfaceMeshIdentificationSequence referenced_surface_mesh_identification_sequence = 14;
-	LongCodeValue long_code_value = 15;
-	URNCodeValue urn_code_value = 16;
-	ContextUID context_uid = 17;
-	AlgorithmSource algorithm_source = 18;
-	WindowCenter window_center = 19;
-	OphthalmicFOV ophthalmic_fov = 20;
-	HighBit high_bit = 21;
-	CodingSchemeDesignator coding_scheme_designator = 22;
-	EquivalentCodeSequence equivalent_code_sequence = 23;
-	OphthalmicImageTypeDescription ophthalmic_image_type_description = 24;
-	ContentTime content_time = 25;
-	ReferencedSOPClassUID referenced_sop_class_uid = 26;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 27;
-	CodingSchemeVersion coding_scheme_version = 28;
-	ContextGroupLocalVersion context_group_local_version = 29;
-	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 30;
-	LossyImageCompressionMethod lossy_image_compression_method = 31;
-	PixelSpacing pixel_spacing = 32;
-	ReferencedFrameNumber referenced_frame_number = 33;
-	MappingResource mapping_resource = 34;
-	MappingResourceName mapping_resource_name = 35;
-	AlgorithmName algorithm_name = 36;
-	AlgorithmParameters algorithm_parameters = 37;
-	OphthalmicImageTypeCodeSequence ophthalmic_image_type_code_sequence = 38;
-	ImageType image_type = 39;
-	BitsStored bits_stored = 40;
-	PixelRepresentation pixel_representation = 41;
-	CodeValue code_value = 42;
-	AlgorithmVersion algorithm_version = 43;
-	PresentationLUTShape presentation_lut_shape = 44;
-	InstanceNumber instance_number = 45;
-	PhotometricInterpretation photometric_interpretation = 46;
-	CodeMeaning code_meaning = 47;
-	WindowWidth window_width = 48;
-	LossyImageCompression lossy_image_compression = 49;
-	RecognizableVisualFeatures recognizable_visual_features = 50;
+	ImageType image_type = 1;
+	OphthalmicImageTypeDescription ophthalmic_image_type_description = 2;
+	WindowCenter window_center = 3;
+	ReferencedSurfaceMeshIdentificationSequence referenced_surface_mesh_identification_sequence = 4;
+	RecognizableVisualFeatures recognizable_visual_features = 5;
+	HighBit high_bit = 6;
+	PhotometricInterpretation photometric_interpretation = 7;
+	ContentDate content_date = 8;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 9;
+	InstanceNumber instance_number = 10;
+	ContentTime content_time = 11;
+	OphthalmicImageTypeCodeSequence ophthalmic_image_type_code_sequence = 12;
+	CalibrationImage calibration_image = 13;
+	BurnedInAnnotation burned_in_annotation = 14;
+	BitsStored bits_stored = 15;
+	PixelRepresentation pixel_representation = 16;
+	DerivationAlgorithmSequence derivation_algorithm_sequence = 17;
+	WindowWidth window_width = 18;
+	OphthalmicAxialLength ophthalmic_axial_length = 19;
+	BitsAllocated bits_allocated = 20;
+	SourceImageSequence source_image_sequence = 21;
+	OphthalmicFOV ophthalmic_fov = 22;
+	LossyImageCompressionMethod lossy_image_compression_method = 23;
+	PresentationLUTShape presentation_lut_shape = 24;
+	SamplesPerPixel samples_per_pixel = 25;
+	PixelSpacing pixel_spacing = 26;
+	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 27;
+	LossyImageCompression lossy_image_compression = 28;
 }

@@ -2,26 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.4.html#table_C.8-106
 syntax = "proto3";
 
-// DICOM Tag: (5600,0020)
-message SpectroscopyData {
-	string value = 1;
-}
-// DICOM Tag: (0028,9001)
-message DataPointRows {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,9002)
-message DataPointColumns {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,9003)
-message SignalDomainColumns {
-	string value = 1;
-}
-// DICOM Tag: (0028,9235)
-message SignalDomainRows {
-	string value = 1;
-}
 // DICOM Tag: (5600,0010)
 message FirstOrderPhaseCorrectionAngle {
 	string value = 1;
@@ -30,8 +10,28 @@ message FirstOrderPhaseCorrectionAngle {
 message Rows {
 	uint32 value = 1;
 }
+// DICOM Tag: (0028,9001)
+message DataPointRows {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,9235)
+message SignalDomainRows {
+	string value = 1;
+}
+// DICOM Tag: (0028,9003)
+message SignalDomainColumns {
+	string value = 1;
+}
+// DICOM Tag: (5600,0020)
+message SpectroscopyData {
+	string value = 1;
+}
 // DICOM Tag: (0028,0011)
 message Columns {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,9002)
+message DataPointColumns {
 	uint32 value = 1;
 }
 // DICOM Tag: (0028,9108)
@@ -39,13 +39,13 @@ message DataRepresentation {
 	string value = 1;
 }
 message MRSpectroscopyDataModule {
-	FirstOrderPhaseCorrectionAngle first_order_phase_correction_angle = 1;
-	SpectroscopyData spectroscopy_data = 2;
-	DataPointRows data_point_rows = 3;
-	DataPointColumns data_point_columns = 4;
-	SignalDomainColumns signal_domain_columns = 5;
-	SignalDomainRows signal_domain_rows = 6;
-	Rows rows = 7;
-	Columns columns = 8;
-	DataRepresentation data_representation = 9;
+	Rows rows = 1;
+	DataPointRows data_point_rows = 2;
+	SignalDomainRows signal_domain_rows = 3;
+	FirstOrderPhaseCorrectionAngle first_order_phase_correction_angle = 4;
+	Columns columns = 5;
+	DataPointColumns data_point_columns = 6;
+	DataRepresentation data_representation = 7;
+	SignalDomainColumns signal_domain_columns = 8;
+	SpectroscopyData spectroscopy_data = 9;
 }

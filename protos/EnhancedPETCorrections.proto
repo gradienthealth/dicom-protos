@@ -2,24 +2,20 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.6.html#table_C.8.22-19
 syntax = "proto3";
 
-// DICOM Tag: (0054,1002)
-message CountsSource {
+// DICOM Tag: (0018,9763)
+message PatientMotionCorrected {
 	string value = 1;
 }
-// DICOM Tag: (0018,9765)
-message RandomsCorrected {
+// DICOM Tag: (0018,9764)
+message CountLossNormalizationCorrected {
 	string value = 1;
 }
 // DICOM Tag: (0018,9768)
 message DetectorNormalizationCorrection {
 	string value = 1;
 }
-// DICOM Tag: (0054,1100)
-message RandomsCorrectionMethod {
-	string value = 1;
-}
-// DICOM Tag: (0018,9770)
-message AttenuationCorrectionTemporalRelationship {
+// DICOM Tag: (0018,9758)
+message DecayCorrected {
 	string value = 1;
 }
 // DICOM Tag: (0018,9759)
@@ -30,21 +26,37 @@ message AttenuationCorrected {
 message ScatterCorrected {
 	string value = 1;
 }
-// DICOM Tag: (0018,9763)
-message PatientMotionCorrected {
-	string value = 1;
-}
-// DICOM Tag: (0018,9764)
-message CountLossNormalizationCorrected {
+// DICOM Tag: (0018,9765)
+message RandomsCorrected {
 	string value = 1;
 }
 // DICOM Tag: (0018,9766)
 message NonUniformRadialSamplingCorrected {
 	string value = 1;
 }
+// DICOM Tag: (0018,9770)
+message AttenuationCorrectionTemporalRelationship {
+	string value = 1;
+}
+// DICOM Tag: (0054,1002)
+message CountsSource {
+	string value = 1;
+}
+// DICOM Tag: (0054,1100)
+message RandomsCorrectionMethod {
+	string value = 1;
+}
+// DICOM Tag: (0018,9738)
+message AttenuationCorrectionSource {
+	string value = 1;
+}
 // DICOM Tag: (0054,1105)
 message ScatterCorrectionMethod {
 	string value = 1;
+}
+// DICOM Tag: (0018,9701)
+message DecayCorrectionDateTime {
+	int64 value = 1;
 }
 // DICOM Tag: (0018,9761)
 message DeadTimeCorrected {
@@ -54,38 +66,26 @@ message DeadTimeCorrected {
 message GantryMotionCorrected {
 	string value = 1;
 }
-// DICOM Tag: (0018,9738)
-message AttenuationCorrectionSource {
-	string value = 1;
-}
-// DICOM Tag: (0018,9758)
-message DecayCorrected {
-	string value = 1;
-}
 // DICOM Tag: (0018,9767)
 message SensitivityCalibrated {
 	string value = 1;
 }
-// DICOM Tag: (0018,9701)
-message DecayCorrectionDateTime {
-	int64 value = 1;
-}
 message EnhancedPETCorrectionsModule {
-	PatientMotionCorrected patient_motion_corrected = 1;
-	CountLossNormalizationCorrected count_loss_normalization_corrected = 2;
-	NonUniformRadialSamplingCorrected non_uniform_radial_sampling_corrected = 3;
+	DeadTimeCorrected dead_time_corrected = 1;
+	GantryMotionCorrected gantry_motion_corrected = 2;
+	SensitivityCalibrated sensitivity_calibrated = 3;
 	ScatterCorrectionMethod scatter_correction_method = 4;
-	AttenuationCorrected attenuation_corrected = 5;
-	ScatterCorrected scatter_corrected = 6;
-	AttenuationCorrectionSource attenuation_correction_source = 7;
-	DeadTimeCorrected dead_time_corrected = 8;
-	GantryMotionCorrected gantry_motion_corrected = 9;
-	DecayCorrectionDateTime decay_correction_datetime = 10;
-	DecayCorrected decay_corrected = 11;
-	SensitivityCalibrated sensitivity_calibrated = 12;
-	DetectorNormalizationCorrection detector_normalization_correction = 13;
-	RandomsCorrectionMethod randoms_correction_method = 14;
-	AttenuationCorrectionTemporalRelationship attenuation_correction_temporal_relationship = 15;
-	CountsSource counts_source = 16;
-	RandomsCorrected randoms_corrected = 17;
+	DecayCorrectionDateTime decay_correction_datetime = 5;
+	DetectorNormalizationCorrection detector_normalization_correction = 6;
+	DecayCorrected decay_corrected = 7;
+	AttenuationCorrected attenuation_corrected = 8;
+	ScatterCorrected scatter_corrected = 9;
+	PatientMotionCorrected patient_motion_corrected = 10;
+	CountLossNormalizationCorrected count_loss_normalization_corrected = 11;
+	RandomsCorrected randoms_corrected = 12;
+	NonUniformRadialSamplingCorrected non_uniform_radial_sampling_corrected = 13;
+	AttenuationCorrectionTemporalRelationship attenuation_correction_temporal_relationship = 14;
+	CountsSource counts_source = 15;
+	RandomsCorrectionMethod randoms_correction_method = 16;
+	AttenuationCorrectionSource attenuation_correction_source = 17;
 }
