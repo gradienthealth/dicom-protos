@@ -2,17 +2,26 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html#table_C.8-42
 syntax = "proto3";
 
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
+// DICOM Tag: (3006,0040)
+message ContourSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (3006,0045)
 message ContourOffsetVector {
 	repeated float value = 1;
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
+// DICOM Tag: (3006,0084)
+message ReferencedROINumber {
+	int32 value = 1;
+}
+// DICOM Tag: (3006,0049)
+message AttachedContours {
 	repeated int32 value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
 }
 // DICOM Tag: (3006,0042)
 message ContourGeometricType {
@@ -22,12 +31,8 @@ message ContourGeometricType {
 message NumberOfContourPoints {
 	int32 value = 1;
 }
-// DICOM Tag: (3006,0084)
-message ReferencedROINumber {
-	int32 value = 1;
-}
-// DICOM Tag: (3006,0040)
-message ContourSequence {
+// DICOM Tag: (3006,0039)
+message ROIContourSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -35,45 +40,40 @@ message ContourSequence {
 message ContourNumber {
 	int32 value = 1;
 }
-// DICOM Tag: (3006,0044)
-message ContourSlabThickness {
-	float value = 1;
-}
-// DICOM Tag: (3006,0039)
-message ROIContourSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (3006,0049)
-message AttachedContours {
-	repeated int32 value = 1;
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
 }
 // DICOM Tag: (3006,0016)
 message ContourImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (3006,0044)
+message ContourSlabThickness {
+	float value = 1;
 }
 // DICOM Tag: (3006,0050)
 message ContourData {
 	repeated float value = 1;
 }
 message ROIContourModule {
-	ReferencedFrameNumber referenced_frame_number = 1;
-	ContourGeometricType contour_geometric_type = 2;
-	NumberOfContourPoints number_of_contour_points = 3;
-	ReferencedROINumber referenced_roi_number = 4;
-	ContourSequence contour_sequence = 5;
-	ContourNumber contour_number = 6;
-	ContourSlabThickness contour_slab_thickness = 7;
+	ContourSequence contour_sequence = 1;
+	ContourOffsetVector contour_offset_vector = 2;
+	ContourGeometricType contour_geometric_type = 3;
+	NumberOfContourPoints number_of_contour_points = 4;
+	ReferencedROINumber referenced_roi_number = 5;
+	AttachedContours attached_contours = 6;
+	ReferencedSOPClassUID referenced_sop_class_uid = 7;
 	ROIContourSequence roi_contour_sequence = 8;
-	AttachedContours attached_contours = 9;
-	ContourImageSequence contour_image_sequence = 10;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 11;
-	ContourData contour_data = 12;
-	ReferencedSOPClassUID referenced_sop_class_uid = 13;
-	ContourOffsetVector contour_offset_vector = 14;
+	ContourNumber contour_number = 9;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 10;
+	ContourImageSequence contour_image_sequence = 11;
+	ReferencedFrameNumber referenced_frame_number = 12;
+	ContourSlabThickness contour_slab_thickness = 13;
+	ContourData contour_data = 14;
 }

@@ -11,6 +11,6 @@ message PositionReferenceIndicator {
 	string value = 1;
 }
 message FrameofReferenceModule {
-	PositionReferenceIndicator position_reference_indicator = 1;
-	FrameOfReferenceUID frame_of_reference_uid = 2;
+	FrameOfReferenceUID frame_of_reference_uid = 1;
+	PositionReferenceIndicator position_reference_indicator = 2;
 }

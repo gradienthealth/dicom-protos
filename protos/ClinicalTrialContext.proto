@@ -2,16 +2,36 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.4.html#table_C.34.4-1
 syntax = "proto3";
 
+// DICOM Tag: (0012,0010)
+message ClinicalTrialSponsorName {
+	string value = 1;
+}
+// DICOM Tag: (0012,0030)
+message ClinicalTrialSiteID {
+	string value = 1;
+}
+// DICOM Tag: (0012,0081)
+message ClinicalTrialProtocolEthicsCommitteeName {
+	string value = 1;
+}
+// DICOM Tag: (0012,0086)
+message EthicsCommitteeApprovalEffectivenessStartDate {
+	string value = 1;
+}
 // DICOM Tag: (0012,0020)
 message ClinicalTrialProtocolID {
+	string value = 1;
+}
+// DICOM Tag: (0012,0021)
+message ClinicalTrialProtocolName {
 	string value = 1;
 }
 // DICOM Tag: (0012,0031)
 message ClinicalTrialSiteName {
 	string value = 1;
 }
-// DICOM Tag: (0012,0081)
-message ClinicalTrialProtocolEthicsCommitteeName {
+// DICOM Tag: (0012,0082)
+message ClinicalTrialProtocolEthicsCommitteeApprovalNumber {
 	string value = 1;
 }
 // DICOM Tag: (0012,0087)
@@ -22,35 +42,15 @@ message EthicsCommitteeApprovalEffectivenessEndDate {
 message ClinicalTrialCoordinatingCenterName {
 	string value = 1;
 }
-// DICOM Tag: (0012,0010)
-message ClinicalTrialSponsorName {
-	string value = 1;
-}
-// DICOM Tag: (0012,0021)
-message ClinicalTrialProtocolName {
-	string value = 1;
-}
-// DICOM Tag: (0012,0030)
-message ClinicalTrialSiteID {
-	string value = 1;
-}
-// DICOM Tag: (0012,0082)
-message ClinicalTrialProtocolEthicsCommitteeApprovalNumber {
-	string value = 1;
-}
-// DICOM Tag: (0012,0086)
-message EthicsCommitteeApprovalEffectivenessStartDate {
-	string value = 1;
-}
 message ClinicalTrialContextModule {
-	ClinicalTrialSponsorName clinical_trial_sponsor_name = 1;
-	ClinicalTrialProtocolName clinical_trial_protocol_name = 2;
-	ClinicalTrialSiteID clinical_trial_site_id = 3;
-	ClinicalTrialProtocolEthicsCommitteeApprovalNumber clinical_trial_protocol_ethics_committee_approval_number = 4;
-	EthicsCommitteeApprovalEffectivenessStartDate ethics_committee_approval_effectiveness_start_date = 5;
-	ClinicalTrialProtocolID clinical_trial_protocol_id = 6;
-	ClinicalTrialSiteName clinical_trial_site_name = 7;
-	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 8;
-	EthicsCommitteeApprovalEffectivenessEndDate ethics_committee_approval_effectiveness_end_date = 9;
-	ClinicalTrialCoordinatingCenterName clinical_trial_coordinating_center_name = 10;
+	ClinicalTrialCoordinatingCenterName clinical_trial_coordinating_center_name = 1;
+	ClinicalTrialProtocolID clinical_trial_protocol_id = 2;
+	ClinicalTrialProtocolName clinical_trial_protocol_name = 3;
+	ClinicalTrialSiteName clinical_trial_site_name = 4;
+	ClinicalTrialProtocolEthicsCommitteeApprovalNumber clinical_trial_protocol_ethics_committee_approval_number = 5;
+	EthicsCommitteeApprovalEffectivenessEndDate ethics_committee_approval_effectiveness_end_date = 6;
+	ClinicalTrialSponsorName clinical_trial_sponsor_name = 7;
+	ClinicalTrialSiteID clinical_trial_site_id = 8;
+	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 9;
+	EthicsCommitteeApprovalEffectivenessStartDate ethics_committee_approval_effectiveness_start_date = 10;
 }

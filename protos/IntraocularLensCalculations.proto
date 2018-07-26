@@ -2,173 +2,49 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.html#table_C.8.25.16-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0100)
-message CodeValue {
+// DICOM Tag: (0022,1097)
+message ImplantPartNumber {
 	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0022,1132)
-message SourceOfLensThicknessDataCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1033)
-message KeratometerIndex {
-	float value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0022,0007)
-message SphericalLensPower {
-	float value = 1;
-}
-// DICOM Tag: (0046,0074)
-message SteepKeratometricAxisSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,0008)
-message CylinderLensPower {
-	float value = 1;
-}
-// DICOM Tag: (0022,1029)
-message IOLFormulaDetail {
-	string value = 1;
-}
-// DICOM Tag: (0022,1121)
-message IOLPowerForExactEmmetropia {
-	float value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0022,1128)
-message AnteriorChamberDepthSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1133)
-message SourceOfAnteriorChamberDepthDataCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1090)
-message IOLPowerSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0022,1300)
 message IntraocularLensCalculationsRightEyeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
 	string value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0022,1012)
-message OphthalmicAxialLengthSequence {
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1044)
-message OphthalmicUltrasoundMethodCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1039)
-message RefractiveProcedureOccurred {
-	string value = 1;
-}
-// DICOM Tag: (0022,1130)
-message LensThickness {
-	float value = 1;
-}
-// DICOM Tag: (0022,1250)
-message OphthalmicAxialLengthSelectionMethodCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1054)
-message PredictedRefractiveError {
-	float value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0022,1035)
-message SourceOfOphthalmicAxialLengthCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0022,1093)
-message IOLManufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0022,1096)
-message KeratometryMeasurementTypeCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
 }
 // DICOM Tag: (0008,0117)
 message ContextUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
+// DICOM Tag: (0046,0075)
+message RadiusOfCurvature {
+	double value = 1;
 }
 // DICOM Tag: (0046,0080)
 message FlatKeratometricAxisSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0022,1092)
-message LensConstantSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0046,0046)
+message CornealSize {
+	double value = 1;
 }
-// DICOM Tag: (0022,0009)
-message CylinderAxis {
+// DICOM Tag: (0022,1033)
+message KeratometerIndex {
 	float value = 1;
 }
-// DICOM Tag: (0022,1135)
-message SourceOfRefractiveMeasurementsCodeSequence {
+// DICOM Tag: (0022,1035)
+message SourceOfOphthalmicAxialLengthCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0076)
-message KeratometricPower {
-	double value = 1;
-}
-// DICOM Tag: (0022,1127)
-message LensThicknessSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0075)
-message RadiusOfCurvature {
-	double value = 1;
 }
 // DICOM Tag: (0022,1310)
 message IntraocularLensCalculationsLeftEyeSequence {
@@ -179,8 +55,52 @@ message IntraocularLensCalculationsLeftEyeSequence {
 message TargetRefraction {
 	float value = 1;
 }
-// DICOM Tag: (0022,1040)
-message RefractiveSurgeryTypeCodeSequence {
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0022,1093)
+message IOLManufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0008,1199)
+message ReferencedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1044)
+message OphthalmicUltrasoundMethodCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0046,0076)
+message KeratometricPower {
+	double value = 1;
+}
+// DICOM Tag: (0022,1029)
+message IOLFormulaDetail {
+	string value = 1;
+}
+// DICOM Tag: (0022,1012)
+message OphthalmicAxialLengthSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1133)
+message SourceOfAnteriorChamberDepthDataCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1250)
+message OphthalmicAxialLengthSelectionMethodCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -188,13 +108,65 @@ message RefractiveSurgeryTypeCodeSequence {
 message LongCodeValue {
 	string value = 1;
 }
+// DICOM Tag: (0022,1019)
+message OphthalmicAxialLength {
+	float value = 1;
+}
+// DICOM Tag: (0022,1040)
+message RefractiveSurgeryTypeCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0022,1103)
 message RefractiveErrorBeforeRefractiveSurgeryCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0022,1130)
+message LensThickness {
+	float value = 1;
+}
+// DICOM Tag: (0022,1131)
+message AnteriorChamberDepth {
+	float value = 1;
+}
+// DICOM Tag: (0022,1039)
+message RefractiveProcedureOccurred {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
 // DICOM Tag: (0022,1134)
 message SourceOfRefractiveMeasurementsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1054)
+message PredictedRefractiveError {
+	float value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0022,1135)
+message SourceOfRefractiveMeasurementsCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1053)
+message IOLPower {
+	float value = 1;
+}
+// DICOM Tag: (0022,1128)
+message AnteriorChamberDepthSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0074)
+message SteepKeratometricAxisSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -203,111 +175,139 @@ message IOLFormulaCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0077)
-message KeratometricAxis {
-	double value = 1;
+// DICOM Tag: (0022,1092)
+message LensConstantSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0022,1053)
-message IOLPower {
-	float value = 1;
-}
-// DICOM Tag: (0022,1122)
-message IOLPowerForExactTargetRefraction {
-	float value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
 	string value = 1;
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0022,1019)
-message OphthalmicAxialLength {
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0022,1132)
+message SourceOfLensThicknessDataCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,0007)
+message SphericalLensPower {
+	float value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
 	float value = 1;
 }
 // DICOM Tag: (0022,1095)
 message ImplantName {
 	string value = 1;
 }
-// DICOM Tag: (0046,0046)
-message CornealSize {
-	double value = 1;
+// DICOM Tag: (0022,1121)
+message IOLPowerForExactEmmetropia {
+	float value = 1;
 }
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
+// DICOM Tag: (0022,1122)
+message IOLPowerForExactTargetRefraction {
+	float value = 1;
+}
+// DICOM Tag: (0022,1127)
+message LensThicknessSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0022,1131)
-message AnteriorChamberDepth {
-	float value = 1;
-}
-// DICOM Tag: (0022,1097)
-message ImplantPartNumber {
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
 	string value = 1;
 }
+// DICOM Tag: (0022,0008)
+message CylinderLensPower {
+	float value = 1;
+}
+// DICOM Tag: (0046,0077)
+message KeratometricAxis {
+	double value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0022,1096)
+message KeratometryMeasurementTypeCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0022,1090)
+message IOLPowerSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 message IntraocularLensCalculationsModule {
-	SphericalLensPower spherical_lens_power = 1;
-	SteepKeratometricAxisSequence steep_keratometric_axis_sequence = 2;
-	EquivalentCodeSequence equivalent_code_sequence = 3;
-	MappingResourceUID mapping_resource_uid = 4;
-	AnteriorChamberDepthSequence anterior_chamber_depth_sequence = 5;
-	CylinderLensPower cylinder_lens_power = 6;
-	IOLFormulaDetail iol_formula_detail = 7;
-	IOLPowerForExactEmmetropia iol_power_for_exact_emmetropia = 8;
-	IntraocularLensCalculationsRightEyeSequence intraocular_lens_calculations_right_eye_sequence = 9;
-	URNCodeValue urn_code_value = 10;
-	MappingResourceName mapping_resource_name = 11;
-	SourceOfAnteriorChamberDepthDataCodeSequence source_of_anterior_chamber_depth_data_code_sequence = 12;
-	IOLPowerSequence iol_power_sequence = 13;
-	OphthalmicAxialLengthSequence ophthalmic_axial_length_sequence = 14;
-	OphthalmicUltrasoundMethodCodeSequence ophthalmic_ultrasound_method_code_sequence = 15;
-	RefractiveProcedureOccurred refractive_procedure_occurred = 16;
-	LensThickness lens_thickness = 17;
-	OphthalmicAxialLengthSelectionMethodCodeSequence ophthalmic_axial_length_selection_method_code_sequence = 18;
-	MappingResource mapping_resource = 19;
-	SourceOfOphthalmicAxialLengthCodeSequence source_of_ophthalmic_axial_length_code_sequence = 20;
-	IOLManufacturer iol_manufacturer = 21;
-	PredictedRefractiveError predicted_refractive_error = 22;
-	CodeMeaning code_meaning = 23;
-	ContextUID context_uid = 24;
-	ReferencedSOPClassUID referenced_sop_class_uid = 25;
-	KeratometryMeasurementTypeCodeSequence keratometry_measurement_type_code_sequence = 26;
-	CylinderAxis cylinder_axis = 27;
-	SourceOfRefractiveMeasurementsCodeSequence source_of_refractive_measurements_code_sequence = 28;
-	KeratometricPower keratometric_power = 29;
-	FlatKeratometricAxisSequence flat_keratometric_axis_sequence = 30;
-	LensConstantSequence lens_constant_sequence = 31;
-	TargetRefraction target_refraction = 32;
-	RefractiveSurgeryTypeCodeSequence refractive_surgery_type_code_sequence = 33;
-	LongCodeValue long_code_value = 34;
-	LensThicknessSequence lens_thickness_sequence = 35;
-	RadiusOfCurvature radius_of_curvature = 36;
-	IntraocularLensCalculationsLeftEyeSequence intraocular_lens_calculations_left_eye_sequence = 37;
-	RefractiveErrorBeforeRefractiveSurgeryCodeSequence refractive_error_before_refractive_surgery_code_sequence = 38;
-	SourceOfRefractiveMeasurementsSequence source_of_refractive_measurements_sequence = 39;
-	IOLFormulaCodeSequence iol_formula_code_sequence = 40;
-	CodingSchemeVersion coding_scheme_version = 41;
+	ReferencedSOPSequence referenced_sop_sequence = 1;
+	OphthalmicUltrasoundMethodCodeSequence ophthalmic_ultrasound_method_code_sequence = 2;
+	KeratometricPower keratometric_power = 3;
+	IOLFormulaDetail iol_formula_detail = 4;
+	OphthalmicAxialLengthSequence ophthalmic_axial_length_sequence = 5;
+	MappingResource mapping_resource = 6;
+	MappingResourceName mapping_resource_name = 7;
+	SourceOfAnteriorChamberDepthDataCodeSequence source_of_anterior_chamber_depth_data_code_sequence = 8;
+	OphthalmicAxialLengthSelectionMethodCodeSequence ophthalmic_axial_length_selection_method_code_sequence = 9;
+	LongCodeValue long_code_value = 10;
+	OphthalmicAxialLength ophthalmic_axial_length = 11;
+	LensThickness lens_thickness = 12;
+	AnteriorChamberDepth anterior_chamber_depth = 13;
+	RefractiveSurgeryTypeCodeSequence refractive_surgery_type_code_sequence = 14;
+	RefractiveErrorBeforeRefractiveSurgeryCodeSequence refractive_error_before_refractive_surgery_code_sequence = 15;
+	SourceOfRefractiveMeasurementsSequence source_of_refractive_measurements_sequence = 16;
+	PredictedRefractiveError predicted_refractive_error = 17;
+	RefractiveProcedureOccurred refractive_procedure_occurred = 18;
+	CodingSchemeDesignator coding_scheme_designator = 19;
+	IOLPower iol_power = 20;
+	ContextGroupLocalVersion context_group_local_version = 21;
+	SourceOfRefractiveMeasurementsCodeSequence source_of_refractive_measurements_code_sequence = 22;
+	IOLFormulaCodeSequence iol_formula_code_sequence = 23;
+	LensConstantSequence lens_constant_sequence = 24;
+	AnteriorChamberDepthSequence anterior_chamber_depth_sequence = 25;
+	SteepKeratometricAxisSequence steep_keratometric_axis_sequence = 26;
+	MappingResourceUID mapping_resource_uid = 27;
+	ReferencedSOPClassUID referenced_sop_class_uid = 28;
+	CodeMeaning code_meaning = 29;
+	URNCodeValue urn_code_value = 30;
+	CylinderAxis cylinder_axis = 31;
+	ImplantName implant_name = 32;
+	SourceOfLensThicknessDataCodeSequence source_of_lens_thickness_data_code_sequence = 33;
+	SphericalLensPower spherical_lens_power = 34;
+	IOLPowerForExactEmmetropia iol_power_for_exact_emmetropia = 35;
+	IOLPowerForExactTargetRefraction iol_power_for_exact_target_refraction = 36;
+	CylinderLensPower cylinder_lens_power = 37;
+	KeratometricAxis keratometric_axis = 38;
+	LensThicknessSequence lens_thickness_sequence = 39;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 40;
+	IOLPowerSequence iol_power_sequence = 41;
 	ContextGroupVersion context_group_version = 42;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 43;
-	KeratometricAxis keratometric_axis = 44;
-	IOLPower iol_power = 45;
-	IOLPowerForExactTargetRefraction iol_power_for_exact_target_refraction = 46;
-	CornealSize corneal_size = 47;
-	ReferencedSOPSequence referenced_sop_sequence = 48;
-	OphthalmicAxialLength ophthalmic_axial_length = 49;
-	ImplantName implant_name = 50;
-	AnteriorChamberDepth anterior_chamber_depth = 51;
-	ImplantPartNumber implant_part_number = 52;
-	CodeValue code_value = 53;
-	CodingSchemeDesignator coding_scheme_designator = 54;
-	SourceOfLensThicknessDataCodeSequence source_of_lens_thickness_data_code_sequence = 55;
-	KeratometerIndex keratometer_index = 56;
-	ContextGroupLocalVersion context_group_local_version = 57;
+	KeratometryMeasurementTypeCodeSequence keratometry_measurement_type_code_sequence = 43;
+	EquivalentCodeSequence equivalent_code_sequence = 44;
+	ContextUID context_uid = 45;
+	RadiusOfCurvature radius_of_curvature = 46;
+	FlatKeratometricAxisSequence flat_keratometric_axis_sequence = 47;
+	ImplantPartNumber implant_part_number = 48;
+	IntraocularLensCalculationsRightEyeSequence intraocular_lens_calculations_right_eye_sequence = 49;
+	CodingSchemeVersion coding_scheme_version = 50;
+	SourceOfOphthalmicAxialLengthCodeSequence source_of_ophthalmic_axial_length_code_sequence = 51;
+	IntraocularLensCalculationsLeftEyeSequence intraocular_lens_calculations_left_eye_sequence = 52;
+	CornealSize corneal_size = 53;
+	KeratometerIndex keratometer_index = 54;
+	IOLManufacturer iol_manufacturer = 55;
+	TargetRefraction target_refraction = 56;
+	CodeValue code_value = 57;
 }

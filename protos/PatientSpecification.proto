@@ -2,50 +2,20 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.5.html#table_C.34.5-1
 syntax = "proto3";
 
-// DICOM Tag: (0072,0060)
-message SelectorATValue {
+// DICOM Tag: (0072,0063)
+message SelectorDTValue {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0072,0066)
+message SelectorLOValue {
 	repeated string value = 1;
 }
-// DICOM Tag: (0072,0061)
-message SelectorDAValue {
-	repeated string value = 1;
-}
-// DICOM Tag: (0072,0080)
-message SelectorCodeSequenceValue {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0082,0035)
-message RecommendedDefaultValueSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0072,0028)
-message SelectorValueNumber {
-	uint32 value = 1;
-}
-// DICOM Tag: (0072,0052)
-message SelectorSequencePointer {
-	repeated string value = 1;
-}
-// DICOM Tag: (0082,0037)
-message ConstraintViolationCondition {
+// DICOM Tag: (0072,0068)
+message SelectorLTValue {
 	string value = 1;
 }
-// DICOM Tag: (0072,0074)
-message SelectorFDValue {
-	repeated double value = 1;
-}
-// DICOM Tag: (0072,0076)
-message SelectorFLValue {
-	repeated float value = 1;
-}
-// DICOM Tag: (0072,0073)
-message SelectorODValue {
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
 	string value = 1;
 }
 // DICOM Tag: (0008,0121)
@@ -53,76 +23,50 @@ message EquivalentCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0082,0018)
-message SelectorAttributeName {
-	string value = 1;
+// DICOM Tag: (0018,9911)
+message PatientSpecificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0082,0019)
 message SelectorAttributeKeyword {
 	string value = 1;
 }
-// DICOM Tag: (0072,0026)
-message SelectorAttribute {
-	string value = 1;
+// DICOM Tag: (0072,0054)
+message SelectorSequencePointerPrivateCreator {
+	repeated string value = 1;
 }
-// DICOM Tag: (0082,0032)
-message ConstraintType {
+// DICOM Tag: (0082,0035)
+message RecommendedDefaultValueSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
 	string value = 1;
 }
 // DICOM Tag: (0072,0065)
 message SelectorOBValue {
 	string value = 1;
 }
-// DICOM Tag: (0072,0075)
-message SelectorOLValue {
-	int32 value = 1;
+// DICOM Tag: (0072,0071)
+message SelectorURValue {
+	string value = 1;
 }
 // DICOM Tag: (0072,0070)
 message SelectorUTValue {
 	string value = 1;
 }
-// DICOM Tag: (0072,0063)
-message SelectorDTValue {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0082,0036)
+message ConstraintViolationSignificance {
 	string value = 1;
 }
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0072,0073)
+message SelectorODValue {
 	string value = 1;
 }
-// DICOM Tag: (0072,0050)
-message SelectorAttributeVR {
-	string value = 1;
-}
-// DICOM Tag: (0074,1057)
-message SelectorSequencePointerItems {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0072,0068)
-message SelectorLTValue {
-	string value = 1;
-}
-// DICOM Tag: (0072,0071)
-message SelectorURValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0072,0056)
-message SelectorAttributePrivateCreator {
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
 	string value = 1;
 }
 // DICOM Tag: (0072,0069)
@@ -130,123 +74,179 @@ message SelectorOWValue {
 	bytes value = 1;
 	int32 word_size = 2;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0082,0033)
-message SpecificationSelectionGuidance {
-	string value = 1;
-}
-// DICOM Tag: (0018,9911)
-message PatientSpecificationSequence {
+// DICOM Tag: (0082,0034)
+message ConstraintValueSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0082,0036)
-message ConstraintViolationSignificance {
+// DICOM Tag: (0072,0076)
+message SelectorFLValue {
+	repeated float value = 1;
+}
+// DICOM Tag: (0072,0067)
+message SelectorOFValue {
 	string value = 1;
 }
-// DICOM Tag: (0072,0066)
-message SelectorLOValue {
+// DICOM Tag: (0072,0062)
+message SelectorCSValue {
 	repeated string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
 	string value = 1;
 }
 // DICOM Tag: (0008,0117)
 message ContextUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
+// DICOM Tag: (0082,0033)
+message SpecificationSelectionGuidance {
 	string value = 1;
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
+// DICOM Tag: (0074,1057)
+message SelectorSequencePointerItems {
+	repeated int32 value = 1;
 }
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
+// DICOM Tag: (0082,0032)
+message ConstraintType {
 	string value = 1;
 }
-// DICOM Tag: (0072,0054)
-message SelectorSequencePointerPrivateCreator {
-	repeated string value = 1;
-}
-// DICOM Tag: (0082,0034)
-message ConstraintValueSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0072,0062)
-message SelectorCSValue {
+// DICOM Tag: (0072,0060)
+message SelectorATValue {
 	repeated string value = 1;
 }
 // DICOM Tag: (0072,0072)
 message SelectorDSValue {
 	repeated float value = 1;
 }
-// DICOM Tag: (0072,0064)
-message SelectorISValue {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0072,0067)
-message SelectorOFValue {
-	string value = 1;
+// DICOM Tag: (0072,0075)
+message SelectorOLValue {
+	int32 value = 1;
 }
 // DICOM Tag: (0072,0078)
 message SelectorULValue {
 	repeated uint32 value = 1;
 }
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0072,0028)
+message SelectorValueNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0072,0056)
+message SelectorAttributePrivateCreator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0072,0080)
+message SelectorCodeSequenceValue {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0082,0018)
+message SelectorAttributeName {
+	string value = 1;
+}
+// DICOM Tag: (0072,0061)
+message SelectorDAValue {
+	repeated string value = 1;
+}
+// DICOM Tag: (0072,0074)
+message SelectorFDValue {
+	repeated double value = 1;
+}
+// DICOM Tag: (0082,0037)
+message ConstraintViolationCondition {
+	string value = 1;
+}
+// DICOM Tag: (0072,0064)
+message SelectorISValue {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0072,0050)
+message SelectorAttributeVR {
+	string value = 1;
+}
+// DICOM Tag: (0072,0026)
+message SelectorAttribute {
+	string value = 1;
+}
+// DICOM Tag: (0072,0052)
+message SelectorSequencePointer {
+	repeated string value = 1;
+}
 message PatientSpecificationModule {
-	SelectorDSValue selector_ds_value = 1;
-	SelectorISValue selector_is_value = 2;
-	SelectorOFValue selector_of_value = 3;
-	SelectorULValue selector_ul_value = 4;
-	CodingSchemeVersion coding_scheme_version = 5;
+	SelectorLTValue selector_lt_value = 1;
+	CodingSchemeDesignator coding_scheme_designator = 2;
+	EquivalentCodeSequence equivalent_code_sequence = 3;
+	PatientSpecificationSequence patient_specification_sequence = 4;
+	SelectorAttributeKeyword selector_attribute_keyword = 5;
 	SelectorSequencePointerPrivateCreator selector_sequence_pointer_private_creator = 6;
-	ConstraintValueSequence constraint_value_sequence = 7;
-	SelectorCSValue selector_cs_value = 8;
+	SelectorDTValue selector_dt_value = 7;
+	SelectorLOValue selector_lo_value = 8;
 	RecommendedDefaultValueSequence recommended_default_value_sequence = 9;
-	SelectorATValue selector_at_value = 10;
-	SelectorDAValue selector_da_value = 11;
-	SelectorCodeSequenceValue selector_code_sequence_value = 12;
-	SelectorFDValue selector_fd_value = 13;
-	SelectorFLValue selector_fl_value = 14;
+	SelectorOBValue selector_ob_value = 10;
+	SelectorURValue selector_ur_value = 11;
+	SelectorUTValue selector_ut_value = 12;
+	MappingResourceName mapping_resource_name = 13;
+	ConstraintViolationSignificance constraint_violation_significance = 14;
 	SelectorODValue selector_od_value = 15;
-	EquivalentCodeSequence equivalent_code_sequence = 16;
-	ContextGroupLocalVersion context_group_local_version = 17;
-	SelectorValueNumber selector_value_number = 18;
-	SelectorSequencePointer selector_sequence_pointer = 19;
-	ConstraintViolationCondition constraint_violation_condition = 20;
-	ConstraintType constraint_type = 21;
-	SelectorOBValue selector_ob_value = 22;
-	SelectorOLValue selector_ol_value = 23;
-	SelectorUTValue selector_ut_value = 24;
-	CodeValue code_value = 25;
-	SelectorAttributeName selector_attribute_name = 26;
-	SelectorAttributeKeyword selector_attribute_keyword = 27;
-	SelectorAttribute selector_attribute = 28;
-	URNCodeValue urn_code_value = 29;
-	SelectorDTValue selector_dt_value = 30;
-	CodingSchemeDesignator coding_scheme_designator = 31;
-	SelectorURValue selector_ur_value = 32;
-	MappingResourceUID mapping_resource_uid = 33;
-	MappingResourceName mapping_resource_name = 34;
-	SelectorAttributeVR selector_attribute_vr = 35;
-	SelectorSequencePointerItems selector_sequence_pointer_items = 36;
-	SelectorLTValue selector_lt_value = 37;
-	SelectorAttributePrivateCreator selector_attribute_private_creator = 38;
-	SelectorOWValue selector_ow_value = 39;
-	CodeMeaning code_meaning = 40;
-	LongCodeValue long_code_value = 41;
-	ContextUID context_uid = 42;
-	MappingResource mapping_resource = 43;
-	ContextGroupVersion context_group_version = 44;
-	SpecificationSelectionGuidance specification_selection_guidance = 45;
-	PatientSpecificationSequence patient_specification_sequence = 46;
-	ConstraintViolationSignificance constraint_violation_significance = 47;
-	SelectorLOValue selector_lo_value = 48;
+	CodingSchemeVersion coding_scheme_version = 16;
+	ConstraintValueSequence constraint_value_sequence = 17;
+	SelectorFLValue selector_fl_value = 18;
+	SelectorOFValue selector_of_value = 19;
+	SelectorOWValue selector_ow_value = 20;
+	ContextUID context_uid = 21;
+	SpecificationSelectionGuidance specification_selection_guidance = 22;
+	SelectorSequencePointerItems selector_sequence_pointer_items = 23;
+	ConstraintType constraint_type = 24;
+	SelectorATValue selector_at_value = 25;
+	SelectorCSValue selector_cs_value = 26;
+	CodeMeaning code_meaning = 27;
+	SelectorULValue selector_ul_value = 28;
+	CodeValue code_value = 29;
+	LongCodeValue long_code_value = 30;
+	SelectorValueNumber selector_value_number = 31;
+	SelectorAttributePrivateCreator selector_attribute_private_creator = 32;
+	SelectorDSValue selector_ds_value = 33;
+	SelectorOLValue selector_ol_value = 34;
+	ContextGroupLocalVersion context_group_local_version = 35;
+	SelectorAttributeName selector_attribute_name = 36;
+	SelectorDAValue selector_da_value = 37;
+	SelectorFDValue selector_fd_value = 38;
+	SelectorCodeSequenceValue selector_code_sequence_value = 39;
+	ContextGroupVersion context_group_version = 40;
+	URNCodeValue urn_code_value = 41;
+	MappingResource mapping_resource = 42;
+	MappingResourceUID mapping_resource_uid = 43;
+	SelectorAttributeVR selector_attribute_vr = 44;
+	SelectorAttribute selector_attribute = 45;
+	SelectorSequencePointer selector_sequence_pointer = 46;
+	ConstraintViolationCondition constraint_violation_condition = 47;
+	SelectorISValue selector_is_value = 48;
 }

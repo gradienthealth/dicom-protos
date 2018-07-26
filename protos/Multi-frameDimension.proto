@@ -2,8 +2,21 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.17.html#table_C.7.6.17-1
 syntax = "proto3";
 
+// DICOM Tag: (0020,9222)
+message DimensionIndexSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0020,9165)
 message DimensionIndexPointer {
+	string value = 1;
+}
+// DICOM Tag: (0020,9311)
+message DimensionOrganizationType {
+	string value = 1;
+}
+// DICOM Tag: (0020,9164)
+message DimensionOrganizationUID {
 	string value = 1;
 }
 // DICOM Tag: (0020,9213)
@@ -18,19 +31,6 @@ message FunctionalGroupPointer {
 message FunctionalGroupPrivateCreator {
 	string value = 1;
 }
-// DICOM Tag: (0020,9311)
-message DimensionOrganizationType {
-	string value = 1;
-}
-// DICOM Tag: (0020,9164)
-message DimensionOrganizationUID {
-	string value = 1;
-}
-// DICOM Tag: (0020,9222)
-message DimensionIndexSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0020,9421)
 message DimensionDescriptionLabel {
 	string value = 1;
@@ -41,13 +41,13 @@ message DimensionOrganizationSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message Multi-frameDimensionModule {
-	DimensionOrganizationSequence dimension_organization_sequence = 1;
-	DimensionOrganizationUID dimension_organization_uid = 2;
+	DimensionIndexPointer dimension_index_pointer = 1;
+	DimensionOrganizationType dimension_organization_type = 2;
 	DimensionIndexSequence dimension_index_sequence = 3;
-	DimensionDescriptionLabel dimension_description_label = 4;
-	DimensionOrganizationType dimension_organization_type = 5;
-	DimensionIndexPointer dimension_index_pointer = 6;
-	DimensionIndexPrivateCreator dimension_index_private_creator = 7;
-	FunctionalGroupPointer functional_group_pointer = 8;
-	FunctionalGroupPrivateCreator functional_group_private_creator = 9;
+	DimensionIndexPrivateCreator dimension_index_private_creator = 4;
+	FunctionalGroupPointer functional_group_pointer = 5;
+	FunctionalGroupPrivateCreator functional_group_private_creator = 6;
+	DimensionDescriptionLabel dimension_description_label = 7;
+	DimensionOrganizationSequence dimension_organization_sequence = 8;
+	DimensionOrganizationUID dimension_organization_uid = 9;
 }

@@ -2,6 +2,14 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.14.html#table_C.8-14
 syntax = "proto3";
 
+// DICOM Tag: (0054,0038)
+message PauseBetweenFrames {
+	int32 value = 1;
+}
+// DICOM Tag: (0054,0033)
+message NumberOfFramesInPhase {
+	uint32 value = 1;
+}
 // DICOM Tag: (0054,0210)
 message TriggerVector {
 	repeated int32 value = 1;
@@ -27,21 +35,13 @@ message PhaseDelay {
 message ActualFrameDuration {
 	int32 value = 1;
 }
-// DICOM Tag: (0054,0038)
-message PauseBetweenFrames {
-	int32 value = 1;
-}
-// DICOM Tag: (0054,0033)
-message NumberOfFramesInPhase {
-	uint32 value = 1;
-}
 message NMPhaseModule {
-	TriggerVector trigger_vector = 1;
-	NumberOfTriggersInPhase number_of_triggers_in_phase = 2;
-	PhaseDescription phase_description = 3;
-	PhaseInformationSequence phase_information_sequence = 4;
-	PhaseDelay phase_delay = 5;
-	ActualFrameDuration actual_frame_duration = 6;
-	PauseBetweenFrames pause_between_frames = 7;
-	NumberOfFramesInPhase number_of_frames_in_phase = 8;
+	PhaseDelay phase_delay = 1;
+	ActualFrameDuration actual_frame_duration = 2;
+	PauseBetweenFrames pause_between_frames = 3;
+	NumberOfFramesInPhase number_of_frames_in_phase = 4;
+	TriggerVector trigger_vector = 5;
+	NumberOfTriggersInPhase number_of_triggers_in_phase = 6;
+	PhaseDescription phase_description = 7;
+	PhaseInformationSequence phase_information_sequence = 8;
 }

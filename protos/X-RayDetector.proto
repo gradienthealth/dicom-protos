@@ -2,36 +2,24 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.5.html#table_C.8.19.5-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,7006)
-message DetectorDescription {
+// DICOM Tag: (0018,7024)
+message DetectorActiveShape {
 	string value = 1;
-}
-// DICOM Tag: (0018,7012)
-message DetectorTimeSinceLastExposure {
-	float value = 1;
-}
-// DICOM Tag: (0018,7022)
-message DetectorElementSpacing {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,7026)
-message DetectorActiveDimensions {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1412)
-message TargetExposureIndex {
-	float value = 1;
 }
 // DICOM Tag: (0018,1413)
 message DeviationIndex {
 	float value = 1;
 }
-// DICOM Tag: (0018,9429)
-message PhysicalDetectorSize {
-	repeated float value = 1;
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
 }
-// DICOM Tag: (0018,9430)
-message PositionOfIsocenterProjection {
+// DICOM Tag: (0018,7008)
+message DetectorMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,7022)
+message DetectorElementSpacing {
 	repeated float value = 1;
 }
 // DICOM Tag: (0018,7001)
@@ -42,20 +30,48 @@ message DetectorTemperature {
 message Sensitivity {
 	float value = 1;
 }
-// DICOM Tag: (0018,7005)
-message DetectorConfiguration {
+// DICOM Tag: (0018,7026)
+message DetectorActiveDimensions {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,9429)
+message PhysicalDetectorSize {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7012)
+message DetectorTimeSinceLastExposure {
+	float value = 1;
+}
+// DICOM Tag: (0018,7000)
+message DetectorConditionsNominalFlag {
 	string value = 1;
 }
-// DICOM Tag: (0018,7008)
-message DetectorMode {
+// DICOM Tag: (0018,9430)
+message PositionOfIsocenterProjection {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7006)
+message DetectorDescription {
 	string value = 1;
 }
 // DICOM Tag: (0018,7010)
 message ExposuresOnDetectorSinceLastCalibration {
 	int32 value = 1;
 }
-// DICOM Tag: (0018,7000)
-message DetectorConditionsNominalFlag {
+// DICOM Tag: (0018,7011)
+message ExposuresOnDetectorSinceManufactured {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,7005)
+message DetectorConfiguration {
 	string value = 1;
 }
 // DICOM Tag: (0018,7020)
@@ -66,41 +82,25 @@ message DetectorElementPhysicalSize {
 message DetectorActiveOrigin {
 	repeated float value = 1;
 }
-// DICOM Tag: (0018,1411)
-message ExposureIndex {
-	float value = 1;
-}
-// DICOM Tag: (0018,7004)
-message DetectorType {
-	string value = 1;
-}
-// DICOM Tag: (0018,7011)
-message ExposuresOnDetectorSinceManufactured {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,7024)
-message DetectorActiveShape {
-	string value = 1;
-}
 message X-RayDetectorModule {
-	DetectorType detector_type = 1;
-	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 2;
-	DetectorActiveShape detector_active_shape = 3;
-	PhysicalDetectorSize physical_detector_size = 4;
-	DetectorDescription detector_description = 5;
-	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 6;
+	DetectorConfiguration detector_configuration = 1;
+	DetectorElementPhysicalSize detector_element_physical_size = 2;
+	DetectorActiveOrigin detector_active_origin = 3;
+	TargetExposureIndex target_exposure_index = 4;
+	DetectorType detector_type = 5;
+	DetectorMode detector_mode = 6;
 	DetectorElementSpacing detector_element_spacing = 7;
-	DetectorActiveDimensions detector_active_dimensions = 8;
-	TargetExposureIndex target_exposure_index = 9;
-	DeviationIndex deviation_index = 10;
-	PositionOfIsocenterProjection position_of_isocenter_projection = 11;
-	DetectorTemperature detector_temperature = 12;
-	Sensitivity sensitivity = 13;
-	DetectorConfiguration detector_configuration = 14;
-	DetectorMode detector_mode = 15;
-	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 16;
-	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 17;
-	DetectorElementPhysicalSize detector_element_physical_size = 18;
-	DetectorActiveOrigin detector_active_origin = 19;
-	ExposureIndex exposure_index = 20;
+	DetectorActiveShape detector_active_shape = 8;
+	DeviationIndex deviation_index = 9;
+	PhysicalDetectorSize physical_detector_size = 10;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 11;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 12;
+	DetectorTemperature detector_temperature = 13;
+	Sensitivity sensitivity = 14;
+	DetectorActiveDimensions detector_active_dimensions = 15;
+	ExposureIndex exposure_index = 16;
+	PositionOfIsocenterProjection position_of_isocenter_projection = 17;
+	DetectorDescription detector_description = 18;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 19;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 20;
 }

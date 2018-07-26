@@ -24,9 +24,9 @@ message DisplayEnvironmentSpatialPosition {
 	repeated double value = 1;
 }
 message StructuredDisplayAnnotationModule {
-	UnformattedTextValue unformatted_text_value = 1;
-	DisplayEnvironmentSpatialPosition display_environment_spatial_position = 2;
-	BoundingBoxTextHorizontalJustification bounding_box_text_horizontal_justification = 3;
-	GraphicLayerRecommendedDisplayCIELabValue graphic_layer_recommended_display_cielab_value = 4;
-	StructuredDisplayTextBoxSequence structured_display_text_box_sequence = 5;
+	StructuredDisplayTextBoxSequence structured_display_text_box_sequence = 1;
+	UnformattedTextValue unformatted_text_value = 2;
+	DisplayEnvironmentSpatialPosition display_environment_spatial_position = 3;
+	BoundingBoxTextHorizontalJustification bounding_box_text_horizontal_justification = 4;
+	GraphicLayerRecommendedDisplayCIELabValue graphic_layer_recommended_display_cielab_value = 5;
 }

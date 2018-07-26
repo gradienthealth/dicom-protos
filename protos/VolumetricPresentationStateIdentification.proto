@@ -2,125 +2,34 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.22.html#table_C.11.22-1
 syntax = "proto3";
 
-// DICOM Tag: (0070,1101)
-message PresentationDisplayCollectionUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0070,0087)
-message AlternateContentDescriptionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,1102)
-message PersonAddress {
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
 	string value = 1;
 }
 // DICOM Tag: (0070,1102)
 message PresentationSequenceCollectionUID {
 	string value = 1;
 }
-// DICOM Tag: (0070,0083)
-message PresentationCreationTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0070,0081)
-message ContentDescription {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0070,0080)
-message ContentLabel {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
 // DICOM Tag: (0008,0117)
 message ContextUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
+// DICOM Tag: (0070,0087)
+message AlternateContentDescriptionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,1104)
-message PersonTelecomInformation {
-	string value = 1;
-}
-// DICOM Tag: (0070,0082)
-message PresentationCreationDate {
-	string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0040,1103)
-message PersonTelephoneNumbers {
-	repeated string value = 1;
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
 }
 // DICOM Tag: (0070,1103)
 message PresentationSequencePositionIndex {
 	uint32 value = 1;
 }
-// DICOM Tag: (0008,0006)
-message LanguageCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0082)
-message InstitutionCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0070,1104)
-message RenderedImageReferenceSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
+// DICOM Tag: (0070,0080)
+message ContentLabel {
+	string value = 1;
 }
 // DICOM Tag: (0008,0121)
 message EquivalentCodeSequence {
@@ -131,17 +40,78 @@ message EquivalentCodeSequence {
 message ContentCreatorName {
 	string value = 1;
 }
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,1104)
+message PersonTelecomInformation {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0040,1102)
+message PersonAddress {
+	string value = 1;
+}
+// DICOM Tag: (0040,1103)
+message PersonTelephoneNumbers {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,0082)
+message InstitutionCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0083)
+message PresentationCreationTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0070,0081)
+message ContentDescription {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
 // DICOM Tag: (0040,1101)
 message PersonIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
 	int64 value = 1;
 }
 // DICOM Tag: (0070,0086)
@@ -149,45 +119,75 @@ message ContentCreatorIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
+// DICOM Tag: (0070,1104)
+message RenderedImageReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,1101)
+message PresentationDisplayCollectionUID {
 	string value = 1;
 }
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0006)
+message LanguageCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0070,0082)
+message PresentationCreationDate {
+	string value = 1;
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
 message VolumetricPresentationStateIdentificationModule {
-	InstitutionName institution_name = 1;
-	ReferencedSOPClassUID referenced_sop_class_uid = 2;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 3;
-	PresentationDisplayCollectionUID presentation_display_collection_uid = 4;
-	CodingSchemeDesignator coding_scheme_designator = 5;
-	ContentDescription content_description = 6;
-	LongCodeValue long_code_value = 7;
-	MappingResource mapping_resource = 8;
-	ContextGroupVersion context_group_version = 9;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 10;
-	PersonAddress person's_address = 11;
+	PresentationDisplayCollectionUID presentation_display_collection_uid = 1;
+	CodingSchemeVersion coding_scheme_version = 2;
+	ContextGroupVersion context_group_version = 3;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 4;
+	RenderedImageReferenceSequence rendered_image_reference_sequence = 5;
+	PresentationCreationDate presentation_creation_date = 6;
+	InstanceNumber instance_number = 7;
+	LanguageCodeSequence language_code_sequence = 8;
+	InstitutionName institution_name = 9;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 10;
+	CodeMeaning code_meaning = 11;
 	PresentationSequenceCollectionUID presentation_sequence_collection_uid = 12;
-	PresentationCreationTime presentation_creation_time = 13;
-	CodeValue code_value = 14;
-	URNCodeValue urn_code_value = 15;
+	PresentationSequencePositionIndex presentation_sequence_position_index = 13;
+	ContentLabel content_label = 14;
+	EquivalentCodeSequence equivalent_code_sequence = 15;
 	ContextUID context_uid = 16;
-	ContentLabel content_label = 17;
-	CodingSchemeVersion coding_scheme_version = 18;
-	CodeMeaning code_meaning = 19;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 17;
+	ReferencedFrameNumber referenced_frame_number = 18;
+	CodingSchemeDesignator coding_scheme_designator = 19;
 	MappingResourceUID mapping_resource_uid = 20;
-	MappingResourceName mapping_resource_name = 21;
-	PersonTelecomInformation person's_telecom_information = 22;
-	PresentationCreationDate presentation_creation_date = 23;
-	PresentationSequencePositionIndex presentation_sequence_position_index = 24;
-	PersonTelephoneNumbers person's_telephone_numbers = 25;
-	InstitutionCodeSequence institution_code_sequence = 26;
-	RenderedImageReferenceSequence rendered_image_reference_sequence = 27;
-	LanguageCodeSequence language_code_sequence = 28;
-	EquivalentCodeSequence equivalent_code_sequence = 29;
-	ContentCreatorName content_creator's_name = 30;
-	PersonIdentificationCodeSequence person_identification_code_sequence = 31;
-	InstanceNumber instance_number = 32;
-	ContextGroupLocalVersion context_group_local_version = 33;
-	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 34;
-	InstitutionAddress institution_address = 35;
-	ReferencedFrameNumber referenced_frame_number = 36;
+	ContentCreatorName content_creator's_name = 21;
+	InstitutionAddress institution_address = 22;
+	ReferencedSOPClassUID referenced_sop_class_uid = 23;
+	PersonTelecomInformation person's_telecom_information = 24;
+	PersonAddress person's_address = 25;
+	PersonTelephoneNumbers person's_telephone_numbers = 26;
+	InstitutionCodeSequence institution_code_sequence = 27;
+	PresentationCreationTime presentation_creation_time = 28;
+	ContentDescription content_description = 29;
+	URNCodeValue urn_code_value = 30;
+	MappingResource mapping_resource = 31;
+	MappingResourceName mapping_resource_name = 32;
+	CodeValue code_value = 33;
+	LongCodeValue long_code_value = 34;
+	ContextGroupLocalVersion context_group_local_version = 35;
+	PersonIdentificationCodeSequence person_identification_code_sequence = 36;
 }

@@ -2,63 +2,10 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.23.html#table_C.11.23-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0028,1056)
-message VOILUTFunction {
-	string value = 1;
-}
-// DICOM Tag: (0070,1204)
-message Crop {
-	string value = 1;
-}
-// DICOM Tag: (0070,1205)
-message CroppingSpecificationIndex {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0028,3003)
-message LUTExplanation {
-	string value = 1;
-}
-// DICOM Tag: (0028,1051)
-message WindowWidth {
-	repeated float value = 1;
-}
-// DICOM Tag: (0070,1209)
-message VolumetricPresentationInputSetUID {
-	string value = 1;
-}
-// DICOM Tag: (0070,1202)
-message PresentationInputType {
-	string value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0070,1207)
-message VolumetricPresentationInputNumber {
-	uint32 value = 1;
-}
-// DICOM Tag: (0070,1203)
-message InputSequencePositionIndex {
-	uint32 value = 1;
-}
 // DICOM Tag: (0008,1140)
 message ReferencedImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,3010)
-message VOILUTSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,3006)
-message LUTData {
-	repeated bytes value = 1;
 }
 // DICOM Tag: (0008,1155)
 message ReferencedSOPInstanceUID {
@@ -69,14 +16,17 @@ message ReferencedSpatialRegistrationSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,1201)
-message VolumetricPresentationStateInputSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0028,3003)
+message LUTExplanation {
+	string value = 1;
 }
-// DICOM Tag: (0028,3002)
-message LUTDescriptor {
-	repeated int64 value = 1;
+// DICOM Tag: (0028,3006)
+message LUTData {
+	repeated bytes value = 1;
+}
+// DICOM Tag: (0070,1209)
+message VolumetricPresentationInputSetUID {
+	string value = 1;
 }
 // DICOM Tag: (0028,1050)
 message WindowCenter {
@@ -86,25 +36,75 @@ message WindowCenter {
 message WindowCenterWidthExplanation {
 	repeated string value = 1;
 }
+// DICOM Tag: (0028,1056)
+message VOILUTFunction {
+	string value = 1;
+}
+// DICOM Tag: (0070,1205)
+message CroppingSpecificationIndex {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0028,3010)
+message VOILUTSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,1051)
+message WindowWidth {
+	repeated float value = 1;
+}
+// DICOM Tag: (0070,1204)
+message Crop {
+	string value = 1;
+}
+// DICOM Tag: (0070,1202)
+message PresentationInputType {
+	string value = 1;
+}
+// DICOM Tag: (0070,1201)
+message VolumetricPresentationStateInputSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,1207)
+message VolumetricPresentationInputNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0070,1203)
+message InputSequencePositionIndex {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,3002)
+message LUTDescriptor {
+	repeated int64 value = 1;
+}
 message VolumetricPresentationStateRelationshipModule {
-	ReferencedImageSequence referenced_image_sequence = 1;
-	VOILUTSequence voi_lut_sequence = 2;
-	LUTData lut_data = 3;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 4;
-	ReferencedSpatialRegistrationSequence referenced_spatial_registration_sequence = 5;
-	VolumetricPresentationStateInputSequence volumetric_presentation_state_input_sequence = 6;
-	LUTDescriptor lut_descriptor = 7;
-	WindowCenter window_center = 8;
-	WindowCenterWidthExplanation window_center_&_width_explanation = 9;
-	ReferencedSOPClassUID referenced_sop_class_uid = 10;
-	VOILUTFunction voi_lut_function = 11;
-	Crop crop = 12;
-	CroppingSpecificationIndex cropping_specification_index = 13;
-	LUTExplanation lut_explanation = 14;
-	WindowWidth window_width = 15;
-	VolumetricPresentationInputSetUID volumetric_presentation_input_set_uid = 16;
-	PresentationInputType presentation_input_type = 17;
-	ReferencedFrameNumber referenced_frame_number = 18;
-	VolumetricPresentationInputNumber volumetric_presentation_input_number = 19;
-	InputSequencePositionIndex input_sequence_position_index = 20;
+	WindowCenter window_center = 1;
+	WindowCenterWidthExplanation window_center_&_width_explanation = 2;
+	VOILUTFunction voi_lut_function = 3;
+	VolumetricPresentationInputSetUID volumetric_presentation_input_set_uid = 4;
+	VOILUTSequence voi_lut_sequence = 5;
+	WindowWidth window_width = 6;
+	Crop crop = 7;
+	CroppingSpecificationIndex cropping_specification_index = 8;
+	ReferencedSOPClassUID referenced_sop_class_uid = 9;
+	ReferencedFrameNumber referenced_frame_number = 10;
+	VolumetricPresentationInputNumber volumetric_presentation_input_number = 11;
+	InputSequencePositionIndex input_sequence_position_index = 12;
+	LUTDescriptor lut_descriptor = 13;
+	PresentationInputType presentation_input_type = 14;
+	VolumetricPresentationStateInputSequence volumetric_presentation_state_input_sequence = 15;
+	ReferencedSpatialRegistrationSequence referenced_spatial_registration_sequence = 16;
+	LUTExplanation lut_explanation = 17;
+	LUTData lut_data = 18;
+	ReferencedImageSequence referenced_image_sequence = 19;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 20;
 }

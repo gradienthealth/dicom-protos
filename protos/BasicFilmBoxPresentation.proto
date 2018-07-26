@@ -2,9 +2,13 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html#table_C.13-3
 syntax = "proto3";
 
-// DICOM Tag: (2010,0040)
-message FilmOrientation {
+// DICOM Tag: (2010,0110)
+message EmptyImageDensity {
 	string value = 1;
+}
+// DICOM Tag: (2010,0120)
+message MinDensity {
+	uint32 value = 1;
 }
 // DICOM Tag: (2010,0060)
 message MagnificationType {
@@ -12,14 +16,6 @@ message MagnificationType {
 }
 // DICOM Tag: (2010,0100)
 message BorderDensity {
-	string value = 1;
-}
-// DICOM Tag: (2010,0130)
-message MaxDensity {
-	uint32 value = 1;
-}
-// DICOM Tag: (2010,0140)
-message Trim {
 	string value = 1;
 }
 // DICOM Tag: (2020,0050)
@@ -30,52 +26,56 @@ message RequestedResolutionID {
 message ImageDisplayFormat {
 	string value = 1;
 }
-// DICOM Tag: (2010,0050)
-message FilmSizeID {
-	string value = 1;
-}
 // DICOM Tag: (2010,0080)
 message SmoothingType {
 	string value = 1;
 }
-// DICOM Tag: (2010,0110)
-message EmptyImageDensity {
+// DICOM Tag: (0028,2000)
+message ICCProfile {
 	string value = 1;
 }
-// DICOM Tag: (2010,0030)
-message AnnotationDisplayFormatID {
+// DICOM Tag: (2010,0040)
+message FilmOrientation {
+	string value = 1;
+}
+// DICOM Tag: (2010,0050)
+message FilmSizeID {
+	string value = 1;
+}
+// DICOM Tag: (2010,0130)
+message MaxDensity {
+	uint32 value = 1;
+}
+// DICOM Tag: (2010,0140)
+message Trim {
 	string value = 1;
 }
 // DICOM Tag: (2010,0150)
 message ConfigurationInformation {
 	string value = 1;
 }
-// DICOM Tag: (2010,0120)
-message MinDensity {
-	uint32 value = 1;
-}
 // DICOM Tag: (2010,0160)
 message ReflectedAmbientLight {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,2000)
-message ICCProfile {
+// DICOM Tag: (2010,0030)
+message AnnotationDisplayFormatID {
 	string value = 1;
 }
 message BasicFilmBoxPresentationModule {
-	ConfigurationInformation configuration_information = 1;
-	AnnotationDisplayFormatID annotation_display_format_id = 2;
-	ReflectedAmbientLight reflected_ambient_light = 3;
-	ICCProfile icc_profile = 4;
-	MinDensity min_density = 5;
-	MagnificationType magnification_type = 6;
-	BorderDensity border_density = 7;
-	MaxDensity max_density = 8;
-	Trim trim = 9;
-	RequestedResolutionID requested_resolution_id = 10;
-	FilmOrientation film_orientation = 11;
-	FilmSizeID film_size_id = 12;
-	SmoothingType smoothing_type = 13;
-	EmptyImageDensity empty_image_density = 14;
-	ImageDisplayFormat image_display_format = 15;
+	EmptyImageDensity empty_image_density = 1;
+	MinDensity min_density = 2;
+	MagnificationType magnification_type = 3;
+	BorderDensity border_density = 4;
+	RequestedResolutionID requested_resolution_id = 5;
+	ImageDisplayFormat image_display_format = 6;
+	SmoothingType smoothing_type = 7;
+	ICCProfile icc_profile = 8;
+	FilmOrientation film_orientation = 9;
+	FilmSizeID film_size_id = 10;
+	MaxDensity max_density = 11;
+	Trim trim = 12;
+	ConfigurationInformation configuration_information = 13;
+	ReflectedAmbientLight reflected_ambient_light = 14;
+	AnnotationDisplayFormatID annotation_display_format_id = 15;
 }

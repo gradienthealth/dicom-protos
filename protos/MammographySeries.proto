@@ -2,67 +2,30 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.6.html#table_C.8-73
 syntax = "proto3";
 
-// DICOM Tag: (0008,1110)
-message ReferencedStudySequence {
+// DICOM Tag: (0032,1060)
+message RequestedProcedureDescription {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0040,0008)
+message ScheduledProtocolCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0040,1002)
-message ReasonForTheRequestedProcedure {
-	string value = 1;
-}
-// DICOM Tag: (0040,0031)
-message LocalNamespaceEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0275)
-message RequestAttributesSequence {
+// DICOM Tag: (0040,0441)
+message ContentItemModifierSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0050)
-message AccessionNumber {
+// DICOM Tag: (0040,1001)
+message RequestedProcedureID {
 	string value = 1;
 }
-// DICOM Tag: (0040,0032)
-message UniversalEntityID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0032,1064)
-message RequestedProcedureCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
 	string value = 1;
 }
 // DICOM Tag: (0008,0121)
@@ -70,18 +33,89 @@ message EquivalentCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0040,0008)
-message ScheduledProtocolCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
 }
-// DICOM Tag: (0040,0440)
-message ProtocolContextSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0050)
+message AccessionNumber {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
 }
 // DICOM Tag: (0008,1199)
 message ReferencedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0040,0009)
+message ScheduledProcedureStepID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0007)
+message ScheduledProcedureStepDescription {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0032,1064)
+message RequestedProcedureCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0051)
+message IssuerOfAccessionNumberSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,0032)
+message UniversalEntityID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0275)
+message RequestAttributesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1110)
+message ReferencedStudySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,0440)
+message ProtocolContextSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -89,97 +123,63 @@ message ReferencedSOPSequence {
 message ReferencedFrameNumber {
 	repeated int32 value = 1;
 }
-// DICOM Tag: (0008,0060)
-message Modality {
-	string value = 1;
-}
 // DICOM Tag: (0040,0033)
 message UniversalEntityIDType {
 	string value = 1;
 }
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0040,0007)
-message ScheduledProcedureStepDescription {
-	string value = 1;
-}
-// DICOM Tag: (0040,1001)
-message RequestedProcedureID {
+// DICOM Tag: (0040,0031)
+message LocalNamespaceEntityID {
 	string value = 1;
 }
 // DICOM Tag: (0008,1155)
 message ReferencedSOPInstanceUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
+// DICOM Tag: (0040,1002)
+message ReasonForTheRequestedProcedure {
 	string value = 1;
 }
-// DICOM Tag: (0032,1060)
-message RequestedProcedureDescription {
+// DICOM Tag: (0008,0060)
+message Modality {
 	string value = 1;
-}
-// DICOM Tag: (0008,0051)
-message IssuerOfAccessionNumberSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0040,0009)
-message ScheduledProcedureStepID {
-	string value = 1;
-}
-// DICOM Tag: (0040,0441)
-message ContentItemModifierSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
 }
 message MammographySeriesModule {
-	RequestedProcedureDescription requested_procedure_description = 1;
-	ScheduledProcedureStepID scheduled_procedure_step_id = 2;
-	ContentItemModifierSequence content_item_modifier_sequence = 3;
-	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 4;
-	CodingSchemeDesignator coding_scheme_designator = 5;
-	LongCodeValue long_code_value = 6;
-	ReasonForTheRequestedProcedure reason_for_the_requested_procedure = 7;
-	ReferencedStudySequence referenced_study_sequence = 8;
-	ContextGroupLocalVersion context_group_local_version = 9;
-	LocalNamespaceEntityID local_namespace_entity_id = 10;
-	AccessionNumber accession_number = 11;
-	UniversalEntityID universal_entity_id = 12;
-	CodeValue code_value = 13;
-	ContextUID context_uid = 14;
-	MappingResourceUID mapping_resource_uid = 15;
-	RequestAttributesSequence request_attributes_sequence = 16;
-	CodeMeaning code_meaning = 17;
-	URNCodeValue urn_code_value = 18;
-	EquivalentCodeSequence equivalent_code_sequence = 19;
-	ScheduledProtocolCodeSequence scheduled_protocol_code_sequence = 20;
-	ProtocolContextSequence protocol_context_sequence = 21;
-	RequestedProcedureCodeSequence requested_procedure_code_sequence = 22;
-	UniversalEntityIDType universal_entity_id_type = 23;
-	ReferencedSOPClassUID referenced_sop_class_uid = 24;
-	MappingResourceName mapping_resource_name = 25;
-	ContextGroupVersion context_group_version = 26;
-	ScheduledProcedureStepDescription scheduled_procedure_step_description = 27;
-	ReferencedSOPSequence referenced_sop_sequence = 28;
-	ReferencedFrameNumber referenced_frame_number = 29;
-	Modality modality = 30;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 31;
-	CodingSchemeVersion coding_scheme_version = 32;
-	MappingResource mapping_resource = 33;
-	RequestedProcedureID requested_procedure_id = 34;
+	AccessionNumber accession_number = 1;
+	CodingSchemeVersion coding_scheme_version = 2;
+	EquivalentCodeSequence equivalent_code_sequence = 3;
+	ContextUID context_uid = 4;
+	MappingResourceName mapping_resource_name = 5;
+	ContextGroupVersion context_group_version = 6;
+	ReferencedSOPSequence referenced_sop_sequence = 7;
+	CodeMeaning code_meaning = 8;
+	ScheduledProcedureStepID scheduled_procedure_step_id = 9;
+	ScheduledProcedureStepDescription scheduled_procedure_step_description = 10;
+	RequestedProcedureCodeSequence requested_procedure_code_sequence = 11;
+	CodeValue code_value = 12;
+	LongCodeValue long_code_value = 13;
+	ContextGroupLocalVersion context_group_local_version = 14;
+	RequestAttributesSequence request_attributes_sequence = 15;
+	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 16;
+	UniversalEntityID universal_entity_id = 17;
+	CodingSchemeDesignator coding_scheme_designator = 18;
+	MappingResourceUID mapping_resource_uid = 19;
+	UniversalEntityIDType universal_entity_id_type = 20;
+	ReferencedStudySequence referenced_study_sequence = 21;
+	ReferencedSOPClassUID referenced_sop_class_uid = 22;
+	ProtocolContextSequence protocol_context_sequence = 23;
+	ReferencedFrameNumber referenced_frame_number = 24;
+	Modality modality = 25;
+	LocalNamespaceEntityID local_namespace_entity_id = 26;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 27;
+	URNCodeValue urn_code_value = 28;
+	ReasonForTheRequestedProcedure reason_for_the_requested_procedure = 29;
+	RequestedProcedureID requested_procedure_id = 30;
+	RequestedProcedureDescription requested_procedure_description = 31;
+	MappingResource mapping_resource = 32;
+	ScheduledProtocolCodeSequence scheduled_protocol_code_sequence = 33;
+	ContentItemModifierSequence content_item_modifier_sequence = 34;
 }

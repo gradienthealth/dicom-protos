@@ -2,25 +2,19 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.28.3.html#table_C.8.28.3-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0066,0031)
-message AlgorithmVersion {
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
 	string value = 1;
 }
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
+// DICOM Tag: (0022,1458)
+message OphthalmicThicknessMapQualityThresholdSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
+// DICOM Tag: (0022,1470)
+message OphthalmicThicknessMapQualityRatingSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,0118)
 message MappingResourceUID {
@@ -30,25 +24,52 @@ message MappingResourceUID {
 message OphthalmicThicknessMapThresholdQualityRating {
 	float value = 1;
 }
+// DICOM Tag: (0066,0036)
+message AlgorithmName {
+	string value = 1;
+}
+// DICOM Tag: (0066,0031)
+message AlgorithmVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
 // DICOM Tag: (0008,0120)
 message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
 	string value = 1;
 }
 // DICOM Tag: (0008,0122)
 message MappingResourceName {
 	string value = 1;
 }
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
 // DICOM Tag: (0008,0107)
 message ContextGroupLocalVersion {
 	int64 value = 1;
 }
-// DICOM Tag: (0022,1458)
-message OphthalmicThicknessMapQualityThresholdSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0066,0032)
+message AlgorithmParameters {
+	string value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
 	string value = 1;
 }
 // DICOM Tag: (0008,0121)
@@ -56,60 +77,39 @@ message EquivalentCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
 // DICOM Tag: (0066,0030)
 message AlgorithmNameCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0066,0036)
-message AlgorithmName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0066,0032)
-message AlgorithmParameters {
-	string value = 1;
-}
 // DICOM Tag: (0024,0202)
 message AlgorithmSource {
 	string value = 1;
 }
-// DICOM Tag: (0022,1470)
-message OphthalmicThicknessMapQualityRatingSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
 message OphthalmicThicknessMapQualityRatingModule {
-	ContextUID context_uid = 1;
-	MappingResource mapping_resource = 2;
-	AlgorithmParameters algorithm_parameters = 3;
-	AlgorithmSource algorithm_source = 4;
-	OphthalmicThicknessMapQualityRatingSequence ophthalmic_thickness_map_quality_rating_sequence = 5;
-	CodingSchemeVersion coding_scheme_version = 6;
-	MappingResourceUID mapping_resource_uid = 7;
-	ContextGroupVersion context_group_version = 8;
-	AlgorithmVersion algorithm_version = 9;
-	CodeValue code_value = 10;
-	CodingSchemeDesignator coding_scheme_designator = 11;
-	LongCodeValue long_code_value = 12;
-	OphthalmicThicknessMapQualityThresholdSequence ophthalmic_thickness_map_quality_threshold_sequence = 13;
-	OphthalmicThicknessMapThresholdQualityRating ophthalmic_thickness_map_threshold_quality_rating = 14;
-	URNCodeValue urn_code_value = 15;
-	MappingResourceName mapping_resource_name = 16;
-	ContextGroupLocalVersion context_group_local_version = 17;
-	AlgorithmName algorithm_name = 18;
-	CodeMeaning code_meaning = 19;
-	EquivalentCodeSequence equivalent_code_sequence = 20;
-	AlgorithmNameCodeSequence algorithm_name_code_sequence = 21;
+	AlgorithmName algorithm_name = 1;
+	AlgorithmVersion algorithm_version = 2;
+	LongCodeValue long_code_value = 3;
+	MappingResourceUID mapping_resource_uid = 4;
+	OphthalmicThicknessMapThresholdQualityRating ophthalmic_thickness_map_threshold_quality_rating = 5;
+	MappingResourceName mapping_resource_name = 6;
+	ContextGroupVersion context_group_version = 7;
+	ContextGroupLocalVersion context_group_local_version = 8;
+	AlgorithmParameters algorithm_parameters = 9;
+	CodingSchemeDesignator coding_scheme_designator = 10;
+	URNCodeValue urn_code_value = 11;
+	MappingResource mapping_resource = 12;
+	EquivalentCodeSequence equivalent_code_sequence = 13;
+	ContextUID context_uid = 14;
+	AlgorithmNameCodeSequence algorithm_name_code_sequence = 15;
+	AlgorithmSource algorithm_source = 16;
+	CodeValue code_value = 17;
+	CodingSchemeVersion coding_scheme_version = 18;
+	OphthalmicThicknessMapQualityRatingSequence ophthalmic_thickness_map_quality_rating_sequence = 19;
+	CodeMeaning code_meaning = 20;
+	OphthalmicThicknessMapQualityThresholdSequence ophthalmic_thickness_map_quality_threshold_sequence = 21;
 }

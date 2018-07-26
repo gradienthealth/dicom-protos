@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.4.html#table_C.8.21.4-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,9525)
-message ApplicationVersion {
-	string value = 1;
-}
 // DICOM Tag: (0018,9526)
 message ApplicationManufacturer {
 	string value = 1;
@@ -35,13 +31,17 @@ message ReconstructionDescription {
 message ApplicationName {
 	string value = 1;
 }
+// DICOM Tag: (0018,9525)
+message ApplicationVersion {
+	string value = 1;
+}
 message X-Ray3DReconstructionModule {
-	AlgorithmDescription algorithm_description = 1;
-	AcquisitionIndex acquisition_index = 2;
-	XRay3DReconstructionSequence x_ray_3d_reconstruction_sequence = 3;
-	ReconstructionDescription reconstruction_description = 4;
-	ApplicationName application_name = 5;
-	ApplicationVersion application_version = 6;
-	ApplicationManufacturer application_manufacturer = 7;
-	AlgorithmType algorithm_type = 8;
+	AcquisitionIndex acquisition_index = 1;
+	XRay3DReconstructionSequence x_ray_3d_reconstruction_sequence = 2;
+	ReconstructionDescription reconstruction_description = 3;
+	ApplicationName application_name = 4;
+	ApplicationVersion application_version = 5;
+	ApplicationManufacturer application_manufacturer = 6;
+	AlgorithmType algorithm_type = 7;
+	AlgorithmDescription algorithm_description = 8;
 }

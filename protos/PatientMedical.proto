@@ -2,20 +2,59 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.4.html#table_C.2-4
 syntax = "proto3";
 
-// DICOM Tag: (0012,0030)
-message ClinicalTrialSiteID {
+// DICOM Tag: (0038,0101)
+message PertinentResourcesSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0012,0031)
+message ClinicalTrialSiteName {
 	string value = 1;
 }
-// DICOM Tag: (0010,2203)
-message PatientSexNeutered {
+// DICOM Tag: (0038,0100)
+message PertinentDocumentsSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0012,0020)
+message ClinicalTrialProtocolID {
 	string value = 1;
 }
 // DICOM Tag: (0010,1024)
 message MeasuredLateralDimension {
 	float value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0042,0010)
+message DocumentTitle {
 	string value = 1;
 }
 // DICOM Tag: (0012,0010)
@@ -26,51 +65,41 @@ message ClinicalTrialSponsorName {
 message ClinicalTrialProtocolName {
 	string value = 1;
 }
-// DICOM Tag: (0038,0101)
-message PertinentResourcesSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0038,0102)
-message ResourceDescription {
+// DICOM Tag: (0012,0040)
+message ClinicalTrialSubjectID {
 	string value = 1;
 }
-// DICOM Tag: (0010,2000)
-message MedicalAlerts {
-	repeated string value = 1;
+// DICOM Tag: (0038,0500)
+message PatientState {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0038,0502)
+message PatientClinicalTrialParticipationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0038,0050)
 message SpecialNeeds {
 	string value = 1;
 }
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
 	string value = 1;
 }
-// DICOM Tag: (0042,0010)
-message DocumentTitle {
+// DICOM Tag: (0038,0102)
+message ResourceDescription {
 	string value = 1;
 }
-// DICOM Tag: (0038,0100)
-message PertinentDocumentsSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0010,2110)
+message Allergies {
+	repeated string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0012,0020)
-message ClinicalTrialProtocolID {
-	string value = 1;
-}
-// DICOM Tag: (0012,0040)
-message ClinicalTrialSubjectID {
+// DICOM Tag: (0010,2203)
+message PatientSexNeutered {
 	string value = 1;
 }
 // DICOM Tag: (0008,1150)
@@ -81,105 +110,76 @@ message ReferencedSOPClassUID {
 message CodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
+// DICOM Tag: (0012,0030)
+message ClinicalTrialSiteID {
 	string value = 1;
+}
+// DICOM Tag: (0010,1022)
+message PatientBodyMassIndex {
+	float value = 1;
 }
 // DICOM Tag: (0010,1023)
 message MeasuredAPDimension {
 	float value = 1;
 }
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
 }
-// DICOM Tag: (0012,0031)
-message ClinicalTrialSiteName {
+// DICOM Tag: (0008,0105)
+message MappingResource {
 	string value = 1;
 }
 // DICOM Tag: (0012,0042)
 message ClinicalTrialSubjectReadingID {
 	string value = 1;
 }
-// DICOM Tag: (0038,0502)
-message PatientClinicalTrialParticipationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0010,2110)
-message Allergies {
+// DICOM Tag: (0010,2000)
+message MedicalAlerts {
 	repeated string value = 1;
 }
-// DICOM Tag: (0010,1022)
-message PatientBodyMassIndex {
-	float value = 1;
-}
-// DICOM Tag: (0038,0500)
-message PatientState {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
 message PatientMedicalModule {
-	CodeMeaning code_meaning = 1;
-	URNCodeValue urn_code_value = 2;
-	MappingResourceName mapping_resource_name = 3;
-	ContextGroupVersion context_group_version = 4;
-	PatientSexNeutered patient's_sex_neutered = 5;
-	MeasuredLateralDimension measured_lateral_dimension = 6;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 7;
-	ClinicalTrialSponsorName clinical_trial_sponsor_name = 8;
-	ClinicalTrialProtocolName clinical_trial_protocol_name = 9;
-	ClinicalTrialSiteID clinical_trial_site_id = 10;
-	MedicalAlerts medical_alerts = 11;
-	SpecialNeeds special_needs = 12;
-	EquivalentCodeSequence equivalent_code_sequence = 13;
-	ContextUID context_uid = 14;
-	DocumentTitle document_title = 15;
-	PertinentResourcesSequence pertinent_resources_sequence = 16;
-	ResourceDescription resource_description = 17;
-	PertinentDocumentsSequence pertinent_documents_sequence = 18;
-	MappingResource mapping_resource = 19;
-	ClinicalTrialProtocolID clinical_trial_protocol_id = 20;
-	ClinicalTrialSubjectID clinical_trial_subject_id = 21;
-	ReferencedSOPClassUID referenced_sop_class_uid = 22;
-	CodeValue code_value = 23;
-	CodingSchemeDesignator coding_scheme_designator = 24;
-	CodingSchemeVersion coding_scheme_version = 25;
-	MeasuredAPDimension measured_ap_dimension = 26;
-	MappingResourceUID mapping_resource_uid = 27;
-	ContextGroupLocalVersion context_group_local_version = 28;
-	ClinicalTrialSiteName clinical_trial_site_name = 29;
-	ClinicalTrialSubjectReadingID clinical_trial_subject_reading_id = 30;
-	Allergies allergies = 31;
-	PatientBodyMassIndex patient's_body_mass_index = 32;
-	PatientState patient_state = 33;
-	LongCodeValue long_code_value = 34;
-	PatientClinicalTrialParticipationSequence patient_clinical_trial_participation_sequence = 35;
+	EquivalentCodeSequence equivalent_code_sequence = 1;
+	ContextGroupVersion context_group_version = 2;
+	DocumentTitle document_title = 3;
+	ClinicalTrialSponsorName clinical_trial_sponsor_name = 4;
+	ClinicalTrialProtocolName clinical_trial_protocol_name = 5;
+	ClinicalTrialSubjectID clinical_trial_subject_id = 6;
+	PatientState patient_state = 7;
+	CodingSchemeDesignator coding_scheme_designator = 8;
+	PatientClinicalTrialParticipationSequence patient_clinical_trial_participation_sequence = 9;
+	SpecialNeeds special_needs = 10;
+	MappingResourceUID mapping_resource_uid = 11;
+	ResourceDescription resource_description = 12;
+	Allergies allergies = 13;
+	PatientSexNeutered patient's_sex_neutered = 14;
+	ReferencedSOPClassUID referenced_sop_class_uid = 15;
+	CodeValue code_value = 16;
+	URNCodeValue urn_code_value = 17;
+	ClinicalTrialSiteID clinical_trial_site_id = 18;
+	PatientBodyMassIndex patient's_body_mass_index = 19;
+	MeasuredAPDimension measured_ap_dimension = 20;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 21;
+	ContextUID context_uid = 22;
+	MappingResource mapping_resource = 23;
+	ClinicalTrialSubjectReadingID clinical_trial_subject_reading_id = 24;
+	MedicalAlerts medical_alerts = 25;
+	PertinentResourcesSequence pertinent_resources_sequence = 26;
+	ClinicalTrialSiteName clinical_trial_site_name = 27;
+	PertinentDocumentsSequence pertinent_documents_sequence = 28;
+	ContextGroupLocalVersion context_group_local_version = 29;
+	CodeMeaning code_meaning = 30;
+	LongCodeValue long_code_value = 31;
+	MappingResourceName mapping_resource_name = 32;
+	ClinicalTrialProtocolID clinical_trial_protocol_id = 33;
+	MeasuredLateralDimension measured_lateral_dimension = 34;
+	CodingSchemeVersion coding_scheme_version = 35;
 }

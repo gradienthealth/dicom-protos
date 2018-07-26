@@ -2,6 +2,18 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.html#table_C.13-1
 syntax = "proto3";
 
+// DICOM Tag: (2000,0010)
+message NumberOfCopies {
+	int32 value = 1;
+}
+// DICOM Tag: (2000,0020)
+message PrintPriority {
+	string value = 1;
+}
+// DICOM Tag: (2000,0030)
+message MediumType {
+	string value = 1;
+}
 // DICOM Tag: (2000,0040)
 message FilmDestination {
 	string value = 1;
@@ -18,24 +30,12 @@ message MemoryAllocation {
 message OwnerID {
 	string value = 1;
 }
-// DICOM Tag: (2000,0010)
-message NumberOfCopies {
-	int32 value = 1;
-}
-// DICOM Tag: (2000,0020)
-message PrintPriority {
-	string value = 1;
-}
-// DICOM Tag: (2000,0030)
-message MediumType {
-	string value = 1;
-}
 message BasicFilmSessionPresentationModule {
-	PrintPriority print_priority = 1;
-	MediumType medium_type = 2;
-	FilmDestination film_destination = 3;
-	FilmSessionLabel film_session_label = 4;
-	MemoryAllocation memory_allocation = 5;
-	OwnerID owner_id = 6;
-	NumberOfCopies number_of_copies = 7;
+	OwnerID owner_id = 1;
+	NumberOfCopies number_of_copies = 2;
+	PrintPriority print_priority = 3;
+	MediumType medium_type = 4;
+	FilmDestination film_destination = 5;
+	FilmSessionLabel film_session_label = 6;
+	MemoryAllocation memory_allocation = 7;
 }

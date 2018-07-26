@@ -2,57 +2,86 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.5.5.html#table_C.8-17
 syntax = "proto3";
 
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
+// DICOM Tag: (0018,6048)
+message PixelComponentRangeStart {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,6044)
+message PixelComponentOrganization {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,6020)
+message ReferencePixelX0 {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,6014)
+message RegionDataType {
+	uint32 value = 1;
+}
+// DICOM Tag: (0018,6058)
+message TableOfPixelValues {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
 	string value = 1;
 }
-// DICOM Tag: (0008,0105)
-message MappingResource {
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
 	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,6036)
-message SteeringAngle {
-	double value = 1;
 }
 // DICOM Tag: (0018,6043)
 message TMLinePositionY1 {
 	int32 value = 1;
 }
-// DICOM Tag: (0018,6048)
-message PixelComponentRangeStart {
+// DICOM Tag: (0018,6022)
+message ReferencePixelY0 {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,6028)
+message ReferencePixelPhysicalValueX {
+	double value = 1;
+}
+// DICOM Tag: (0018,6052)
+message TableOfXBreakPoints {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0018,6056)
+message NumberOfTableEntries {
 	uint32 value = 1;
 }
 // DICOM Tag: (0008,0102)
 message CodingSchemeDesignator {
 	string value = 1;
 }
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,6011)
+message SequenceOfUltrasoundRegions {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0018,6034)
 message DopplerCorrectionAngle {
 	double value = 1;
 }
-// DICOM Tag: (0018,6054)
-message TableOfYBreakPoints {
-	repeated double value = 1;
+// DICOM Tag: (0018,6036)
+message SteeringAngle {
+	double value = 1;
 }
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
+// DICOM Tag: (0018,6030)
+message TransducerFrequency {
+	uint32 value = 1;
 }
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,6041)
-message TMLinePositionX1 {
-	int32 value = 1;
+// DICOM Tag: (0018,6046)
+message PixelComponentMask {
+	uint32 value = 1;
 }
 // DICOM Tag: (0018,6050)
 message NumberOfTableBreakPoints {
@@ -66,41 +95,17 @@ message CodingSchemeVersion {
 message LongCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,6030)
-message TransducerFrequency {
+// DICOM Tag: (0018,6016)
+message RegionFlags {
 	uint32 value = 1;
 }
 // DICOM Tag: (0018,6032)
 message PulseRepetitionFrequency {
 	uint32 value = 1;
 }
-// DICOM Tag: (0018,6028)
-message ReferencePixelPhysicalValueX {
-	double value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0018,6056)
-message NumberOfTableEntries {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,6026)
-message PhysicalUnitsYDirection {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,6016)
-message RegionFlags {
-	uint32 value = 1;
-}
-// DICOM Tag: (0018,6044)
-message PixelComponentOrganization {
-	uint32 value = 1;
+// DICOM Tag: (0018,6054)
+message TableOfYBreakPoints {
+	repeated double value = 1;
 }
 // DICOM Tag: (0040,9098)
 message PixelValueMappingCodeSequence {
@@ -112,93 +117,88 @@ message EquivalentCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0018,6011)
-message SequenceOfUltrasoundRegions {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0018,6041)
+message TMLinePositionX1 {
+	int32 value = 1;
 }
 // DICOM Tag: (0018,6012)
 message RegionSpatialFormat {
 	uint32 value = 1;
 }
-// DICOM Tag: (0018,6046)
-message PixelComponentMask {
-	uint32 value = 1;
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
 }
-// DICOM Tag: (0018,6039)
-message DopplerSampleVolumeXPosition {
-	int32 value = 1;
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
 }
-// DICOM Tag: (0018,6022)
-message ReferencePixelY0 {
-	int32 value = 1;
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
 }
 // DICOM Tag: (0018,6024)
 message PhysicalUnitsXDirection {
 	uint32 value = 1;
 }
-// DICOM Tag: (0018,6020)
-message ReferencePixelX0 {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,6014)
-message RegionDataType {
+// DICOM Tag: (0018,6026)
+message PhysicalUnitsYDirection {
 	uint32 value = 1;
 }
-// DICOM Tag: (0018,6052)
-message TableOfXBreakPoints {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0018,6058)
-message TableOfPixelValues {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
+// DICOM Tag: (0008,0100)
+message CodeValue {
 	string value = 1;
+}
+// DICOM Tag: (0018,6039)
+message DopplerSampleVolumeXPosition {
+	int32 value = 1;
 }
 // DICOM Tag: (0018,6018)
 message RegionLocationMinX0 {
 	uint32 value = 1;
 }
 message USRegionCalibrationModule {
-	SequenceOfUltrasoundRegions sequence_of_ultrasound_regions = 1;
-	PhysicalUnitsYDirection physical_units_y_direction = 2;
-	RegionFlags region_flags = 3;
-	PixelComponentOrganization pixel_component_organization = 4;
-	PixelValueMappingCodeSequence pixel_value_mapping_code_sequence = 5;
-	EquivalentCodeSequence equivalent_code_sequence = 6;
-	ReferencePixelY0 reference_pixel_y0 = 7;
-	RegionSpatialFormat region_spatial_format = 8;
-	PixelComponentMask pixel_component_mask = 9;
-	DopplerSampleVolumeXPosition doppler_sample_volume_x_position = 10;
-	RegionLocationMinX0 region_location_min_x0 = 11;
-	PhysicalUnitsXDirection physical_units_x_direction = 12;
-	ReferencePixelX0 reference_pixel_x0 = 13;
-	RegionDataType region_data_type = 14;
-	TableOfXBreakPoints table_of_x_break_points = 15;
-	TableOfPixelValues table_of_pixel_values = 16;
-	MappingResourceUID mapping_resource_uid = 17;
-	PixelComponentRangeStart pixel_component_range_start = 18;
-	URNCodeValue urn_code_value = 19;
-	MappingResource mapping_resource = 20;
-	MappingResourceName mapping_resource_name = 21;
-	ContextGroupLocalVersion context_group_local_version = 22;
-	SteeringAngle steering_angle = 23;
-	TMLinePositionY1 tm_line_position_y1 = 24;
-	TableOfYBreakPoints table_of_y_break_points = 25;
-	CodingSchemeDesignator coding_scheme_designator = 26;
-	DopplerCorrectionAngle doppler_correction_angle = 27;
-	NumberOfTableBreakPoints number_of_table_break_points = 28;
-	CodeMeaning code_meaning = 29;
-	ContextUID context_uid = 30;
-	TMLinePositionX1 tm_line_position_x1 = 31;
-	ReferencePixelPhysicalValueX reference_pixel_physical_value_x = 32;
-	CodingSchemeVersion coding_scheme_version = 33;
-	LongCodeValue long_code_value = 34;
-	ContextGroupVersion context_group_version = 35;
-	TransducerFrequency transducer_frequency = 36;
-	PulseRepetitionFrequency pulse_repetition_frequency = 37;
-	NumberOfTableEntries number_of_table_entries = 38;
-	CodeValue code_value = 39;
+	ReferencePixelX0 reference_pixel_x0 = 1;
+	RegionDataType region_data_type = 2;
+	TableOfPixelValues table_of_pixel_values = 3;
+	CodeMeaning code_meaning = 4;
+	MappingResourceUID mapping_resource_uid = 5;
+	TMLinePositionY1 tm_line_position_y1 = 6;
+	ContextGroupLocalVersion context_group_local_version = 7;
+	SequenceOfUltrasoundRegions sequence_of_ultrasound_regions = 8;
+	ReferencePixelY0 reference_pixel_y0 = 9;
+	ReferencePixelPhysicalValueX reference_pixel_physical_value_x = 10;
+	TableOfXBreakPoints table_of_x_break_points = 11;
+	NumberOfTableEntries number_of_table_entries = 12;
+	CodingSchemeDesignator coding_scheme_designator = 13;
+	URNCodeValue urn_code_value = 14;
+	TransducerFrequency transducer_frequency = 15;
+	DopplerCorrectionAngle doppler_correction_angle = 16;
+	SteeringAngle steering_angle = 17;
+	RegionFlags region_flags = 18;
+	PixelComponentMask pixel_component_mask = 19;
+	NumberOfTableBreakPoints number_of_table_break_points = 20;
+	CodingSchemeVersion coding_scheme_version = 21;
+	LongCodeValue long_code_value = 22;
+	TableOfYBreakPoints table_of_y_break_points = 23;
+	PulseRepetitionFrequency pulse_repetition_frequency = 24;
+	RegionSpatialFormat region_spatial_format = 25;
+	PixelValueMappingCodeSequence pixel_value_mapping_code_sequence = 26;
+	EquivalentCodeSequence equivalent_code_sequence = 27;
+	MappingResourceName mapping_resource_name = 28;
+	TMLinePositionX1 tm_line_position_x1 = 29;
+	PhysicalUnitsXDirection physical_units_x_direction = 30;
+	ContextUID context_uid = 31;
+	MappingResource mapping_resource = 32;
+	ContextGroupVersion context_group_version = 33;
+	RegionLocationMinX0 region_location_min_x0 = 34;
+	PhysicalUnitsYDirection physical_units_y_direction = 35;
+	CodeValue code_value = 36;
+	DopplerSampleVolumeXPosition doppler_sample_volume_x_position = 37;
+	PixelComponentOrganization pixel_component_organization = 38;
+	PixelComponentRangeStart pixel_component_range_start = 39;
 }

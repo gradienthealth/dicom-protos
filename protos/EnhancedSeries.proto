@@ -20,8 +20,8 @@ message ReferencedSOPInstanceUID {
 	string value = 1;
 }
 message EnhancedSeriesModule {
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
-	ReferencedSOPClassUID referenced_sop_class_uid = 2;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 3;
-	SeriesNumber series_number = 4;
+	SeriesNumber series_number = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	ReferencedSOPClassUID referenced_sop_class_uid = 3;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 4;
 }

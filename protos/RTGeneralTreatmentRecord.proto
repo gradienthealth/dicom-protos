@@ -2,15 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.17.html#table_C.8-53
 syntax = "proto3";
 
-// DICOM Tag: (3008,0030)
-message ReferencedTreatmentRecordSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0020,0013)
-message InstanceNumber {
-	int32 value = 1;
-}
 // DICOM Tag: (3008,0250)
 message TreatmentDate {
 	string value = 1;
@@ -27,11 +18,20 @@ message ReferencedSOPClassUID {
 message ReferencedSOPInstanceUID {
 	string value = 1;
 }
+// DICOM Tag: (3008,0030)
+message ReferencedTreatmentRecordSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
 message RTGeneralTreatmentRecordModule {
-	ReferencedSOPClassUID referenced_sop_class_uid = 1;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 2;
-	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 3;
-	InstanceNumber instance_number = 4;
-	TreatmentDate treatment_date = 5;
-	TreatmentTime treatment_time = 6;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 1;
+	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 2;
+	InstanceNumber instance_number = 3;
+	TreatmentDate treatment_date = 4;
+	TreatmentTime treatment_time = 5;
+	ReferencedSOPClassUID referenced_sop_class_uid = 6;
 }

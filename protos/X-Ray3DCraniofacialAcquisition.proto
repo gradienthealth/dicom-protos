@@ -2,169 +2,20 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.3.3.html#table_C.8.21.3.3-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
+// DICOM Tag: (0018,9420)
+message XRayReceptorType {
 	string value = 1;
-}
-// DICOM Tag: (0018,9461)
-message FieldOfViewDimensionsInFloat {
-	repeated float value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,7024)
-message DetectorActiveShape {
-	string value = 1;
-}
-// DICOM Tag: (0018,7000)
-message DetectorConditionsNominalFlag {
-	string value = 1;
-}
-// DICOM Tag: (0018,7028)
-message DetectorActiveOrigin {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,7040)
-message GridAbsorbingMaterial {
-	string value = 1;
-}
-// DICOM Tag: (0018,7001)
-message DetectorTemperature {
-	float value = 1;
-}
-// DICOM Tag: (0018,7020)
-message DetectorElementPhysicalSize {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1411)
-message ExposureIndex {
-	float value = 1;
-}
-// DICOM Tag: (0018,9220)
-message FrameAcquisitionDuration {
-	double value = 1;
-}
-// DICOM Tag: (0018,1166)
-message Grid {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0018,7004)
-message DetectorType {
-	string value = 1;
-}
-// DICOM Tag: (0018,7022)
-message DetectorElementSpacing {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,7041)
-message GridSpacingMaterial {
-	string value = 1;
-}
-// DICOM Tag: (0018,7042)
-message GridThickness {
-	float value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0105)
-message MappingResource {
-	string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0018,9516)
-message StartAcquisitionDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,7006)
-message DetectorDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,1720)
-message VerticesOfThePolygonalCollimator {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0018,7030)
-message FieldOfViewOrigin {
-	repeated float value = 1;
-}
-// DICOM Tag: (0018,1006)
-message GridID {
-	string value = 1;
-}
-// DICOM Tag: (0018,1702)
-message CollimatorLeftVerticalEdge {
-	int32 value = 1;
-}
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,9517)
-message EndAcquisitionDateTime {
-	int64 value = 1;
-}
-// DICOM Tag: (0018,1706)
-message CollimatorUpperHorizontalEdge {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1710)
-message CenterOfCircularCollimator {
-	repeated int32 value = 1;
 }
 // DICOM Tag: (0008,1150)
 message ReferencedSOPClassUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
+// DICOM Tag: (0018,7041)
+message GridSpacingMaterial {
 	string value = 1;
 }
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0018,1704)
-message CollimatorRightVerticalEdge {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1708)
-message CollimatorLowerHorizontalEdge {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,9507)
-message XRay3DAcquisitionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,7034)
-message FieldOfViewHorizontalFlip {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
+// DICOM Tag: (0018,0012)
+message ContrastBolusAgentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -172,62 +23,193 @@ message EquivalentCodeSequence {
 message MappingResourceUID {
 	string value = 1;
 }
-// DICOM Tag: (0018,6000)
-message Sensitivity {
-	float value = 1;
-}
-// DICOM Tag: (0008,2112)
-message SourceImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,9330)
-message XRayTubeCurrentInmA {
-	double value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,7008)
-message DetectorMode {
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
 	string value = 1;
 }
 // DICOM Tag: (0018,1700)
 message CollimatorShape {
 	repeated string value = 1;
 }
-// DICOM Tag: (0018,7032)
-message FieldOfViewRotation {
-	float value = 1;
-}
-// DICOM Tag: (0018,7046)
-message GridAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0018,9332)
-message ExposureInmAs {
-	double value = 1;
-}
-// DICOM Tag: (0018,7005)
-message DetectorConfiguration {
-	string value = 1;
-}
-// DICOM Tag: (0018,7011)
-message ExposuresOnDetectorSinceManufactured {
+// DICOM Tag: (0018,1708)
+message CollimatorLowerHorizontalEdge {
 	int32 value = 1;
 }
-// DICOM Tag: (0018,9420)
-message XRayReceptorType {
+// DICOM Tag: (0018,1720)
+message VerticesOfThePolygonalCollimator {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0018,7010)
+message ExposuresOnDetectorSinceLastCalibration {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,7020)
+message DetectorElementPhysicalSize {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1006)
+message GridID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
 	string value = 1;
 }
 // DICOM Tag: (0018,7026)
 message DetectorActiveDimensions {
 	repeated float value = 1;
 }
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1706)
+message CollimatorUpperHorizontalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,2112)
+message SourceImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,0010)
+message ContrastBolusAgent {
+	string value = 1;
+}
+// DICOM Tag: (0018,7006)
+message DetectorDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,7000)
+message DetectorConditionsNominalFlag {
+	string value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
+}
 // DICOM Tag: (0018,1413)
 message DeviationIndex {
 	float value = 1;
+}
+// DICOM Tag: (0018,9538)
+message PerProjectionAcquisitionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0018,1704)
+message CollimatorRightVerticalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,7030)
+message FieldOfViewOrigin {
+	repeated float value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0018,7008)
+message DetectorMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,7001)
+message DetectorTemperature {
+	float value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0018,7024)
+message DetectorActiveShape {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0018,7034)
+message FieldOfViewHorizontalFlip {
+	string value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0018,9516)
+message StartAcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,9507)
+message XRay3DAcquisitionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0018,7011)
+message ExposuresOnDetectorSinceManufactured {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,7005)
+message DetectorConfiguration {
+	string value = 1;
+}
+// DICOM Tag: (0018,1166)
+message Grid {
+	repeated string value = 1;
+}
+// DICOM Tag: (0018,9332)
+message ExposureInmAs {
+	double value = 1;
+}
+// DICOM Tag: (0018,7022)
+message DetectorElementSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1712)
+message RadiusOfCircularCollimator {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0018,9517)
+message EndAcquisitionDateTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,7028)
+message DetectorActiveOrigin {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,9461)
+message FieldOfViewDimensionsInFloat {
+	repeated float value = 1;
 }
 // DICOM Tag: (0018,7044)
 message GridPitch {
@@ -237,115 +219,133 @@ message GridPitch {
 message DetectorTimeSinceLastExposure {
 	float value = 1;
 }
-// DICOM Tag: (0018,1712)
-message RadiusOfCircularCollimator {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,7048)
-message GridPeriod {
+// DICOM Tag: (0018,6000)
+message Sensitivity {
 	float value = 1;
 }
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
-}
-// DICOM Tag: (0018,0010)
-message ContrastBolusAgent {
-	string value = 1;
-}
-// DICOM Tag: (0018,0012)
-message ContrastBolusAgentSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1412)
-message TargetExposureIndex {
-	float value = 1;
+// DICOM Tag: (0018,9220)
+message FrameAcquisitionDuration {
+	double value = 1;
 }
 // DICOM Tag: (0018,1147)
 message FieldOfViewShape {
 	string value = 1;
 }
+// DICOM Tag: (0018,7032)
+message FieldOfViewRotation {
+	float value = 1;
+}
+// DICOM Tag: (0018,7048)
+message GridPeriod {
+	float value = 1;
+}
+// DICOM Tag: (0018,9330)
+message XRayTubeCurrentInmA {
+	double value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0018,7040)
+message GridAbsorbingMaterial {
+	string value = 1;
+}
+// DICOM Tag: (0018,7042)
+message GridThickness {
+	float value = 1;
+}
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1702)
+message CollimatorLeftVerticalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1710)
+message CenterOfCircularCollimator {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,7046)
+message GridAspectRatio {
+	repeated int32 value = 1;
+}
 // DICOM Tag: (0018,9328)
 message ExposureTimeInms {
 	double value = 1;
 }
-// DICOM Tag: (0018,7010)
-message ExposuresOnDetectorSinceLastCalibration {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,9538)
-message PerProjectionAcquisitionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
 }
 message X-Ray3DCraniofacialAcquisitionModule {
-	Grid grid = 1;
-	CodingSchemeVersion coding_scheme_version = 2;
-	DetectorType detector_type = 3;
+	RadiusOfCircularCollimator radius_of_circular_collimator = 1;
+	Grid grid = 2;
+	ExposureInmAs exposure_in_mas = 3;
 	DetectorElementSpacing detector_element_spacing = 4;
-	GridSpacingMaterial grid_spacing_material = 5;
-	GridThickness grid_thickness = 6;
-	CodeMeaning code_meaning = 7;
-	MappingResource mapping_resource = 8;
-	CodingSchemeDesignator coding_scheme_designator = 9;
-	MappingResourceName mapping_resource_name = 10;
-	StartAcquisitionDateTime start_acquisition_datetime = 11;
-	DetectorDescription detector_description = 12;
-	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 13;
-	FieldOfViewOrigin field_of_view_origin = 14;
-	GridID grid_id = 15;
-	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 16;
-	ContextGroupLocalVersion context_group_local_version = 17;
-	EndAcquisitionDateTime end_acquisition_datetime = 18;
-	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 19;
+	DetectorActiveOrigin detector_active_origin = 5;
+	ReferencedFrameNumber referenced_frame_number = 6;
+	ContextUID context_uid = 7;
+	EndAcquisitionDateTime end_acquisition_datetime = 8;
+	Sensitivity sensitivity = 9;
+	FrameAcquisitionDuration frame_acquisition_duration = 10;
+	FieldOfViewDimensionsInFloat field_of_view_dimensions_in_float = 11;
+	GridPitch grid_pitch = 12;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 13;
+	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 14;
+	ContextGroupLocalVersion context_group_local_version = 15;
+	FieldOfViewShape field_of_view_shape = 16;
+	FieldOfViewRotation field_of_view_rotation = 17;
+	GridPeriod grid_period = 18;
+	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 19;
 	CenterOfCircularCollimator center_of_circular_collimator = 20;
-	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 21;
-	ReferencedSOPClassUID referenced_sop_class_uid = 22;
-	ReferencedFrameNumber referenced_frame_number = 23;
-	CodeValue code_value = 24;
-	LongCodeValue long_code_value = 25;
-	URNCodeValue urn_code_value = 26;
-	CollimatorRightVerticalEdge collimator_right_vertical_edge = 27;
-	XRay3DAcquisitionSequence x_ray_3d_acquisition_sequence = 28;
-	FieldOfViewHorizontalFlip field_of_view_horizontal_flip = 29;
-	EquivalentCodeSequence equivalent_code_sequence = 30;
-	MappingResourceUID mapping_resource_uid = 31;
-	Sensitivity sensitivity = 32;
-	SourceImageSequence source_image_sequence = 33;
-	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 34;
-	ContextUID context_uid = 35;
-	DetectorMode detector_mode = 36;
-	CollimatorShape collimator_shape = 37;
-	FieldOfViewRotation field_of_view_rotation = 38;
-	GridAspectRatio grid_aspect_ratio = 39;
-	ExposureInmAs exposure_in_mas = 40;
-	DetectorConfiguration detector_configuration = 41;
-	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 42;
-	XRayReceptorType x_ray_receptor_type = 43;
-	DetectorActiveDimensions detector_active_dimensions = 44;
-	DeviationIndex deviation_index = 45;
-	GridPitch grid_pitch = 46;
-	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 47;
-	RadiusOfCircularCollimator radius_of_circular_collimator = 48;
-	GridPeriod grid_period = 49;
-	KVP kvp = 50;
-	ContrastBolusAgent contrast_bolus_agent = 51;
-	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 52;
-	TargetExposureIndex target_exposure_index = 53;
-	FieldOfViewShape field_of_view_shape = 54;
-	ExposureTimeInms exposure_time_in_ms = 55;
-	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 56;
-	PerProjectionAcquisitionSequence per_projection_acquisition_sequence = 57;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 58;
-	FieldOfViewDimensionsInFloat field_of_view_dimensions_in_float = 59;
-	ContextGroupVersion context_group_version = 60;
-	DetectorActiveShape detector_active_shape = 61;
-	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 62;
-	DetectorActiveOrigin detector_active_origin = 63;
-	GridAbsorbingMaterial grid_absorbing_material = 64;
-	DetectorTemperature detector_temperature = 65;
-	DetectorElementPhysicalSize detector_element_physical_size = 66;
-	ExposureIndex exposure_index = 67;
-	FrameAcquisitionDuration frame_acquisition_duration = 68;
+	GridAbsorbingMaterial grid_absorbing_material = 21;
+	GridThickness grid_thickness = 22;
+	DetectorType detector_type = 23;
+	GridAspectRatio grid_aspect_ratio = 24;
+	ExposureTimeInms exposure_time_in_ms = 25;
+	CodingSchemeDesignator coding_scheme_designator = 26;
+	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 27;
+	MappingResourceUID mapping_resource_uid = 28;
+	XRayReceptorType x_ray_receptor_type = 29;
+	ReferencedSOPClassUID referenced_sop_class_uid = 30;
+	GridSpacingMaterial grid_spacing_material = 31;
+	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 32;
+	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 33;
+	LongCodeValue long_code_value = 34;
+	CollimatorShape collimator_shape = 35;
+	DetectorElementPhysicalSize detector_element_physical_size = 36;
+	EquivalentCodeSequence equivalent_code_sequence = 37;
+	MappingResource mapping_resource = 38;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 39;
+	DetectorActiveDimensions detector_active_dimensions = 40;
+	ExposureIndex exposure_index = 41;
+	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 42;
+	GridID grid_id = 43;
+	CodeValue code_value = 44;
+	CodingSchemeVersion coding_scheme_version = 45;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 46;
+	TargetExposureIndex target_exposure_index = 47;
+	DeviationIndex deviation_index = 48;
+	PerProjectionAcquisitionSequence per_projection_acquisition_sequence = 49;
+	CollimatorRightVerticalEdge collimator_right_vertical_edge = 50;
+	SourceImageSequence source_image_sequence = 51;
+	ContrastBolusAgent contrast_bolus_agent = 52;
+	DetectorDescription detector_description = 53;
+	DetectorTemperature detector_temperature = 54;
+	FieldOfViewOrigin field_of_view_origin = 55;
+	CodeMeaning code_meaning = 56;
+	DetectorMode detector_mode = 57;
+	URNCodeValue urn_code_value = 58;
+	DetectorActiveShape detector_active_shape = 59;
+	StartAcquisitionDateTime start_acquisition_datetime = 60;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 61;
+	FieldOfViewHorizontalFlip field_of_view_horizontal_flip = 62;
+	KVP kvp = 63;
+	XRay3DAcquisitionSequence x_ray_3d_acquisition_sequence = 64;
+	MappingResourceName mapping_resource_name = 65;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 66;
+	ContextGroupVersion context_group_version = 67;
+	DetectorConfiguration detector_configuration = 68;
 }
