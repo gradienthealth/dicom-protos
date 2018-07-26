@@ -54,6 +54,7 @@ var VRToProto = map[string]string{
 
 const ProtoHeader = "syntax = \"proto3\";"
 
+// AttributeProto generates the protocol message for an attribute and returns it as a string
 func AttributeProto(a *parse.Attribute) string {
 
 	b := bytes.NewBufferString("")

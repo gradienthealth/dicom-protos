@@ -2,13 +2,13 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.21.html#table_C.7.6.21-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,9537)
-message EquipmentCoordinateSystemIdentification {
-	string value = 1;
-}
 // DICOM Tag: (0028,9520)
 message ImageToEquipmentMappingMatrix {
 	repeated float value = 1;
+}
+// DICOM Tag: (0028,9537)
+message EquipmentCoordinateSystemIdentification {
+	string value = 1;
 }
 message Image-EquipmentCoordinateRelationshipModule {
 	ImageToEquipmentMappingMatrix image_to_equipment_mapping_matrix = 1;

@@ -2,18 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.7.html#table_C.8-6
 syntax = "proto3";
 
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
 // DICOM Tag: (0028,0101)
 message BitsStored {
 	uint32 value = 1;
@@ -26,11 +14,23 @@ message HighBit {
 message PixelSpacing {
 	repeated float value = 1;
 }
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
 message NMImagePixelModule {
-	HighBit high_bit = 1;
-	PixelSpacing pixel_spacing = 2;
-	SamplesPerPixel samples_per_pixel = 3;
-	PhotometricInterpretation photometric_interpretation = 4;
-	BitsAllocated bits_allocated = 5;
-	BitsStored bits_stored = 6;
+	SamplesPerPixel samples_per_pixel = 1;
+	PhotometricInterpretation photometric_interpretation = 2;
+	BitsAllocated bits_allocated = 3;
+	BitsStored bits_stored = 4;
+	HighBit high_bit = 5;
+	PixelSpacing pixel_spacing = 6;
 }

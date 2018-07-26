@@ -2,15 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.23.html#table_C.7.6.23-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,2000)
-message ICCProfile {
-	string value = 1;
-}
-// DICOM Tag: (0028,3010)
-message VOILUTSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
 // DICOM Tag: (0028,3003)
 message LUTExplanation {
 	string value = 1;
@@ -19,39 +10,40 @@ message LUTExplanation {
 message WindowWidth {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,1055)
-message WindowCenterWidthExplanation {
-	repeated string value = 1;
+// DICOM Tag: (0028,1407)
+message BlendingLookupTableDescriptor {
+	repeated uint32 value = 1;
 }
-// DICOM Tag: (0028,1404)
-message BlendingLUT1Sequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
 }
-// DICOM Tag: (0028,1103)
-message BluePaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
+// DICOM Tag: (0028,1403)
+message BitsMappedToColorLookupTable {
+	uint32 value = 1;
 }
-// DICOM Tag: (0028,1401)
-message DataFrameAssignmentSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (0028,1056)
+message VOILUTFunction {
+	string value = 1;
 }
-// DICOM Tag: (0028,1201)
-message RedPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
+// DICOM Tag: (0028,1405)
+message BlendingLUT1TransferFunction {
+	string value = 1;
 }
 // DICOM Tag: (0028,1050)
 message WindowCenter {
 	repeated float value = 1;
 }
-// DICOM Tag: (0028,1406)
-message BlendingWeightConstant {
-	double value = 1;
+// DICOM Tag: (0028,3006)
+message LUTData {
+	repeated bytes value = 1;
 }
-// DICOM Tag: (0028,1202)
-message GreenPaletteColorLookupTableData {
+// DICOM Tag: (0028,1104)
+message AlphaPaletteColorLookupTableDescriptor {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,1201)
+message RedPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
@@ -59,37 +51,30 @@ message GreenPaletteColorLookupTableData {
 message DataType {
 	string value = 1;
 }
+// DICOM Tag: (0028,1404)
+message BlendingLUT1Sequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,1406)
+message BlendingWeightConstant {
+	double value = 1;
+}
+// DICOM Tag: (0028,1103)
+message BluePaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,3010)
+message VOILUTSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0028,3002)
 message LUTDescriptor {
 	repeated int64 value = 1;
 }
-// DICOM Tag: (0028,3006)
-message LUTData {
-	repeated bytes value = 1;
-}
-// DICOM Tag: (0028,1405)
-message BlendingLUT1TransferFunction {
-	string value = 1;
-}
-// DICOM Tag: (0028,1204)
-message AlphaPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,2002)
-message ColorSpace {
-	string value = 1;
-}
-// DICOM Tag: (0028,1402)
-message DataPathAssignment {
-	string value = 1;
-}
-// DICOM Tag: (0028,1403)
-message BitsMappedToColorLookupTable {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1203)
-message BluePaletteColorLookupTableData {
+// DICOM Tag: (0028,1408)
+message BlendingLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
@@ -97,24 +82,26 @@ message BluePaletteColorLookupTableData {
 message AlphaLUTTransferFunction {
 	string value = 1;
 }
-// DICOM Tag: (0028,1101)
-message RedPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,1104)
-message AlphaPaletteColorLookupTableDescriptor {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0028,1056)
-message VOILUTFunction {
+// DICOM Tag: (0028,1402)
+message DataPathAssignment {
 	string value = 1;
 }
-// DICOM Tag: (0028,1407)
-message BlendingLookupTableDescriptor {
-	repeated uint32 value = 1;
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
 }
-// DICOM Tag: (0028,1408)
-message BlendingLookupTableData {
+// DICOM Tag: (0028,2002)
+message ColorSpace {
+	string value = 1;
+}
+// DICOM Tag: (0028,1401)
+message DataFrameAssignmentSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,1204)
+message AlphaPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
@@ -122,33 +109,46 @@ message BlendingLookupTableData {
 message GreenPaletteColorLookupTableDescriptor {
 	repeated int64 value = 1;
 }
+// DICOM Tag: (0028,1101)
+message RedPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1055)
+message WindowCenterWidthExplanation {
+	repeated string value = 1;
+}
 message EnhancedPaletteColorLookupTableModule {
-	BlendingWeightConstant blending_weight_constant = 1;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 2;
-	WindowCenter window_center = 3;
-	LUTDescriptor lut_descriptor = 4;
-	LUTData lut_data = 5;
-	BlendingLUT1TransferFunction blending_lut_1_transfer_function = 6;
-	AlphaPaletteColorLookupTableData alpha_palette_color_lookup_table_data = 7;
-	ColorSpace color_space = 8;
-	DataType data_type = 9;
-	BitsMappedToColorLookupTable bits_mapped_to_color_lookup_table = 10;
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 11;
-	DataPathAssignment data_path_assignment = 12;
-	AlphaLUTTransferFunction alpha_lut_transfer_function = 13;
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 14;
-	AlphaPaletteColorLookupTableDescriptor alpha_palette_color_lookup_table_descriptor = 15;
+	DataPathAssignment data_path_assignment = 1;
+	LUTDescriptor lut_descriptor = 2;
+	BlendingLookupTableData blending_lookup_table_data = 3;
+	AlphaLUTTransferFunction alpha_lut_transfer_function = 4;
+	DataFrameAssignmentSequence data_frame_assignment_sequence = 5;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 6;
+	ColorSpace color_space = 7;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 8;
+	AlphaPaletteColorLookupTableData alpha_palette_color_lookup_table_data = 9;
+	WindowCenterWidthExplanation window_center_&_width_explanation = 10;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 11;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 12;
+	BitsMappedToColorLookupTable bits_mapped_to_color_lookup_table = 13;
+	LUTExplanation lut_explanation = 14;
+	WindowWidth window_width = 15;
 	BlendingLookupTableDescriptor blending_lookup_table_descriptor = 16;
-	BlendingLookupTableData blending_lookup_table_data = 17;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 18;
+	ICCProfile icc_profile = 17;
+	WindowCenter window_center = 18;
 	VOILUTFunction voi_lut_function = 19;
-	LUTExplanation lut_explanation = 20;
-	WindowWidth window_width = 21;
-	WindowCenterWidthExplanation window_center_&_width_explanation = 22;
-	BlendingLUT1Sequence blending_lut_1_sequence = 23;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 24;
-	ICCProfile icc_profile = 25;
-	VOILUTSequence voi_lut_sequence = 26;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 27;
-	DataFrameAssignmentSequence data_frame_assignment_sequence = 28;
+	BlendingLUT1TransferFunction blending_lut_1_transfer_function = 20;
+	DataType data_type = 21;
+	LUTData lut_data = 22;
+	AlphaPaletteColorLookupTableDescriptor alpha_palette_color_lookup_table_descriptor = 23;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 24;
+	VOILUTSequence voi_lut_sequence = 25;
+	BlendingLUT1Sequence blending_lut_1_sequence = 26;
+	BlendingWeightConstant blending_weight_constant = 27;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 28;
 }

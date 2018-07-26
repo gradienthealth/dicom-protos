@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.15.html#table_C.8-15
 syntax = "proto3";
 
-// DICOM Tag: (0020,1041)
-message SliceLocation {
-	float value = 1;
-}
-// DICOM Tag: (0054,0500)
-message SliceProgressionDirection {
-	string value = 1;
-}
 // DICOM Tag: (0018,0088)
 message SpacingBetweenSlices {
 	float value = 1;
@@ -25,6 +17,14 @@ message ConvolutionKernel {
 // DICOM Tag: (0018,0050)
 message SliceThickness {
 	float value = 1;
+}
+// DICOM Tag: (0020,1041)
+message SliceLocation {
+	float value = 1;
+}
+// DICOM Tag: (0054,0500)
+message SliceProgressionDirection {
+	string value = 1;
 }
 message NMReconstructionModule {
 	SpacingBetweenSlices spacing_between_slices = 1;

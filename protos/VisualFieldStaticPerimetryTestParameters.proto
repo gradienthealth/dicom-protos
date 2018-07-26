@@ -6,6 +6,10 @@ syntax = "proto3";
 message MappingResource {
 	string value = 1;
 }
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
 // DICOM Tag: (0024,0025)
 message StimulusArea {
 	float value = 1;
@@ -19,38 +23,13 @@ message EquivalentCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
 // DICOM Tag: (0008,0120)
 message URNCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0024,0010)
-message VisualFieldHorizontalExtent {
-	float value = 1;
-}
-// DICOM Tag: (0024,0016)
-message ScreeningTestModeCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
 	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
 }
 // DICOM Tag: (0024,0018)
 message MaximumStimulusLuminance {
@@ -61,6 +40,10 @@ message StimulusColorCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0024,0028)
+message StimulusPresentationTime {
+	float value = 1;
+}
 // DICOM Tag: (0024,0012)
 message VisualFieldShape {
 	string value = 1;
@@ -69,17 +52,22 @@ message VisualFieldShape {
 message CodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
 	string value = 1;
 }
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
+// DICOM Tag: (0008,0117)
+message ContextUID {
 	string value = 1;
 }
-// DICOM Tag: (0024,0028)
-message StimulusPresentationTime {
+// DICOM Tag: (0024,0020)
+message BackgroundLuminance {
 	float value = 1;
+}
+// DICOM Tag: (0024,0016)
+message ScreeningTestModeCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0008,0102)
 message CodingSchemeDesignator {
@@ -89,37 +77,49 @@ message CodingSchemeDesignator {
 message LongCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0024,0020)
-message BackgroundLuminance {
-	float value = 1;
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
 }
 // DICOM Tag: (0024,0024)
 message BackgroundIlluminationColorCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
+// DICOM Tag: (0024,0010)
+message VisualFieldHorizontalExtent {
+	float value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
 message VisualFieldStaticPerimetryTestParametersModule {
-	CodingSchemeVersion coding_scheme_version = 1;
-	CodeMeaning code_meaning = 2;
-	URNCodeValue urn_code_value = 3;
-	ContextGroupLocalVersion context_group_local_version = 4;
-	VisualFieldHorizontalExtent visual_field_horizontal_extent = 5;
-	ScreeningTestModeCodeSequence screening_test_mode_code_sequence = 6;
-	MappingResourceUID mapping_resource_uid = 7;
-	MappingResourceName mapping_resource_name = 8;
-	ContextGroupVersion context_group_version = 9;
-	MaximumStimulusLuminance maximum_stimulus_luminance = 10;
-	StimulusColorCodeSequence stimulus_color_code_sequence = 11;
-	VisualFieldShape visual_field_shape = 12;
-	CodeValue code_value = 13;
-	BackgroundLuminance background_luminance = 14;
-	BackgroundIlluminationColorCodeSequence background_illumination_color_code_sequence = 15;
-	StimulusPresentationTime stimulus_presentation_time = 16;
-	CodingSchemeDesignator coding_scheme_designator = 17;
-	LongCodeValue long_code_value = 18;
-	ContextUID context_uid = 19;
-	MappingResource mapping_resource = 20;
-	StimulusArea stimulus_area = 21;
-	VisualFieldVerticalExtent visual_field_vertical_extent = 22;
-	EquivalentCodeSequence equivalent_code_sequence = 23;
+	ScreeningTestModeCodeSequence screening_test_mode_code_sequence = 1;
+	CodingSchemeDesignator coding_scheme_designator = 2;
+	CodeMeaning code_meaning = 3;
+	ContextUID context_uid = 4;
+	BackgroundLuminance background_luminance = 5;
+	VisualFieldHorizontalExtent visual_field_horizontal_extent = 6;
+	CodingSchemeVersion coding_scheme_version = 7;
+	LongCodeValue long_code_value = 8;
+	MappingResourceName mapping_resource_name = 9;
+	ContextGroupLocalVersion context_group_local_version = 10;
+	BackgroundIlluminationColorCodeSequence background_illumination_color_code_sequence = 11;
+	VisualFieldVerticalExtent visual_field_vertical_extent = 12;
+	EquivalentCodeSequence equivalent_code_sequence = 13;
+	MappingResource mapping_resource = 14;
+	ContextGroupVersion context_group_version = 15;
+	StimulusArea stimulus_area = 16;
+	StimulusPresentationTime stimulus_presentation_time = 17;
+	VisualFieldShape visual_field_shape = 18;
+	CodeValue code_value = 19;
+	URNCodeValue urn_code_value = 20;
+	MappingResourceUID mapping_resource_uid = 21;
+	MaximumStimulusLuminance maximum_stimulus_luminance = 22;
+	StimulusColorCodeSequence stimulus_color_code_sequence = 23;
 }

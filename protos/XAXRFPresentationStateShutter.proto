@@ -2,30 +2,34 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.20.html#table_C.11.20-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,1602)
-message ShutterLeftVerticalEdge {
+// DICOM Tag: (0018,1604)
+message ShutterRightVerticalEdge {
 	int32 value = 1;
 }
-// DICOM Tag: (0018,1622)
-message ShutterPresentationValue {
-	uint32 value = 1;
+// DICOM Tag: (0018,1606)
+message ShutterUpperHorizontalEdge {
+	int32 value = 1;
 }
 // DICOM Tag: (0008,1150)
 message ReferencedSOPClassUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,1620)
+message VerticesOfThePolygonalShutter {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,1622)
+message ShutterPresentationValue {
+	uint32 value = 1;
 }
 // DICOM Tag: (0018,9472)
 message FrameDisplayShutterSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0018,1606)
-message ShutterUpperHorizontalEdge {
-	int32 value = 1;
 }
 // DICOM Tag: (0018,1608)
 message ShutterLowerHorizontalEdge {
@@ -39,17 +43,13 @@ message CenterOfCircularShutter {
 message RadiusOfCircularShutter {
 	int32 value = 1;
 }
-// DICOM Tag: (0018,1620)
-message VerticesOfThePolygonalShutter {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0018,1604)
-message ShutterRightVerticalEdge {
+// DICOM Tag: (0018,1602)
+message ShutterLeftVerticalEdge {
 	int32 value = 1;
 }
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
 }
 // DICOM Tag: (0018,1600)
 message ShutterShape {
@@ -65,19 +65,19 @@ message ReferencedImageSequence {
 	// This attribute has a SQ VR, no proto mapping yet
 }
 message XA/XRFPresentationStateShutterModule {
-	CenterOfCircularShutter center_of_circular_shutter = 1;
-	RadiusOfCircularShutter radius_of_circular_shutter = 2;
-	VerticesOfThePolygonalShutter vertices_of_the_polygonal_shutter = 3;
-	ShutterRightVerticalEdge shutter_right_vertical_edge = 4;
+	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 1;
+	ReferencedImageSequence referenced_image_sequence = 2;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 3;
+	ShutterShape shutter_shape = 4;
 	ShutterUpperHorizontalEdge shutter_upper_horizontal_edge = 5;
-	ShutterLowerHorizontalEdge shutter_lower_horizontal_edge = 6;
-	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 7;
-	ReferencedImageSequence referenced_image_sequence = 8;
-	ReferencedFrameNumber referenced_frame_number = 9;
-	ShutterShape shutter_shape = 10;
-	ShutterPresentationValue shutter_presentation_value = 11;
-	ReferencedSOPClassUID referenced_sop_class_uid = 12;
+	ReferencedSOPClassUID referenced_sop_class_uid = 6;
+	ShutterRightVerticalEdge shutter_right_vertical_edge = 7;
+	ShutterPresentationValue shutter_presentation_value = 8;
+	FrameDisplayShutterSequence frame_display_shutter_sequence = 9;
+	ReferencedFrameNumber referenced_frame_number = 10;
+	VerticesOfThePolygonalShutter vertices_of_the_polygonal_shutter = 11;
+	RadiusOfCircularShutter radius_of_circular_shutter = 12;
 	ShutterLeftVerticalEdge shutter_left_vertical_edge = 13;
-	FrameDisplayShutterSequence frame_display_shutter_sequence = 14;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 15;
+	ShutterLowerHorizontalEdge shutter_lower_horizontal_edge = 14;
+	CenterOfCircularShutter center_of_circular_shutter = 15;
 }

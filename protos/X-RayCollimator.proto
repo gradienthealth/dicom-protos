@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.3.html#table_C.8-28
 syntax = "proto3";
 
-// DICOM Tag: (0018,1706)
-message CollimatorUpperHorizontalEdge {
-	int32 value = 1;
-}
-// DICOM Tag: (0018,1708)
-message CollimatorLowerHorizontalEdge {
-	int32 value = 1;
-}
 // DICOM Tag: (0018,1710)
 message CenterOfCircularCollimator {
 	repeated int32 value = 1;
@@ -34,13 +26,21 @@ message CollimatorLeftVerticalEdge {
 message CollimatorRightVerticalEdge {
 	int32 value = 1;
 }
+// DICOM Tag: (0018,1706)
+message CollimatorUpperHorizontalEdge {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1708)
+message CollimatorLowerHorizontalEdge {
+	int32 value = 1;
+}
 message X-RayCollimatorModule {
-	RadiusOfCircularCollimator radius_of_circular_collimator = 1;
-	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 2;
-	CollimatorShape collimator_shape = 3;
-	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 4;
-	CollimatorRightVerticalEdge collimator_right_vertical_edge = 5;
-	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 6;
-	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 7;
-	CenterOfCircularCollimator center_of_circular_collimator = 8;
+	CenterOfCircularCollimator center_of_circular_collimator = 1;
+	RadiusOfCircularCollimator radius_of_circular_collimator = 2;
+	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 3;
+	CollimatorShape collimator_shape = 4;
+	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 5;
+	CollimatorRightVerticalEdge collimator_right_vertical_edge = 6;
+	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 7;
+	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 8;
 }

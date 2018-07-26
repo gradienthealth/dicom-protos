@@ -2,20 +2,16 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.12.html#table_C.8-48
 syntax = "proto3";
 
+// DICOM Tag: (0018,5100)
+message PatientPosition {
+	string value = 1;
+}
 // DICOM Tag: (0008,1160)
 message ReferencedFrameNumber {
 	repeated int32 value = 1;
 }
-// DICOM Tag: (0018,9170)
-message RespiratoryMotionCompensationTechnique {
-	string value = 1;
-}
 // DICOM Tag: (0018,9185)
 message RespiratoryMotionCompensationTechniqueDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,5100)
-message PatientPosition {
 	string value = 1;
 }
 // DICOM Tag: (0008,1150)
@@ -24,6 +20,10 @@ message ReferencedSOPClassUID {
 }
 // DICOM Tag: (0008,1155)
 message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0018,9170)
+message RespiratoryMotionCompensationTechnique {
 	string value = 1;
 }
 // DICOM Tag: (0018,9171)
@@ -35,12 +35,12 @@ message RespiratorySignalSourceID {
 	string value = 1;
 }
 message RTPatientSetupModule {
-	PatientPosition patient_position = 1;
-	ReferencedSOPClassUID referenced_sop_class_uid = 2;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 3;
+	ReferencedSOPClassUID referenced_sop_class_uid = 1;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 2;
+	RespiratoryMotionCompensationTechnique respiratory_motion_compensation_technique = 3;
 	RespiratorySignalSource respiratory_signal_source = 4;
 	RespiratorySignalSourceID respiratory_signal_source_id = 5;
 	ReferencedFrameNumber referenced_frame_number = 6;
-	RespiratoryMotionCompensationTechnique respiratory_motion_compensation_technique = 7;
-	RespiratoryMotionCompensationTechniqueDescription respiratory_motion_compensation_technique_description = 8;
+	RespiratoryMotionCompensationTechniqueDescription respiratory_motion_compensation_technique_description = 7;
+	PatientPosition patient_position = 8;
 }

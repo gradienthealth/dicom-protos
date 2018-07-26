@@ -2,70 +2,73 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.27.html#table_C.11.27-1
 syntax = "proto3";
 
+// DICOM Tag: (0028,1222)
+message SegmentedGreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (2050,0020)
+message PresentationLUTShape {
+	string value = 1;
+}
 // DICOM Tag: (0028,1101)
 message RedPaletteColorLookupTableDescriptor {
 	repeated int64 value = 1;
 }
-// DICOM Tag: (0070,1802)
-message ComponentType {
+// DICOM Tag: (0028,1199)
+message PaletteColorLookupTableUID {
 	string value = 1;
-}
-// DICOM Tag: (0070,1803)
-message ComponentInputSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,1403)
-message BitsMappedToColorLookupTable {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1410)
-message AlphaLUTTransferFunction {
-	string value = 1;
-}
-// DICOM Tag: (0028,1104)
-message AlphaPaletteColorLookupTableDescriptor {
-	repeated uint32 value = 1;
-}
-// DICOM Tag: (0028,1202)
-message GreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,1204)
-message AlphaPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,3006)
-message LUTData {
-	repeated bytes value = 1;
-}
-// DICOM Tag: (0028,1203)
-message BluePaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
 }
 // DICOM Tag: (0028,1221)
 message SegmentedRedPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
-// DICOM Tag: (0028,1223)
-message SegmentedBluePaletteColorLookupTableData {
+// DICOM Tag: (0028,1403)
+message BitsMappedToColorLookupTable {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,1102)
+message GreenPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0070,1806)
+message WeightingTransferFunctionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,3006)
+message LUTData {
+	repeated bytes value = 1;
+}
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
+}
+// DICOM Tag: (0070,1801)
+message PresentationStateClassificationComponentSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,1802)
+message ComponentType {
+	string value = 1;
 }
 // DICOM Tag: (0070,1804)
 message VolumetricPresentationInputIndex {
 	uint32 value = 1;
 }
+// DICOM Tag: (0028,1410)
+message AlphaLUTTransferFunction {
+	string value = 1;
+}
 // DICOM Tag: (0028,1103)
 message BluePaletteColorLookupTableDescriptor {
 	repeated int64 value = 1;
 }
-// DICOM Tag: (0028,1224)
-message SegmentedAlphaPaletteColorLookupTableData {
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
@@ -77,30 +80,8 @@ message LUTDescriptor {
 message ICCProfile {
 	string value = 1;
 }
-// DICOM Tag: (0028,2002)
-message ColorSpace {
-	string value = 1;
-}
-// DICOM Tag: (0028,1222)
-message SegmentedGreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0008,9205)
-message PixelPresentation {
-	string value = 1;
-}
-// DICOM Tag: (0028,1199)
-message PaletteColorLookupTableUID {
-	string value = 1;
-}
-// DICOM Tag: (0070,1806)
-message WeightingTransferFunctionSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,1201)
-message RedPaletteColorLookupTableData {
+// DICOM Tag: (0028,1224)
+message SegmentedAlphaPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
@@ -109,45 +90,64 @@ message PresentationStateCompositorComponentSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0070,1801)
-message PresentationStateClassificationComponentSequence {
+// DICOM Tag: (0008,9205)
+message PixelPresentation {
+	string value = 1;
+}
+// DICOM Tag: (0028,1104)
+message AlphaPaletteColorLookupTableDescriptor {
+	repeated uint32 value = 1;
+}
+// DICOM Tag: (0028,1201)
+message RedPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1223)
+message SegmentedBluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0070,1803)
+message ComponentInputSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,1102)
-message GreenPaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
+// DICOM Tag: (0028,1204)
+message AlphaPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
 }
-// DICOM Tag: (2050,0020)
-message PresentationLUTShape {
+// DICOM Tag: (0028,2002)
+message ColorSpace {
 	string value = 1;
 }
 message MPRVolumetricPresentationStateDisplayModule {
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 1;
-	SegmentedRedPaletteColorLookupTableData segmented_red_palette_color_lookup_table_data = 2;
-	SegmentedBluePaletteColorLookupTableData segmented_blue_palette_color_lookup_table_data = 3;
-	VolumetricPresentationInputIndex volumetric_presentation_input_index = 4;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 5;
-	SegmentedAlphaPaletteColorLookupTableData segmented_alpha_palette_color_lookup_table_data = 6;
-	LUTDescriptor lut_descriptor = 7;
-	ICCProfile icc_profile = 8;
-	ColorSpace color_space = 9;
-	SegmentedGreenPaletteColorLookupTableData segmented_green_palette_color_lookup_table_data = 10;
-	PixelPresentation pixel_presentation = 11;
-	PaletteColorLookupTableUID palette_color_lookup_table_uid = 12;
-	WeightingTransferFunctionSequence weighting_transfer_function_sequence = 13;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 14;
+	PresentationStateClassificationComponentSequence presentation_state_classification_component_sequence = 1;
+	ComponentType component_type = 2;
+	VolumetricPresentationInputIndex volumetric_presentation_input_index = 3;
+	AlphaLUTTransferFunction alpha_lut_transfer_function = 4;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 5;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 6;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 7;
+	LUTDescriptor lut_descriptor = 8;
+	ICCProfile icc_profile = 9;
+	PixelPresentation pixel_presentation = 10;
+	AlphaPaletteColorLookupTableDescriptor alpha_palette_color_lookup_table_descriptor = 11;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 12;
+	SegmentedBluePaletteColorLookupTableData segmented_blue_palette_color_lookup_table_data = 13;
+	SegmentedAlphaPaletteColorLookupTableData segmented_alpha_palette_color_lookup_table_data = 14;
 	PresentationStateCompositorComponentSequence presentation_state_compositor_component_sequence = 15;
-	PresentationStateClassificationComponentSequence presentation_state_classification_component_sequence = 16;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 17;
-	PresentationLUTShape presentation_lut_shape = 18;
+	ComponentInputSequence component_input_sequence = 16;
+	AlphaPaletteColorLookupTableData alpha_palette_color_lookup_table_data = 17;
+	ColorSpace color_space = 18;
 	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 19;
-	ComponentType component_type = 20;
-	ComponentInputSequence component_input_sequence = 21;
-	BitsMappedToColorLookupTable bits_mapped_to_color_lookup_table = 22;
-	AlphaLUTTransferFunction alpha_lut_transfer_function = 23;
-	AlphaPaletteColorLookupTableDescriptor alpha_palette_color_lookup_table_descriptor = 24;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 25;
-	AlphaPaletteColorLookupTableData alpha_palette_color_lookup_table_data = 26;
+	PaletteColorLookupTableUID palette_color_lookup_table_uid = 20;
+	SegmentedRedPaletteColorLookupTableData segmented_red_palette_color_lookup_table_data = 21;
+	SegmentedGreenPaletteColorLookupTableData segmented_green_palette_color_lookup_table_data = 22;
+	PresentationLUTShape presentation_lut_shape = 23;
+	BitsMappedToColorLookupTable bits_mapped_to_color_lookup_table = 24;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 25;
+	WeightingTransferFunctionSequence weighting_transfer_function_sequence = 26;
 	LUTData lut_data = 27;
 }

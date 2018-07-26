@@ -24,9 +24,9 @@ message BodyPartExamined {
 	string value = 1;
 }
 message CornealTopographyMapSeriesModule {
-	BodyPartExamined body_part_examined = 1;
-	Modality modality = 2;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
-	ReferencedSOPClassUID referenced_sop_class_uid = 4;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 5;
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	ReferencedSOPClassUID referenced_sop_class_uid = 3;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 4;
+	BodyPartExamined body_part_examined = 5;
 }

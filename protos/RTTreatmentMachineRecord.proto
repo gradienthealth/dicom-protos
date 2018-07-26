@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.18.html#table_C.8-54
 syntax = "proto3";
 
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
 // DICOM Tag: (0008,1040)
 message InstitutionalDepartmentName {
 	string value = 1;
@@ -24,6 +20,10 @@ message Manufacturer {
 }
 // DICOM Tag: (0008,0080)
 message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
 	string value = 1;
 }
 message RTTreatmentMachineRecordModule {

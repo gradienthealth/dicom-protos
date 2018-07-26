@@ -2,49 +2,57 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#table_C.7-8
 syntax = "proto3";
 
-// DICOM Tag: (0008,0070)
-message Manufacturer {
-	string value = 1;
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
 // DICOM Tag: (0008,1040)
 message InstitutionalDepartmentName {
-	string value = 1;
-}
-// DICOM Tag: (0018,1009)
-message UniqueDeviceIdentifier {
-	string value = 1;
-}
-// DICOM Tag: (0028,0120)
-message PixelPaddingValue {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1010)
-message StationName {
 	string value = 1;
 }
 // DICOM Tag: (0008,1090)
 message ManufacturerModelName {
 	string value = 1;
 }
-// DICOM Tag: (0018,1020)
-message SoftwareVersions {
-	repeated string value = 1;
+// DICOM Tag: (0018,1008)
+message GantryID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0070)
+message Manufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
+}
+// DICOM Tag: (0008,1010)
+message StationName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1009)
+message UniqueDeviceIdentifier {
+	string value = 1;
+}
+// DICOM Tag: (0050,0020)
+message DeviceDescription {
+	string value = 1;
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1201)
+message TimeOfLastCalibration {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,0120)
+message PixelPaddingValue {
+	int64 value = 1;
 }
 // DICOM Tag: (0018,1000)
 message DeviceSerialNumber {
 	string value = 1;
 }
-// DICOM Tag: (0018,1008)
-message GantryID {
-	string value = 1;
+// DICOM Tag: (0018,1020)
+message SoftwareVersions {
+	repeated string value = 1;
 }
 // DICOM Tag: (0018,1050)
 message SpatialResolution {
@@ -54,28 +62,20 @@ message SpatialResolution {
 message DateOfLastCalibration {
 	repeated string value = 1;
 }
-// DICOM Tag: (0050,0020)
-message DeviceDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,1201)
-message TimeOfLastCalibration {
-	repeated int64 value = 1;
-}
 message GeneralEquipmentModule {
-	Manufacturer manufacturer = 1;
+	PixelPaddingValue pixel_padding_value = 1;
 	InstitutionName institution_name = 2;
-	InstitutionAddress institution_address = 3;
-	InstitutionalDepartmentName institutional_department_name = 4;
-	UniqueDeviceIdentifier unique_device_identifier = 5;
-	PixelPaddingValue pixel_padding_value = 6;
-	StationName station_name = 7;
-	ManufacturerModelName manufacturer's_model_name = 8;
-	SoftwareVersions software_versions = 9;
-	DeviceSerialNumber device_serial_number = 10;
-	GantryID gantry_id = 11;
-	SpatialResolution spatial_resolution = 12;
-	DateOfLastCalibration date_of_last_calibration = 13;
-	DeviceDescription device_description = 14;
-	TimeOfLastCalibration time_of_last_calibration = 15;
+	TimeOfLastCalibration time_of_last_calibration = 3;
+	SpatialResolution spatial_resolution = 4;
+	DateOfLastCalibration date_of_last_calibration = 5;
+	DeviceSerialNumber device_serial_number = 6;
+	SoftwareVersions software_versions = 7;
+	GantryID gantry_id = 8;
+	InstitutionalDepartmentName institutional_department_name = 9;
+	ManufacturerModelName manufacturer's_model_name = 10;
+	StationName station_name = 11;
+	UniqueDeviceIdentifier unique_device_identifier = 12;
+	DeviceDescription device_description = 13;
+	Manufacturer manufacturer = 14;
+	InstitutionAddress institution_address = 15;
 }

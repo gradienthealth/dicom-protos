@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.25.html#table_C.8.8.25-1
 syntax = "proto3";
 
-// DICOM Tag: (0008,1090)
-message ManufacturerModelName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
 // DICOM Tag: (3006,0084)
 message ReferencedROINumber {
 	int32 value = 1;
@@ -18,39 +10,47 @@ message ReferencedROINumber {
 message Manufacturer {
 	string value = 1;
 }
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
-	string value = 1;
-}
 // DICOM Tag: (0008,1040)
 message InstitutionalDepartmentName {
-	string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
-}
-// DICOM Tag: (0018,0060)
-message KVP {
-	float value = 1;
-}
-// DICOM Tag: (0008,0080)
-message InstitutionName {
 	string value = 1;
 }
 // DICOM Tag: (0018,1000)
 message DeviceSerialNumber {
 	string value = 1;
 }
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
+}
+// DICOM Tag: (0008,1090)
+message ManufacturerModelName {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
 message RTIonBeamsModule {
-	InstitutionName institution_name = 1;
-	DeviceSerialNumber device_serial_number = 2;
-	ReferencedSOPClassUID referenced_sop_class_uid = 3;
-	KVP kvp = 4;
-	Manufacturer manufacturer = 5;
-	InstitutionAddress institution_address = 6;
-	InstitutionalDepartmentName institutional_department_name = 7;
-	ManufacturerModelName manufacturer's_model_name = 8;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 9;
-	ReferencedROINumber referenced_roi_number = 10;
+	ReferencedSOPClassUID referenced_sop_class_uid = 1;
+	ReferencedROINumber referenced_roi_number = 2;
+	Manufacturer manufacturer = 3;
+	InstitutionalDepartmentName institutional_department_name = 4;
+	DeviceSerialNumber device_serial_number = 5;
+	KVP kvp = 6;
+	InstitutionName institution_name = 7;
+	InstitutionAddress institution_address = 8;
+	ManufacturerModelName manufacturer's_model_name = 9;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 10;
 }

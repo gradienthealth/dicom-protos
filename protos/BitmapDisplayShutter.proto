@@ -19,8 +19,8 @@ message ShutterPresentationColorCIELabValue {
 	repeated uint32 value = 1;
 }
 message BitmapDisplayShutterModule {
-	ShutterPresentationValue shutter_presentation_value = 1;
-	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 2;
-	ShutterShape shutter_shape = 3;
-	ShutterOverlayGroup shutter_overlay_group = 4;
+	ShutterShape shutter_shape = 1;
+	ShutterOverlayGroup shutter_overlay_group = 2;
+	ShutterPresentationValue shutter_presentation_value = 3;
+	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 4;
 }

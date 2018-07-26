@@ -2,14 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.7.html#table_C.34.7-1
 syntax = "proto3";
 
-// DICOM Tag: (0018,9917)
-message InstructionDescription {
-	string value = 1;
-}
-// DICOM Tag: (0018,9918)
-message InstructionPerformedFlag {
-	string value = 1;
-}
 // DICOM Tag: (0018,9919)
 message InstructionPerformedDateTime {
 	int64 value = 1;
@@ -27,11 +19,19 @@ message InstructionIndex {
 message InstructionText {
 	string value = 1;
 }
+// DICOM Tag: (0018,9917)
+message InstructionDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,9918)
+message InstructionPerformedFlag {
+	string value = 1;
+}
 message InstructionsModule {
-	InstructionIndex instruction_index = 1;
-	InstructionText instruction_text = 2;
-	InstructionDescription instruction_description = 3;
-	InstructionPerformedFlag instruction_performed_flag = 4;
-	InstructionPerformedDateTime instruction_performed_datetime = 5;
-	InstructionSequence instruction_sequence = 6;
+	InstructionText instruction_text = 1;
+	InstructionDescription instruction_description = 2;
+	InstructionPerformedFlag instruction_performed_flag = 3;
+	InstructionPerformedDateTime instruction_performed_datetime = 4;
+	InstructionSequence instruction_sequence = 5;
+	InstructionIndex instruction_index = 6;
 }

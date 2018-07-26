@@ -20,8 +20,8 @@ message CalculatedDoseReferenceDescription {
 	string value = 1;
 }
 message CalculatedDoseReferenceRecordModule {
-	CalculatedDoseReferenceSequence calculated_dose_reference_sequence = 1;
-	CalculatedDoseReferenceNumber calculated_dose_reference_number = 2;
-	CalculatedDoseReferenceDoseValue calculated_dose_reference_dose_value = 3;
-	CalculatedDoseReferenceDescription calculated_dose_reference_description = 4;
+	CalculatedDoseReferenceNumber calculated_dose_reference_number = 1;
+	CalculatedDoseReferenceDoseValue calculated_dose_reference_dose_value = 2;
+	CalculatedDoseReferenceDescription calculated_dose_reference_description = 3;
+	CalculatedDoseReferenceSequence calculated_dose_reference_sequence = 4;
 }

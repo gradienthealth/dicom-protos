@@ -2,93 +2,114 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.22.html#table_C.22.1-1
 syntax = "proto3";
 
-// DICOM Tag: (0028,0011)
-message Columns {
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
 	uint32 value = 1;
 }
-// DICOM Tag: (2200,0004)
-message MediaDisposition {
-	string value = 1;
-}
-// DICOM Tag: (0008,1197)
-message FailureReason {
+// DICOM Tag: (0028,0010)
+message Rows {
 	uint32 value = 1;
 }
-// DICOM Tag: (2200,0006)
-message BarcodeSymbology {
-	string value = 1;
+// DICOM Tag: (0028,1102)
+message GreenPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
 }
-// DICOM Tag: (2200,0008)
-message IncludeNonDICOMObjects {
+// DICOM Tag: (2200,0007)
+message AllowMediaSplitting {
 	string value = 1;
 }
 // DICOM Tag: (2200,0009)
 message IncludeDisplayApplication {
 	string value = 1;
 }
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
+// DICOM Tag: (2200,0006)
+message BarcodeSymbology {
+	string value = 1;
+}
+// DICOM Tag: (0028,0006)
+message PlanarConfiguration {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0106)
-message SmallestImagePixelValue {
+// DICOM Tag: (0028,0107)
+message LargestImagePixelValue {
 	int64 value = 1;
 }
-// DICOM Tag: (2200,0020)
-message RequestPriority {
+// DICOM Tag: (0088,0130)
+message StorageMediaFileSetID {
 	string value = 1;
 }
 // DICOM Tag: (2200,0001)
 message LabelUsingInformationExtractedFromInstances {
 	string value = 1;
 }
-// DICOM Tag: (0088,0200)
-message IconImageSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
+// DICOM Tag: (2200,0002)
+message LabelText {
+	string value = 1;
 }
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
+// DICOM Tag: (0008,1197)
+message FailureReason {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
 	uint32 value = 1;
 }
 // DICOM Tag: (0028,0101)
 message BitsStored {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0102)
-message HighBit {
-	uint32 value = 1;
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
 }
-// DICOM Tag: (0028,0006)
-message PlanarConfiguration {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0034)
-message PixelAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (2100,0030)
-message ExecutionStatusInfo {
+// DICOM Tag: (0028,2002)
+message ColorSpace {
 	string value = 1;
 }
-// DICOM Tag: (0088,0130)
-message StorageMediaFileSetID {
+// DICOM Tag: (2200,0020)
+message RequestPriority {
+	string value = 1;
+}
+// DICOM Tag: (2200,0005)
+message BarcodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,1199)
+message ReferencedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,0011)
+message Columns {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0106)
+message SmallestImagePixelValue {
+	int64 value = 1;
+}
+// DICOM Tag: (0088,0140)
+message StorageMediaFileSetUID {
 	string value = 1;
 }
 // DICOM Tag: (2000,0010)
 message NumberOfCopies {
 	int32 value = 1;
 }
-// DICOM Tag: (2200,0007)
-message AllowMediaSplitting {
+// DICOM Tag: (2100,0020)
+message ExecutionStatus {
 	string value = 1;
 }
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,1102)
-message GreenPaletteColorLookupTableDescriptor {
+// DICOM Tag: (0028,1103)
+message BluePaletteColorLookupTableDescriptor {
 	repeated int64 value = 1;
 }
 // DICOM Tag: (0028,1201)
@@ -96,55 +117,17 @@ message RedPaletteColorLookupTableData {
 	bytes value = 1;
 	int32 word_size = 2;
 }
-// DICOM Tag: (0088,0140)
-message StorageMediaFileSetUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1150)
-message ReferencedSOPClassUID {
-	string value = 1;
+// DICOM Tag: (0028,0034)
+message PixelAspectRatio {
+	repeated int32 value = 1;
 }
 // DICOM Tag: (0028,1101)
 message RedPaletteColorLookupTableDescriptor {
 	repeated int64 value = 1;
 }
-// DICOM Tag: (0028,1103)
-message BluePaletteColorLookupTableDescriptor {
-	repeated int64 value = 1;
-}
-// DICOM Tag: (0028,1202)
-message GreenPaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,1203)
-message BluePaletteColorLookupTableData {
-	bytes value = 1;
-	int32 word_size = 2;
-}
-// DICOM Tag: (0028,2000)
-message ICCProfile {
-	string value = 1;
-}
-// DICOM Tag: (2100,0020)
-message ExecutionStatus {
-	string value = 1;
-}
-// DICOM Tag: (2200,0002)
-message LabelText {
-	string value = 1;
-}
-// DICOM Tag: (2200,0005)
-message BarcodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
-}
-// DICOM Tag: (0028,2002)
-message ColorSpace {
-	string value = 1;
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
 }
 // DICOM Tag: (0008,1198)
 message FailedSOPSequence {
@@ -155,63 +138,80 @@ message FailedSOPSequence {
 message LabelStyleSelection {
 	string value = 1;
 }
-// DICOM Tag: (0008,1199)
-message ReferencedSOPSequence {
+// DICOM Tag: (2200,0008)
+message IncludeNonDICOMObjects {
+	string value = 1;
+}
+// DICOM Tag: (0088,0200)
+message IconImageSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0028,0010)
-message Rows {
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
 	uint32 value = 1;
 }
-// DICOM Tag: (0028,0107)
-message LargestImagePixelValue {
-	int64 value = 1;
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
+}
+// DICOM Tag: (2100,0030)
+message ExecutionStatusInfo {
+	string value = 1;
+}
+// DICOM Tag: (2200,0004)
+message MediaDisposition {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
 }
 message MediaCreationManagementModule {
-	RequestPriority request_priority = 1;
-	LabelUsingInformationExtractedFromInstances label_using_information_extracted_from_instances = 2;
-	IconImageSequence icon_image_sequence = 3;
-	SamplesPerPixel samples_per_pixel = 4;
-	BitsStored bits_stored = 5;
-	HighBit high_bit = 6;
-	PlanarConfiguration planar_configuration = 7;
-	PixelAspectRatio pixel_aspect_ratio = 8;
-	ExecutionStatusInfo execution_status_info = 9;
-	StorageMediaFileSetID storage_media_file_set_id = 10;
-	NumberOfCopies number_of_copies = 11;
-	AllowMediaSplitting allow_media_splitting = 12;
-	PixelRepresentation pixel_representation = 13;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 14;
+	BitsStored bits_stored = 1;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 2;
+	ColorSpace color_space = 3;
+	RequestPriority request_priority = 4;
+	BitsAllocated bits_allocated = 5;
+	ReferencedSOPSequence referenced_sop_sequence = 6;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 7;
+	PhotometricInterpretation photometric_interpretation = 8;
+	Columns columns = 9;
+	SmallestImagePixelValue smallest_image_pixel_value = 10;
+	StorageMediaFileSetUID storage_media_file_set_uid = 11;
+	NumberOfCopies number_of_copies = 12;
+	BarcodeValue barcode_value = 13;
+	ExecutionStatus execution_status = 14;
 	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 15;
-	StorageMediaFileSetUID storage_media_file_set_uid = 16;
-	ReferencedSOPClassUID referenced_sop_class_uid = 17;
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 18;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 19;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 20;
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 21;
-	ICCProfile icc_profile = 22;
-	ExecutionStatus execution_status = 23;
-	LabelText label_text = 24;
-	BarcodeValue barcode_value = 25;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 26;
-	ColorSpace color_space = 27;
-	FailedSOPSequence failed_sop_sequence = 28;
-	LabelStyleSelection label_style_selection = 29;
-	ReferencedSOPSequence referenced_sop_sequence = 30;
-	PhotometricInterpretation photometric_interpretation = 31;
-	Rows rows = 32;
-	LargestImagePixelValue largest_image_pixel_value = 33;
-	Columns columns = 34;
-	MediaDisposition media_disposition = 35;
-	FailureReason failure_reason = 36;
-	BarcodeSymbology barcode_symbology = 37;
-	IncludeNonDICOMObjects include_non_dicom_objects = 38;
-	IncludeDisplayApplication include_display_application = 39;
-	BitsAllocated bits_allocated = 40;
-	SmallestImagePixelValue smallest_image_pixel_value = 41;
+	PixelAspectRatio pixel_aspect_ratio = 16;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 17;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 18;
+	FailedSOPSequence failed_sop_sequence = 19;
+	LabelStyleSelection label_style_selection = 20;
+	IncludeNonDICOMObjects include_non_dicom_objects = 21;
+	HighBit high_bit = 22;
+	PixelRepresentation pixel_representation = 23;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 24;
+	ICCProfile icc_profile = 25;
+	ExecutionStatusInfo execution_status_info = 26;
+	MediaDisposition media_disposition = 27;
+	ReferencedSOPClassUID referenced_sop_class_uid = 28;
+	IconImageSequence icon_image_sequence = 29;
+	Rows rows = 30;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 31;
+	AllowMediaSplitting allow_media_splitting = 32;
+	IncludeDisplayApplication include_display_application = 33;
+	SamplesPerPixel samples_per_pixel = 34;
+	PlanarConfiguration planar_configuration = 35;
+	LargestImagePixelValue largest_image_pixel_value = 36;
+	StorageMediaFileSetID storage_media_file_set_id = 37;
+	LabelUsingInformationExtractedFromInstances label_using_information_extracted_from_instances = 38;
+	BarcodeSymbology barcode_symbology = 39;
+	LabelText label_text = 40;
+	FailureReason failure_reason = 41;
 }

@@ -2,17 +2,53 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.7.html#table_C.8.17.7-1
 syntax = "proto3";
 
+// DICOM Tag: (0020,0012)
+message AcquisitionNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0020,4000)
+message ImageComments {
+	string value = 1;
+}
+// DICOM Tag: (0022,1622)
+message OphthalmicVolumetricPropertiesFlag {
+	string value = 1;
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
 // DICOM Tag: (2050,0020)
 message PresentationLUTShape {
 	string value = 1;
 }
-// DICOM Tag: (0028,2110)
-message LossyImageCompression {
+// DICOM Tag: (0028,2112)
+message LossyImageCompressionRatio {
+	repeated float value = 1;
+}
+// DICOM Tag: (0028,0302)
+message RecognizableVisualFeatures {
 	string value = 1;
 }
-// DICOM Tag: (0028,2114)
-message LossyImageCompressionMethod {
-	repeated string value = 1;
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
+	uint32 value = 1;
+}
+// DICOM Tag: (0020,9228)
+message ConcatenationFrameOffsetNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0301)
+message BurnedInAnnotation {
+	string value = 1;
 }
 // DICOM Tag: (0020,9162)
 message InConcatenationNumber {
@@ -26,81 +62,45 @@ message ImageType {
 message AcquisitionDuration {
 	double value = 1;
 }
-// DICOM Tag: (0020,0012)
-message AcquisitionNumber {
-	int32 value = 1;
-}
 // DICOM Tag: (0028,0101)
 message BitsStored {
-	uint32 value = 1;
-}
-// DICOM Tag: (0020,4000)
-message ImageComments {
-	string value = 1;
-}
-// DICOM Tag: (0028,0004)
-message PhotometricInterpretation {
-	string value = 1;
-}
-// DICOM Tag: (0028,0301)
-message BurnedInAnnotation {
-	string value = 1;
-}
-// DICOM Tag: (0020,9163)
-message InConcatenationTotalNumber {
-	uint32 value = 1;
-}
-// DICOM Tag: (0020,9228)
-message ConcatenationFrameOffsetNumber {
-	uint32 value = 1;
-}
-// DICOM Tag: (0022,1622)
-message OphthalmicVolumetricPropertiesFlag {
-	string value = 1;
-}
-// DICOM Tag: (0028,0100)
-message BitsAllocated {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,2112)
-message LossyImageCompressionRatio {
-	repeated float value = 1;
-}
-// DICOM Tag: (0028,0302)
-message RecognizableVisualFeatures {
-	string value = 1;
-}
-// DICOM Tag: (0028,0002)
-message SamplesPerPixel {
-	uint32 value = 1;
-}
-// DICOM Tag: (0028,0103)
-message PixelRepresentation {
 	uint32 value = 1;
 }
 // DICOM Tag: (0028,0102)
 message HighBit {
 	uint32 value = 1;
 }
+// DICOM Tag: (0028,2110)
+message LossyImageCompression {
+	string value = 1;
+}
+// DICOM Tag: (0028,2114)
+message LossyImageCompressionMethod {
+	repeated string value = 1;
+}
+// DICOM Tag: (0020,9163)
+message InConcatenationTotalNumber {
+	uint32 value = 1;
+}
 message OphthalmicTomographyImageModule {
-	InConcatenationTotalNumber in_concatenation_total_number = 1;
-	PhotometricInterpretation photometric_interpretation = 2;
-	BurnedInAnnotation burned_in_annotation = 3;
-	LossyImageCompressionRatio lossy_image_compression_ratio = 4;
-	RecognizableVisualFeatures recognizable_visual_features = 5;
-	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 6;
-	OphthalmicVolumetricPropertiesFlag ophthalmic_volumetric_properties_flag = 7;
-	BitsAllocated bits_allocated = 8;
-	PixelRepresentation pixel_representation = 9;
-	HighBit high_bit = 10;
-	SamplesPerPixel samples_per_pixel = 11;
-	AcquisitionNumber acquisition_number = 12;
-	BitsStored bits_stored = 13;
-	PresentationLUTShape presentation_lut_shape = 14;
-	LossyImageCompression lossy_image_compression = 15;
-	LossyImageCompressionMethod lossy_image_compression_method = 16;
-	InConcatenationNumber in_concatenation_number = 17;
-	ImageType image_type = 18;
-	AcquisitionDuration acquisition_duration = 19;
-	ImageComments image_comments = 20;
+	LossyImageCompressionMethod lossy_image_compression_method = 1;
+	BurnedInAnnotation burned_in_annotation = 2;
+	InConcatenationNumber in_concatenation_number = 3;
+	ImageType image_type = 4;
+	AcquisitionDuration acquisition_duration = 5;
+	BitsStored bits_stored = 6;
+	HighBit high_bit = 7;
+	LossyImageCompression lossy_image_compression = 8;
+	InConcatenationTotalNumber in_concatenation_total_number = 9;
+	AcquisitionNumber acquisition_number = 10;
+	PhotometricInterpretation photometric_interpretation = 11;
+	ImageComments image_comments = 12;
+	RecognizableVisualFeatures recognizable_visual_features = 13;
+	OphthalmicVolumetricPropertiesFlag ophthalmic_volumetric_properties_flag = 14;
+	SamplesPerPixel samples_per_pixel = 15;
+	BitsAllocated bits_allocated = 16;
+	PresentationLUTShape presentation_lut_shape = 17;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 18;
+	PixelRepresentation pixel_representation = 19;
+	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 20;
 }

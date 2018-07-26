@@ -2,10 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.6.html#table_C.7-14
 syntax = "proto3";
 
-// DICOM Tag: (0022,0028)
-message StereoPairsPresent {
-	string value = 1;
-}
 // DICOM Tag: (0028,0008)
 message NumberOfFrames {
 	int32 value = 1;
@@ -13,6 +9,10 @@ message NumberOfFrames {
 // DICOM Tag: (0028,0009)
 message FrameIncrementPointer {
 	repeated string value = 1;
+}
+// DICOM Tag: (0022,0028)
+message StereoPairsPresent {
+	string value = 1;
 }
 message Multi-frameModule {
 	NumberOfFrames number_of_frames = 1;

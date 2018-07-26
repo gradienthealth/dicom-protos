@@ -2,6 +2,11 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.html#table_C.2-1
 syntax = "proto3";
 
+// DICOM Tag: (0008,1110)
+message ReferencedStudySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
 // DICOM Tag: (0008,1150)
 message ReferencedSOPClassUID {
 	string value = 1;
@@ -17,11 +22,6 @@ message ReferencedVisitSequence {
 }
 // DICOM Tag: (0038,0004)
 message ReferencedPatientAliasSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,1110)
-message ReferencedStudySequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }

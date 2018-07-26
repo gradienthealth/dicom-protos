@@ -2,9 +2,25 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.3.html#table_C.8.27.3-1
 syntax = "proto3";
 
+// DICOM Tag: (0052,0002)
+message OCTFocalDistance {
+	double value = 1;
+}
+// DICOM Tag: (0052,0003)
+message BeamSpotSize {
+	double value = 1;
+}
+// DICOM Tag: (0052,0012)
+message ALinesPerFrame {
+	uint32 value = 1;
+}
 // DICOM Tag: (0052,0004)
 message EffectiveRefractiveIndex {
 	double value = 1;
+}
+// DICOM Tag: (0052,0006)
+message OCTAcquisitionDomain {
+	string value = 1;
 }
 // DICOM Tag: (0052,0007)
 message OCTOpticalCenterWavelength {
@@ -22,30 +38,14 @@ message RangingDepth {
 message ALineRate {
 	double value = 1;
 }
-// DICOM Tag: (0052,0002)
-message OCTFocalDistance {
-	double value = 1;
-}
-// DICOM Tag: (0052,0003)
-message BeamSpotSize {
-	double value = 1;
-}
-// DICOM Tag: (0052,0006)
-message OCTAcquisitionDomain {
-	string value = 1;
-}
-// DICOM Tag: (0052,0012)
-message ALinesPerFrame {
-	uint32 value = 1;
-}
 message IntravascularOCTAcquisitionParametersModule {
-	EffectiveRefractiveIndex effective_refractive_index = 1;
-	OCTOpticalCenterWavelength oct_optical_center_wavelength = 2;
-	AxialResolution axial_resolution = 3;
-	RangingDepth ranging_depth = 4;
-	ALineRate a_line_rate = 5;
-	OCTFocalDistance oct_focal_distance = 6;
-	BeamSpotSize beam_spot_size = 7;
-	OCTAcquisitionDomain oct_acquisition_domain = 8;
-	ALinesPerFrame a_lines_per_frame = 9;
+	OCTFocalDistance oct_focal_distance = 1;
+	BeamSpotSize beam_spot_size = 2;
+	ALinesPerFrame a_lines_per_frame = 3;
+	EffectiveRefractiveIndex effective_refractive_index = 4;
+	OCTAcquisitionDomain oct_acquisition_domain = 5;
+	OCTOpticalCenterWavelength oct_optical_center_wavelength = 6;
+	AxialResolution axial_resolution = 7;
+	RangingDepth ranging_depth = 8;
+	ALineRate a_line_rate = 9;
 }

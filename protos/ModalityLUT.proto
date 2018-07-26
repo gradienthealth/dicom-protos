@@ -2,6 +2,19 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html#table_C.11-1
 syntax = "proto3";
 
+// DICOM Tag: (0028,1054)
+message RescaleType {
+	string value = 1;
+}
+// DICOM Tag: (0028,3000)
+message ModalityLUTSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0028,3002)
+message LUTDescriptor {
+	repeated int64 value = 1;
+}
 // DICOM Tag: (0028,3003)
 message LUTExplanation {
 	string value = 1;
@@ -22,26 +35,13 @@ message RescaleIntercept {
 message RescaleSlope {
 	float value = 1;
 }
-// DICOM Tag: (0028,1054)
-message RescaleType {
-	string value = 1;
-}
-// DICOM Tag: (0028,3000)
-message ModalityLUTSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0028,3002)
-message LUTDescriptor {
-	repeated int64 value = 1;
-}
 message ModalityLUTModule {
-	ModalityLUTType modality_lut_type = 1;
-	LUTData lut_data = 2;
-	RescaleIntercept rescale_intercept = 3;
-	RescaleSlope rescale_slope = 4;
-	RescaleType rescale_type = 5;
-	ModalityLUTSequence modality_lut_sequence = 6;
-	LUTDescriptor lut_descriptor = 7;
-	LUTExplanation lut_explanation = 8;
+	RescaleSlope rescale_slope = 1;
+	RescaleType rescale_type = 2;
+	ModalityLUTSequence modality_lut_sequence = 3;
+	LUTDescriptor lut_descriptor = 4;
+	LUTExplanation lut_explanation = 5;
+	ModalityLUTType modality_lut_type = 6;
+	LUTData lut_data = 7;
+	RescaleIntercept rescale_intercept = 8;
 }

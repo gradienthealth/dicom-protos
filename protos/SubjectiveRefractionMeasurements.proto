@@ -2,21 +2,17 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.11.html#table_C.8.25.11-1
 syntax = "proto3";
 
-// DICOM Tag: (0046,0062)
-message NearPupillaryDistance {
-	double value = 1;
-}
-// DICOM Tag: (0046,0064)
-message OtherPupillaryDistance {
-	double value = 1;
-}
-// DICOM Tag: (0046,0097)
-message SubjectiveRefractionRightEyeSequence {
+// DICOM Tag: (0046,0018)
+message CylinderSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0100)
-message AddNearSequence {
+// DICOM Tag: (0046,0036)
+message VerticalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0101)
+message AddIntermediateSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -25,21 +21,51 @@ message AddOtherSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0060)
-message DistancePupillaryDistance {
-	double value = 1;
-}
-// DICOM Tag: (0046,0104)
-message AddPower {
-	double value = 1;
-}
-// DICOM Tag: (0046,0101)
-message AddIntermediateSequence {
+// DICOM Tag: (0046,0098)
+message SubjectiveRefractionLeftEyeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0046,0098)
-message SubjectiveRefractionLeftEyeSequence {
+// DICOM Tag: (0046,0064)
+message OtherPupillaryDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0028)
+message PrismSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0030)
+message HorizontalPrismPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0032)
+message HorizontalPrismBase {
+	string value = 1;
+}
+// DICOM Tag: (0046,0106)
+message ViewingDistance {
+	double value = 1;
+}
+// DICOM Tag: (0022,0009)
+message CylinderAxis {
+	float value = 1;
+}
+// DICOM Tag: (0046,0100)
+message AddNearSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0046,0062)
+message NearPupillaryDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0063)
+message IntermediatePupillaryDistance {
+	double value = 1;
+}
+// DICOM Tag: (0046,0097)
+message SubjectiveRefractionRightEyeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
@@ -51,63 +77,37 @@ message SpherePower {
 message CylinderPower {
 	double value = 1;
 }
-// DICOM Tag: (0046,0032)
-message HorizontalPrismBase {
-	string value = 1;
-}
-// DICOM Tag: (0046,0036)
-message VerticalPrismBase {
-	string value = 1;
-}
-// DICOM Tag: (0022,0009)
-message CylinderAxis {
-	float value = 1;
-}
-// DICOM Tag: (0046,0063)
-message IntermediatePupillaryDistance {
-	double value = 1;
-}
-// DICOM Tag: (0046,0106)
-message ViewingDistance {
-	double value = 1;
-}
-// DICOM Tag: (0046,0018)
-message CylinderSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0028)
-message PrismSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0046,0030)
-message HorizontalPrismPower {
-	double value = 1;
-}
 // DICOM Tag: (0046,0034)
 message VerticalPrismPower {
 	double value = 1;
 }
+// DICOM Tag: (0046,0104)
+message AddPower {
+	double value = 1;
+}
+// DICOM Tag: (0046,0060)
+message DistancePupillaryDistance {
+	double value = 1;
+}
 message SubjectiveRefractionMeasurementsModule {
-	SubjectiveRefractionRightEyeSequence subjective_refraction_right_eye_sequence = 1;
-	AddNearSequence add_near_sequence = 2;
-	AddOtherSequence add_other_sequence = 3;
-	DistancePupillaryDistance distance_pupillary_distance = 4;
-	NearPupillaryDistance near_pupillary_distance = 5;
-	OtherPupillaryDistance other_pupillary_distance = 6;
-	SpherePower sphere_power = 7;
-	CylinderPower cylinder_power = 8;
-	HorizontalPrismBase horizontal_prism_base = 9;
-	VerticalPrismBase vertical_prism_base = 10;
-	AddPower add_power = 11;
-	AddIntermediateSequence add_intermediate_sequence = 12;
-	SubjectiveRefractionLeftEyeSequence subjective_refraction_left_eye_sequence = 13;
-	CylinderAxis cylinder_axis = 14;
-	IntermediatePupillaryDistance intermediate_pupillary_distance = 15;
-	CylinderSequence cylinder_sequence = 16;
-	PrismSequence prism_sequence = 17;
-	HorizontalPrismPower horizontal_prism_power = 18;
-	VerticalPrismPower vertical_prism_power = 19;
-	ViewingDistance viewing_distance = 20;
+	PrismSequence prism_sequence = 1;
+	HorizontalPrismPower horizontal_prism_power = 2;
+	HorizontalPrismBase horizontal_prism_base = 3;
+	ViewingDistance viewing_distance = 4;
+	CylinderAxis cylinder_axis = 5;
+	AddNearSequence add_near_sequence = 6;
+	NearPupillaryDistance near_pupillary_distance = 7;
+	IntermediatePupillaryDistance intermediate_pupillary_distance = 8;
+	SubjectiveRefractionRightEyeSequence subjective_refraction_right_eye_sequence = 9;
+	SpherePower sphere_power = 10;
+	CylinderPower cylinder_power = 11;
+	VerticalPrismPower vertical_prism_power = 12;
+	AddPower add_power = 13;
+	DistancePupillaryDistance distance_pupillary_distance = 14;
+	CylinderSequence cylinder_sequence = 15;
+	VerticalPrismBase vertical_prism_base = 16;
+	AddIntermediateSequence add_intermediate_sequence = 17;
+	AddOtherSequence add_other_sequence = 18;
+	SubjectiveRefractionLeftEyeSequence subjective_refraction_left_eye_sequence = 19;
+	OtherPupillaryDistance other_pupillary_distance = 20;
 }

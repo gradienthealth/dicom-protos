@@ -2,18 +2,6 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.4.html#table_C.10-4
 syntax = "proto3";
 
-// DICOM Tag: (0070,0102)
-message PresentationPixelAspectRatio {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0008,1160)
-message ReferencedFrameNumber {
-	repeated int32 value = 1;
-}
-// DICOM Tag: (0048,0301)
-message PixelOriginInterpretation {
-	string value = 1;
-}
 // DICOM Tag: (0070,0052)
 message DisplayedAreaTopLeftHandCorner {
 	repeated int32 value = 1;
@@ -30,6 +18,18 @@ message PresentationSizeMode {
 message PresentationPixelSpacing {
 	repeated float value = 1;
 }
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0048,0301)
+message PixelOriginInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0070,0102)
+message PresentationPixelAspectRatio {
+	repeated int32 value = 1;
+}
 // DICOM Tag: (0070,0103)
 message PresentationPixelMagnificationRatio {
 	float value = 1;
@@ -43,20 +43,20 @@ message ReferencedImageSequence {
 message ReferencedSOPClassUID {
 	string value = 1;
 }
-// DICOM Tag: (0008,1155)
-message ReferencedSOPInstanceUID {
-	string value = 1;
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
 }
 message DisplayedAreaModule {
-	PresentationPixelSpacing presentation_pixel_spacing = 1;
-	PresentationPixelAspectRatio presentation_pixel_aspect_ratio = 2;
-	ReferencedFrameNumber referenced_frame_number = 3;
-	PixelOriginInterpretation pixel_origin_interpretation = 4;
-	DisplayedAreaTopLeftHandCorner displayed_area_top_left_hand_corner = 5;
-	DisplayedAreaBottomRightHandCorner displayed_area_bottom_right_hand_corner = 6;
-	PresentationSizeMode presentation_size_mode = 7;
-	PresentationPixelMagnificationRatio presentation_pixel_magnification_ratio = 8;
-	ReferencedImageSequence referenced_image_sequence = 9;
-	ReferencedSOPClassUID referenced_sop_class_uid = 10;
-	ReferencedSOPInstanceUID referenced_sop_instance_uid = 11;
+	ReferencedSOPClassUID referenced_sop_class_uid = 1;
+	ReferencedFrameNumber referenced_frame_number = 2;
+	PresentationPixelAspectRatio presentation_pixel_aspect_ratio = 3;
+	PresentationPixelMagnificationRatio presentation_pixel_magnification_ratio = 4;
+	ReferencedImageSequence referenced_image_sequence = 5;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 6;
+	PixelOriginInterpretation pixel_origin_interpretation = 7;
+	DisplayedAreaTopLeftHandCorner displayed_area_top_left_hand_corner = 8;
+	DisplayedAreaBottomRightHandCorner displayed_area_bottom_right_hand_corner = 9;
+	PresentationSizeMode presentation_size_mode = 10;
+	PresentationPixelSpacing presentation_pixel_spacing = 11;
 }

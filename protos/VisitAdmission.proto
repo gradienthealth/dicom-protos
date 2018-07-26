@@ -2,13 +2,30 @@
 // Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.3.4.html#table_C.3-4
 syntax = "proto3";
 
-// DICOM Tag: (0008,0080)
-message InstitutionName {
+// DICOM Tag: (0038,0021)
+message AdmittingTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
 	string value = 1;
 }
-// DICOM Tag: (0038,0016)
-message RouteOfAdmissions {
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,1103)
+message PersonTelephoneNumbers {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
 	string value = 1;
+}
+// DICOM Tag: (0008,1080)
+message AdmittingDiagnosesDescription {
+	repeated string value = 1;
 }
 // DICOM Tag: (0008,0092)
 message ReferringPhysicianAddress {
@@ -19,91 +36,12 @@ message PersonIdentificationCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0008,0107)
-message ContextGroupLocalVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,1080)
-message AdmittingDiagnosesDescription {
-	repeated string value = 1;
-}
-// DICOM Tag: (0008,0102)
-message CodingSchemeDesignator {
-	string value = 1;
-}
-// DICOM Tag: (0008,0117)
-message ContextUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,0106)
-message ContextGroupVersion {
-	int64 value = 1;
-}
-// DICOM Tag: (0008,0096)
-message ReferringPhysicianIdentificationSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0100)
-message CodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0121)
-message EquivalentCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0118)
-message MappingResourceUID {
-	string value = 1;
-}
-// DICOM Tag: (0008,1084)
-message AdmittingDiagnosesCodeSequence {
-	bytes value = 1;
-	// This attribute has a SQ VR, no proto mapping yet
-}
-// DICOM Tag: (0008,0103)
-message CodingSchemeVersion {
-	string value = 1;
-}
-// DICOM Tag: (0008,0120)
-message URNCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0040,1103)
-message PersonTelephoneNumbers {
-	repeated string value = 1;
-}
-// DICOM Tag: (0040,1104)
-message PersonTelecomInformation {
-	string value = 1;
-}
-// DICOM Tag: (0008,0104)
-message CodeMeaning {
-	string value = 1;
-}
-// DICOM Tag: (0008,0122)
-message MappingResourceName {
-	string value = 1;
-}
-// DICOM Tag: (0038,0020)
-message AdmittingDate {
-	string value = 1;
-}
-// DICOM Tag: (0008,0090)
-message ReferringPhysicianName {
-	string value = 1;
-}
-// DICOM Tag: (0008,0119)
-message LongCodeValue {
-	string value = 1;
-}
-// DICOM Tag: (0008,0094)
-message ReferringPhysicianTelephoneNumbers {
-	repeated string value = 1;
-}
 // DICOM Tag: (0008,0105)
 message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
 	string value = 1;
 }
 // DICOM Tag: (0008,0082)
@@ -111,46 +49,108 @@ message InstitutionCodeSequence {
 	bytes value = 1;
 	// This attribute has a SQ VR, no proto mapping yet
 }
-// DICOM Tag: (0038,0021)
-message AdmittingTime {
-	int64 value = 1;
+// DICOM Tag: (0038,0016)
+message RouteOfAdmissions {
+	string value = 1;
+}
+// DICOM Tag: (0008,0096)
+message ReferringPhysicianIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
 }
 // DICOM Tag: (0040,1102)
 message PersonAddress {
 	string value = 1;
 }
-// DICOM Tag: (0008,0081)
-message InstitutionAddress {
+// DICOM Tag: (0008,0094)
+message ReferringPhysicianTelephoneNumbers {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,1104)
+message PersonTelecomInformation {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,1084)
+message AdmittingDiagnosesCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0038,0020)
+message AdmittingDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0090)
+message ReferringPhysicianName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
 	string value = 1;
 }
 message VisitAdmissionModule {
-	CodeMeaning code_meaning = 1;
-	MappingResourceName mapping_resource_name = 2;
-	PersonTelephoneNumbers person's_telephone_numbers = 3;
-	PersonTelecomInformation person's_telecom_information = 4;
-	ReferringPhysicianName referring_physician's_name = 5;
-	LongCodeValue long_code_value = 6;
-	AdmittingDate admitting_date = 7;
-	ReferringPhysicianTelephoneNumbers referring_physician's_telephone_numbers = 8;
-	MappingResource mapping_resource = 9;
-	PersonAddress person's_address = 10;
-	InstitutionAddress institution_address = 11;
-	InstitutionCodeSequence institution_code_sequence = 12;
-	AdmittingTime admitting_time = 13;
-	ReferringPhysicianAddress referring_physician's_address = 14;
-	PersonIdentificationCodeSequence person_identification_code_sequence = 15;
-	InstitutionName institution_name = 16;
-	RouteOfAdmissions route_of_admissions = 17;
-	CodingSchemeDesignator coding_scheme_designator = 18;
-	ContextUID context_uid = 19;
-	ContextGroupLocalVersion context_group_local_version = 20;
-	AdmittingDiagnosesDescription admitting_diagnoses_description = 21;
-	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 22;
-	CodeValue code_value = 23;
-	ContextGroupVersion context_group_version = 24;
-	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 25;
-	CodingSchemeVersion coding_scheme_version = 26;
-	URNCodeValue urn_code_value = 27;
-	EquivalentCodeSequence equivalent_code_sequence = 28;
-	MappingResourceUID mapping_resource_uid = 29;
+	CodeValue code_value = 1;
+	CodingSchemeDesignator coding_scheme_designator = 2;
+	CodeMeaning code_meaning = 3;
+	LongCodeValue long_code_value = 4;
+	ContextUID context_uid = 5;
+	ReferringPhysicianName referring_physician's_name = 6;
+	CodingSchemeVersion coding_scheme_version = 7;
+	URNCodeValue urn_code_value = 8;
+	EquivalentCodeSequence equivalent_code_sequence = 9;
+	PersonTelephoneNumbers person's_telephone_numbers = 10;
+	AdmittingTime admitting_time = 11;
+	ReferringPhysicianAddress referring_physician's_address = 12;
+	PersonIdentificationCodeSequence person_identification_code_sequence = 13;
+	MappingResource mapping_resource = 14;
+	InstitutionAddress institution_address = 15;
+	AdmittingDiagnosesDescription admitting_diagnoses_description = 16;
+	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 17;
+	PersonAddress person's_address = 18;
+	InstitutionName institution_name = 19;
+	InstitutionCodeSequence institution_code_sequence = 20;
+	RouteOfAdmissions route_of_admissions = 21;
+	ReferringPhysicianTelephoneNumbers referring_physician's_telephone_numbers = 22;
+	MappingResourceUID mapping_resource_uid = 23;
+	PersonTelecomInformation person's_telecom_information = 24;
+	MappingResourceName mapping_resource_name = 25;
+	ContextGroupLocalVersion context_group_local_version = 26;
+	ContextGroupVersion context_group_version = 27;
+	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 28;
+	AdmittingDate admitting_date = 29;
 }
