@@ -1,0 +1,46 @@
+// SC Equipment
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.html#table_C.8-24
+syntax = "proto3";
+
+// DICOM Tag: (0018,1022)
+message VideoImageFormatAcquired {
+	string value = 1;
+}
+// DICOM Tag: (0018,1023)
+message DigitalImageFormatAcquired {
+	string value = 1;
+}
+// DICOM Tag: (0008,0064)
+message ConversionType {
+	string value = 1;
+}
+// DICOM Tag: (0008,0060)
+message Modality {
+	string value = 1;
+}
+// DICOM Tag: (0018,1010)
+message SecondaryCaptureDeviceID {
+	string value = 1;
+}
+// DICOM Tag: (0018,1016)
+message SecondaryCaptureDeviceManufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0018,1018)
+message SecondaryCaptureDeviceManufacturerModelName {
+	string value = 1;
+}
+// DICOM Tag: (0018,1019)
+message SecondaryCaptureDeviceSoftwareVersions {
+	repeated string value = 1;
+}
+message SCEquipmentModule {
+	SecondaryCaptureDeviceManufacturerModelName secondary_capture_device_manufacturer's_model_name = 1;
+	SecondaryCaptureDeviceSoftwareVersions secondary_capture_device_software_versions = 2;
+	VideoImageFormatAcquired video_image_format_acquired = 3;
+	DigitalImageFormatAcquired digital_image_format_acquired = 4;
+	ConversionType conversion_type = 5;
+	Modality modality = 6;
+	SecondaryCaptureDeviceID secondary_capture_device_id = 7;
+	SecondaryCaptureDeviceManufacturer secondary_capture_device_manufacturer = 8;
+}

@@ -6,6 +6,10 @@ import (
 	"io"
 	"log"
 
+	"strings"
+
+	"regexp"
+
 	"github.com/gradienthealth/dicom-protos/parse"
 )
 
@@ -52,19 +56,12 @@ const ProtoHeader = "syntax = \"proto3\";"
 
 func AttributeProto(a *parse.Attribute) string {
 
-	// If empty attribute, don't generate a proto message for it
-	if a.Name == "" && a.Keyword == "" &&
-		a.ValueRepresentation == "" &&
-		a.ValueMultiplicity == "" && a.Tag == "" {
-		return ""
-	}
-
 	b := bytes.NewBufferString("")
 
 	// Determine name of proto message:
 	messageName := a.Keyword
 	if a.Keyword == "" {
-		messageName = parse.TagToKey(a.Tag)
+		messageName = string(a.TagKey())
 		log.Printf("Blank keyword, assigning tag. Attribute: %+v", a)
 	}
 
@@ -104,14 +101,45 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 	fmt.Fprintln(w, ProtoHeader)
 	fmt.Fprintln(w, "")
 
+	// Write attribute messages
 	for _, a := range module.Attributes {
-		if a.Retired {
-			continue // Skip retired attributes for now
+		if a.Retired || a.IsEmpty() {
+			continue // Skip
 		}
-		ap := AttributeProto(&a)
+		ap := AttributeProto(a)
 		fmt.Fprintf(w, ap)
 		fmt.Fprintln(w, "")
 	}
 
+	// Write module proto
+	moduleName := strings.Replace(module.Name, " ", "", -1)
+	fmt.Fprintf(w, "message %sModule {\n", moduleName)
+
+	i := 1
+	for _, a := range module.Attributes {
+		if a.Retired || a.IsEmpty() {
+			continue
+		}
+		fmt.Fprintf(w, "\t%s %s = %d;\n", a.Keyword, getFieldName(a.Name), i)
+		i++
+	}
+
+	fmt.Fprintln(w, "}")
+
 	return nil
+}
+
+func getFieldName(name string) string {
+	s := strings.ToLower(name)
+	// Replace characters we do not like in protocol buffer messages
+	s2 := strings.Replace(s, " ", "_", -1)
+	s3 := strings.Replace(s2, "-", "_", -1)
+	s4 := strings.Replace(s3, "(", "", -1)
+	s5 := strings.Replace(s4, ")", "", -1)
+	s6 := strings.Replace(s5, "/", "_", -1)
+
+	// Only allow ascii characters into the FieldName
+	re := regexp.MustCompile("[[:^ascii:]]")
+	s7 := re.ReplaceAllLiteralString(s6, "")
+	return s7
 }

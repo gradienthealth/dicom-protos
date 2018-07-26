@@ -1,0 +1,225 @@
+// Spatial Fiducials
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.21.2.html#table_C.21.2-1
+syntax = "proto3";
+
+// DICOM Tag: (0040,1102)
+message PersonAddress {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0084)
+message ContentCreatorName {
+	string value = 1;
+}
+// DICOM Tag: (0040,1101)
+message PersonIdentificationCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0310)
+message FiducialIdentifier {
+	string value = 1;
+}
+// DICOM Tag: (0070,0318)
+message GraphicCoordinatesDataSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0006)
+message LanguageCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0020,0052)
+message FrameOfReferenceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1140)
+message ReferencedImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3006,0050)
+message ContourData {
+	repeated float value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (0070,0087)
+message AlternateContentDescriptionSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0086)
+message ContentCreatorIdentificationCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0040,1103)
+message PersonTelephoneNumbers {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0040,1104)
+message PersonTelecomInformation {
+	string value = 1;
+}
+// DICOM Tag: (0008,1160)
+message ReferencedFrameNumber {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0070,0306)
+message ShapeType {
+	string value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (3006,0046)
+message NumberOfContourPoints {
+	int32 value = 1;
+}
+// DICOM Tag: (0070,0312)
+message ContourUncertaintyRadius {
+	double value = 1;
+}
+// DICOM Tag: (0070,0022)
+message GraphicData {
+	repeated float value = 1;
+}
+// DICOM Tag: (0020,0013)
+message InstanceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0070,0080)
+message ContentLabel {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0070,0311)
+message FiducialIdentifierCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0070,0081)
+message ContentDescription {
+	string value = 1;
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (0008,0082)
+message InstitutionCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0023)
+message ContentDate {
+	string value = 1;
+}
+// DICOM Tag: (0008,0033)
+message ContentTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
+}
+message SpatialFiducialsModule {
+	ContentTime content_time = 1;
+	InstitutionAddress institution_address = 2;
+	ContentDate content_date = 3;
+	EquivalentCodeSequence equivalent_code_sequence = 4;
+	ContentCreatorName content_creator's_name = 5;
+	PersonIdentificationCodeSequence person_identification_code_sequence = 6;
+	PersonAddress person's_address = 7;
+	ReferencedSOPClassUID referenced_sop_class_uid = 8;
+	LongCodeValue long_code_value = 9;
+	LanguageCodeSequence language_code_sequence = 10;
+	InstitutionName institution_name = 11;
+	FiducialIdentifier fiducial_identifier = 12;
+	GraphicCoordinatesDataSequence graphic_coordinates_data_sequence = 13;
+	CodeValue code_value = 14;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 15;
+	ContentCreatorIdentificationCodeSequence content_creator's_identification_code_sequence = 16;
+	PersonTelephoneNumbers person's_telephone_numbers = 17;
+	FrameOfReferenceUID frame_of_reference_uid = 18;
+	ReferencedImageSequence referenced_image_sequence = 19;
+	ContourData contour_data = 20;
+	MappingResource mapping_resource = 21;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 22;
+	URNCodeValue urn_code_value = 23;
+	ContextUID context_uid = 24;
+	MappingResourceUID mapping_resource_uid = 25;
+	MappingResourceName mapping_resource_name = 26;
+	PersonTelecomInformation person's_telecom_information = 27;
+	ReferencedFrameNumber referenced_frame_number = 28;
+	ShapeType shape_type = 29;
+	CodeMeaning code_meaning = 30;
+	ContentLabel content_label = 31;
+	ContextGroupVersion context_group_version = 32;
+	ContextGroupLocalVersion context_group_local_version = 33;
+	NumberOfContourPoints number_of_contour_points = 34;
+	ContourUncertaintyRadius contour_uncertainty_radius = 35;
+	GraphicData graphic_data = 36;
+	InstanceNumber instance_number = 37;
+	CodingSchemeDesignator coding_scheme_designator = 38;
+	CodingSchemeVersion coding_scheme_version = 39;
+	InstitutionCodeSequence institution_code_sequence = 40;
+	FiducialIdentifierCodeSequence fiducial_identifier_code_sequence = 41;
+	ContentDescription content_description = 42;
+}

@@ -1,0 +1,81 @@
+// Printer Configuration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.13.html#table_C.13-13
+syntax = "proto3";
+
+// DICOM Tag: (2010,0154)
+message MaximumCollatedFilms {
+	int32 value = 1;
+}
+// DICOM Tag: (2010,0050)
+message FilmSizeID {
+	string value = 1;
+}
+// DICOM Tag: (2010,0010)
+message ImageDisplayFormat {
+	string value = 1;
+}
+// DICOM Tag: (2010,0376)
+message PrinterPixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (2010,0152)
+message ConfigurationInformationDescription {
+	string value = 1;
+}
+// DICOM Tag: (0020,0019)
+message ItemNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0028,0010)
+message Rows {
+	uint32 value = 1;
+}
+// DICOM Tag: (2010,0052)
+message PrinterResolutionID {
+	string value = 1;
+}
+// DICOM Tag: (2010,0054)
+message DefaultPrinterResolutionID {
+	string value = 1;
+}
+// DICOM Tag: (2000,0061)
+message MaximumMemoryAllocation {
+	int32 value = 1;
+}
+// DICOM Tag: (2010,0130)
+message MaxDensity {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0011)
+message Columns {
+	uint32 value = 1;
+}
+// DICOM Tag: (2010,0040)
+message FilmOrientation {
+	string value = 1;
+}
+// DICOM Tag: (2000,0030)
+message MediumType {
+	string value = 1;
+}
+// DICOM Tag: (2010,0120)
+message MinDensity {
+	uint32 value = 1;
+}
+message PrinterConfigurationModule {
+	FilmSizeID film_size_id = 1;
+	ImageDisplayFormat image_display_format = 2;
+	MaximumCollatedFilms maximum_collated_films = 3;
+	PrinterPixelSpacing printer_pixel_spacing = 4;
+	ConfigurationInformationDescription configuration_information_description = 5;
+	MaximumMemoryAllocation maximum_memory_allocation = 6;
+	ItemNumber item_number = 7;
+	Rows rows = 8;
+	PrinterResolutionID printer_resolution_id = 9;
+	DefaultPrinterResolutionID default_printer_resolution_id = 10;
+	MediumType medium_type = 11;
+	MinDensity min_density = 12;
+	MaxDensity max_density = 13;
+	Columns columns = 14;
+	FilmOrientation film_orientation = 15;
+}

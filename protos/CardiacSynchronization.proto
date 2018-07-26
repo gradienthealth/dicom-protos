@@ -1,0 +1,56 @@
+// Cardiac Synchronization
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.18.html#table_C.7.6.18-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,9037)
+message CardiacSynchronizationTechnique {
+	string value = 1;
+}
+// DICOM Tag: (0018,9085)
+message CardiacSignalSource {
+	string value = 1;
+}
+// DICOM Tag: (0018,9070)
+message CardiacRRIntervalSpecified {
+	double value = 1;
+}
+// DICOM Tag: (0018,9169)
+message CardiacBeatRejectionTechnique {
+	string value = 1;
+}
+// DICOM Tag: (0018,1083)
+message IntervalsAcquired {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1086)
+message SkipBeats {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1081)
+message LowRRValue {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1082)
+message HighRRValue {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1084)
+message IntervalsRejected {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1064)
+message CardiacFramingType {
+	string value = 1;
+}
+message CardiacSynchronizationModule {
+	LowRRValue low_r_r_value = 1;
+	HighRRValue high_r_r_value = 2;
+	IntervalsRejected intervals_rejected = 3;
+	CardiacFramingType cardiac_framing_type = 4;
+	CardiacSynchronizationTechnique cardiac_synchronization_technique = 5;
+	CardiacSignalSource cardiac_signal_source = 6;
+	CardiacRRIntervalSpecified cardiac_r_r_interval_specified = 7;
+	CardiacBeatRejectionTechnique cardiac_beat_rejection_technique = 8;
+	IntervalsAcquired intervals_acquired = 9;
+	SkipBeats skip_beats = 10;
+}

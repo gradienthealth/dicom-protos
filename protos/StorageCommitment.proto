@@ -1,0 +1,53 @@
+// Storage Commitment
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.14.html#table_C.14-1
+syntax = "proto3";
+
+// DICOM Tag: (0088,0130)
+message StorageMediaFileSetID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1198)
+message FailedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1197)
+message FailureReason {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,1195)
+message TransactionUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0054)
+message RetrieveAETitle {
+	repeated string value = 1;
+}
+// DICOM Tag: (0088,0140)
+message StorageMediaFileSetUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1199)
+message ReferencedSOPSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+message StorageCommitmentModule {
+	FailedSOPSequence failed_sop_sequence = 1;
+	FailureReason failure_reason = 2;
+	StorageMediaFileSetID storage_media_file_set_id = 3;
+	ReferencedSOPClassUID referenced_sop_class_uid = 4;
+	StorageMediaFileSetUID storage_media_file_set_uid = 5;
+	ReferencedSOPSequence referenced_sop_sequence = 6;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 7;
+	TransactionUID transaction_uid = 8;
+	RetrieveAETitle retrieve_ae_title = 9;
+}

@@ -1,0 +1,36 @@
+// X-Ray Tomography Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.7.html#table_C.8-32
+syntax = "proto3";
+
+// DICOM Tag: (0018,1460)
+message TomoLayerHeight {
+	float value = 1;
+}
+// DICOM Tag: (0018,1470)
+message TomoAngle {
+	float value = 1;
+}
+// DICOM Tag: (0018,1480)
+message TomoTime {
+	float value = 1;
+}
+// DICOM Tag: (0018,1490)
+message TomoType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1491)
+message TomoClass {
+	string value = 1;
+}
+// DICOM Tag: (0018,1495)
+message NumberOfTomosynthesisSourceImages {
+	int32 value = 1;
+}
+message X-RayTomographyAcquisitionModule {
+	TomoClass tomo_class = 1;
+	NumberOfTomosynthesisSourceImages number_of_tomosynthesis_source_images = 2;
+	TomoLayerHeight tomo_layer_height = 3;
+	TomoAngle tomo_angle = 4;
+	TomoTime tomo_time = 5;
+	TomoType tomo_type = 6;
+}

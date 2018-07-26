@@ -1,0 +1,114 @@
+// Image Pixel
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#table_C.7-11a
+syntax = "proto3";
+
+// DICOM Tag: (0028,0101)
+message BitsStored {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,1202)
+message GreenPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,1203)
+message BluePaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,0002)
+message SamplesPerPixel {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0011)
+message Columns {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,1101)
+message RedPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1102)
+message GreenPaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,1103)
+message BluePaletteColorLookupTableDescriptor {
+	repeated int64 value = 1;
+}
+// DICOM Tag: (0028,0103)
+message PixelRepresentation {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0107)
+message LargestImagePixelValue {
+	int64 value = 1;
+}
+// DICOM Tag: (0028,1201)
+message RedPaletteColorLookupTableData {
+	bytes value = 1;
+	int32 word_size = 2;
+}
+// DICOM Tag: (0028,2002)
+message ColorSpace {
+	string value = 1;
+}
+// DICOM Tag: (0028,0010)
+message Rows {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0106)
+message SmallestImagePixelValue {
+	int64 value = 1;
+}
+// DICOM Tag: (0028,0102)
+message HighBit {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0006)
+message PlanarConfiguration {
+	uint32 value = 1;
+}
+// DICOM Tag: (0028,0034)
+message PixelAspectRatio {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0028,2000)
+message ICCProfile {
+	string value = 1;
+}
+// DICOM Tag: (0028,0121)
+message PixelPaddingRangeLimit {
+	int64 value = 1;
+}
+// DICOM Tag: (0028,0004)
+message PhotometricInterpretation {
+	string value = 1;
+}
+// DICOM Tag: (0028,0100)
+message BitsAllocated {
+	uint32 value = 1;
+}
+message ImagePixelModule {
+	Rows rows = 1;
+	SmallestImagePixelValue smallest_image_pixel_value = 2;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 3;
+	ColorSpace color_space = 4;
+	ICCProfile icc_profile = 5;
+	PixelPaddingRangeLimit pixel_padding_range_limit = 6;
+	PhotometricInterpretation photometric_interpretation = 7;
+	BitsAllocated bits_allocated = 8;
+	HighBit high_bit = 9;
+	PlanarConfiguration planar_configuration = 10;
+	PixelAspectRatio pixel_aspect_ratio = 11;
+	SamplesPerPixel samples_per_pixel = 12;
+	Columns columns = 13;
+	BitsStored bits_stored = 14;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 15;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 16;
+	PixelRepresentation pixel_representation = 17;
+	LargestImagePixelValue largest_image_pixel_value = 18;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 19;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 20;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 21;
+}

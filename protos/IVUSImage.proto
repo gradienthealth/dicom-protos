@@ -1,0 +1,31 @@
+// IVUS Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.4.html#table_C.8.24.4-1
+syntax = "proto3";
+
+// DICOM Tag: (0018,3104)
+message IVUSPullbackStopFrameNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,3100)
+message IVUSAcquisition {
+	string value = 1;
+}
+// DICOM Tag: (0018,3101)
+message IVUSPullbackRate {
+	float value = 1;
+}
+// DICOM Tag: (0018,3102)
+message IVUSGatedRate {
+	float value = 1;
+}
+// DICOM Tag: (0018,3103)
+message IVUSPullbackStartFrameNumber {
+	int32 value = 1;
+}
+message IVUSImageModule {
+	IVUSAcquisition ivus_acquisition = 1;
+	IVUSPullbackRate ivus_pullback_rate = 2;
+	IVUSGatedRate ivus_gated_rate = 3;
+	IVUSPullbackStartFrameNumber ivus_pullback_start_frame_number = 4;
+	IVUSPullbackStopFrameNumber ivus_pullback_stop_frame_number = 5;
+}

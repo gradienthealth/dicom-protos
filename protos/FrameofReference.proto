@@ -1,0 +1,16 @@
+// Frame of Reference
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.4.html#table_C.7-6
+syntax = "proto3";
+
+// DICOM Tag: (0020,0052)
+message FrameOfReferenceUID {
+	string value = 1;
+}
+// DICOM Tag: (0020,1040)
+message PositionReferenceIndicator {
+	string value = 1;
+}
+message FrameofReferenceModule {
+	PositionReferenceIndicator position_reference_indicator = 1;
+	FrameOfReferenceUID frame_of_reference_uid = 2;
+}

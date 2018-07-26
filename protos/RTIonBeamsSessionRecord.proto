@@ -1,0 +1,286 @@
+// RT Ion Beams Session Record
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.26.html#table_C.8.8.26-1
+syntax = "proto3";
+
+// DICOM Tag: (3008,0068)
+message CorrectedParameterSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1070)
+message OperatorsName {
+	repeated string value = 1;
+}
+// DICOM Tag: (3008,0090)
+message ReferencedCalculatedDoseReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,0045)
+message MetersetRateSet {
+	float value = 1;
+}
+// DICOM Tag: (0018,0060)
+message KVP {
+	float value = 1;
+}
+// DICOM Tag: (0008,0118)
+message MappingResourceUID {
+	string value = 1;
+}
+// DICOM Tag: (0040,1104)
+message PersonTelecomInformation {
+	string value = 1;
+}
+// DICOM Tag: (3008,0080)
+message ReferencedMeasuredDoseReferenceSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,0022)
+message CurrentFractionNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,1072)
+message OperatorIdentificationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0103)
+message CodingSchemeVersion {
+	string value = 1;
+}
+// DICOM Tag: (3008,0076)
+message CalculatedDoseReferenceDoseValue {
+	float value = 1;
+}
+// DICOM Tag: (0008,0120)
+message URNCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0106)
+message ContextGroupVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
+}
+// DICOM Tag: (3008,0021)
+message TreatmentSessionIonBeamSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0102)
+message CodingSchemeDesignator {
+	string value = 1;
+}
+// DICOM Tag: (3008,0067)
+message ParameterValueNumber {
+	uint32 value = 1;
+}
+// DICOM Tag: (0040,1103)
+message PersonTelephoneNumbers {
+	repeated string value = 1;
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (3008,0046)
+message MetersetRateDelivered {
+	float value = 1;
+}
+// DICOM Tag: (3008,0062)
+message OverrideParameterPointer {
+	string value = 1;
+}
+// DICOM Tag: (0040,1102)
+message PersonAddress {
+	string value = 1;
+}
+// DICOM Tag: (3006,0084)
+message ReferencedROINumber {
+	int32 value = 1;
+}
+// DICOM Tag: (3008,0036)
+message DeliveredPrimaryMeterset {
+	float value = 1;
+}
+// DICOM Tag: (0008,0105)
+message MappingResource {
+	string value = 1;
+}
+// DICOM Tag: (3008,0066)
+message OverrideReason {
+	string value = 1;
+}
+// DICOM Tag: (0008,0119)
+message LongCodeValue {
+	string value = 1;
+}
+// DICOM Tag: (0008,0117)
+message ContextUID {
+	string value = 1;
+}
+// DICOM Tag: (3008,0016)
+message MeasuredDoseValue {
+	float value = 1;
+}
+// DICOM Tag: (0040,1101)
+message PersonIdentificationCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,0061)
+message ParameterSequencePointer {
+	string value = 1;
+}
+// DICOM Tag: (3008,0063)
+message ParameterItemIndex {
+	int32 value = 1;
+}
+// DICOM Tag: (3008,0032)
+message SpecifiedPrimaryMeterset {
+	float value = 1;
+}
+// DICOM Tag: (3008,0033)
+message SpecifiedSecondaryMeterset {
+	float value = 1;
+}
+// DICOM Tag: (3008,0047)
+message ScanSpotMetersetsDelivered {
+	repeated float value = 1;
+}
+// DICOM Tag: (3008,0060)
+message OverrideSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3008,0024)
+message TreatmentControlPointDate {
+	string value = 1;
+}
+// DICOM Tag: (3008,0044)
+message DeliveredMeterset {
+	float value = 1;
+}
+// DICOM Tag: (3008,0065)
+message ParameterPointer {
+	string value = 1;
+}
+// DICOM Tag: (3008,0082)
+message ReferencedMeasuredDoseReferenceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (3008,0092)
+message ReferencedCalculatedDoseReferenceNumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,0100)
+message CodeValue {
+	string value = 1;
+}
+// DICOM Tag: (3008,0037)
+message DeliveredSecondaryMeterset {
+	float value = 1;
+}
+// DICOM Tag: (3008,0042)
+message SpecifiedMeterset {
+	float value = 1;
+}
+// DICOM Tag: (0008,0104)
+message CodeMeaning {
+	string value = 1;
+}
+// DICOM Tag: (0008,0082)
+message InstitutionCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (3008,0025)
+message TreatmentControlPointTime {
+	int64 value = 1;
+}
+// DICOM Tag: (0008,0122)
+message MappingResourceName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0107)
+message ContextGroupLocalVersion {
+	int64 value = 1;
+}
+// DICOM Tag: (3008,0041)
+message IonControlPointDeliverySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,0121)
+message EquivalentCodeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+message RTIonBeamsSessionRecordModule {
+	InstitutionCodeSequence institution_code_sequence = 1;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 2;
+	TreatmentControlPointTime treatment_control_point_time = 3;
+	CodeMeaning code_meaning = 4;
+	ContextGroupLocalVersion context_group_local_version = 5;
+	IonControlPointDeliverySequence ion_control_point_delivery_sequence = 6;
+	EquivalentCodeSequence equivalent_code_sequence = 7;
+	MappingResourceName mapping_resource_name = 8;
+	OperatorsName operators'_name = 9;
+	ReferencedCalculatedDoseReferenceSequence referenced_calculated_dose_reference_sequence = 10;
+	MetersetRateSet meterset_rate_set = 11;
+	CorrectedParameterSequence corrected_parameter_sequence = 12;
+	MappingResourceUID mapping_resource_uid = 13;
+	PersonTelecomInformation person's_telecom_information = 14;
+	ReferencedMeasuredDoseReferenceSequence referenced_measured_dose_reference_sequence = 15;
+	CurrentFractionNumber current_fraction_number = 16;
+	KVP kvp = 17;
+	CodingSchemeVersion coding_scheme_version = 18;
+	CalculatedDoseReferenceDoseValue calculated_dose_reference_dose_value = 19;
+	OperatorIdentificationSequence operator_identification_sequence = 20;
+	ContextGroupVersion context_group_version = 21;
+	InstitutionAddress institution_address = 22;
+	TreatmentSessionIonBeamSequence treatment_session_ion_beam_sequence = 23;
+	CodingSchemeDesignator coding_scheme_designator = 24;
+	URNCodeValue urn_code_value = 25;
+	PersonTelephoneNumbers person's_telephone_numbers = 26;
+	InstitutionName institution_name = 27;
+	ReferencedSOPClassUID referenced_sop_class_uid = 28;
+	MetersetRateDelivered meterset_rate_delivered = 29;
+	ParameterValueNumber parameter_value_number = 30;
+	PersonAddress person's_address = 31;
+	ReferencedROINumber referenced_roi_number = 32;
+	DeliveredPrimaryMeterset delivered_primary_meterset = 33;
+	OverrideParameterPointer override_parameter_pointer = 34;
+	OverrideReason override_reason = 35;
+	LongCodeValue long_code_value = 36;
+	ContextUID context_uid = 37;
+	MappingResource mapping_resource = 38;
+	MeasuredDoseValue measured_dose_value = 39;
+	PersonIdentificationCodeSequence person_identification_code_sequence = 40;
+	ParameterItemIndex parameter_item_index = 41;
+	SpecifiedPrimaryMeterset specified_primary_meterset = 42;
+	SpecifiedSecondaryMeterset specified_secondary_meterset = 43;
+	ParameterSequencePointer parameter_sequence_pointer = 44;
+	ScanSpotMetersetsDelivered scan_spot_metersets_delivered = 45;
+	TreatmentControlPointDate treatment_control_point_date = 46;
+	DeliveredMeterset delivered_meterset = 47;
+	OverrideSequence override_sequence = 48;
+	ReferencedMeasuredDoseReferenceNumber referenced_measured_dose_reference_number = 49;
+	ReferencedCalculatedDoseReferenceNumber referenced_calculated_dose_reference_number = 50;
+	ParameterPointer parameter_pointer = 51;
+	DeliveredSecondaryMeterset delivered_secondary_meterset = 52;
+	SpecifiedMeterset specified_meterset = 53;
+	CodeValue code_value = 54;
+}

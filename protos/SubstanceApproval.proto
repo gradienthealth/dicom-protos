@@ -1,0 +1,21 @@
+// Substance Approval
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.26.2.html#table_C.26-2
+syntax = "proto3";
+
+// DICOM Tag: (0044,0002)
+message SubstanceAdministrationApproval {
+	string value = 1;
+}
+// DICOM Tag: (0044,0003)
+message ApprovalStatusFurtherDescription {
+	string value = 1;
+}
+// DICOM Tag: (0044,0004)
+message ApprovalStatusDateTime {
+	int64 value = 1;
+}
+message SubstanceApprovalModule {
+	SubstanceAdministrationApproval substance_administration_approval = 1;
+	ApprovalStatusFurtherDescription approval_status_further_description = 2;
+	ApprovalStatusDateTime approval_status_datetime = 3;
+}

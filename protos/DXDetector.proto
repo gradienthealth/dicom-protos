@@ -1,0 +1,151 @@
+// DX Detector
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.4.html#table_C.8-71
+syntax = "proto3";
+
+// DICOM Tag: (0018,7005)
+message DetectorConfiguration {
+	string value = 1;
+}
+// DICOM Tag: (0018,7006)
+message DetectorDescription {
+	string value = 1;
+}
+// DICOM Tag: (0018,7011)
+message ExposuresOnDetectorSinceManufactured {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,7014)
+message DetectorActiveTime {
+	float value = 1;
+}
+// DICOM Tag: (0028,0030)
+message PixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7028)
+message DetectorActiveOrigin {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7016)
+message DetectorActivationOffsetFromExposure {
+	float value = 1;
+}
+// DICOM Tag: (0018,1149)
+message FieldOfViewDimensions {
+	repeated int32 value = 1;
+}
+// DICOM Tag: (0018,7004)
+message DetectorType {
+	string value = 1;
+}
+// DICOM Tag: (0018,7008)
+message DetectorMode {
+	string value = 1;
+}
+// DICOM Tag: (0018,7001)
+message DetectorTemperature {
+	float value = 1;
+}
+// DICOM Tag: (0018,7020)
+message DetectorElementPhysicalSize {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1164)
+message ImagerPixelSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7026)
+message DetectorActiveDimensions {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1412)
+message TargetExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,7034)
+message FieldOfViewHorizontalFlip {
+	string value = 1;
+}
+// DICOM Tag: (0018,1004)
+message PlateID {
+	string value = 1;
+}
+// DICOM Tag: (0018,1413)
+message DeviationIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,1147)
+message FieldOfViewShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,7010)
+message ExposuresOnDetectorSinceLastCalibration {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,7012)
+message DetectorTimeSinceLastExposure {
+	float value = 1;
+}
+// DICOM Tag: (0018,6000)
+message Sensitivity {
+	float value = 1;
+}
+// DICOM Tag: (0018,7022)
+message DetectorElementSpacing {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,1007)
+message CassetteID {
+	string value = 1;
+}
+// DICOM Tag: (0018,7000)
+message DetectorConditionsNominalFlag {
+	string value = 1;
+}
+// DICOM Tag: (0018,7024)
+message DetectorActiveShape {
+	string value = 1;
+}
+// DICOM Tag: (0018,1411)
+message ExposureIndex {
+	float value = 1;
+}
+// DICOM Tag: (0018,7030)
+message FieldOfViewOrigin {
+	repeated float value = 1;
+}
+// DICOM Tag: (0018,7032)
+message FieldOfViewRotation {
+	float value = 1;
+}
+message DXDetectorModule {
+	DetectorActiveOrigin detector_active_origin = 1;
+	DetectorActivationOffsetFromExposure detector_activation_offset_from_exposure = 2;
+	FieldOfViewDimensions field_of_view_dimensions = 3;
+	DetectorType detector_type = 4;
+	DetectorMode detector_mode = 5;
+	DetectorTemperature detector_temperature = 6;
+	DetectorElementPhysicalSize detector_element_physical_size = 7;
+	ImagerPixelSpacing imager_pixel_spacing = 8;
+	DetectorActiveDimensions detector_active_dimensions = 9;
+	TargetExposureIndex target_exposure_index = 10;
+	FieldOfViewHorizontalFlip field_of_view_horizontal_flip = 11;
+	PlateID plate_id = 12;
+	DeviationIndex deviation_index = 13;
+	FieldOfViewShape field_of_view_shape = 14;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 15;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 16;
+	Sensitivity sensitivity = 17;
+	DetectorElementSpacing detector_element_spacing = 18;
+	CassetteID cassette_id = 19;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 20;
+	DetectorActiveShape detector_active_shape = 21;
+	ExposureIndex exposure_index = 22;
+	FieldOfViewOrigin field_of_view_origin = 23;
+	FieldOfViewRotation field_of_view_rotation = 24;
+	DetectorConfiguration detector_configuration = 25;
+	DetectorDescription detector_description = 26;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 27;
+	DetectorActiveTime detector_active_time = 28;
+	PixelSpacing pixel_spacing = 29;
+}

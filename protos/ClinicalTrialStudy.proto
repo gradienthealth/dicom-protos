@@ -1,0 +1,47 @@
+// Clinical Trial Study
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.3.html#table_C.7-4b
+syntax = "proto3";
+
+// DICOM Tag: (0012,0053)
+message LongitudinalTemporalEventType {
+	string value = 1;
+}
+// DICOM Tag: (0012,0083)
+message ConsentForClinicalTrialUseSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0012,0084)
+message DistributionType {
+	string value = 1;
+}
+// DICOM Tag: (0012,0020)
+message ClinicalTrialProtocolID {
+	string value = 1;
+}
+// DICOM Tag: (0012,0085)
+message ConsentForDistributionFlag {
+	string value = 1;
+}
+// DICOM Tag: (0012,0050)
+message ClinicalTrialTimePointID {
+	string value = 1;
+}
+// DICOM Tag: (0012,0051)
+message ClinicalTrialTimePointDescription {
+	string value = 1;
+}
+// DICOM Tag: (0012,0052)
+message LongitudinalTemporalOffsetFromEvent {
+	double value = 1;
+}
+message ClinicalTrialStudyModule {
+	ClinicalTrialProtocolID clinical_trial_protocol_id = 1;
+	ConsentForDistributionFlag consent_for_distribution_flag = 2;
+	ClinicalTrialTimePointID clinical_trial_time_point_id = 3;
+	ClinicalTrialTimePointDescription clinical_trial_time_point_description = 4;
+	LongitudinalTemporalOffsetFromEvent longitudinal_temporal_offset_from_event = 5;
+	LongitudinalTemporalEventType longitudinal_temporal_event_type = 6;
+	ConsentForClinicalTrialUseSequence consent_for_clinical_trial_use_sequence = 7;
+	DistributionType distribution_type = 8;
+}

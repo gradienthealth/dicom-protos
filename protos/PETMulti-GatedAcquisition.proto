@@ -1,0 +1,36 @@
+// PET Multi-Gated Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.3.html#table_C.8-62
+syntax = "proto3";
+
+// DICOM Tag: (0018,1088)
+message HeartRate {
+	int32 value = 1;
+}
+// DICOM Tag: (0018,1064)
+message CardiacFramingType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1080)
+message BeatRejectionFlag {
+	string value = 1;
+}
+// DICOM Tag: (0018,1061)
+message TriggerSourceOrType {
+	string value = 1;
+}
+// DICOM Tag: (0018,1085)
+message PVCRejection {
+	string value = 1;
+}
+// DICOM Tag: (0018,1086)
+message SkipBeats {
+	int32 value = 1;
+}
+message PETMulti-GatedAcquisitionModule {
+	BeatRejectionFlag beat_rejection_flag = 1;
+	TriggerSourceOrType trigger_source_or_type = 2;
+	PVCRejection pvc_rejection = 3;
+	SkipBeats skip_beats = 4;
+	HeartRate heart_rate = 5;
+	CardiacFramingType cardiac_framing_type = 6;
+}

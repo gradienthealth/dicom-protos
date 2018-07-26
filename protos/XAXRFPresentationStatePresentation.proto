@@ -1,0 +1,74 @@
+// XA/XRF Presentation State Presentation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.21.html#table_C.11.21-1
+syntax = "proto3";
+
+// DICOM Tag: (0028,9505)
+message MultiFramePresentationSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1140)
+message ReferencedImageSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (0018,1244)
+message PreferredPlaybackSequencing {
+	uint32 value = 1;
+}
+// DICOM Tag: (0008,2142)
+message StartTrim {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,2143)
+message StopTrim {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,9459)
+message RecommendedDisplayFrameRateInFloat {
+	float value = 1;
+}
+// DICOM Tag: (0028,1090)
+message RecommendedViewingMode {
+	string value = 1;
+}
+// DICOM Tag: (0008,9458)
+message FrameDisplaySequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (0008,9460)
+message SkipFrameRangeFlag {
+	string value = 1;
+}
+// DICOM Tag: (0028,9411)
+message DisplayFilterPercentage {
+	float value = 1;
+}
+// DICOM Tag: (0028,9478)
+message MaskVisibilityPercentage {
+	float value = 1;
+}
+message XA/XRFPresentationStatePresentationModule {
+	StopTrim stop_trim = 1;
+	RecommendedDisplayFrameRateInFloat recommended_display_frame_rate_in_float = 2;
+	MultiFramePresentationSequence multi_frame_presentation_sequence = 3;
+	ReferencedImageSequence referenced_image_sequence = 4;
+	ReferencedSOPClassUID referenced_sop_class_uid = 5;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 6;
+	PreferredPlaybackSequencing preferred_playback_sequencing = 7;
+	StartTrim start_trim = 8;
+	RecommendedViewingMode recommended_viewing_mode = 9;
+	FrameDisplaySequence frame_display_sequence = 10;
+	SkipFrameRangeFlag skip_frame_range_flag = 11;
+	DisplayFilterPercentage display_filter_percentage = 12;
+	MaskVisibilityPercentage mask_visibility_percentage = 13;
+}

@@ -1,0 +1,87 @@
+// RT Beams
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.14.html#table_C.8-50
+syntax = "proto3";
+
+// DICOM Tag: (3002,0052)
+message FluenceModeID {
+	string value = 1;
+}
+// DICOM Tag: (0008,0080)
+message InstitutionName {
+	string value = 1;
+}
+// DICOM Tag: (0008,0081)
+message InstitutionAddress {
+	string value = 1;
+}
+// DICOM Tag: (3002,0032)
+message MetersetExposure {
+	float value = 1;
+}
+// DICOM Tag: (3002,0012)
+message RTImagePosition {
+	repeated float value = 1;
+}
+// DICOM Tag: (0008,1090)
+message ManufacturerModelName {
+	string value = 1;
+}
+// DICOM Tag: (0008,1155)
+message ReferencedSOPInstanceUID {
+	string value = 1;
+}
+// DICOM Tag: (3006,0084)
+message ReferencedROINumber {
+	int32 value = 1;
+}
+// DICOM Tag: (0008,0070)
+message Manufacturer {
+	string value = 1;
+}
+// DICOM Tag: (0018,1000)
+message DeviceSerialNumber {
+	string value = 1;
+}
+// DICOM Tag: (3002,0026)
+message RTImageSID {
+	float value = 1;
+}
+// DICOM Tag: (3002,0050)
+message PrimaryFluenceModeSequence {
+	bytes value = 1;
+	// This attribute has a SQ VR, no proto mapping yet
+}
+// DICOM Tag: (3002,0051)
+message FluenceMode {
+	string value = 1;
+}
+// DICOM Tag: (0008,1040)
+message InstitutionalDepartmentName {
+	string value = 1;
+}
+// DICOM Tag: (0008,1150)
+message ReferencedSOPClassUID {
+	string value = 1;
+}
+// DICOM Tag: (3002,0010)
+message RTImageOrientation {
+	repeated float value = 1;
+}
+message RTBeamsModule {
+	Manufacturer manufacturer = 1;
+	DeviceSerialNumber device_serial_number = 2;
+	RTImageSID rt_image_sid = 3;
+	PrimaryFluenceModeSequence primary_fluence_mode_sequence = 4;
+	FluenceMode fluence_mode = 5;
+	InstitutionalDepartmentName institutional_department_name = 6;
+	ReferencedSOPClassUID referenced_sop_class_uid = 7;
+	RTImageOrientation rt_image_orientation = 8;
+	FluenceModeID fluence_mode_id = 9;
+	InstitutionName institution_name = 10;
+	InstitutionAddress institution_address = 11;
+	MetersetExposure meterset_exposure = 12;
+	RTImagePosition rt_image_position = 13;
+	ManufacturerModelName manufacturer's_model_name = 14;
+	ReferencedSOPInstanceUID referenced_sop_instance_uid = 15;
+	ReferencedROINumber referenced_roi_number = 16;
+}
