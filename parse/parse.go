@@ -39,33 +39,32 @@ func (a *Attribute) TagKey() TagKey {
 }
 
 // AddSubAttribute adds a subattribute in the right place to an attribute "tree"
-func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey) {
-	if len(keys) == 1 {
-		if a.SubAttributes == nil {
-			a.SubAttributes = make(map[TagKey]*Attribute)
-		}
-		a.SubAttributes[keys[0]] = at
-		return
-	}
-
+func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap AttributeMap, mapping *ModuleToAttributeItem) {
 	// If a's subattribute map hasn't been made yet, do so
 	if a.SubAttributes == nil {
 		a.SubAttributes = make(map[TagKey]*Attribute)
 	}
 
-	// NOTE: the underlying code prevents the current reliance on order of the JSON. Currently it is assumed that
-	// attributes are encountered from the root to the leaves (and not out of order). The below code addresses out of
-	// order scenarios
-	/*
-		// Add current level attribute to a's subattributes. DONT HAVE TO DO THIS assuming ordering in JSON
-		if a.SubAttributes[keys[0]] == nil {
+	// If the added attribute only has one key, it is a leaf node and we can stop adding subattributes
+	if len(keys) == 1 {
+		if val, ok := a.SubAttributes[keys[0]]; !ok {
+			a.SubAttributes[keys[0]] = at
+		} else {
+			log.Printf("WARN: Duplicate Attribute Path: %s", mapping.Path ) // badness
+			log.Printf("WARN: Existent Attirbute is: %s \n", at.Tag) // badness
+			log.Printf("WARN: New Attribute is: %s \n\n", val.Tag) // badness
+		}
+		
+		return
+	} else {
+		// The added attribute needs to go deeper
+		if _, ok := a.SubAttributes[keys[0]]; !ok {
 			attr := attributeMap[keys[0]]
 			a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
 		}
-	*/
-
-	// Call add sub attribute on the next level
-	a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:])
+		// Call add sub attribute on the next level		
+		a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:], attributeMap, mapping)
+	}
 }
 
 // AttributeMap represents a mapping from TagKey to Attribute entities
@@ -158,17 +157,17 @@ func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([
 
 		// Add the attribute to the module or corresponding module attribute chain:
 		pathTagKeys := mapping.PathTagKeys()
-
+		
 		if len(pathTagKeys) == 1 {
 			// Add as a top level module attribute
 			module.AddAttribute(attr, mapping.Path)
 		} else {
-			// This attribute is nested under attributes, add as a sub attribute for the proper attribute
+			// This is not a top level module, leave the module struct values blank but create an attribute map so subattributes can be added
 			if module.Attributes == nil {
 				module.Attributes = make(map[TagKey]*Attribute)
 			}
 
-			module.Attributes[pathTagKeys[0]].AddSubAttribute(&attr, pathTagKeys[1:]) //TODO: no need for attr pointer, it's prob copied anyway since map values are not addressable
+			module.Attributes[pathTagKeys[0]].AddSubAttribute(&attr, pathTagKeys[1:], attrMap, &mapping) //TODO: no need for attr pointer, it's prob copied anyway since map values are not addressable
 		}
 	}
 
