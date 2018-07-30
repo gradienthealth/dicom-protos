@@ -51,6 +51,8 @@ var VRToProto = map[string]string{
 	"US or OW": "bytes",
 	"OB or OW": "bytes",
 }
+var SQMap = map[string]*parse.Attribute{}
+var SetComplete = map[string]*parse.Attribute{}
 
 const ProtoHeader = "syntax = \"proto3\";"
 
@@ -89,7 +91,7 @@ func AttributeProto(a *parse.Attribute) string {
 	}
 
 	if a.ValueRepresentation == "SQ" {
-		fmt.Fprint(b, "\t// This attribute has a SQ VR, no proto mapping yet\n")
+		fmt.Fprint(b, "\t // This attribute has a SQ VR, no proto mapping yet\n")
 	}
 
 	fmt.Fprint(b, "}")
@@ -98,21 +100,22 @@ func AttributeProto(a *parse.Attribute) string {
 
 // ModuleProto generates the corresponding protocol buffer for the module and writes it to w
 func ModuleProto(module *parse.Module, w io.Writer) error {
+
 	fmt.Fprintf(w, "// %s\n// Link to standard: %s\n", module.Name, module.LinkToStandard)
 	fmt.Fprintln(w, ProtoHeader)
+	fmt.Fprintln(w, "import \"Sequences.proto\";")
 	fmt.Fprintln(w, "")
 
-	// Write attribute messages
+	// Prepare attribute messages for output.
 	for _, a := range module.Attributes {
-		if a.Retired || a.IsEmpty() {
-			continue // Skip
+		if val, ok := SQMap[a.Tag]; ok {
+			log.Printf("WARN: Existent Attribute is: %s %s %s\n", val.Name, val.Tag, val.Keyword)
+			log.Printf("WARN: new Attribute is: %s %s %s\n", a.Name, a.Tag, a.Keyword)
 		}
-		ap := AttributeProto(a)
-		fmt.Fprintf(w, ap)
-		fmt.Fprintln(w, "")
+		SQMap[a.Tag] = a
 	}
 
-	// Write module proto
+	// Write module proto.
 	moduleName := strings.Replace(module.Name, " ", "", -1)
 	fmt.Fprintf(w, "message %sModule {\n", moduleName)
 
@@ -130,6 +133,42 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 	return nil
 }
 
+func SequenceAttrProto(a *parse.Attribute, wSeq io.Writer, wAttr io.Writer, sqmap map[string]*parse.Attribute) error {
+	if val, ok := SetComplete[a.Tag]; ok {
+		// Value already exists don't write it.
+		log.Printf("INFO: Existent Attribute is: %s %s %s %s\n", val.Name, val.Tag, val.Keyword, val.ValueRepresentation)
+		log.Printf("INFO: New Attribute is: %s %s %s %s\n", a.Name, a.Tag, a.Keyword, a.ValueRepresentation)
+		if a.ValueRepresentation != val.ValueRepresentation {
+			log.Print("WARN: ValueRepresentation for same tag does not match\n")
+		}
+	} else if len(a.SubAttributes) == 0 && !(a.Retired || a.IsEmpty()) {
+		// Write the attribute out if it is a leaf node.
+		SetComplete[a.Tag] = a
+		ap := AttributeProto(a)
+		fmt.Fprintf(wAttr, ap)
+		fmt.Fprintln(wAttr, "")
+	} else {
+		// This attribute is not a leaf node, generate a higher level message and recurse.
+
+		fmt.Fprintf(wSeq, "// DICOM Tag: %s\n", a.Tag)
+		fmt.Fprintf(wSeq, "message %s {\n ", a.Keyword)
+
+		i := 1
+		for _, s := range a.SubAttributes {
+			sqmap[s.Tag] = s
+			fmt.Fprintf(wSeq, "\t%s %s = %d;\n", s.Keyword, getFieldName(s.Name), i)
+			i++
+		}
+		fmt.Fprint(wSeq, "} \n\n")
+
+		for _, n := range sqmap {
+			SequenceAttrProto(n, wSeq, wAttr, map[string]*parse.Attribute{})
+		}
+
+	}
+	return nil
+}
+
 func getFieldName(name string) string {
 	s := strings.ToLower(name)
 	// Replace characters we do not like in protocol buffer messages
@@ -138,9 +177,10 @@ func getFieldName(name string) string {
 	s4 := strings.Replace(s3, "(", "", -1)
 	s5 := strings.Replace(s4, ")", "", -1)
 	s6 := strings.Replace(s5, "/", "_", -1)
+	s7 := strings.Replace(s6, "'", "", -1)
 
 	// Only allow ascii characters into the FieldName
 	re := regexp.MustCompile("[[:^ascii:]]")
-	s7 := re.ReplaceAllLiteralString(s6, "")
-	return s7
+	s8 := re.ReplaceAllLiteralString(s7, "")
+	return s8
 }
