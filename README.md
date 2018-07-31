@@ -4,6 +4,7 @@ This repository contains generated protocol buffer representations of every DICO
 # Quick Start
 ## Generate protocol buffers
 ### Native
+Assuming you have golang and make installed:
 1. Clone this repository using `git clone --recursive` into your $GOPATH or `go get github.com/gradienthealth/dicom-protos`
 2. Simply run `make run` and the protos will be deposited in the `protos` directory. 
 
