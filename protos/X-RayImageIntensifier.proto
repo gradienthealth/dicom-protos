@@ -1,0 +1,12 @@
+// X-Ray Image Intensifier
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.4.html#table_C.8.19.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_Image_IntensifierModule {
+	IntensifierSize intensifier_size = 1;
+	IntensifierActiveShape intensifier_active_shape = 2;
+	IntensifierActiveDimensions intensifier_active_dimensions = 3;
+}

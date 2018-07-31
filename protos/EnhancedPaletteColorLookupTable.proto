@@ -1,0 +1,15 @@
+// Enhanced Palette Color Lookup Table
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.23.html#table_C.7.6.23-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_Palette_Color_Lookup_TableModule {
+	BlendingLUT1Sequence blending_lut_one_sequence = 1;
+	BlendingLUT2Sequence blending_lut_two_sequence = 2;
+	EnhancedPaletteColorLookupTableSequence enhanced_palette_color_lookup_table_sequence = 3;
+	ICCProfile icc_profile = 4;
+	ColorSpace color_space = 5;
+	DataFrameAssignmentSequence data_frame_assignment_sequence = 6;
+}

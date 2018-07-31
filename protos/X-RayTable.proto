@@ -1,0 +1,14 @@
+// X-Ray Table
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.4.html#table_C.8-29
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_TableModule {
+	TableLateralIncrement table_lateral_increment = 1;
+	TableAngle table_angle = 2;
+	TableMotion table_motion = 3;
+	TableVerticalIncrement table_vertical_increment = 4;
+	TableLongitudinalIncrement table_longitudinal_increment = 5;
+}

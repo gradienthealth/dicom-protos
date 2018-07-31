@@ -1,0 +1,17 @@
+// Wide Field Ophthalmic Photography 3D Coordinates
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.12.html#table_C.8.17.12-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Wide_Field_Ophthalmic_Photography_threeD_CoordinatesModule {
+	TwoDimensionalToThreeDimensionalMapSequence two_dimensional_to_three_dimensional_map_sequence = 1;
+	AnatomicRegionSequence anatomic_region_sequence = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	TransformationMethodCodeSequence transformation_method_code_sequence = 4;
+	TransformationAlgorithmSequence transformation_algorithm_sequence = 5;
+	OphthalmicAxialLength ophthalmic_axial_length = 6;
+	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 7;
+	OphthalmicFOV ophthalmic_fov = 8;
+}

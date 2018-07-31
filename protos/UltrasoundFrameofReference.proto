@@ -1,0 +1,17 @@
+// Ultrasound Frame of Reference
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.2.html#table_C.8.24.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ultrasound_Frame_of_ReferenceModule {
+	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 1;
+	PatientFrameOfReferenceSource patient_frame_of_reference_source = 2;
+	TableFrameOfReferenceUID table_frame_of_reference_uid = 3;
+	VolumeToTableMappingMatrix volume_to_table_mapping_matrix = 4;
+	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 5;
+	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 6;
+	ApexPosition apex_position = 7;
+	VolumeToTransducerRelationship volume_to_transducer_relationship = 8;
+}

@@ -1,0 +1,10 @@
+// Ophthalmic Optical Coherence Tomography En Face Image Quality Rating
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.15.html#table_C.8.17.15-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Optical_Coherence_Tomography_En_Face_Image_Quality_RatingModule {
+	OphthalmicEnFaceImageQualityRatingSequence ophthalmic_en_face_image_quality_rating_sequence = 1;
+}

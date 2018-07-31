@@ -1,0 +1,49 @@
+// Enhanced MR Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.13.html#table_C.8-79
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_MR_ImageModule {
+	ContentQualification content_qualification = 1;
+	ApplicableSafetyStandardAgency applicable_safety_standard_agency = 2;
+	B1rms bonerms = 3;
+	AcquisitionNumber acquisition_number = 4;
+	ReferencedWaveformSequence referenced_waveform_sequence = 5;
+	ImageType image_type = 6;
+	BitsStored bits_stored = 7;
+	LossyImageCompression lossy_image_compression = 8;
+	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 9;
+	AcquisitionContrast acquisition_contrast = 10;
+	PlanarConfiguration planar_configuration = 11;
+	ResonantNucleus resonant_nucleus = 12;
+	KSpaceFiltering k_space_filtering = 13;
+	FunctionalSettlingPhaseFramesPresent functional_settling_phase_frames_present = 14;
+	BitsAllocated bits_allocated = 15;
+	HighBit high_bit = 16;
+	LossyImageCompressionMethod lossy_image_compression_method = 17;
+	SliceProgressionDirection slice_progression_direction = 18;
+	ReferencedRawDataSequence referenced_raw_data_sequence = 19;
+	ImageComments image_comments = 20;
+	PixelPresentation pixel_presentation = 21;
+	SamplesPerPixel samples_per_pixel = 22;
+	RecognizableVisualFeatures recognizable_visual_features = 23;
+	IconImageSequence icon_image_sequence = 24;
+	AcquisitionDuration acquisition_duration = 25;
+	SourceImageEvidenceSequence source_image_evidence_sequence = 26;
+	VolumetricProperties volumetric_properties = 27;
+	PhotometricInterpretation photometric_interpretation = 28;
+	IsocenterPosition isocenter_position = 29;
+	ComplexImageComponent complex_image_component = 30;
+	PixelRepresentation pixel_representation = 31;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 32;
+	ViewCodeSequence view_code_sequence = 33;
+	AcquisitionDateTime acquisition_datetime = 34;
+	ReferencedPresentationStateSequence referenced_presentation_state_sequence = 35;
+	MagneticFieldStrength magnetic_field_strength = 36;
+	ApplicableSafetyStandardDescription applicable_safety_standard_description = 37;
+	VolumeBasedCalculationTechnique volume_based_calculation_technique = 38;
+	BurnedInAnnotation burned_in_annotation = 39;
+	PresentationLUTShape presentation_lut_shape = 40;
+}

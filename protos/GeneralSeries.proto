@@ -1,0 +1,40 @@
+// General Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.3.html#table_C.7-5a
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message General_SeriesModule {
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
+	BodyPartExamined body_part_examined = 2;
+	PerformedProcedureStepID performed_procedure_step_id = 3;
+	PerformedProcedureStepEndDate performed_procedure_step_end_date = 4;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 5;
+	Modality modality = 6;
+	SeriesInstanceUID series_instance_uid = 7;
+	ReferencedPerformedProtocolSequence referenced_performed_protocol_sequence = 8;
+	PerformedProcedureStepStartTime performed_procedure_step_start_time = 9;
+	PerformedProcedureStepDescription performed_procedure_step_description = 10;
+	Laterality laterality = 11;
+	OperatorsName operators_name = 12;
+	OperatorIdentificationSequence operator_identification_sequence = 13;
+	RequestAttributesSequence request_attributes_sequence = 14;
+	PerformedProcedureStepEndTime performed_procedure_step_end_time = 15;
+	AnatomicalOrientationType anatomical_orientation_type = 16;
+	SeriesDate series_date = 17;
+	SeriesTime series_time = 18;
+	PerformingPhysicianIdentificationSequence performing_physician_identification_sequence = 19;
+	SeriesDescription series_description = 20;
+	PatientPosition patient_position = 21;
+	ProtocolName protocol_name = 22;
+	PerformedProcedureStepStartDate performed_procedure_step_start_date = 23;
+	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 24;
+	SeriesNumber series_number = 25;
+	LargestPixelValueInSeries largest_pixel_value_in_series = 26;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 27;
+	SmallestPixelValueInSeries smallest_pixel_value_in_series = 28;
+	PerformingPhysicianName performing_physicians_name = 29;
+	ReferencedDefinedProtocolSequence referenced_defined_protocol_sequence = 30;
+	RelatedSeriesSequence related_series_sequence = 31;
+}

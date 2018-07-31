@@ -1,0 +1,10 @@
+// RT ROI Observations
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.8.html#table_C.8-44
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_ROI_ObservationsModule {
+	RTROIObservationsSequence rt_roi_observations_sequence = 1;
+}

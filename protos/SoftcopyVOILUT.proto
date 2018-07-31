@@ -1,0 +1,10 @@
+// Softcopy VOI LUT
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.8.html#table_C.11.8-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Softcopy_VOI_LUTModule {
+	SoftcopyVOILUTSequence softcopy_voi_lut_sequence = 1;
+}

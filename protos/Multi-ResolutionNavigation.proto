@@ -1,0 +1,10 @@
+// Multi-Resolution Navigation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.7.html#table_C.8.12.7-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Multi_Resolution_NavigationModule {
+	ReferencedImageNavigationSequence referenced_image_navigation_sequence = 1;
+}

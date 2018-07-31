@@ -1,0 +1,10 @@
+// RT Dose ROI
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.7.html#table_C.8-43
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_Dose_ROIModule {
+	RTDoseROISequence rt_dose_roi_sequence = 1;
+}

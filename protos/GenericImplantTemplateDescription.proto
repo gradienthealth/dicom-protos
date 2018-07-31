@@ -1,0 +1,29 @@
+// Generic Implant Template Description
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.html#table_C.29.1.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Generic_Implant_Template_DescriptionModule {
+	FrameOfReferenceUID frame_of_reference_uid = 1;
+	ImplantName implant_name = 2;
+	DerivationImplantTemplateSequence derivation_implant_template_sequence = 3;
+	CoatingMaterialsCodeSequence coating_materials_code_sequence = 4;
+	Manufacturer manufacturer = 5;
+	ImplantSize implant_size = 6;
+	ImplantTargetAnatomySequence implant_target_anatomy_sequence = 7;
+	NotificationFromManufacturerSequence notification_from_manufacturer_sequence = 8;
+	FixationMethodCodeSequence fixation_method_code_sequence = 9;
+	ImplantPartNumber implant_part_number = 10;
+	ReplacedImplantTemplateSequence replaced_implant_template_sequence = 11;
+	EffectiveDateTime effective_datetime = 12;
+	InformationFromManufacturerSequence information_from_manufacturer_sequence = 13;
+	OverallTemplateSpatialTolerance overall_template_spatial_tolerance = 14;
+	MaterialsCodeSequence materials_code_sequence = 15;
+	ImplantTemplateVersion implant_template_version = 16;
+	ImplantType implant_type = 17;
+	OriginalImplantTemplateSequence original_implant_template_sequence = 18;
+	ImplantRegulatoryDisapprovalCodeSequence implant_regulatory_disapproval_code_sequence = 19;
+	ImplantTypeCodeSequence implant_type_code_sequence = 20;
+}

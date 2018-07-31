@@ -1,0 +1,19 @@
+// Visual Field Static Perimetry Test Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.2.html#table_C.8.26.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Visual_Field_Static_Perimetry_Test_ParametersModule {
+	StimulusArea stimulus_area = 1;
+	VisualFieldHorizontalExtent visual_field_horizontal_extent = 2;
+	VisualFieldVerticalExtent visual_field_vertical_extent = 3;
+	VisualFieldShape visual_field_shape = 4;
+	ScreeningTestModeCodeSequence screening_test_mode_code_sequence = 5;
+	MaximumStimulusLuminance maximum_stimulus_luminance = 6;
+	BackgroundIlluminationColorCodeSequence background_illumination_color_code_sequence = 7;
+	BackgroundLuminance background_luminance = 8;
+	StimulusColorCodeSequence stimulus_color_code_sequence = 9;
+	StimulusPresentationTime stimulus_presentation_time = 10;
+}

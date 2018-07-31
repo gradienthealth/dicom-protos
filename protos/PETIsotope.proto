@@ -1,0 +1,11 @@
+// PET Isotope
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.2.html#table_C.8-61
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message PET_IsotopeModule {
+	InterventionDrugInformationSequence intervention_drug_information_sequence = 1;
+	RadiopharmaceuticalInformationSequence radiopharmaceutical_information_sequence = 2;
+}

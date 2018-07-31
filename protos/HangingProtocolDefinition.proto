@@ -1,0 +1,20 @@
+// Hanging Protocol Definition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.23.html#table_C.23.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Hanging_Protocol_DefinitionModule {
+	HangingProtocolCreationDateTime hanging_protocol_creation_datetime = 1;
+	NumberOfPriorsReferenced number_of_priors_referenced = 2;
+	ImageSetsSequence image_sets_sequence = 3;
+	HangingProtocolUserIdentificationCodeSequence hanging_protocol_user_identification_code_sequence = 4;
+	SourceHangingProtocolSequence source_hanging_protocol_sequence = 5;
+	HangingProtocolName hanging_protocol_name = 6;
+	HangingProtocolLevel hanging_protocol_level = 7;
+	HangingProtocolDefinitionSequence hanging_protocol_definition_sequence = 8;
+	HangingProtocolUserGroupName hanging_protocol_user_group_name = 9;
+	HangingProtocolDescription hanging_protocol_description = 10;
+	HangingProtocolCreator hanging_protocol_creator = 11;
+}

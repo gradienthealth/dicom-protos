@@ -1,0 +1,15 @@
+// NM Image Pixel
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.7.html#table_C.8-6
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message NM_Image_PixelModule {
+	BitsStored bits_stored = 1;
+	HighBit high_bit = 2;
+	PixelSpacing pixel_spacing = 3;
+	SamplesPerPixel samples_per_pixel = 4;
+	PhotometricInterpretation photometric_interpretation = 5;
+	BitsAllocated bits_allocated = 6;
+}

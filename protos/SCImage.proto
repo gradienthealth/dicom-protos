@@ -1,0 +1,18 @@
+// SC Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.2.html#table_C.8-25
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SC_ImageModule {
+	DateOfSecondaryCapture date_of_secondary_capture = 1;
+	NominalScannedPixelSpacing nominal_scanned_pixel_spacing = 2;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 3;
+	SliceProgressionDirection slice_progression_direction = 4;
+	TimeOfSecondaryCapture time_of_secondary_capture = 5;
+	DocumentClassCodeSequence document_class_code_sequence = 6;
+	PixelSpacing pixel_spacing = 7;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 8;
+	ViewCodeSequence view_code_sequence = 9;
+}

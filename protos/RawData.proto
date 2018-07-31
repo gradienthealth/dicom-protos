@@ -1,0 +1,19 @@
+// Raw Data
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.19.html#table_C.19-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Raw_DataModule {
+	ContentLabel content_label = 1;
+	ReferencedInstanceSequence referenced_instance_sequence = 2;
+	ContentTime content_time = 3;
+	AcquisitionDateTime acquisition_datetime = 4;
+	ContentDescription content_description = 5;
+	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	ImageLaterality image_laterality = 7;
+	CreatorVersionUID creator_version_uid = 8;
+	InstanceNumber instance_number = 9;
+	ContentDate content_date = 10;
+}

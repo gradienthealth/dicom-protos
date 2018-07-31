@@ -1,0 +1,46 @@
+// DX Detector
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.4.html#table_C.8-71
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message DX_DetectorModule {
+	DetectorConfiguration detector_configuration = 1;
+	DetectorDescription detector_description = 2;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 3;
+	DetectorManufacturerName detector_manufacturer_name = 4;
+	DetectorTemperature detector_temperature = 5;
+	FieldOfViewOrigin field_of_view_origin = 6;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 7;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 8;
+	Sensitivity sensitivity = 9;
+	DetectorElementPhysicalSize detector_element_physical_size = 10;
+	DetectorActiveShape detector_active_shape = 11;
+	DetectorActiveTime detector_active_time = 12;
+	DetectorActivationOffsetFromExposure detector_activation_offset_from_exposure = 13;
+	CassetteID cassette_id = 14;
+	DetectorType detector_type = 15;
+	DetectorMode detector_mode = 16;
+	DetectorID detector_id = 17;
+	TimeOfLastDetectorCalibration time_of_last_detector_calibration = 18;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 19;
+	DetectorActiveDimensions detector_active_dimensions = 20;
+	FieldOfViewRotation field_of_view_rotation = 21;
+	DetectorBinning detector_binning = 22;
+	DeviationIndex deviation_index = 23;
+	FieldOfViewHorizontalFlip field_of_view_horizontal_flip = 24;
+	DetectorActiveOrigin detector_active_origin = 25;
+	ImagerPixelSpacing imager_pixel_spacing = 26;
+	DetectorElementSpacing detector_element_spacing = 27;
+	PixelSpacing pixel_spacing = 28;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 29;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 30;
+	TargetExposureIndex target_exposure_index = 31;
+	FieldOfViewShape field_of_view_shape = 32;
+	FieldOfViewDimensions field_of_view_dimensions = 33;
+	PlateID plate_id = 34;
+	DateOfLastDetectorCalibration date_of_last_detector_calibration = 35;
+	DetectorManufacturerModelName detector_manufacturers_model_name = 36;
+	ExposureIndex exposure_index = 37;
+}

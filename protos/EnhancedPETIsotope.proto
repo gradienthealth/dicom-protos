@@ -1,0 +1,10 @@
+// Enhanced PET Isotope
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.4.html#table_C.8.22-9
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_PET_IsotopeModule {
+	RadiopharmaceuticalInformationSequence radiopharmaceutical_information_sequence = 1;
+}

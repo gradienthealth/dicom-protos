@@ -1,0 +1,17 @@
+// Scan Procedure
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.29.2.html#table_C.8.29-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Scan_ProcedureModule {
+	ShotOffsetTime shot_offset_time = 1;
+	SurfaceScanAcquisitionTypeCodeSequence surface_scan_acquisition_type_code_sequence = 2;
+	SurfaceScanModeCodeSequence surface_scan_mode_code_sequence = 3;
+	RegistrationMethodCodeSequence registration_method_code_sequence = 4;
+	InstanceNumber instance_number = 5;
+	AcquisitionNumber acquisition_number = 6;
+	AcquisitionDateTime acquisition_datetime = 7;
+	ShotDurationTime shot_duration_time = 8;
+}

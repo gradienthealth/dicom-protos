@@ -1,0 +1,28 @@
+// General Study
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.html#table_C.7-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message General_StudyModule {
+	StudyDate study_date = 1;
+	ConsultingPhysicianName consulting_physicians_name = 2;
+	StudyDescription study_description = 3;
+	PhysiciansOfRecord physicians_of_record = 4;
+	PhysiciansReadingStudyIdentificationSequence physicians_reading_study_identification_sequence = 5;
+	ReasonForPerformedProcedureCodeSequence reason_for_performed_procedure_code_sequence = 6;
+	StudyInstanceUID study_instance_uid = 7;
+	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 8;
+	AccessionNumber accession_number = 9;
+	NameOfPhysiciansReadingStudy name_of_physicians_reading_study = 10;
+	ReferencedStudySequence referenced_study_sequence = 11;
+	ConsultingPhysicianIdentificationSequence consulting_physician_identification_sequence = 12;
+	StudyID study_id = 13;
+	IssuerOfAccessionNumberSequence issuer_of_accession_number_sequence = 14;
+	PhysiciansOfRecordIdentificationSequence physicians_of_record_identification_sequence = 15;
+	RequestingServiceCodeSequence requesting_service_code_sequence = 16;
+	ProcedureCodeSequence procedure_code_sequence = 17;
+	StudyTime study_time = 18;
+	ReferringPhysicianName referring_physicians_name = 19;
+}

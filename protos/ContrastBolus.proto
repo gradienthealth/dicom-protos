@@ -1,0 +1,21 @@
+// Contrast/Bolus
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.4.html#table_C.7-12
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Contrast_BolusModule {
+	ContrastBolusRoute contrast_bolus_route = 1;
+	ContrastBolusAdministrationRouteSequence contrast_bolus_administration_route_sequence = 2;
+	ContrastBolusVolume contrast_bolus_volume = 3;
+	ContrastBolusStartTime contrast_bolus_start_time = 4;
+	ContrastBolusStopTime contrast_bolus_stop_time = 5;
+	ContrastFlowRate contrast_flow_rate = 6;
+	ContrastBolusAgent contrast_bolus_agent = 7;
+	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 8;
+	ContrastBolusTotalDose contrast_bolus_total_dose = 9;
+	ContrastFlowDuration contrast_flow_duration = 10;
+	ContrastBolusIngredient contrast_bolus_ingredient = 11;
+	ContrastBolusIngredientConcentration contrast_bolus_ingredient_concentration = 12;
+}

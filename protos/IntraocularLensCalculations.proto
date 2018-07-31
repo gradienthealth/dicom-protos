@@ -1,0 +1,11 @@
+// Intraocular Lens Calculations
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.16.html#table_C.8.25.16-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intraocular_Lens_CalculationsModule {
+	IntraocularLensCalculationsRightEyeSequence intraocular_lens_calculations_right_eye_sequence = 1;
+	IntraocularLensCalculationsLeftEyeSequence intraocular_lens_calculations_left_eye_sequence = 2;
+}

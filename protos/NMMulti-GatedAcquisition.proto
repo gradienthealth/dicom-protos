@@ -1,0 +1,14 @@
+// NM Multi-Gated Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.13.html#table_C.8-13
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message NM_Multi_Gated_AcquisitionModule {
+	BeatRejectionFlag beat_rejection_flag = 1;
+	PVCRejection pvc_rejection = 2;
+	SkipBeats skip_beats = 3;
+	HeartRate heart_rate = 4;
+	GatedInformationSequence gated_information_sequence = 5;
+}

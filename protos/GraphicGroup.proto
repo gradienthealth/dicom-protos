@@ -1,0 +1,10 @@
+// Graphic Group
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.11.html#table_C.10-12
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Graphic_GroupModule {
+	GraphicGroupSequence graphic_group_sequence = 1;
+}

@@ -1,0 +1,12 @@
+// Enhanced Mammography Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.10.html#table_C.8-76b
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_Mammography_SeriesModule {
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	RequestAttributesSequence request_attributes_sequence = 3;
+}

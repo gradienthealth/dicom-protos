@@ -1,0 +1,24 @@
+// Performed Procedure Step Information
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.14.html#table_C.4-14
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Performed_Procedure_Step_InformationModule {
+	PerformedProcedureStepStatus performed_procedure_step_status = 1;
+	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 2;
+	PerformedStationName performed_station_name = 3;
+	PerformedLocation performed_location = 4;
+	PerformedProcedureStepStartDate performed_procedure_step_start_date = 5;
+	ProcedureCodeSequence procedure_code_sequence = 6;
+	PerformedProcedureStepStartTime performed_procedure_step_start_time = 7;
+	PerformedProcedureStepID performed_procedure_step_id = 8;
+	ReasonForPerformedProcedureCodeSequence reason_for_performed_procedure_code_sequence = 9;
+	PerformedProcedureTypeDescription performed_procedure_type_description = 10;
+	PerformedProcedureStepDiscontinuationReasonCodeSequence performed_procedure_step_discontinuation_reason_code_sequence = 11;
+	PerformedStationAETitle performed_station_ae_title = 12;
+	PerformedProcedureStepEndDate performed_procedure_step_end_date = 13;
+	PerformedProcedureStepEndTime performed_procedure_step_end_time = 14;
+	PerformedProcedureStepDescription performed_procedure_step_description = 15;
+}

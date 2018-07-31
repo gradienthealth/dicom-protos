@@ -1,0 +1,16 @@
+// Specimen
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.22.html#table_C.7.6.22-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SpecimenModule {
+	ContainerComponentSequence container_component_sequence = 1;
+	SpecimenDescriptionSequence specimen_description_sequence = 2;
+	ContainerIdentifier container_identifier = 3;
+	IssuerOfTheContainerIdentifierSequence issuer_of_the_container_identifier_sequence = 4;
+	AlternateContainerIdentifierSequence alternate_container_identifier_sequence = 5;
+	ContainerTypeCodeSequence container_type_code_sequence = 6;
+	ContainerDescription container_description = 7;
+}

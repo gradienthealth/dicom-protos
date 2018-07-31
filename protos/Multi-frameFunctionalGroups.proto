@@ -1,0 +1,22 @@
+// Multi-frame Functional Groups
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.16.html#table_C.7.6.16-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Multi_frame_Functional_GroupsModule {
+	ContentTime content_time = 1;
+	StereoPairsPresent stereo_pairs_present = 2;
+	RepresentativeFrameNumber representative_frame_number = 3;
+	ConcatenationUID concatenation_uid = 4;
+	SOPInstanceUIDOfConcatenationSource sop_instance_uid_of_concatenation_source = 5;
+	InConcatenationNumber in_concatenation_number = 6;
+	SharedFunctionalGroupsSequence shared_functional_groups_sequence = 7;
+	PerFrameFunctionalGroupsSequence per_frame_functional_groups_sequence = 8;
+	InConcatenationTotalNumber in_concatenation_total_number = 9;
+	NumberOfFrames number_of_frames = 10;
+	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 11;
+	InstanceNumber instance_number = 12;
+	ContentDate content_date = 13;
+}

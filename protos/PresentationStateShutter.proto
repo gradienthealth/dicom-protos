@@ -1,0 +1,11 @@
+// Presentation State Shutter
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.12.html#table_C.11.12-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Presentation_State_ShutterModule {
+	ShutterPresentationValue shutter_presentation_value = 1;
+	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 2;
+}

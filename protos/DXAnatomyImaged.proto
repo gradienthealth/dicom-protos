@@ -1,0 +1,12 @@
+// DX Anatomy Imaged
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.2.html#table_C.8-69
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message DX_Anatomy_ImagedModule {
+	ImageLaterality image_laterality = 1;
+	AnatomicRegionSequence anatomic_region_sequence = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+}

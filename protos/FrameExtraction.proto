@@ -1,0 +1,10 @@
+// Frame Extraction
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.3.html#table_C.12-9
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Frame_ExtractionModule {
+	FrameExtractionSequence frame_extraction_sequence = 1;
+}

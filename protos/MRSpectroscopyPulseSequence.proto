@@ -1,0 +1,23 @@
+// MR Spectroscopy Pulse Sequence
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.2.html#table_C.8-103
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message MR_Spectroscopy_Pulse_SequenceModule {
+	CoverageOfKSpace coverage_of_k_space = 1;
+	RectilinearPhaseEncodeReordering rectilinear_phase_encode_reordering = 2;
+	SegmentedKSpaceTraversal segmented_k_space_traversal = 3;
+	SpectrallySelectedSuppression spectrally_selected_suppression = 4;
+	EchoPeakPosition echo_peak_position = 5;
+	EchoPulseSequence echo_pulse_sequence = 6;
+	MultiPlanarExcitation multi_planar_excitation = 7;
+	GeometryOfKSpaceTraversal geometry_of_k_space_traversal = 8;
+	NumberOfKSpaceTrajectories number_of_k_space_trajectories = 9;
+	MRSpectroscopyAcquisitionType mr_spectroscopy_acquisition_type = 10;
+	MultipleSpinEcho multiple_spin_echo = 11;
+	EchoPlanarPulseSequence echo_planar_pulse_sequence = 12;
+	PulseSequenceName pulse_sequence_name = 13;
+	SteadyStatePulseSequence steady_state_pulse_sequence = 14;
+}

@@ -1,0 +1,10 @@
+// Graphic Annotation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.10.5.html#table_C.10-5
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Graphic_AnnotationModule {
+	GraphicAnnotationSequence graphic_annotation_sequence = 1;
+}

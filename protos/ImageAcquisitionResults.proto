@@ -1,0 +1,13 @@
+// Image Acquisition Results
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.15.html#table_C.4-15
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Image_Acquisition_ResultsModule {
+	PerformedSeriesSequence performed_series_sequence = 1;
+	Modality modality = 2;
+	StudyID study_id = 3;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 4;
+}

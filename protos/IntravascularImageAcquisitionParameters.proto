@@ -1,0 +1,16 @@
+// Intravascular Image Acquisition Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.5.html#table_C.8.27.5-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intravascular_Image_Acquisition_ParametersModule {
+	IVUSPullbackStopFrameNumber ivus_pullback_stop_frame_number = 1;
+	CatheterDirectionOfRotation catheter_direction_of_rotation = 2;
+	CatheterRotationalRate catheter_rotational_rate = 3;
+	ModeOfPercutaneousAccessSequence mode_of_percutaneous_access_sequence = 4;
+	IVUSAcquisition ivus_acquisition = 5;
+	IVUSPullbackRate ivus_pullback_rate = 6;
+	IVUSPullbackStartFrameNumber ivus_pullback_start_frame_number = 7;
+}

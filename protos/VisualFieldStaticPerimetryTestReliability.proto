@@ -1,0 +1,15 @@
+// Visual Field Static Perimetry Test Reliability
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.3.html#table_C.8.26.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Visual_Field_Static_Perimetry_Test_ReliabilityModule {
+	FixationSequence fixation_sequence = 1;
+	VisualFieldCatchTrialSequence visual_field_catch_trial_sequence = 2;
+	StimuliRetestingQuantity stimuli_retesting_quantity = 3;
+	PatientReliabilityIndicator patient_reliability_indicator = 4;
+	CommentsOnPatientPerformanceOfVisualField comments_on_patients_performance_of_visual_field = 5;
+	VisualFieldTestReliabilityGlobalIndexSequence visual_field_test_reliability_global_index_sequence = 6;
+}

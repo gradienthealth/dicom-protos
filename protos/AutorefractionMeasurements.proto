@@ -1,0 +1,13 @@
+// Autorefraction Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.9.html#table_C.8.25.9-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Autorefraction_MeasurementsModule {
+	AutorefractionRightEyeSequence autorefraction_right_eye_sequence = 1;
+	AutorefractionLeftEyeSequence autorefraction_left_eye_sequence = 2;
+	DistancePupillaryDistance distance_pupillary_distance = 3;
+	NearPupillaryDistance near_pupillary_distance = 4;
+}

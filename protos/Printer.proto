@@ -1,0 +1,18 @@
+// Printer
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.9.html#table_C.13-9
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message PrinterModule {
+	PrinterStatus printer_status = 1;
+	PrinterName printer_name = 2;
+	DeviceSerialNumber device_serial_number = 3;
+	SoftwareVersions software_versions = 4;
+	PrinterStatusInfo printer_status_info = 5;
+	Manufacturer manufacturer = 6;
+	ManufacturerModelName manufacturers_model_name = 7;
+	DateOfLastCalibration date_of_last_calibration = 8;
+	TimeOfLastCalibration time_of_last_calibration = 9;
+}

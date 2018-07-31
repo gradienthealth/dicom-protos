@@ -1,0 +1,30 @@
+// X-Ray 3D Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.html#table_C.8.21.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_threeD_ImageModule {
+	LossyImageCompression lossy_image_compression = 1;
+	LossyImageCompressionMethod lossy_image_compression_method = 2;
+	QualityControlImage quality_control_image = 3;
+	HighBit high_bit = 4;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 5;
+	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 6;
+	IconImageSequence icon_image_sequence = 7;
+	PixelPresentation pixel_presentation = 8;
+	VolumetricProperties volumetric_properties = 9;
+	BitsStored bits_stored = 10;
+	PhotometricInterpretation photometric_interpretation = 11;
+	ContentQualification content_qualification = 12;
+	BurnedInAnnotation burned_in_annotation = 13;
+	RecognizableVisualFeatures recognizable_visual_features = 14;
+	ImageComments image_comments = 15;
+	PresentationLUTShape presentation_lut_shape = 16;
+	ImageType image_type = 17;
+	VolumeBasedCalculationTechnique volume_based_calculation_technique = 18;
+	BitsAllocated bits_allocated = 19;
+	SamplesPerPixel samples_per_pixel = 20;
+	SourceIrradiationEventSequence source_irradiation_event_sequence = 21;
+}

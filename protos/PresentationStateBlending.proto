@@ -1,0 +1,12 @@
+// Presentation State Blending
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.14.html#table_C.11.14-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Presentation_State_BlendingModule {
+	ReferencedSpatialRegistrationSequence referenced_spatial_registration_sequence = 1;
+	BlendingSequence blending_sequence = 2;
+	RelativeOpacity relative_opacity = 3;
+}

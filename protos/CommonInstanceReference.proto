@@ -1,0 +1,11 @@
+// Common Instance Reference
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.12.2.html#table_C.12-8
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Common_Instance_ReferenceModule {
+	ReferencedSeriesSequence referenced_series_sequence = 1;
+	StudiesContainingOtherReferencedInstancesSequence studies_containing_other_referenced_instances_sequence = 2;
+}

@@ -1,0 +1,11 @@
+// Acquisition Context
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.14.html#table_C.7.6.14-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Acquisition_ContextModule {
+	AcquisitionContextSequence acquisition_context_sequence = 1;
+	AcquisitionContextDescription acquisition_context_description = 2;
+}

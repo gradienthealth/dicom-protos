@@ -1,0 +1,10 @@
+// US Region Calibration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.5.5.html#table_C.8-17
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message US_Region_CalibrationModule {
+	SequenceOfUltrasoundRegions sequence_of_ultrasound_regions = 1;
+}

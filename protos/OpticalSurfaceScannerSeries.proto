@@ -1,0 +1,12 @@
+// Optical Surface Scanner Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.29.html#table_C.8.29-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Optical_Surface_Scanner_SeriesModule {
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	ReferencedSurfaceDataSequence referenced_surface_data_sequence = 3;
+}

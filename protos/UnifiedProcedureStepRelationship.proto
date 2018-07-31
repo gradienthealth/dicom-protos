@@ -1,0 +1,26 @@
+// Unified Procedure Step Relationship
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.30.4.html#table_C.30.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Unified_Procedure_Step_RelationshipModule {
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 1;
+	AdmittingDiagnosesDescription admitting_diagnoses_description = 2;
+	PatientID patient_id = 3;
+	AdmissionID admission_id = 4;
+	PatientAlternativeCalendar patients_alternative_calendar = 5;
+	PatientBirthDate patients_birth_date = 6;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 7;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 8;
+	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 9;
+	IssuerOfPatientID issuer_of_patient_id = 10;
+	OtherPatientIDsSequence other_patient_ids_sequence = 11;
+	PatientDeathDateInAlternativeCalendar patients_death_date_in_alternative_calendar = 12;
+	ReferencedRequestSequence referenced_request_sequence = 13;
+	ReplacedProcedureStepSequence replaced_procedure_step_sequence = 14;
+	PatientName patients_name = 15;
+	PatientBirthDateInAlternativeCalendar patients_birth_date_in_alternative_calendar = 16;
+	PatientSex patients_sex = 17;
+}

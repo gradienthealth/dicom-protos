@@ -1,0 +1,28 @@
+// Visual Field Static Perimetry Test Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.4.html#table_C.8.26.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Visual_Field_Static_Perimetry_Test_MeasurementsModule {
+	ScreeningBaselineMeasuredSequence screening_baseline_measured_sequence = 1;
+	BlindSpotYCoordinate blind_spot_y_coordinate = 2;
+	GeneralizedDefectSensitivityDeviationAlgorithmSequence generalized_defect_sensitivity_deviation_algorithm_sequence = 3;
+	NumberOfVisualStimuli number_of_visual_stimuli = 4;
+	FovealSensitivity foveal_sensitivity = 5;
+	FovealPointProbabilityValue foveal_point_probability_value = 6;
+	TestPointNormalsDataFlag test_point_normals_data_flag = 7;
+	AgeCorrectedSensitivityDeviationAlgorithmSequence age_corrected_sensitivity_deviation_algorithm_sequence = 8;
+	FovealPointNormativeDataFlag foveal_point_normative_data_flag = 9;
+	BlindSpotLocalized blind_spot_localized = 10;
+	TestPointNormalsSequence test_point_normals_sequence = 11;
+	PresentedVisualStimuliDataFlag presented_visual_stimuli_data_flag = 12;
+	VisualFieldTestDuration visual_field_test_duration = 13;
+	FovealSensitivityMeasured foveal_sensitivity_measured = 14;
+	MinimumSensitivityValue minimum_sensitivity_value = 15;
+	VisualFieldTestPointSequence visual_field_test_point_sequence = 16;
+	MeasurementLaterality measurement_laterality = 17;
+	ScreeningBaselineMeasured screening_baseline_measured = 18;
+	BlindSpotXCoordinate blind_spot_x_coordinate = 19;
+}

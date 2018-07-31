@@ -1,0 +1,14 @@
+// Ophthalmic Axial Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.14.html#table_C.8.25.14-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Axial_MeasurementsModule {
+	OphthalmicAxialMeasurementsDeviceType ophthalmic_axial_measurements_device_type = 1;
+	OphthalmicUltrasoundMethodCodeSequence ophthalmic_ultrasound_method_code_sequence = 2;
+	AnteriorChamberDepthDefinitionCodeSequence anterior_chamber_depth_definition_code_sequence = 3;
+	OphthalmicAxialMeasurementsRightEyeSequence ophthalmic_axial_measurements_right_eye_sequence = 4;
+	OphthalmicAxialMeasurementsLeftEyeSequence ophthalmic_axial_measurements_left_eye_sequence = 5;
+}

@@ -1,0 +1,24 @@
+// Substance Administration Log
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.26.4.html#table_C.26-4
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Substance_Administration_LogModule {
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 1;
+	SubstanceAdministrationDateTime substance_administration_datetime = 2;
+	SubstanceAdministrationParameterSequence substance_administration_parameter_sequence = 3;
+	PatientName patients_name = 4;
+	PatientID patient_id = 5;
+	AdmissionID admission_id = 6;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 7;
+	ProductPackageIdentifier product_package_identifier = 8;
+	ProductDescription product_description = 9;
+	SubstanceAdministrationNotes substance_administration_notes = 10;
+	SubstanceAdministrationDeviceID substance_administration_device_id = 11;
+	OperatorIdentificationSequence operator_identification_sequence = 12;
+	IssuerOfPatientID issuer_of_patient_id = 13;
+	ProductName product_name = 14;
+	AdministrationRouteCodeSequence administration_route_code_sequence = 15;
+}

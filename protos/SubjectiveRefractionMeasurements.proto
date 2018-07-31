@@ -1,0 +1,15 @@
+// Subjective Refraction Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.11.html#table_C.8.25.11-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Subjective_Refraction_MeasurementsModule {
+	SubjectiveRefractionRightEyeSequence subjective_refraction_right_eye_sequence = 1;
+	SubjectiveRefractionLeftEyeSequence subjective_refraction_left_eye_sequence = 2;
+	DistancePupillaryDistance distance_pupillary_distance = 3;
+	NearPupillaryDistance near_pupillary_distance = 4;
+	IntermediatePupillaryDistance intermediate_pupillary_distance = 5;
+	OtherPupillaryDistance other_pupillary_distance = 6;
+}

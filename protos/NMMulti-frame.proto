@@ -1,0 +1,26 @@
+// NM Multi-frame
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.8.html#table_C.8-7
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message NM_Multi_frameModule {
+	NumberOfSlices number_of_slices = 1;
+	FrameIncrementPointer frame_increment_pointer = 2;
+	EnergyWindowVector energy_window_vector = 3;
+	DetectorVector detector_vector = 4;
+	NumberOfPhases number_of_phases = 5;
+	RRIntervalVector r_r_interval_vector = 6;
+	TimeSlotVector time_slot_vector = 7;
+	NumberOfEnergyWindows number_of_energy_windows = 8;
+	PhaseVector phase_vector = 9;
+	NumberOfRotations number_of_rotations = 10;
+	NumberOfTimeSlots number_of_time_slots = 11;
+	AngularViewVector angular_view_vector = 12;
+	TimeSliceVector time_slice_vector = 13;
+	NumberOfDetectors number_of_detectors = 14;
+	RotationVector rotation_vector = 15;
+	NumberOfRRIntervals number_of_r_r_intervals = 16;
+	SliceVector slice_vector = 17;
+}

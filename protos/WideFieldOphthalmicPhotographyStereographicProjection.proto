@@ -1,0 +1,17 @@
+// Wide Field Ophthalmic Photography Stereographic Projection
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.11.html#table_C.8.17.11-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Wide_Field_Ophthalmic_Photography_Stereographic_ProjectionModule {
+	OphthalmicFOV ophthalmic_fov = 1;
+	AnatomicRegionSequence anatomic_region_sequence = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	TransformationAlgorithmSequence transformation_algorithm_sequence = 4;
+	OphthalmicAxialLength ophthalmic_axial_length = 5;
+	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 6;
+	XCoordinatesCenterPixelViewAngle x_coordinates_center_pixel_view_angle = 7;
+	YCoordinatesCenterPixelViewAngle y_coordinates_center_pixel_view_angle = 8;
+}

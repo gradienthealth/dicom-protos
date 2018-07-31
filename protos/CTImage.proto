@@ -1,0 +1,65 @@
+// CT Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.2.html#table_C.8-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message CT_ImageModule {
+	SamplesPerPixel samples_per_pixel = 1;
+	TableHeight table_height = 2;
+	ImageAndFluoroscopyAreaDoseProduct image_and_fluoroscopy_area_dose_product = 3;
+	RescaleIntercept rescale_intercept = 4;
+	ExposureInuAs exposure_in_as = 5;
+	ExposureModulationType exposure_modulation_type = 6;
+	ImageType image_type = 7;
+	RescaleType rescale_type = 8;
+	TotalCollimationWidth total_collimation_width = 9;
+	EnergyWeightingFactor energy_weighting_factor = 10;
+	PhotometricInterpretation photometric_interpretation = 11;
+	BitsStored bits_stored = 12;
+	CTDIvol ctdivol = 13;
+	AnatomicRegionSequence anatomic_region_sequence = 14;
+	KVP kvp = 15;
+	XRayTubeCurrent x_ray_tube_current = 16;
+	CalciumScoringMassFactorPatient calcium_scoring_mass_factor_patient = 17;
+	BitsAllocated bits_allocated = 18;
+	RevolutionTime revolution_time = 19;
+	EstimatedDoseSaving estimated_dose_saving = 20;
+	IsocenterPosition isocenter_position = 21;
+	TableTopPitchAngle table_top_pitch_angle = 22;
+	DistanceSourceToDetector distance_source_to_detector = 23;
+	GeneratorPower generator_power = 24;
+	SingleCollimationWidth single_collimation_width = 25;
+	TableSpeed table_speed = 26;
+	CTAdditionalXRaySourceSequence ct_additional_x_ray_source_sequence = 27;
+	DistanceSourceToPatient distance_source_to_patient = 28;
+	ConvolutionKernel convolution_kernel = 29;
+	SpiralPitchFactor spiral_pitch_factor = 30;
+	ReconstructionDiameter reconstruction_diameter = 31;
+	ReconstructionTargetCenterPatient reconstruction_target_center_patient = 32;
+	CalciumScoringMassFactorDevice calcium_scoring_mass_factor_device = 33;
+	DataCollectionDiameter data_collection_diameter = 34;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 35;
+	SliceProgressionDirection slice_progression_direction = 36;
+	ScanOptions scan_options = 37;
+	DataCollectionCenterPatient data_collection_center_patient = 38;
+	FilterType filter_type = 39;
+	FocalSpots focal_spots = 40;
+	RescaleSlope rescale_slope = 41;
+	AcquisitionNumber acquisition_number = 42;
+	Exposure exposure = 43;
+	GantryDetectorTilt gantry_detector_tilt = 44;
+	RotationDirection rotation_direction = 45;
+	ExposureTime exposure_time = 46;
+	ViewCodeSequence view_code_sequence = 47;
+	TableTopLateralPosition table_top_lateral_position = 48;
+	HighBit high_bit = 49;
+	TableFeedPerRotation table_feed_per_rotation = 50;
+	CTDIPhantomTypeCodeSequence ctdi_phantom_type_code_sequence = 51;
+	TableTopRollAngle table_top_roll_angle = 52;
+	TableTopLongitudinalPosition table_top_longitudinal_position = 53;
+	WaterEquivalentDiameter water_equivalent_diameter = 54;
+	WaterEquivalentDiameterCalculationMethodCodeSequence water_equivalent_diameter_calculation_method_code_sequence = 55;
+	PatientSupportAngle patient_support_angle = 56;
+}

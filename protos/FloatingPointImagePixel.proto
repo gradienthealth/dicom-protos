@@ -1,0 +1,18 @@
+// Floating Point Image Pixel
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.24.html#table_PS3.3_C.7.6.24-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Floating_Point_Image_PixelModule {
+	Rows rows = 1;
+	PixelAspectRatio pixel_aspect_ratio = 2;
+	FloatPixelPaddingRangeLimit float_pixel_padding_range_limit = 3;
+	BitsAllocated bits_allocated = 4;
+	FloatPixelData float_pixel_data = 5;
+	FloatPixelPaddingValue float_pixel_padding_value = 6;
+	SamplesPerPixel samples_per_pixel = 7;
+	PhotometricInterpretation photometric_interpretation = 8;
+	Columns columns = 9;
+}

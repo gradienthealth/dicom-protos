@@ -1,0 +1,30 @@
+// X-Ray Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.2.html#table_C.8-27
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_AcquisitionModule {
+	RadiationSetting radiation_setting = 1;
+	XRayTubeCurrent x_ray_tube_current = 2;
+	FieldOfViewShape field_of_view_shape = 3;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 4;
+	FieldOfViewDimensions field_of_view_dimensions = 5;
+	ImagerPixelSpacing imager_pixel_spacing = 6;
+	XRayTubeCurrentInuA x_ray_tube_current_in_a = 7;
+	ExposureTime exposure_time = 8;
+	ExposureTimeInuS exposure_time_in_s = 9;
+	ExposureInuAs exposure_in_as = 10;
+	RadiationMode radiation_mode = 11;
+	IntensifierSize intensifier_size = 12;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 13;
+	KVP kvp = 14;
+	Grid grid = 15;
+	PixelSpacing pixel_spacing = 16;
+	ImageAndFluoroscopyAreaDoseProduct image_and_fluoroscopy_area_dose_product = 17;
+	Exposure exposure = 18;
+	AveragePulseWidth average_pulse_width = 19;
+	TypeOfFilters type_of_filters = 20;
+	FocalSpots focal_spots = 21;
+}

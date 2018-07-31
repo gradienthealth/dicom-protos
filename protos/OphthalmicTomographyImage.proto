@@ -1,0 +1,30 @@
+// Ophthalmic Tomography Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.7.html#table_C.8.17.7-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Tomography_ImageModule {
+	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 1;
+	InConcatenationNumber in_concatenation_number = 2;
+	ImageComments image_comments = 3;
+	SamplesPerPixel samples_per_pixel = 4;
+	AcquisitionNumber acquisition_number = 5;
+	BitsStored bits_stored = 6;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 7;
+	BurnedInAnnotation burned_in_annotation = 8;
+	ImageType image_type = 9;
+	AcquisitionDuration acquisition_duration = 10;
+	BitsAllocated bits_allocated = 11;
+	InConcatenationTotalNumber in_concatenation_total_number = 12;
+	AcquisitionDateTime acquisition_datetime = 13;
+	PhotometricInterpretation photometric_interpretation = 14;
+	PixelRepresentation pixel_representation = 15;
+	HighBit high_bit = 16;
+	RecognizableVisualFeatures recognizable_visual_features = 17;
+	OphthalmicVolumetricPropertiesFlag ophthalmic_volumetric_properties_flag = 18;
+	PresentationLUTShape presentation_lut_shape = 19;
+	LossyImageCompression lossy_image_compression = 20;
+	LossyImageCompressionMethod lossy_image_compression_method = 21;
+}

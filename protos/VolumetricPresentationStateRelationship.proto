@@ -1,0 +1,13 @@
+// Volumetric Presentation State Relationship
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.23.html#table_C.11.23-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Volumetric_Presentation_State_RelationshipModule {
+	VolumetricPresentationStateInputSequence volumetric_presentation_state_input_sequence = 1;
+	GlobalCrop global_crop = 2;
+	GlobalCroppingSpecificationIndex global_cropping_specification_index = 3;
+	VolumetricPresentationInputSetSequence volumetric_presentation_input_set_sequence = 4;
+}

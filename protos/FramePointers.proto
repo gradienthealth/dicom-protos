@@ -1,0 +1,13 @@
+// Frame Pointers
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.9.html#table_C.7-15
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Frame_PointersModule {
+	RepresentativeFrameNumber representative_frame_number = 1;
+	FrameNumbersOfInterest frame_numbers_of_interest_foi = 2;
+	FrameOfInterestDescription frame_of_interest_description = 3;
+	FrameOfInterestType frame_of_interest_type = 4;
+}

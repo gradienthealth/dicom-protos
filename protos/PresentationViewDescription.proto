@@ -1,0 +1,13 @@
+// Presentation View Description
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.25.html#table_C.11.25-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Presentation_View_DescriptionModule {
+	AnatomicRegionSequence anatomic_region_sequence = 1;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
+	ViewCodeSequence view_code_sequence = 3;
+	ImageLaterality image_laterality = 4;
+}

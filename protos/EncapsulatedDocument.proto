@@ -1,0 +1,27 @@
+// Encapsulated Document
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.24.2.html#table_C.24-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Encapsulated_DocumentModule {
+	DocumentClassCodeSequence document_class_code_sequence = 1;
+	IdenticalDocumentsSequence identical_documents_sequence = 2;
+	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 3;
+	InstanceNumber instance_number = 4;
+	ContentDate content_date = 5;
+	ContentTime content_time = 6;
+	AcquisitionDateTime acquisition_datetime = 7;
+	DocumentTitle document_title = 8;
+	ListOfMIMETypes list_of_mime_types = 9;
+	BurnedInAnnotation burned_in_annotation = 10;
+	RecognizableVisualFeatures recognizable_visual_features = 11;
+	SourceInstanceSequence source_instance_sequence = 12;
+	VerificationFlag verification_flag = 13;
+	PredecessorDocumentsSequence predecessor_documents_sequence = 14;
+	ConceptNameCodeSequence concept_name_code_sequence = 15;
+	HL7InstanceIdentifier hlseven_instance_identifier = 16;
+	EncapsulatedDocument encapsulated_document = 17;
+	ImageLaterality image_laterality = 18;
+}

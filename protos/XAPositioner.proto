@@ -1,0 +1,19 @@
+// XA Positioner
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.5.html#table_C.8-30
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message XA_PositionerModule {
+	PositionerSecondaryAngleIncrement positioner_secondary_angle_increment = 1;
+	DetectorPrimaryAngle detector_primary_angle = 2;
+	EstimatedRadiographicMagnificationFactor estimated_radiographic_magnification_factor = 3;
+	DistanceSourceToDetector distance_source_to_detector = 4;
+	PositionerMotion positioner_motion = 5;
+	PositionerPrimaryAngle positioner_primary_angle = 6;
+	PositionerSecondaryAngle positioner_secondary_angle = 7;
+	PositionerPrimaryAngleIncrement positioner_primary_angle_increment = 8;
+	DetectorSecondaryAngle detector_secondary_angle = 9;
+	DistanceSourceToPatient distance_source_to_patient = 10;
+}

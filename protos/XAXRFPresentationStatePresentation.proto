@@ -1,0 +1,10 @@
+// XA/XRF Presentation State Presentation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.21.html#table_C.11.21-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message XA_XRF_Presentation_State_PresentationModule {
+	MultiFramePresentationSequence multi_frame_presentation_sequence = 1;
+}

@@ -1,0 +1,11 @@
+// Patient Orientation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.20.html#table_C.7.6.20-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Patient_OrientationModule {
+	PatientOrientationCodeSequence patient_orientation_code_sequence = 1;
+	PatientGantryRelationshipCodeSequence patient_gantry_relationship_code_sequence = 2;
+}

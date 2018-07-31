@@ -1,0 +1,10 @@
+// Breast Tomosynthesis Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.3.4.html#table_C.8.21.3.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Breast_Tomosynthesis_AcquisitionModule {
+	XRay3DAcquisitionSequence x_ray_threed_acquisition_sequence = 1;
+}

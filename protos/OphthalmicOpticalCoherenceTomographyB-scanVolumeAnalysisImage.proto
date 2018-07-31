@@ -1,0 +1,31 @@
+// Ophthalmic Optical Coherence Tomography B-scan Volume Analysis Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.16.html#table_C.8.17.16-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Optical_Coherence_Tomography_B_scan_Volume_Analysis_ImageModule {
+	RecognizableVisualFeatures recognizable_visual_features = 1;
+	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 2;
+	SamplesPerPixel samples_per_pixel = 3;
+	ContentDate content_date = 4;
+	PhotometricInterpretation photometric_interpretation = 5;
+	OCTBscanAnalysisAcquisitionParametersSequence oct_b_scan_analysis_acquisition_parameters_sequence = 6;
+	InConcatenationNumber in_concatenation_number = 7;
+	ImageComments image_comments = 8;
+	ContentTime content_time = 9;
+	InstanceNumber instance_number = 10;
+	BitsStored bits_stored = 11;
+	PixelRepresentation pixel_representation = 12;
+	LossyImageCompression lossy_image_compression = 13;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 14;
+	BurnedInAnnotation burned_in_annotation = 15;
+	AcquisitionMethodAlgorithmSequence acquisition_method_algorithm_sequence = 16;
+	ImageType image_type = 17;
+	HighBit high_bit = 18;
+	PresentationLUTShape presentation_lut_shape = 19;
+	LossyImageCompressionMethod lossy_image_compression_method = 20;
+	InConcatenationTotalNumber in_concatenation_total_number = 21;
+	BitsAllocated bits_allocated = 22;
+}

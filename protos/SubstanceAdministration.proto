@@ -1,0 +1,10 @@
+// Substance Administration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.26.3.html#table_C.26-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Substance_AdministrationModule {
+	AdministrationRouteCodeSequence administration_route_code_sequence = 1;
+}

@@ -1,0 +1,32 @@
+// Image Pixel
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#table_C.7-11a
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Image_PixelModule {
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 1;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 2;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 3;
+	Rows rows = 4;
+	LargestImagePixelValue largest_image_pixel_value = 5;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 6;
+	PixelData pixel_data = 7;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 8;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 9;
+	ColorSpace color_space = 10;
+	PixelDataProviderURL pixel_data_provider_url = 11;
+	SamplesPerPixel samples_per_pixel = 12;
+	SmallestImagePixelValue smallest_image_pixel_value = 13;
+	BitsAllocated bits_allocated = 14;
+	BitsStored bits_stored = 15;
+	HighBit high_bit = 16;
+	PixelRepresentation pixel_representation = 17;
+	PlanarConfiguration planar_configuration = 18;
+	PixelAspectRatio pixel_aspect_ratio = 19;
+	PhotometricInterpretation photometric_interpretation = 20;
+	Columns columns = 21;
+	ICCProfile icc_profile = 22;
+	PixelPaddingRangeLimit pixel_padding_range_limit = 23;
+}

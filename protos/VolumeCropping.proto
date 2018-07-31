@@ -1,0 +1,10 @@
+// Volume Cropping
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.24.html#table_C.11.24-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Volume_CroppingModule {
+	VolumeCroppingSequence volume_cropping_sequence = 1;
+}

@@ -1,0 +1,12 @@
+// Substance Approval
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.26.2.html#table_C.26-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Substance_ApprovalModule {
+	SubstanceAdministrationApproval substance_administration_approval = 1;
+	ApprovalStatusFurtherDescription approval_status_further_description = 2;
+	ApprovalStatusDateTime approval_status_datetime = 3;
+}

@@ -1,0 +1,34 @@
+// Enhanced PET Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.22.3.html#table_C.8.22-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_PET_ImageModule {
+	BurnedInAnnotation burned_in_annotation = 1;
+	PixelPresentation pixel_presentation = 2;
+	VolumetricProperties volumetric_properties = 3;
+	VolumeBasedCalculationTechnique volume_based_calculation_technique = 4;
+	AcquisitionNumber acquisition_number = 5;
+	ReferencedRawDataSequence referenced_raw_data_sequence = 6;
+	ReferencedWaveformSequence referenced_waveform_sequence = 7;
+	BitsStored bits_stored = 8;
+	RecognizableVisualFeatures recognizable_visual_features = 9;
+	LossyImageCompressionMethod lossy_image_compression_method = 10;
+	PresentationLUTShape presentation_lut_shape = 11;
+	AcquisitionDateTime acquisition_datetime = 12;
+	PhotometricInterpretation photometric_interpretation = 13;
+	BitsAllocated bits_allocated = 14;
+	ImageComments image_comments = 15;
+	IconImageSequence icon_image_sequence = 16;
+	ReferencedImageEvidenceSequence referenced_image_evidence_sequence = 17;
+	SamplesPerPixel samples_per_pixel = 18;
+	ContentQualification content_qualification = 19;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 20;
+	ImageType image_type = 21;
+	AcquisitionDuration acquisition_duration = 22;
+	SourceImageEvidenceSequence source_image_evidence_sequence = 23;
+	HighBit high_bit = 24;
+	LossyImageCompression lossy_image_compression = 25;
+}

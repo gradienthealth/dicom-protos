@@ -1,0 +1,18 @@
+// Implant Template Group
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.29.3.html#table_C.29.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Implant_Template_GroupModule {
+	ImplantTemplateGroupName implant_template_group_name = 1;
+	ImplantTemplateGroupVersion implant_template_group_version = 2;
+	ReplacedImplantTemplateGroupSequence replaced_implant_template_group_sequence = 3;
+	EffectiveDateTime effective_datetime = 4;
+	ImplantTemplateGroupDescription implant_template_group_description = 5;
+	ImplantTemplateGroupIssuer implant_template_group_issuer = 6;
+	ImplantTemplateGroupTargetAnatomySequence implant_template_group_target_anatomy_sequence = 7;
+	ImplantTemplateGroupMembersSequence implant_template_group_members_sequence = 8;
+	ImplantTemplateGroupVariationDimensionSequence implant_template_group_variation_dimension_sequence = 9;
+}

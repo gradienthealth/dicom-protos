@@ -1,0 +1,30 @@
+// Media Creation Management
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.22.html#table_C.22.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Media_Creation_ManagementModule {
+	NumberOfCopies number_of_copies = 1;
+	ReferencedSOPSequence referenced_sop_sequence = 2;
+	ReferencedStorageMediaSequence referenced_storage_media_sequence = 3;
+	StorageMediaFileSetID storage_media_file_set_id = 4;
+	LabelText label_text = 5;
+	LabelStyleSelection label_style_selection = 6;
+	MediaDisposition media_disposition = 7;
+	BarcodeValue barcode_value = 8;
+	FailedSOPSequence failed_sop_sequence = 9;
+	PreserveCompositeInstancesAfterMediaCreation preserve_composite_instances_after_media_creation = 10;
+	TotalNumberOfPiecesOfMediaCreated total_number_of_pieces_of_media_created = 11;
+	StorageMediaFileSetUID storage_media_file_set_uid = 12;
+	RequestPriority request_priority = 13;
+	LabelUsingInformationExtractedFromInstances label_using_information_extracted_from_instances = 14;
+	AllowMediaSplitting allow_media_splitting = 15;
+	AllowLossyCompression allow_lossy_compression = 16;
+	IncludeNonDICOMObjects include_non_dicom_objects = 17;
+	BarcodeSymbology barcode_symbology = 18;
+	IncludeDisplayApplication include_display_application = 19;
+	ExecutionStatus execution_status = 20;
+	ExecutionStatusInfo execution_status_info = 21;
+}

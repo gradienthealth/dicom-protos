@@ -1,0 +1,19 @@
+// Real World Value Mapping
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.25.2.html#table_C.25.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Real_World_Value_MappingModule {
+	InstanceNumber instance_number = 1;
+	ConceptNameCodeSequence concept_name_code_sequence = 2;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 4;
+	ReferencedImageRealWorldValueMappingSequence referenced_image_real_world_value_mapping_sequence = 5;
+	ContentDate content_date = 6;
+	ContentTime content_time = 7;
+	ContentLabel content_label = 8;
+	ContentDescription content_description = 9;
+	ContentCreatorName content_creators_name = 10;
+}

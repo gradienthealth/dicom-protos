@@ -1,0 +1,28 @@
+// Ophthalmic Photography Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.2.html#table_C.8.17.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Photography_ImageModule {
+	InstanceNumber instance_number = 1;
+	PixelSpacing pixel_spacing = 2;
+	LossyImageCompressionMethod lossy_image_compression_method = 3;
+	RecognizableVisualFeatures recognizable_visual_features = 4;
+	ImageType image_type = 5;
+	PixelRepresentation pixel_representation = 6;
+	ContentDate content_date = 7;
+	AcquisitionDateTime acquisition_datetime = 8;
+	CalibrationImage calibration_image = 9;
+	BurnedInAnnotation burned_in_annotation = 10;
+	PhotometricInterpretation photometric_interpretation = 11;
+	PlanarConfiguration planar_configuration = 12;
+	ContentTime content_time = 13;
+	SourceImageSequence source_image_sequence = 14;
+	SamplesPerPixel samples_per_pixel = 15;
+	LossyImageCompression lossy_image_compression = 16;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 17;
+	PresentationLUTShape presentation_lut_shape = 18;
+	SamplesPerPixelUsed samples_per_pixel_used = 19;
+}

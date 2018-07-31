@@ -1,0 +1,19 @@
+// Clinical Trial Context
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.4.html#table_C.34.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Clinical_Trial_ContextModule {
+	ClinicalTrialSiteID clinical_trial_site_id = 1;
+	ClinicalTrialSiteName clinical_trial_site_name = 2;
+	ClinicalTrialProtocolEthicsCommitteeApprovalNumber clinical_trial_protocol_ethics_committee_approval_number = 3;
+	EthicsCommitteeApprovalEffectivenessStartDate ethics_committee_approval_effectiveness_start_date = 4;
+	EthicsCommitteeApprovalEffectivenessEndDate ethics_committee_approval_effectiveness_end_date = 5;
+	ClinicalTrialCoordinatingCenterName clinical_trial_coordinating_center_name = 6;
+	ClinicalTrialProtocolID clinical_trial_protocol_id = 7;
+	ClinicalTrialProtocolName clinical_trial_protocol_name = 8;
+	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 9;
+	ClinicalTrialSponsorName clinical_trial_sponsor_name = 10;
+}

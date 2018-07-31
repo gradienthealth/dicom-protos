@@ -1,0 +1,35 @@
+// X-Ray Detector
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.5.html#table_C.8.19.5-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_DetectorModule {
+	TimeOfLastDetectorCalibration time_of_last_detector_calibration = 1;
+	DetectorTimeSinceLastExposure detector_time_since_last_exposure = 2;
+	DetectorBinning detector_binning = 3;
+	DetectorConditionsNominalFlag detector_conditions_nominal_flag = 4;
+	DetectorTemperature detector_temperature = 5;
+	DetectorActiveDimensions detector_active_dimensions = 6;
+	DeviationIndex deviation_index = 7;
+	DetectorType detector_type = 8;
+	DetectorManufacturerModelName detector_manufacturers_model_name = 9;
+	Sensitivity sensitivity = 10;
+	DetectorElementPhysicalSize detector_element_physical_size = 11;
+	DetectorElementSpacing detector_element_spacing = 12;
+	DetectorActiveShape detector_active_shape = 13;
+	DetectorActiveOrigin detector_active_origin = 14;
+	DetectorID detector_id = 15;
+	ExposuresOnDetectorSinceLastCalibration exposures_on_detector_since_last_calibration = 16;
+	ExposuresOnDetectorSinceManufactured exposures_on_detector_since_manufactured = 17;
+	DetectorManufacturerName detector_manufacturer_name = 18;
+	ExposureIndex exposure_index = 19;
+	TargetExposureIndex target_exposure_index = 20;
+	DetectorMode detector_mode = 21;
+	DetectorDescription detector_description = 22;
+	DateOfLastDetectorCalibration date_of_last_detector_calibration = 23;
+	PhysicalDetectorSize physical_detector_size = 24;
+	PositionOfIsocenterProjection position_of_isocenter_projection = 25;
+	DetectorConfiguration detector_configuration = 26;
+}

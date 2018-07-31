@@ -1,0 +1,33 @@
+// Corneal Topography Map Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.30.2.html#table_C.8.30.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Corneal_Topography_Map_ImageModule {
+	AcquisitionDateTime acquisition_datetime = 1;
+	PixelRepresentation pixel_representation = 2;
+	PixelSpacing pixel_spacing = 3;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 4;
+	RecognizableVisualFeatures recognizable_visual_features = 5;
+	RealWorldValueMappingSequence real_world_value_mapping_sequence = 6;
+	ContentDate content_date = 7;
+	LossyImageCompression lossy_image_compression = 8;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 9;
+	BurnedInAnnotation burned_in_annotation = 10;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 11;
+	BitsAllocated bits_allocated = 12;
+	ImageType image_type = 13;
+	PhotometricInterpretation photometric_interpretation = 14;
+	PixelAspectRatio pixel_aspect_ratio = 15;
+	HighBit high_bit = 16;
+	LossyImageCompressionMethod lossy_image_compression_method = 17;
+	AnatomicRegionSequence anatomic_region_sequence = 18;
+	InstanceNumber instance_number = 19;
+	SamplesPerPixel samples_per_pixel = 20;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 21;
+	BitsStored bits_stored = 22;
+	ImageLaterality image_laterality = 23;
+	ContentTime content_time = 24;
+}

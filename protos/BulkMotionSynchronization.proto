@@ -1,0 +1,11 @@
+// Bulk Motion Synchronization
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.18.3.html#table_C.7.6.18-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Bulk_Motion_SynchronizationModule {
+	BulkMotionCompensationTechnique bulk_motion_compensation_technique = 1;
+	BulkMotionSignalSource bulk_motion_signal_source = 2;
+}

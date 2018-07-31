@@ -1,0 +1,15 @@
+// X-Ray Filtration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.10.html#table_C.8-35
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_FiltrationModule {
+	FilterThicknessMinimum filter_thickness_minimum = 1;
+	FilterThicknessMaximum filter_thickness_maximum = 2;
+	FilterBeamPathLengthMinimum filter_beam_path_length_minimum = 3;
+	FilterBeamPathLengthMaximum filter_beam_path_length_maximum = 4;
+	FilterType filter_type = 5;
+	FilterMaterial filter_material = 6;
+}

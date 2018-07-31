@@ -1,0 +1,59 @@
+// RT Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.2.html#table_C.8-38
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_ImageModule {
+	GantryPitchAngle gantry_pitch_angle = 1;
+	TableTopVerticalPosition table_top_vertical_position = 2;
+	PixelRepresentation pixel_representation = 3;
+	ImagePlanePixelSpacing image_plane_pixel_spacing = 4;
+	RTImageSID rt_image_sid = 5;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 6;
+	XRayImageReceptorTranslation x_ray_image_receptor_translation = 7;
+	SourceToReferenceObjectDistance source_to_reference_object_distance = 8;
+	ExposureSequence exposure_sequence = 9;
+	TableTopRollAngle table_top_roll_angle = 10;
+	RTImageLabel rt_image_label = 11;
+	RTImageDescription rt_image_description = 12;
+	ConversionType conversion_type = 13;
+	FractionNumber fraction_number = 14;
+	RadiationMachineSAD radiation_machine_sad = 15;
+	EndCumulativeMetersetWeight end_cumulative_meterset_weight = 16;
+	TableTopEccentricAxisDistance table_top_eccentric_axis_distance = 17;
+	TableTopEccentricAngle table_top_eccentric_angle = 18;
+	SamplesPerPixel samples_per_pixel = 19;
+	BitsAllocated bits_allocated = 20;
+	PixelIntensityRelationshipSign pixel_intensity_relationship_sign = 21;
+	ImageType image_type = 22;
+	TableTopPitchAngle table_top_pitch_angle = 23;
+	RTImageOrientation rt_image_orientation = 24;
+	RTImagePosition rt_image_position = 25;
+	PatientPosition patient_position = 26;
+	ExposureTime exposure_time = 27;
+	PhotometricInterpretation photometric_interpretation = 28;
+	BitsStored bits_stored = 29;
+	HighBit high_bit = 30;
+	ReportedValuesOrigin reported_values_origin = 31;
+	MetersetExposure meterset_exposure = 32;
+	PatientSupportAngle patient_support_angle = 33;
+	PixelIntensityRelationship pixel_intensity_relationship = 34;
+	RadiationMachineName radiation_machine_name = 35;
+	ReferencedBeamNumber referenced_beam_number = 36;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 37;
+	TableTopLongitudinalPosition table_top_longitudinal_position = 38;
+	RTImagePlane rt_image_plane = 39;
+	XRayImageReceptorAngle x_ray_image_receptor_angle = 40;
+	StartCumulativeMetersetWeight start_cumulative_meterset_weight = 41;
+	FluenceMapSequence fluence_map_sequence = 42;
+	BeamLimitingDeviceAngle beam_limiting_device_angle = 43;
+	TableTopLateralPosition table_top_lateral_position = 44;
+	IsocenterPosition isocenter_position = 45;
+	ExposureTimeInms exposure_time_in_ms = 46;
+	RTImageName rt_image_name = 47;
+	PrimaryDosimeterUnit primary_dosimeter_unit = 48;
+	RadiationMachineSSD radiation_machine_ssd = 49;
+	GantryAngle gantry_angle = 50;
+}

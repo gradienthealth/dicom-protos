@@ -1,0 +1,17 @@
+// SC Equipment
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.html#table_C.8-24
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SC_EquipmentModule {
+	SecondaryCaptureDeviceSoftwareVersions secondary_capture_device_software_versions = 1;
+	VideoImageFormatAcquired video_image_format_acquired = 2;
+	DigitalImageFormatAcquired digital_image_format_acquired = 3;
+	ConversionType conversion_type = 4;
+	Modality modality = 5;
+	SecondaryCaptureDeviceID secondary_capture_device_id = 6;
+	SecondaryCaptureDeviceManufacturer secondary_capture_device_manufacturer = 7;
+	SecondaryCaptureDeviceManufacturerModelName secondary_capture_device_manufacturers_model_name = 8;
+}

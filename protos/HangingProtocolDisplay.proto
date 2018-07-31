@@ -1,0 +1,13 @@
+// Hanging Protocol Display
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.23.3.html#table_C.23.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Hanging_Protocol_DisplayModule {
+	DisplaySetsSequence display_sets_sequence = 1;
+	PartialDataDisplayHandling partial_data_display_handling = 2;
+	SynchronizedScrollingSequence synchronized_scrolling_sequence = 3;
+	NavigationIndicatorSequence navigation_indicator_sequence = 4;
+}

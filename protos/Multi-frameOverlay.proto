@@ -1,0 +1,11 @@
+// Multi-frame Overlay
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.3.html#table_C.9-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Multi_frame_OverlayModule {
+	ImageFrameOrigin image_frame_origin = 1;
+	NumberOfFramesInOverlay number_of_frames_in_overlay = 2;
+}

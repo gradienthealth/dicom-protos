@@ -1,0 +1,27 @@
+// SR Document General
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.html#table_C.17-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SR_Document_GeneralModule {
+	CompletionFlag completion_flag = 1;
+	CompletionFlagDescription completion_flag_description = 2;
+	VerificationFlag verification_flag = 3;
+	VerifyingObserverSequence verifying_observer_sequence = 4;
+	ParticipantSequence participant_sequence = 5;
+	PredecessorDocumentsSequence predecessor_documents_sequence = 6;
+	ContentDate content_date = 7;
+	ContentTime content_time = 8;
+	PreliminaryFlag preliminary_flag = 9;
+	IdenticalDocumentsSequence identical_documents_sequence = 10;
+	ReferencedInstanceSequence referenced_instance_sequence = 11;
+	InstanceNumber instance_number = 12;
+	AuthorObserverSequence author_observer_sequence = 13;
+	CustodialOrganizationSequence custodial_organization_sequence = 14;
+	ReferencedRequestSequence referenced_request_sequence = 15;
+	PerformedProcedureCodeSequence performed_procedure_code_sequence = 16;
+	CurrentRequestedProcedureEvidenceSequence current_requested_procedure_evidence_sequence = 17;
+	PertinentOtherEvidenceSequence pertinent_other_evidence_sequence = 18;
+}

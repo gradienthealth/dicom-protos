@@ -1,0 +1,10 @@
+// ROI Contour
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html#table_C.8-42
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message ROI_ContourModule {
+	ROIContourSequence roi_contour_sequence = 1;
+}

@@ -1,0 +1,11 @@
+// Keratometry Measurements Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.3.html#table_C.8.25.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Keratometry_Measurements_SeriesModule {
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+}

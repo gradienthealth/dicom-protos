@@ -1,0 +1,48 @@
+// PET Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.html#table_C.8-60
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message PET_SeriesModule {
+	ReconstructionMethod reconstruction_method = 1;
+	DetectorLinesOfResponseUsed detector_lines_of_response_used = 2;
+	FieldOfViewShape field_of_view_shape = 3;
+	EnergyWindowRangeSequence energy_window_range_sequence = 4;
+	TypeOfDetectorMotion type_of_detector_motion = 5;
+	TransverseMash transverse_mash = 6;
+	SUVType suv_type = 7;
+	ReprojectionMethod reprojection_method = 8;
+	NumberOfTimeSlots number_of_time_slots = 9;
+	ReconstructionDiameter reconstruction_diameter = 10;
+	AcquisitionStartCondition acquisition_start_condition = 11;
+	SeriesType series_type = 12;
+	NumberOfRRIntervals number_of_r_r_intervals = 13;
+	AttenuationCorrectionMethod attenuation_correction_method = 14;
+	DetectorElementSize detector_element_size = 15;
+	SeriesDate series_date = 16;
+	ScanProgressionDirection scan_progression_direction = 17;
+	SeriesTime series_time = 18;
+	CoincidenceWindowWidth coincidence_window_width = 19;
+	CollimatorGridName collimator_grid_name = 20;
+	SecondaryCountsType secondary_counts_type = 21;
+	Units units = 22;
+	CorrectedImage corrected_image = 23;
+	AcquisitionTerminationCondition acquisition_termination_condition = 24;
+	AcquisitionTerminationConditionData acquisition_termination_condition_data = 25;
+	GantryDetectorSlew gantry_detector_slew = 26;
+	FieldOfViewDimensions field_of_view_dimensions = 27;
+	AxialAcceptance axial_acceptance = 28;
+	RandomsCorrectionMethod randoms_correction_method = 29;
+	ScatterCorrectionMethod scatter_correction_method = 30;
+	DecayCorrection decay_correction = 31;
+	ConvolutionKernel convolution_kernel = 32;
+	AcquisitionStartConditionData acquisition_start_condition_data = 33;
+	AxialMash axial_mash = 34;
+	CountsSource counts_source = 35;
+	NumberOfTimeSlices number_of_time_slices = 36;
+	NumberOfSlices number_of_slices = 37;
+	GantryDetectorTilt gantry_detector_tilt = 38;
+	CollimatorType collimator_type = 39;
+}

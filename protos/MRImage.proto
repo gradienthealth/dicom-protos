@@ -1,0 +1,65 @@
+// MR Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.3.html#table_C.8-4
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message MR_ImageModule {
+	ImageType image_type = 1;
+	TransmitCoilName transmit_coil_name = 2;
+	HighBit high_bit = 3;
+	BeatRejectionFlag beat_rejection_flag = 4;
+	BitsStored bits_stored = 5;
+	InversionTime inversion_time = 6;
+	PixelBandwidth pixel_bandwidth = 7;
+	TriggerWindow trigger_window = 8;
+	NumberOfTemporalPositions number_of_temporal_positions = 9;
+	SequenceName sequence_name = 10;
+	ImagedNucleus imaged_nucleus = 11;
+	SAR sar = 12;
+	NominalInterval nominal_interval = 13;
+	HeartRate heart_rate = 14;
+	LowRRValue low_r_r_value = 15;
+	dBdt db_dt = 16;
+	MRAcquisitionType mr_acquisition_type = 17;
+	NumberOfPhaseEncodingSteps number_of_phase_encoding_steps = 18;
+	SliceProgressionDirection slice_progression_direction = 19;
+	BitsAllocated bits_allocated = 20;
+	SkipBeats skip_beats = 21;
+	PercentPhaseFieldOfView percent_phase_field_of_view = 22;
+	IntervalsAcquired intervals_acquired = 23;
+	EchoTime echo_time = 24;
+	AngioFlag angio_flag = 25;
+	EchoNumbers echo_numbers = 26;
+	HighRRValue high_r_r_value = 27;
+	IntervalsRejected intervals_rejected = 28;
+	VariableFlipAngleFlag variable_flip_angle_flag = 29;
+	RepetitionTime repetition_time = 30;
+	TriggerTime trigger_time = 31;
+	SpacingBetweenSlices spacing_between_slices = 32;
+	FlipAngle flip_angle = 33;
+	AnatomicRegionSequence anatomic_region_sequence = 34;
+	SamplesPerPixel samples_per_pixel = 35;
+	PhotometricInterpretation photometric_interpretation = 36;
+	ReceiveCoilName receive_coil_name = 37;
+	ViewCodeSequence view_code_sequence = 38;
+	SequenceVariant sequence_variant = 39;
+	CardiacNumberOfImages cardiac_number_of_images = 40;
+	TemporalResolution temporal_resolution = 41;
+	ScanOptions scan_options = 42;
+	PercentSampling percent_sampling = 43;
+	AcquisitionMatrix acquisition_matrix = 44;
+	IsocenterPosition isocenter_position = 45;
+	ReconstructionDiameter reconstruction_diameter = 46;
+	B1rms bonerms = 47;
+	NumberOfAverages number_of_averages = 48;
+	ImagingFrequency imaging_frequency = 49;
+	EchoTrainLength echo_train_length = 50;
+	MagneticFieldStrength magnetic_field_strength = 51;
+	PVCRejection pvc_rejection = 52;
+	InPlanePhaseEncodingDirection in_plane_phase_encoding_direction = 53;
+	ScanningSequence scanning_sequence = 54;
+	TemporalPositionIdentifier temporal_position_identifier = 55;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 56;
+}
