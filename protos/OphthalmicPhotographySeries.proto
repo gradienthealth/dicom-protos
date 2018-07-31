@@ -1,0 +1,10 @@
+// Ophthalmic Photography Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.html#table_C.8.17.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Photography_SeriesModule {
+	Modality modality = 1;
+}

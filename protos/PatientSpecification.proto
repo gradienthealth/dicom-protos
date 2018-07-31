@@ -1,0 +1,10 @@
+// Patient Specification
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.5.html#table_C.34.5-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Patient_SpecificationModule {
+	PatientSpecificationSequence patient_specification_sequence = 1;
+}

@@ -1,0 +1,25 @@
+// Basic Film Box Presentation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html#table_C.13-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Basic_Film_Box_PresentationModule {
+	FilmSizeID film_size_id = 1;
+	ConfigurationInformation configuration_information = 2;
+	ImageDisplayFormat image_display_format = 3;
+	FilmOrientation film_orientation = 4;
+	SmoothingType smoothing_type = 5;
+	Illumination illumination = 6;
+	RequestedResolutionID requested_resolution_id = 7;
+	MagnificationType magnification_type = 8;
+	EmptyImageDensity empty_image_density = 9;
+	MaxDensity max_density = 10;
+	AnnotationDisplayFormatID annotation_display_format_id = 11;
+	BorderDensity border_density = 12;
+	MinDensity min_density = 13;
+	Trim trim = 14;
+	ReflectedAmbientLight reflected_ambient_light = 15;
+	ICCProfile icc_profile = 16;
+}

@@ -1,0 +1,18 @@
+// Ophthalmic Photography Acquisition Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.4.html#table_C.8.17.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Photography_Acquisition_ParametersModule {
+	DegreeOfDilation degree_of_dilation = 1;
+	PatientEyeMovementCommandCodeSequence patient_eye_movement_command_code_sequence = 2;
+	HorizontalFieldOfView horizontal_field_of_view = 3;
+	PupilDilated pupil_dilated = 4;
+	IntraOcularPressure intra_ocular_pressure = 5;
+	MydriaticAgentSequence mydriatic_agent_sequence = 6;
+	PatientEyeMovementCommanded patient_eye_movement_commanded = 7;
+	RefractiveStateSequence refractive_state_sequence = 8;
+	EmmetropicMagnification emmetropic_magnification = 9;
+}

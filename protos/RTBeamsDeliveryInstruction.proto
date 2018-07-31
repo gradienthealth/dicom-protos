@@ -1,0 +1,12 @@
+// RT Beams Delivery Instruction
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.29.html#table_C.8.8.29-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_Beams_Delivery_InstructionModule {
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 1;
+	BeamTaskSequence beam_task_sequence = 2;
+	OmittedBeamTaskSequence omitted_beam_task_sequence = 3;
+}

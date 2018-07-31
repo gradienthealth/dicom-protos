@@ -1,0 +1,45 @@
+// Patient
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.html#table_C.7-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message PatientModule {
+	PatientSex patients_sex = 1;
+	PatientBirthTime patients_birth_time = 2;
+	OtherPatientNames other_patient_names = 3;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 4;
+	PatientBirthDate patients_birth_date = 5;
+	QualityControlSubject quality_control_subject = 6;
+	PatientBreedDescription patient_breed_description = 7;
+	PatientIdentityRemoved patient_identity_removed = 8;
+	DeidentificationMethodCodeSequence de_identification_method_code_sequence = 9;
+	PatientID patient_id = 10;
+	PatientAlternativeCalendar patients_alternative_calendar = 11;
+	PatientSpeciesCodeSequence patient_species_code_sequence = 12;
+	PatientBreedCodeSequence patient_breed_code_sequence = 13;
+	ResponsiblePerson responsible_person = 14;
+	DeidentificationMethod de_identification_method = 15;
+	PatientBirthDateInAlternativeCalendar patients_birth_date_in_alternative_calendar = 16;
+	OtherPatientIDsSequence other_patient_ids_sequence = 17;
+	StrainCodeSequence strain_code_sequence = 18;
+	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 19;
+	IssuerOfPatientID issuer_of_patient_id = 20;
+	PatientDeathDateInAlternativeCalendar patients_death_date_in_alternative_calendar = 21;
+	PatientSpeciesDescription patient_species_description = 22;
+	StrainDescription strain_description = 23;
+	StrainNomenclature strain_nomenclature = 24;
+	PatientName patients_name = 25;
+	ReferencedPatientSequence referenced_patient_sequence = 26;
+	EthnicGroup ethnic_group = 27;
+	PatientComments patient_comments = 28;
+	StrainStockSequence strain_stock_sequence = 29;
+	ResponsibleOrganization responsible_organization = 30;
+	BreedRegistrationSequence breed_registration_sequence = 31;
+	StrainAdditionalInformation strain_additional_information = 32;
+	ResponsiblePersonRole responsible_person_role = 33;
+	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 34;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 35;
+	GeneticModificationsSequence genetic_modifications_sequence = 36;
+}

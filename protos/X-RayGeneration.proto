@@ -1,0 +1,24 @@
+// X-Ray Generation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.9.html#table_C.8-34
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_GenerationModule {
+	XRayTubeCurrent x_ray_tube_current = 1;
+	XRayTubeCurrentInuA x_ray_tube_current_in_a = 2;
+	ExposureControlModeDescription exposure_control_mode_description = 3;
+	FocalSpots focal_spots = 4;
+	AnodeTargetMaterial anode_target_material = 5;
+	RectificationType rectification_type = 6;
+	GeneratorID generator_id = 7;
+	KVP kvp = 8;
+	ExposureInuAs exposure_in_as = 9;
+	ExposureStatus exposure_status = 10;
+	PhototimerSetting phototimer_setting = 11;
+	ExposureTimeInuS exposure_time_in_s = 12;
+	ExposureTime exposure_time = 13;
+	Exposure exposure = 14;
+	ExposureControlMode exposure_control_mode = 15;
+}

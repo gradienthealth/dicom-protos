@@ -1,0 +1,24 @@
+// SC Multi-frame Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.6.3.html#table_C.8-25b
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SC_Multi_frame_ImageModule {
+	BurnedInAnnotation burned_in_annotation = 1;
+	RecognizableVisualFeatures recognizable_visual_features = 2;
+	PresentationLUTShape presentation_lut_shape = 3;
+	Illumination illumination = 4;
+	PixelSpacing pixel_spacing = 5;
+	RotationOfScannedFilm rotation_of_scanned_film = 6;
+	ReflectedAmbientLight reflected_ambient_light = 7;
+	FrameIncrementPointer frame_increment_pointer = 8;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 9;
+	RescaleIntercept rescale_intercept = 10;
+	RescaleType rescale_type = 11;
+	RescaleSlope rescale_slope = 12;
+	NominalScannedPixelSpacing nominal_scanned_pixel_spacing = 13;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 14;
+	DigitizingDeviceTransportDirection digitizing_device_transport_direction = 15;
+}

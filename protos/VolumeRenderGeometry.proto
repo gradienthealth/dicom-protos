@@ -1,0 +1,16 @@
+// Volume Render Geometry
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.30.html#table_C.11.30-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Volume_Render_GeometryModule {
+	RenderingMethod rendering_method = 1;
+	SamplingStepSize sampling_step_size = 2;
+	RenderProjection render_projection = 3;
+	ViewpointPosition viewpoint_position = 4;
+	ViewpointLookAtPoint viewpoint_lookat_point = 5;
+	ViewpointUpDirection viewpoint_up_direction = 6;
+	RenderFieldOfView render_field_of_view = 7;
+}

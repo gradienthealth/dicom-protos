@@ -1,0 +1,35 @@
+// SR Document Content
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.html#table_C.17-4
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SR_Document_ContentModule {
+	ConceptCodeSequence concept_code_sequence = 1;
+	GraphicData graphic_data = 2;
+	FiducialUID fiducial_uid = 3;
+	ConceptNameCodeSequence concept_name_code_sequence = 4;
+	TextValue text_value = 5;
+	Date date = 6;
+	PersonName person_name = 7;
+	NumericValueQualifierCodeSequence numeric_value_qualifier_code_sequence = 8;
+	ReferencedTimeOffsets referenced_time_offsets = 9;
+	ValueType value_type = 10;
+	Time time = 11;
+	ReferencedSOPSequence referenced_sop_sequence = 12;
+	GraphicType graphic_type = 13;
+	ObservationUID observation_uid = 14;
+	DateTime datetime = 15;
+	ReferencedDateTime referenced_datetime = 16;
+	ContinuityOfContent continuity_of_content = 17;
+	ReferencedSamplePositions referenced_sample_positions = 18;
+	ContentTemplateSequence content_template_sequence = 19;
+	ObservationDateTime observation_datetime = 20;
+	UID uid = 21;
+	MeasuredValueSequence measured_value_sequence = 22;
+	PixelOriginInterpretation pixel_origin_interpretation = 23;
+	ReferencedFrameOfReferenceUID referenced_frame_of_reference_uid = 24;
+	TemporalRangeType temporal_range_type = 25;
+	ContentSequence content_sequence = 26;
+}

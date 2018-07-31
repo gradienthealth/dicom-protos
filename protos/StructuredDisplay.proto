@@ -1,0 +1,25 @@
+// Structured Display
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.16.html#table_C.11.16-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Structured_DisplayModule {
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 1;
+	ContentCreatorName content_creators_name = 2;
+	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 3;
+	IconImageSequence icon_image_sequence = 4;
+	HangingProtocolCreator hanging_protocol_creator = 5;
+	InstanceNumber instance_number = 6;
+	ContentLabel content_label = 7;
+	ConceptNameCodeSequence concept_name_code_sequence = 8;
+	ContentDescription content_description = 9;
+	PresentationCreationDate presentation_creation_date = 10;
+	HangingProtocolName hanging_protocol_name = 11;
+	NumberOfScreens number_of_screens = 12;
+	StructuredDisplayBackgroundCIELabValue structured_display_background_cielab_value = 13;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 14;
+	PresentationCreationTime presentation_creation_time = 15;
+	EmptyImageBoxCIELabValue empty_image_box_cielab_value = 16;
+}

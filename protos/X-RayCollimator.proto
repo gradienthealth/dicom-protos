@@ -1,0 +1,17 @@
+// X-Ray Collimator
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.3.html#table_C.8-28
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_CollimatorModule {
+	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 1;
+	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 2;
+	CenterOfCircularCollimator center_of_circular_collimator = 3;
+	RadiusOfCircularCollimator radius_of_circular_collimator = 4;
+	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 5;
+	CollimatorShape collimator_shape = 6;
+	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 7;
+	CollimatorRightVerticalEdge collimator_right_vertical_edge = 8;
+}

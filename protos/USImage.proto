@@ -1,0 +1,61 @@
+// US Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.5.6.html#table_C.8-18
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message US_ImageModule {
+	TriggerTime trigger_time = 1;
+	IVUSPullbackStartFrameNumber ivus_pullback_start_frame_number = 2;
+	PhotometricInterpretation photometric_interpretation = 3;
+	HighBit high_bit = 4;
+	RWaveTimeVector r_wave_time_vector = 5;
+	EventElapsedTimes event_elapsed_times = 6;
+	IVUSPullbackRate ivus_pullback_rate = 7;
+	TransducerType transducer_type = 8;
+	CranialThermalIndex cranial_thermal_index = 9;
+	StageNumber stage_number = 10;
+	ViewName view_name = 11;
+	ViewNumber view_number = 12;
+	AnatomicRegionSequence anatomic_region_sequence = 13;
+	SoftTissueSurfaceThermalIndex soft_tissue_surface_thermal_index = 14;
+	PlanarConfiguration planar_configuration = 15;
+	NumberOfStages number_of_stages = 16;
+	UltrasoundColorDataPresent ultrasound_color_data_present = 17;
+	FocusDepth focus_depth = 18;
+	SoftTissueFocusThermalIndex soft_tissue_focus_thermal_index = 19;
+	PixelRepresentation pixel_representation = 20;
+	StageName stage_name = 21;
+	ViewCodeSequence view_code_sequence = 22;
+	OutputPower output_power = 23;
+	LowRRValue low_r_r_value = 24;
+	HighRRValue high_r_r_value = 25;
+	IVUSGatedRate ivus_gated_rate = 26;
+	MechanicalIndex mechanical_index = 27;
+	FrameIncrementPointer frame_increment_pointer = 28;
+	LossyImageCompression lossy_image_compression = 29;
+	SliceProgressionDirection slice_progression_direction = 30;
+	BeatRejectionFlag beat_rejection_flag = 31;
+	NominalInterval nominal_interval = 32;
+	HeartRate heart_rate = 33;
+	TransducerData transducer_data = 34;
+	BitsAllocated bits_allocated = 35;
+	NumberOfViewsInStage number_of_views_in_stage = 36;
+	StageCodeSequence stage_code_sequence = 37;
+	EventTimerNames event_timer_names = 38;
+	SoftTissueThermalIndex soft_tissue_thermal_index = 39;
+	DepthOfScanField depth_of_scan_field = 40;
+	OverlaySubtype overlay_subtype = 41;
+	BitsStored bits_stored = 42;
+	ImageType image_type = 43;
+	AcquisitionDateTime acquisition_datetime = 44;
+	ProcessingFunction processing_function = 45;
+	IVUSPullbackStopFrameNumber ivus_pullback_stop_frame_number = 46;
+	LesionNumber lesion_number = 47;
+	BoneThermalIndex bone_thermal_index = 48;
+	SamplesPerPixel samples_per_pixel = 49;
+	NumberOfEventTimers number_of_event_timers = 50;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 51;
+	IVUSAcquisition ivus_acquisition = 52;
+}

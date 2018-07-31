@@ -1,0 +1,19 @@
+// Content Assessment Results
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.33.html#table_C.33.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Content_Assessment_ResultsModule {
+	PertinentResourcesSequence pertinent_resources_sequence = 1;
+	AssessmentLabel assessment_label = 2;
+	AssessmentTypeCodeSequence assessment_type_code_sequence = 3;
+	AssessmentSetID assessment_set_id = 4;
+	AssessmentRequesterSequence assessment_requester_sequence = 5;
+	AssessmentSummary assessment_summary = 6;
+	AssessedSOPInstanceSequence assessed_sop_instance_sequence = 7;
+	AssessmentSummaryDescription assessment_summary_description = 8;
+	NumberOfAssessmentObservations number_of_assessment_observations = 9;
+	AssessmentObservationsSequence assessment_observations_sequence = 10;
+}

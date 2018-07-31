@@ -1,0 +1,21 @@
+// Cine
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.5.html#table_C.7-13
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message CineModule {
+	FrameTime frame_time = 1;
+	StartTrim start_trim = 2;
+	StopTrim stop_trim = 3;
+	RecommendedDisplayFrameRate recommended_display_frame_rate = 4;
+	CineRate cine_rate = 5;
+	ActualFrameDuration actual_frame_duration = 6;
+	PreferredPlaybackSequencing preferred_playback_sequencing = 7;
+	FrameDelay frame_delay = 8;
+	ImageTriggerDelay image_trigger_delay = 9;
+	EffectiveDuration effective_duration = 10;
+	MultiplexedAudioChannelsDescriptionCodeSequence multiplexed_audio_channels_description_code_sequence = 11;
+	FrameTimeVector frame_time_vector = 12;
+}

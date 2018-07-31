@@ -1,0 +1,18 @@
+// Visual Acuity Measurements
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.25.12.html#table_C.8.25.12-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Visual_Acuity_MeasurementsModule {
+	BackgroundColor background_color = 1;
+	Optotype optotype = 2;
+	OptotypePresentation optotype_presentation = 3;
+	VisualAcuityLeftEyeSequence visual_acuity_left_eye_sequence = 4;
+	VisualAcuityBothEyesOpenSequence visual_acuity_both_eyes_open_sequence = 5;
+	ViewingDistanceType viewing_distance_type = 6;
+	VisualAcuityTypeCodeSequence visual_acuity_type_code_sequence = 7;
+	OptotypeDetailedDefinition optotype_detailed_definition = 8;
+	VisualAcuityRightEyeSequence visual_acuity_right_eye_sequence = 9;
+}

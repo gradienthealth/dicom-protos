@@ -1,0 +1,11 @@
+// Ophthalmic Patient Clinical Information and Test Lens Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.26.6.html#table_C.8.26.6-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Patient_Clinical_Information_and_Test_Lens_ParametersModule {
+	OphthalmicPatientClinicalInformationLeftEyeSequence ophthalmic_patient_clinical_information_left_eye_sequence = 1;
+	OphthalmicPatientClinicalInformationRightEyeSequence ophthalmic_patient_clinical_information_right_eye_sequence = 2;
+}

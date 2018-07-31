@@ -1,0 +1,32 @@
+// RT Dose
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.3.html#table_C.8-39
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_DoseModule {
+	PhotometricInterpretation photometric_interpretation = 1;
+	BitsAllocated bits_allocated = 2;
+	DoseUnits dose_units = 3;
+	DoseGridScaling dose_grid_scaling = 4;
+	ReferencedInstanceSequence referenced_instance_sequence = 5;
+	DerivationCodeSequence derivation_code_sequence = 6;
+	BitsStored bits_stored = 7;
+	HighBit high_bit = 8;
+	PixelRepresentation pixel_representation = 9;
+	SpatialTransformOfDose spatial_transform_of_dose = 10;
+	ReferencedSpatialRegistrationSequence referenced_spatial_registration_sequence = 11;
+	DoseSummationType dose_summation_type = 12;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 13;
+	ContentDate content_date = 14;
+	InstanceNumber instance_number = 15;
+	DoseComment dose_comment = 16;
+	TissueHeterogeneityCorrection tissue_heterogeneity_correction = 17;
+	SamplesPerPixel samples_per_pixel = 18;
+	ContentTime content_time = 19;
+	DoseType dose_type = 20;
+	NormalizationPoint normalization_point = 21;
+	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 22;
+	GridFrameOffsetVector grid_frame_offset_vector = 23;
+}

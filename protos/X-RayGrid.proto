@@ -1,0 +1,18 @@
+// X-Ray Grid
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.11.html#table_C.8-36
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_GridModule {
+	GridPeriod grid_period = 1;
+	GridID grid_id = 2;
+	GridSpacingMaterial grid_spacing_material = 3;
+	GridThickness grid_thickness = 4;
+	GridPitch grid_pitch = 5;
+	GridFocalDistance grid_focal_distance = 6;
+	Grid grid = 7;
+	GridAbsorbingMaterial grid_absorbing_material = 8;
+	GridAspectRatio grid_aspect_ratio = 9;
+}

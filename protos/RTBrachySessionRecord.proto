@@ -1,0 +1,15 @@
+// RT Brachy Session Record
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.22.html#table_C.8-58
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_Brachy_Session_RecordModule {
+	NumberOfFractionsPlanned number_of_fractions_planned = 1;
+	BrachyTreatmentTechnique brachy_treatment_technique = 2;
+	BrachyTreatmentType brachy_treatment_type = 3;
+	RecordedSourceSequence recorded_source_sequence = 4;
+	TreatmentSessionApplicationSetupSequence treatment_session_application_setup_sequence = 5;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 6;
+}

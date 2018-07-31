@@ -1,0 +1,11 @@
+// XA/XRF Multi-frame Presentation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.19.7.html#table_C.8.19.7-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message XA_XRF_Multi_frame_PresentationModule {
+	PreferredPlaybackSequencing preferred_playback_sequencing = 1;
+	FrameDisplaySequence frame_display_sequence = 2;
+}

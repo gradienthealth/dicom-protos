@@ -1,0 +1,15 @@
+// Storage Commitment
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.14.html#table_C.14-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Storage_CommitmentModule {
+	ReferencedSOPSequence referenced_sop_sequence = 1;
+	FailedSOPSequence failed_sop_sequence = 2;
+	TransactionUID transaction_uid = 3;
+	RetrieveAETitle retrieve_ae_title = 4;
+	StorageMediaFileSetID storage_media_file_set_id = 5;
+	StorageMediaFileSetUID storage_media_file_set_uid = 6;
+}

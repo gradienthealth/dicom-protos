@@ -1,0 +1,16 @@
+// Basic Film Session Presentation
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.html#table_C.13-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Basic_Film_Session_PresentationModule {
+	NumberOfCopies number_of_copies = 1;
+	PrintPriority print_priority = 2;
+	MediumType medium_type = 3;
+	FilmDestination film_destination = 4;
+	FilmSessionLabel film_session_label = 5;
+	MemoryAllocation memory_allocation = 6;
+	OwnerID owner_id = 7;
+}

@@ -1,0 +1,32 @@
+// Patient Study
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.2.html#table_C.7-4a
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Patient_StudyModule {
+	ServiceEpisodeID service_episode_id = 1;
+	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 2;
+	PatientSexNeutered patients_sex_neutered = 3;
+	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 4;
+	MeasuredLateralDimension measured_lateral_dimension = 5;
+	SmokingStatus smoking_status = 6;
+	MedicalAlerts medical_alerts = 7;
+	LastMenstrualDate last_menstrual_date = 8;
+	Occupation occupation = 9;
+	AdditionalPatientHistory additional_patient_history = 10;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 11;
+	PatientSize patients_size = 12;
+	MeasuredAPDimension measured_ap_dimension = 13;
+	PatientSizeCodeSequence patients_size_code_sequence = 14;
+	ServiceEpisodeDescription service_episode_description = 15;
+	PregnancyStatus pregnancy_status = 16;
+	PatientState patient_state = 17;
+	AdmittingDiagnosesDescription admitting_diagnoses_description = 18;
+	PatientAge patients_age = 19;
+	PatientBodyMassIndex patients_body_mass_index = 20;
+	PatientWeight patients_weight = 21;
+	Allergies allergies = 22;
+	AdmissionID admission_id = 23;
+}

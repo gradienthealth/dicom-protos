@@ -1,0 +1,45 @@
+// Patient Demographic
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.3.html#table_C.2-3
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Patient_DemographicModule {
+	ConfidentialityConstraintOnPatientDataDescription confidentiality_constraint_on_patient_data_description = 1;
+	PatientAddress patients_address = 2;
+	MilitaryRank military_rank = 3;
+	RegionOfResidence region_of_residence = 4;
+	ResponsibleOrganization responsible_organization = 5;
+	PatientBreedDescription patient_breed_description = 6;
+	StrainAdditionalInformation strain_additional_information = 7;
+	PatientSizeCodeSequence patients_size_code_sequence = 8;
+	PatientTelecomInformation patients_telecom_information = 9;
+	PatientReligiousPreference patients_religious_preference = 10;
+	PatientComments patient_comments = 11;
+	PatientSpeciesDescription patient_species_description = 12;
+	PatientSpeciesCodeSequence patient_species_code_sequence = 13;
+	PatientBirthDate patients_birth_date = 14;
+	PatientWeight patients_weight = 15;
+	CountryOfResidence country_of_residence = 16;
+	EthnicGroup ethnic_group = 17;
+	BreedRegistrationSequence breed_registration_sequence = 18;
+	Occupation occupation = 19;
+	QualityControlSubject quality_control_subject = 20;
+	PatientInsurancePlanCodeSequence patients_insurance_plan_code_sequence = 21;
+	PatientSize patients_size = 22;
+	ResponsiblePersonRole responsible_person_role = 23;
+	StrainStockSequence strain_stock_sequence = 24;
+	StrainDescription strain_description = 25;
+	PatientAge patients_age = 26;
+	PatientBirthTime patients_birth_time = 27;
+	PatientSex patients_sex = 28;
+	BranchOfService branch_of_service = 29;
+	ResponsiblePerson responsible_person = 30;
+	PatientBreedCodeSequence patient_breed_code_sequence = 31;
+	PatientPrimaryLanguageCodeSequence patients_primary_language_code_sequence = 32;
+	PatientTelephoneNumbers patients_telephone_numbers = 33;
+	StrainCodeSequence strain_code_sequence = 34;
+	GeneticModificationsSequence genetic_modifications_sequence = 35;
+	StrainNomenclature strain_nomenclature = 36;
+}

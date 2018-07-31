@@ -1,0 +1,11 @@
+// Advanced Blending Presentation State Display
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.34.html#table_C.11.34.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Advanced_Blending_Presentation_State_DisplayModule {
+	PixelPresentation pixel_presentation = 1;
+	BlendingDisplaySequence blending_display_sequence = 2;
+}

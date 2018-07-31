@@ -1,0 +1,18 @@
+// Presentation State Identification
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.10.html#table_C.11.10-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Presentation_State_IdentificationModule {
+	ContentLabel content_label = 1;
+	ContentDescription content_description = 2;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 4;
+	PresentationCreationTime presentation_creation_time = 5;
+	InstanceNumber instance_number = 6;
+	ContentCreatorName content_creators_name = 7;
+	PresentationCreationDate presentation_creation_date = 8;
+	ConceptNameCodeSequence concept_name_code_sequence = 9;
+}

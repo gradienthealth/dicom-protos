@@ -1,0 +1,10 @@
+// Defined CT Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.9.html#table_C.34.9-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Defined_CT_AcquisitionModule {
+	AcquisitionProtocolElementSpecificationSequence acquisition_protocol_element_specification_sequence = 1;
+}

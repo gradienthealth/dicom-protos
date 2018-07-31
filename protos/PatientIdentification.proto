@@ -1,0 +1,20 @@
+// Patient Identification
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.2.html#table_C.2-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Patient_IdentificationModule {
+	PatientName patients_name = 1;
+	PatientID patient_id = 2;
+	OtherPatientIDsSequence other_patient_ids_sequence = 3;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 4;
+	IssuerOfPatientID issuer_of_patient_id = 5;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 6;
+	OtherPatientNames other_patient_names = 7;
+	PatientBirthName patients_birth_name = 8;
+	PatientMotherBirthName patients_mothers_birth_name = 9;
+	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 10;
+	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 11;
+}

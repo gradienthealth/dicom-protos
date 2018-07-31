@@ -1,0 +1,16 @@
+// RT Treatment Summary Record
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.23.html#table_C.8-59
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_Treatment_Summary_RecordModule {
+	FirstTreatmentDate first_treatment_date = 1;
+	MostRecentTreatmentDate most_recent_treatment_date = 2;
+	FractionGroupSummarySequence fraction_group_summary_sequence = 3;
+	TreatmentSummaryMeasuredDoseReferenceSequence treatment_summary_measured_dose_reference_sequence = 4;
+	TreatmentSummaryCalculatedDoseReferenceSequence treatment_summary_calculated_dose_reference_sequence = 5;
+	CurrentTreatmentStatus current_treatment_status = 6;
+	TreatmentStatusComment treatment_status_comment = 7;
+}

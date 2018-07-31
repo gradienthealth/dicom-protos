@@ -1,0 +1,18 @@
+// Double Floating Point Image Pixel
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.25.html#table_PS3.3_C.7.6.25-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Double_Floating_Point_Image_PixelModule {
+	SamplesPerPixel samples_per_pixel = 1;
+	BitsAllocated bits_allocated = 2;
+	PixelAspectRatio pixel_aspect_ratio = 3;
+	DoubleFloatPixelPaddingValue double_float_pixel_padding_value = 4;
+	DoubleFloatPixelPaddingRangeLimit double_float_pixel_padding_range_limit = 5;
+	PhotometricInterpretation photometric_interpretation = 6;
+	Rows rows = 7;
+	Columns columns = 8;
+	DoubleFloatPixelData double_float_pixel_data = 9;
+}

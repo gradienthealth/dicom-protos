@@ -1,0 +1,10 @@
+// Intra-Oral Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.8.html#table_C.8-75
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intra_Oral_SeriesModule {
+	Modality modality = 1;
+}

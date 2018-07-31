@@ -1,0 +1,11 @@
+// Equipment Specification
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.6.html#table_C.34.6-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Equipment_SpecificationModule {
+	ModelSpecificationSequence model_specification_sequence = 1;
+	EquipmentModality equipment_modality = 2;
+}

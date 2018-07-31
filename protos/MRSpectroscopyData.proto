@@ -1,0 +1,18 @@
+// MR Spectroscopy Data
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.14.4.html#table_C.8-106
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message MR_Spectroscopy_DataModule {
+	DataPointRows data_point_rows = 1;
+	DataPointColumns data_point_columns = 2;
+	SignalDomainColumns signal_domain_columns = 3;
+	Rows rows = 4;
+	Columns columns = 5;
+	FirstOrderPhaseCorrectionAngle first_order_phase_correction_angle = 6;
+	SpectroscopyData spectroscopy_data = 7;
+	DataRepresentation data_representation = 8;
+	SignalDomainRows signal_domain_rows = 9;
+}

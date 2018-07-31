@@ -1,0 +1,14 @@
+// Render Display
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.32.html#table_C.11.32-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Render_DisplayModule {
+	PixelPresentation pixel_presentation = 1;
+	VolumeStreamSequence volume_stream_sequence = 2;
+	PresentationStateCompositorComponentSequence presentation_state_compositor_component_sequence = 3;
+	ICCProfile icc_profile = 4;
+	ColorSpace color_space = 5;
+}

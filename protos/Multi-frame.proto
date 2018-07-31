@@ -1,0 +1,12 @@
+// Multi-frame
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.6.html#table_C.7-14
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Multi_frameModule {
+	StereoPairsPresent stereo_pairs_present = 1;
+	NumberOfFrames number_of_frames = 2;
+	FrameIncrementPointer frame_increment_pointer = 3;
+}

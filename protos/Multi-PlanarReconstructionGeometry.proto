@@ -1,0 +1,17 @@
+// Multi-Planar Reconstruction Geometry
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.26.html#table_C.11.26-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Multi_Planar_Reconstruction_GeometryModule {
+	MPRViewWidth mpr_view_width = 1;
+	MPRViewHeightDirection mpr_view_height_direction = 2;
+	MPRViewHeight mpr_view_height = 3;
+	MPRTopLeftHandCorner mpr_top_left_hand_corner = 4;
+	MultiPlanarReconstructionStyle multi_planar_reconstruction_style = 5;
+	MPRThicknessType mpr_thickness_type = 6;
+	MPRSlabThickness mpr_slab_thickness = 7;
+	MPRViewWidthDirection mpr_view_width_direction = 8;
+}

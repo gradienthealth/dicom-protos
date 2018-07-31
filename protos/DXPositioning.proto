@@ -1,0 +1,31 @@
+// DX Positioning
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.5.html#table_C.8-72
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message DX_PositioningModule {
+	ViewCodeSequence view_code_sequence = 1;
+	PatientGantryRelationshipCodeSequence patient_gantry_relationship_code_sequence = 2;
+	DistanceSourceToDetector distance_source_to_detector = 3;
+	PositionerPrimaryAngle positioner_primary_angle = 4;
+	DetectorPrimaryAngle detector_primary_angle = 5;
+	DetectorSecondaryAngle detector_secondary_angle = 6;
+	ColumnAngulation column_angulation = 7;
+	ViewPosition view_position = 8;
+	CompressionContactArea compression_contact_area = 9;
+	PositionerSecondaryAngle positioner_secondary_angle = 10;
+	BodyPartThickness body_part_thickness = 11;
+	PatientPosition patient_position = 12;
+	PositionerType positioner_type = 13;
+	TableType table_type = 14;
+	TableAngle table_angle = 15;
+	PaddleDescription paddle_description = 16;
+	EstimatedRadiographicMagnificationFactor estimated_radiographic_magnification_factor = 17;
+	PatientOrientationCodeSequence patient_orientation_code_sequence = 18;
+	DistanceSourceToPatient distance_source_to_patient = 19;
+	CompressionForce compression_force = 20;
+	CompressionPressure compression_pressure = 21;
+	ProjectionEponymousNameCodeSequence projection_eponymous_name_code_sequence = 22;
+}

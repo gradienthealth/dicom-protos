@@ -1,0 +1,18 @@
+// SR Document Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.html#table_C.17-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message SR_Document_SeriesModule {
+	Modality modality = 1;
+	ProtocolName protocol_name = 2;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 3;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 4;
+	SeriesInstanceUID series_instance_uid = 5;
+	SeriesNumber series_number = 6;
+	SeriesDate series_date = 7;
+	SeriesTime series_time = 8;
+	SeriesDescription series_description = 9;
+}

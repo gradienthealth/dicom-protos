@@ -1,0 +1,14 @@
+// VOI LUT
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html#table_C.11-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message VOI_LUTModule {
+	WindowCenterWidthExplanation window_center__and__width_explanation = 1;
+	VOILUTFunction voi_lut_function = 2;
+	VOILUTSequence voi_lut_sequence = 3;
+	WindowCenter window_center = 4;
+	WindowWidth window_width = 5;
+}

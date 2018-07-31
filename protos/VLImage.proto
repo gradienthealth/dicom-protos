@@ -1,0 +1,26 @@
+// VL Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.html#table_C.8-77
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message VL_ImageModule {
+	LossyImageCompression lossy_image_compression = 1;
+	WindowCenter window_center = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	BitsStored bits_stored = 4;
+	PixelRepresentation pixel_representation = 5;
+	ContentTime content_time = 6;
+	PixelSpacing pixel_spacing = 7;
+	WindowWidth window_width = 8;
+	BitsAllocated bits_allocated = 9;
+	HighBit high_bit = 10;
+	ReferencedImageSequence referenced_image_sequence = 11;
+	PlanarConfiguration planar_configuration = 12;
+	AnatomicRegionSequence anatomic_region_sequence = 13;
+	ChannelDescriptionCodeSequence channel_description_code_sequence = 14;
+	ImageType image_type = 15;
+	PhotometricInterpretation photometric_interpretation = 16;
+	SamplesPerPixel samples_per_pixel = 17;
+}

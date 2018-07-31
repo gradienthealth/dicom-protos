@@ -1,0 +1,18 @@
+// Intravascular OCT Acquisition Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.3.html#table_C.8.27.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intravascular_OCT_Acquisition_ParametersModule {
+	ALinesPerFrame a_lines_per_frame = 1;
+	OCTFocalDistance oct_focal_distance = 2;
+	OCTAcquisitionDomain oct_acquisition_domain = 3;
+	OCTOpticalCenterWavelength oct_optical_center_wavelength = 4;
+	RangingDepth ranging_depth = 5;
+	ALineRate a_line_rate = 6;
+	BeamSpotSize beam_spot_size = 7;
+	EffectiveRefractiveIndex effective_refractive_index = 8;
+	AxialResolution axial_resolution = 9;
+}

@@ -1,0 +1,19 @@
+// Spatial Registration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.20.2.html#table_C.20.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Spatial_RegistrationModule {
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 1;
+	ContentCreatorName content_creators_name = 2;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 3;
+	ContentDate content_date = 4;
+	ContentDescription content_description = 5;
+	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	RegistrationSequence registration_sequence = 7;
+	ContentTime content_time = 8;
+	InstanceNumber instance_number = 9;
+	ContentLabel content_label = 10;
+}

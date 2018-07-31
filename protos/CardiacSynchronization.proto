@@ -1,0 +1,19 @@
+// Cardiac Synchronization
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.18.html#table_C.7.6.18-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Cardiac_SynchronizationModule {
+	IntervalsRejected intervals_rejected = 1;
+	CardiacFramingType cardiac_framing_type = 2;
+	CardiacSignalSource cardiac_signal_source = 3;
+	CardiacRRIntervalSpecified cardiac_r_r_interval_specified = 4;
+	LowRRValue low_r_r_value = 5;
+	HighRRValue high_r_r_value = 6;
+	CardiacSynchronizationTechnique cardiac_synchronization_technique = 7;
+	CardiacBeatRejectionTechnique cardiac_beat_rejection_technique = 8;
+	IntervalsAcquired intervals_acquired = 9;
+	SkipBeats skip_beats = 10;
+}

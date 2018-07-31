@@ -1,0 +1,25 @@
+// Performed Procedure Step Relationship
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.13.html#table_C.4-13
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Performed_Procedure_Step_RelationshipModule {
+	PatientBirthDate patients_birth_date = 1;
+	PatientSex patients_sex = 2;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 3;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 4;
+	IssuerOfPatientID issuer_of_patient_id = 5;
+	AdmissionID admission_id = 6;
+	ScheduledStepAttributesSequence scheduled_step_attributes_sequence = 7;
+	PatientID patient_id = 8;
+	PatientAlternativeCalendar patients_alternative_calendar = 9;
+	ServiceEpisodeID service_episode_id = 10;
+	ServiceEpisodeDescription service_episode_description = 11;
+	PatientBirthDateInAlternativeCalendar patients_birth_date_in_alternative_calendar = 12;
+	PatientDeathDateInAlternativeCalendar patients_death_date_in_alternative_calendar = 13;
+	ReferencedPatientSequence referenced_patient_sequence = 14;
+	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 15;
+	PatientName patients_name = 16;
+}

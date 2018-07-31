@@ -1,0 +1,10 @@
+// Wide Field Ophthalmic Photography Quality Rating
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.13.html#table_C.8.17.13-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Wide_Field_Ophthalmic_Photography_Quality_RatingModule {
+	WideFieldOphthalmicPhotographyQualityRatingSequence wide_field_ophthalmic_photography_quality_rating_sequence = 1;
+}

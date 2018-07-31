@@ -1,0 +1,14 @@
+// Intravascular OCT Processing Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.4.html#table_C.8.27.4-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intravascular_OCT_Processing_ParametersModule {
+	OCTZOffsetApplied oct_z_offset_applied = 1;
+	RefractiveIndexApplied refractive_index_applied = 2;
+	ALinePixelSpacing a_line_pixel_spacing = 3;
+	PixelIntensityRelationship pixel_intensity_relationship = 4;
+	FirstALineLocation first_a_line_location = 5;
+}

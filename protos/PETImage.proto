@@ -1,0 +1,42 @@
+// PET Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.4.html#table_C.8-63
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message PET_ImageModule {
+	ImageType image_type = 1;
+	SliceSensitivityFactor slice_sensitivity_factor = 2;
+	ScatterFractionFactor scatter_fraction_factor = 3;
+	AnatomicRegionSequence anatomic_region_sequence = 4;
+	SliceProgressionDirection slice_progression_direction = 5;
+	RescaleSlope rescale_slope = 6;
+	HighRRValue high_r_r_value = 7;
+	DecayFactor decay_factor = 8;
+	ViewCodeSequence view_code_sequence = 9;
+	LowRRValue low_r_r_value = 10;
+	NominalInterval nominal_interval = 11;
+	IntervalsAcquired intervals_acquired = 12;
+	SecondaryCountsAccumulated secondary_counts_accumulated = 13;
+	SamplesPerPixel samples_per_pixel = 14;
+	PhotometricInterpretation photometric_interpretation = 15;
+	FrameTime frame_time = 16;
+	AcquisitionTime acquisition_time = 17;
+	ActualFrameDuration actual_frame_duration = 18;
+	BitsAllocated bits_allocated = 19;
+	BitsStored bits_stored = 20;
+	IntervalsRejected intervals_rejected = 21;
+	HighBit high_bit = 22;
+	TriggerTime trigger_time = 23;
+	ImageIndex image_index = 24;
+	AcquisitionDate acquisition_date = 25;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 26;
+	FrameReferenceTime frame_reference_time = 27;
+	DoseCalibrationFactor dose_calibration_factor = 28;
+	IsocenterPosition isocenter_position = 29;
+	RescaleIntercept rescale_intercept = 30;
+	LossyImageCompression lossy_image_compression = 31;
+	PrimaryPromptsCountsAccumulated primary_prompts_counts_accumulated = 32;
+	DeadTimeFactor dead_time_factor = 33;
+}

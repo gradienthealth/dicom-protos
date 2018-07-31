@@ -1,0 +1,15 @@
+// NM Reconstruction
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.15.html#table_C.8-15
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message NM_ReconstructionModule {
+	ReconstructionDiameter reconstruction_diameter = 1;
+	ConvolutionKernel convolution_kernel = 2;
+	SliceThickness slice_thickness = 3;
+	SliceLocation slice_location = 4;
+	SliceProgressionDirection slice_progression_direction = 5;
+	SpacingBetweenSlices spacing_between_slices = 6;
+}

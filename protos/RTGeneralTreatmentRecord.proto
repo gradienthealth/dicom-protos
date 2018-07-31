@@ -1,0 +1,14 @@
+// RT General Treatment Record
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.17.html#table_C.8-53
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_General_Treatment_RecordModule {
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 1;
+	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 2;
+	InstanceNumber instance_number = 3;
+	TreatmentDate treatment_date = 4;
+	TreatmentTime treatment_time = 5;
+}

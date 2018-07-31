@@ -1,0 +1,13 @@
+// Intra-Oral Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.9.html#table_C.8-76
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intra_Oral_ImageModule {
+	PositionerType positioner_type = 1;
+	ImageLaterality image_laterality = 2;
+	AnatomicRegionSequence anatomic_region_sequence = 3;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 4;
+}

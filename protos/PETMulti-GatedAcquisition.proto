@@ -1,0 +1,15 @@
+// PET Multi-Gated Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.9.3.html#table_C.8-62
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message PET_Multi_Gated_AcquisitionModule {
+	BeatRejectionFlag beat_rejection_flag = 1;
+	TriggerSourceOrType trigger_source_or_type = 2;
+	PVCRejection pvc_rejection = 3;
+	SkipBeats skip_beats = 4;
+	HeartRate heart_rate = 5;
+	CardiacFramingType cardiac_framing_type = 6;
+}

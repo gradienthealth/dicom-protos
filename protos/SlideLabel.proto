@@ -1,0 +1,11 @@
+// Slide Label
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.8.html#table_C.8.12.8-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Slide_LabelModule {
+	BarcodeValue barcode_value = 1;
+	LabelText label_text = 2;
+}

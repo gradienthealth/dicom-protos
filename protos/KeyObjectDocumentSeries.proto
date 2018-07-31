@@ -1,0 +1,18 @@
+// Key Object Document Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.6.html#table_C.17.6-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Key_Object_Document_SeriesModule {
+	SeriesInstanceUID series_instance_uid = 1;
+	SeriesNumber series_number = 2;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
+	ProtocolName protocol_name = 4;
+	SeriesDescription series_description = 5;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 6;
+	Modality modality = 7;
+	SeriesDate series_date = 8;
+	SeriesTime series_time = 9;
+}

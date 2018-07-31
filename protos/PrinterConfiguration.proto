@@ -1,0 +1,10 @@
+// Printer Configuration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.13.html#table_C.13-13
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Printer_ConfigurationModule {
+	PrinterConfigurationSequence printer_configuration_sequence = 1;
+}

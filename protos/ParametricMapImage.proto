@@ -1,0 +1,33 @@
+// Parametric Map Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.32.2.html#table_PS3.3_C.8.32-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Parametric_Map_ImageModule {
+	LossyImageCompressionRatio lossy_image_compression_ratio = 1;
+	InstanceNumber instance_number = 2;
+	ContentLabel content_label = 3;
+	ContentDescription content_description = 4;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 5;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 6;
+	LossyImageCompression lossy_image_compression = 7;
+	ImageType image_type = 8;
+	ConceptNameCodeSequence concept_name_code_sequence = 9;
+	PixelPresentation pixel_presentation = 10;
+	BitsAllocated bits_allocated = 11;
+	BitsStored bits_stored = 12;
+	PresentationLUTShape presentation_lut_shape = 13;
+	BurnedInAnnotation burned_in_annotation = 14;
+	ContentQualification content_qualification = 15;
+	PaletteColorLookupTableUID palette_color_lookup_table_uid = 16;
+	ContentCreatorName content_creators_name = 17;
+	SamplesPerPixel samples_per_pixel = 18;
+	PhotometricInterpretation photometric_interpretation = 19;
+	HighBit high_bit = 20;
+	LossyImageCompressionMethod lossy_image_compression_method = 21;
+	RecognizableVisualFeatures recognizable_visual_features = 22;
+	ICCProfile icc_profile = 23;
+	ColorSpace color_space = 24;
+}

@@ -1,0 +1,13 @@
+// RT Ion Beams Session Record
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.26.html#table_C.8.8.26-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_Ion_Beams_Session_RecordModule {
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 1;
+	NumberOfFractionsPlanned number_of_fractions_planned = 2;
+	PrimaryDosimeterUnit primary_dosimeter_unit = 3;
+	TreatmentSessionIonBeamSequence treatment_session_ion_beam_sequence = 4;
+}

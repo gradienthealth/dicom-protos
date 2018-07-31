@@ -1,0 +1,10 @@
+// XA/XRF Presentation State Mask
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.19.html#table_C.11.19-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message XA_XRF_Presentation_State_MaskModule {
+	MaskSubtractionSequence mask_subtraction_sequence = 1;
+}

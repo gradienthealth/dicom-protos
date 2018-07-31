@@ -1,0 +1,19 @@
+// Spatial Fiducials
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.21.2.html#table_C.21.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Spatial_FiducialsModule {
+	ContentTime content_time = 1;
+	InstanceNumber instance_number = 2;
+	ContentLabel content_label = 3;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 4;
+	FiducialSetSequence fiducial_set_sequence = 5;
+	ContentDate content_date = 6;
+	ContentDescription content_description = 7;
+	ConceptNameCodeSequence concept_name_code_sequence = 8;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 9;
+	ContentCreatorName content_creators_name = 10;
+}

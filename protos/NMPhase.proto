@@ -1,0 +1,10 @@
+// NM Phase
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.14.html#table_C.8-14
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message NM_PhaseModule {
+	PhaseInformationSequence phase_information_sequence = 1;
+}

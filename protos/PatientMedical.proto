@@ -1,0 +1,24 @@
+// Patient Medical
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.2.4.html#table_C.2-4
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Patient_MedicalModule {
+	PregnancyStatus pregnancy_status = 1;
+	PatientBodyMassIndex patients_body_mass_index = 2;
+	MeasuredLateralDimension measured_lateral_dimension = 3;
+	Allergies allergies = 4;
+	LastMenstrualDate last_menstrual_date = 5;
+	MeasuredAPDimension measured_ap_dimension = 6;
+	AdditionalPatientHistory additional_patient_history = 7;
+	PatientSexNeutered patients_sex_neutered = 8;
+	SpecialNeeds special_needs = 9;
+	PatientState patient_state = 10;
+	PertinentDocumentsSequence pertinent_documents_sequence = 11;
+	PertinentResourcesSequence pertinent_resources_sequence = 12;
+	PatientClinicalTrialParticipationSequence patient_clinical_trial_participation_sequence = 13;
+	MedicalAlerts medical_alerts = 14;
+	SmokingStatus smoking_status = 15;
+}

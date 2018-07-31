@@ -1,0 +1,19 @@
+// Deformable Spatial Registration
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.20.3.html#table_C.20.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Deformable_Spatial_RegistrationModule {
+	ConceptNameCodeSequence concept_name_code_sequence = 1;
+	ContentCreatorName content_creators_name = 2;
+	DeformableRegistrationSequence deformable_registration_sequence = 3;
+	ContentTime content_time = 4;
+	InstanceNumber instance_number = 5;
+	ContentDescription content_description = 6;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 7;
+	ContentDate content_date = 8;
+	ContentLabel content_label = 9;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 10;
+}

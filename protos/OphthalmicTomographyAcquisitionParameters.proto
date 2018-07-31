@@ -1,0 +1,17 @@
+// Ophthalmic Tomography Acquisition Parameters
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.17.8.html#table_C.8.17.8-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Tomography_Acquisition_ParametersModule {
+	RefractiveStateSequence refractive_state_sequence = 1;
+	EmmetropicMagnification emmetropic_magnification = 2;
+	IntraOcularPressure intra_ocular_pressure = 3;
+	PupilDilated pupil_dilated = 4;
+	MydriaticAgentSequence mydriatic_agent_sequence = 5;
+	DegreeOfDilation degree_of_dilation = 6;
+	AxialLengthOfTheEye axial_length_of_the_eye = 7;
+	HorizontalFieldOfView horizontal_field_of_view = 8;
+}

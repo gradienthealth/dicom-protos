@@ -1,0 +1,13 @@
+// Enhanced US Series
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.html#table_C.8.24.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_US_SeriesModule {
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 3;
+	PerformedProtocolType performed_protocol_type = 4;
+}

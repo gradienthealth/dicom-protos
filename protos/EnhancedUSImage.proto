@@ -1,0 +1,53 @@
+// Enhanced US Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.24.3.html#table_C.8.24.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Enhanced_US_ImageModule {
+	SoftTissueThermalIndex soft_tissue_thermal_index = 1;
+	BitsAllocated bits_allocated = 2;
+	LossyImageCompression lossy_image_compression = 3;
+	RescaleSlope rescale_slope = 4;
+	SliceProgressionDirection slice_progression_direction = 5;
+	TransducerApplicationCodeSequence transducer_application_code_sequence = 6;
+	ProcessingFunction processing_function = 7;
+	CranialThermalIndex cranial_thermal_index = 8;
+	ImageType image_type = 9;
+	PixelRepresentation pixel_representation = 10;
+	AcquisitionDateTime acquisition_datetime = 11;
+	PositionMeasuringDeviceUsed position_measuring_device_used = 12;
+	LossyImageCompressionMethod lossy_image_compression_method = 13;
+	PhotometricInterpretation photometric_interpretation = 14;
+	RescaleIntercept rescale_intercept = 15;
+	ReferencedRawDataSequence referenced_raw_data_sequence = 16;
+	StageNumber stage_number = 17;
+	ViewCodeSequence view_code_sequence = 18;
+	BoneThermalIndex bone_thermal_index = 19;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 20;
+	TransducerScanPatternCodeSequence transducer_scan_pattern_code_sequence = 21;
+	DepthsOfFocus depths_of_focus = 22;
+	HighBit high_bit = 23;
+	AcquisitionDuration acquisition_duration = 24;
+	TransducerBeamSteeringCodeSequence transducer_beam_steering_code_sequence = 25;
+	MechanicalIndex mechanical_index = 26;
+	DepthOfScanField depth_of_scan_field = 27;
+	IconImageSequence icon_image_sequence = 28;
+	SamplesPerPixel samples_per_pixel = 29;
+	ReferencedImageSequence referenced_image_sequence = 30;
+	ReferencedInstanceSequence referenced_instance_sequence = 31;
+	StageCodeSequence stage_code_sequence = 32;
+	AnatomicRegionSequence anatomic_region_sequence = 33;
+	BurnedInAnnotation burned_in_annotation = 34;
+	RecognizableVisualFeatures recognizable_visual_features = 35;
+	TransducerData transducer_data = 36;
+	EventTimerSequence event_timer_sequence = 37;
+	TransducerGeometryCodeSequence transducer_geometry_code_sequence = 38;
+	BitsStored bits_stored = 39;
+	DimensionOrganizationType dimension_organization_type = 40;
+	PresentationLUTShape presentation_lut_shape = 41;
+	SourceImageSequence source_image_sequence = 42;
+	NumberOfStages number_of_stages = 43;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 44;
+}

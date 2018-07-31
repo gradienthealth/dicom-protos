@@ -1,0 +1,11 @@
+// Structured Display Image Box
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.17.html#table_C.11.17-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Structured_Display_Image_BoxModule {
+	StructuredDisplayImageBoxSequence structured_display_image_box_sequence = 1;
+	ImageBoxSynchronizationSequence image_box_synchronization_sequence = 2;
+}

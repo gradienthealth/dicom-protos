@@ -1,0 +1,14 @@
+// Clinical Trial Study
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.3.html#table_C.7-4b
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Clinical_Trial_StudyModule {
+	ConsentForClinicalTrialUseSequence consent_for_clinical_trial_use_sequence = 1;
+	ClinicalTrialTimePointID clinical_trial_time_point_id = 2;
+	ClinicalTrialTimePointDescription clinical_trial_time_point_description = 3;
+	LongitudinalTemporalOffsetFromEvent longitudinal_temporal_offset_from_event = 4;
+	LongitudinalTemporalEventType longitudinal_temporal_event_type = 5;
+}

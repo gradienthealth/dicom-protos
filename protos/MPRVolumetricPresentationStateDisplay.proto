@@ -1,0 +1,15 @@
+// MPR Volumetric Presentation State Display
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.27.html#table_C.11.27-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message MPR_Volumetric_Presentation_State_DisplayModule {
+	ICCProfile icc_profile = 1;
+	ColorSpace color_space = 2;
+	PixelPresentation pixel_presentation = 3;
+	PresentationStateClassificationComponentSequence presentation_state_classification_component_sequence = 4;
+	PresentationStateCompositorComponentSequence presentation_state_compositor_component_sequence = 5;
+	PresentationLUTShape presentation_lut_shape = 6;
+}

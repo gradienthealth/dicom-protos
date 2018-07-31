@@ -1,0 +1,22 @@
+// Volumetric Presentation State Identification
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.22.html#table_C.11.22-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Volumetric_Presentation_State_IdentificationModule {
+	RenderedImageReferenceSequence rendered_image_reference_sequence = 1;
+	PresentationSequencePositionIndex presentation_sequence_position_index = 2;
+	PresentationCreationDate presentation_creation_date = 3;
+	PresentationCreationTime presentation_creation_time = 4;
+	ContentLabel content_label = 5;
+	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	ContentCreatorName content_creators_name = 7;
+	PresentationSequenceCollectionUID presentation_sequence_collection_uid = 8;
+	InstanceNumber instance_number = 9;
+	ContentDescription content_description = 10;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 11;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 12;
+	PresentationDisplayCollectionUID presentation_display_collection_uid = 13;
+}

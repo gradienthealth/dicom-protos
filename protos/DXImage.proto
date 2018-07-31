@@ -1,0 +1,34 @@
+// DX Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.11.3.html#table_C.8-70
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message DX_ImageModule {
+	PatientOrientation patient_orientation = 1;
+	VOILUTSequence voi_lut_sequence = 2;
+	PixelRepresentation pixel_representation = 3;
+	PixelIntensityRelationship pixel_intensity_relationship = 4;
+	RescaleSlope rescale_slope = 5;
+	LossyImageCompression lossy_image_compression = 6;
+	AcquisitionDeviceProcessingDescription acquisition_device_processing_description = 7;
+	AcquisitionDeviceProcessingCode acquisition_device_processing_code = 8;
+	BitsAllocated bits_allocated = 9;
+	PixelIntensityRelationshipSign pixel_intensity_relationship_sign = 10;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 11;
+	WindowCenterWidthExplanation window_center__and__width_explanation = 12;
+	WindowWidth window_width = 13;
+	ImageType image_type = 14;
+	SamplesPerPixel samples_per_pixel = 15;
+	PresentationLUTShape presentation_lut_shape = 16;
+	DerivationDescription derivation_description = 17;
+	BurnedInAnnotation burned_in_annotation = 18;
+	WindowCenter window_center = 19;
+	PhotometricInterpretation photometric_interpretation = 20;
+	BitsStored bits_stored = 21;
+	HighBit high_bit = 22;
+	RescaleIntercept rescale_intercept = 23;
+	RescaleType rescale_type = 24;
+	CalibrationImage calibration_image = 25;
+}

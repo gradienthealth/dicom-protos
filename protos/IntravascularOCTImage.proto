@@ -1,0 +1,32 @@
+// Intravascular OCT Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.27.2.html#table_C.8.27.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Intravascular_OCT_ImageModule {
+	LossyImageCompressionRatio lossy_image_compression_ratio = 1;
+	ReferencedInstanceSequence referenced_instance_sequence = 2;
+	SamplesPerPixel samples_per_pixel = 3;
+	PhotometricInterpretation photometric_interpretation = 4;
+	PixelRepresentation pixel_representation = 5;
+	PresentationLUTShape presentation_lut_shape = 6;
+	RecognizableVisualFeatures recognizable_visual_features = 7;
+	InterpolationType interpolation_type = 8;
+	ImageType image_type = 9;
+	PixelPresentation pixel_presentation = 10;
+	AcquisitionDuration acquisition_duration = 11;
+	AcquisitionNumber acquisition_number = 12;
+	HighBit high_bit = 13;
+	LossyImageCompressionMethod lossy_image_compression_method = 14;
+	ImageComments image_comments = 15;
+	RecommendedDisplayFrameRate recommended_display_frame_rate = 16;
+	VolumetricProperties volumetric_properties = 17;
+	AcquisitionDateTime acquisition_datetime = 18;
+	BitsAllocated bits_allocated = 19;
+	BitsStored bits_stored = 20;
+	LossyImageCompression lossy_image_compression = 21;
+	BurnedInAnnotation burned_in_annotation = 22;
+	ReferencedColorPaletteInstanceUID referenced_color_palette_instance_uid = 23;
+}

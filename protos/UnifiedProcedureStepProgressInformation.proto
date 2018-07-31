@@ -1,0 +1,11 @@
+// Unified Procedure Step Progress Information
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.30.html#table_C.30.1-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Unified_Procedure_Step_Progress_InformationModule {
+	ProcedureStepState procedure_step_state = 1;
+	ProcedureStepProgressInformationSequence procedure_step_progress_information_sequence = 2;
+}

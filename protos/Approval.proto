@@ -1,0 +1,13 @@
+// Approval
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.16.html#table_C.8-52
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message ApprovalModule {
+	ReviewerName reviewer_name = 1;
+	ApprovalStatus approval_status = 2;
+	ReviewDate review_date = 3;
+	ReviewTime review_time = 4;
+}

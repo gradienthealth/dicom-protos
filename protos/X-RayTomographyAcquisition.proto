@@ -1,0 +1,15 @@
+// X-Ray Tomography Acquisition
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.7.7.html#table_C.8-32
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_Tomography_AcquisitionModule {
+	NumberOfTomosynthesisSourceImages number_of_tomosynthesis_source_images = 1;
+	TomoLayerHeight tomo_layer_height = 2;
+	TomoAngle tomo_angle = 3;
+	TomoTime tomo_time = 4;
+	TomoType tomo_type = 5;
+	TomoClass tomo_class = 6;
+}

@@ -1,0 +1,10 @@
+// Performed CT Reconstruction
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.12.html#table_C.34.12-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Performed_CT_ReconstructionModule {
+	ReconstructionProtocolElementSequence reconstruction_protocol_element_sequence = 1;
+}

@@ -1,0 +1,18 @@
+// Product Characteristics
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.26.html#table_C.26-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Product_CharacteristicsModule {
+	ProductPackageIdentifier product_package_identifier = 1;
+	ProductTypeCodeSequence product_type_code_sequence = 2;
+	ProductName product_name = 3;
+	ProductDescription product_description = 4;
+	ProductLotIdentifier product_lot_identifier = 5;
+	ProductParameterSequence product_parameter_sequence = 6;
+	PertinentDocumentsSequence pertinent_documents_sequence = 7;
+	Manufacturer manufacturer = 8;
+	ProductExpirationDateTime product_expiration_datetime = 9;
+}

@@ -1,0 +1,12 @@
+// Point Cloud
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.27.5.html#table_C.27.5-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Point_CloudModule {
+	SurfacePointsSequence surface_points_sequence = 1;
+	SurfacePointPresentationValueData surface_point_presentation_value_data = 2;
+	SurfacePointColorCIELabValueData surface_point_color_cielab_value_data = 3;
+}

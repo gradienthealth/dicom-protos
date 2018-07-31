@@ -1,0 +1,14 @@
+// RT Brachy Application Setups
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.15.html#table_C.8-51
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message RT_Brachy_Application_SetupsModule {
+	BrachyTreatmentTechnique brachy_treatment_technique = 1;
+	BrachyTreatmentType brachy_treatment_type = 2;
+	TreatmentMachineSequence treatment_machine_sequence = 3;
+	SourceSequence source_sequence = 4;
+	ApplicationSetupSequence application_setup_sequence = 5;
+}

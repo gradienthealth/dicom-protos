@@ -12,8 +12,8 @@ import (
 
 func moduleNameToFilename(name string) string {
 	s := strings.Replace(name, " ", "", -1)
-	s2 := strings.Replace(s, "/", "", -1)
-	return fmt.Sprintf("protos/%s.proto", s2)
+	s  = strings.Replace(s, "/", "", -1)
+	return fmt.Sprintf("protos/%s.proto", s)
 }
 
 func generateFile(name string) *os.File {

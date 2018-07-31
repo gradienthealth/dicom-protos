@@ -1,0 +1,12 @@
+// NM Isotope
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.4.10.html#table_C.8-10
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message NM_IsotopeModule {
+	EnergyWindowInformationSequence energy_window_information_sequence = 1;
+	RadiopharmaceuticalInformationSequence radiopharmaceutical_information_sequence = 2;
+	InterventionDrugInformationSequence intervention_drug_information_sequence = 3;
+}

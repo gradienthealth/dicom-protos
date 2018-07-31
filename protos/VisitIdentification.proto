@@ -1,0 +1,17 @@
+// Visit Identification
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.3.2.html#table_C.3-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Visit_IdentificationModule {
+	InstitutionCodeSequence institution_code_sequence = 1;
+	AdmissionID admission_id = 2;
+	IssuerOfAdmissionIDSequence issuer_of_admission_id_sequence = 3;
+	ServiceEpisodeID service_episode_id = 4;
+	IssuerOfServiceEpisodeIDSequence issuer_of_service_episode_id_sequence = 5;
+	ServiceEpisodeDescription service_episode_description = 6;
+	InstitutionName institution_name = 7;
+	InstitutionAddress institution_address = 8;
+}

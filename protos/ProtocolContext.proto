@@ -1,0 +1,25 @@
+// Protocol Context
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.34.2.html#table_C.34.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Protocol_ContextModule {
+	CustodialOrganizationSequence custodial_organization_sequence = 1;
+	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 2;
+	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 3;
+	ContraindicationsCodeSequence contraindications_code_sequence = 4;
+	ProtocolDesignRationale protocol_design_rationale = 5;
+	InstanceCreationDate instance_creation_date = 6;
+	PotentialReasonsForProcedure potential_reasons_for_procedure = 7;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 8;
+	ResponsibleGroupCodeSequence responsible_group_code_sequence = 9;
+	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 10;
+	PotentialDiagnosticTasks potential_diagnostic_tasks = 11;
+	ContentCreatorName content_creators_name = 12;
+	ProtocolPlanningInformation protocol_planning_information = 13;
+	ProtocolName protocol_name = 14;
+	PredecessorProtocolSequence predecessor_protocol_sequence = 15;
+	InstanceCreationTime instance_creation_time = 16;
+}

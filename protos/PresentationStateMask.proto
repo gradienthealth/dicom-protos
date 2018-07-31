@@ -1,0 +1,11 @@
+// Presentation State Mask
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.13.html#table_C.11.13-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Presentation_State_MaskModule {
+	MaskSubtractionSequence mask_subtraction_sequence = 1;
+	RecommendedViewingMode recommended_viewing_mode = 2;
+}

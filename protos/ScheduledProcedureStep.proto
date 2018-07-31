@@ -1,0 +1,11 @@
+// Scheduled Procedure Step
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.10.html#table_C.4-10
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Scheduled_Procedure_StepModule {
+	ScheduledProcedureStepSequence scheduled_procedure_step_sequence = 1;
+	ScheduledSpecimenSequence scheduled_specimen_sequence = 2;
+}

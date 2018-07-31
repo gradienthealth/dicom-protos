@@ -1,0 +1,46 @@
+// Ophthalmic Thickness Map
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.28.2.html#table_C.8.28.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Ophthalmic_Thickness_MapModule {
+	PhotometricInterpretation photometric_interpretation = 1;
+	BitsStored bits_stored = 2;
+	HighBit high_bit = 3;
+	PixelPresentation pixel_presentation = 4;
+	ReferencedColorPaletteInstanceUID referenced_color_palette_instance_uid = 5;
+	LossyImageCompressionMethod lossy_image_compression_method = 6;
+	ImageLaterality image_laterality = 7;
+	ContentDate content_date = 8;
+	SourceImageSequence source_image_sequence = 9;
+	RelevantOPTAttributesSequence relevant_opt_attributes_sequence = 10;
+	BitsAllocated bits_allocated = 11;
+	RealWorldValueMappingSequence real_world_value_mapping_sequence = 12;
+	OphthalmicThicknessMappingNormalsSequence ophthalmic_thickness_mapping_normals_sequence = 13;
+	ReferencedInstanceSequence referenced_instance_sequence = 14;
+	AnatomicStructureReferencePoint anatomic_structure_reference_point = 15;
+	PixelSpacing pixel_spacing = 16;
+	LossyImageCompressionRatio lossy_image_compression_ratio = 17;
+	AcquisitionMethodAlgorithmSequence acquisition_method_algorithm_sequence = 18;
+	LossyImageCompression lossy_image_compression = 19;
+	AnatomicRegionSequence anatomic_region_sequence = 20;
+	SamplesPerPixel samples_per_pixel = 21;
+	AcquisitionDateTime acquisition_datetime = 22;
+	PixelAspectRatio pixel_aspect_ratio = 23;
+	OphthalmicThicknessMapTypeCodeSequence ophthalmic_thickness_map_type_code_sequence = 24;
+	PixelValueMappingToCodedConceptSequence pixel_value_mapping_to_coded_concept_sequence = 25;
+	RetinalThicknessDefinitionCodeSequence retinal_thickness_definition_code_sequence = 26;
+	ContentTime content_time = 27;
+	InstanceNumber instance_number = 28;
+	ImageType image_type = 29;
+	PixelRepresentation pixel_representation = 30;
+	BurnedInAnnotation burned_in_annotation = 31;
+	RecognizableVisualFeatures recognizable_visual_features = 32;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 33;
+	RelativeImagePositionCodeSequence relative_image_position_code_sequence = 34;
+	OphthalmicMappingDeviceType ophthalmic_mapping_device_type = 35;
+	RegistrationToLocalizerSequence registration_to_localizer_sequence = 36;
+	AcquisitionMethodCodeSequence acquisition_method_code_sequence = 37;
+}

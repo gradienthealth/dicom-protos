@@ -1,0 +1,18 @@
+// Structure Set
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.5.html#table_C.8-41
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Structure_SetModule {
+	StructureSetLabel structure_set_label = 1;
+	StructureSetName structure_set_name = 2;
+	InstanceNumber instance_number = 3;
+	StructureSetROISequence structure_set_roi_sequence = 4;
+	PredecessorStructureSetSequence predecessor_structure_set_sequence = 5;
+	StructureSetDescription structure_set_description = 6;
+	StructureSetDate structure_set_date = 7;
+	StructureSetTime structure_set_time = 8;
+	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 9;
+}

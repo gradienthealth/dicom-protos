@@ -1,0 +1,35 @@
+// CR Image
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.html#table_C.8-2
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message CR_ImageModule {
+	PhotometricInterpretation photometric_interpretation = 1;
+	DistanceSourceToDetector distance_source_to_detector = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	TargetExposureIndex target_exposure_index = 4;
+	ExposureTime exposure_time = 5;
+	ExposureInuAs exposure_in_as = 6;
+	RelativeXRayExposure relative_x_ray_exposure = 7;
+	Sensitivity sensitivity = 8;
+	AcquisitionDeviceProcessingCode acquisition_device_processing_code = 9;
+	KVP kvp = 10;
+	PlateID plate_id = 11;
+	DistanceSourceToPatient distance_source_to_patient = 12;
+	XRayTubeCurrent x_ray_tube_current = 13;
+	Exposure exposure = 14;
+	PixelSpacing pixel_spacing = 15;
+	GeneratorPower generator_power = 16;
+	CassetteOrientation cassette_orientation = 17;
+	ExposuresOnPlate exposures_on_plate = 18;
+	ExposureIndex exposure_index = 19;
+	ImagerPixelSpacing imager_pixel_spacing = 20;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 21;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 22;
+	AcquisitionDeviceProcessingDescription acquisition_device_processing_description = 23;
+	CassetteSize cassette_size = 24;
+	AnatomicRegionSequence anatomic_region_sequence = 25;
+	DeviationIndex deviation_index = 26;
+}

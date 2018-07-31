@@ -1,0 +1,12 @@
+// Billing and Material Management Code
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.4.17.html#table_C.4-17
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Billing_and_Material_Management_CodeModule {
+	BillingProcedureStepSequence billing_procedure_step_sequence = 1;
+	FilmConsumptionSequence film_consumption_sequence = 2;
+	BillingSuppliesAndDevicesSequence billing_supplies_and_devices_sequence = 3;
+}

@@ -1,0 +1,34 @@
+// Corneal Topography Map Analysis
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.30.3.html#table_C.8.30.3-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message Corneal_Topography_Map_AnalysisModule {
+	CornealISValue corneal_i_s_value = 1;
+	MaximumCornealCurvatureSequence maximum_corneal_curvature_sequence = 2;
+	DecimalPotentialVisualAcuity decimal_potential_visual_acuity = 3;
+	OphthalmicMappingDeviceType ophthalmic_mapping_device_type = 4;
+	CornealVertexLocation corneal_vertex_location = 5;
+	CornealTopographySurface corneal_topography_surface = 6;
+	EquivalentPupilRadius equivalent_pupil_radius = 7;
+	FlatKeratometricAxisSequence flat_keratometric_axis_sequence = 8;
+	SourceImageCornealProcessedDataSequence source_image_corneal_processed_data_sequence = 9;
+	PupilCentroidXCoordinate pupil_centroid_x_coordinate = 10;
+	VerticesOfTheOutlineOfPupil vertices_of_the_outline_of_pupil = 11;
+	AnalyzedArea analyzed_area = 12;
+	CornealTopographyMapTypeCodeSequence corneal_topography_map_type_code_sequence = 13;
+	CornealTopographyMappingNormalsSequence corneal_topography_mapping_normals_sequence = 14;
+	SteepKeratometricAxisSequence steep_keratometric_axis_sequence = 15;
+	MinimumKeratometricSequence minimum_keratometric_sequence = 16;
+	CornealEccentricityIndex corneal_eccentricity_index = 17;
+	KeratoconusPredictionIndex keratoconus_prediction_index = 18;
+	CornealTopographyMapQualityEvaluation corneal_topography_map_quality_evaluation = 19;
+	SourceImageSequence source_image_sequence = 20;
+	PupilCentroidYCoordinate pupil_centroid_y_coordinate = 21;
+	SimulatedKeratometricCylinderSequence simulated_keratometric_cylinder_sequence = 22;
+	AverageCornealPower average_corneal_power = 23;
+	SurfaceRegularityIndex surface_regularity_index = 24;
+	SurfaceAsymmetryIndex surface_asymmetry_index = 25;
+}

@@ -1,0 +1,10 @@
+// X-Ray 3D Craniofacial Image Contributing Sources
+// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.21.2.2.html#table_C.8.21.2.2-1
+syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
+import "Sequences.proto";
+import "Attributes.proto";
+
+message X_Ray_threeD_Craniofacial_Image_Contributing_SourcesModule {
+	ContributingSourcesSequence contributing_sources_sequence = 1;
+}
