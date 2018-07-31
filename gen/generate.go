@@ -5,11 +5,8 @@ import (
 	"fmt"
 	"io"
 	"log"
-
 	"strings"
-
 	"regexp"
-
 	"github.com/gradienthealth/dicom-protos/parse"
 )
 
@@ -51,7 +48,6 @@ var VRToProto = map[string]string{
 	"US or OW": "bytes",
 	"OB or OW": "bytes",
 }
-var SQMap = map[string]*parse.Attribute{}
 var SetComplete = map[string]*parse.Attribute{}
 
 const ProtoHeader = "syntax = \"proto3\";"
@@ -100,20 +96,10 @@ func AttributeProto(a *parse.Attribute) string {
 
 // ModuleProto generates the corresponding protocol buffer for the module and writes it to w
 func ModuleProto(module *parse.Module, w io.Writer) error {
-
 	fmt.Fprintf(w, "// %s\n// Link to standard: %s\n", module.Name, module.LinkToStandard)
 	fmt.Fprintln(w, ProtoHeader)
 	fmt.Fprintln(w, "import \"Sequences.proto\";")
 	fmt.Fprintln(w, "")
-
-	// Prepare attribute messages for output.
-	for _, a := range module.Attributes {
-		if val, ok := SQMap[a.Tag]; ok {
-			log.Printf("WARN: Existent Attribute is: %s %s %s\n", val.Name, val.Tag, val.Keyword)
-			log.Printf("WARN: new Attribute is: %s %s %s\n", a.Name, a.Tag, a.Keyword)
-		}
-		SQMap[a.Tag] = a
-	}
 
 	// Write module proto.
 	moduleName := strings.Replace(module.Name, " ", "", -1)
@@ -121,23 +107,19 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 
 	i := 1
 	for _, a := range module.Attributes {
-		if a.Retired || a.IsEmpty() {
-			continue
+		if !(a.Retired || a.IsEmpty()) {
+			fmt.Fprintf(w, "\t%s %s = %d;\n", a.Keyword, getFieldName(a.Name), i)
+			i++
 		}
-		fmt.Fprintf(w, "\t%s %s = %d;\n", a.Keyword, getFieldName(a.Name), i)
-		i++
 	}
-
 	fmt.Fprintln(w, "}")
 
 	return nil
 }
 
-func SequenceAttrProto(a *parse.Attribute, wSeq io.Writer, wAttr io.Writer, sqmap map[string]*parse.Attribute) error {
+// SequenceAttrProto generates two protocol buffer files for Sequences and Leaf Attributes.
+func SequenceAttrProto(a *parse.Attribute, wSeq io.Writer, wAttr io.Writer) error {
 	if val, ok := SetComplete[a.Tag]; ok {
-		// Value already exists don't write it.
-		log.Printf("INFO: Existent Attribute is: %s %s %s %s\n", val.Name, val.Tag, val.Keyword, val.ValueRepresentation)
-		log.Printf("INFO: New Attribute is: %s %s %s %s\n", a.Name, a.Tag, a.Keyword, a.ValueRepresentation)
 		if a.ValueRepresentation != val.ValueRepresentation {
 			log.Print("WARN: ValueRepresentation for same tag does not match\n")
 		}
@@ -148,21 +130,22 @@ func SequenceAttrProto(a *parse.Attribute, wSeq io.Writer, wAttr io.Writer, sqma
 		fmt.Fprintf(wAttr, ap)
 		fmt.Fprintln(wAttr, "")
 	} else {
-		// This attribute is not a leaf node, generate a higher level message and recurse.
+		// This attribute is not a leaf Attribute
 
 		fmt.Fprintf(wSeq, "// DICOM Tag: %s\n", a.Tag)
 		fmt.Fprintf(wSeq, "message %s {\n ", a.Keyword)
 
+		// Write out the sequence protobuf message.
 		i := 1
 		for _, s := range a.SubAttributes {
-			sqmap[s.Tag] = s
 			fmt.Fprintf(wSeq, "\t%s %s = %d;\n", s.Keyword, getFieldName(s.Name), i)
 			i++
 		}
 		fmt.Fprint(wSeq, "} \n\n")
 
-		for _, n := range sqmap {
-			SequenceAttrProto(n, wSeq, wAttr, map[string]*parse.Attribute{})
+		// Recursively call for children.
+		for _, s := range a.SubAttributes {
+			SequenceAttrProto(s, wSeq, wAttr)
 		}
 
 	}
