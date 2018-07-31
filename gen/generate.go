@@ -118,7 +118,7 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 }
 
 // SequenceAttrProto generates two protocol buffer files for Sequences and Leaf Attributes.
-func SequenceAttrProto(a *parse.Attribute, wSeq io.Writer, wAttr io.Writer) error {
+func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 	if val, ok := SetComplete[a.Tag]; ok {
 		if a.ValueRepresentation != val.ValueRepresentation {
 			log.Print("WARN: ValueRepresentation for same tag does not match\n")
@@ -131,7 +131,6 @@ func SequenceAttrProto(a *parse.Attribute, wSeq io.Writer, wAttr io.Writer) erro
 		fmt.Fprintln(wAttr, "")
 	} else {
 		// This attribute is not a leaf Attribute
-
 		fmt.Fprintf(wSeq, "// DICOM Tag: %s\n", a.Tag)
 		fmt.Fprintf(wSeq, "message %s {\n ", a.Keyword)
 
