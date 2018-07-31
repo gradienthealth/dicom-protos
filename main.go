@@ -16,38 +16,59 @@ func moduleNameToFilename(name string) string {
 	return fmt.Sprintf("protos/%s.proto", s2)
 }
 
+func generateFile(name string) *os.File {
+	out, err := os.Create(name)
+	if err != nil {
+		log.Printf("Couldn't create file %s \n", name)
+		log.Panic(err)
+	}
+	return out
+}
+
+
 func main() {
 	af, err := os.Open("dicom-standard/standard/attributes.json")
 	if err != nil {
-		panic(err)
+		log.Panic(err)
 	}
 	defer af.Close()
 
 	mf, err := os.Open("dicom-standard/standard/modules.json")
 	if err != nil {
-		panic(err)
+		log.Panic(err)
 	}
 	defer mf.Close()
 
 	mta, err := os.Open("dicom-standard/standard/module_to_attributes.json")
 	if err != nil {
-		panic(err)
+		log.Panic(err)
 	}
 	defer mta.Close()
+
+	// Generate Sequences
+	seqOut := generateFile("protos/Sequences.proto")
+	fmt.Fprintln(seqOut, gen.ProtoHeader)
+	fmt.Fprintln(seqOut, "import \"Attributes.proto\";")
+	fmt.Fprintln(seqOut, "")
+	defer seqOut.Close()
+
+	attrOut := generateFile("protos/Attributes.proto")
+	fmt.Fprintln(attrOut, gen.ProtoHeader)
+	fmt.Fprintln(attrOut, "")
+	defer attrOut.Close()
 
 	counter := 0
 	modules, err := parse.Parse(af, mf, mta)
 	for _, m := range modules {
-		out, err := os.Create(moduleNameToFilename(m.Name))
-		if err != nil {
-			log.Printf("Couldn't create file %s \n", moduleNameToFilename(m.Name))
-			log.Print(err)
-		}
+		out := generateFile(moduleNameToFilename(m.Name))
 		gen.ModuleProto(m, out) // Generate module proto
 		out.Close()
 		counter++
+
+		for _, a := range m.Attributes {
+			gen.SequenceAttrProto(a, seqOut, attrOut)
+		}
 	}
 
 	log.Printf("Complete. Generated protos for %d modules.", counter)
-
 }

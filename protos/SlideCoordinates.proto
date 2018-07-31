@@ -1,6 +1,0 @@
-// Slide Coordinates
-// Link to standard: http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.12.2.html#table_C.8-78
-syntax = "proto3";
-
-message SlideCoordinatesModule {
-}

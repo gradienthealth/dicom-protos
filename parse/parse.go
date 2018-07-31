@@ -3,6 +3,7 @@ package parse
 import (
 	"encoding/json"
 	"io"
+	"log"
 	"strings"
 )
 
@@ -37,18 +38,33 @@ func (a *Attribute) TagKey() TagKey {
 	return a.tagKey
 }
 
-// AddSubAttribute adds a subattribute in the right place to an attribute "tree" TODO: incoporate into parse flow
-func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey) {
-	if len(keys) == 1 {
-		a.SubAttributes[keys[0]] = at
-	}
-
-	// If map hasn't been made yet, do so
+// AddSubAttribute adds a subattribute in the right place to an attribute "tree"
+func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap AttributeMap, mapping *ModuleToAttributeItem) {
+	// If a's subattribute map hasn't been made yet, do so
 	if a.SubAttributes == nil {
 		a.SubAttributes = make(map[TagKey]*Attribute)
 	}
 
-	a.SubAttributes[keys[1]].AddSubAttribute(at, keys[1:])
+	// If the added attribute only has one key, it is a leaf node and we can stop adding subattributes
+	if len(keys) == 1 {
+		if val, ok := a.SubAttributes[keys[0]]; !ok {
+			a.SubAttributes[keys[0]] = at
+		} else {
+			log.Printf("WARN: Duplicate Attribute Path: %s", mapping.Path ) // badness
+			log.Printf("WARN: Existent Attirbute is: %s \n", at.Tag) // badness
+			log.Printf("WARN: New Attribute is: %s \n\n", val.Tag) // badness
+		}
+		
+		return
+	} else {
+		// The added attribute needs to go deeper
+		if _, ok := a.SubAttributes[keys[0]]; !ok {
+			attr := attributeMap[keys[0]]
+			a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
+		}
+		// Call add sub attribute on the next level		
+		a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:], attributeMap, mapping)
+	}
 }
 
 // AttributeMap represents a mapping from TagKey to Attribute entities
@@ -92,6 +108,17 @@ type ModuleToAttributeItem struct {
 	Path     string `json:"path"`
 }
 
+// PathTagKeys returns a slice of TagKeys from the path of the ModuleToAttributeItem
+func (m ModuleToAttributeItem) PathTagKeys() []TagKey {
+	keys := strings.Split(m.Path, ":")[1:]
+	tagKeys := make([]TagKey, len(keys))
+	// Cast strings to TagKeys
+	for i := range keys {
+		tagKeys[i] = TagKey(keys[i])
+	}
+	return tagKeys
+}
+
 // Parse consumes data from innolitics' dicom-standard format and returns a slice of parsed Modules.
 func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([]*Module, error) {
 	// Parse AttributeMap
@@ -122,8 +149,26 @@ func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([
 	// Associate all modules with their sets of attributes
 	for _, mapping := range moduleToAttributes {
 		tagKey := tagToKey(mapping.Tag)
+		attr, ok := attrMap[tagKey]
+		if !ok {
+			log.Printf("ERROR: NO Attribute MAPPING FOUND: %s", tagKey) // badness
+		}
 		module := moduleMap[mapping.ModuleID]
-		module.AddAttribute(attrMap[tagKey], mapping.Path)
+
+		// Add the attribute to the module or corresponding module attribute chain:
+		pathTagKeys := mapping.PathTagKeys()
+		
+		if len(pathTagKeys) == 1 {
+			// Add as a top level module attribute
+			module.AddAttribute(attr, mapping.Path)
+		} else {
+			// This is not a top level module, leave the module struct values blank but create an attribute map so subattributes can be added
+			if module.Attributes == nil {
+				module.Attributes = make(map[TagKey]*Attribute)
+			}
+
+			module.Attributes[pathTagKeys[0]].AddSubAttribute(&attr, pathTagKeys[1:], attrMap, &mapping) //TODO: no need for attr pointer, it's prob copied anyway since map values are not addressable
+		}
 	}
 
 	// Create slice of modules to return
@@ -142,6 +187,7 @@ func tagToKey(tag string) TagKey {
 	s := strings.Replace(tag, ",", "", -1)
 	s2 := strings.Replace(s, "(", "", -1)
 	s3 := strings.Replace(s2, ")", "", -1)
+	s4 := strings.ToLower(s3)
 
-	return TagKey(s3)
+	return TagKey(s4)
 }
