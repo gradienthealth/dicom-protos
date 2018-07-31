@@ -98,11 +98,13 @@ func AttributeProto(a *parse.Attribute) string {
 func ModuleProto(module *parse.Module, w io.Writer) error {
 	fmt.Fprintf(w, "// %s\n// Link to standard: %s\n", module.Name, module.LinkToStandard)
 	fmt.Fprintln(w, ProtoHeader)
+	fmt.Fprintln(w, "option go_package = \"github.com/gradienthealth/dicom-protos/protos\";")
 	fmt.Fprintln(w, "import \"Sequences.proto\";")
+	fmt.Fprintln(w, "import \"Attributes.proto\";")
 	fmt.Fprintln(w, "")
 
 	// Write module proto.
-	moduleName := strings.Replace(module.Name, " ", "", -1)
+	moduleName := normalizeString(module.Name)
 	fmt.Fprintf(w, "message %sModule {\n", moduleName)
 
 	i := 1
@@ -131,6 +133,8 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 		fmt.Fprintln(wAttr, "")
 	} else {
 		// This attribute is not a leaf Attribute
+		SetComplete[a.Tag] = a
+
 		fmt.Fprintf(wSeq, "// DICOM Tag: %s\n", a.Tag)
 		fmt.Fprintf(wSeq, "message %s {\n ", a.Keyword)
 
@@ -151,18 +155,32 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 	return nil
 }
 
-func getFieldName(name string) string {
-	s := strings.ToLower(name)
-	// Replace characters we do not like in protocol buffer messages
-	s2 := strings.Replace(s, " ", "_", -1)
-	s3 := strings.Replace(s2, "-", "_", -1)
-	s4 := strings.Replace(s3, "(", "", -1)
-	s5 := strings.Replace(s4, ")", "", -1)
-	s6 := strings.Replace(s5, "/", "_", -1)
-	s7 := strings.Replace(s6, "'", "", -1)
-
+func normalizeString(s string) string {
+	s = strings.Replace(s, " ", "_", -1)
+	s = strings.Replace(s, "-", "_", -1)
+	s = strings.Replace(s, "(", "", -1)
+	s = strings.Replace(s, ")", "", -1)
+	s = strings.Replace(s, "/", "_", -1)
+	s = strings.Replace(s, "'", "", -1)
+	s = strings.Replace(s, "&", "_and_", -1)
+	s = strings.Replace(s, "0", "zero", -1)
+	s = strings.Replace(s, "1", "one", -1)
+	s = strings.Replace(s, "2", "two", -1)
+	s = strings.Replace(s, "3", "three", -1)
+	s = strings.Replace(s, "4", "four", -1)
+	s = strings.Replace(s, "5", "five", -1)
+	s = strings.Replace(s, "6", "six", -1)
+	s = strings.Replace(s, "7", "seven", -1)
+	s = strings.Replace(s, "8", "eight", -1)
+	s = strings.Replace(s, "9", "nine", -1)
 	// Only allow ascii characters into the FieldName
 	re := regexp.MustCompile("[[:^ascii:]]")
-	s8 := re.ReplaceAllLiteralString(s7, "")
-	return s8
+	s = re.ReplaceAllLiteralString(s, "")
+	return s
+}
+
+func getFieldName(name string) string {
+	s := strings.ToLower(name)
+	s = normalizeString(s)
+	return s
 }
