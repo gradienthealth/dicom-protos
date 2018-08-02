@@ -50,11 +50,11 @@ func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap A
 		if val, ok := a.SubAttributes[keys[0]]; !ok {
 			a.SubAttributes[keys[0]] = at
 		} else {
-			log.Printf("WARN: Duplicate Attribute Path: %s", mapping.Path ) // badness
-			log.Printf("WARN: Existent Attirbute is: %s \n", at.Tag) // badness
-			log.Printf("WARN: New Attribute is: %s \n\n", val.Tag) // badness
+			log.Printf("WARN: Duplicate Attribute Path: %s", mapping.Path) // badness
+			log.Printf("WARN: Existent Attribute is: %s \n", at.Tag)       // badness
+			log.Printf("WARN: New Attribute is: %s \n\n", val.Tag)         // badness
 		}
-		
+
 		return
 	} else {
 		// The added attribute needs to go deeper
@@ -62,7 +62,7 @@ func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap A
 			attr := attributeMap[keys[0]]
 			a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
 		}
-		// Call add sub attribute on the next level		
+		// Call add sub attribute on the next level
 		a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:], attributeMap, mapping)
 	}
 }
@@ -157,7 +157,7 @@ func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([
 
 		// Add the attribute to the module or corresponding module attribute chain:
 		pathTagKeys := mapping.PathTagKeys()
-		
+
 		if len(pathTagKeys) == 1 {
 			// Add as a top level module attribute
 			module.AddAttribute(attr, mapping.Path)

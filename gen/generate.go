@@ -3,11 +3,11 @@ package gen
 import (
 	"bytes"
 	"fmt"
+	"github.com/gradienthealth/dicom-protos/parse"
 	"io"
 	"log"
-	"strings"
 	"regexp"
-	"github.com/gradienthealth/dicom-protos/parse"
+	"strings"
 )
 
 // VRToProto maps a DICOM VR to the corresponding proto type (Part 5 6.2)

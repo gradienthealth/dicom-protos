@@ -12,7 +12,7 @@ import (
 
 func moduleNameToFilename(name string) string {
 	s := strings.Replace(name, " ", "", -1)
-	s  = strings.Replace(s, "/", "", -1)
+	s = strings.Replace(s, "/", "", -1)
 	return fmt.Sprintf("protos/%s.proto", s)
 }
 
@@ -24,7 +24,6 @@ func generateFile(name string) *os.File {
 	}
 	return out
 }
-
 
 func main() {
 	af, err := os.Open("dicom-standard/standard/attributes.json")
@@ -59,6 +58,9 @@ func main() {
 
 	counter := 0
 	modules, err := parse.Parse(af, mf, mta)
+	if err != nil {
+		log.Panic()
+	}
 	for _, m := range modules {
 		out := generateFile(moduleNameToFilename(m.Name))
 		gen.ModuleProto(m, out) // Generate module proto
