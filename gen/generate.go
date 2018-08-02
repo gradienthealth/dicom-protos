@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"strings"
 	"regexp"
+	"strings"
+
 	"github.com/gradienthealth/dicom-protos/parse"
 )
 
@@ -48,8 +49,11 @@ var VRToProto = map[string]string{
 	"US or OW": "bytes",
 	"OB or OW": "bytes",
 }
+
+// SetComplete holds on to attributes that have been generated already
 var SetComplete = map[string]*parse.Attribute{}
 
+// ProtoHeader represents the protocol buffer header for all protos
 const ProtoHeader = "syntax = \"proto3\";"
 
 // AttributeProto generates the protocol message for an attribute and returns it as a string

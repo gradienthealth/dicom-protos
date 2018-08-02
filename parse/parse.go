@@ -29,7 +29,7 @@ func (a *Attribute) IsEmpty() bool {
 		a.ValueMultiplicity == "" && a.Tag == ""
 }
 
-// Returns the corresponding TagKey of an Attribute
+// TagKey returns the corresponding TagKey of an Attribute
 func (a *Attribute) TagKey() TagKey {
 	if a.tagKey != "" {
 		return a.tagKey
@@ -50,21 +50,21 @@ func (a *Attribute) AddSubAttribute(at *Attribute, keys []TagKey, attributeMap A
 		if val, ok := a.SubAttributes[keys[0]]; !ok {
 			a.SubAttributes[keys[0]] = at
 		} else {
-			log.Printf("WARN: Duplicate Attribute Path: %s", mapping.Path ) // badness
-			log.Printf("WARN: Existent Attirbute is: %s \n", at.Tag) // badness
-			log.Printf("WARN: New Attribute is: %s \n\n", val.Tag) // badness
+			log.Printf("WARN: Duplicate Attribute Path: %s", mapping.Path) // badness
+			log.Printf("WARN: Existent Attribute is: %s \n", at.Tag)       // badness
+			log.Printf("WARN: New Attribute is: %s \n\n", val.Tag)         // badness
 		}
-		
 		return
-	} else {
-		// The added attribute needs to go deeper
-		if _, ok := a.SubAttributes[keys[0]]; !ok {
-			attr := attributeMap[keys[0]]
-			a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
-		}
-		// Call add sub attribute on the next level		
-		a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:], attributeMap, mapping)
 	}
+
+	// The added attribute needs to go deeper
+	if _, ok := a.SubAttributes[keys[0]]; !ok {
+		attr := attributeMap[keys[0]]
+		a.SubAttributes[keys[0]] = &attr //TODO: dont use addresses, copy prob happens anyway
+	}
+	// Call add sub attribute on the next level
+	a.SubAttributes[keys[0]].AddSubAttribute(at, keys[1:], attributeMap, mapping)
+
 }
 
 // AttributeMap represents a mapping from TagKey to Attribute entities
@@ -88,7 +88,10 @@ func (m *Module) AddAttribute(a Attribute, path string) {
 	m.Attributes[a.TagKey()] = &a
 }
 
+// ModuleMap represents a map of string module identifiers to Modules
 type ModuleMap map[string]Module
+
+// ModulePointerMap represents a map of string module IDs to module pointers
 type ModulePointerMap map[string]*Module
 
 // ToPointerMap converts a ModuleMap to a ModulePointerMap
@@ -101,6 +104,7 @@ func (m ModuleMap) ToPointerMap() ModulePointerMap {
 	return mp
 }
 
+// ModuleToAttributeItem represents an item that maps modules to attributes
 type ModuleToAttributeItem struct {
 	ModuleID string `json:"module"`
 	Tag      string `json:"tag"`
@@ -157,7 +161,7 @@ func Parse(attributeSource, moduleSource, moduleToAttributesSource io.Reader) ([
 
 		// Add the attribute to the module or corresponding module attribute chain:
 		pathTagKeys := mapping.PathTagKeys()
-		
+
 		if len(pathTagKeys) == 1 {
 			// Add as a top level module attribute
 			module.AddAttribute(attr, mapping.Path)
