@@ -1,5 +1,11 @@
 # dicom-protos
+[![Build Status](https://travis-ci.org/gradienthealth/dicom-protos.svg?branch=master)](https://travis-ci.org/gradienthealth/dicom-protos) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/gradienthealth/dicom-protos)](https://goreportcard.com/report/github.com/gradienthealth/dicom-protos) 
+[![GoDoc Reference](https://godoc.org/github.com/gradienthealth/dicom-protos?status.svg)](https://godoc.org/github.com/gradienthealth/dicom-protos)
+
 This repository contains generated protocol buffer representations of every DICOM attribute and module. These protocol buffers were generated using the software included in this repository and the [innolitics JSON dump](https://github.com/innolitics/dicom-standard) of the entire DICOM standard. 
+
+Check out our [Golang DICOM parser repo](https://github.com/gradienthealth/dicom) as well, if you're interested in medical imaging. 
 
 # Quick Start
 ## Generate protocol buffers
