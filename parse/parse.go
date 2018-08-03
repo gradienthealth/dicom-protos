@@ -88,7 +88,7 @@ func (m *Module) AddAttribute(a Attribute, path string) {
 	m.Attributes[a.TagKey()] = &a
 }
 
-// Types for sorting:
+// ModulesByID implements the sort.Sorter interface to allow []*Modules to be sorted easily.
 type ModulesByID []*Module
 
 func (m ModulesByID) Len() int           { return len(m) }
