@@ -56,21 +56,15 @@ func main() {
 	fmt.Fprintln(attrOut, "")
 	defer attrOut.Close()
 
-	counter := 0
 	modules, err := parse.Parse(af, mf, mta)
 	if err != nil {
 		log.Panic()
 	}
-	for _, m := range modules {
-		out := generateFile(moduleNameToFilename(m.Name))
-		gen.ModuleProto(m, out) // Generate module proto
-		out.Close()
-		counter++
 
-		for _, a := range m.Attributes {
-			gen.SequenceAttrProto(a, seqOut, attrOut)
-		}
+	numModules, err := gen.ProtosToFile("protos", modules)
+	if err != nil {
+		panic(err)
 	}
 
-	log.Printf("Complete. Generated protos for %d modules.", counter)
+	log.Printf("Complete. Generated protos for %d modules.", numModules)
 }
