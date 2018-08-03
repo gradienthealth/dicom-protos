@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message X_Ray_FiltrationModule {
-	FilterThicknessMinimum filter_thickness_minimum = 1;
-	FilterThicknessMaximum filter_thickness_maximum = 2;
-	FilterBeamPathLengthMinimum filter_beam_path_length_minimum = 3;
-	FilterBeamPathLengthMaximum filter_beam_path_length_maximum = 4;
-	FilterType filter_type = 5;
-	FilterMaterial filter_material = 6;
+	FilterType filter_type = 1;
+	FilterMaterial filter_material = 2;
+	FilterThicknessMinimum filter_thickness_minimum = 3;
+	FilterThicknessMaximum filter_thickness_maximum = 4;
+	FilterBeamPathLengthMinimum filter_beam_path_length_minimum = 5;
+	FilterBeamPathLengthMaximum filter_beam_path_length_maximum = 6;
 }

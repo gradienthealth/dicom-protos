@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message XA_XRF_Multi_frame_PresentationModule {
-	PreferredPlaybackSequencing preferred_playback_sequencing = 1;
-	FrameDisplaySequence frame_display_sequence = 2;
+	FrameDisplaySequence frame_display_sequence = 1;
+	PreferredPlaybackSequencing preferred_playback_sequencing = 2;
 }

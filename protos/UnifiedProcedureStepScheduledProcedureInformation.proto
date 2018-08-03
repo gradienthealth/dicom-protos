@@ -6,21 +6,21 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Unified_Procedure_Step_Scheduled_Procedure_InformationModule {
-	ScheduledProcedureStepPriority scheduled_procedure_step_priority = 1;
-	ScheduledProcedureStepModificationDateTime scheduled_procedure_step_modification_datetime = 2;
-	WorklistLabel worklist_label = 3;
-	CommentsOnTheScheduledProcedureStep comments_on_the_scheduled_procedure_step = 4;
-	ScheduledStationClassCodeSequence scheduled_station_class_code_sequence = 5;
-	ExpectedCompletionDateTime expected_completion_datetime = 6;
-	ScheduledHumanPerformersSequence scheduled_human_performers_sequence = 7;
-	ScheduledProcedureStepStartDateTime scheduled_procedure_step_start_datetime = 8;
-	ScheduledProcessingParametersSequence scheduled_processing_parameters_sequence = 9;
-	InputReadinessState input_readiness_state = 10;
-	StudyInstanceUID study_instance_uid = 11;
-	OutputDestinationSequence output_destination_sequence = 12;
-	ProcedureStepLabel procedure_step_label = 13;
-	ScheduledStationGeographicLocationCodeSequence scheduled_station_geographic_location_code_sequence = 14;
-	ScheduledWorkitemCodeSequence scheduled_workitem_code_sequence = 15;
-	ScheduledStationNameCodeSequence scheduled_station_name_code_sequence = 16;
-	InputInformationSequence input_information_sequence = 17;
+	StudyInstanceUID study_instance_uid = 1;
+	CommentsOnTheScheduledProcedureStep comments_on_the_scheduled_procedure_step = 2;
+	ScheduledProcedureStepStartDateTime scheduled_procedure_step_start_datetime = 3;
+	ScheduledProcedureStepModificationDateTime scheduled_procedure_step_modification_datetime = 4;
+	ExpectedCompletionDateTime expected_completion_datetime = 5;
+	ScheduledWorkitemCodeSequence scheduled_workitem_code_sequence = 6;
+	InputInformationSequence input_information_sequence = 7;
+	ScheduledStationNameCodeSequence scheduled_station_name_code_sequence = 8;
+	ScheduledStationClassCodeSequence scheduled_station_class_code_sequence = 9;
+	ScheduledStationGeographicLocationCodeSequence scheduled_station_geographic_location_code_sequence = 10;
+	ScheduledHumanPerformersSequence scheduled_human_performers_sequence = 11;
+	InputReadinessState input_readiness_state = 12;
+	OutputDestinationSequence output_destination_sequence = 13;
+	ScheduledProcedureStepPriority scheduled_procedure_step_priority = 14;
+	WorklistLabel worklist_label = 15;
+	ProcedureStepLabel procedure_step_label = 16;
+	ScheduledProcessingParametersSequence scheduled_processing_parameters_sequence = 17;
 }

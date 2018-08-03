@@ -8,13 +8,13 @@ import "Attributes.proto";
 message Patient_IdentificationModule {
 	PatientName patients_name = 1;
 	PatientID patient_id = 2;
-	OtherPatientIDsSequence other_patient_ids_sequence = 3;
-	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 4;
-	IssuerOfPatientID issuer_of_patient_id = 5;
-	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 6;
+	IssuerOfPatientID issuer_of_patient_id = 3;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 4;
+	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 5;
+	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 6;
 	OtherPatientNames other_patient_names = 7;
-	PatientBirthName patients_birth_name = 8;
-	PatientMotherBirthName patients_mothers_birth_name = 9;
-	SourcePatientGroupIdentificationSequence source_patient_group_identification_sequence = 10;
-	GroupOfPatientsIdentificationSequence group_of_patients_identification_sequence = 11;
+	OtherPatientIDsSequence other_patient_ids_sequence = 8;
+	PatientBirthName patients_birth_name = 9;
+	PatientMotherBirthName patients_mothers_birth_name = 10;
+	ReferencedPatientPhotoSequence referenced_patient_photo_sequence = 11;
 }

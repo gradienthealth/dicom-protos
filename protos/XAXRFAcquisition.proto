@@ -6,20 +6,20 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message XA_XRF_AcquisitionModule {
-	RadiationMode radiation_mode = 1;
-	RectificationType rectification_type = 2;
-	AcquiredImageAreaDoseProduct acquired_image_area_dose_product = 3;
-	KVP kvp = 4;
-	RadiationSetting radiation_setting = 5;
-	ExposureTimeInms exposure_time_in_ms = 6;
-	AveragePulseWidth average_pulse_width = 7;
-	XRayReceptorType x_ray_receptor_type = 8;
-	DistanceReceptorPlaneToDetectorHousing distance_receptor_plane_to_detector_housing = 9;
-	PositionerType positioner_type = 10;
-	CArmPositionerTabletopRelationship c_arm_positioner_tabletop_relationship = 11;
-	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 12;
-	ExposureInmAs exposure_in_mas = 13;
-	AcquisitionDuration acquisition_duration = 14;
-	FocalSpots focal_spots = 15;
-	AnodeTargetMaterial anode_target_material = 16;
+	KVP kvp = 1;
+	AveragePulseWidth average_pulse_width = 2;
+	RadiationSetting radiation_setting = 3;
+	RectificationType rectification_type = 4;
+	RadiationMode radiation_mode = 5;
+	FocalSpots focal_spots = 6;
+	AnodeTargetMaterial anode_target_material = 7;
+	PositionerType positioner_type = 8;
+	AcquisitionDuration acquisition_duration = 9;
+	ExposureTimeInms exposure_time_in_ms = 10;
+	XRayTubeCurrentInmA x_ray_tube_current_in_ma = 11;
+	ExposureInmAs exposure_in_mas = 12;
+	XRayReceptorType x_ray_receptor_type = 13;
+	DistanceReceptorPlaneToDetectorHousing distance_receptor_plane_to_detector_housing = 14;
+	AcquiredImageAreaDoseProduct acquired_image_area_dose_product = 15;
+	CArmPositionerTabletopRelationship c_arm_positioner_tabletop_relationship = 16;
 }

@@ -6,19 +6,19 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Patient_MedicalModule {
-	PregnancyStatus pregnancy_status = 1;
-	PatientBodyMassIndex patients_body_mass_index = 2;
+	PatientBodyMassIndex patients_body_mass_index = 1;
+	MeasuredAPDimension measured_ap_dimension = 2;
 	MeasuredLateralDimension measured_lateral_dimension = 3;
-	Allergies allergies = 4;
-	LastMenstrualDate last_menstrual_date = 5;
-	MeasuredAPDimension measured_ap_dimension = 6;
+	MedicalAlerts medical_alerts = 4;
+	Allergies allergies = 5;
+	SmokingStatus smoking_status = 6;
 	AdditionalPatientHistory additional_patient_history = 7;
-	PatientSexNeutered patients_sex_neutered = 8;
-	SpecialNeeds special_needs = 9;
-	PatientState patient_state = 10;
-	PertinentDocumentsSequence pertinent_documents_sequence = 11;
-	PertinentResourcesSequence pertinent_resources_sequence = 12;
-	PatientClinicalTrialParticipationSequence patient_clinical_trial_participation_sequence = 13;
-	MedicalAlerts medical_alerts = 14;
-	SmokingStatus smoking_status = 15;
+	PregnancyStatus pregnancy_status = 8;
+	LastMenstrualDate last_menstrual_date = 9;
+	PatientSexNeutered patients_sex_neutered = 10;
+	SpecialNeeds special_needs = 11;
+	PertinentDocumentsSequence pertinent_documents_sequence = 12;
+	PertinentResourcesSequence pertinent_resources_sequence = 13;
+	PatientState patient_state = 14;
+	PatientClinicalTrialParticipationSequence patient_clinical_trial_participation_sequence = 15;
 }

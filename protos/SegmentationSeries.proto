@@ -6,7 +6,7 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Segmentation_SeriesModule {
-	SeriesNumber series_number = 1;
+	Modality modality = 1;
 	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
-	Modality modality = 3;
+	SeriesNumber series_number = 3;
 }

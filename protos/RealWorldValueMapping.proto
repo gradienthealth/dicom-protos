@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Real_World_Value_MappingModule {
-	InstanceNumber instance_number = 1;
-	ConceptNameCodeSequence concept_name_code_sequence = 2;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 4;
-	ReferencedImageRealWorldValueMappingSequence referenced_image_real_world_value_mapping_sequence = 5;
-	ContentDate content_date = 6;
-	ContentTime content_time = 7;
-	ContentLabel content_label = 8;
-	ContentDescription content_description = 9;
-	ContentCreatorName content_creators_name = 10;
+	ContentDate content_date = 1;
+	ContentTime content_time = 2;
+	InstanceNumber instance_number = 3;
+	ReferencedImageRealWorldValueMappingSequence referenced_image_real_world_value_mapping_sequence = 4;
+	ConceptNameCodeSequence concept_name_code_sequence = 5;
+	ContentLabel content_label = 6;
+	ContentDescription content_description = 7;
+	ContentCreatorName content_creators_name = 8;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 9;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 10;
 }

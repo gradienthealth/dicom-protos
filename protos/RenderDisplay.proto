@@ -7,8 +7,8 @@ import "Attributes.proto";
 
 message Render_DisplayModule {
 	PixelPresentation pixel_presentation = 1;
-	VolumeStreamSequence volume_stream_sequence = 2;
-	PresentationStateCompositorComponentSequence presentation_state_compositor_component_sequence = 3;
-	ICCProfile icc_profile = 4;
-	ColorSpace color_space = 5;
+	ICCProfile icc_profile = 2;
+	ColorSpace color_space = 3;
+	PresentationStateCompositorComponentSequence presentation_state_compositor_component_sequence = 4;
+	VolumeStreamSequence volume_stream_sequence = 5;
 }

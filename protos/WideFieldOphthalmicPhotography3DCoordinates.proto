@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Wide_Field_Ophthalmic_Photography_threeD_CoordinatesModule {
-	TwoDimensionalToThreeDimensionalMapSequence two_dimensional_to_three_dimensional_map_sequence = 1;
-	AnatomicRegionSequence anatomic_region_sequence = 2;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	AnatomicRegionSequence anatomic_region_sequence = 1;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
+	OphthalmicAxialLength ophthalmic_axial_length = 3;
 	TransformationMethodCodeSequence transformation_method_code_sequence = 4;
 	TransformationAlgorithmSequence transformation_algorithm_sequence = 5;
-	OphthalmicAxialLength ophthalmic_axial_length = 6;
-	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 7;
-	OphthalmicFOV ophthalmic_fov = 8;
+	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 6;
+	OphthalmicFOV ophthalmic_fov = 7;
+	TwoDimensionalToThreeDimensionalMapSequence two_dimensional_to_three_dimensional_map_sequence = 8;
 }

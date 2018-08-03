@@ -6,20 +6,20 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Basic_Film_Box_PresentationModule {
-	FilmSizeID film_size_id = 1;
-	ConfigurationInformation configuration_information = 2;
-	ImageDisplayFormat image_display_format = 3;
+	ICCProfile icc_profile = 1;
+	ImageDisplayFormat image_display_format = 2;
+	AnnotationDisplayFormatID annotation_display_format_id = 3;
 	FilmOrientation film_orientation = 4;
-	SmoothingType smoothing_type = 5;
-	Illumination illumination = 6;
-	RequestedResolutionID requested_resolution_id = 7;
-	MagnificationType magnification_type = 8;
+	FilmSizeID film_size_id = 5;
+	MagnificationType magnification_type = 6;
+	SmoothingType smoothing_type = 7;
+	BorderDensity border_density = 8;
 	EmptyImageDensity empty_image_density = 9;
-	MaxDensity max_density = 10;
-	AnnotationDisplayFormatID annotation_display_format_id = 11;
-	BorderDensity border_density = 12;
-	MinDensity min_density = 13;
-	Trim trim = 14;
+	MinDensity min_density = 10;
+	MaxDensity max_density = 11;
+	Trim trim = 12;
+	ConfigurationInformation configuration_information = 13;
+	Illumination illumination = 14;
 	ReflectedAmbientLight reflected_ambient_light = 15;
-	ICCProfile icc_profile = 16;
+	RequestedResolutionID requested_resolution_id = 16;
 }

@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Enhanced_SeriesModule {
-	SeriesNumber series_number = 1;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
+	SeriesNumber series_number = 2;
 }

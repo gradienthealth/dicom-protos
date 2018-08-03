@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message NM_ReconstructionModule {
-	ReconstructionDiameter reconstruction_diameter = 1;
-	ConvolutionKernel convolution_kernel = 2;
-	SliceThickness slice_thickness = 3;
-	SliceLocation slice_location = 4;
-	SliceProgressionDirection slice_progression_direction = 5;
-	SpacingBetweenSlices spacing_between_slices = 6;
+	SliceThickness slice_thickness = 1;
+	SpacingBetweenSlices spacing_between_slices = 2;
+	ReconstructionDiameter reconstruction_diameter = 3;
+	ConvolutionKernel convolution_kernel = 4;
+	SliceLocation slice_location = 5;
+	SliceProgressionDirection slice_progression_direction = 6;
 }

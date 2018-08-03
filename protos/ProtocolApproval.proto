@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Protocol_ApprovalModule {
-	ApprovalSubjectSequence approval_subject_sequence = 1;
-	ApprovalSequence approval_sequence = 2;
+	ApprovalSequence approval_sequence = 1;
+	ApprovalSubjectSequence approval_subject_sequence = 2;
 }

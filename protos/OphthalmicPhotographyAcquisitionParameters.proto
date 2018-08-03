@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Ophthalmic_Photography_Acquisition_ParametersModule {
-	DegreeOfDilation degree_of_dilation = 1;
+	PatientEyeMovementCommanded patient_eye_movement_commanded = 1;
 	PatientEyeMovementCommandCodeSequence patient_eye_movement_command_code_sequence = 2;
-	HorizontalFieldOfView horizontal_field_of_view = 3;
-	PupilDilated pupil_dilated = 4;
-	IntraOcularPressure intra_ocular_pressure = 5;
-	MydriaticAgentSequence mydriatic_agent_sequence = 6;
-	PatientEyeMovementCommanded patient_eye_movement_commanded = 7;
+	EmmetropicMagnification emmetropic_magnification = 3;
+	IntraOcularPressure intra_ocular_pressure = 4;
+	HorizontalFieldOfView horizontal_field_of_view = 5;
+	PupilDilated pupil_dilated = 6;
+	DegreeOfDilation degree_of_dilation = 7;
 	RefractiveStateSequence refractive_state_sequence = 8;
-	EmmetropicMagnification emmetropic_magnification = 9;
+	MydriaticAgentSequence mydriatic_agent_sequence = 9;
 }

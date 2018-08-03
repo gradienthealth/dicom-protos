@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Image_Acquisition_ResultsModule {
-	PerformedSeriesSequence performed_series_sequence = 1;
-	Modality modality = 2;
-	StudyID study_id = 3;
-	PerformedProtocolCodeSequence performed_protocol_code_sequence = 4;
+	Modality modality = 1;
+	StudyID study_id = 2;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 3;
+	PerformedSeriesSequence performed_series_sequence = 4;
 }

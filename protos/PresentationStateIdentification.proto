@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Presentation_State_IdentificationModule {
-	ContentLabel content_label = 1;
-	ContentDescription content_description = 2;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 4;
-	PresentationCreationTime presentation_creation_time = 5;
-	InstanceNumber instance_number = 6;
+	InstanceNumber instance_number = 1;
+	ConceptNameCodeSequence concept_name_code_sequence = 2;
+	ContentLabel content_label = 3;
+	ContentDescription content_description = 4;
+	PresentationCreationDate presentation_creation_date = 5;
+	PresentationCreationTime presentation_creation_time = 6;
 	ContentCreatorName content_creators_name = 7;
-	PresentationCreationDate presentation_creation_date = 8;
-	ConceptNameCodeSequence concept_name_code_sequence = 9;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 8;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 9;
 }

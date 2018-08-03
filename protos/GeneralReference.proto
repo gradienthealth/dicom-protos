@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message General_ReferenceModule {
-	DerivationDescription derivation_description = 1;
-	DerivationCodeSequence derivation_code_sequence = 2;
-	SourceImageSequence source_image_sequence = 3;
-	SourceInstanceSequence source_instance_sequence = 4;
-	ReferencedImageSequence referenced_image_sequence = 5;
-	ReferencedInstanceSequence referenced_instance_sequence = 6;
+	ReferencedImageSequence referenced_image_sequence = 1;
+	ReferencedInstanceSequence referenced_instance_sequence = 2;
+	DerivationDescription derivation_description = 3;
+	SourceImageSequence source_image_sequence = 4;
+	DerivationCodeSequence derivation_code_sequence = 5;
+	SourceInstanceSequence source_instance_sequence = 6;
 }

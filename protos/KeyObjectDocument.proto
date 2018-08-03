@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Key_Object_DocumentModule {
-	InstanceNumber instance_number = 1;
-	ContentDate content_date = 2;
-	ContentTime content_time = 3;
+	ContentDate content_date = 1;
+	ContentTime content_time = 2;
+	InstanceNumber instance_number = 3;
 	ReferencedRequestSequence referenced_request_sequence = 4;
 	CurrentRequestedProcedureEvidenceSequence current_requested_procedure_evidence_sequence = 5;
 	IdenticalDocumentsSequence identical_documents_sequence = 6;

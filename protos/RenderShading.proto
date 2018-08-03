@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Render_ShadingModule {
-	DiffuseReflectionIntensity diffuse_reflection_intensity = 1;
-	SpecularReflectionIntensity specular_reflection_intensity = 2;
-	Shininess shininess = 3;
-	ShadingStyle shading_style = 4;
-	AmbientReflectionIntensity ambient_reflection_intensity = 5;
-	LightDirection light_direction = 6;
+	ShadingStyle shading_style = 1;
+	AmbientReflectionIntensity ambient_reflection_intensity = 2;
+	LightDirection light_direction = 3;
+	DiffuseReflectionIntensity diffuse_reflection_intensity = 4;
+	SpecularReflectionIntensity specular_reflection_intensity = 5;
+	Shininess shininess = 6;
 }

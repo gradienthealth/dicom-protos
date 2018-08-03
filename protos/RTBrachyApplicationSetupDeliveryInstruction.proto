@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message RT_Brachy_Application_Setup_Delivery_InstructionModule {
-	ContinuationPulseNumber continuation_pulse_number = 1;
-	BrachyTaskSequence brachy_task_sequence = 2;
+	BrachyTaskSequence brachy_task_sequence = 1;
+	ContinuationPulseNumber continuation_pulse_number = 2;
 	OmittedApplicationSetupSequence omitted_application_setup_sequence = 3;
-	ReferencedRTPlanSequence referenced_rt_plan_sequence = 4;
-	ReferencedFractionGroupNumber referenced_fraction_group_number = 5;
-	CurrentFractionNumber current_fraction_number = 6;
+	CurrentFractionNumber current_fraction_number = 4;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 5;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 6;
 }

@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Structure_SetModule {
-	StructureSetLabel structure_set_label = 1;
-	StructureSetName structure_set_name = 2;
-	InstanceNumber instance_number = 3;
-	StructureSetROISequence structure_set_roi_sequence = 4;
-	PredecessorStructureSetSequence predecessor_structure_set_sequence = 5;
-	StructureSetDescription structure_set_description = 6;
-	StructureSetDate structure_set_date = 7;
-	StructureSetTime structure_set_time = 8;
-	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 9;
+	InstanceNumber instance_number = 1;
+	StructureSetLabel structure_set_label = 2;
+	StructureSetName structure_set_name = 3;
+	StructureSetDescription structure_set_description = 4;
+	StructureSetDate structure_set_date = 5;
+	StructureSetTime structure_set_time = 6;
+	ReferencedFrameOfReferenceSequence referenced_frame_of_reference_sequence = 7;
+	PredecessorStructureSetSequence predecessor_structure_set_sequence = 8;
+	StructureSetROISequence structure_set_roi_sequence = 9;
 }

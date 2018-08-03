@@ -7,6 +7,6 @@ import "Attributes.proto";
 
 message XA_XRF_SeriesModule {
 	Modality modality = 1;
-	SeriesNumber series_number = 2;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	SeriesNumber series_number = 3;
 }

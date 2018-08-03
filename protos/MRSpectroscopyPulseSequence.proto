@@ -6,18 +6,18 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message MR_Spectroscopy_Pulse_SequenceModule {
-	CoverageOfKSpace coverage_of_k_space = 1;
-	RectilinearPhaseEncodeReordering rectilinear_phase_encode_reordering = 2;
-	SegmentedKSpaceTraversal segmented_k_space_traversal = 3;
-	SpectrallySelectedSuppression spectrally_selected_suppression = 4;
-	EchoPeakPosition echo_peak_position = 5;
-	EchoPulseSequence echo_pulse_sequence = 6;
-	MultiPlanarExcitation multi_planar_excitation = 7;
+	PulseSequenceName pulse_sequence_name = 1;
+	EchoPulseSequence echo_pulse_sequence = 2;
+	MultipleSpinEcho multiple_spin_echo = 3;
+	MultiPlanarExcitation multi_planar_excitation = 4;
+	SteadyStatePulseSequence steady_state_pulse_sequence = 5;
+	EchoPlanarPulseSequence echo_planar_pulse_sequence = 6;
+	SpectrallySelectedSuppression spectrally_selected_suppression = 7;
 	GeometryOfKSpaceTraversal geometry_of_k_space_traversal = 8;
-	NumberOfKSpaceTrajectories number_of_k_space_trajectories = 9;
-	MRSpectroscopyAcquisitionType mr_spectroscopy_acquisition_type = 10;
-	MultipleSpinEcho multiple_spin_echo = 11;
-	EchoPlanarPulseSequence echo_planar_pulse_sequence = 12;
-	PulseSequenceName pulse_sequence_name = 13;
-	SteadyStatePulseSequence steady_state_pulse_sequence = 14;
+	SegmentedKSpaceTraversal segmented_k_space_traversal = 9;
+	RectilinearPhaseEncodeReordering rectilinear_phase_encode_reordering = 10;
+	NumberOfKSpaceTrajectories number_of_k_space_trajectories = 11;
+	CoverageOfKSpace coverage_of_k_space = 12;
+	MRSpectroscopyAcquisitionType mr_spectroscopy_acquisition_type = 13;
+	EchoPeakPosition echo_peak_position = 14;
 }

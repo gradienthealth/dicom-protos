@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Scan_ProcedureModule {
-	ShotOffsetTime shot_offset_time = 1;
-	SurfaceScanAcquisitionTypeCodeSequence surface_scan_acquisition_type_code_sequence = 2;
-	SurfaceScanModeCodeSequence surface_scan_mode_code_sequence = 3;
-	RegistrationMethodCodeSequence registration_method_code_sequence = 4;
-	InstanceNumber instance_number = 5;
-	AcquisitionNumber acquisition_number = 6;
-	AcquisitionDateTime acquisition_datetime = 7;
-	ShotDurationTime shot_duration_time = 8;
+	AcquisitionDateTime acquisition_datetime = 1;
+	AcquisitionNumber acquisition_number = 2;
+	InstanceNumber instance_number = 3;
+	SurfaceScanAcquisitionTypeCodeSequence surface_scan_acquisition_type_code_sequence = 4;
+	SurfaceScanModeCodeSequence surface_scan_mode_code_sequence = 5;
+	RegistrationMethodCodeSequence registration_method_code_sequence = 6;
+	ShotDurationTime shot_duration_time = 7;
+	ShotOffsetTime shot_offset_time = 8;
 }

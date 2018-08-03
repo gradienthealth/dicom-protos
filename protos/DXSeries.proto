@@ -7,6 +7,6 @@ import "Attributes.proto";
 
 message DX_SeriesModule {
 	Modality modality = 1;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
-	PresentationIntentType presentation_intent_type = 3;
+	PresentationIntentType presentation_intent_type = 2;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
 }

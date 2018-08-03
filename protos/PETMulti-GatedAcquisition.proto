@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message PET_Multi_Gated_AcquisitionModule {
-	BeatRejectionFlag beat_rejection_flag = 1;
-	TriggerSourceOrType trigger_source_or_type = 2;
-	PVCRejection pvc_rejection = 3;
-	SkipBeats skip_beats = 4;
-	HeartRate heart_rate = 5;
-	CardiacFramingType cardiac_framing_type = 6;
+	TriggerSourceOrType trigger_source_or_type = 1;
+	CardiacFramingType cardiac_framing_type = 2;
+	BeatRejectionFlag beat_rejection_flag = 3;
+	PVCRejection pvc_rejection = 4;
+	SkipBeats skip_beats = 5;
+	HeartRate heart_rate = 6;
 }

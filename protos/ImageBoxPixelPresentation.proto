@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Image_Box_Pixel_PresentationModule {
-	Polarity polarity = 1;
-	ConfigurationInformation configuration_information = 2;
-	RequestedDecimateCropBehavior requested_decimate_crop_behavior = 3;
-	BasicGrayscaleImageSequence basic_grayscale_image_sequence = 4;
-	BasicColorImageSequence basic_color_image_sequence = 5;
-	ImageBoxPosition image_box_position = 6;
-	MagnificationType magnification_type = 7;
-	SmoothingType smoothing_type = 8;
-	RequestedImageSize requested_image_size = 9;
+	MagnificationType magnification_type = 1;
+	SmoothingType smoothing_type = 2;
+	ConfigurationInformation configuration_information = 3;
+	ImageBoxPosition image_box_position = 4;
+	Polarity polarity = 5;
+	RequestedImageSize requested_image_size = 6;
+	RequestedDecimateCropBehavior requested_decimate_crop_behavior = 7;
+	BasicGrayscaleImageSequence basic_grayscale_image_sequence = 8;
+	BasicColorImageSequence basic_color_image_sequence = 9;
 }

@@ -6,11 +6,11 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Color_Palette_DefinitionModule {
-	ContentDescription content_description = 1;
+	InstanceNumber instance_number = 1;
 	ConceptNameCodeSequence concept_name_code_sequence = 2;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
-	ContentCreatorName content_creators_name = 4;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 5;
-	InstanceNumber instance_number = 6;
-	ContentLabel content_label = 7;
+	ContentLabel content_label = 3;
+	ContentDescription content_description = 4;
+	ContentCreatorName content_creators_name = 5;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 6;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 7;
 }

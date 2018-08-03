@@ -7,7 +7,7 @@ import "Attributes.proto";
 
 message Volumetric_Presentation_State_RelationshipModule {
 	VolumetricPresentationStateInputSequence volumetric_presentation_state_input_sequence = 1;
-	GlobalCrop global_crop = 2;
-	GlobalCroppingSpecificationIndex global_cropping_specification_index = 3;
-	VolumetricPresentationInputSetSequence volumetric_presentation_input_set_sequence = 4;
+	VolumetricPresentationInputSetSequence volumetric_presentation_input_set_sequence = 2;
+	GlobalCrop global_crop = 3;
+	GlobalCroppingSpecificationIndex global_cropping_specification_index = 4;
 }

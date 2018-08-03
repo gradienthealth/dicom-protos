@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message X_Ray_TableModule {
-	TableLateralIncrement table_lateral_increment = 1;
-	TableAngle table_angle = 2;
-	TableMotion table_motion = 3;
-	TableVerticalIncrement table_vertical_increment = 4;
-	TableLongitudinalIncrement table_longitudinal_increment = 5;
+	TableMotion table_motion = 1;
+	TableVerticalIncrement table_vertical_increment = 2;
+	TableLateralIncrement table_lateral_increment = 3;
+	TableLongitudinalIncrement table_longitudinal_increment = 4;
+	TableAngle table_angle = 5;
 }

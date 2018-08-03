@@ -6,21 +6,21 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Mammography_ImageModule {
-	PartialViewDescription partial_view_description = 1;
-	ImageType image_type = 2;
-	ImageLaterality image_laterality = 3;
-	PositionerPrimaryAngleDirection positioner_primary_angle_direction = 4;
-	PartialViewCodeSequence partial_view_code_sequence = 5;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 6;
-	PositionerType positioner_type = 7;
-	DistanceSourceToPatient distance_source_to_patient = 8;
-	ViewCodeSequence view_code_sequence = 9;
-	DistanceSourceToDetector distance_source_to_detector = 10;
-	BreastImplantPresent breast_implant_present = 11;
-	OrganExposed organ_exposed = 12;
+	ImageType image_type = 1;
+	AnatomicRegionSequence anatomic_region_sequence = 2;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	DistanceSourceToDetector distance_source_to_detector = 4;
+	DistanceSourceToPatient distance_source_to_patient = 5;
+	PositionerType positioner_type = 6;
+	PositionerPrimaryAngle positioner_primary_angle = 7;
+	PositionerSecondaryAngle positioner_secondary_angle = 8;
+	BiopsyTargetSequence biopsy_target_sequence = 9;
+	PositionerPrimaryAngleDirection positioner_primary_angle_direction = 10;
+	ImageLaterality image_laterality = 11;
+	BreastImplantPresent breast_implant_present = 12;
 	PartialView partial_view = 13;
-	AnatomicRegionSequence anatomic_region_sequence = 14;
-	BiopsyTargetSequence biopsy_target_sequence = 15;
-	PositionerPrimaryAngle positioner_primary_angle = 16;
-	PositionerSecondaryAngle positioner_secondary_angle = 17;
+	PartialViewDescription partial_view_description = 14;
+	PartialViewCodeSequence partial_view_code_sequence = 15;
+	OrganExposed organ_exposed = 16;
+	ViewCodeSequence view_code_sequence = 17;
 }

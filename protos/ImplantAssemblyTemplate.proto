@@ -6,19 +6,19 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Implant_Assembly_TemplateModule {
-	ImplantAssemblyTemplateType implant_assembly_template_type = 1;
-	ImplantAssemblyTemplateTargetAnatomySequence implant_assembly_template_target_anatomy_sequence = 2;
-	EncapsulatedDocument encapsulated_document = 3;
-	ImplantAssemblyTemplateVersion implant_assembly_template_version = 4;
-	ReplacedImplantAssemblyTemplateSequence replaced_implant_assembly_template_sequence = 5;
-	DerivationImplantAssemblyTemplateSequence derivation_implant_assembly_template_sequence = 6;
-	OriginalImplantAssemblyTemplateSequence original_implant_assembly_template_sequence = 7;
-	ProcedureTypeCodeSequence procedure_type_code_sequence = 8;
-	SurgicalTechnique surgical_technique = 9;
-	ComponentTypesSequence component_types_sequence = 10;
-	EffectiveDateTime effective_datetime = 11;
-	ImplantAssemblyTemplateName implant_assembly_template_name = 12;
-	ImplantAssemblyTemplateIssuer implant_assembly_template_issuer = 13;
-	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 14;
+	EncapsulatedDocument encapsulated_document = 1;
+	MIMETypeOfEncapsulatedDocument mime_type_of_encapsulated_document = 2;
+	EffectiveDateTime effective_datetime = 3;
+	ImplantAssemblyTemplateName implant_assembly_template_name = 4;
+	ImplantAssemblyTemplateIssuer implant_assembly_template_issuer = 5;
+	ImplantAssemblyTemplateVersion implant_assembly_template_version = 6;
+	ReplacedImplantAssemblyTemplateSequence replaced_implant_assembly_template_sequence = 7;
+	ImplantAssemblyTemplateType implant_assembly_template_type = 8;
+	OriginalImplantAssemblyTemplateSequence original_implant_assembly_template_sequence = 9;
+	DerivationImplantAssemblyTemplateSequence derivation_implant_assembly_template_sequence = 10;
+	ImplantAssemblyTemplateTargetAnatomySequence implant_assembly_template_target_anatomy_sequence = 11;
+	ProcedureTypeCodeSequence procedure_type_code_sequence = 12;
+	SurgicalTechnique surgical_technique = 13;
+	ComponentTypesSequence component_types_sequence = 14;
 	ComponentAssemblySequence component_assembly_sequence = 15;
 }

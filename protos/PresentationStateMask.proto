@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Presentation_State_MaskModule {
-	MaskSubtractionSequence mask_subtraction_sequence = 1;
-	RecommendedViewingMode recommended_viewing_mode = 2;
+	RecommendedViewingMode recommended_viewing_mode = 1;
+	MaskSubtractionSequence mask_subtraction_sequence = 2;
 }

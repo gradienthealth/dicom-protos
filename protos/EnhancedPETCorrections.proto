@@ -6,21 +6,21 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Enhanced_PET_CorrectionsModule {
-	NonUniformRadialSamplingCorrected non_uniform_radial_sampling_corrected = 1;
-	RandomsCorrectionMethod randoms_correction_method = 2;
-	AttenuationCorrectionSource attenuation_correction_source = 3;
-	ScatterCorrectionMethod scatter_correction_method = 4;
+	DecayCorrectionDateTime decay_correction_datetime = 1;
+	AttenuationCorrectionSource attenuation_correction_source = 2;
+	DecayCorrected decay_corrected = 3;
+	AttenuationCorrected attenuation_corrected = 4;
 	ScatterCorrected scatter_corrected = 5;
-	AttenuationCorrected attenuation_corrected = 6;
-	CountLossNormalizationCorrected count_loss_normalization_corrected = 7;
-	RandomsCorrected randoms_corrected = 8;
-	SensitivityCalibrated sensitivity_calibrated = 9;
-	DetectorNormalizationCorrection detector_normalization_correction = 10;
-	AttenuationCorrectionTemporalRelationship attenuation_correction_temporal_relationship = 11;
-	DecayCorrectionDateTime decay_correction_datetime = 12;
-	CountsSource counts_source = 13;
-	GantryMotionCorrected gantry_motion_corrected = 14;
-	DecayCorrected decay_corrected = 15;
-	PatientMotionCorrected patient_motion_corrected = 16;
-	DeadTimeCorrected dead_time_corrected = 17;
+	DeadTimeCorrected dead_time_corrected = 6;
+	GantryMotionCorrected gantry_motion_corrected = 7;
+	PatientMotionCorrected patient_motion_corrected = 8;
+	CountLossNormalizationCorrected count_loss_normalization_corrected = 9;
+	RandomsCorrected randoms_corrected = 10;
+	NonUniformRadialSamplingCorrected non_uniform_radial_sampling_corrected = 11;
+	SensitivityCalibrated sensitivity_calibrated = 12;
+	DetectorNormalizationCorrection detector_normalization_correction = 13;
+	AttenuationCorrectionTemporalRelationship attenuation_correction_temporal_relationship = 14;
+	CountsSource counts_source = 15;
+	RandomsCorrectionMethod randoms_correction_method = 16;
+	ScatterCorrectionMethod scatter_correction_method = 17;
 }

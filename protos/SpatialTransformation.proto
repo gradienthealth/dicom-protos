@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Spatial_TransformationModule {
-	ImageRotation image_rotation = 1;
-	ImageHorizontalFlip image_horizontal_flip = 2;
+	ImageHorizontalFlip image_horizontal_flip = 1;
+	ImageRotation image_rotation = 2;
 }

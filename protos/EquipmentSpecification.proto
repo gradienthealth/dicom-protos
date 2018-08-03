@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Equipment_SpecificationModule {
-	ModelSpecificationSequence model_specification_sequence = 1;
-	EquipmentModality equipment_modality = 2;
+	EquipmentModality equipment_modality = 1;
+	ModelSpecificationSequence model_specification_sequence = 2;
 }

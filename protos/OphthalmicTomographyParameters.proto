@@ -6,16 +6,16 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Ophthalmic_Tomography_ParametersModule {
-	MaximumAlongScanDistortion maximum_along_scan_distortion = 1;
-	AcrossScanSpatialResolution across_scan_spatial_resolution = 2;
-	AcquisitionDeviceTypeCodeSequence acquisition_device_type_code_sequence = 3;
-	IlluminationPower illumination_power = 4;
-	AlongScanSpatialResolution along_scan_spatial_resolution = 5;
-	IlluminationBandwidth illumination_bandwidth = 6;
-	DepthSpatialResolution depth_spatial_resolution = 7;
-	MaximumDepthDistortion maximum_depth_distortion = 8;
+	DetectorType detector_type = 1;
+	AcquisitionDeviceTypeCodeSequence acquisition_device_type_code_sequence = 2;
+	LightPathFilterTypeStackCodeSequence light_path_filter_type_stack_code_sequence = 3;
+	DepthSpatialResolution depth_spatial_resolution = 4;
+	MaximumDepthDistortion maximum_depth_distortion = 5;
+	AlongScanSpatialResolution along_scan_spatial_resolution = 6;
+	MaximumAlongScanDistortion maximum_along_scan_distortion = 7;
+	AcrossScanSpatialResolution across_scan_spatial_resolution = 8;
 	MaximumAcrossScanDistortion maximum_across_scan_distortion = 9;
-	LightPathFilterTypeStackCodeSequence light_path_filter_type_stack_code_sequence = 10;
-	DetectorType detector_type = 11;
-	IlluminationWaveLength illumination_wave_length = 12;
+	IlluminationWaveLength illumination_wave_length = 10;
+	IlluminationPower illumination_power = 11;
+	IlluminationBandwidth illumination_bandwidth = 12;
 }

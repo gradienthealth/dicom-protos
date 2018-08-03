@@ -9,7 +9,7 @@ message Visual_Field_Static_Perimetry_Test_ReliabilityModule {
 	FixationSequence fixation_sequence = 1;
 	VisualFieldCatchTrialSequence visual_field_catch_trial_sequence = 2;
 	StimuliRetestingQuantity stimuli_retesting_quantity = 3;
-	PatientReliabilityIndicator patient_reliability_indicator = 4;
-	CommentsOnPatientPerformanceOfVisualField comments_on_patients_performance_of_visual_field = 5;
+	CommentsOnPatientPerformanceOfVisualField comments_on_patients_performance_of_visual_field = 4;
+	PatientReliabilityIndicator patient_reliability_indicator = 5;
 	VisualFieldTestReliabilityGlobalIndexSequence visual_field_test_reliability_global_index_sequence = 6;
 }

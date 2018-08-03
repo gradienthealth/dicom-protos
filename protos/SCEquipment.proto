@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message SC_EquipmentModule {
-	SecondaryCaptureDeviceSoftwareVersions secondary_capture_device_software_versions = 1;
-	VideoImageFormatAcquired video_image_format_acquired = 2;
-	DigitalImageFormatAcquired digital_image_format_acquired = 3;
-	ConversionType conversion_type = 4;
-	Modality modality = 5;
-	SecondaryCaptureDeviceID secondary_capture_device_id = 6;
-	SecondaryCaptureDeviceManufacturer secondary_capture_device_manufacturer = 7;
-	SecondaryCaptureDeviceManufacturerModelName secondary_capture_device_manufacturers_model_name = 8;
+	Modality modality = 1;
+	ConversionType conversion_type = 2;
+	SecondaryCaptureDeviceID secondary_capture_device_id = 3;
+	SecondaryCaptureDeviceManufacturer secondary_capture_device_manufacturer = 4;
+	SecondaryCaptureDeviceManufacturerModelName secondary_capture_device_manufacturers_model_name = 5;
+	SecondaryCaptureDeviceSoftwareVersions secondary_capture_device_software_versions = 6;
+	VideoImageFormatAcquired video_image_format_acquired = 7;
+	DigitalImageFormatAcquired digital_image_format_acquired = 8;
 }

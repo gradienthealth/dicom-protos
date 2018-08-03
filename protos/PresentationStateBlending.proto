@@ -6,7 +6,7 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Presentation_State_BlendingModule {
-	ReferencedSpatialRegistrationSequence referenced_spatial_registration_sequence = 1;
-	BlendingSequence blending_sequence = 2;
-	RelativeOpacity relative_opacity = 3;
+	BlendingSequence blending_sequence = 1;
+	RelativeOpacity relative_opacity = 2;
+	ReferencedSpatialRegistrationSequence referenced_spatial_registration_sequence = 3;
 }

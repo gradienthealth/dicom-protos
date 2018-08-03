@@ -7,11 +7,11 @@ import "Attributes.proto";
 
 message SynchronizationModule {
 	TriggerSourceOrType trigger_source_or_type = 1;
-	SynchronizationChannel synchronization_channel = 2;
-	AcquisitionTimeSynchronized acquisition_time_synchronized = 3;
-	TimeSource time_source = 4;
-	TimeDistributionProtocol time_distribution_protocol = 5;
-	NTPSourceAddress ntp_source_address = 6;
-	SynchronizationFrameOfReferenceUID synchronization_frame_of_reference_uid = 7;
-	SynchronizationTrigger synchronization_trigger = 8;
+	SynchronizationTrigger synchronization_trigger = 2;
+	SynchronizationChannel synchronization_channel = 3;
+	AcquisitionTimeSynchronized acquisition_time_synchronized = 4;
+	TimeSource time_source = 5;
+	TimeDistributionProtocol time_distribution_protocol = 6;
+	NTPSourceAddress ntp_source_address = 7;
+	SynchronizationFrameOfReferenceUID synchronization_frame_of_reference_uid = 8;
 }

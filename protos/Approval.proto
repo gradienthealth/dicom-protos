@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message ApprovalModule {
-	ReviewerName reviewer_name = 1;
-	ApprovalStatus approval_status = 2;
-	ReviewDate review_date = 3;
-	ReviewTime review_time = 4;
+	ApprovalStatus approval_status = 1;
+	ReviewDate review_date = 2;
+	ReviewTime review_time = 3;
+	ReviewerName reviewer_name = 4;
 }

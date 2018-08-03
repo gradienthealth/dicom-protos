@@ -7,13 +7,13 @@ import "Attributes.proto";
 
 message Content_Assessment_ResultsModule {
 	PertinentResourcesSequence pertinent_resources_sequence = 1;
-	AssessmentLabel assessment_label = 2;
-	AssessmentTypeCodeSequence assessment_type_code_sequence = 3;
-	AssessmentSetID assessment_set_id = 4;
-	AssessmentRequesterSequence assessment_requester_sequence = 5;
-	AssessmentSummary assessment_summary = 6;
-	AssessedSOPInstanceSequence assessed_sop_instance_sequence = 7;
-	AssessmentSummaryDescription assessment_summary_description = 8;
-	NumberOfAssessmentObservations number_of_assessment_observations = 9;
-	AssessmentObservationsSequence assessment_observations_sequence = 10;
+	AssessmentSummary assessment_summary = 2;
+	AssessmentSummaryDescription assessment_summary_description = 3;
+	AssessedSOPInstanceSequence assessed_sop_instance_sequence = 4;
+	NumberOfAssessmentObservations number_of_assessment_observations = 5;
+	AssessmentObservationsSequence assessment_observations_sequence = 6;
+	AssessmentSetID assessment_set_id = 7;
+	AssessmentRequesterSequence assessment_requester_sequence = 8;
+	AssessmentTypeCodeSequence assessment_type_code_sequence = 9;
+	AssessmentLabel assessment_label = 10;
 }

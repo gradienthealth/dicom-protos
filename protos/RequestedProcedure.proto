@@ -6,21 +6,21 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Requested_ProcedureModule {
-	ReasonForRequestedProcedureCodeSequence reason_for_requested_procedure_code_sequence = 1;
-	RequestedProcedureDescription requested_procedure_description = 2;
-	RequestedProcedurePriority requested_procedure_priority = 3;
-	PatientTransportArrangements patient_transport_arrangements = 4;
-	NamesOfIntendedRecipientsOfResults names_of_intended_recipients_of_results = 5;
-	RequestedProcedureID requested_procedure_id = 6;
-	ReasonForTheRequestedProcedure reason_for_the_requested_procedure = 7;
-	StudyInstanceUID study_instance_uid = 8;
-	StudyDate study_date = 9;
-	StudyTime study_time = 10;
-	ReferencedStudySequence referenced_study_sequence = 11;
-	RequestedProcedureComments requested_procedure_comments = 12;
-	RequestedProcedureCodeSequence requested_procedure_code_sequence = 13;
-	RequestedProcedureLocation requested_procedure_location = 14;
-	ConfidentialityCode confidentiality_code = 15;
-	ReportingPriority reporting_priority = 16;
-	IntendedRecipientsOfResultsIdentificationSequence intended_recipients_of_results_identification_sequence = 17;
+	StudyDate study_date = 1;
+	StudyTime study_time = 2;
+	ReferencedStudySequence referenced_study_sequence = 3;
+	StudyInstanceUID study_instance_uid = 4;
+	RequestedProcedureDescription requested_procedure_description = 5;
+	RequestedProcedureCodeSequence requested_procedure_code_sequence = 6;
+	RequestedProcedureID requested_procedure_id = 7;
+	ReasonForTheRequestedProcedure reason_for_the_requested_procedure = 8;
+	RequestedProcedurePriority requested_procedure_priority = 9;
+	PatientTransportArrangements patient_transport_arrangements = 10;
+	RequestedProcedureLocation requested_procedure_location = 11;
+	ConfidentialityCode confidentiality_code = 12;
+	ReportingPriority reporting_priority = 13;
+	ReasonForRequestedProcedureCodeSequence reason_for_requested_procedure_code_sequence = 14;
+	NamesOfIntendedRecipientsOfResults names_of_intended_recipients_of_results = 15;
+	IntendedRecipientsOfResultsIdentificationSequence intended_recipients_of_results_identification_sequence = 16;
+	RequestedProcedureComments requested_procedure_comments = 17;
 }

@@ -6,15 +6,15 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Hanging_Protocol_DefinitionModule {
-	HangingProtocolCreationDateTime hanging_protocol_creation_datetime = 1;
-	NumberOfPriorsReferenced number_of_priors_referenced = 2;
-	ImageSetsSequence image_sets_sequence = 3;
-	HangingProtocolUserIdentificationCodeSequence hanging_protocol_user_identification_code_sequence = 4;
-	SourceHangingProtocolSequence source_hanging_protocol_sequence = 5;
-	HangingProtocolName hanging_protocol_name = 6;
-	HangingProtocolLevel hanging_protocol_level = 7;
-	HangingProtocolDefinitionSequence hanging_protocol_definition_sequence = 8;
-	HangingProtocolUserGroupName hanging_protocol_user_group_name = 9;
-	HangingProtocolDescription hanging_protocol_description = 10;
-	HangingProtocolCreator hanging_protocol_creator = 11;
+	HangingProtocolName hanging_protocol_name = 1;
+	HangingProtocolDescription hanging_protocol_description = 2;
+	HangingProtocolLevel hanging_protocol_level = 3;
+	HangingProtocolCreator hanging_protocol_creator = 4;
+	HangingProtocolCreationDateTime hanging_protocol_creation_datetime = 5;
+	HangingProtocolDefinitionSequence hanging_protocol_definition_sequence = 6;
+	HangingProtocolUserIdentificationCodeSequence hanging_protocol_user_identification_code_sequence = 7;
+	HangingProtocolUserGroupName hanging_protocol_user_group_name = 8;
+	SourceHangingProtocolSequence source_hanging_protocol_sequence = 9;
+	NumberOfPriorsReferenced number_of_priors_referenced = 10;
+	ImageSetsSequence image_sets_sequence = 11;
 }

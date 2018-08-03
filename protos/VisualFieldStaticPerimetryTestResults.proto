@@ -6,16 +6,16 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Visual_Field_Static_Perimetry_Test_ResultsModule {
-	CorrectedLocalizedDeviationFromNormalProbability corrected_localized_deviation_from_normal_probability = 1;
-	VisualFieldTestNormalsFlag visual_field_test_normals_flag = 2;
-	ShortTermFluctuationCalculated short_term_fluctuation_calculated = 3;
-	ShortTermFluctuationProbabilityCalculated short_term_fluctuation_probability_calculated = 4;
-	ShortTermFluctuationProbability short_term_fluctuation_probability = 5;
-	CorrectedLocalizedDeviationFromNormal corrected_localized_deviation_from_normal = 6;
-	CorrectedLocalizedDeviationFromNormalProbabilityCalculated corrected_localized_deviation_from_normal_probability_calculated = 7;
-	VisualFieldMeanSensitivity visual_field_mean_sensitivity = 8;
-	ResultsNormalsSequence results_normals_sequence = 9;
-	ShortTermFluctuation short_term_fluctuation = 10;
-	CorrectedLocalizedDeviationFromNormalCalculated corrected_localized_deviation_from_normal_calculated = 11;
+	VisualFieldTestNormalsFlag visual_field_test_normals_flag = 1;
+	ResultsNormalsSequence results_normals_sequence = 2;
+	VisualFieldMeanSensitivity visual_field_mean_sensitivity = 3;
+	ShortTermFluctuationCalculated short_term_fluctuation_calculated = 4;
+	ShortTermFluctuation short_term_fluctuation = 5;
+	ShortTermFluctuationProbabilityCalculated short_term_fluctuation_probability_calculated = 6;
+	ShortTermFluctuationProbability short_term_fluctuation_probability = 7;
+	CorrectedLocalizedDeviationFromNormalCalculated corrected_localized_deviation_from_normal_calculated = 8;
+	CorrectedLocalizedDeviationFromNormal corrected_localized_deviation_from_normal = 9;
+	CorrectedLocalizedDeviationFromNormalProbabilityCalculated corrected_localized_deviation_from_normal_probability_calculated = 10;
+	CorrectedLocalizedDeviationFromNormalProbability corrected_localized_deviation_from_normal_probability = 11;
 	VisualFieldGlobalResultsIndexSequence visual_field_global_results_index_sequence = 12;
 }

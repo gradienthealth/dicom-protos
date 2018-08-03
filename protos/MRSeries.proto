@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message MR_SeriesModule {
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
-	Modality modality = 2;
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
 }
