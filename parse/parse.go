@@ -88,6 +88,13 @@ func (m *Module) AddAttribute(a Attribute, path string) {
 	m.Attributes[a.TagKey()] = &a
 }
 
+// Types for sorting:
+type ModulesByID []*Module
+
+func (m ModulesByID) Len() int           { return len(m) }
+func (m ModulesByID) Swap(i, j int)      { m[i], m[j] = m[j], m[i] }
+func (m ModulesByID) Less(i, j int) bool { return m[i].ID < m[j].ID }
+
 // ModuleMap represents a map of string module identifiers to Modules
 type ModuleMap map[string]Module
 

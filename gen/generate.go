@@ -58,20 +58,6 @@ var SetComplete = map[string]*parse.Attribute{}
 // ProtoHeader represents the protocol buffer header for all protos
 const ProtoHeader = "syntax = \"proto3\";"
 
-// Types for sorting:
-
-type ModulesByID []*parse.Module
-
-func (m ModulesByID) Len() int           { return len(m) }
-func (m ModulesByID) Swap(i, j int)      { m[i], m[j] = m[j], m[i] }
-func (m ModulesByID) Less(i, j int) bool { return m[i].ID < m[j].ID }
-
-type AttributesByTag []*parse.Attribute
-
-func (a AttributesByTag) Len() int           { return len(a) }
-func (a AttributesByTag) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a AttributesByTag) Less(i, j int) bool { return a[i].Tag < a[j].Tag }
-
 // AttributeProto generates the protocol message for an attribute and returns it as a string
 func AttributeProto(a *parse.Attribute) string {
 
@@ -227,7 +213,7 @@ func ProtosToFile(dirPath string, modules []*parse.Module) (counter int, err err
 	defer attrOut.Close()
 
 	// Begin to generate Module protos and populate Sequences.proto and Attributes.proto
-	sort.Sort(ModulesByID(modules))
+	sort.Sort(parse.ModulesByID(modules))
 	counter = 0
 	for _, m := range modules {
 		// Generate Module proto
