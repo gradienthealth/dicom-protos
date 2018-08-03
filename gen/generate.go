@@ -128,7 +128,8 @@ func ModuleProto(module *parse.Module, w io.Writer) {
 	fmt.Fprintf(w, "message %sModule {\n", moduleName)
 
 	i := 1
-	for _, a := range module.Attributes {
+	attrs := getSortedAttributes(module.Attributes)
+	for _, a := range attrs {
 		if !(a.Retired || a.IsEmpty()) {
 			fmt.Fprintf(w, "\t%s %s = %d;\n", a.Keyword, getFieldName(a.Name), i)
 			i++
@@ -158,8 +159,9 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 
 		// Write out the sequence protobuf message.
 		i := 1
-		for _, s := range a.SubAttributes {
-			fmt.Fprintf(wSeq, "\t%s %s = %d;\n", s.Keyword, getFieldName(s.Name), i)
+		attrs := getSortedAttributes(a.SubAttributes)
+		for _, attr := range attrs {
+			fmt.Fprintf(wSeq, "\t%s %s = %d;\n", attr.Keyword, getFieldName(attr.Name), i)
 			i++
 		}
 		fmt.Fprint(wSeq, "} \n\n")
@@ -180,6 +182,20 @@ func getSortedKeys(m map[parse.TagKey]*parse.Attribute) []string {
 	}
 	sort.Strings(keys)
 	return keys
+}
+
+func getSortedAttributes(m map[parse.TagKey]*parse.Attribute) []*parse.Attribute {
+	keys := getSortedKeys(m)
+	sort.Strings(keys)
+	attrs := make([]*parse.Attribute, 0, len(m))
+	for _, key := range keys {
+		if key == "" {
+			continue //TODO: investigate why we have empty string keys
+		}
+		attrs = append(attrs, m[parse.TagKey(key)])
+
+	}
+	return attrs
 }
 
 func moduleProtoToFile(dirPath string, m *parse.Module) error {
@@ -221,13 +237,9 @@ func ProtosToFile(dirPath string, modules []*parse.Module) (counter int, err err
 		}
 
 		// Generate messages for this module's attributes
-		attrKeys := getSortedKeys(m.Attributes)
-		fmt.Println(attrKeys)
-		for _, key := range attrKeys {
-			if key == "" {
-				continue
-			}
-			SequenceAttrProto(m.Attributes[parse.TagKey(key)], seqOut, attrOut)
+		attrs := getSortedAttributes(m.Attributes)
+		for _, attr := range attrs {
+			SequenceAttrProto(attr, seqOut, attrOut)
 		}
 
 		counter++
