@@ -4,17 +4,10 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 
 	"github.com/gradienthealth/dicom-protos/gen"
 	"github.com/gradienthealth/dicom-protos/parse"
 )
-
-func moduleNameToFilename(name string) string {
-	s := strings.Replace(name, " ", "", -1)
-	s = strings.Replace(s, "/", "", -1)
-	return fmt.Sprintf("protos/%s.proto", s)
-}
 
 func generateFile(name string) *os.File {
 	out, err := os.Create(name)
@@ -63,7 +56,7 @@ func main() {
 
 	numModules, err := gen.ProtosToFile("protos", modules)
 	if err != nil {
-		panic(err)
+		log.Panic("Issue with generating protos", err)
 	}
 
 	log.Printf("Complete. Generated protos for %d modules.", numModules)

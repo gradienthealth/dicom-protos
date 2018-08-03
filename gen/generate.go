@@ -216,13 +216,13 @@ func ProtosToFile(dirPath string, modules []*parse.Module) (counter int, err err
 	sort.Sort(parse.ModulesByID(modules))
 	counter = 0
 	for _, m := range modules {
-		// Generate Module proto
+		// Generate proto messages for this module
 		err := moduleProtoToFile(dirPath, m)
 		if err != nil {
 			return counter, err
 		}
 
-		// Generate messages for this module's attributes
+		// Generate proto messages for this module's attributes
 		attrs := getSortedAttributes(m.Attributes)
 		for _, attr := range attrs {
 			SequenceAttrProto(attr, seqOut, attrOut)
