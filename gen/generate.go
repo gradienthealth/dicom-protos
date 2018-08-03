@@ -167,7 +167,7 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 		fmt.Fprint(wSeq, "} \n\n")
 
 		// Recursively call for children.
-		for _, s := range a.SubAttributes {
+		for _, s := range attrs {
 			SequenceAttrProto(s, wSeq, wAttr)
 		}
 
