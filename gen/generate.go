@@ -162,7 +162,7 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 }
 
 func getSortedKeys(m map[parse.TagKey]*parse.Attribute) []string {
-	keys := make([]string, len(m))
+	keys := make([]string, 0, len(m))
 	for k := range m {
 		keys = append(keys, string(k))
 	}
@@ -175,11 +175,7 @@ func getSortedAttributes(m map[parse.TagKey]*parse.Attribute) []*parse.Attribute
 	sort.Strings(keys)
 	attrs := make([]*parse.Attribute, 0, len(m))
 	for _, key := range keys {
-		if key == "" {
-			continue //TODO: investigate why we have empty string keys
-		}
 		attrs = append(attrs, m[parse.TagKey(key)])
-
 	}
 	return attrs
 }
