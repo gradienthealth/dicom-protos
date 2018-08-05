@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Intravascular_OCT_Acquisition_ParametersModule {
-	ALinesPerFrame a_lines_per_frame = 1;
-	OCTFocalDistance oct_focal_distance = 2;
-	OCTAcquisitionDomain oct_acquisition_domain = 3;
-	OCTOpticalCenterWavelength oct_optical_center_wavelength = 4;
-	RangingDepth ranging_depth = 5;
-	ALineRate a_line_rate = 6;
-	BeamSpotSize beam_spot_size = 7;
-	EffectiveRefractiveIndex effective_refractive_index = 8;
-	AxialResolution axial_resolution = 9;
+	OCTFocalDistance oct_focal_distance = 1;
+	BeamSpotSize beam_spot_size = 2;
+	EffectiveRefractiveIndex effective_refractive_index = 3;
+	OCTAcquisitionDomain oct_acquisition_domain = 4;
+	OCTOpticalCenterWavelength oct_optical_center_wavelength = 5;
+	AxialResolution axial_resolution = 6;
+	RangingDepth ranging_depth = 7;
+	ALineRate a_line_rate = 8;
+	ALinesPerFrame a_lines_per_frame = 9;
 }

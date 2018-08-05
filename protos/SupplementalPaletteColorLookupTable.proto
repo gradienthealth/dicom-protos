@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Supplemental_Palette_Color_Lookup_TableModule {
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 1;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 2;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 3;
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 4;
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 5;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 6;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 1;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 2;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 3;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 4;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 5;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 6;
 }

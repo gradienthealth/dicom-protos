@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Intra_Oral_ImageModule {
-	PositionerType positioner_type = 1;
-	ImageLaterality image_laterality = 2;
-	AnatomicRegionSequence anatomic_region_sequence = 3;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 4;
+	AnatomicRegionSequence anatomic_region_sequence = 1;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
+	PositionerType positioner_type = 3;
+	ImageLaterality image_laterality = 4;
 }

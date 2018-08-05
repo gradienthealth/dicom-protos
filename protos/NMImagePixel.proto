@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message NM_Image_PixelModule {
-	BitsStored bits_stored = 1;
-	HighBit high_bit = 2;
+	SamplesPerPixel samples_per_pixel = 1;
+	PhotometricInterpretation photometric_interpretation = 2;
 	PixelSpacing pixel_spacing = 3;
-	SamplesPerPixel samples_per_pixel = 4;
-	PhotometricInterpretation photometric_interpretation = 5;
-	BitsAllocated bits_allocated = 6;
+	BitsAllocated bits_allocated = 4;
+	BitsStored bits_stored = 5;
+	HighBit high_bit = 6;
 }

@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Subjective_Refraction_MeasurementsModule {
-	SubjectiveRefractionRightEyeSequence subjective_refraction_right_eye_sequence = 1;
-	SubjectiveRefractionLeftEyeSequence subjective_refraction_left_eye_sequence = 2;
-	DistancePupillaryDistance distance_pupillary_distance = 3;
-	NearPupillaryDistance near_pupillary_distance = 4;
-	IntermediatePupillaryDistance intermediate_pupillary_distance = 5;
-	OtherPupillaryDistance other_pupillary_distance = 6;
+	DistancePupillaryDistance distance_pupillary_distance = 1;
+	NearPupillaryDistance near_pupillary_distance = 2;
+	IntermediatePupillaryDistance intermediate_pupillary_distance = 3;
+	OtherPupillaryDistance other_pupillary_distance = 4;
+	SubjectiveRefractionRightEyeSequence subjective_refraction_right_eye_sequence = 5;
+	SubjectiveRefractionLeftEyeSequence subjective_refraction_left_eye_sequence = 6;
 }

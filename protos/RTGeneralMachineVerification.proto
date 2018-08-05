@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message RT_General_Machine_VerificationModule {
-	OverriddenAttributesSequence overridden_attributes_sequence = 1;
-	GeneralMachineVerificationSequence general_machine_verification_sequence = 2;
-	ReferencedRTPlanSequence referenced_rt_plan_sequence = 3;
-	PatientID patient_id = 4;
-	IssuerOfPatientID issuer_of_patient_id = 5;
-	FailedAttributesSequence failed_attributes_sequence = 6;
-	ReferencedFractionGroupNumber referenced_fraction_group_number = 7;
-	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 8;
-	TreatmentVerificationStatus treatment_verification_status = 9;
+	PatientID patient_id = 1;
+	IssuerOfPatientID issuer_of_patient_id = 2;
+	IssuerOfPatientIDQualifiersSequence issuer_of_patient_id_qualifiers_sequence = 3;
+	GeneralMachineVerificationSequence general_machine_verification_sequence = 4;
+	FailedAttributesSequence failed_attributes_sequence = 5;
+	OverriddenAttributesSequence overridden_attributes_sequence = 6;
+	TreatmentVerificationStatus treatment_verification_status = 7;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 8;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 9;
 }

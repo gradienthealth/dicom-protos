@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Clinical_Trial_ContextModule {
-	ClinicalTrialSiteID clinical_trial_site_id = 1;
-	ClinicalTrialSiteName clinical_trial_site_name = 2;
-	ClinicalTrialProtocolEthicsCommitteeApprovalNumber clinical_trial_protocol_ethics_committee_approval_number = 3;
-	EthicsCommitteeApprovalEffectivenessStartDate ethics_committee_approval_effectiveness_start_date = 4;
-	EthicsCommitteeApprovalEffectivenessEndDate ethics_committee_approval_effectiveness_end_date = 5;
+	ClinicalTrialSponsorName clinical_trial_sponsor_name = 1;
+	ClinicalTrialProtocolID clinical_trial_protocol_id = 2;
+	ClinicalTrialProtocolName clinical_trial_protocol_name = 3;
+	ClinicalTrialSiteID clinical_trial_site_id = 4;
+	ClinicalTrialSiteName clinical_trial_site_name = 5;
 	ClinicalTrialCoordinatingCenterName clinical_trial_coordinating_center_name = 6;
-	ClinicalTrialProtocolID clinical_trial_protocol_id = 7;
-	ClinicalTrialProtocolName clinical_trial_protocol_name = 8;
-	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 9;
-	ClinicalTrialSponsorName clinical_trial_sponsor_name = 10;
+	ClinicalTrialProtocolEthicsCommitteeName clinical_trial_protocol_ethics_committee_name = 7;
+	ClinicalTrialProtocolEthicsCommitteeApprovalNumber clinical_trial_protocol_ethics_committee_approval_number = 8;
+	EthicsCommitteeApprovalEffectivenessStartDate ethics_committee_approval_effectiveness_start_date = 9;
+	EthicsCommitteeApprovalEffectivenessEndDate ethics_committee_approval_effectiveness_end_date = 10;
 }

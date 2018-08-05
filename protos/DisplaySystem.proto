@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Display_SystemModule {
-	NumberOfDisplaySubsystems number_of_display_subsystems = 1;
-	DisplaySubsystemSequence display_subsystem_sequence = 2;
-	Manufacturer manufacturer = 3;
-	InstitutionName institution_name = 4;
-	ManufacturerModelName manufacturers_model_name = 5;
-	InstitutionalDepartmentName institutional_department_name = 6;
-	EquipmentAdministratorSequence equipment_administrator_sequence = 7;
-	InstitutionAddress institution_address = 8;
-	DeviceSerialNumber device_serial_number = 9;
-	StationName station_name = 10;
+	Manufacturer manufacturer = 1;
+	InstitutionName institution_name = 2;
+	InstitutionAddress institution_address = 3;
+	StationName station_name = 4;
+	InstitutionalDepartmentName institutional_department_name = 5;
+	ManufacturerModelName manufacturers_model_name = 6;
+	DeviceSerialNumber device_serial_number = 7;
+	EquipmentAdministratorSequence equipment_administrator_sequence = 8;
+	NumberOfDisplaySubsystems number_of_display_subsystems = 9;
+	DisplaySubsystemSequence display_subsystem_sequence = 10;
 }

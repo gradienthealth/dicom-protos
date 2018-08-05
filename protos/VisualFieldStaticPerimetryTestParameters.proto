@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Visual_Field_Static_Perimetry_Test_ParametersModule {
-	StimulusArea stimulus_area = 1;
-	VisualFieldHorizontalExtent visual_field_horizontal_extent = 2;
-	VisualFieldVerticalExtent visual_field_vertical_extent = 3;
-	VisualFieldShape visual_field_shape = 4;
-	ScreeningTestModeCodeSequence screening_test_mode_code_sequence = 5;
-	MaximumStimulusLuminance maximum_stimulus_luminance = 6;
-	BackgroundIlluminationColorCodeSequence background_illumination_color_code_sequence = 7;
-	BackgroundLuminance background_luminance = 8;
-	StimulusColorCodeSequence stimulus_color_code_sequence = 9;
+	VisualFieldHorizontalExtent visual_field_horizontal_extent = 1;
+	VisualFieldVerticalExtent visual_field_vertical_extent = 2;
+	VisualFieldShape visual_field_shape = 3;
+	ScreeningTestModeCodeSequence screening_test_mode_code_sequence = 4;
+	MaximumStimulusLuminance maximum_stimulus_luminance = 5;
+	BackgroundLuminance background_luminance = 6;
+	StimulusColorCodeSequence stimulus_color_code_sequence = 7;
+	BackgroundIlluminationColorCodeSequence background_illumination_color_code_sequence = 8;
+	StimulusArea stimulus_area = 9;
 	StimulusPresentationTime stimulus_presentation_time = 10;
 }

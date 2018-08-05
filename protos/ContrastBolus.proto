@@ -6,15 +6,15 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Contrast_BolusModule {
-	ContrastBolusRoute contrast_bolus_route = 1;
-	ContrastBolusAdministrationRouteSequence contrast_bolus_administration_route_sequence = 2;
-	ContrastBolusVolume contrast_bolus_volume = 3;
-	ContrastBolusStartTime contrast_bolus_start_time = 4;
-	ContrastBolusStopTime contrast_bolus_stop_time = 5;
-	ContrastFlowRate contrast_flow_rate = 6;
-	ContrastBolusAgent contrast_bolus_agent = 7;
-	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 8;
-	ContrastBolusTotalDose contrast_bolus_total_dose = 9;
+	ContrastBolusAgent contrast_bolus_agent = 1;
+	ContrastBolusAgentSequence contrast_bolus_agent_sequence = 2;
+	ContrastBolusAdministrationRouteSequence contrast_bolus_administration_route_sequence = 3;
+	ContrastBolusRoute contrast_bolus_route = 4;
+	ContrastBolusVolume contrast_bolus_volume = 5;
+	ContrastBolusStartTime contrast_bolus_start_time = 6;
+	ContrastBolusStopTime contrast_bolus_stop_time = 7;
+	ContrastBolusTotalDose contrast_bolus_total_dose = 8;
+	ContrastFlowRate contrast_flow_rate = 9;
 	ContrastFlowDuration contrast_flow_duration = 10;
 	ContrastBolusIngredient contrast_bolus_ingredient = 11;
 	ContrastBolusIngredientConcentration contrast_bolus_ingredient_concentration = 12;

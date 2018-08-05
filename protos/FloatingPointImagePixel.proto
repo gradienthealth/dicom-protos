@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Floating_Point_Image_PixelModule {
-	Rows rows = 1;
-	PixelAspectRatio pixel_aspect_ratio = 2;
-	FloatPixelPaddingRangeLimit float_pixel_padding_range_limit = 3;
-	BitsAllocated bits_allocated = 4;
-	FloatPixelData float_pixel_data = 5;
-	FloatPixelPaddingValue float_pixel_padding_value = 6;
-	SamplesPerPixel samples_per_pixel = 7;
-	PhotometricInterpretation photometric_interpretation = 8;
-	Columns columns = 9;
+	SamplesPerPixel samples_per_pixel = 1;
+	PhotometricInterpretation photometric_interpretation = 2;
+	Rows rows = 3;
+	Columns columns = 4;
+	PixelAspectRatio pixel_aspect_ratio = 5;
+	BitsAllocated bits_allocated = 6;
+	FloatPixelPaddingValue float_pixel_padding_value = 7;
+	FloatPixelPaddingRangeLimit float_pixel_padding_range_limit = 8;
+	FloatPixelData float_pixel_data = 9;
 }

@@ -8,6 +8,6 @@ import "Attributes.proto";
 message Presentation_View_DescriptionModule {
 	AnatomicRegionSequence anatomic_region_sequence = 1;
 	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
-	ViewCodeSequence view_code_sequence = 3;
-	ImageLaterality image_laterality = 4;
+	ImageLaterality image_laterality = 3;
+	ViewCodeSequence view_code_sequence = 4;
 }

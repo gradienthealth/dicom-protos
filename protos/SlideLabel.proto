@@ -6,6 +6,6 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Slide_LabelModule {
-	BarcodeValue barcode_value = 1;
-	LabelText label_text = 2;
+	LabelText label_text = 1;
+	BarcodeValue barcode_value = 2;
 }

@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message RT_Beams_Session_RecordModule {
-	ReferencedFractionGroupNumber referenced_fraction_group_number = 1;
+	TreatmentSessionBeamSequence treatment_session_beam_sequence = 1;
 	NumberOfFractionsPlanned number_of_fractions_planned = 2;
 	PrimaryDosimeterUnit primary_dosimeter_unit = 3;
-	TreatmentSessionBeamSequence treatment_session_beam_sequence = 4;
+	ReferencedFractionGroupNumber referenced_fraction_group_number = 4;
 }

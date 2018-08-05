@@ -6,15 +6,15 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Visit_AdmissionModule {
-	ConsultingPhysicianName consulting_physicians_name = 1;
-	ConsultingPhysicianIdentificationSequence consulting_physician_identification_sequence = 2;
-	AdmittingDiagnosesDescription admitting_diagnoses_description = 3;
-	RouteOfAdmissions route_of_admissions = 4;
-	AdmittingTime admitting_time = 5;
-	ReferringPhysicianName referring_physicians_name = 6;
-	ReferringPhysicianAddress referring_physicians_address = 7;
-	ReferringPhysicianTelephoneNumbers referring_physicians_telephone_numbers = 8;
-	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 9;
-	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 10;
-	AdmittingDate admitting_date = 11;
+	ReferringPhysicianName referring_physicians_name = 1;
+	ReferringPhysicianAddress referring_physicians_address = 2;
+	ReferringPhysicianTelephoneNumbers referring_physicians_telephone_numbers = 3;
+	ReferringPhysicianIdentificationSequence referring_physician_identification_sequence = 4;
+	ConsultingPhysicianName consulting_physicians_name = 5;
+	ConsultingPhysicianIdentificationSequence consulting_physician_identification_sequence = 6;
+	AdmittingDiagnosesDescription admitting_diagnoses_description = 7;
+	AdmittingDiagnosesCodeSequence admitting_diagnoses_code_sequence = 8;
+	RouteOfAdmissions route_of_admissions = 9;
+	AdmittingDate admitting_date = 10;
+	AdmittingTime admitting_time = 11;
 }

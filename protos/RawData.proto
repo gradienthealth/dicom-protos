@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Raw_DataModule {
-	ContentLabel content_label = 1;
-	ReferencedInstanceSequence referenced_instance_sequence = 2;
+	ContentDate content_date = 1;
+	AcquisitionDateTime acquisition_datetime = 2;
 	ContentTime content_time = 3;
-	AcquisitionDateTime acquisition_datetime = 4;
-	ContentDescription content_description = 5;
-	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	ReferencedInstanceSequence referenced_instance_sequence = 4;
+	CreatorVersionUID creator_version_uid = 5;
+	InstanceNumber instance_number = 6;
 	ImageLaterality image_laterality = 7;
-	CreatorVersionUID creator_version_uid = 8;
-	InstanceNumber instance_number = 9;
-	ContentDate content_date = 10;
+	ConceptNameCodeSequence concept_name_code_sequence = 8;
+	ContentLabel content_label = 9;
+	ContentDescription content_description = 10;
 }

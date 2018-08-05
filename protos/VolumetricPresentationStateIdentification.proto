@@ -6,17 +6,17 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Volumetric_Presentation_State_IdentificationModule {
-	RenderedImageReferenceSequence rendered_image_reference_sequence = 1;
-	PresentationSequencePositionIndex presentation_sequence_position_index = 2;
-	PresentationCreationDate presentation_creation_date = 3;
-	PresentationCreationTime presentation_creation_time = 4;
-	ContentLabel content_label = 5;
-	ConceptNameCodeSequence concept_name_code_sequence = 6;
+	InstanceNumber instance_number = 1;
+	ConceptNameCodeSequence concept_name_code_sequence = 2;
+	ContentLabel content_label = 3;
+	ContentDescription content_description = 4;
+	PresentationCreationDate presentation_creation_date = 5;
+	PresentationCreationTime presentation_creation_time = 6;
 	ContentCreatorName content_creators_name = 7;
-	PresentationSequenceCollectionUID presentation_sequence_collection_uid = 8;
-	InstanceNumber instance_number = 9;
-	ContentDescription content_description = 10;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 11;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 12;
-	PresentationDisplayCollectionUID presentation_display_collection_uid = 13;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 8;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 9;
+	PresentationDisplayCollectionUID presentation_display_collection_uid = 10;
+	PresentationSequenceCollectionUID presentation_sequence_collection_uid = 11;
+	PresentationSequencePositionIndex presentation_sequence_position_index = 12;
+	RenderedImageReferenceSequence rendered_image_reference_sequence = 13;
 }

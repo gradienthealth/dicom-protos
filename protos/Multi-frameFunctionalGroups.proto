@@ -6,17 +6,17 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Multi_frame_Functional_GroupsModule {
-	ContentTime content_time = 1;
-	StereoPairsPresent stereo_pairs_present = 2;
-	RepresentativeFrameNumber representative_frame_number = 3;
-	ConcatenationUID concatenation_uid = 4;
-	SOPInstanceUIDOfConcatenationSource sop_instance_uid_of_concatenation_source = 5;
+	ContentDate content_date = 1;
+	ContentTime content_time = 2;
+	InstanceNumber instance_number = 3;
+	SOPInstanceUIDOfConcatenationSource sop_instance_uid_of_concatenation_source = 4;
+	ConcatenationUID concatenation_uid = 5;
 	InConcatenationNumber in_concatenation_number = 6;
-	SharedFunctionalGroupsSequence shared_functional_groups_sequence = 7;
-	PerFrameFunctionalGroupsSequence per_frame_functional_groups_sequence = 8;
-	InConcatenationTotalNumber in_concatenation_total_number = 9;
+	InConcatenationTotalNumber in_concatenation_total_number = 7;
+	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 8;
+	StereoPairsPresent stereo_pairs_present = 9;
 	NumberOfFrames number_of_frames = 10;
-	ConcatenationFrameOffsetNumber concatenation_frame_offset_number = 11;
-	InstanceNumber instance_number = 12;
-	ContentDate content_date = 13;
+	RepresentativeFrameNumber representative_frame_number = 11;
+	SharedFunctionalGroupsSequence shared_functional_groups_sequence = 12;
+	PerFrameFunctionalGroupsSequence per_frame_functional_groups_sequence = 13;
 }

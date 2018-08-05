@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Display_ShutterModule {
-	CenterOfCircularShutter center_of_circular_shutter = 1;
-	VerticesOfThePolygonalShutter vertices_of_the_polygonal_shutter = 2;
-	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 3;
-	ShutterShape shutter_shape = 4;
-	ShutterLeftVerticalEdge shutter_left_vertical_edge = 5;
-	ShutterRightVerticalEdge shutter_right_vertical_edge = 6;
-	ShutterUpperHorizontalEdge shutter_upper_horizontal_edge = 7;
-	ShutterLowerHorizontalEdge shutter_lower_horizontal_edge = 8;
-	RadiusOfCircularShutter radius_of_circular_shutter = 9;
-	ShutterPresentationValue shutter_presentation_value = 10;
+	ShutterShape shutter_shape = 1;
+	ShutterLeftVerticalEdge shutter_left_vertical_edge = 2;
+	ShutterRightVerticalEdge shutter_right_vertical_edge = 3;
+	ShutterUpperHorizontalEdge shutter_upper_horizontal_edge = 4;
+	ShutterLowerHorizontalEdge shutter_lower_horizontal_edge = 5;
+	CenterOfCircularShutter center_of_circular_shutter = 6;
+	RadiusOfCircularShutter radius_of_circular_shutter = 7;
+	VerticesOfThePolygonalShutter vertices_of_the_polygonal_shutter = 8;
+	ShutterPresentationValue shutter_presentation_value = 9;
+	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 10;
 }

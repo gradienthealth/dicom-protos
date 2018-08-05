@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Clinical_Trial_StudyModule {
-	ConsentForClinicalTrialUseSequence consent_for_clinical_trial_use_sequence = 1;
-	ClinicalTrialTimePointID clinical_trial_time_point_id = 2;
-	ClinicalTrialTimePointDescription clinical_trial_time_point_description = 3;
-	LongitudinalTemporalOffsetFromEvent longitudinal_temporal_offset_from_event = 4;
-	LongitudinalTemporalEventType longitudinal_temporal_event_type = 5;
+	ClinicalTrialTimePointID clinical_trial_time_point_id = 1;
+	ClinicalTrialTimePointDescription clinical_trial_time_point_description = 2;
+	LongitudinalTemporalOffsetFromEvent longitudinal_temporal_offset_from_event = 3;
+	LongitudinalTemporalEventType longitudinal_temporal_event_type = 4;
+	ConsentForClinicalTrialUseSequence consent_for_clinical_trial_use_sequence = 5;
 }

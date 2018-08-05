@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message RT_General_Treatment_RecordModule {
-	ReferencedRTPlanSequence referenced_rt_plan_sequence = 1;
+	InstanceNumber instance_number = 1;
 	ReferencedTreatmentRecordSequence referenced_treatment_record_sequence = 2;
-	InstanceNumber instance_number = 3;
-	TreatmentDate treatment_date = 4;
-	TreatmentTime treatment_time = 5;
+	TreatmentDate treatment_date = 3;
+	TreatmentTime treatment_time = 4;
+	ReferencedRTPlanSequence referenced_rt_plan_sequence = 5;
 }

@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message X_Ray_CollimatorModule {
-	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 1;
-	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 2;
-	CenterOfCircularCollimator center_of_circular_collimator = 3;
-	RadiusOfCircularCollimator radius_of_circular_collimator = 4;
-	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 5;
-	CollimatorShape collimator_shape = 6;
-	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 7;
-	CollimatorRightVerticalEdge collimator_right_vertical_edge = 8;
+	CollimatorShape collimator_shape = 1;
+	CollimatorLeftVerticalEdge collimator_left_vertical_edge = 2;
+	CollimatorRightVerticalEdge collimator_right_vertical_edge = 3;
+	CollimatorUpperHorizontalEdge collimator_upper_horizontal_edge = 4;
+	CollimatorLowerHorizontalEdge collimator_lower_horizontal_edge = 5;
+	CenterOfCircularCollimator center_of_circular_collimator = 6;
+	RadiusOfCircularCollimator radius_of_circular_collimator = 7;
+	VerticesOfThePolygonalCollimator vertices_of_the_polygonal_collimator = 8;
 }

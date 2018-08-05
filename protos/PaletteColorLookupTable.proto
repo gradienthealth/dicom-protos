@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Palette_Color_Lookup_TableModule {
-	PaletteColorLookupTableUID palette_color_lookup_table_uid = 1;
-	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 2;
-	SegmentedRedPaletteColorLookupTableData segmented_red_palette_color_lookup_table_data = 3;
-	SegmentedGreenPaletteColorLookupTableData segmented_green_palette_color_lookup_table_data = 4;
-	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 5;
-	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 6;
-	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 7;
-	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 8;
-	SegmentedBluePaletteColorLookupTableData segmented_blue_palette_color_lookup_table_data = 9;
-	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 10;
+	RedPaletteColorLookupTableDescriptor red_palette_color_lookup_table_descriptor = 1;
+	GreenPaletteColorLookupTableDescriptor green_palette_color_lookup_table_descriptor = 2;
+	BluePaletteColorLookupTableDescriptor blue_palette_color_lookup_table_descriptor = 3;
+	PaletteColorLookupTableUID palette_color_lookup_table_uid = 4;
+	RedPaletteColorLookupTableData red_palette_color_lookup_table_data = 5;
+	GreenPaletteColorLookupTableData green_palette_color_lookup_table_data = 6;
+	BluePaletteColorLookupTableData blue_palette_color_lookup_table_data = 7;
+	SegmentedRedPaletteColorLookupTableData segmented_red_palette_color_lookup_table_data = 8;
+	SegmentedGreenPaletteColorLookupTableData segmented_green_palette_color_lookup_table_data = 9;
+	SegmentedBluePaletteColorLookupTableData segmented_blue_palette_color_lookup_table_data = 10;
 }

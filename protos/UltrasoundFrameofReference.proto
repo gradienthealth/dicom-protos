@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Ultrasound_Frame_of_ReferenceModule {
-	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 1;
-	PatientFrameOfReferenceSource patient_frame_of_reference_source = 2;
-	TableFrameOfReferenceUID table_frame_of_reference_uid = 3;
+	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 1;
+	ApexPosition apex_position = 2;
+	VolumeToTransducerMappingMatrix volume_to_transducer_mapping_matrix = 3;
 	VolumeToTableMappingMatrix volume_to_table_mapping_matrix = 4;
-	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 5;
-	UltrasoundAcquisitionGeometry ultrasound_acquisition_geometry = 6;
-	ApexPosition apex_position = 7;
-	VolumeToTransducerRelationship volume_to_transducer_relationship = 8;
+	VolumeToTransducerRelationship volume_to_transducer_relationship = 5;
+	PatientFrameOfReferenceSource patient_frame_of_reference_source = 6;
+	VolumeFrameOfReferenceUID volume_frame_of_reference_uid = 7;
+	TableFrameOfReferenceUID table_frame_of_reference_uid = 8;
 }

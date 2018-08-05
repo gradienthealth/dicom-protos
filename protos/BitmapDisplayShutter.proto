@@ -7,7 +7,7 @@ import "Attributes.proto";
 
 message Bitmap_Display_ShutterModule {
 	ShutterShape shutter_shape = 1;
-	ShutterOverlayGroup shutter_overlay_group = 2;
-	ShutterPresentationValue shutter_presentation_value = 3;
+	ShutterPresentationValue shutter_presentation_value = 2;
+	ShutterOverlayGroup shutter_overlay_group = 3;
 	ShutterPresentationColorCIELabValue shutter_presentation_color_cielab_value = 4;
 }

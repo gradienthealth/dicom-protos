@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message General_Ophthalmic_Refractive_MeasurementsModule {
-	ReferencedRefractiveMeasurementsSequence referenced_refractive_measurements_sequence = 1;
-	InstanceNumber instance_number = 2;
-	ContentDate content_date = 3;
-	ContentTime content_time = 4;
+	ContentDate content_date = 1;
+	ContentTime content_time = 2;
+	InstanceNumber instance_number = 3;
+	ImageComments image_comments = 4;
 	MeasurementLaterality measurement_laterality = 5;
-	ImageComments image_comments = 6;
+	ReferencedRefractiveMeasurementsSequence referenced_refractive_measurements_sequence = 6;
 }

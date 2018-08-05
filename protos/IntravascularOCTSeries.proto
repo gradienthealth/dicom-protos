@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Intravascular_OCT_SeriesModule {
-	SeriesNumber series_number = 1;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
-	PresentationIntentType presentation_intent_type = 3;
-	Modality modality = 4;
+	Modality modality = 1;
+	PresentationIntentType presentation_intent_type = 2;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
+	SeriesNumber series_number = 4;
 }

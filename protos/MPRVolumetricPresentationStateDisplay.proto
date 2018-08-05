@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message MPR_Volumetric_Presentation_State_DisplayModule {
-	ICCProfile icc_profile = 1;
-	ColorSpace color_space = 2;
-	PixelPresentation pixel_presentation = 3;
+	PixelPresentation pixel_presentation = 1;
+	ICCProfile icc_profile = 2;
+	ColorSpace color_space = 3;
 	PresentationStateClassificationComponentSequence presentation_state_classification_component_sequence = 4;
 	PresentationStateCompositorComponentSequence presentation_state_compositor_component_sequence = 5;
 	PresentationLUTShape presentation_lut_shape = 6;

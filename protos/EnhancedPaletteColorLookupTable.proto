@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Enhanced_Palette_Color_Lookup_TableModule {
-	BlendingLUT1Sequence blending_lut_one_sequence = 1;
-	BlendingLUT2Sequence blending_lut_two_sequence = 2;
+	DataFrameAssignmentSequence data_frame_assignment_sequence = 1;
+	BlendingLUT1Sequence blending_lut_one_sequence = 2;
 	EnhancedPaletteColorLookupTableSequence enhanced_palette_color_lookup_table_sequence = 3;
-	ICCProfile icc_profile = 4;
-	ColorSpace color_space = 5;
-	DataFrameAssignmentSequence data_frame_assignment_sequence = 6;
+	BlendingLUT2Sequence blending_lut_two_sequence = 4;
+	ICCProfile icc_profile = 5;
+	ColorSpace color_space = 6;
 }

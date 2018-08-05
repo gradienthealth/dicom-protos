@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Key_Object_Document_SeriesModule {
-	SeriesInstanceUID series_instance_uid = 1;
-	SeriesNumber series_number = 2;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 3;
-	ProtocolName protocol_name = 4;
-	SeriesDescription series_description = 5;
-	SeriesDescriptionCodeSequence series_description_code_sequence = 6;
-	Modality modality = 7;
-	SeriesDate series_date = 8;
-	SeriesTime series_time = 9;
+	SeriesDate series_date = 1;
+	SeriesTime series_time = 2;
+	Modality modality = 3;
+	SeriesDescription series_description = 4;
+	SeriesDescriptionCodeSequence series_description_code_sequence = 5;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 6;
+	ProtocolName protocol_name = 7;
+	SeriesInstanceUID series_instance_uid = 8;
+	SeriesNumber series_number = 9;
 }

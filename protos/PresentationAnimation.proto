@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Presentation_AnimationModule {
-	AnimationStepSize animation_step_size = 1;
-	SwivelRange swivel_range = 2;
-	PresentationAnimationStyle presentation_animation_style = 3;
-	RecommendedAnimationRate recommended_animation_rate = 4;
-	AnimationCurveSequence animation_curve_sequence = 5;
+	PresentationAnimationStyle presentation_animation_style = 1;
+	RecommendedAnimationRate recommended_animation_rate = 2;
+	AnimationCurveSequence animation_curve_sequence = 3;
+	AnimationStepSize animation_step_size = 4;
+	SwivelRange swivel_range = 5;
 }

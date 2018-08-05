@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Cardiac_SynchronizationModule {
-	IntervalsRejected intervals_rejected = 1;
-	CardiacFramingType cardiac_framing_type = 2;
-	CardiacSignalSource cardiac_signal_source = 3;
-	CardiacRRIntervalSpecified cardiac_r_r_interval_specified = 4;
-	LowRRValue low_r_r_value = 5;
-	HighRRValue high_r_r_value = 6;
+	CardiacFramingType cardiac_framing_type = 1;
+	LowRRValue low_r_r_value = 2;
+	HighRRValue high_r_r_value = 3;
+	IntervalsAcquired intervals_acquired = 4;
+	IntervalsRejected intervals_rejected = 5;
+	SkipBeats skip_beats = 6;
 	CardiacSynchronizationTechnique cardiac_synchronization_technique = 7;
-	CardiacBeatRejectionTechnique cardiac_beat_rejection_technique = 8;
-	IntervalsAcquired intervals_acquired = 9;
-	SkipBeats skip_beats = 10;
+	CardiacRRIntervalSpecified cardiac_r_r_interval_specified = 8;
+	CardiacSignalSource cardiac_signal_source = 9;
+	CardiacBeatRejectionTechnique cardiac_beat_rejection_technique = 10;
 }

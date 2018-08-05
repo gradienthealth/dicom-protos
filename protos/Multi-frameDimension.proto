@@ -7,6 +7,6 @@ import "Attributes.proto";
 
 message Multi_frame_DimensionModule {
 	DimensionOrganizationSequence dimension_organization_sequence = 1;
-	DimensionOrganizationType dimension_organization_type = 2;
-	DimensionIndexSequence dimension_index_sequence = 3;
+	DimensionIndexSequence dimension_index_sequence = 2;
+	DimensionOrganizationType dimension_organization_type = 3;
 }

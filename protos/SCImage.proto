@@ -7,12 +7,12 @@ import "Attributes.proto";
 
 message SC_ImageModule {
 	DateOfSecondaryCapture date_of_secondary_capture = 1;
-	NominalScannedPixelSpacing nominal_scanned_pixel_spacing = 2;
-	PixelSpacingCalibrationType pixel_spacing_calibration_type = 3;
-	SliceProgressionDirection slice_progression_direction = 4;
-	TimeOfSecondaryCapture time_of_secondary_capture = 5;
-	DocumentClassCodeSequence document_class_code_sequence = 6;
-	PixelSpacing pixel_spacing = 7;
-	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 8;
-	ViewCodeSequence view_code_sequence = 9;
+	TimeOfSecondaryCapture time_of_secondary_capture = 2;
+	NominalScannedPixelSpacing nominal_scanned_pixel_spacing = 3;
+	PixelSpacing pixel_spacing = 4;
+	PixelSpacingCalibrationType pixel_spacing_calibration_type = 5;
+	PixelSpacingCalibrationDescription pixel_spacing_calibration_description = 6;
+	DocumentClassCodeSequence document_class_code_sequence = 7;
+	ViewCodeSequence view_code_sequence = 8;
+	SliceProgressionDirection slice_progression_direction = 9;
 }

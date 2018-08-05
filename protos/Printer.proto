@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message PrinterModule {
-	PrinterStatus printer_status = 1;
-	PrinterName printer_name = 2;
+	Manufacturer manufacturer = 1;
+	ManufacturerModelName manufacturers_model_name = 2;
 	DeviceSerialNumber device_serial_number = 3;
 	SoftwareVersions software_versions = 4;
-	PrinterStatusInfo printer_status_info = 5;
-	Manufacturer manufacturer = 6;
-	ManufacturerModelName manufacturers_model_name = 7;
-	DateOfLastCalibration date_of_last_calibration = 8;
-	TimeOfLastCalibration time_of_last_calibration = 9;
+	DateOfLastCalibration date_of_last_calibration = 5;
+	TimeOfLastCalibration time_of_last_calibration = 6;
+	PrinterStatus printer_status = 7;
+	PrinterStatusInfo printer_status_info = 8;
+	PrinterName printer_name = 9;
 }

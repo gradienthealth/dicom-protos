@@ -6,15 +6,15 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Tractography_ResultsModule {
-	ContentDescription content_description = 1;
-	ConceptNameCodeSequence concept_name_code_sequence = 2;
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 3;
-	ContentCreatorName content_creators_name = 4;
-	ContentTime content_time = 5;
+	ContentDate content_date = 1;
+	ContentTime content_time = 2;
+	ReferencedInstanceSequence referenced_instance_sequence = 3;
+	InstanceNumber instance_number = 4;
+	ConceptNameCodeSequence concept_name_code_sequence = 5;
 	TrackSetSequence track_set_sequence = 6;
-	InstanceNumber instance_number = 7;
-	ContentLabel content_label = 8;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 9;
-	ContentDate content_date = 10;
-	ReferencedInstanceSequence referenced_instance_sequence = 11;
+	ContentLabel content_label = 7;
+	ContentDescription content_description = 8;
+	ContentCreatorName content_creators_name = 9;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 10;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 11;
 }

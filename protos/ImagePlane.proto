@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Image_PlaneModule {
-	ImageOrientationPatient image_orientation_patient = 1;
+	SliceThickness slice_thickness = 1;
 	ImagePositionPatient image_position_patient = 2;
-	SliceThickness slice_thickness = 3;
+	ImageOrientationPatient image_orientation_patient = 3;
 	SliceLocation slice_location = 4;
 	PixelSpacing pixel_spacing = 5;
 }

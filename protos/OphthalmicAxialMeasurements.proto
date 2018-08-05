@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Ophthalmic_Axial_MeasurementsModule {
-	OphthalmicAxialMeasurementsDeviceType ophthalmic_axial_measurements_device_type = 1;
-	OphthalmicUltrasoundMethodCodeSequence ophthalmic_ultrasound_method_code_sequence = 2;
-	AnteriorChamberDepthDefinitionCodeSequence anterior_chamber_depth_definition_code_sequence = 3;
-	OphthalmicAxialMeasurementsRightEyeSequence ophthalmic_axial_measurements_right_eye_sequence = 4;
-	OphthalmicAxialMeasurementsLeftEyeSequence ophthalmic_axial_measurements_left_eye_sequence = 5;
+	OphthalmicAxialMeasurementsRightEyeSequence ophthalmic_axial_measurements_right_eye_sequence = 1;
+	OphthalmicAxialMeasurementsLeftEyeSequence ophthalmic_axial_measurements_left_eye_sequence = 2;
+	OphthalmicAxialMeasurementsDeviceType ophthalmic_axial_measurements_device_type = 3;
+	OphthalmicUltrasoundMethodCodeSequence ophthalmic_ultrasound_method_code_sequence = 4;
+	AnteriorChamberDepthDefinitionCodeSequence anterior_chamber_depth_definition_code_sequence = 5;
 }

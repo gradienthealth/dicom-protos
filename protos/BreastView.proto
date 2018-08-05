@@ -6,9 +6,9 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Breast_ViewModule {
-	PartialViewCodeSequence partial_view_code_sequence = 1;
-	ImageType image_type = 2;
-	ViewCodeSequence view_code_sequence = 3;
-	BreastImplantPresent breast_implant_present = 4;
-	PartialView partial_view = 5;
+	ImageType image_type = 1;
+	BreastImplantPresent breast_implant_present = 2;
+	PartialView partial_view = 3;
+	PartialViewCodeSequence partial_view_code_sequence = 4;
+	ViewCodeSequence view_code_sequence = 5;
 }

@@ -6,20 +6,20 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Protocol_ContextModule {
-	CustodialOrganizationSequence custodial_organization_sequence = 1;
-	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 2;
-	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 3;
-	ContraindicationsCodeSequence contraindications_code_sequence = 4;
-	ProtocolDesignRationale protocol_design_rationale = 5;
-	InstanceCreationDate instance_creation_date = 6;
+	InstanceCreationDate instance_creation_date = 1;
+	InstanceCreationTime instance_creation_time = 2;
+	ResponsibleGroupCodeSequence responsible_group_code_sequence = 3;
+	ProtocolName protocol_name = 4;
+	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 5;
+	PotentialRequestedProcedureCodeSequence potential_requested_procedure_code_sequence = 6;
 	PotentialReasonsForProcedure potential_reasons_for_procedure = 7;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 8;
-	ResponsibleGroupCodeSequence responsible_group_code_sequence = 9;
-	PotentialScheduledProtocolCodeSequence potential_scheduled_protocol_code_sequence = 10;
-	PotentialDiagnosticTasks potential_diagnostic_tasks = 11;
-	ContentCreatorName content_creators_name = 12;
-	ProtocolPlanningInformation protocol_planning_information = 13;
-	ProtocolName protocol_name = 14;
-	PredecessorProtocolSequence predecessor_protocol_sequence = 15;
-	InstanceCreationTime instance_creation_time = 16;
+	PotentialReasonsForProcedureCodeSequence potential_reasons_for_procedure_code_sequence = 8;
+	PotentialDiagnosticTasks potential_diagnostic_tasks = 9;
+	ContraindicationsCodeSequence contraindications_code_sequence = 10;
+	PredecessorProtocolSequence predecessor_protocol_sequence = 11;
+	ProtocolPlanningInformation protocol_planning_information = 12;
+	ProtocolDesignRationale protocol_design_rationale = 13;
+	CustodialOrganizationSequence custodial_organization_sequence = 14;
+	ContentCreatorName content_creators_name = 15;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 16;
 }

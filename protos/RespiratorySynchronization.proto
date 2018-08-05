@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Respiratory_SynchronizationModule {
-	RespiratoryTriggerDelayThreshold respiratory_trigger_delay_threshold = 1;
-	RespiratoryTriggerType respiratory_trigger_type = 2;
-	RespiratoryMotionCompensationTechnique respiratory_motion_compensation_technique = 3;
-	RespiratorySignalSource respiratory_signal_source = 4;
+	RespiratoryMotionCompensationTechnique respiratory_motion_compensation_technique = 1;
+	RespiratorySignalSource respiratory_signal_source = 2;
+	RespiratoryTriggerType respiratory_trigger_type = 3;
+	RespiratoryTriggerDelayThreshold respiratory_trigger_delay_threshold = 4;
 }

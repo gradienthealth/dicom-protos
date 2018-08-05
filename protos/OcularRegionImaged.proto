@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Ocular_Region_ImagedModule {
-	OphthalmicAnatomicReferencePointXCoordinate ophthalmic_anatomic_reference_point_x_coordinate = 1;
-	OphthalmicAnatomicReferencePointYCoordinate ophthalmic_anatomic_reference_point_y_coordinate = 2;
-	AnatomicRegionSequence anatomic_region_sequence = 3;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 4;
-	ImageLaterality image_laterality = 5;
-	RelativeImagePositionCodeSequence relative_image_position_code_sequence = 6;
+	AnatomicRegionSequence anatomic_region_sequence = 1;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
+	ImageLaterality image_laterality = 3;
+	RelativeImagePositionCodeSequence relative_image_position_code_sequence = 4;
+	OphthalmicAnatomicReferencePointXCoordinate ophthalmic_anatomic_reference_point_x_coordinate = 5;
+	OphthalmicAnatomicReferencePointYCoordinate ophthalmic_anatomic_reference_point_y_coordinate = 6;
 }

@@ -6,19 +6,19 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Performed_Procedure_Step_InformationModule {
-	PerformedProcedureStepStatus performed_procedure_step_status = 1;
-	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 2;
+	ProcedureCodeSequence procedure_code_sequence = 1;
+	PerformedStationAETitle performed_station_ae_title = 2;
 	PerformedStationName performed_station_name = 3;
 	PerformedLocation performed_location = 4;
 	PerformedProcedureStepStartDate performed_procedure_step_start_date = 5;
-	ProcedureCodeSequence procedure_code_sequence = 6;
-	PerformedProcedureStepStartTime performed_procedure_step_start_time = 7;
-	PerformedProcedureStepID performed_procedure_step_id = 8;
-	ReasonForPerformedProcedureCodeSequence reason_for_performed_procedure_code_sequence = 9;
-	PerformedProcedureTypeDescription performed_procedure_type_description = 10;
-	PerformedProcedureStepDiscontinuationReasonCodeSequence performed_procedure_step_discontinuation_reason_code_sequence = 11;
-	PerformedStationAETitle performed_station_ae_title = 12;
-	PerformedProcedureStepEndDate performed_procedure_step_end_date = 13;
-	PerformedProcedureStepEndTime performed_procedure_step_end_time = 14;
-	PerformedProcedureStepDescription performed_procedure_step_description = 15;
+	PerformedProcedureStepStartTime performed_procedure_step_start_time = 6;
+	PerformedProcedureStepEndDate performed_procedure_step_end_date = 7;
+	PerformedProcedureStepEndTime performed_procedure_step_end_time = 8;
+	PerformedProcedureStepStatus performed_procedure_step_status = 9;
+	PerformedProcedureStepID performed_procedure_step_id = 10;
+	PerformedProcedureStepDescription performed_procedure_step_description = 11;
+	PerformedProcedureTypeDescription performed_procedure_type_description = 12;
+	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 13;
+	PerformedProcedureStepDiscontinuationReasonCodeSequence performed_procedure_step_discontinuation_reason_code_sequence = 14;
+	ReasonForPerformedProcedureCodeSequence reason_for_performed_procedure_code_sequence = 15;
 }

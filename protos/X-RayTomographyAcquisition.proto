@@ -6,10 +6,10 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message X_Ray_Tomography_AcquisitionModule {
-	NumberOfTomosynthesisSourceImages number_of_tomosynthesis_source_images = 1;
-	TomoLayerHeight tomo_layer_height = 2;
-	TomoAngle tomo_angle = 3;
-	TomoTime tomo_time = 4;
-	TomoType tomo_type = 5;
-	TomoClass tomo_class = 6;
+	TomoLayerHeight tomo_layer_height = 1;
+	TomoAngle tomo_angle = 2;
+	TomoTime tomo_time = 3;
+	TomoType tomo_type = 4;
+	TomoClass tomo_class = 5;
+	NumberOfTomosynthesisSourceImages number_of_tomosynthesis_source_images = 6;
 }

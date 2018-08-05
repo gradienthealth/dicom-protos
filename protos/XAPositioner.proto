@@ -6,14 +6,14 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message XA_PositionerModule {
-	PositionerSecondaryAngleIncrement positioner_secondary_angle_increment = 1;
-	DetectorPrimaryAngle detector_primary_angle = 2;
+	DistanceSourceToDetector distance_source_to_detector = 1;
+	DistanceSourceToPatient distance_source_to_patient = 2;
 	EstimatedRadiographicMagnificationFactor estimated_radiographic_magnification_factor = 3;
-	DistanceSourceToDetector distance_source_to_detector = 4;
-	PositionerMotion positioner_motion = 5;
-	PositionerPrimaryAngle positioner_primary_angle = 6;
-	PositionerSecondaryAngle positioner_secondary_angle = 7;
-	PositionerPrimaryAngleIncrement positioner_primary_angle_increment = 8;
-	DetectorSecondaryAngle detector_secondary_angle = 9;
-	DistanceSourceToPatient distance_source_to_patient = 10;
+	PositionerMotion positioner_motion = 4;
+	PositionerPrimaryAngle positioner_primary_angle = 5;
+	PositionerSecondaryAngle positioner_secondary_angle = 6;
+	PositionerPrimaryAngleIncrement positioner_primary_angle_increment = 7;
+	PositionerSecondaryAngleIncrement positioner_secondary_angle_increment = 8;
+	DetectorPrimaryAngle detector_primary_angle = 9;
+	DetectorSecondaryAngle detector_secondary_angle = 10;
 }

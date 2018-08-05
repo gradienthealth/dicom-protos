@@ -6,8 +6,8 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message RT_DVHModule {
-	ReferencedStructureSetSequence referenced_structure_set_sequence = 1;
-	DVHNormalizationPoint dvh_normalization_point = 2;
-	DVHNormalizationDoseValue dvh_normalization_dose_value = 3;
-	DVHSequence dvh_sequence = 4;
+	DVHNormalizationPoint dvh_normalization_point = 1;
+	DVHNormalizationDoseValue dvh_normalization_dose_value = 2;
+	DVHSequence dvh_sequence = 3;
+	ReferencedStructureSetSequence referenced_structure_set_sequence = 4;
 }

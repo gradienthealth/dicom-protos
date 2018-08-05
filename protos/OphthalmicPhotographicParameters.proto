@@ -6,16 +6,16 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Ophthalmic_Photographic_ParametersModule {
-	LensesCodeSequence lenses_code_sequence = 1;
-	AcquisitionDeviceTypeCodeSequence acquisition_device_type_code_sequence = 2;
-	LightPathFilterTypeStackCodeSequence light_path_filter_type_stack_code_sequence = 3;
-	ImagePathFilterTypeStackCodeSequence image_path_filter_type_stack_code_sequence = 4;
-	ImagePathFilterPassThroughWavelength image_path_filter_pass_through_wavelength = 5;
-	ImagePathFilterPassBand image_path_filter_pass_band = 6;
-	DetectorType detector_type = 7;
-	ChannelDescriptionCodeSequence channel_description_code_sequence = 8;
-	CameraAngleOfView camera_angle_of_view = 9;
-	IlluminationTypeCodeSequence illumination_type_code_sequence = 10;
-	LightPathFilterPassThroughWavelength light_path_filter_pass_through_wavelength = 11;
-	LightPathFilterPassBand light_path_filter_pass_band = 12;
+	DetectorType detector_type = 1;
+	LightPathFilterPassThroughWavelength light_path_filter_pass_through_wavelength = 2;
+	LightPathFilterPassBand light_path_filter_pass_band = 3;
+	ImagePathFilterPassThroughWavelength image_path_filter_pass_through_wavelength = 4;
+	ImagePathFilterPassBand image_path_filter_pass_band = 5;
+	AcquisitionDeviceTypeCodeSequence acquisition_device_type_code_sequence = 6;
+	IlluminationTypeCodeSequence illumination_type_code_sequence = 7;
+	LightPathFilterTypeStackCodeSequence light_path_filter_type_stack_code_sequence = 8;
+	ImagePathFilterTypeStackCodeSequence image_path_filter_type_stack_code_sequence = 9;
+	LensesCodeSequence lenses_code_sequence = 10;
+	ChannelDescriptionCodeSequence channel_description_code_sequence = 11;
+	CameraAngleOfView camera_angle_of_view = 12;
 }

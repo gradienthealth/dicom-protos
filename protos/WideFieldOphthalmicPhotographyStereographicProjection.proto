@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Wide_Field_Ophthalmic_Photography_Stereographic_ProjectionModule {
-	OphthalmicFOV ophthalmic_fov = 1;
-	AnatomicRegionSequence anatomic_region_sequence = 2;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 3;
+	AnatomicRegionSequence anatomic_region_sequence = 1;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
+	OphthalmicAxialLength ophthalmic_axial_length = 3;
 	TransformationAlgorithmSequence transformation_algorithm_sequence = 4;
-	OphthalmicAxialLength ophthalmic_axial_length = 5;
-	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 6;
+	OphthalmicAxialLengthMethod ophthalmic_axial_length_method = 5;
+	OphthalmicFOV ophthalmic_fov = 6;
 	XCoordinatesCenterPixelViewAngle x_coordinates_center_pixel_view_angle = 7;
 	YCoordinatesCenterPixelViewAngle y_coordinates_center_pixel_view_angle = 8;
 }

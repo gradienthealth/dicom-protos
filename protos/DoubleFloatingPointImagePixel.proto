@@ -7,12 +7,12 @@ import "Attributes.proto";
 
 message Double_Floating_Point_Image_PixelModule {
 	SamplesPerPixel samples_per_pixel = 1;
-	BitsAllocated bits_allocated = 2;
-	PixelAspectRatio pixel_aspect_ratio = 3;
-	DoubleFloatPixelPaddingValue double_float_pixel_padding_value = 4;
-	DoubleFloatPixelPaddingRangeLimit double_float_pixel_padding_range_limit = 5;
-	PhotometricInterpretation photometric_interpretation = 6;
-	Rows rows = 7;
-	Columns columns = 8;
+	PhotometricInterpretation photometric_interpretation = 2;
+	Rows rows = 3;
+	Columns columns = 4;
+	PixelAspectRatio pixel_aspect_ratio = 5;
+	BitsAllocated bits_allocated = 6;
+	DoubleFloatPixelPaddingValue double_float_pixel_padding_value = 7;
+	DoubleFloatPixelPaddingRangeLimit double_float_pixel_padding_range_limit = 8;
 	DoubleFloatPixelData double_float_pixel_data = 9;
 }

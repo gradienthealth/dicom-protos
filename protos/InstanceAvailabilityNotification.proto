@@ -7,6 +7,6 @@ import "Attributes.proto";
 
 message Instance_Availability_NotificationModule {
 	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 1;
-	StudyInstanceUID study_instance_uid = 2;
-	ReferencedSeriesSequence referenced_series_sequence = 3;
+	ReferencedSeriesSequence referenced_series_sequence = 2;
+	StudyInstanceUID study_instance_uid = 3;
 }

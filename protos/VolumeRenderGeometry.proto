@@ -7,10 +7,10 @@ import "Attributes.proto";
 
 message Volume_Render_GeometryModule {
 	RenderingMethod rendering_method = 1;
-	SamplingStepSize sampling_step_size = 2;
-	RenderProjection render_projection = 3;
-	ViewpointPosition viewpoint_position = 4;
-	ViewpointLookAtPoint viewpoint_lookat_point = 5;
-	ViewpointUpDirection viewpoint_up_direction = 6;
-	RenderFieldOfView render_field_of_view = 7;
+	RenderProjection render_projection = 2;
+	ViewpointPosition viewpoint_position = 3;
+	ViewpointLookAtPoint viewpoint_lookat_point = 4;
+	ViewpointUpDirection viewpoint_up_direction = 5;
+	RenderFieldOfView render_field_of_view = 6;
+	SamplingStepSize sampling_step_size = 7;
 }

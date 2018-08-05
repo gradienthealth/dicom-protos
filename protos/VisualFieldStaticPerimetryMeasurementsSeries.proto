@@ -6,15 +6,15 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Visual_Field_Static_Perimetry_Measurements_SeriesModule {
-	PerformedProcedureStepEndDate performed_procedure_step_end_date = 1;
-	PerformedProcedureStepEndTime performed_procedure_step_end_time = 2;
-	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 3;
-	Modality modality = 4;
-	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 5;
-	PerformedProcedureStepStartDate performed_procedure_step_start_date = 6;
-	PerformedProcedureStepStartTime performed_procedure_step_start_time = 7;
-	RequestAttributesSequence request_attributes_sequence = 8;
-	PerformedProcedureStepID performed_procedure_step_id = 9;
-	PerformedProcedureStepDescription performed_procedure_step_description = 10;
-	PerformedProtocolCodeSequence performed_protocol_code_sequence = 11;
+	Modality modality = 1;
+	ReferencedPerformedProcedureStepSequence referenced_performed_procedure_step_sequence = 2;
+	PerformedProcedureStepStartDate performed_procedure_step_start_date = 3;
+	PerformedProcedureStepStartTime performed_procedure_step_start_time = 4;
+	PerformedProcedureStepEndDate performed_procedure_step_end_date = 5;
+	PerformedProcedureStepEndTime performed_procedure_step_end_time = 6;
+	PerformedProcedureStepID performed_procedure_step_id = 7;
+	PerformedProcedureStepDescription performed_procedure_step_description = 8;
+	PerformedProtocolCodeSequence performed_protocol_code_sequence = 9;
+	RequestAttributesSequence request_attributes_sequence = 10;
+	CommentsOnThePerformedProcedureStep comments_on_the_performed_procedure_step = 11;
 }

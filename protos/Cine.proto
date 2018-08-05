@@ -6,16 +6,16 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message CineModule {
-	FrameTime frame_time = 1;
-	StartTrim start_trim = 2;
-	StopTrim stop_trim = 3;
-	RecommendedDisplayFrameRate recommended_display_frame_rate = 4;
-	CineRate cine_rate = 5;
-	ActualFrameDuration actual_frame_duration = 6;
-	PreferredPlaybackSequencing preferred_playback_sequencing = 7;
+	StartTrim start_trim = 1;
+	StopTrim stop_trim = 2;
+	RecommendedDisplayFrameRate recommended_display_frame_rate = 3;
+	CineRate cine_rate = 4;
+	EffectiveDuration effective_duration = 5;
+	FrameTime frame_time = 6;
+	FrameTimeVector frame_time_vector = 7;
 	FrameDelay frame_delay = 8;
 	ImageTriggerDelay image_trigger_delay = 9;
-	EffectiveDuration effective_duration = 10;
-	MultiplexedAudioChannelsDescriptionCodeSequence multiplexed_audio_channels_description_code_sequence = 11;
-	FrameTimeVector frame_time_vector = 12;
+	ActualFrameDuration actual_frame_duration = 10;
+	PreferredPlaybackSequencing preferred_playback_sequencing = 11;
+	MultiplexedAudioChannelsDescriptionCodeSequence multiplexed_audio_channels_description_code_sequence = 12;
 }

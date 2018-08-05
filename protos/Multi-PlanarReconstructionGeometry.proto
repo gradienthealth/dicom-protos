@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Multi_Planar_Reconstruction_GeometryModule {
-	MPRViewWidth mpr_view_width = 1;
-	MPRViewHeightDirection mpr_view_height_direction = 2;
-	MPRViewHeight mpr_view_height = 3;
+	MultiPlanarReconstructionStyle multi_planar_reconstruction_style = 1;
+	MPRThicknessType mpr_thickness_type = 2;
+	MPRSlabThickness mpr_slab_thickness = 3;
 	MPRTopLeftHandCorner mpr_top_left_hand_corner = 4;
-	MultiPlanarReconstructionStyle multi_planar_reconstruction_style = 5;
-	MPRThicknessType mpr_thickness_type = 6;
-	MPRSlabThickness mpr_slab_thickness = 7;
-	MPRViewWidthDirection mpr_view_width_direction = 8;
+	MPRViewWidthDirection mpr_view_width_direction = 5;
+	MPRViewWidth mpr_view_width = 6;
+	MPRViewHeightDirection mpr_view_height_direction = 7;
+	MPRViewHeight mpr_view_height = 8;
 }

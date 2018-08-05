@@ -6,11 +6,11 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message SpecimenModule {
-	ContainerComponentSequence container_component_sequence = 1;
-	SpecimenDescriptionSequence specimen_description_sequence = 2;
-	ContainerIdentifier container_identifier = 3;
-	IssuerOfTheContainerIdentifierSequence issuer_of_the_container_identifier_sequence = 4;
-	AlternateContainerIdentifierSequence alternate_container_identifier_sequence = 5;
-	ContainerTypeCodeSequence container_type_code_sequence = 6;
-	ContainerDescription container_description = 7;
+	ContainerIdentifier container_identifier = 1;
+	IssuerOfTheContainerIdentifierSequence issuer_of_the_container_identifier_sequence = 2;
+	AlternateContainerIdentifierSequence alternate_container_identifier_sequence = 3;
+	ContainerTypeCodeSequence container_type_code_sequence = 4;
+	ContainerDescription container_description = 5;
+	ContainerComponentSequence container_component_sequence = 6;
+	SpecimenDescriptionSequence specimen_description_sequence = 7;
 }

@@ -6,17 +6,17 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Overlay_PlaneModule {
-	OverlayBitsAllocated overlay_bits_allocated = 1;
-	OverlayLabel overlay_label = 2;
-	ROIMean roi_mean = 3;
-	OverlayRows overlay_rows = 4;
-	OverlayColumns overlay_columns = 5;
-	OverlayType overlay_type = 6;
-	OverlayOrigin overlay_origin = 7;
+	OverlayRows overlay_rows = 1;
+	OverlayColumns overlay_columns = 2;
+	OverlayDescription overlay_description = 3;
+	OverlayType overlay_type = 4;
+	OverlaySubtype overlay_subtype = 5;
+	OverlayOrigin overlay_origin = 6;
+	OverlayBitsAllocated overlay_bits_allocated = 7;
 	OverlayBitPosition overlay_bit_position = 8;
-	OverlayData overlay_data = 9;
-	OverlayDescription overlay_description = 10;
-	OverlaySubtype overlay_subtype = 11;
-	ROIArea roi_area = 12;
-	ROIStandardDeviation roi_standard_deviation = 13;
+	ROIArea roi_area = 9;
+	ROIMean roi_mean = 10;
+	ROIStandardDeviation roi_standard_deviation = 11;
+	OverlayLabel overlay_label = 12;
+	OverlayData overlay_data = 13;
 }

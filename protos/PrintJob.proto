@@ -6,11 +6,11 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Print_JobModule {
-	PrinterName printer_name = 1;
-	Originator originator = 2;
-	ExecutionStatus execution_status = 3;
-	ExecutionStatusInfo execution_status_info = 4;
-	CreationDate creation_date = 5;
-	CreationTime creation_time = 6;
-	PrintPriority print_priority = 7;
+	PrintPriority print_priority = 1;
+	ExecutionStatus execution_status = 2;
+	ExecutionStatusInfo execution_status_info = 3;
+	CreationDate creation_date = 4;
+	CreationTime creation_time = 5;
+	Originator originator = 6;
+	PrinterName printer_name = 7;
 }

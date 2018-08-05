@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message X_Ray_GridModule {
-	GridPeriod grid_period = 1;
-	GridID grid_id = 2;
-	GridSpacingMaterial grid_spacing_material = 3;
-	GridThickness grid_thickness = 4;
-	GridPitch grid_pitch = 5;
-	GridFocalDistance grid_focal_distance = 6;
-	Grid grid = 7;
-	GridAbsorbingMaterial grid_absorbing_material = 8;
-	GridAspectRatio grid_aspect_ratio = 9;
+	GridID grid_id = 1;
+	Grid grid = 2;
+	GridAbsorbingMaterial grid_absorbing_material = 3;
+	GridSpacingMaterial grid_spacing_material = 4;
+	GridThickness grid_thickness = 5;
+	GridPitch grid_pitch = 6;
+	GridAspectRatio grid_aspect_ratio = 7;
+	GridPeriod grid_period = 8;
+	GridFocalDistance grid_focal_distance = 9;
 }

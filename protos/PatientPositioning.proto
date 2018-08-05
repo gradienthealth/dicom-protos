@@ -6,12 +6,12 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Patient_PositioningModule {
-	PositioningLandmarkSequence positioning_landmark_sequence = 1;
-	TargetFrameOfReferenceUID target_frame_of_reference_uid = 2;
-	TargetPositionReferenceIndicator target_position_reference_indicator = 3;
-	AnatomicRegionSequence anatomic_region_sequence = 4;
-	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 5;
-	ProtocolDefinedPatientPosition protocol_defined_patient_position = 6;
-	PatientPositioningInstructionSequence patient_positioning_instruction_sequence = 7;
-	PositioningMethodCodeSequence positioning_method_code_sequence = 8;
+	AnatomicRegionSequence anatomic_region_sequence = 1;
+	PrimaryAnatomicStructureSequence primary_anatomic_structure_sequence = 2;
+	PatientPositioningInstructionSequence patient_positioning_instruction_sequence = 3;
+	PositioningMethodCodeSequence positioning_method_code_sequence = 4;
+	PositioningLandmarkSequence positioning_landmark_sequence = 5;
+	TargetFrameOfReferenceUID target_frame_of_reference_uid = 6;
+	ProtocolDefinedPatientPosition protocol_defined_patient_position = 7;
+	TargetPositionReferenceIndicator target_position_reference_indicator = 8;
 }

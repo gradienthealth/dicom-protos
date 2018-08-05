@@ -6,13 +6,13 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Product_CharacteristicsModule {
-	ProductPackageIdentifier product_package_identifier = 1;
-	ProductTypeCodeSequence product_type_code_sequence = 2;
-	ProductName product_name = 3;
-	ProductDescription product_description = 4;
-	ProductLotIdentifier product_lot_identifier = 5;
-	ProductParameterSequence product_parameter_sequence = 6;
-	PertinentDocumentsSequence pertinent_documents_sequence = 7;
-	Manufacturer manufacturer = 8;
-	ProductExpirationDateTime product_expiration_datetime = 9;
+	Manufacturer manufacturer = 1;
+	PertinentDocumentsSequence pertinent_documents_sequence = 2;
+	ProductPackageIdentifier product_package_identifier = 3;
+	ProductTypeCodeSequence product_type_code_sequence = 4;
+	ProductName product_name = 5;
+	ProductDescription product_description = 6;
+	ProductLotIdentifier product_lot_identifier = 7;
+	ProductExpirationDateTime product_expiration_datetime = 8;
+	ProductParameterSequence product_parameter_sequence = 9;
 }

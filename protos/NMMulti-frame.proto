@@ -6,21 +6,21 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message NM_Multi_frameModule {
-	NumberOfSlices number_of_slices = 1;
-	FrameIncrementPointer frame_increment_pointer = 2;
-	EnergyWindowVector energy_window_vector = 3;
+	FrameIncrementPointer frame_increment_pointer = 1;
+	EnergyWindowVector energy_window_vector = 2;
+	NumberOfEnergyWindows number_of_energy_windows = 3;
 	DetectorVector detector_vector = 4;
-	NumberOfPhases number_of_phases = 5;
-	RRIntervalVector r_r_interval_vector = 6;
-	TimeSlotVector time_slot_vector = 7;
-	NumberOfEnergyWindows number_of_energy_windows = 8;
-	PhaseVector phase_vector = 9;
-	NumberOfRotations number_of_rotations = 10;
-	NumberOfTimeSlots number_of_time_slots = 11;
-	AngularViewVector angular_view_vector = 12;
-	TimeSliceVector time_slice_vector = 13;
-	NumberOfDetectors number_of_detectors = 14;
-	RotationVector rotation_vector = 15;
-	NumberOfRRIntervals number_of_r_r_intervals = 16;
-	SliceVector slice_vector = 17;
+	NumberOfDetectors number_of_detectors = 5;
+	PhaseVector phase_vector = 6;
+	NumberOfPhases number_of_phases = 7;
+	RotationVector rotation_vector = 8;
+	NumberOfRotations number_of_rotations = 9;
+	RRIntervalVector r_r_interval_vector = 10;
+	NumberOfRRIntervals number_of_r_r_intervals = 11;
+	TimeSlotVector time_slot_vector = 12;
+	NumberOfTimeSlots number_of_time_slots = 13;
+	SliceVector slice_vector = 14;
+	NumberOfSlices number_of_slices = 15;
+	AngularViewVector angular_view_vector = 16;
+	TimeSliceVector time_slice_vector = 17;
 }

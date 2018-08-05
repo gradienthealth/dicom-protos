@@ -6,20 +6,20 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Structured_DisplayModule {
-	AlternateContentDescriptionSequence alternate_content_description_sequence = 1;
-	ContentCreatorName content_creators_name = 2;
-	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 3;
-	IconImageSequence icon_image_sequence = 4;
-	HangingProtocolCreator hanging_protocol_creator = 5;
-	InstanceNumber instance_number = 6;
-	ContentLabel content_label = 7;
-	ConceptNameCodeSequence concept_name_code_sequence = 8;
-	ContentDescription content_description = 9;
-	PresentationCreationDate presentation_creation_date = 10;
-	HangingProtocolName hanging_protocol_name = 11;
+	InstanceNumber instance_number = 1;
+	ConceptNameCodeSequence concept_name_code_sequence = 2;
+	ContentLabel content_label = 3;
+	ContentDescription content_description = 4;
+	PresentationCreationDate presentation_creation_date = 5;
+	PresentationCreationTime presentation_creation_time = 6;
+	ContentCreatorName content_creators_name = 7;
+	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 8;
+	AlternateContentDescriptionSequence alternate_content_description_sequence = 9;
+	HangingProtocolName hanging_protocol_name = 10;
+	HangingProtocolCreator hanging_protocol_creator = 11;
 	NumberOfScreens number_of_screens = 12;
-	StructuredDisplayBackgroundCIELabValue structured_display_background_cielab_value = 13;
-	ContentCreatorIdentificationCodeSequence content_creators_identification_code_sequence = 14;
-	PresentationCreationTime presentation_creation_time = 15;
-	EmptyImageBoxCIELabValue empty_image_box_cielab_value = 16;
+	NominalScreenDefinitionSequence nominal_screen_definition_sequence = 13;
+	StructuredDisplayBackgroundCIELabValue structured_display_background_cielab_value = 14;
+	EmptyImageBoxCIELabValue empty_image_box_cielab_value = 15;
+	IconImageSequence icon_image_sequence = 16;
 }

@@ -6,7 +6,7 @@ import "Sequences.proto";
 import "Attributes.proto";
 
 message Generic_Implant_Template_Planning_LandmarksModule {
-	PlanningLandmarkLineSequence planning_landmark_line_sequence = 1;
-	PlanningLandmarkPlaneSequence planning_landmark_plane_sequence = 2;
-	PlanningLandmarkPointSequence planning_landmark_point_sequence = 3;
+	PlanningLandmarkPointSequence planning_landmark_point_sequence = 1;
+	PlanningLandmarkLineSequence planning_landmark_line_sequence = 2;
+	PlanningLandmarkPlaneSequence planning_landmark_plane_sequence = 3;
 }

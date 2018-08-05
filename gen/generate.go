@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"os"
 	"regexp"
+	"sort"
 	"strings"
 
 	"github.com/gradienthealth/dicom-protos/parse"
@@ -99,7 +101,7 @@ func AttributeProto(a *parse.Attribute) string {
 }
 
 // ModuleProto generates the corresponding protocol buffer for the module and writes it to w
-func ModuleProto(module *parse.Module, w io.Writer) error {
+func ModuleProto(module *parse.Module, w io.Writer) {
 	fmt.Fprintf(w, "// %s\n// Link to standard: %s\n", module.Name, module.LinkToStandard)
 	fmt.Fprintln(w, ProtoHeader)
 	fmt.Fprintln(w, "option go_package = \"github.com/gradienthealth/dicom-protos/protos\";")
@@ -112,15 +114,14 @@ func ModuleProto(module *parse.Module, w io.Writer) error {
 	fmt.Fprintf(w, "message %sModule {\n", moduleName)
 
 	i := 1
-	for _, a := range module.Attributes {
+	attrs := getSortedAttributes(module.Attributes)
+	for _, a := range attrs {
 		if !(a.Retired || a.IsEmpty()) {
 			fmt.Fprintf(w, "\t%s %s = %d;\n", a.Keyword, getFieldName(a.Name), i)
 			i++
 		}
 	}
 	fmt.Fprintln(w, "}")
-
-	return nil
 }
 
 // SequenceAttrProto generates two protocol buffer files for Sequences and Leaf Attributes.
@@ -144,18 +145,88 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 
 		// Write out the sequence protobuf message.
 		i := 1
-		for _, s := range a.SubAttributes {
-			fmt.Fprintf(wSeq, "\t%s %s = %d;\n", s.Keyword, getFieldName(s.Name), i)
+		attrs := getSortedAttributes(a.SubAttributes)
+		for _, attr := range attrs {
+			fmt.Fprintf(wSeq, "\t%s %s = %d;\n", attr.Keyword, getFieldName(attr.Name), i)
 			i++
 		}
 		fmt.Fprint(wSeq, "} \n\n")
 
 		// Recursively call for children.
-		for _, s := range a.SubAttributes {
+		for _, s := range attrs {
 			SequenceAttrProto(s, wSeq, wAttr)
 		}
 
 	}
+	return nil
+}
+
+// ProtosToFile generates ALL protos from the provided modules to the directory path specified
+func ProtosToFile(dirPath string, modules []*parse.Module) (counter int, err error) {
+	// Create Sequences and Attributes file
+	seqOut, err := os.Create(dirPath + "/Sequences.proto")
+	if err != nil {
+		return 0, err
+	}
+	fmt.Fprintln(seqOut, ProtoHeader)
+	fmt.Fprintln(seqOut, "import \"Attributes.proto\";")
+	fmt.Fprintln(seqOut, "")
+	defer seqOut.Close()
+
+	attrOut, err := os.Create(dirPath + "/Attributes.proto")
+	fmt.Fprintln(attrOut, ProtoHeader)
+	fmt.Fprintln(attrOut, "")
+	defer attrOut.Close()
+
+	// Begin to generate Module protos and populate Sequences.proto and Attributes.proto
+	sort.Sort(parse.ModulesByID(modules))
+	counter = 0
+	for _, m := range modules {
+		// Generate proto messages for this module
+		err := moduleProtoToFile(dirPath, m)
+		if err != nil {
+			return counter, err
+		}
+
+		// Generate proto messages for this module's attributes
+		attrs := getSortedAttributes(m.Attributes)
+		for _, attr := range attrs {
+			SequenceAttrProto(attr, seqOut, attrOut)
+		}
+
+		counter++
+	}
+
+	return counter, nil
+}
+
+func getSortedKeys(m map[parse.TagKey]*parse.Attribute) []string {
+	keys := make([]string, 0, len(m))
+	for k := range m {
+		keys = append(keys, string(k))
+	}
+	sort.Strings(keys)
+	return keys
+}
+
+func getSortedAttributes(m map[parse.TagKey]*parse.Attribute) []*parse.Attribute {
+	keys := getSortedKeys(m)
+	sort.Strings(keys)
+	attrs := make([]*parse.Attribute, 0, len(m))
+	for _, key := range keys {
+		attrs = append(attrs, m[parse.TagKey(key)])
+	}
+	return attrs
+}
+
+func moduleProtoToFile(dirPath string, m *parse.Module) error {
+	out, err := os.Create(dirPath + "/" + moduleNameToFilename(m.Name))
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	ModuleProto(m, out) // Generate module proto
 	return nil
 }
 
@@ -187,4 +258,10 @@ func getFieldName(name string) string {
 	s := strings.ToLower(name)
 	s = normalizeString(s)
 	return s
+}
+
+func moduleNameToFilename(name string) string {
+	s := strings.Replace(name, " ", "", -1)
+	s = strings.Replace(s, "/", "", -1)
+	return fmt.Sprintf("%s.proto", s)
 }
