@@ -161,36 +161,6 @@ func SequenceAttrProto(a *parse.Attribute, wSeq, wAttr io.Writer) error {
 	return nil
 }
 
-func getSortedKeys(m map[parse.TagKey]*parse.Attribute) []string {
-	keys := make([]string, 0, len(m))
-	for k := range m {
-		keys = append(keys, string(k))
-	}
-	sort.Strings(keys)
-	return keys
-}
-
-func getSortedAttributes(m map[parse.TagKey]*parse.Attribute) []*parse.Attribute {
-	keys := getSortedKeys(m)
-	sort.Strings(keys)
-	attrs := make([]*parse.Attribute, 0, len(m))
-	for _, key := range keys {
-		attrs = append(attrs, m[parse.TagKey(key)])
-	}
-	return attrs
-}
-
-func moduleProtoToFile(dirPath string, m *parse.Module) error {
-	out, err := os.Create(dirPath + "/" + moduleNameToFilename(m.Name))
-	if err != nil {
-		return err
-	}
-	defer out.Close()
-
-	ModuleProto(m, out) // Generate module proto
-	return nil
-}
-
 // ProtosToFile generates ALL protos from the provided modules to the directory path specified
 func ProtosToFile(dirPath string, modules []*parse.Module) (counter int, err error) {
 	// Create Sequences and Attributes file
@@ -228,6 +198,36 @@ func ProtosToFile(dirPath string, modules []*parse.Module) (counter int, err err
 	}
 
 	return counter, nil
+}
+
+func getSortedKeys(m map[parse.TagKey]*parse.Attribute) []string {
+	keys := make([]string, 0, len(m))
+	for k := range m {
+		keys = append(keys, string(k))
+	}
+	sort.Strings(keys)
+	return keys
+}
+
+func getSortedAttributes(m map[parse.TagKey]*parse.Attribute) []*parse.Attribute {
+	keys := getSortedKeys(m)
+	sort.Strings(keys)
+	attrs := make([]*parse.Attribute, 0, len(m))
+	for _, key := range keys {
+		attrs = append(attrs, m[parse.TagKey(key)])
+	}
+	return attrs
+}
+
+func moduleProtoToFile(dirPath string, m *parse.Module) error {
+	out, err := os.Create(dirPath + "/" + moduleNameToFilename(m.Name))
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	ModuleProto(m, out) // Generate module proto
+	return nil
 }
 
 func normalizeString(s string) string {
