@@ -56,7 +56,7 @@ var VRToProto = map[string]string{
 var SetComplete = map[string]*parse.Attribute{}
 
 // ProtoHeader represents the protocol buffer header for all protos
-const ProtoHeader = "syntax = \"proto3\";"
+const ProtoHeader = "syntax = \"proto3\";\noption go_package = \"github.com/gradienthealth/dicom-protos/protos\";"
 
 // AttributeProto generates the protocol message for an attribute and returns it as a string
 func AttributeProto(a *parse.Attribute) string {
@@ -103,8 +103,7 @@ func AttributeProto(a *parse.Attribute) string {
 // ModuleProto generates the corresponding protocol buffer for the module and writes it to w
 func ModuleProto(module *parse.Module, w io.Writer) {
 	fmt.Fprintf(w, "// %s\n// Link to standard: %s\n", module.Name, module.LinkToStandard)
-	fmt.Fprintln(w, ProtoHeader)
-	fmt.Fprintln(w, "option go_package = \"github.com/gradienthealth/dicom-protos/protos\";")
+	fmt.Fprintln(w, ProtoHeader) 
 	fmt.Fprintln(w, "import \"Sequences.proto\";")
 	fmt.Fprintln(w, "import \"Attributes.proto\";")
 	fmt.Fprintln(w, "")

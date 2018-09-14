@@ -1,4 +1,5 @@
 syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
 import "Attributes.proto";
 
 // DICOM Tag: (0040,0555)

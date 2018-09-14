@@ -1,4 +1,5 @@
 syntax = "proto3";
+option go_package = "github.com/gradienthealth/dicom-protos/protos";
 
 // DICOM Tag: (0008,0100)
 message CodeValue {
